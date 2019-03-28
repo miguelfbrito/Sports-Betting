@@ -1,0 +1,97 @@
+<DataModel xmlns:db="http://www.webratio.com/2006/WebML/Database" xmlns:gr="http://www.webratio.com/2006/WebML/Graph">
+  <Entity id="User" name="User" duration="persistent" gr:x="415" gr:y="455" gr:hideAttributes="false" attributeOrder="userOID userName password email">
+    <Attribute name="oid" id="userOID" type="integer" key="true"/>
+    <Attribute name="userName" id="userName" type="string"/>
+    <Attribute name="password" id="password" type="password"/>
+    <Attribute name="email" id="email" type="string"/>
+  </Entity>
+  <Entity id="Group" name="Group" duration="persistent" gr:x="795" gr:y="450" gr:hideAttributes="false" attributeOrder="groupOID groupName">
+    <Attribute name="oid" id="groupOID" type="integer" key="true"/>
+    <Attribute name="groupName" id="groupName" type="string"/>
+  </Entity>
+  <Entity id="Module" name="Module" duration="persistent" gr:x="1075" gr:y="395" gr:hideAttributes="false" attributeOrder="moduleOID moduleID moduleName">
+    <Attribute name="oid" id="moduleOID" type="integer" key="true"/>
+    <Attribute name="moduleID" id="moduleID" type="string"/>
+    <Attribute name="moduleName" id="moduleName" type="string"/>
+  </Entity>
+  <Relationship id="User2Group_Group2User" name="User_Group" sourceEntity="User" targetEntity="Group">
+    <RelationshipRole1 id="User2Group" name="groups" maxCard="N"/>
+    <RelationshipRole2 id="Group2User" name="users" maxCard="N"/>
+  </Relationship>
+  <Relationship id="User2DefaultGroup_DefaultGroup2User" name="User_DefaultGroup" sourceEntity="User" targetEntity="Group" gr:bendpoints="113,42,-112,44">
+    <RelationshipRole1 id="User2DefaultGroup" name="defaultGroup" maxCard="1"/>
+    <RelationshipRole2 id="DefaultGroup2User" name="defaultUsers" maxCard="N"/>
+  </Relationship>
+  <Relationship id="Group2DefaultModule_DefaultModule2Group" name="Group_DefaultModule" sourceEntity="Group" targetEntity="Module">
+    <RelationshipRole1 id="Group2DefaultModule" name="defaultModule" maxCard="1"/>
+    <RelationshipRole2 id="DefaultModule2Group" name="defaultGroups" maxCard="N"/>
+  </Relationship>
+  <Relationship id="Group2Module_Module2Group" name="Group_Module" sourceEntity="Group" targetEntity="Module" gr:bendpoints="110,41,-115,41">
+    <RelationshipRole1 id="Group2Module" name="modules" maxCard="N"/>
+    <RelationshipRole2 id="Module2Group" name="groups" maxCard="N"/>
+  </Relationship>
+  <db:Database id="db1" name="Database" type="MySQL" url="jdbc:mysql://localhost:3306/bettingwebapp" username="mbrito" password="gomas" cryptedPassword="false" connectionCount="5"/>
+  <Entity gr:x="450" gr:y="270" id="ent1" name="Bet" duration="persistent" attributeOrder="ent1#att1 ent1#att10 ent1#att11">
+    <Attribute id="ent1#att1" key="true" name="oid" type="integer"/>
+    <Attribute id="ent1#att10" name="wager" type="float"/>
+    <Attribute id="ent1#att11" name="result" type="string"/>
+  </Entity>
+  <Relationship id="rel1" name="User_Bet" sourceEntity="User" targetEntity="ent1">
+    <RelationshipRole1 id="rel1#role1" name="UserToBet" maxCard="1"/>
+    <RelationshipRole2 id="rel1#role2" name="BetToUser" maxCard="N"/>
+  </Relationship>
+  <Entity gr:x="775" gr:y="230" id="ent2" name="AvailableBetTypes" duration="persistent">
+    <Attribute id="ent2#att2" key="true" name="oid" type="integer"/>
+  </Entity>
+  <Entity gr:x="450" gr:y="105" id="ent3" name="Event" duration="persistent" attributeOrder="ent3#att3 ent3#att12">
+    <Attribute id="ent3#att3" key="true" name="oid" type="integer"/>
+    <Attribute id="ent3#att12" name="state" type="string"/>
+  </Entity>
+  <Relationship id="rel3" name="Bet_Event" sourceEntity="ent1" targetEntity="ent3">
+    <RelationshipRole1 id="rel3#role5" name="BetToEvent" maxCard="N"/>
+    <RelationshipRole2 id="rel3#role6" name="EventToBet" maxCard="1"/>
+  </Relationship>
+  <Relationship id="rel4" name="BetType_Event" sourceEntity="ent2" targetEntity="ent3">
+    <RelationshipRole1 id="rel4#role7" name="BetTypeToEvent" maxCard="N"/>
+    <RelationshipRole2 id="rel4#role8" name="EventToBetType" maxCard="1"/>
+  </Relationship>
+  <Entity gr:x="800" gr:y="10" id="ent5" name="Sport" duration="persistent">
+    <Attribute id="ent5#att5" key="true" name="oid" type="integer"/>
+  </Entity>
+  <Relationship id="rel6" name="Sport_Event" sourceEntity="ent5" targetEntity="ent3">
+    <RelationshipRole1 id="rel6#role11" name="SportToEvent" maxCard="1"/>
+    <RelationshipRole2 id="rel6#role12" name="EventToSport" maxCard="N"/>
+  </Relationship>
+  <Entity gr:x="800" gr:y="345" id="ent6" name="BetType" duration="persistent">
+    <Attribute id="ent6#att6" key="true" name="oid" type="integer"/>
+  </Entity>
+  <Relationship id="rel7" name="BetType_AvailableBetTypes" sourceEntity="ent6" targetEntity="ent2">
+    <RelationshipRole1 id="rel7#role13" name="BetTypeToAvailableBetTypes" maxCard="1"/>
+    <RelationshipRole2 id="rel7#role14" name="AvailableBetTypesToBetType" maxCard="N"/>
+  </Relationship>
+  <Relationship id="rel8" name="Bet_BetType" sourceEntity="ent1" targetEntity="ent6">
+    <RelationshipRole1 id="rel8#role15" name="BetToBetType" maxCard="N"/>
+    <RelationshipRole2 id="rel8#role16" name="BetTypeToBet" maxCard="1"/>
+  </Relationship>
+  <Entity gr:x="1080" gr:y="120" id="ent7" name="Team" duration="persistent">
+    <Attribute id="ent7#att7" key="true" name="oid" type="integer"/>
+  </Entity>
+  <Entity gr:x="780" gr:y="120" id="ent8" name="TeamsPerEvent" duration="persistent">
+    <Attribute id="ent8#att8" key="true" name="oid" type="integer"/>
+  </Entity>
+  <Relationship id="rel12" name="Event_TeamsPerEvent" sourceEntity="ent3" targetEntity="ent8">
+    <RelationshipRole1 id="rel12#role23" name="EventToTeamsPerEvent" maxCard="1"/>
+    <RelationshipRole2 id="rel12#role24" name="TeamsPerEventToEvent" maxCard="N"/>
+  </Relationship>
+  <Relationship id="rel13" name="TeamsPerEvent_Team" sourceEntity="ent8" targetEntity="ent7">
+    <RelationshipRole1 id="rel13#role25" name="TeamsPerEventToTeam" maxCard="N"/>
+    <RelationshipRole2 id="rel13#role26" name="TeamToTeamsPerEvent" maxCard="1"/>
+  </Relationship>
+  <Entity gr:x="1140" gr:y="10" id="ent9" name="Player" duration="persistent">
+    <Attribute id="ent9#att9" key="true" name="oid" type="integer"/>
+  </Entity>
+  <Relationship id="rel14" name="Sport_Player" sourceEntity="ent5" targetEntity="ent9">
+    <RelationshipRole1 id="rel14#role27" name="SportToPlayer" maxCard="N"/>
+    <RelationshipRole2 id="rel14#role28" name="PlayerToSport" maxCard="1"/>
+  </Relationship>
+</DataModel>
