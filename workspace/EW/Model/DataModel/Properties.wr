@@ -48,7 +48,7 @@
       <db:JoinColumn attribute="moduleOID" name="module_oid"/>
     </RelationshipRole2>
   </Relationship>
-  <db:Database id="db1" name="Database" type="MySQL" url="jdbc:mysql://localhost:3306/bettingwebapp" username="mbrito" password="gomas" cryptedPassword="false" connectionCount="5">
+  <db:Database id="db1" name="Database" type="MySQL" url="jdbc:mysql://localhost:3306/bettingwebapp" username="userEW" password="userEW23" connectionCount="5">
   </db:Database>
   <Entity gr:x="375" gr:y="300" id="ent1" name="Bet" duration="persistent" attributeOrder="ent1#att1 ent1#att10 ent1#att11" db:database="db1" db:table="bet">
     <Attribute id="ent1#att1" key="true" name="oid" type="integer" db:column="oid"/>
@@ -63,10 +63,11 @@
       <db:JoinColumn attribute="ent1#att1" name="bet_oid"/>
     </RelationshipRole2>
   </Relationship>
-  <Entity gr:x="775" gr:y="230" id="ent2" name="AvailableBetTypes" duration="persistent" db:database="db1" db:table="availablebettypes">
+  <Entity gr:x="775" gr:y="230" id="ent2" name="AvailableBetTypes" duration="persistent" db:database="db1" db:table="availablebettypes" attributeOrder="ent2#att2 ent2#att13">
     <Attribute id="ent2#att2" key="true" name="oid" type="integer" db:column="oid"/>
+    <Attribute id="ent2#att13" name="Odd" type="float" key="false" db:column="odd"/>
   </Entity>
-  <Entity gr:x="360" gr:y="5" id="ent3" name="Event" duration="persistent" attributeOrder="ent3#att3 ent3#att18 ent3#att17 ent3#att4 ent3#att14 ent3#att15 ent3#att16" db:database="db1" db:table="event">
+  <Entity gr:x="365" gr:y="5" id="ent3" name="Event" duration="persistent" attributeOrder="ent3#att3 ent3#att18 ent3#att17 ent3#att4 ent3#att14 ent3#att15 ent3#att16" db:database="db1" db:table="event">
     <Attribute id="ent3#att3" key="true" name="oid" type="integer" db:column="oid"/>
     <Attribute id="ent3#att16" name="finishingDate" type="date" db:column="finishingdate"/>
     <Attribute id="ent3#att15" name="startingDate" type="date" db:column="startingdate"/>
@@ -102,8 +103,9 @@
       <db:JoinColumn attribute="ent3#att3" name="event_oid"/>
     </RelationshipRole2>
   </Relationship>
-  <Entity gr:x="800" gr:y="345" id="ent6" name="BetType" duration="persistent" db:database="db1" db:table="bettype">
+  <Entity gr:x="800" gr:y="345" id="ent6" name="BetType" duration="persistent" db:database="db1" db:table="bettype" attributeOrder="ent6#att6 ent6#att12">
     <Attribute id="ent6#att6" key="true" name="oid" type="integer" db:column="oid"/>
+    <Attribute id="ent6#att12" name="Name" type="string" db:column="name"/>
   </Entity>
   <Relationship id="rel7" name="BetType_AvailableBetTypes" sourceEntity="ent6" targetEntity="ent2" db:database="db1" db:table="bettype">
     <RelationshipRole1 id="rel7#role13" name="BetTypeToAvailableBetTypes" maxCard="1">

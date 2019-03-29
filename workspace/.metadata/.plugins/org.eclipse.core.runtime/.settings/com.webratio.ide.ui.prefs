@@ -1,0 +1,7 @@
+#Thu Mar 28 22:17:25 WET 2019
+VAR_VALUE.date=20190328
+eclipse.preferences.version=1
+VAR_VALUE.webapps_loc=/opt/tomcat/apache-tomcat-8.5.39/webapps
+VAR_VALUE.timestamp=20190328221635
+VAR_NAMES=timestamp|webapps_loc|deploy_loc|date
+VAR_VALUE.deploy_loc=/home/luis/WebRatio_Platform/WebRatio/deploy

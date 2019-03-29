@@ -1,61 +1,61 @@
 
-Mar 29, 2019 12:19:40.79 NEW SESSION
-Mar 29, 2019 12:19:40.79 
-Mar 29, 2019 12:19:40.79 (firefox:6520): Gtk-WARNING **: 12:19:40.774: Theme directory 2x22@2x/animations of theme Papirus-Light has no size field
-Mar 29, 2019 12:19:40.79 
-Mar 29, 2019 12:19:40.82 
-Mar 29, 2019 12:19:40.82 (firefox:6520): Gtk-WARNING **: 12:19:40.816: Theme parsing error: <data>:1:34: Expected ')' in color definition
-Mar 29, 2019 12:19:40.82 
-Mar 29, 2019 12:19:40.82 (firefox:6520): Gtk-WARNING **: 12:19:40.816: Theme parsing error: <data>:1:76: Expected ')' in color definition
-Mar 29, 2019 12:19:41.28 
-Mar 29, 2019 12:19:41.28 (firefox:6592): Gtk-WARNING **: 12:19:41.280: Theme directory 2x22@2x/animations of theme Papirus-Light has no size field
-Mar 29, 2019 12:19:41.28 
-Mar 29, 2019 12:19:41.31 
-Mar 29, 2019 12:19:41.31 (firefox:6592): Gtk-WARNING **: 12:19:41.311: Theme parsing error: <data>:1:34: Expected ')' in color definition
-Mar 29, 2019 12:19:41.31 
-Mar 29, 2019 12:19:41.31 (firefox:6592): Gtk-WARNING **: 12:19:41.311: Theme parsing error: <data>:1:76: Expected ')' in color definition
-Mar 29, 2019 12:21:39.94 
-Mar 29, 2019 12:21:39.94 (firefox:7311): Gtk-WARNING **: 12:21:39.941: Theme directory 2x22@2x/animations of theme Papirus-Light has no size field
-Mar 29, 2019 12:21:39.94 
-Mar 29, 2019 12:21:39.98 
-Mar 29, 2019 12:21:39.98 (firefox:7311): Gtk-WARNING **: 12:21:39.974: Theme parsing error: <data>:1:34: Expected ')' in color definition
-Mar 29, 2019 12:21:39.98 
-Mar 29, 2019 12:21:39.98 (firefox:7311): Gtk-WARNING **: 12:21:39.974: Theme parsing error: <data>:1:76: Expected ')' in color definition
-Mar 29, 2019 12:21:40.39 
-Mar 29, 2019 12:21:40.39 (firefox:7377): Gtk-WARNING **: 12:21:40.387: Theme directory 2x22@2x/animations of theme Papirus-Light has no size field
-Mar 29, 2019 12:21:40.39 
-Mar 29, 2019 12:21:40.42 
-Mar 29, 2019 12:21:40.42 (firefox:7377): Gtk-WARNING **: 12:21:40.421: Theme parsing error: <data>:1:34: Expected ')' in color definition
-Mar 29, 2019 12:21:40.42 
-Mar 29, 2019 12:21:40.42 (firefox:7377): Gtk-WARNING **: 12:21:40.421: Theme parsing error: <data>:1:76: Expected ')' in color definition
-Mar 29, 2019 12:33:06.34 
-Mar 29, 2019 12:33:06.34 (firefox:8710): Gtk-WARNING **: 12:33:06.343: Theme directory 2x22@2x/animations of theme Papirus-Light has no size field
-Mar 29, 2019 12:33:06.34 
-Mar 29, 2019 12:33:06.37 
-Mar 29, 2019 12:33:06.37 (firefox:8710): Gtk-WARNING **: 12:33:06.374: Theme parsing error: <data>:1:34: Expected ')' in color definition
-Mar 29, 2019 12:33:06.37 
-Mar 29, 2019 12:33:06.37 (firefox:8710): Gtk-WARNING **: 12:33:06.374: Theme parsing error: <data>:1:76: Expected ')' in color definition
-Mar 29, 2019 12:33:06.79 
-Mar 29, 2019 12:33:06.79 (firefox:8775): Gtk-WARNING **: 12:33:06.793: Theme directory 2x22@2x/animations of theme Papirus-Light has no size field
-Mar 29, 2019 12:33:06.79 
-Mar 29, 2019 12:33:06.83 
-Mar 29, 2019 12:33:06.83 (firefox:8775): Gtk-WARNING **: 12:33:06.826: Theme parsing error: <data>:1:34: Expected ')' in color definition
-Mar 29, 2019 12:33:06.83 
-Mar 29, 2019 12:33:06.83 (firefox:8775): Gtk-WARNING **: 12:33:06.826: Theme parsing error: <data>:1:76: Expected ')' in color definition
-Mar 29, 2019 12:42:14.97 
-Mar 29, 2019 12:42:14.97 ###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
-Mar 29, 2019 12:42:14.97 
-Mar 29, 2019 12:42:23.08 
-Mar 29, 2019 12:42:23.08 (firefox:9916): Gtk-WARNING **: 12:42:23.075: Theme directory 2x22@2x/animations of theme Papirus-Light has no size field
-Mar 29, 2019 12:42:23.08 
-Mar 29, 2019 12:42:23.11 
-Mar 29, 2019 12:42:23.11 (firefox:9916): Gtk-WARNING **: 12:42:23.107: Theme parsing error: <data>:1:34: Expected ')' in color definition
-Mar 29, 2019 12:42:23.11 
-Mar 29, 2019 12:42:23.11 (firefox:9916): Gtk-WARNING **: 12:42:23.107: Theme parsing error: <data>:1:76: Expected ')' in color definition
-Mar 29, 2019 12:42:23.57 
-Mar 29, 2019 12:42:23.57 (firefox:10017): Gtk-WARNING **: 12:42:23.573: Theme directory 2x22@2x/animations of theme Papirus-Light has no size field
-Mar 29, 2019 12:42:23.57 
-Mar 29, 2019 12:42:23.61 
-Mar 29, 2019 12:42:23.61 (firefox:10017): Gtk-WARNING **: 12:42:23.609: Theme parsing error: <data>:1:34: Expected ')' in color definition
-Mar 29, 2019 12:42:23.61 
-Mar 29, 2019 12:42:23.61 (firefox:10017): Gtk-WARNING **: 12:42:23.609: Theme parsing error: <data>:1:76: Expected ')' in color definition
+Mar 25, 2019 17:26:16.87 NEW SESSION
+Mar 25, 2019 17:26:16.87 [Parent 30640, Gecko_IOThread] WARNING: pipe error (61): Ligação terminada no destino: file /build/firefox-daPcGs/firefox-66.0+build3/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Mar 25, 2019 17:26:19.68 [Parent 30640, Gecko_IOThread] WARNING: pipe error (119): Ligação terminada no destino: file /build/firefox-daPcGs/firefox-66.0+build3/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Mar 25, 2019 17:26:19.71 [Parent 30640, Gecko_IOThread] WARNING: pipe error (102): Ligação terminada no destino: file /build/firefox-daPcGs/firefox-66.0+build3/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+
+Mar 25, 2019 17:28:44.76 NEW SESSION
+Mar 25, 2019 17:28:44.76 [Parent 31221, Gecko_IOThread] WARNING: pipe error (120): Ligação terminada no destino: file /build/firefox-daPcGs/firefox-66.0+build3/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Mar 25, 2019 17:28:44.76 [Parent 31221, Gecko_IOThread] WARNING: pipe error (100): Ligação terminada no destino: file /build/firefox-daPcGs/firefox-66.0+build3/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Mar 25, 2019 17:28:44.77 [Parent 31221, Gecko_IOThread] WARNING: pipe error (71): Ligação terminada no destino: file /build/firefox-daPcGs/firefox-66.0+build3/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+
+Mar 25, 2019 17:33:55.26 NEW SESSION
+Mar 25, 2019 17:33:55.26 [Parent 31957, Gecko_IOThread] WARNING: pipe error (61): Ligação terminada no destino: file /build/firefox-daPcGs/firefox-66.0+build3/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Mar 25, 2019 17:33:55.26 [Parent 31957, Gecko_IOThread] WARNING: pipe error (120): Ligação terminada no destino: file /build/firefox-daPcGs/firefox-66.0+build3/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Mar 25, 2019 17:33:55.26 [Parent 31957, Gecko_IOThread] WARNING: pipe error (103): Ligação terminada no destino: file /build/firefox-daPcGs/firefox-66.0+build3/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+
+Mar 28, 2019 09:22:41.59 NEW SESSION
+Mar 28, 2019 09:22:41.59 [Parent 4790, Gecko_IOThread] WARNING: pipe error (88): Ligação terminada no destino: file /build/firefox-8l_Snv/firefox-66.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+
+Mar 28, 2019 14:19:02.71 NEW SESSION
+Mar 28, 2019 14:19:02.71 [Parent 3659, Gecko_IOThread] WARNING: pipe error: Canal interrompido: file /build/firefox-8l_Snv/firefox-66.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 726
+Mar 28, 2019 14:19:02.72 [Parent 3659, Gecko_IOThread] WARNING: pipe error: Canal interrompido: file /build/firefox-8l_Snv/firefox-66.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 726
+Mar 28, 2019 14:19:02.72 [Parent 3659, Gecko_IOThread] WARNING: pipe error: Canal interrompido: file /build/firefox-8l_Snv/firefox-66.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 726
+Mar 28, 2019 14:19:02.72 [Parent 3659, Gecko_IOThread] WARNING: pipe error (219): Ligação terminada no destino: file /build/firefox-8l_Snv/firefox-66.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Mar 28, 2019 14:30:13.61 [Parent 3659, Gecko_IOThread] WARNING: pipe error (62): Ligação terminada no destino: file /build/firefox-8l_Snv/firefox-66.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+
+Mar 28, 2019 17:06:32.44 NEW SESSION
+Mar 28, 2019 17:06:32.44 [Parent 8077, Gecko_IOThread] WARNING: pipe error (174): Ligação terminada no destino: file /build/firefox-8l_Snv/firefox-66.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Mar 28, 2019 21:47:41.09 [Parent 8077, Gecko_IOThread] WARNING: pipe error (68): Ligação terminada no destino: file /build/firefox-8l_Snv/firefox-66.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Mar 28, 2019 22:04:26.98 [Parent 8077, Gecko_IOThread] WARNING: pipe error (116): Ligação terminada no destino: file /build/firefox-8l_Snv/firefox-66.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Mar 28, 2019 22:06:10.47 [Child 11786, MediaPlayback #4] WARNING: Decoder=7f8773531200 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - RefPtr<mozilla::MozPromise<RefPtr<mozilla::MediaTrackDemuxer::SamplesHolder>, mozilla::MediaResult, true> > mozilla::MediaSourceTrackDemuxer::DoGetSamples(int32_t): manager is detached.: file /build/firefox-8l_Snv/firefox-66.0.1+build1/dom/media/MediaDecoderStateMachine.cpp, line 3331
+Mar 28, 2019 22:17:49.70 [Parent 8077, Gecko_IOThread] WARNING: pipe error (60): Ligação terminada no destino: file /build/firefox-8l_Snv/firefox-66.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Mar 28, 2019 22:17:54.97 [Parent 8077, Gecko_IOThread] WARNING: pipe error (153): Ligação terminada no destino: file /build/firefox-8l_Snv/firefox-66.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Mar 28, 2019 22:17:54.98 [Parent 8077, Gecko_IOThread] WARNING: pipe error (97): Ligação terminada no destino: file /build/firefox-8l_Snv/firefox-66.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+
+Mar 29, 2019 17:43:34.14 NEW SESSION
+Mar 29, 2019 17:43:34.14 [Parent 10492, Gecko_IOThread] WARNING: pipe error (73): Ligação terminada no destino: file /build/firefox-8l_Snv/firefox-66.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Mar 29, 2019 17:49:51.75 [Parent 10492, Gecko_IOThread] WARNING: pipe error (63): Ligação terminada no destino: file /build/firefox-8l_Snv/firefox-66.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Mar 29, 2019 17:50:38.31 [Parent 10492, Gecko_IOThread] WARNING: pipe error (79): Ligação terminada no destino: file /build/firefox-8l_Snv/firefox-66.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Mar 29, 2019 18:16:14.65 [Parent 10492, Gecko_IOThread] WARNING: pipe error (72): Ligação terminada no destino: file /build/firefox-8l_Snv/firefox-66.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Mar 29, 2019 18:46:41.43 [Parent 10492, Gecko_IOThread] WARNING: pipe error (61): Ligação terminada no destino: file /build/firefox-8l_Snv/firefox-66.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Mar 29, 2019 18:46:41.57 [Parent 10492, Gecko_IOThread] WARNING: pipe error (73): Ligação terminada no destino: file /build/firefox-8l_Snv/firefox-66.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Mar 29, 2019 18:46:41.93 [Parent 10492, Gecko_IOThread] WARNING: pipe error (125): Ligação terminada no destino: file /build/firefox-8l_Snv/firefox-66.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Mar 29, 2019 18:46:42.48 [Parent 10492, Gecko_IOThread] WARNING: pipe error (205): Ligação terminada no destino: file /build/firefox-8l_Snv/firefox-66.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Mar 29, 2019 18:57:50.03 [Parent 10492, Gecko_IOThread] WARNING: pipe error (86): Ligação terminada no destino: file /build/firefox-8l_Snv/firefox-66.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Mar 29, 2019 18:57:52.77 [Parent 10492, Gecko_IOThread] WARNING: pipe error (225): Ligação terminada no destino: file /build/firefox-8l_Snv/firefox-66.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Mar 29, 2019 19:06:45.48 [Parent 10492, Gecko_IOThread] WARNING: pipe error (186): Ligação terminada no destino: file /build/firefox-8l_Snv/firefox-66.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Mar 29, 2019 19:10:22.08 [Parent 10492, Gecko_IOThread] WARNING: pipe error (72): Ligação terminada no destino: file /build/firefox-8l_Snv/firefox-66.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Mar 29, 2019 19:20:25.80 [Parent 10492, Gecko_IOThread] WARNING: pipe error (80): Ligação terminada no destino: file /build/firefox-8l_Snv/firefox-66.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Mar 29, 2019 19:23:09.70 [Parent 10492, Gecko_IOThread] WARNING: pipe error (111): Ligação terminada no destino: file /build/firefox-8l_Snv/firefox-66.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Mar 29, 2019 19:24:54.35 [Parent 10492, Gecko_IOThread] WARNING: pipe error (118): Ligação terminada no destino: file /build/firefox-8l_Snv/firefox-66.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Mar 29, 2019 19:28:44.82 [Parent 10492, Gecko_IOThread] WARNING: pipe error (166): Ligação terminada no destino: file /build/firefox-8l_Snv/firefox-66.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Mar 29, 2019 19:31:52.06 [Parent 10492, Gecko_IOThread] WARNING: pipe error (82): Ligação terminada no destino: file /build/firefox-8l_Snv/firefox-66.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Mar 29, 2019 19:31:52.70 [Parent 10492, Gecko_IOThread] WARNING: pipe error (77): Ligação terminada no destino: file /build/firefox-8l_Snv/firefox-66.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Mar 29, 2019 19:32:04.52 [Parent 10492, Gecko_IOThread] WARNING: pipe error (89): Ligação terminada no destino: file /build/firefox-8l_Snv/firefox-66.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Mar 29, 2019 19:33:12.49 [Parent 10492, Gecko_IOThread] WARNING: pipe error (206): Ligação terminada no destino: file /build/firefox-8l_Snv/firefox-66.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Mar 29, 2019 19:33:59.18 [Parent 10492, Gecko_IOThread] WARNING: pipe error (72): Ligação terminada no destino: file /build/firefox-8l_Snv/firefox-66.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Mar 29, 2019 19:35:20.76 [Parent 10492, Gecko_IOThread] WARNING: pipe error (77): Ligação terminada no destino: file /build/firefox-8l_Snv/firefox-66.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Mar 29, 2019 19:36:07.25 [Parent 10492, Gecko_IOThread] WARNING: pipe error (72): Ligação terminada no destino: file /build/firefox-8l_Snv/firefox-66.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Mar 29, 2019 19:42:24.66 
+Mar 29, 2019 19:42:24.66 (/usr/lib/firefox/firefox:20172): dconf-WARNING **: 19:42:24.657: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permissão negada

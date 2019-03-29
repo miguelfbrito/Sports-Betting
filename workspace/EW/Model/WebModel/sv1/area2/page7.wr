@@ -47,12 +47,12 @@
             <layout:Row>
               <layout:Cell colspan="12">
                 <layout:Unit unitId="sv1#area2#page7#alt1#page10#dau3">
-                  <layout:Attribute attribute="ent3#att18"/>
-                  <layout:Attribute attribute="ent3#att17"/>
-                  <layout:Attribute attribute="ent3#att4"/>
-                  <layout:Attribute attribute="ent3#att14"/>
-                  <layout:Attribute attribute="ent3#att15"/>
                   <layout:Attribute attribute="ent3#att16"/>
+                  <layout:Attribute attribute="ent3#att15"/>
+                  <layout:Attribute attribute="ent3#att14"/>
+                  <layout:Attribute attribute="ent3#att4"/>
+                  <layout:Attribute attribute="ent3#att17"/>
+                  <layout:Attribute attribute="ent3#att18"/>
                 </layout:Unit>
               </layout:Cell>
               <layout:Cell/>

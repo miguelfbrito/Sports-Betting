@@ -5,8 +5,7 @@
 	<section name="DBSyncPlugin">
 	</section>
 	<section name="WR5ImportProjectWizard">
-	</section>
-	<section name="DatabaseMissingJarsDialog.FileDialog">
+		<item value="/home/luis/Documentos/UMinho/2º semestre/EW/Prática/myfirst (1)/myfirst" key="SOURCE_DIR"/>
 	</section>
 	<section name="com.webratio.ide.ui.grid.views.GridViewPage.Settings">
 		<item value="NONE" key="AUTO_HORIZONTAL_FIT_PREFERENCE"/>

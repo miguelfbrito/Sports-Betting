@@ -1,0 +1,73 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv2#area1#page1" name="Home">
+  <ContentUnits/>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:SubPage pageId="sv2#area1#page1#alt2#page2">
+          <layout:Grid containerType="grid">
+            <layout:Row>
+              <layout:Cell colspan="12">
+                <layout:Unit unitId="sv2#area1#page1#alt2#page2#inu1">
+                  <layout:Link link="sv2#area1#page1#alt2#page2#inu1#ln1"/>
+                </layout:Unit>
+              </layout:Cell>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+            </layout:Row>
+            <layout:Row>
+              <layout:Cell colspan="12">
+                <layout:Unit unitId="sv2#area1#page1#alt2#page2#dau1"/>
+              </layout:Cell>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+            </layout:Row>
+          </layout:Grid>
+        </layout:SubPage>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <Alternative gr:x="0" gr:y="0" id="sv2#area1#page1#alt2" name="Bet" defaultPage="sv2#area1#page1#alt2#page2">
+    <Page gr:x="0" gr:y="0" id="sv2#area1#page1#alt2#page2" name="Events">
+      <ContentUnits>
+        <IndexUnit gr:x="165" gr:y="5" id="sv2#area1#page1#alt2#page2#inu1" name="List events" entity="ent3" linkOrder="sv2#area1#page1#alt2#page2#inu1#ln1">
+          <Link id="sv2#area1#page1#alt2#page2#inu1#ln1" name="Bets" to="sv2#area1#page1#alt2#page2#dau1" automaticCoupling="true" type="normal" validate="true"/>
+          <Link id="sv2#area1#page1#alt2#page2#inu1#ln2" name="Flow2" to="sv2#area1#page1#alt2#page2#dau1" type="transport" validate="true" gr:bendpoints="-78,15,82,15"/>
+        </IndexUnit>
+        <DataUnit gr:x="0" gr:y="0" id="sv2#area1#page1#alt2#page2#dau1" name="Type of Bets" entity="ent6">
+          <Selector id="sv2#area1#page1#alt2#page2#dau1#su1" defaultPolicy="fill" booleanOperator="and">
+            <KeyCondition id="sv2#area1#page1#alt2#page2#dau1#su1#kcond1" name="KeyCondition1" predicate="in" implied="false"/>
+          </Selector>
+        </DataUnit>
+      </ContentUnits>
+    </Page>
+  </Alternative>
+</Page>

@@ -1,139 +1,173 @@
-[29 Mar 2019 11:59:44] Building database metadata model
-[29 Mar 2019 11:59:44] Properties: {partialRefresh=false, processColumnsUsingSelect=, includePrimaryKeys=true, eventSocketClient=com.webratio.commons.net.EventSocketClient@62a937ae, includeTables=true, username=mbrito, outputLogPath=/home/mbrito/WebRatio/workspace/EW/.Temp~/DB.xml.log, readIndexes=null, driverClass=com.mysql.jdbc.Driver, includeSynonyms=true, metaDataProviderClass=com.webratio.commons.db.metadata.MySQLMetaDataProvider, outputPath=/home/mbrito/WebRatio/workspace/EW/.Temp~/DB.xml, schemaRegex=null, readProcedures=null, includeViews=true, derby.system.home=/home/mbrito/WebRatio/workspace/.metadata/.plugins/com.webratio.commons.db/derby, url=jdbc:mysql://localhost:3306/bettingwebapp, tableRegex=null, readSQLDefinitions=true, includeForeignKeys=false, retrieveAllNames=false, tablesToRefresh=, eventSocketPort=36363}
-[29 Mar 2019 11:59:44] URL: jdbc:mysql://localhost:3306/bettingwebapp
-[29 Mar 2019 11:59:44] Product name: MySQL
-[29 Mar 2019 11:59:44] Product version: 5.7.25-0ubuntu0.18.04.2
-[29 Mar 2019 11:59:44] Driver name: MySQL Connector Java
-[29 Mar 2019 11:59:44] Driver version: mysql-connector-java-5.1.31 ( Revision: alexander.soklakov@oracle.com-20140520065950-groqzzbvxprqdmnz )
-[29 Mar 2019 11:59:44] Driver major version: 5
-[29 Mar 2019 11:59:44] Driver minor version: 1
-[29 Mar 2019 11:59:44] Identifier quote string: 1
-[29 Mar 2019 11:59:44] Retrieving schemas
-[29 Mar 2019 11:59:44] Retrieving [TABLE, VIEW, SYNONYM] for schema ''
-[29 Mar 2019 11:59:44]   Found 'availablebettypes' [type = TABLE]
-[29 Mar 2019 11:59:44]   Found 'bet' [type = TABLE]
-[29 Mar 2019 11:59:44]   Found 'bettype' [type = TABLE]
-[29 Mar 2019 11:59:44]   Found 'event' [type = TABLE]
-[29 Mar 2019 11:59:44]   Found 'group' [type = TABLE]
-[29 Mar 2019 11:59:44]   Found 'group_module' [type = TABLE]
-[29 Mar 2019 11:59:44]   Found 'module' [type = TABLE]
-[29 Mar 2019 11:59:44]   Found 'player' [type = TABLE]
-[29 Mar 2019 11:59:44]   Found 'result' [type = TABLE]
-[29 Mar 2019 11:59:44]   Found 'sport' [type = TABLE]
-[29 Mar 2019 11:59:44]   Found 'state' [type = TABLE]
-[29 Mar 2019 11:59:44]   Found 'team' [type = TABLE]
-[29 Mar 2019 11:59:44]   Found 'teamsperevent' [type = TABLE]
-[29 Mar 2019 11:59:44]   Found 'user' [type = TABLE]
-[29 Mar 2019 11:59:44]   Found 'user_group' [type = TABLE]
-[29 Mar 2019 11:59:44] Retrieving columns for 'availablebettypes' [type = TABLE]
-[29 Mar 2019 11:59:44]   Found column: oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[29 Mar 2019 11:59:44] Retrieving primary keys for 'availablebettypes' [type = TABLE]
-[29 Mar 2019 11:59:44]   Found primary key column: oid
-[29 Mar 2019 11:59:44] Retrieving columns for 'bet' [type = TABLE]
-[29 Mar 2019 11:59:44]   Found column: oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[29 Mar 2019 11:59:44]   Found column: wager [type = DOUBLE][SQL/XOPEN type = 8][size = 22][dec. digits = 0]
-[29 Mar 2019 11:59:44]   Found column: result [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
-[29 Mar 2019 11:59:44] Retrieving primary keys for 'bet' [type = TABLE]
-[29 Mar 2019 11:59:44]   Found primary key column: oid
-[29 Mar 2019 11:59:44] Retrieving columns for 'bettype' [type = TABLE]
-[29 Mar 2019 11:59:44]   Found column: oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[29 Mar 2019 11:59:44]   Found column: availablebettypes_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[29 Mar 2019 11:59:44]   Found column: bet_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[29 Mar 2019 11:59:44] Retrieving primary keys for 'bettype' [type = TABLE]
-[29 Mar 2019 11:59:44]   Found primary key column: oid
-[29 Mar 2019 11:59:44] Retrieving columns for 'event' [type = TABLE]
-[29 Mar 2019 11:59:44]   Found column: oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[29 Mar 2019 11:59:44]   Found column: finishingdate [type = DATE][SQL/XOPEN type = 91][size = 10][dec. digits = 0]
-[29 Mar 2019 11:59:44]   Found column: startingdate [type = DATE][SQL/XOPEN type = 91][size = 10][dec. digits = 0]
-[29 Mar 2019 11:59:44]   Found column: creationdate [type = DATE][SQL/XOPEN type = 91][size = 10][dec. digits = 0]
-[29 Mar 2019 11:59:44]   Found column: ispremium [type = BIT][SQL/XOPEN type = -7][size = 1][dec. digits = 0]
-[29 Mar 2019 11:59:44]   Found column: description [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
-[29 Mar 2019 11:59:44]   Found column: name [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
-[29 Mar 2019 11:59:44]   Found column: teamsperevent_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[29 Mar 2019 11:59:44]   Found column: bet_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[29 Mar 2019 11:59:44]   Found column: availablebettypes_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[29 Mar 2019 11:59:44] Retrieving primary keys for 'event' [type = TABLE]
-[29 Mar 2019 11:59:44]   Found primary key column: oid
-[29 Mar 2019 11:59:44] Retrieving columns for 'group' [type = TABLE]
-[29 Mar 2019 11:59:44]   Found column: oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[29 Mar 2019 11:59:44]   Found column: groupname [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
-[29 Mar 2019 11:59:44]   Found column: module_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[29 Mar 2019 11:59:44] Retrieving primary keys for 'group' [type = TABLE]
-[29 Mar 2019 11:59:44]   Found primary key column: oid
-[29 Mar 2019 11:59:44] Retrieving columns for 'group_module' [type = TABLE]
-[29 Mar 2019 11:59:44]   Found column: group_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[29 Mar 2019 11:59:44]   Found column: module_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[29 Mar 2019 11:59:44] Retrieving primary keys for 'group_module' [type = TABLE]
-[29 Mar 2019 11:59:44]   Found primary key column: group_oid
-[29 Mar 2019 11:59:44]   Found primary key column: module_oid
-[29 Mar 2019 11:59:44] Retrieving columns for 'module' [type = TABLE]
-[29 Mar 2019 11:59:44]   Found column: oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[29 Mar 2019 11:59:44]   Found column: moduleid [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
-[29 Mar 2019 11:59:44]   Found column: modulename [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
-[29 Mar 2019 11:59:44] Retrieving primary keys for 'module' [type = TABLE]
-[29 Mar 2019 11:59:44]   Found primary key column: oid
-[29 Mar 2019 11:59:44] Retrieving columns for 'player' [type = TABLE]
-[29 Mar 2019 11:59:44]   Found column: oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[29 Mar 2019 11:59:44] Retrieving primary keys for 'player' [type = TABLE]
-[29 Mar 2019 11:59:44]   Found primary key column: oid
-[29 Mar 2019 11:59:44] Retrieving columns for 'result' [type = TABLE]
-[29 Mar 2019 11:59:44]   Found column: oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[29 Mar 2019 11:59:44]   Found column: name [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
-[29 Mar 2019 11:59:44]   Found column: bet_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[29 Mar 2019 11:59:44] Retrieving primary keys for 'result' [type = TABLE]
-[29 Mar 2019 11:59:44]   Found primary key column: oid
-[29 Mar 2019 11:59:44] Retrieving columns for 'sport' [type = TABLE]
-[29 Mar 2019 11:59:44]   Found column: oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[29 Mar 2019 11:59:44]   Found column: event_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[29 Mar 2019 11:59:44] Retrieving primary keys for 'sport' [type = TABLE]
-[29 Mar 2019 11:59:44]   Found primary key column: oid
-[29 Mar 2019 11:59:44] Retrieving columns for 'state' [type = TABLE]
-[29 Mar 2019 11:59:44]   Found column: oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[29 Mar 2019 11:59:44]   Found column: name [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
-[29 Mar 2019 11:59:44]   Found column: event_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[29 Mar 2019 11:59:44] Retrieving primary keys for 'state' [type = TABLE]
-[29 Mar 2019 11:59:44]   Found primary key column: oid
-[29 Mar 2019 11:59:44] Retrieving columns for 'team' [type = TABLE]
-[29 Mar 2019 11:59:44]   Found column: oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[29 Mar 2019 11:59:44]   Found column: teamsperevent_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[29 Mar 2019 11:59:44]   Found column: player_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[29 Mar 2019 11:59:44] Retrieving primary keys for 'team' [type = TABLE]
-[29 Mar 2019 11:59:44]   Found primary key column: oid
-[29 Mar 2019 11:59:44] Retrieving columns for 'teamsperevent' [type = TABLE]
-[29 Mar 2019 11:59:44]   Found column: oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[29 Mar 2019 11:59:44] Retrieving primary keys for 'teamsperevent' [type = TABLE]
-[29 Mar 2019 11:59:44]   Found primary key column: oid
-[29 Mar 2019 11:59:44] Retrieving columns for 'user' [type = TABLE]
-[29 Mar 2019 11:59:44]   Found column: oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[29 Mar 2019 11:59:44]   Found column: username [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
-[29 Mar 2019 11:59:44]   Found column: password [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
-[29 Mar 2019 11:59:44]   Found column: email [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
-[29 Mar 2019 11:59:44]   Found column: name [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
-[29 Mar 2019 11:59:44]   Found column: balance [type = DOUBLE][SQL/XOPEN type = 8][size = 22][dec. digits = 0]
-[29 Mar 2019 11:59:44]   Found column: group_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[29 Mar 2019 11:59:44]   Found column: bet_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[29 Mar 2019 11:59:44] Retrieving primary keys for 'user' [type = TABLE]
-[29 Mar 2019 11:59:44]   Found primary key column: oid
-[29 Mar 2019 11:59:44] Retrieving columns for 'user_group' [type = TABLE]
-[29 Mar 2019 11:59:44]   Found column: user_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[29 Mar 2019 11:59:44]   Found column: group_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[29 Mar 2019 11:59:44] Retrieving primary keys for 'user_group' [type = TABLE]
-[29 Mar 2019 11:59:44]   Found primary key column: user_oid
-[29 Mar 2019 11:59:44]   Found primary key column: group_oid
-[29 Mar 2019 11:59:44] Database metadata retrieved (639 ms)
-[29 Mar 2019 11:59:44] Retrieving auto-increment columns for 'availablebettypes' [type = TABLE]
-[29 Mar 2019 11:59:44] Retrieving auto-increment columns for 'bet' [type = TABLE]
-[29 Mar 2019 11:59:44] Retrieving auto-increment columns for 'bettype' [type = TABLE]
-[29 Mar 2019 11:59:44] Retrieving auto-increment columns for 'event' [type = TABLE]
-[29 Mar 2019 11:59:44] Retrieving auto-increment columns for 'group' [type = TABLE]
-[29 Mar 2019 11:59:44] Retrieving auto-increment columns for 'group_module' [type = TABLE]
-[29 Mar 2019 11:59:44] Retrieving auto-increment columns for 'module' [type = TABLE]
-[29 Mar 2019 11:59:44] Retrieving auto-increment columns for 'player' [type = TABLE]
-[29 Mar 2019 11:59:44] Retrieving auto-increment columns for 'result' [type = TABLE]
-[29 Mar 2019 11:59:44] Retrieving auto-increment columns for 'sport' [type = TABLE]
-[29 Mar 2019 11:59:44] Retrieving auto-increment columns for 'state' [type = TABLE]
-[29 Mar 2019 11:59:44] Retrieving auto-increment columns for 'team' [type = TABLE]
-[29 Mar 2019 11:59:44] Retrieving auto-increment columns for 'teamsperevent' [type = TABLE]
-[29 Mar 2019 11:59:44] Retrieving auto-increment columns for 'user' [type = TABLE]
-[29 Mar 2019 11:59:44] Retrieving auto-increment columns for 'user_group' [type = TABLE]
-[29 Mar 2019 11:59:45] Database connection closed
+[29 Mar 2019 18:22:51] Building database metadata model
+[29 Mar 2019 18:22:51] Properties: {partialRefresh=false, processColumnsUsingSelect=, includePrimaryKeys=true, eventSocketClient=com.webratio.commons.net.EventSocketClient@8e89bed, includeTables=true, username=userEW, outputLogPath=/home/luis/WebRatio_Platform/WebRatio/workspace/EW/.Temp~/DB.xml.log, readIndexes=null, driverClass=com.mysql.jdbc.Driver, includeSynonyms=true, metaDataProviderClass=com.webratio.commons.db.metadata.MySQLMetaDataProvider, outputPath=/home/luis/WebRatio_Platform/WebRatio/workspace/EW/.Temp~/DB.xml, schemaRegex=null, readProcedures=null, includeViews=true, derby.system.home=/home/luis/WebRatio_Platform/WebRatio/workspace/.metadata/.plugins/com.webratio.commons.db/derby, url=jdbc:mysql://localhost:3306/bettingwebapp, tableRegex=null, readSQLDefinitions=true, includeForeignKeys=true, retrieveAllNames=false, tablesToRefresh=, eventSocketPort=34675}
+[29 Mar 2019 18:22:51] URL: jdbc:mysql://localhost:3306/bettingwebapp
+[29 Mar 2019 18:22:51] Product name: MySQL
+[29 Mar 2019 18:22:51] Product version: 5.7.25-0ubuntu0.18.04.2
+[29 Mar 2019 18:22:51] Driver name: MySQL Connector Java
+[29 Mar 2019 18:22:51] Driver version: mysql-connector-java-5.1.31 ( Revision: alexander.soklakov@oracle.com-20140520065950-groqzzbvxprqdmnz )
+[29 Mar 2019 18:22:51] Driver major version: 5
+[29 Mar 2019 18:22:51] Driver minor version: 1
+[29 Mar 2019 18:22:51] Identifier quote string: 1
+[29 Mar 2019 18:22:51] Retrieving schemas
+[29 Mar 2019 18:22:51] Retrieving [TABLE, VIEW, SYNONYM] for schema ''
+[29 Mar 2019 18:22:51]   Found 'availablebettypes' [type = TABLE]
+[29 Mar 2019 18:22:51]   Found 'bet' [type = TABLE]
+[29 Mar 2019 18:22:51]   Found 'bettype' [type = TABLE]
+[29 Mar 2019 18:22:51]   Found 'event' [type = TABLE]
+[29 Mar 2019 18:22:51]   Found 'group' [type = TABLE]
+[29 Mar 2019 18:22:51]   Found 'group_module' [type = TABLE]
+[29 Mar 2019 18:22:51]   Found 'module' [type = TABLE]
+[29 Mar 2019 18:22:51]   Found 'player' [type = TABLE]
+[29 Mar 2019 18:22:51]   Found 'result' [type = TABLE]
+[29 Mar 2019 18:22:51]   Found 'sport' [type = TABLE]
+[29 Mar 2019 18:22:51]   Found 'state' [type = TABLE]
+[29 Mar 2019 18:22:51]   Found 'team' [type = TABLE]
+[29 Mar 2019 18:22:51]   Found 'teamsperevent' [type = TABLE]
+[29 Mar 2019 18:22:51]   Found 'user' [type = TABLE]
+[29 Mar 2019 18:22:51]   Found 'user_group' [type = TABLE]
+[29 Mar 2019 18:22:51] Retrieving columns for 'availablebettypes' [type = TABLE]
+[29 Mar 2019 18:22:51]   Found column: oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[29 Mar 2019 18:22:51]   Found column: odd [type = DOUBLE][SQL/XOPEN type = 8][size = 22][dec. digits = 0]
+[29 Mar 2019 18:22:51] Retrieving primary keys for 'availablebettypes' [type = TABLE]
+[29 Mar 2019 18:22:51]   Found primary key column: oid
+[29 Mar 2019 18:22:51] Retrieving columns for 'bet' [type = TABLE]
+[29 Mar 2019 18:22:51]   Found column: oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[29 Mar 2019 18:22:51]   Found column: wager [type = DOUBLE][SQL/XOPEN type = 8][size = 22][dec. digits = 0]
+[29 Mar 2019 18:22:51]   Found column: result [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[29 Mar 2019 18:22:51] Retrieving primary keys for 'bet' [type = TABLE]
+[29 Mar 2019 18:22:51]   Found primary key column: oid
+[29 Mar 2019 18:22:51] Retrieving columns for 'bettype' [type = TABLE]
+[29 Mar 2019 18:22:51]   Found column: oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[29 Mar 2019 18:22:51]   Found column: availablebettypes_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[29 Mar 2019 18:22:51]   Found column: bet_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[29 Mar 2019 18:22:51]   Found column: name [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[29 Mar 2019 18:22:51] Retrieving primary keys for 'bettype' [type = TABLE]
+[29 Mar 2019 18:22:51]   Found primary key column: oid
+[29 Mar 2019 18:22:51] Retrieving columns for 'event' [type = TABLE]
+[29 Mar 2019 18:22:51]   Found column: oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[29 Mar 2019 18:22:51]   Found column: finishingdate [type = DATE][SQL/XOPEN type = 91][size = 10][dec. digits = 0]
+[29 Mar 2019 18:22:51]   Found column: startingdate [type = DATE][SQL/XOPEN type = 91][size = 10][dec. digits = 0]
+[29 Mar 2019 18:22:51]   Found column: creationdate [type = DATE][SQL/XOPEN type = 91][size = 10][dec. digits = 0]
+[29 Mar 2019 18:22:51]   Found column: ispremium [type = BIT][SQL/XOPEN type = -7][size = 1][dec. digits = 0]
+[29 Mar 2019 18:22:51]   Found column: description [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[29 Mar 2019 18:22:51]   Found column: name [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[29 Mar 2019 18:22:51]   Found column: teamsperevent_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[29 Mar 2019 18:22:51]   Found column: bet_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[29 Mar 2019 18:22:51]   Found column: availablebettypes_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[29 Mar 2019 18:22:51] Retrieving primary keys for 'event' [type = TABLE]
+[29 Mar 2019 18:22:51]   Found primary key column: oid
+[29 Mar 2019 18:22:51] Retrieving columns for 'group' [type = TABLE]
+[29 Mar 2019 18:22:51]   Found column: oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[29 Mar 2019 18:22:51]   Found column: groupname [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[29 Mar 2019 18:22:51]   Found column: module_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[29 Mar 2019 18:22:51] Retrieving primary keys for 'group' [type = TABLE]
+[29 Mar 2019 18:22:51]   Found primary key column: oid
+[29 Mar 2019 18:22:51] Retrieving columns for 'group_module' [type = TABLE]
+[29 Mar 2019 18:22:51]   Found column: group_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[29 Mar 2019 18:22:51]   Found column: module_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[29 Mar 2019 18:22:51] Retrieving primary keys for 'group_module' [type = TABLE]
+[29 Mar 2019 18:22:51]   Found primary key column: group_oid
+[29 Mar 2019 18:22:51]   Found primary key column: module_oid
+[29 Mar 2019 18:22:51] Retrieving columns for 'module' [type = TABLE]
+[29 Mar 2019 18:22:51]   Found column: oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[29 Mar 2019 18:22:51]   Found column: moduleid [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[29 Mar 2019 18:22:51]   Found column: modulename [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[29 Mar 2019 18:22:51] Retrieving primary keys for 'module' [type = TABLE]
+[29 Mar 2019 18:22:51]   Found primary key column: oid
+[29 Mar 2019 18:22:51] Retrieving columns for 'player' [type = TABLE]
+[29 Mar 2019 18:22:51]   Found column: oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[29 Mar 2019 18:22:51] Retrieving primary keys for 'player' [type = TABLE]
+[29 Mar 2019 18:22:51]   Found primary key column: oid
+[29 Mar 2019 18:22:51] Retrieving columns for 'result' [type = TABLE]
+[29 Mar 2019 18:22:51]   Found column: oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[29 Mar 2019 18:22:51]   Found column: name [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[29 Mar 2019 18:22:51]   Found column: bet_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[29 Mar 2019 18:22:51] Retrieving primary keys for 'result' [type = TABLE]
+[29 Mar 2019 18:22:51]   Found primary key column: oid
+[29 Mar 2019 18:22:51] Retrieving columns for 'sport' [type = TABLE]
+[29 Mar 2019 18:22:51]   Found column: oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[29 Mar 2019 18:22:51]   Found column: event_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[29 Mar 2019 18:22:51] Retrieving primary keys for 'sport' [type = TABLE]
+[29 Mar 2019 18:22:51]   Found primary key column: oid
+[29 Mar 2019 18:22:51] Retrieving columns for 'state' [type = TABLE]
+[29 Mar 2019 18:22:51]   Found column: oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[29 Mar 2019 18:22:51]   Found column: name [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[29 Mar 2019 18:22:51]   Found column: event_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[29 Mar 2019 18:22:51] Retrieving primary keys for 'state' [type = TABLE]
+[29 Mar 2019 18:22:51]   Found primary key column: oid
+[29 Mar 2019 18:22:51] Retrieving columns for 'team' [type = TABLE]
+[29 Mar 2019 18:22:51]   Found column: oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[29 Mar 2019 18:22:51]   Found column: teamsperevent_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[29 Mar 2019 18:22:51]   Found column: player_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[29 Mar 2019 18:22:51] Retrieving primary keys for 'team' [type = TABLE]
+[29 Mar 2019 18:22:51]   Found primary key column: oid
+[29 Mar 2019 18:22:51] Retrieving columns for 'teamsperevent' [type = TABLE]
+[29 Mar 2019 18:22:51]   Found column: oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[29 Mar 2019 18:22:51] Retrieving primary keys for 'teamsperevent' [type = TABLE]
+[29 Mar 2019 18:22:51]   Found primary key column: oid
+[29 Mar 2019 18:22:51] Retrieving columns for 'user' [type = TABLE]
+[29 Mar 2019 18:22:51]   Found column: oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[29 Mar 2019 18:22:51]   Found column: username [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[29 Mar 2019 18:22:51]   Found column: password [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[29 Mar 2019 18:22:51]   Found column: email [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[29 Mar 2019 18:22:51]   Found column: name [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[29 Mar 2019 18:22:51]   Found column: balance [type = DOUBLE][SQL/XOPEN type = 8][size = 22][dec. digits = 0]
+[29 Mar 2019 18:22:51]   Found column: group_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[29 Mar 2019 18:22:51]   Found column: bet_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[29 Mar 2019 18:22:51] Retrieving primary keys for 'user' [type = TABLE]
+[29 Mar 2019 18:22:51]   Found primary key column: oid
+[29 Mar 2019 18:22:51] Retrieving columns for 'user_group' [type = TABLE]
+[29 Mar 2019 18:22:51]   Found column: user_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[29 Mar 2019 18:22:51]   Found column: group_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[29 Mar 2019 18:22:51] Retrieving primary keys for 'user_group' [type = TABLE]
+[29 Mar 2019 18:22:51]   Found primary key column: user_oid
+[29 Mar 2019 18:22:51]   Found primary key column: group_oid
+[29 Mar 2019 18:22:51] Retrieving foreign keys for 'availablebettypes' [type = TABLE]
+[29 Mar 2019 18:22:51] Retrieving foreign keys for 'bet' [type = TABLE]
+[29 Mar 2019 18:22:51] Retrieving foreign keys for 'bettype' [type = TABLE]
+[29 Mar 2019 18:22:51]   Found foreign key: column availablebettypes_oid references availablebettypes(oid)
+[29 Mar 2019 18:22:51]   Found foreign key: column bet_oid references bet(oid)
+[29 Mar 2019 18:22:51] Retrieving foreign keys for 'event' [type = TABLE]
+[29 Mar 2019 18:22:51]   Found foreign key: column availablebettypes_oid references availablebettypes(oid)
+[29 Mar 2019 18:22:51]   Found foreign key: column bet_oid references bet(oid)
+[29 Mar 2019 18:22:51]   Found foreign key: column teamsperevent_oid references teamsperevent(oid)
+[29 Mar 2019 18:22:51] Retrieving foreign keys for 'group' [type = TABLE]
+[29 Mar 2019 18:22:51]   Found foreign key: column module_oid references module(oid)
+[29 Mar 2019 18:22:51] Retrieving foreign keys for 'group_module' [type = TABLE]
+[29 Mar 2019 18:22:51]   Found foreign key: column group_oid references group(oid)
+[29 Mar 2019 18:22:51]   Found foreign key: column module_oid references module(oid)
+[29 Mar 2019 18:22:51] Retrieving foreign keys for 'module' [type = TABLE]
+[29 Mar 2019 18:22:51] Retrieving foreign keys for 'player' [type = TABLE]
+[29 Mar 2019 18:22:51] Retrieving foreign keys for 'result' [type = TABLE]
+[29 Mar 2019 18:22:51]   Found foreign key: column bet_oid references bet(oid)
+[29 Mar 2019 18:22:51] Retrieving foreign keys for 'sport' [type = TABLE]
+[29 Mar 2019 18:22:51]   Found foreign key: column event_oid references event(oid)
+[29 Mar 2019 18:22:51] Retrieving foreign keys for 'state' [type = TABLE]
+[29 Mar 2019 18:22:51]   Found foreign key: column event_oid references event(oid)
+[29 Mar 2019 18:22:51] Retrieving foreign keys for 'team' [type = TABLE]
+[29 Mar 2019 18:22:51]   Found foreign key: column player_oid references player(oid)
+[29 Mar 2019 18:22:51]   Found foreign key: column teamsperevent_oid references teamsperevent(oid)
+[29 Mar 2019 18:22:51] Retrieving foreign keys for 'teamsperevent' [type = TABLE]
+[29 Mar 2019 18:22:51] Retrieving foreign keys for 'user' [type = TABLE]
+[29 Mar 2019 18:22:51]   Found foreign key: column bet_oid references bet(oid)
+[29 Mar 2019 18:22:51]   Found foreign key: column group_oid references group(oid)
+[29 Mar 2019 18:22:51] Retrieving foreign keys for 'user_group' [type = TABLE]
+[29 Mar 2019 18:22:51]   Found foreign key: column group_oid references group(oid)
+[29 Mar 2019 18:22:51]   Found foreign key: column user_oid references user(oid)
+[29 Mar 2019 18:22:51] Database metadata retrieved (95 ms)
+[29 Mar 2019 18:22:51] Retrieving auto-increment columns for 'availablebettypes' [type = TABLE]
+[29 Mar 2019 18:22:51] Retrieving auto-increment columns for 'bet' [type = TABLE]
+[29 Mar 2019 18:22:51] Retrieving auto-increment columns for 'bettype' [type = TABLE]
+[29 Mar 2019 18:22:51] Retrieving auto-increment columns for 'event' [type = TABLE]
+[29 Mar 2019 18:22:51] Retrieving auto-increment columns for 'group' [type = TABLE]
+[29 Mar 2019 18:22:51] Retrieving auto-increment columns for 'group_module' [type = TABLE]
+[29 Mar 2019 18:22:51] Retrieving auto-increment columns for 'module' [type = TABLE]
+[29 Mar 2019 18:22:51] Retrieving auto-increment columns for 'player' [type = TABLE]
+[29 Mar 2019 18:22:51] Retrieving auto-increment columns for 'result' [type = TABLE]
+[29 Mar 2019 18:22:51] Retrieving auto-increment columns for 'sport' [type = TABLE]
+[29 Mar 2019 18:22:51] Retrieving auto-increment columns for 'state' [type = TABLE]
+[29 Mar 2019 18:22:51] Retrieving auto-increment columns for 'team' [type = TABLE]
+[29 Mar 2019 18:22:51] Retrieving auto-increment columns for 'teamsperevent' [type = TABLE]
+[29 Mar 2019 18:22:51] Retrieving auto-increment columns for 'user' [type = TABLE]
+[29 Mar 2019 18:22:51] Retrieving auto-increment columns for 'user_group' [type = TABLE]
+[29 Mar 2019 18:22:51] Database connection closed

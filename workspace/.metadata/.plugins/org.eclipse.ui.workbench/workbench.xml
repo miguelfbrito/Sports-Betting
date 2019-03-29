@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="48" version="2.0">
+<workbench progressCount="47" version="2.0">
 <workbenchAdvisor/>
-<window height="1051" maximized="true" width="937" x="983" y="29">
+<window height="740" maximized="true" width="1024" x="45" y="27">
 <fastViewData fastViewLocation="1024"/>
 <perspectiveBar>
 <itemSize x="205"/>
 </perspectiveBar>
 <coolbarLayout locked="0">
 <coolItem id="group.file" itemType="typeGroupMarker"/>
-<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="142" y="34"/>
+<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="132" y="30"/>
 <coolItem id="additions" itemType="typeGroupMarker"/>
-<coolItem id="com.webratio.deploy.ui.TomcatActionSet" itemType="typeToolBarContribution" x="104" y="34"/>
-<coolItem id="com.webratio.ide.deploy.ui.actionSet" itemType="typeToolBarContribution" x="172" y="34"/>
-<coolItem id="com.webratio.ide.styles.TemplateCreationActionSet" itemType="typeToolBarContribution" x="52" y="34"/>
+<coolItem id="com.webratio.deploy.ui.TomcatActionSet" itemType="typeToolBarContribution" x="96" y="30"/>
+<coolItem id="com.webratio.ide.deploy.ui.actionSet" itemType="typeToolBarContribution" x="162" y="30"/>
+<coolItem id="com.webratio.ide.styles.TemplateCreationActionSet" itemType="typeToolBarContribution" x="48" y="30"/>
 <coolItem id="com.webratio.ide.ui.compare.toolbar" itemType="typeToolBarContribution" x="-1" y="-1"/>
-<coolItem id="com.webratio.ide.store.ui.toolbar" itemType="typeToolBarContribution" x="74" y="34"/>
-<coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="128" y="34"/>
-<coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="52" y="34"/>
+<coolItem id="com.webratio.ide.store.ui.toolbar" itemType="typeToolBarContribution" x="68" y="30"/>
+<coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="120" y="30"/>
+<coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="48" y="30"/>
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
-<coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="196" y="34"/>
+<coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="184" y="30"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
-<coolItem id="com.webratio.ide.ui.editors.WebProjectEditor" itemType="typeToolBarContribution" x="118" y="34"/>
+<coolItem id="com.webratio.ide.ui.editors.WebProjectEditor" itemType="typeToolBarContribution" x="110" y="30"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
 </coolbarLayout>
-<page aggregateWorkingSetId="Aggregate for window 1553793509519" focus="true" label="Workspace - Web IFML">
+<page aggregateWorkingSetId="Aggregate for window 1553535112886" focus="true" label="Workspace - Web IFML">
 <editors>
 <editorArea activeWorkbook="DefaultEditorWorkbook">
 <info part="DefaultEditorWorkbook">
@@ -35,8 +35,8 @@
 </folder>
 </info>
 </editorArea>
-<editor activePart="true" focus="true" id="com.webratio.ide.ui.editors.WebProjectEditor" name="Model.wr" partName="EW" path="/home/mbrito/WebRatio/workspace/EW/Model.wr" title="EW" tooltip="EW/Model.wr" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/EW/Model.wr"/>
+<editor activePart="true" focus="true" id="com.webratio.ide.ui.editors.WebProjectEditor" name="Model.wr" partName="myfirst" path="/home/luis/WebRatio_Platform/WebRatio/workspace/myfirst/Model.wr" title="myfirst" tooltip="myfirst/Model.wr" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/myfirst/Model.wr"/>
 </editor>
 </editors>
 <views>
@@ -48,9 +48,7 @@
 </view>
 <view id="com.webratio.ide.ui.explorer.views.WRExplorerView" partName="WebRatio Explorer">
 <viewState configured="false" sortWorkingSets="false">
-<localWorkingSetManager>
-<workingSet editPageId="org.eclipse.jdt.internal.ui.OthersWorkingSet" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1553792952626_0" label="Other Projects" name="Other Projects">
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/EW" type="4"/>
+<localWorkingSetManager>&#x0A;<workingSet editPageId="org.eclipse.jdt.internal.ui.OthersWorkingSet" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1553534667112_0" label="Other Projects" name="Other Projects">&#x0A;<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/myfirst" type="4"/>
 </workingSet>
 </localWorkingSetManager>
 <activeWorkingSet workingSetName="Other Projects"/>
@@ -59,12 +57,19 @@
 <view id="org.eclipse.ui.views.PropertySheet" partName="Properties">
 <viewState/>
 </view>
-<view id="org.eclipse.ui.views.ProblemView" partName="Problems"/>
+<view id="org.eclipse.ui.views.ProblemView" partName="Problems">
+<viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
+<columnWidths org.eclipse.ui.ide.locationField="73" org.eclipse.ui.ide.markerType="378" org.eclipse.ui.ide.pathField="143" org.eclipse.ui.ide.resourceField="108" org.eclipse.ui.ide.severityAndDescriptionField="350"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.pathField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.locationField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.markerType"/>
+</viewState>
+</view>
 <view id="org.eclipse.jdt.ui.PackageExplorer" partName="Package Explorer">
-<viewState group_libraries="1" layout="2" linkWithEditor="0" rootMode="1" workingSetName="Aggregate for window 1553793509519">
-<customFilters userDefinedPatternsEnabled="false">
-<xmlDefinedFilters>
-<child filterId="org.eclipse.jdt.ui.PackageExplorer.LibraryFilter" isEnabled="false"/>
+<viewState group_libraries="1" layout="2" linkWithEditor="0" rootMode="1" workingSetName="Aggregate for window 1553535112886">
+<customFilters userDefinedPatternsEnabled="false">&#x0A;<xmlDefinedFilters>&#x0A;<child filterId="org.eclipse.jdt.ui.PackageExplorer.LibraryFilter" isEnabled="false"/>
 <child filterId="org.eclipse.jdt.ui.PackageExplorer.LocalTypesFilter" isEnabled="false"/>
 <child filterId="org.eclipse.jdt.ui.PackageExplorer.StaticsFilter" isEnabled="false"/>
 <child filterId="org.eclipse.pde.ui.ExternalPluginLibrariesFilter1" isEnabled="true"/>
@@ -89,9 +94,13 @@
 </customFilters>
 </viewState>
 </view>
-<view id="com.webratio.eclipse.cloud.ui.views.CloudServicesView" partName="Cloud Accounts"/>
+<view id="com.webratio.eclipse.cloud.ui.views.CloudServicesView" partName="Cloud Accounts">
+<viewState/>
+</view>
 <view id="com.webratio.bpm.ui.views.BPMDocumentationView" partName="Documentation"/>
-<view id="com.webratio.ide.ui.views.WRAerialView" partName="Overview"/>
+<view id="com.webratio.ide.ui.views.WRAerialView" partName="Overview">
+<viewState/>
+</view>
 <view id="com.webratio.bpm.ui.explorer.views.BPMExplorerView" partName="BPMN Explorer"/>
 <view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
 <viewState/>
@@ -151,14 +160,14 @@
 </folder>
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.23960397" ratioLeft="242" ratioRight="768" relationship="2" relative="left"/>
-<info folder="true" part="bottom" ratio="0.84887457" ratioLeft="528" ratioRight="94" relationship="4" relative="org.eclipse.ui.editorss">&#x0A;<folder appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
+<info folder="true" part="bottom" ratio="0.8485342" ratioLeft="521" ratioRight="93" relationship="4" relative="org.eclipse.ui.editorss">&#x0A;<folder appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
 <page content="com.webratio.bpm.ui.views.BPMDocumentationView" label="Documentation"/>
 </folder>
 </info>
-<info folder="true" part="leftBottom2" ratio="0.41961414" ratioLeft="261" ratioRight="361" relationship="4" relative="left">&#x0A;<folder appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.views.PropertySheet" label="Properties"/>
+<info folder="true" part="leftBottom2" ratio="0.41856676" ratioLeft="257" ratioRight="357" relationship="4" relative="left">&#x0A;<folder appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.views.PropertySheet" label="Properties"/>
 </folder>
 </info>
-<info folder="true" part="leftBottom3" ratio="0.64819944" ratioLeft="234" ratioRight="127" relationship="4" relative="leftBottom2">&#x0A;<folder appearance="2" expanded="2">&#x0A;<page content="com.webratio.ide.ui.views.WRAerialView" label="Overview"/>
+<info folder="true" part="leftBottom3" ratio="0.64985996" ratioLeft="232" ratioRight="125" relationship="4" relative="leftBottom2">&#x0A;<folder appearance="2" expanded="2">&#x0A;<page content="com.webratio.ide.ui.views.WRAerialView" label="Overview"/>
 </folder>
 </info>
 </mainWindow>
@@ -221,10 +230,15 @@
 <view id="com.webratio.eclipse.cloud.ui.views.CloudServicesView"/>
 <view id="org.eclipse.ui.views.PropertySheet"/>
 <view id="com.webratio.ide.ui.views.WRAerialView"/>
-<view id="com.webratio.ide.ui.grid.views.GridView"/>
-<view id="org.eclipse.ui.views.ProblemView"/>
-<view id="com.webratio.ide.ui.views.GenerationErrorsView"/>
-<fastViewBars/>
+<fastViewBars>
+<fastViewBar fastViewLocation="1024" id="bottom" orientation="256" selectedTabId="com.webratio.ide.ui.views.GenerationErrorsView" style="0">
+<fastViews>
+<view id="com.webratio.ide.ui.grid.views.GridView" ratio="0.3"/>
+<view id="org.eclipse.ui.views.ProblemView" ratio="0.3"/>
+<view id="com.webratio.ide.ui.views.GenerationErrorsView" ratio="0.3"/>
+</fastViews>
+</fastViewBar>
+</fastViewBars>
 <layout>
 <mainWindow>
 <info folder="true" part="left">
@@ -249,20 +263,16 @@
 <page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
 </folder>
 </info>
-<info part="org.eclipse.ui.editorss" ratio="0.27013963" ratioLeft="503" ratioRight="1359" relationship="2" relative="left"/>
-<info folder="true" part="bottom" ratio="0.6993569" ratioLeft="435" ratioRight="187" relationship="4" relative="org.eclipse.ui.editorss">
-<folder activePageID="com.webratio.ide.ui.grid.views.GridView" appearance="2" expanded="2">
-<page content="com.webratio.ide.ui.grid.views.GridView" label="Layout"/>
-<page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
-<page content="com.webratio.ide.ui.views.GenerationErrorsView" label="Generation Errors"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
-<part id="1"/>
-<part id="2"/>
-</presentation>
+<info part="org.eclipse.ui.editorss" ratio="0.28549618" ratioLeft="374" ratioRight="936" relationship="2" relative="left"/>
+<info folder="true" part="bottom" ratio="0.6986971" ratioLeft="429" ratioRight="185" relationship="4" relative="org.eclipse.ui.editorss">
+<folder appearance="2" expanded="0">
+<page content="com.webratio.ide.ui.grid.views.GridView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.ProblemView" label="LabelNotFound"/>
+<page content="com.webratio.ide.ui.views.GenerationErrorsView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
-<info folder="true" part="leftBottom" ratio="0.30462864" ratioLeft="283" ratioRight="646" relationship="4" relative="left">
+<info folder="true" part="leftBottom" ratio="0.36019737" ratioLeft="219" ratioRight="389" relationship="4" relative="left">
 <folder activePageID="org.eclipse.ui.views.PropertySheet" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.PropertySheet" label="Properties"/>
 <page content="com.webratio.ide.ui.views.WRAerialView" label="Overview"/>
@@ -279,156 +289,141 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.webratio.ide.ui.editors.WebProjectEditor" path="/EW/Model.wr"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.webratio.ide.ui.editors.WebProjectEditor" path="/myfirst/Model.wr"/>
 </editors>
-<item historyLabel="EW &gt; List events &gt; Flow10" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#cru1#ln10&apos;)" PROPERTY_TAB_ID=""/>
+<item historyLabel="myfirst &gt; Domain Model" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="/WebProject/DataModel" GRAPHEDITOR_PATH="/WebProject/DataModel" LOCATIONS="/WebProject/DataModel" PROPERTY_TAB_ID=""/>
 </item>
-<item historyLabel="EW &gt; List events" index="0">
+<item historyLabel="myfirst &gt; Home" index="0">
 <position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1&apos;)" PROPERTY_TAB_ID=""/>
 </item>
-<item historyLabel="EW &gt; Events &gt; A Event" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page7#alt1#page10#dau3&apos;)" PROPERTY_TAB_ID=""/>
+<item historyLabel="myfirst &gt; Domain Model" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="/WebProject/DataModel" GRAPHEDITOR_PATH="/WebProject/DataModel" LOCATIONS="/WebProject/DataModel" PROPERTY_TAB_ID=""/>
 </item>
-<item historyLabel="EW &gt; Events" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page7#alt1#page10&apos;)" PROPERTY_TAB_ID=""/>
+<item historyLabel="myfirst &gt; Home" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="/WebProject/DataModel" GRAPHEDITOR_PATH="/WebProject/DataModel" LOCATIONS="id(&apos;Module&apos;)" PROPERTY_TAB_ID=""/>
 </item>
-<item historyLabel="EW &gt; Home" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page7&apos;)" PROPERTY_TAB_ID=""/>
+<item historyLabel="myfirst &gt; Add Students &gt; Student" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page3#alt2#page6#enu2&apos;)" PROPERTY_TAB_ID=""/>
 </item>
-<item historyLabel="EW &gt; List events" index="0">
+<item historyLabel="myfirst &gt; Home &gt; add student" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#cru1&apos;)" PROPERTY_TAB_ID=""/>
+</item>
+<item historyLabel="myfirst &gt; Home &gt; Set1" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#stu1&apos;)" PROPERTY_TAB_ID=""/>
+</item>
+<item historyLabel="myfirst &gt; Home" index="0">
 <position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1&apos;)" PROPERTY_TAB_ID=""/>
 </item>
-<item historyLabel="EW &gt; Events &gt; Flow9" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page7#alt1#page10#dau3#ln9&apos;)" PROPERTY_TAB_ID=""/>
+<item historyLabel="myfirst &gt; Home &gt; Add Students" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page3#ln12&apos;)" PROPERTY_TAB_ID=""/>
 </item>
-<item historyLabel="EW &gt; Add Events &gt; Flow8" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page7#alt1#page9#enu2#ln8&apos;)" PROPERTY_TAB_ID=""/>
+<item historyLabel="myfirst &gt; Add Students &gt; Submit" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page3#alt2#page6#enu2#ln10&apos;)" PROPERTY_TAB_ID=""/>
 </item>
-<item historyLabel="EW &gt; Events &gt; Flow9" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page7#alt1#page10#dau3#ln9&apos;)" PROPERTY_TAB_ID=""/>
+<item historyLabel="myfirst &gt; Home" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page3&apos;)" PROPERTY_TAB_ID=""/>
 </item>
-<item historyLabel="EW &gt; Events" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page7#alt1#page10&apos;)" PROPERTY_TAB_ID=""/>
+<item historyLabel="myfirst &gt; Home &gt; Add Students" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page3#ln12&apos;)" PROPERTY_TAB_ID=""/>
 </item>
-<item historyLabel="EW" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page7#alt1#page10#inu2#ln6&apos;)" PROPERTY_TAB_ID=""/>
+<item historyLabel="myfirst &gt; Add Students" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page3#alt2#page6&apos;)" PROPERTY_TAB_ID=""/>
 </item>
-<item historyLabel="EW &gt; Home" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page7&apos;)" PROPERTY_TAB_ID=""/>
+<item historyLabel="myfirst &gt; Home &gt; add student" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#cru1&apos;)" PROPERTY_TAB_ID=""/>
 </item>
-<item historyLabel="EW &gt; Home &gt; Events" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page7#alt1&apos;)" PROPERTY_TAB_ID=""/>
+<item historyLabel="myfirst &gt; Students" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page3#alt2#page5&apos;)" PROPERTY_TAB_ID=""/>
 </item>
-<item historyLabel="EW" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page7#alt1#page10#dau3#ln9&apos;)" PROPERTY_TAB_ID=""/>
+<item historyLabel="myfirst &gt; Home &gt; Students" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page3#alt2&apos;)" PROPERTY_TAB_ID=""/>
 </item>
-<item historyLabel="EW &gt; Home" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page7&apos;)" PROPERTY_TAB_ID=""/>
+<item historyLabel="myfirst &gt; Page 1" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page3#page1&apos;)" PROPERTY_TAB_ID=""/>
 </item>
-<item historyLabel="EW &gt; List events" index="0">
+<item historyLabel="myfirst &gt; Home" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page3&apos;)" PROPERTY_TAB_ID=""/>
+</item>
+<item historyLabel="myfirst &gt; Students &gt; A Student" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page3#alt2#page5#dau1&apos;)" PROPERTY_TAB_ID=""/>
+</item>
+<item historyLabel="myfirst &gt; Students &gt; List Students" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page3#alt2#page5#inu1&apos;)" PROPERTY_TAB_ID=""/>
+</item>
+<item historyLabel="myfirst &gt; Students &gt; A Student" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page3#alt2#page5#dau1&apos;)" PROPERTY_TAB_ID=""/>
+</item>
+<item historyLabel="myfirst &gt; Students &gt; Flow13" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page3#alt2#page5#inu1#ln13&apos;)" PROPERTY_TAB_ID=""/>
+</item>
+<item historyLabel="myfirst &gt; Students &gt; A Student" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page3#alt2#page5#dau1&apos;)" PROPERTY_TAB_ID=""/>
+</item>
+<item historyLabel="myfirst &gt; Add Students &gt; Student" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page3#alt2#page6#enu2&apos;)" PROPERTY_TAB_ID=""/>
+</item>
+<item historyLabel="myfirst &gt; Home &gt; Students" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page3#alt2&apos;)" PROPERTY_TAB_ID=""/>
+</item>
+<item historyLabel="myfirst &gt; Students &gt; Edit" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page3#alt2#page5#dau1#ln8&apos;)" PROPERTY_TAB_ID=""/>
+</item>
+<item historyLabel="myfirst &gt; Students &gt; Flow13" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page3#alt2#page5#inu1#ln13&apos;)" PROPERTY_TAB_ID=""/>
+</item>
+<item historyLabel="myfirst &gt; Students &gt; Edit" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page3#alt2#page5#dau1#ln8&apos;)" PROPERTY_TAB_ID=""/>
+</item>
+<item historyLabel="myfirst &gt; Add Students &gt; Submit" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page3#alt2#page6#enu2#ln10&apos;)" PROPERTY_TAB_ID=""/>
+</item>
+<item historyLabel="myfirst &gt; Students &gt; Edit" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page3#alt2#page5#dau1#ln8&apos;)" PROPERTY_TAB_ID=""/>
+</item>
+<item historyLabel="myfirst &gt; Home &gt; add student" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#cru1&apos;)" PROPERTY_TAB_ID=""/>
+</item>
+<item historyLabel="myfirst &gt; Add Students &gt; Student" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page3#alt2#page6#enu2&apos;)" PROPERTY_TAB_ID=""/>
+</item>
+<item historyLabel="myfirst &gt; Home &gt; KOFlow1" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#cru1#kln1&apos;)" PROPERTY_TAB_ID=""/>
+</item>
+<item historyLabel="myfirst &gt; Add Students" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page3#alt2#page6&apos;)" PROPERTY_TAB_ID=""/>
+</item>
+<item historyLabel="myfirst &gt; Add Students &gt; Student" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page3#alt2#page6#enu2&apos;)" PROPERTY_TAB_ID=""/>
+</item>
+<item historyLabel="myfirst &gt; Add Students &gt; name" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page3#alt2#page6#enu2#fld2&apos;)" PROPERTY_TAB_ID=""/>
+</item>
+<item historyLabel="myfirst &gt; Home" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page3&apos;)" PROPERTY_TAB_ID=""/>
+</item>
+<item historyLabel="myfirst &gt; Home &gt; KOFlow1" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#cru1#kln1&apos;)" PROPERTY_TAB_ID=""/>
+</item>
+<item historyLabel="myfirst &gt; Home" index="0">
 <position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1&apos;)" PROPERTY_TAB_ID=""/>
 </item>
-<item historyLabel="EW &gt; Add Events &gt; Event" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page7#alt1#page9#enu2&apos;)" PROPERTY_TAB_ID=""/>
+<item historyLabel="myfirst &gt; Domain Model" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="/WebProject/DataModel" GRAPHEDITOR_PATH="/WebProject/DataModel" LOCATIONS="/WebProject/DataModel" PROPERTY_TAB_ID=""/>
 </item>
-<item historyLabel="EW &gt; Home" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page7&apos;)" PROPERTY_TAB_ID=""/>
-</item>
-<item historyLabel="EW &gt; Add Events &gt; Event" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page7#alt1#page9#enu2&apos;)" PROPERTY_TAB_ID=""/>
-</item>
-<item historyLabel="EW &gt; Home" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page7&apos;)" PROPERTY_TAB_ID=""/>
-</item>
-<item historyLabel="EW &gt; List events" index="0">
+<item historyLabel="myfirst &gt; Home" index="0">
 <position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1&apos;)" PROPERTY_TAB_ID=""/>
 </item>
-<item historyLabel="EW &gt; List events &gt; KOFlow2" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#cru1#kln2&apos;)" PROPERTY_TAB_ID=""/>
+<item historyLabel="myfirst &gt; Home" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="/WebProject" GRAPHEDITOR_PATH="/WebProject" LOCATIONS="id(&apos;sv1&apos;)" PROPERTY_TAB_ID=""/>
 </item>
-<item historyLabel="EW &gt; List events" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1&apos;)" PROPERTY_TAB_ID=""/>
+<item historyLabel="myfirst" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="/WebProject" GRAPHEDITOR_PATH="/WebProject" LOCATIONS="/WebProject" PROPERTY_TAB_ID=""/>
 </item>
-<item historyLabel="EW &gt; Add Events" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page7#alt1#page9&apos;)" PROPERTY_TAB_ID=""/>
+<item historyLabel="myfirst &gt; Domain Model" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="/WebProject/DataModel" GRAPHEDITOR_PATH="/WebProject/DataModel" LOCATIONS="/WebProject/DataModel" PROPERTY_TAB_ID=""/>
 </item>
-<item historyLabel="EW &gt; Home" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page7&apos;)" PROPERTY_TAB_ID=""/>
-</item>
-<item historyLabel="EW &gt; List events" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1&apos;)" PROPERTY_TAB_ID=""/>
-</item>
-<item historyLabel="EW &gt; Events &gt; A Event" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page7#alt1#page10#dau3&apos;)" PROPERTY_TAB_ID=""/>
-</item>
-<item historyLabel="EW &gt; Add Events &gt; Event" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page7#alt1#page9#enu2&apos;)" PROPERTY_TAB_ID=""/>
-</item>
-<item historyLabel="EW" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page7#alt1#page9#enu2#fld1&apos;)" PROPERTY_TAB_ID=""/>
-</item>
-<item historyLabel="EW &gt; Home" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page7&apos;)" PROPERTY_TAB_ID=""/>
-</item>
-<item historyLabel="EW &gt; Add Events &gt; name" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page7#alt1#page9#enu2#fld1&apos;)" PROPERTY_TAB_ID=""/>
-</item>
-<item historyLabel="EW &gt; Home" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page7&apos;)" PROPERTY_TAB_ID=""/>
-</item>
-<item historyLabel="EW &gt; Add Events &gt; Event" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page7#alt1#page9#enu2&apos;)" PROPERTY_TAB_ID=""/>
-</item>
-<item historyLabel="EW &gt; Add Events &gt; Selection Field1" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page7#alt1#page9#enu2#sfld1&apos;)" PROPERTY_TAB_ID=""/>
-</item>
-<item historyLabel="EW &gt; Add Events &gt; Event" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page7#alt1#page9#enu2&apos;)" PROPERTY_TAB_ID=""/>
-</item>
-<item historyLabel="EW &gt; Add Events &gt; Field2" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page7#alt1#page9#enu2#fld2&apos;)" PROPERTY_TAB_ID=""/>
-</item>
-<item historyLabel="EW &gt; List events" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#cru1&apos;)$id(&apos;sv1#area2&apos;)" PROPERTY_TAB_ID=""/>
-</item>
-<item historyLabel="EW &gt; Events &gt; A Event" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page7#alt1#page10#dau3&apos;)" PROPERTY_TAB_ID=""/>
-</item>
-<item historyLabel="EW &gt; Add Events &gt; Event" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page7#alt1#page9#enu2&apos;)" PROPERTY_TAB_ID=""/>
-</item>
-<item historyLabel="EW" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page7#alt1#page9#enu2#fld3&apos;)" PROPERTY_TAB_ID=""/>
-</item>
-<item historyLabel="EW &gt; Home" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page7&apos;)" PROPERTY_TAB_ID=""/>
-</item>
-<item historyLabel="EW &gt; List events" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1&apos;)" PROPERTY_TAB_ID=""/>
-</item>
-<item historyLabel="EW &gt; Add Events &gt; Event" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page7#alt1#page9#enu2&apos;)" PROPERTY_TAB_ID=""/>
-</item>
-<item historyLabel="EW &gt; Add Events &gt; Flow8" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page7#alt1#page9#enu2#ln8&apos;)" PROPERTY_TAB_ID=""/>
-</item>
-<item historyLabel="EW &gt; Home" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page7&apos;)" PROPERTY_TAB_ID=""/>
-</item>
-<item historyLabel="EW &gt; List events &gt; KOFlow2" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#cru1#kln2&apos;)" PROPERTY_TAB_ID=""/>
-</item>
-<item historyLabel="EW &gt; List events" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1&apos;)" PROPERTY_TAB_ID=""/>
-</item>
-<item historyLabel="EW &gt; Events" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page7#alt1#page10&apos;)" PROPERTY_TAB_ID=""/>
-</item>
-<item historyLabel="EW &gt; Home" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page7&apos;)" PROPERTY_TAB_ID=""/>
-</item>
-<item active="true" historyLabel="EW &gt; List events" index="0">
+<item active="true" historyLabel="myfirst &gt; Home" index="0">
 <position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1&apos;)" PROPERTY_TAB_ID=""/>
 </item>
 </navigationHistory>
@@ -444,12 +439,13 @@
 <trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
 <trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
+<trimItem IMemento.internal.id="bottom"/>
 </trimArea>
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.webratio.ide.ui.editors.WebProjectEditor" name="Model.wr" tooltip="EW/Model.wr">
-<persistable path="/EW/Model.wr"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.webratio.ide.ui.editors.WebProjectEditor" name="Model.wr" tooltip="myfirst/Model.wr">
+<persistable path="/myfirst/Model.wr"/>
 </file>
 </mruList>
 </workbench>
