@@ -1,0 +1,61 @@
+
+Mar 29, 2019 12:19:40.79 NEW SESSION
+Mar 29, 2019 12:19:40.79 
+Mar 29, 2019 12:19:40.79 (firefox:6520): Gtk-WARNING **: 12:19:40.774: Theme directory 2x22@2x/animations of theme Papirus-Light has no size field
+Mar 29, 2019 12:19:40.79 
+Mar 29, 2019 12:19:40.82 
+Mar 29, 2019 12:19:40.82 (firefox:6520): Gtk-WARNING **: 12:19:40.816: Theme parsing error: <data>:1:34: Expected ')' in color definition
+Mar 29, 2019 12:19:40.82 
+Mar 29, 2019 12:19:40.82 (firefox:6520): Gtk-WARNING **: 12:19:40.816: Theme parsing error: <data>:1:76: Expected ')' in color definition
+Mar 29, 2019 12:19:41.28 
+Mar 29, 2019 12:19:41.28 (firefox:6592): Gtk-WARNING **: 12:19:41.280: Theme directory 2x22@2x/animations of theme Papirus-Light has no size field
+Mar 29, 2019 12:19:41.28 
+Mar 29, 2019 12:19:41.31 
+Mar 29, 2019 12:19:41.31 (firefox:6592): Gtk-WARNING **: 12:19:41.311: Theme parsing error: <data>:1:34: Expected ')' in color definition
+Mar 29, 2019 12:19:41.31 
+Mar 29, 2019 12:19:41.31 (firefox:6592): Gtk-WARNING **: 12:19:41.311: Theme parsing error: <data>:1:76: Expected ')' in color definition
+Mar 29, 2019 12:21:39.94 
+Mar 29, 2019 12:21:39.94 (firefox:7311): Gtk-WARNING **: 12:21:39.941: Theme directory 2x22@2x/animations of theme Papirus-Light has no size field
+Mar 29, 2019 12:21:39.94 
+Mar 29, 2019 12:21:39.98 
+Mar 29, 2019 12:21:39.98 (firefox:7311): Gtk-WARNING **: 12:21:39.974: Theme parsing error: <data>:1:34: Expected ')' in color definition
+Mar 29, 2019 12:21:39.98 
+Mar 29, 2019 12:21:39.98 (firefox:7311): Gtk-WARNING **: 12:21:39.974: Theme parsing error: <data>:1:76: Expected ')' in color definition
+Mar 29, 2019 12:21:40.39 
+Mar 29, 2019 12:21:40.39 (firefox:7377): Gtk-WARNING **: 12:21:40.387: Theme directory 2x22@2x/animations of theme Papirus-Light has no size field
+Mar 29, 2019 12:21:40.39 
+Mar 29, 2019 12:21:40.42 
+Mar 29, 2019 12:21:40.42 (firefox:7377): Gtk-WARNING **: 12:21:40.421: Theme parsing error: <data>:1:34: Expected ')' in color definition
+Mar 29, 2019 12:21:40.42 
+Mar 29, 2019 12:21:40.42 (firefox:7377): Gtk-WARNING **: 12:21:40.421: Theme parsing error: <data>:1:76: Expected ')' in color definition
+Mar 29, 2019 12:33:06.34 
+Mar 29, 2019 12:33:06.34 (firefox:8710): Gtk-WARNING **: 12:33:06.343: Theme directory 2x22@2x/animations of theme Papirus-Light has no size field
+Mar 29, 2019 12:33:06.34 
+Mar 29, 2019 12:33:06.37 
+Mar 29, 2019 12:33:06.37 (firefox:8710): Gtk-WARNING **: 12:33:06.374: Theme parsing error: <data>:1:34: Expected ')' in color definition
+Mar 29, 2019 12:33:06.37 
+Mar 29, 2019 12:33:06.37 (firefox:8710): Gtk-WARNING **: 12:33:06.374: Theme parsing error: <data>:1:76: Expected ')' in color definition
+Mar 29, 2019 12:33:06.79 
+Mar 29, 2019 12:33:06.79 (firefox:8775): Gtk-WARNING **: 12:33:06.793: Theme directory 2x22@2x/animations of theme Papirus-Light has no size field
+Mar 29, 2019 12:33:06.79 
+Mar 29, 2019 12:33:06.83 
+Mar 29, 2019 12:33:06.83 (firefox:8775): Gtk-WARNING **: 12:33:06.826: Theme parsing error: <data>:1:34: Expected ')' in color definition
+Mar 29, 2019 12:33:06.83 
+Mar 29, 2019 12:33:06.83 (firefox:8775): Gtk-WARNING **: 12:33:06.826: Theme parsing error: <data>:1:76: Expected ')' in color definition
+Mar 29, 2019 12:42:14.97 
+Mar 29, 2019 12:42:14.97 ###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+Mar 29, 2019 12:42:14.97 
+Mar 29, 2019 12:42:23.08 
+Mar 29, 2019 12:42:23.08 (firefox:9916): Gtk-WARNING **: 12:42:23.075: Theme directory 2x22@2x/animations of theme Papirus-Light has no size field
+Mar 29, 2019 12:42:23.08 
+Mar 29, 2019 12:42:23.11 
+Mar 29, 2019 12:42:23.11 (firefox:9916): Gtk-WARNING **: 12:42:23.107: Theme parsing error: <data>:1:34: Expected ')' in color definition
+Mar 29, 2019 12:42:23.11 
+Mar 29, 2019 12:42:23.11 (firefox:9916): Gtk-WARNING **: 12:42:23.107: Theme parsing error: <data>:1:76: Expected ')' in color definition
+Mar 29, 2019 12:42:23.57 
+Mar 29, 2019 12:42:23.57 (firefox:10017): Gtk-WARNING **: 12:42:23.573: Theme directory 2x22@2x/animations of theme Papirus-Light has no size field
+Mar 29, 2019 12:42:23.57 
+Mar 29, 2019 12:42:23.61 
+Mar 29, 2019 12:42:23.61 (firefox:10017): Gtk-WARNING **: 12:42:23.609: Theme parsing error: <data>:1:34: Expected ')' in color definition
+Mar 29, 2019 12:42:23.61 
+Mar 29, 2019 12:42:23.61 (firefox:10017): Gtk-WARNING **: 12:42:23.609: Theme parsing error: <data>:1:76: Expected ')' in color definition
