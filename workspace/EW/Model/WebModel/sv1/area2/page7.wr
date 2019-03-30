@@ -70,7 +70,6 @@
             <layout:Row>
               <layout:Cell colspan="12">
                 <layout:Unit unitId="sv1#area2#page7#alt1#page10#inu2">
-                  <layout:Link link="sv1#area2#page7#alt1#page10#inu2#ln6"/>
                   <layout:Attribute attribute="ent3#att3"/>
                   <layout:Attribute attribute="ent3#att18"/>
                   <layout:Attribute attribute="ent3#att17"/>
@@ -78,6 +77,7 @@
                   <layout:Attribute attribute="ent3#att14"/>
                   <layout:Attribute attribute="ent3#att15"/>
                   <layout:Attribute attribute="ent3#att16"/>
+                  <layout:Link link="sv1#area2#page7#alt1#page10#inu2#ln6"/>
                 </layout:Unit>
               </layout:Cell>
               <layout:Cell/>
@@ -95,6 +95,34 @@
           </layout:Grid>
         </layout:SubPage>
       </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>

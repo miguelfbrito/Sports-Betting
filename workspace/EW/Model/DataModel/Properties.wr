@@ -1,5 +1,5 @@
 <DataModel xmlns:db="http://www.webratio.com/2006/WebML/Database" xmlns:gr="http://www.webratio.com/2006/WebML/Graph">
-  <Entity id="User" name="User" duration="persistent" gr:x="345" gr:y="470" gr:hideAttributes="false" attributeOrder="userOID userName password email User#att19 User#att20" db:database="db1" db:table="user">
+  <Entity id="User" name="User" duration="persistent" gr:x="340" gr:y="475" gr:hideAttributes="false" attributeOrder="userOID userName password email User#att19 User#att20" db:database="db1" db:table="user">
     <Attribute name="oid" id="userOID" type="integer" key="true" db:column="oid"/>
     <Attribute name="username" id="userName" type="string" key="false" db:column="username"/>
     <Attribute name="password" id="password" type="password" key="false" db:column="password"/>
@@ -55,14 +55,6 @@
     <Attribute id="ent1#att10" name="wager" type="float" db:column="wager"/>
     <Attribute id="ent1#att11" name="result" type="string" db:column="result"/>
   </Entity>
-  <Relationship id="rel1" name="User_Bet" sourceEntity="User" targetEntity="ent1" db:database="db1" db:table="user">
-    <RelationshipRole1 id="rel1#role1" name="UserToBet" maxCard="1">
-      <db:JoinColumn attribute="userOID" name="oid"/>
-    </RelationshipRole1>
-    <RelationshipRole2 id="rel1#role2" name="BetToUser" maxCard="N">
-      <db:JoinColumn attribute="ent1#att1" name="bet_oid"/>
-    </RelationshipRole2>
-  </Relationship>
   <Entity gr:x="775" gr:y="230" id="ent2" name="AvailableBetTypes" duration="persistent" db:database="db1" db:table="availablebettypes" attributeOrder="ent2#att2 ent2#att13">
     <Attribute id="ent2#att2" key="true" name="oid" type="integer" db:column="oid"/>
     <Attribute id="ent2#att13" name="Odd" type="float" key="false" db:column="odd"/>
@@ -76,108 +68,116 @@
     <Attribute id="ent3#att17" name="description" type="string" db:column="description"/>
     <Attribute id="ent3#att18" name="name" type="string" db:column="name"/>
   </Entity>
-  <Relationship id="rel3" name="Bet_Event" sourceEntity="ent1" targetEntity="ent3" db:database="db1" db:table="event">
-    <RelationshipRole1 id="rel3#role5" name="BetToEvent" maxCard="N">
-      <db:JoinColumn attribute="ent1#att1" name="bet_oid"/>
-    </RelationshipRole1>
-    <RelationshipRole2 id="rel3#role6" name="EventToBet" maxCard="1">
-      <db:JoinColumn attribute="ent3#att3" name="oid"/>
-    </RelationshipRole2>
-  </Relationship>
-  <Relationship id="rel4" name="BetType_Event" sourceEntity="ent2" targetEntity="ent3" db:database="db1" db:table="event">
-    <RelationshipRole1 id="rel4#role7" name="BetTypeToEvent" maxCard="N">
-      <db:JoinColumn attribute="ent2#att2" name="availablebettypes_oid"/>
-    </RelationshipRole1>
-    <RelationshipRole2 id="rel4#role8" name="EventToBetType" maxCard="1">
-      <db:JoinColumn attribute="ent3#att3" name="oid"/>
-    </RelationshipRole2>
-  </Relationship>
   <Entity gr:x="800" gr:y="10" id="ent5" name="Sport" duration="persistent" db:database="db1" db:table="sport">
     <Attribute id="ent5#att5" key="true" name="oid" type="integer" db:column="oid"/>
   </Entity>
-  <Relationship id="rel6" name="Sport_Event" sourceEntity="ent5" targetEntity="ent3" db:database="db1" db:table="sport">
-    <RelationshipRole1 id="rel6#role11" name="SportToEvent" maxCard="1">
-      <db:JoinColumn attribute="ent5#att5" name="oid"/>
-    </RelationshipRole1>
-    <RelationshipRole2 id="rel6#role12" name="EventToSport" maxCard="N">
-      <db:JoinColumn attribute="ent3#att3" name="event_oid"/>
-    </RelationshipRole2>
-  </Relationship>
-  <Entity gr:x="800" gr:y="345" id="ent6" name="BetType" duration="persistent" db:database="db1" db:table="bettype" attributeOrder="ent6#att6 ent6#att12">
+  <Entity gr:x="795" gr:y="375" id="ent6" name="BetType" duration="persistent" db:database="db1" db:table="bettype" attributeOrder="ent6#att6 ent6#att12">
     <Attribute id="ent6#att6" key="true" name="oid" type="integer" db:column="oid"/>
     <Attribute id="ent6#att12" name="Name" type="string" db:column="name"/>
   </Entity>
-  <Relationship id="rel7" name="BetType_AvailableBetTypes" sourceEntity="ent6" targetEntity="ent2" db:database="db1" db:table="bettype">
-    <RelationshipRole1 id="rel7#role13" name="BetTypeToAvailableBetTypes" maxCard="1">
-      <db:JoinColumn attribute="ent6#att6" name="oid"/>
-    </RelationshipRole1>
-    <RelationshipRole2 id="rel7#role14" name="AvailableBetTypesToBetType" maxCard="N">
-      <db:JoinColumn attribute="ent2#att2" name="availablebettypes_oid"/>
-    </RelationshipRole2>
-  </Relationship>
-  <Relationship id="rel8" name="Bet_BetType" sourceEntity="ent1" targetEntity="ent6" db:database="db1" db:table="bettype">
-    <RelationshipRole1 id="rel8#role15" name="BetToBetType" maxCard="N">
-      <db:JoinColumn attribute="ent1#att1" name="bet_oid"/>
-    </RelationshipRole1>
-    <RelationshipRole2 id="rel8#role16" name="BetTypeToBet" maxCard="1">
-      <db:JoinColumn attribute="ent6#att6" name="oid"/>
-    </RelationshipRole2>
-  </Relationship>
-  <Entity gr:x="1080" gr:y="120" id="ent7" name="Team" duration="persistent" db:database="db1" db:table="team">
+  <Entity gr:x="1120" gr:y="115" id="ent7" name="Team" duration="persistent" db:database="db1" db:table="team">
     <Attribute id="ent7#att7" key="true" name="oid" type="integer" db:column="oid"/>
   </Entity>
   <Entity gr:x="780" gr:y="120" id="ent8" name="TeamsPerEvent" duration="persistent" db:database="db1" db:table="teamsperevent">
     <Attribute id="ent8#att8" key="true" name="oid" type="integer" db:column="oid"/>
   </Entity>
-  <Relationship id="rel12" name="Event_TeamsPerEvent" sourceEntity="ent3" targetEntity="ent8" db:database="db1" db:table="event">
-    <RelationshipRole1 id="rel12#role23" name="EventToTeamsPerEvent" maxCard="1">
-      <db:JoinColumn attribute="ent3#att3" name="oid"/>
+  <Relationship id="rel12" name="Event_TeamsPerEvent" sourceEntity="ent3" targetEntity="ent8" db:database="db1" db:isView="false" db:table="teamsperevent">
+    <RelationshipRole1 id="rel12#role23" name="EventToTeamsPerEvent" maxCard="N">
+      <db:JoinColumn attribute="ent3#att3" name="event_oid"/>
     </RelationshipRole1>
-    <RelationshipRole2 id="rel12#role24" name="TeamsPerEventToEvent" maxCard="N">
-      <db:JoinColumn attribute="ent8#att8" name="teamsperevent_oid"/>
+    <RelationshipRole2 id="rel12#role24" name="TeamsPerEventToEvent" maxCard="1">
+      <db:JoinColumn attribute="ent8#att8" name="oid"/>
     </RelationshipRole2>
   </Relationship>
-  <Relationship id="rel13" name="TeamsPerEvent_Team" sourceEntity="ent8" targetEntity="ent7" db:database="db1" db:table="team">
-    <RelationshipRole1 id="rel13#role25" name="TeamsPerEventToTeam" maxCard="N">
-      <db:JoinColumn attribute="ent8#att8" name="teamsperevent_oid"/>
-    </RelationshipRole1>
-    <RelationshipRole2 id="rel13#role26" name="TeamToTeamsPerEvent" maxCard="1">
-      <db:JoinColumn attribute="ent7#att7" name="oid"/>
-    </RelationshipRole2>
-  </Relationship>
-  <Entity gr:x="1080" gr:y="5" id="ent9" name="Player" duration="persistent" db:database="db1" db:table="player">
+  <Entity gr:x="1105" gr:y="-20" id="ent9" name="Player" duration="persistent" db:database="db1" db:table="player">
     <Attribute id="ent9#att9" key="true" name="oid" type="integer" db:column="oid"/>
   </Entity>
-  <Relationship id="rel2" name="Team_Player" sourceEntity="ent7" targetEntity="ent9" db:database="db1" db:table="team">
-    <RelationshipRole1 id="rel2#role3" name="TeamToPlayer" maxCard="1">
-      <db:JoinColumn attribute="ent7#att7" name="oid"/>
-    </RelationshipRole1>
-    <RelationshipRole2 id="rel2#role4" name="PlayerToTeam" maxCard="N">
-      <db:JoinColumn attribute="ent9#att9" name="player_oid"/>
-    </RelationshipRole2>
-  </Relationship>
   <Entity gr:x="100" gr:y="310" id="ent4" name="Result" duration="persistent" attributeOrder="ent4#att21 ent4#att22" db:database="db1" db:table="result">
     <Attribute id="ent4#att21" key="true" name="oid" type="integer" db:column="oid"/>
     <Attribute id="ent4#att22" name="name" type="string" db:column="name"/>
   </Entity>
-  <Relationship id="rel5" name="Result_Bet" sourceEntity="ent4" targetEntity="ent1" db:database="db1" db:table="result">
-    <RelationshipRole1 id="rel5#role9" name="ResultToBet" maxCard="1">
-      <db:JoinColumn attribute="ent4#att21" name="oid"/>
-    </RelationshipRole1>
-    <RelationshipRole2 id="rel5#role10" name="BetToResult" maxCard="N">
-      <db:JoinColumn attribute="ent1#att1" name="bet_oid"/>
-    </RelationshipRole2>
-  </Relationship>
   <Entity gr:x="100" gr:y="60" id="ent10" name="State" duration="persistent" attributeOrder="ent10#att23 ent10#att24" db:database="db1" db:table="state">
     <Attribute id="ent10#att23" key="true" name="oid" type="integer" db:column="oid"/>
     <Attribute id="ent10#att24" name="name" type="string" db:column="name"/>
   </Entity>
-  <Relationship id="rel9" name="Event_State" sourceEntity="ent3" targetEntity="ent10" db:database="db1" db:table="state">
-    <RelationshipRole1 id="rel9#role17" name="EventToState" maxCard="N">
-      <db:JoinColumn attribute="ent3#att3" name="event_oid"/>
+  <Relationship id="rel10" name="User_Bet" sourceEntity="User" targetEntity="ent1" db:database="db1" db:table="bet">
+    <RelationshipRole1 id="rel10#role19" name="UserToBet" maxCard="N">
+      <db:JoinColumn attribute="userOID" name="user_oid"/>
     </RelationshipRole1>
-    <RelationshipRole2 id="rel9#role18" name="StateToEvent" maxCard="1">
-      <db:JoinColumn attribute="ent10#att23" name="oid"/>
+    <RelationshipRole2 id="rel10#role20" name="BetToUser" maxCard="1">
+      <db:JoinColumn attribute="ent1#att1" name="oid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel11" name="TeamsPerEvent_Team" sourceEntity="ent8" targetEntity="ent7" db:database="db1" db:table="teamsperevent">
+    <RelationshipRole1 id="rel11#role21" name="TeamsPerEventToTeam" maxCard="1">
+      <db:JoinColumn attribute="ent8#att8" name="oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel11#role22" name="TeamToTeamsPerEvent" maxCard="N">
+      <db:JoinColumn attribute="ent7#att7" name="team_oid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel14" name="Team_Player" sourceEntity="ent7" targetEntity="ent9" db:database="db1" db:table="player">
+    <RelationshipRole1 id="rel14#role27" name="TeamToPlayer" maxCard="N">
+      <db:JoinColumn attribute="ent7#att7" name="team_oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel14#role28" name="PlayerToTeam" maxCard="1">
+      <db:JoinColumn attribute="ent9#att9" name="oid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel15" name="Bet_Event" sourceEntity="ent1" targetEntity="ent3" db:database="db1" db:table="bet">
+    <RelationshipRole1 id="rel15#role29" name="BetToEvent" maxCard="1">
+      <db:JoinColumn attribute="ent1#att1" name="oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel15#role30" name="EventToBet" maxCard="N">
+      <db:JoinColumn attribute="ent3#att3" name="event_oid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel16" name="State_Event" sourceEntity="ent10" targetEntity="ent3" db:database="db1" db:table="event">
+    <RelationshipRole1 id="rel16#role31" name="StateToEvent" maxCard="N">
+      <db:JoinColumn attribute="ent10#att23" name="state_oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel16#role32" name="EventToState" maxCard="1">
+      <db:JoinColumn attribute="ent3#att3" name="oid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel17" name="Bet_BetType" sourceEntity="ent1" targetEntity="ent6" db:database="db1" db:table="bet">
+    <RelationshipRole1 id="rel17#role33" name="BetToBetType" maxCard="1">
+      <db:JoinColumn attribute="ent1#att1" name="oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel17#role34" name="BetTypeToBet" maxCard="N">
+      <db:JoinColumn attribute="ent6#att6" name="bettype_oid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel19" name="BetType_AvailableBetTypes" sourceEntity="ent6" targetEntity="ent2" db:database="db1" db:table="availablebettypes">
+    <RelationshipRole1 id="rel19#role37" name="BetTypeToAvailableBetTypes" maxCard="N">
+      <db:JoinColumn attribute="ent6#att6" name="bettype_oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel19#role38" name="AvailableBetTypesToBetType" maxCard="1">
+      <db:JoinColumn attribute="ent2#att2" name="oid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel20" name="AvailableBetTypes_Event" sourceEntity="ent2" targetEntity="ent3" db:database="db1" db:table="availablebettypes">
+    <RelationshipRole1 id="rel20#role39" name="AvailableBetTypesToEvent" maxCard="1">
+      <db:JoinColumn attribute="ent2#att2" name="oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel20#role40" name="EventToAvailableBetTypes" maxCard="N">
+      <db:JoinColumn attribute="ent3#att3" name="event_oid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel21" name="Result_Bet" sourceEntity="ent4" targetEntity="ent1" db:database="db1" db:table="bet">
+    <RelationshipRole1 id="rel21#role41" name="ResultToBet" maxCard="N">
+      <db:JoinColumn attribute="ent4#att21" name="result_oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel21#role42" name="BetToResult" maxCard="1">
+      <db:JoinColumn attribute="ent1#att1" name="oid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel22" name="Sport_Event" sourceEntity="ent5" targetEntity="ent3" db:database="db1" db:table="event">
+    <RelationshipRole1 id="rel22#role43" name="SportToEvent" maxCard="N">
+      <db:JoinColumn attribute="ent5#att5" name="sport_oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel22#role44" name="EventToSport" maxCard="1">
+      <db:JoinColumn attribute="ent3#att3" name="oid"/>
     </RelationshipRole2>
   </Relationship>
 </DataModel>

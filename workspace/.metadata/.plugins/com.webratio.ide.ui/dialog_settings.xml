@@ -10,4 +10,6 @@
 	<section name="com.webratio.ide.ui.grid.views.GridViewPage.Settings">
 		<item value="NONE" key="AUTO_HORIZONTAL_FIT_PREFERENCE"/>
 	</section>
+	<section name="WR4ImportProjectWizard">
+	</section>
 </section>

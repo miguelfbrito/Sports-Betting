@@ -1,0 +1,68 @@
+[30 Mar 2019 18:45:17] DEBUG Executing SQL script
+[30 Mar 2019 18:45:17] INFO ================================================================================
+[30 Mar 2019 18:45:17] INFO onError= 'stop'
+[30 Mar 2019 18:45:17] INFO autoCommit= 'false'
+[30 Mar 2019 18:45:17] INFO username= 'mbrito'
+[30 Mar 2019 18:45:17] INFO outputPath= '/home/mbrito/WebRatio/workspace/EW/.Temp~/RollbackSQL.xml'
+[30 Mar 2019 18:45:17] INFO outputLogPath= '/home/mbrito/WebRatio/workspace/EW/.Temp~/RollbackSQL.xml.log'
+[30 Mar 2019 18:45:17] INFO encoding= ''
+[30 Mar 2019 18:45:17] INFO driverClass= 'com.mysql.jdbc.Driver'
+[30 Mar 2019 18:45:17] INFO sqlScript= '/home/mbrito/WebRatio/workspace/EW/.Temp~/RollbackSQL.sql'
+[30 Mar 2019 18:45:17] INFO eventSocketPort= '45475'
+[30 Mar 2019 18:45:17] INFO statementSeparator= ';'
+[30 Mar 2019 18:45:17] INFO derby.system.home= '/home/mbrito/Desktop/WebRatio/workspace/.metadata/.plugins/com.webratio.commons.db/derby'
+[30 Mar 2019 18:45:17] INFO password= 'gomas'
+[30 Mar 2019 18:45:17] INFO url= 'jdbc:mysql://localhost:3306/bettingwebapp'
+[30 Mar 2019 18:45:17] INFO ================================================================================
+[30 Mar 2019 18:45:17] INFO Connecting to the Database...
+[30 Mar 2019 18:45:17] INFO Database connection estabilished
+[30 Mar 2019 18:45:17] INFO transaction isolation: 4
+[30 Mar 2019 18:45:17] DEBUG ================================================================================
+[30 Mar 2019 18:45:17] DEBUG Executing SQL script file: /home/mbrito/WebRatio/workspace/EW/.Temp~/RollbackSQL.sql
+[30 Mar 2019 18:45:17] DEBUG Executing statement:  alter table `bet`   drop foreign key `fk_bet_result`
+[30 Mar 2019 18:45:17] DEBUG Executing statement:  alter table `bet`  drop column  `result_oid`
+[30 Mar 2019 18:45:17] DEBUG Executing statement:  alter table `availablebettypes`   drop foreign key `fk_availablebettypes_event`
+[30 Mar 2019 18:45:17] DEBUG Executing statement:  alter table `availablebettypes`  drop column  `event_oid`
+[30 Mar 2019 18:45:17] DEBUG Executing statement:  alter table `availablebettypes`   drop foreign key `fk_availablebettypes_bettype`
+[30 Mar 2019 18:45:17] DEBUG Executing statement:  alter table `availablebettypes`  drop column  `bettype_oid`
+[30 Mar 2019 18:45:17] DEBUG Executing statement:  alter table `bet`   drop foreign key `fk_bet_bettype`
+[30 Mar 2019 18:45:17] DEBUG Executing statement:  alter table `bet`  drop column  `bettype_oid`
+[30 Mar 2019 18:45:17] DEBUG Executing statement:  alter table `event`   drop foreign key `fk_event_state`
+[30 Mar 2019 18:45:17] DEBUG Executing statement:  alter table `event`  drop column  `state_oid`
+[30 Mar 2019 18:45:17] DEBUG Executing statement:  alter table `bet`   drop foreign key `fk_bet_event`
+[30 Mar 2019 18:45:17] DEBUG Executing statement:  alter table `bet`  drop column  `event_oid`
+[30 Mar 2019 18:45:17] DEBUG Executing statement:  alter table `player`   drop foreign key `fk_player_team`
+[30 Mar 2019 18:45:17] DEBUG Executing statement:  alter table `player`  drop column  `team_oid`
+[30 Mar 2019 18:45:17] DEBUG Executing statement:  alter table `teamsperevent`   drop foreign key `fk_teamsperevent_event`
+[30 Mar 2019 18:45:17] DEBUG Executing statement:  alter table `teamsperevent`  drop column  `event_oid`
+[30 Mar 2019 18:45:17] DEBUG Executing statement:  alter table `teamsperevent`   drop foreign key `fk_teamsperevent_team`
+[30 Mar 2019 18:45:17] DEBUG Executing statement:  alter table `teamsperevent`  drop column  `team_oid`
+[30 Mar 2019 18:45:17] DEBUG Executing statement:  alter table `bet`   drop foreign key `fk_bet_user`
+[30 Mar 2019 18:45:17] DEBUG Executing statement:  alter table `bet`  drop column  `user_oid`
+[30 Mar 2019 18:45:17] DEBUG Executing statement:  alter table `user_group`   drop foreign key `fk_user_group_group`
+[30 Mar 2019 18:45:17] DEBUG Executing statement:  alter table `user_group`   drop foreign key `fk_user_group_user`
+[30 Mar 2019 18:45:17] DEBUG Executing statement:  drop table `user_group`
+[30 Mar 2019 18:45:17] DEBUG Executing statement:  alter table `user`   drop foreign key `fk_user_group`
+[30 Mar 2019 18:45:17] DEBUG Executing statement:  alter table `user`  drop column  `group_oid`
+[30 Mar 2019 18:45:17] DEBUG Executing statement:  alter table `group_module`   drop foreign key `fk_group_module_module`
+[30 Mar 2019 18:45:17] DEBUG Executing statement:  alter table `group_module`   drop foreign key `fk_group_module_group`
+[30 Mar 2019 18:45:17] DEBUG Executing statement:  drop table `group_module`
+[30 Mar 2019 18:45:17] DEBUG Executing statement:  alter table `group`   drop foreign key `fk_group_module`
+[30 Mar 2019 18:45:17] DEBUG Executing statement:  alter table `group`  drop column  `module_oid`
+[30 Mar 2019 18:45:17] DEBUG Executing statement:  drop table `player`
+[30 Mar 2019 18:45:17] DEBUG Executing statement:  drop table `teamsperevent`
+[30 Mar 2019 18:45:17] DEBUG Executing statement:  drop table `team`
+[30 Mar 2019 18:45:17] DEBUG Executing statement:  drop table `bettype`
+[30 Mar 2019 18:45:17] DEBUG Executing statement:  drop table `sport`
+[30 Mar 2019 18:45:17] DEBUG Executing statement:  drop table `result`
+[30 Mar 2019 18:45:17] DEBUG Executing statement:  drop table `event`
+[30 Mar 2019 18:45:17] DEBUG Executing statement:  drop table `availablebettypes`
+[30 Mar 2019 18:45:17] DEBUG Executing statement:  drop table `state`
+[30 Mar 2019 18:45:17] DEBUG Executing statement:  drop table `bet`
+[30 Mar 2019 18:45:17] DEBUG Executing statement:  drop table `user`
+[30 Mar 2019 18:45:17] DEBUG Executing statement:  drop table `module`
+[30 Mar 2019 18:45:17] DEBUG Executing statement:  drop table `group`
+[30 Mar 2019 18:45:17] DEBUG ================================================================================
+[30 Mar 2019 18:45:18] DEBUG SQL SCRIPT SUCCESSFULLY EXECUTED
+[30 Mar 2019 18:45:18] INFO Database connection closed
+[30 Mar 2019 18:45:18] DEBUG Total time: 809 milliseconds

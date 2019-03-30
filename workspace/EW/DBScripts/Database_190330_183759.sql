@@ -154,43 +154,43 @@ alter table `teamsperevent`  add column  `event_oid`  integer;
 alter table `teamsperevent`   add index fk_teamsperevent_event (`event_oid`), add constraint fk_teamsperevent_event foreign key (`event_oid`) references `event` (`oid`);
 
 
--- Team_Player [rel14]
-alter table `player`  add column  `team_oid`  integer;
-alter table `player`   add index fk_player_team (`team_oid`), add constraint fk_player_team foreign key (`team_oid`) references `team` (`oid`);
+-- Team_Player [rel2]
+alter table `player`  add column  `oid`  integer;
+alter table `player`   add index fk_player_team (`oid`), add constraint fk_player_team foreign key (`oid`) references `team` (`oid`);
 
 
--- Bet_Event [rel15]
-alter table `bet`  add column  `event_oid`  integer;
-alter table `bet`   add index fk_bet_event (`event_oid`), add constraint fk_bet_event foreign key (`event_oid`) references `event` (`oid`);
+-- Bet_Event [rel3]
+alter table `bet`  add column  `oid`  integer;
+alter table `bet`   add index fk_bet_event (`oid`), add constraint fk_bet_event foreign key (`oid`) references `event` (`oid`);
 
 
--- State_Event [rel16]
-alter table `event`  add column  `state_oid`  integer;
-alter table `event`   add index fk_event_state (`state_oid`), add constraint fk_event_state foreign key (`state_oid`) references `state` (`oid`);
+-- BetType_Event [rel4]
+alter table `availablebettypes`  add column  `oid`  integer;
+alter table `availablebettypes`   add index fk_availablebettypes_event (`oid`), add constraint fk_availablebettypes_event foreign key (`oid`) references `event` (`oid`);
 
 
--- Bet_BetType [rel17]
-alter table `bet`  add column  `bettype_oid`  integer;
-alter table `bet`   add index fk_bet_bettype (`bettype_oid`), add constraint fk_bet_bettype foreign key (`bettype_oid`) references `bettype` (`oid`);
+-- Result_Bet [rel5]
+alter table `bet`  add column  `oid`  integer;
+alter table `bet`   add index fk_bet_result (`oid`), add constraint fk_bet_result foreign key (`oid`) references `result` (`oid`);
 
 
--- BetType_AvailableBetTypes [rel19]
-alter table `availablebettypes`  add column  `bettype_oid`  integer;
-alter table `availablebettypes`   add index fk_availablebettypes_bettype (`bettype_oid`), add constraint fk_availablebettypes_bettype foreign key (`bettype_oid`) references `bettype` (`oid`);
+-- Sport_Event [rel6]
+alter table `event`  add column  `oid`  integer;
+alter table `event`   add index fk_event_sport (`oid`), add constraint fk_event_sport foreign key (`oid`) references `sport` (`oid`);
 
 
--- AvailableBetTypes_Event [rel20]
-alter table `availablebettypes`  add column  `event_oid`  integer;
-alter table `availablebettypes`   add index fk_availablebettypes_event (`event_oid`), add constraint fk_availablebettypes_event foreign key (`event_oid`) references `event` (`oid`);
+-- BetType_AvailableBetTypes [rel7]
+alter table `bettype`  add column  `availablebettypes_oid`  integer;
+alter table `bettype`   add index fk_bettype_availablebettypes (`availablebettypes_oid`), add constraint fk_bettype_availablebettypes foreign key (`availablebettypes_oid`) references `availablebettypes` (`oid`);
 
 
--- Result_Bet [rel21]
-alter table `bet`  add column  `result_oid`  integer;
-alter table `bet`   add index fk_bet_result (`result_oid`), add constraint fk_bet_result foreign key (`result_oid`) references `result` (`oid`);
+-- Bet_BetType [rel8]
+alter table `bet`  add column  `oid`  integer;
+alter table `bet`   add index fk_bet_bettype (`oid`), add constraint fk_bet_bettype foreign key (`oid`) references `bettype` (`oid`);
 
 
--- Sport_Event [rel22]
-alter table `event`  add column  `sport_oid`  integer;
-alter table `event`   add index fk_event_sport (`sport_oid`), add constraint fk_event_sport foreign key (`sport_oid`) references `sport` (`oid`);
+-- Event_State [rel9]
+alter table `event`  add column  `oid`  integer;
+alter table `event`   add index fk_event_state (`oid`), add constraint fk_event_state foreign key (`oid`) references `state` (`oid`);
 
 
