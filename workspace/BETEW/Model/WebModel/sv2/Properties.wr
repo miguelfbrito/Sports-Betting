@@ -1,0 +1,17 @@
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv2" name="Make Bet" landmarks="sv2#area1" homePage="sv2#area1#page1">
+  <OperationUnits>
+    <CreateUnit id="sv2#cru2" name="add Bet" gr:x="530" gr:y="95" entity="ent1" skipBlankRecords="false" linkOrder="sv2#cru2#ln15">
+      <OKLink id="sv2#cru2#oln2" name="OKFlow2" to="sv2#area1#page1#alt5#page21" automaticCoupling="true" gr:bendpoints="-141,-46,229,-31"/>
+      <KOLink id="sv2#cru2#kln1" name="KOFlow1" to="sv2#area1#page1#alt5#page2#enu1" automaticCoupling="true" gr:bendpoints="-111,12,114,17"/>
+      <Link id="sv2#cru2#ln15" name="Flow15" to="sv2#cnu2" automaticCoupling="true" type="transport" validate="true"/>
+    </CreateUnit>
+    <ConnectUnit gr:x="565" gr:y="215" id="sv2#cnu2" name="Connect2" relationship="rel17#role33">
+      <SourceSelector id="sv2#cnu2#su8" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#cnu2#su8#kcond7" name="KeyCondition7" predicate="in" implied="false"/>
+      </SourceSelector>
+      <TargetSelector id="sv2#cnu2#su9" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#cnu2#su9#kcond8" name="KeyCondition8" predicate="in" implied="false"/>
+      </TargetSelector>
+    </ConnectUnit>
+  </OperationUnits>
+</SiteView>

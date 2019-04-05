@@ -1,0 +1,246 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv2#area1#page1" name="Home">
+  <ContentUnits/>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Grid containerType="cell">
+          <layout:Row>
+            <layout:Cell/>
+          </layout:Row>
+        </layout:Grid>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Grid containerType="cell">
+          <layout:Row>
+            <layout:Cell>
+              <layout:SubPage pageId="sv2#area1#page1#alt5#page20">
+                <layout:Grid containerType="grid">
+                  <layout:Row>
+                    <layout:Cell colspan="12">
+                      <layout:Unit unitId="sv2#area1#page1#alt5#page20#inu7">
+                        <layout:Attribute attribute="ent2#att2"/>
+                        <layout:Attribute attribute="ent2#att13"/>
+                        <layout:Link link="sv2#area1#page1#alt5#page20#inu7#ln59"/>
+                      </layout:Unit>
+                    </layout:Cell>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                  </layout:Row>
+                  <layout:Row>
+                    <layout:Cell colspan="12"/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                  </layout:Row>
+                </layout:Grid>
+              </layout:SubPage>
+            </layout:Cell>
+          </layout:Row>
+        </layout:Grid>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:SubPage pageId="sv2#area1#page1#alt5#page21">
+          <layout:Grid containerType="grid">
+            <layout:Row>
+              <layout:Cell colspan="12"/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+            </layout:Row>
+            <layout:Row>
+              <layout:Cell colspan="12">
+                <layout:Unit unitId="sv2#area1#page1#alt5#page21#inu8">
+                  <layout:Attribute attribute="ent3#att3"/>
+                  <layout:Attribute attribute="ent3#att18"/>
+                  <layout:Attribute attribute="ent3#att17"/>
+                  <layout:Attribute attribute="ent3#att4"/>
+                  <layout:Attribute attribute="ent3#att14"/>
+                  <layout:Attribute attribute="ent3#att15"/>
+                  <layout:Attribute attribute="ent3#att16"/>
+                  <layout:Link link="sv2#area1#page1#alt5#page21#inu8#ln53"/>
+                </layout:Unit>
+              </layout:Cell>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+            </layout:Row>
+          </layout:Grid>
+        </layout:SubPage>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#area1#page1#alt5#page21#dau12">
+          <layout:Attribute attribute="ent3#att18"/>
+          <layout:Attribute attribute="ent3#att17"/>
+          <layout:Attribute attribute="ent3#att4"/>
+          <layout:Attribute attribute="ent3#att14"/>
+          <layout:Attribute attribute="ent3#att15"/>
+          <layout:Attribute attribute="ent3#att16"/>
+          <layout:Link link="sv2#area1#page1#alt5#page21#dau12#ln50"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:SubPage pageId="sv2#area1#page1#alt5#page22">
+          <layout:Grid containerType="grid">
+            <layout:Row>
+              <layout:Cell colspan="12"/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+            </layout:Row>
+          </layout:Grid>
+        </layout:SubPage>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <Alternative gr:x="0" gr:y="0" id="sv2#area1#page1#alt5" name="Alternative5" defaultPage="sv2#area1#page1#alt5#page21">
+    <Page id="sv2#area1#page1#alt5#page20" name="Bet types" gr:x="0" gr:y="0">
+      <ContentUnits>
+        <IndexUnit id="sv2#area1#page1#alt5#page20#inu7" name="Bet Types" gr:x="0" gr:y="0" entity="ent2" displayAttributes="ent2#att2 ent2#att13" linkOrder="sv2#area1#page1#alt5#page20#inu7#ln59">
+          <Selector id="sv2#area1#page1#alt5#page20#inu7#su9" defaultPolicy="fill" booleanOperator="and">
+            <RelationshipRoleCondition id="sv2#area1#page1#alt5#page20#inu7#su9#rcond1" name="RoleCondition1" predicate="in" implied="false" role="rel20#role40"/>
+          </Selector>
+          <Link id="sv2#area1#page1#alt5#page20#inu7#ln58" name="Flow28" to="sv2#area1#page1#alt5#page22#dau14" type="transport" validate="true" gr:bendpoints="10,65,20,-65"/>
+          <Link id="sv2#area1#page1#alt5#page20#inu7#ln59" name="Details" to="sv2#area1#page1#alt5#page22#dau14" type="normal" automaticCoupling="true" validate="true"/>
+        </IndexUnit>
+      </ContentUnits>
+    </Page>
+    <Page id="sv2#area1#page1#alt5#page21" name="Events" gr:x="235" gr:y="5">
+      <ContentUnits>
+        <IndexUnit id="sv2#area1#page1#alt5#page21#inu8" name="List Events" gr:x="140" gr:y="5" entity="ent3" displayAttributes="ent3#att3 ent3#att18 ent3#att17 ent3#att4 ent3#att14 ent3#att15 ent3#att16" linkOrder="sv2#area1#page1#alt5#page21#inu8#ln53">
+          <Link id="sv2#area1#page1#alt5#page21#inu8#ln52" name="Flow7" to="sv2#area1#page1#alt5#page21#dau12" type="transport" validate="true" gr:bendpoints="-106,17,89,12"/>
+          <Link id="sv2#area1#page1#alt5#page21#inu8#ln53" name="Details" to="sv2#area1#page1#alt5#page21#dau12" type="normal" automaticCoupling="true" validate="true"/>
+        </IndexUnit>
+        <DataUnit id="sv2#area1#page1#alt5#page21#dau12" name="A Event" linkOrder="sv2#area1#page1#alt5#page21#dau12#ln50" gr:x="0" gr:y="0" entity="ent3" displayAll="true">
+          <Selector id="sv2#area1#page1#alt5#page21#dau12#su10" defaultPolicy="fill" booleanOperator="and">
+            <KeyCondition id="sv2#area1#page1#alt5#page21#dau12#su10#kcond9" name="KeyCondition3" predicate="in" implied="false"/>
+          </Selector>
+          <Link id="sv2#area1#page1#alt5#page21#dau12#ln50" name="Flow48" to="sv2#area1#page1#alt5#page20#inu7" type="normal" automaticCoupling="true" validate="true"/>
+          <Link id="sv2#area1#page1#alt5#page21#dau12#ln51" name="Flow49" to="sv2#area1#page1#alt5#page20#inu7" type="transport" validate="true" gr:bendpoints="-86,14,114,39"/>
+        </DataUnit>
+      </ContentUnits>
+    </Page>
+    <Page gr:x="0" gr:y="155" id="sv2#area1#page1#alt5#page22" name="A bet type">
+      <ContentUnits>
+        <DataUnit id="sv2#area1#page1#alt5#page22#dau14" name="A Bet type" gr:x="0" gr:y="0" entity="ent2" displayAll="true"/>
+      </ContentUnits>
+    </Page>
+  </Alternative>
+</Page>

@@ -1,0 +1,5 @@
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv2" name="Make Bet" landmarks="sv2#area1" homePage="sv2#area1#page1">
+  <OperationUnits>
+    <CreateUnit gr:x="485" gr:y="400" id="sv2#cru2" name="Betting" entity="ent1"/>
+  </OperationUnits>
+</SiteView>
