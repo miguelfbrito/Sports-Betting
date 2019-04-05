@@ -9,8 +9,8 @@
 	</section>
 	<section name="DialogBounds_CouplingDialog">
 		<item value="684" key="DIALOG_WIDTH"/>
-		<item value="42" key="DIALOG_Y_ORIGIN"/>
-		<item value="657" key="DIALOG_HEIGHT"/>
+		<item value="38" key="DIALOG_Y_ORIGIN"/>
+		<item value="665" key="DIALOG_HEIGHT"/>
 		<item value="318" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 	</section>

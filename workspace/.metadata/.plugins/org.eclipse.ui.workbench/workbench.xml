@@ -302,157 +302,156 @@
 <navigationHistory>
 <editors>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.webratio.ide.ui.editors.WebProjectEditor" path="/BETEW/Model.wr"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.webratio.ide.ui.editors.WebProjectEditor" path="/myfirst/Model.wr"/>
 </editors>
 <item historyLabel="BETEW &gt; Home" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv2&apos;)" GRAPHEDITOR_PATH="id(&apos;sv2&apos;)" LOCATIONS="id(&apos;sv2#area1#page1&apos;)" PROPERTY_TAB_ID=""/>
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv3&apos;)" GRAPHEDITOR_PATH="id(&apos;sv3&apos;)" LOCATIONS="id(&apos;sv3#area3#page12&apos;)" PROPERTY_TAB_ID=""/>
 </item>
-<item historyLabel="BETEW &gt; Place bet &gt; Place bet" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv2&apos;)" GRAPHEDITOR_PATH="id(&apos;sv2&apos;)" LOCATIONS="id(&apos;sv2#area1#page1#alt5#page2#enu1&apos;)" PROPERTY_TAB_ID=""/>
+<item historyLabel="BETEW &gt; Manage Events &gt; Update Event" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv3&apos;)" GRAPHEDITOR_PATH="id(&apos;sv3&apos;)" LOCATIONS="id(&apos;sv3#mfu1&apos;)" PROPERTY_TAB_ID=""/>
 </item>
-<item historyLabel="BETEW &gt; Make Bet &gt; add Bet" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv2&apos;)" GRAPHEDITOR_PATH="id(&apos;sv2&apos;)" LOCATIONS="id(&apos;sv2#cru2&apos;)" PROPERTY_TAB_ID=""/>
-</item>
-<item historyLabel="BETEW &gt; Bet types &gt; Available Bet Types" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv2&apos;)" GRAPHEDITOR_PATH="id(&apos;sv2&apos;)" LOCATIONS="id(&apos;sv2#area1#page1#alt5#page20#inu1&apos;)" PROPERTY_TAB_ID=""/>
-</item>
-<item historyLabel="BETEW &gt; Bet types &gt; Flow49" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv2&apos;)" GRAPHEDITOR_PATH="id(&apos;sv2&apos;)" LOCATIONS="id(&apos;sv2#area1#page1#alt5#page20#dau1#ln2&apos;)" PROPERTY_TAB_ID=""/>
-</item>
-<item historyLabel="BETEW &gt; Bet types &gt; Flow61" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv2&apos;)" GRAPHEDITOR_PATH="id(&apos;sv2&apos;)" LOCATIONS="id(&apos;sv2#area1#page1#alt5#page20#inu1#ln12&apos;)" PROPERTY_TAB_ID=""/>
-</item>
-<item historyLabel="BETEW &gt; Place bet &gt; Available Bet Type" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv2&apos;)" GRAPHEDITOR_PATH="id(&apos;sv2&apos;)" LOCATIONS="id(&apos;sv2#area1#page1#alt5#page2#dau5&apos;)" PROPERTY_TAB_ID=""/>
-</item>
-<item historyLabel="BETEW &gt; Place bet &gt; Place bet" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv2&apos;)" GRAPHEDITOR_PATH="id(&apos;sv2&apos;)" LOCATIONS="id(&apos;sv2#area1#page1#alt5#page2#enu1&apos;)" PROPERTY_TAB_ID=""/>
+<item historyLabel="BETEW &gt; Details &gt; Edit" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv3&apos;)" GRAPHEDITOR_PATH="id(&apos;sv3&apos;)" LOCATIONS="id(&apos;sv3#area3#page12#alt3#page4#dau2#ln16&apos;)" PROPERTY_TAB_ID=""/>
 </item>
 <item historyLabel="BETEW &gt; Home" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv2&apos;)" GRAPHEDITOR_PATH="id(&apos;sv2&apos;)" LOCATIONS="id(&apos;sv2#area1#page1&apos;)" PROPERTY_TAB_ID=""/>
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv3&apos;)" GRAPHEDITOR_PATH="id(&apos;sv3&apos;)" LOCATIONS="id(&apos;sv3#area3#page12&apos;)" PROPERTY_TAB_ID=""/>
 </item>
-<item historyLabel="BETEW &gt; Place bet &gt; Flow14" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv2&apos;)" GRAPHEDITOR_PATH="id(&apos;sv2&apos;)" LOCATIONS="id(&apos;sv2#area1#page1#alt5#page2#dau5#ln14&apos;)" PROPERTY_TAB_ID=""/>
+<item historyLabel="BETEW &gt; Manage Events &gt; Update Event" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv3&apos;)" GRAPHEDITOR_PATH="id(&apos;sv3&apos;)" LOCATIONS="id(&apos;sv3#mfu1&apos;)" PROPERTY_TAB_ID=""/>
 </item>
-<item historyLabel="BETEW &gt; Make Bet" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv2&apos;)" GRAPHEDITOR_PATH="id(&apos;sv2&apos;)" LOCATIONS="id(&apos;sv2&apos;)" PROPERTY_TAB_ID=""/>
+<item historyLabel="BETEW &gt; Details &gt; A Event" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv3&apos;)" GRAPHEDITOR_PATH="id(&apos;sv3&apos;)" LOCATIONS="id(&apos;sv3#area3#page12#alt3#page4#dau2&apos;)" PROPERTY_TAB_ID=""/>
 </item>
-<item historyLabel="myfirst &gt; Home &gt; Flow7" index="1">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#cru1#ln7&apos;)" PROPERTY_TAB_ID=""/>
+<item historyLabel="BETEW &gt; Details &gt; Edit" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv3&apos;)" GRAPHEDITOR_PATH="id(&apos;sv3&apos;)" LOCATIONS="id(&apos;sv3#area3#page12#alt3#page4#dau2#ln16&apos;)" PROPERTY_TAB_ID=""/>
 </item>
-<item historyLabel="BETEW &gt; Make Bet" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv2&apos;)" GRAPHEDITOR_PATH="id(&apos;sv2&apos;)" LOCATIONS="id(&apos;sv2&apos;)" PROPERTY_TAB_ID=""/>
+<item historyLabel="BETEW &gt; Manage Events" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv3&apos;)" GRAPHEDITOR_PATH="id(&apos;sv3&apos;)" LOCATIONS="id(&apos;sv3&apos;)" PROPERTY_TAB_ID=""/>
 </item>
-<item historyLabel="myfirst &gt; Home &gt; Flow7" index="1">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#cru1#ln7&apos;)" PROPERTY_TAB_ID=""/>
-</item>
-<item historyLabel="myfirst &gt; Students &gt; Edit" index="1">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page3#alt2#page5#dau1#ln8&apos;)" PROPERTY_TAB_ID=""/>
-</item>
-<item historyLabel="BETEW &gt; Make Bet" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv2&apos;)" GRAPHEDITOR_PATH="id(&apos;sv2&apos;)" LOCATIONS="id(&apos;sv2&apos;)" PROPERTY_TAB_ID=""/>
-</item>
-<item historyLabel="BETEW &gt; Place bet &gt; Flow14" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv2&apos;)" GRAPHEDITOR_PATH="id(&apos;sv2&apos;)" LOCATIONS="id(&apos;sv2#area1#page1#alt5#page2#dau5#ln14&apos;)" PROPERTY_TAB_ID=""/>
+<item historyLabel="BETEW &gt; Details &gt; Flow17" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv3&apos;)" GRAPHEDITOR_PATH="id(&apos;sv3&apos;)" LOCATIONS="id(&apos;sv3#area3#page12#alt3#page4#dau2#ln17&apos;)" PROPERTY_TAB_ID=""/>
 </item>
 <item historyLabel="BETEW &gt; Home" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv2&apos;)" GRAPHEDITOR_PATH="id(&apos;sv2&apos;)" LOCATIONS="id(&apos;sv2#area1#page1&apos;)" PROPERTY_TAB_ID=""/>
-</item>
-<item historyLabel="BETEW &gt; Make Bet" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv2&apos;)" GRAPHEDITOR_PATH="id(&apos;sv2&apos;)" LOCATIONS="id(&apos;sv2&apos;)" PROPERTY_TAB_ID=""/>
-</item>
-<item historyLabel="BETEW &gt; Place bet &gt; Flow14" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv2&apos;)" GRAPHEDITOR_PATH="id(&apos;sv2&apos;)" LOCATIONS="id(&apos;sv2#area1#page1#alt5#page2#dau5#ln14&apos;)" PROPERTY_TAB_ID=""/>
-</item>
-<item historyLabel="myfirst &gt; Home" index="1">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page3&apos;)" PROPERTY_TAB_ID=""/>
-</item>
-<item historyLabel="myfirst &gt; Students &gt; Edit" index="1">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page3#alt2#page5#dau1#ln8&apos;)" PROPERTY_TAB_ID=""/>
-</item>
-<item historyLabel="BETEW &gt; Home" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv2&apos;)" GRAPHEDITOR_PATH="id(&apos;sv2&apos;)" LOCATIONS="id(&apos;sv2#area1#page1&apos;)" PROPERTY_TAB_ID=""/>
-</item>
-<item historyLabel="BETEW &gt; Place bet &gt; Flow14" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv2&apos;)" GRAPHEDITOR_PATH="id(&apos;sv2&apos;)" LOCATIONS="id(&apos;sv2#area1#page1#alt5#page2#dau5#ln14&apos;)" PROPERTY_TAB_ID=""/>
-</item>
-<item historyLabel="BETEW &gt; Home" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv2&apos;)" GRAPHEDITOR_PATH="id(&apos;sv2&apos;)" LOCATIONS="id(&apos;sv2#area1#page1&apos;)" PROPERTY_TAB_ID=""/>
-</item>
-<item historyLabel="BETEW &gt; Make Bet" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv2&apos;)" GRAPHEDITOR_PATH="id(&apos;sv2&apos;)" LOCATIONS="id(&apos;sv2&apos;)" PROPERTY_TAB_ID=""/>
-</item>
-<item historyLabel="BETEW &gt; Place bet &gt; Flow14" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv2&apos;)" GRAPHEDITOR_PATH="id(&apos;sv2&apos;)" LOCATIONS="id(&apos;sv2#area1#page1#alt5#page2#dau5#ln14&apos;)" PROPERTY_TAB_ID=""/>
-</item>
-<item historyLabel="myfirst &gt; Home" index="1">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page3&apos;)" PROPERTY_TAB_ID=""/>
-</item>
-<item historyLabel="myfirst &gt; Students &gt; Edit" index="1">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page3#alt2#page5#dau1#ln8&apos;)" PROPERTY_TAB_ID=""/>
-</item>
-<item historyLabel="myfirst &gt; Add Students &gt; Student" index="1">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page3#alt2#page6#enu2&apos;)" PROPERTY_TAB_ID=""/>
-</item>
-<item historyLabel="BETEW &gt; Home" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv2&apos;)" GRAPHEDITOR_PATH="id(&apos;sv2&apos;)" LOCATIONS="id(&apos;sv2#area1#page1&apos;)" PROPERTY_TAB_ID=""/>
-</item>
-<item historyLabel="BETEW &gt; Place bet &gt; Place Bet" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv2&apos;)" GRAPHEDITOR_PATH="id(&apos;sv2&apos;)" LOCATIONS="id(&apos;sv2#area1#page1#alt5#page2#enu1#ln3&apos;)" PROPERTY_TAB_ID=""/>
-</item>
-<item historyLabel="BETEW &gt; Home" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv2&apos;)" GRAPHEDITOR_PATH="id(&apos;sv2&apos;)" LOCATIONS="id(&apos;sv2#area1#page1&apos;)" PROPERTY_TAB_ID=""/>
-</item>
-<item historyLabel="BETEW &gt; Place bet &gt; Place Bet" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv2&apos;)" GRAPHEDITOR_PATH="id(&apos;sv2&apos;)" LOCATIONS="id(&apos;sv2#area1#page1#alt5#page2#enu1#ln3&apos;)" PROPERTY_TAB_ID=""/>
-</item>
-<item historyLabel="BETEW &gt; Place bet &gt; Place bet" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv2&apos;)" GRAPHEDITOR_PATH="id(&apos;sv2&apos;)" LOCATIONS="id(&apos;sv2#area1#page1#alt5#page2#enu1&apos;)" PROPERTY_TAB_ID=""/>
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv3&apos;)" GRAPHEDITOR_PATH="id(&apos;sv3&apos;)" LOCATIONS="id(&apos;sv3#area3#page12&apos;)" PROPERTY_TAB_ID=""/>
 </item>
 <item historyLabel="BETEW" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv2&apos;)" GRAPHEDITOR_PATH="id(&apos;sv2&apos;)" LOCATIONS="id(&apos;sv2#area1#page1#alt5#page2#enu1#fld7&apos;)" PROPERTY_TAB_ID=""/>
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv3&apos;)" GRAPHEDITOR_PATH="id(&apos;sv3&apos;)" LOCATIONS="id(&apos;sv3#area3#page12#alt3#page4#dau2#ln17&apos;)" PROPERTY_TAB_ID=""/>
 </item>
 <item historyLabel="BETEW &gt; Home" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv2&apos;)" GRAPHEDITOR_PATH="id(&apos;sv2&apos;)" LOCATIONS="id(&apos;sv2#area1#page1&apos;)" PROPERTY_TAB_ID=""/>
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv3&apos;)" GRAPHEDITOR_PATH="id(&apos;sv3&apos;)" LOCATIONS="id(&apos;sv3#area3#page12&apos;)" PROPERTY_TAB_ID=""/>
 </item>
-<item historyLabel="BETEW &gt; Place bet &gt; Available Bet Type" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv2&apos;)" GRAPHEDITOR_PATH="id(&apos;sv2&apos;)" LOCATIONS="id(&apos;sv2#area1#page1#alt5#page2#dau5&apos;)" PROPERTY_TAB_ID=""/>
-</item>
-<item historyLabel="BETEW &gt; Place bet &gt; Flow14" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv2&apos;)" GRAPHEDITOR_PATH="id(&apos;sv2&apos;)" LOCATIONS="id(&apos;sv2#area1#page1#alt5#page2#dau5#ln14&apos;)" PROPERTY_TAB_ID=""/>
+<item historyLabel="BETEW" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv3&apos;)" GRAPHEDITOR_PATH="id(&apos;sv3&apos;)" LOCATIONS="id(&apos;sv3#area3#page12#alt3#page4#dau2#ln18&apos;)" PROPERTY_TAB_ID=""/>
 </item>
 <item historyLabel="BETEW &gt; Home" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv2&apos;)" GRAPHEDITOR_PATH="id(&apos;sv2&apos;)" LOCATIONS="id(&apos;sv2#area1#page1&apos;)" PROPERTY_TAB_ID=""/>
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv3&apos;)" GRAPHEDITOR_PATH="id(&apos;sv3&apos;)" LOCATIONS="id(&apos;sv3#area3#page12&apos;)" PROPERTY_TAB_ID=""/>
 </item>
-<item historyLabel="BETEW &gt; Place bet &gt; Place bet" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv2&apos;)" GRAPHEDITOR_PATH="id(&apos;sv2&apos;)" LOCATIONS="id(&apos;sv2#area1#page1#alt5#page2#enu1&apos;)" PROPERTY_TAB_ID=""/>
+<item historyLabel="BETEW" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv3&apos;)" GRAPHEDITOR_PATH="id(&apos;sv3&apos;)" LOCATIONS="id(&apos;sv3#area3#page12#alt3#page4#dau2#ln17&apos;)" PROPERTY_TAB_ID=""/>
 </item>
-<item historyLabel="BETEW &gt; Make Bet &gt; add Bet" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv2&apos;)" GRAPHEDITOR_PATH="id(&apos;sv2&apos;)" LOCATIONS="id(&apos;sv2#cru2&apos;)" PROPERTY_TAB_ID=""/>
+<item historyLabel="BETEW &gt; Home" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv3&apos;)" GRAPHEDITOR_PATH="id(&apos;sv3&apos;)" LOCATIONS="id(&apos;sv3#area3#page12&apos;)" PROPERTY_TAB_ID=""/>
 </item>
-<item historyLabel="BETEW &gt; Make Bet &gt; Connect2" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv2&apos;)" GRAPHEDITOR_PATH="id(&apos;sv2&apos;)" LOCATIONS="id(&apos;sv2#cnu2&apos;)" PROPERTY_TAB_ID=""/>
+<item historyLabel="BETEW &gt; Manage Events" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv3&apos;)" GRAPHEDITOR_PATH="id(&apos;sv3&apos;)" LOCATIONS="id(&apos;sv3&apos;)" PROPERTY_TAB_ID=""/>
 </item>
-<item historyLabel="myfirst &gt; Home" index="1">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page3&apos;)" PROPERTY_TAB_ID=""/>
+<item historyLabel="BETEW &gt; Details &gt; Edit" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv3&apos;)" GRAPHEDITOR_PATH="id(&apos;sv3&apos;)" LOCATIONS="id(&apos;sv3#area3#page12#alt3#page4#dau2#ln18&apos;)" PROPERTY_TAB_ID=""/>
 </item>
-<item historyLabel="BETEW &gt; Make Bet &gt; Connect2" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv2&apos;)" GRAPHEDITOR_PATH="id(&apos;sv2&apos;)" LOCATIONS="id(&apos;sv2#cnu2&apos;)" PROPERTY_TAB_ID=""/>
+<item historyLabel="BETEW &gt; Home" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv3&apos;)" GRAPHEDITOR_PATH="id(&apos;sv3&apos;)" LOCATIONS="id(&apos;sv3#area3#page12&apos;)" PROPERTY_TAB_ID=""/>
 </item>
-<item historyLabel="myfirst &gt; Home" index="1">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#area2#page3&apos;)" PROPERTY_TAB_ID=""/>
+<item historyLabel="BETEW &gt; Manage Events" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv3&apos;)" GRAPHEDITOR_PATH="id(&apos;sv3&apos;)" LOCATIONS="id(&apos;sv3&apos;)" PROPERTY_TAB_ID=""/>
 </item>
-<item historyLabel="myfirst &gt; Home &gt; Flow7" index="1">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv1&apos;)" GRAPHEDITOR_PATH="id(&apos;sv1&apos;)" LOCATIONS="id(&apos;sv1#cru1#ln7&apos;)" PROPERTY_TAB_ID=""/>
+<item historyLabel="BETEW &gt; Add Events &gt; Event" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv3&apos;)" GRAPHEDITOR_PATH="id(&apos;sv3&apos;)" LOCATIONS="id(&apos;sv3#area3#page12#alt3#page13#enu5&apos;)" PROPERTY_TAB_ID=""/>
 </item>
-<item historyLabel="BETEW &gt; Make Bet &gt; Connect2" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv2&apos;)" GRAPHEDITOR_PATH="id(&apos;sv2&apos;)" LOCATIONS="id(&apos;sv2#cnu2&apos;)" PROPERTY_TAB_ID=""/>
+<item historyLabel="BETEW" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv3&apos;)" GRAPHEDITOR_PATH="id(&apos;sv3&apos;)" LOCATIONS="id(&apos;sv3#area3#page12#alt3#page13#enu5#ln19&apos;)" PROPERTY_TAB_ID=""/>
 </item>
-<item historyLabel="BETEW &gt; Make Bet &gt; Flow15" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv2&apos;)" GRAPHEDITOR_PATH="id(&apos;sv2&apos;)" LOCATIONS="id(&apos;sv2#cru2#ln15&apos;)" PROPERTY_TAB_ID=""/>
+<item historyLabel="BETEW &gt; Home" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv3&apos;)" GRAPHEDITOR_PATH="id(&apos;sv3&apos;)" LOCATIONS="id(&apos;sv3#area3#page12&apos;)" PROPERTY_TAB_ID=""/>
 </item>
-<item active="true" historyLabel="BETEW &gt; Make Bet" index="0">
-<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv2&apos;)" GRAPHEDITOR_PATH="id(&apos;sv2&apos;)" LOCATIONS="id(&apos;sv2&apos;)" PROPERTY_TAB_ID=""/>
+<item historyLabel="BETEW &gt; Manage Events" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv3&apos;)" GRAPHEDITOR_PATH="id(&apos;sv3&apos;)" LOCATIONS="id(&apos;sv3&apos;)" PROPERTY_TAB_ID=""/>
+</item>
+<item historyLabel="BETEW &gt; Add Events" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv3&apos;)" GRAPHEDITOR_PATH="id(&apos;sv3&apos;)" LOCATIONS="id(&apos;sv3#area3#page12#alt3#page13&apos;)" PROPERTY_TAB_ID=""/>
+</item>
+<item historyLabel="BETEW &gt; Home &gt; Events" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv3&apos;)" GRAPHEDITOR_PATH="id(&apos;sv3&apos;)" LOCATIONS="id(&apos;sv3#area3#page12#alt3&apos;)" PROPERTY_TAB_ID=""/>
+</item>
+<item historyLabel="BETEW &gt; Add Events" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv3&apos;)" GRAPHEDITOR_PATH="id(&apos;sv3&apos;)" LOCATIONS="id(&apos;sv3#area3#page12#alt3#page5&apos;)" PROPERTY_TAB_ID=""/>
+</item>
+<item historyLabel="BETEW &gt; Add Events &gt; Add event" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv3&apos;)" GRAPHEDITOR_PATH="id(&apos;sv3&apos;)" LOCATIONS="id(&apos;sv3#area3#page12#alt3#page5#enu3#ln20&apos;)" PROPERTY_TAB_ID=""/>
+</item>
+<item historyLabel="BETEW &gt; Manage Events" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv3&apos;)" GRAPHEDITOR_PATH="id(&apos;sv3&apos;)" LOCATIONS="id(&apos;sv3&apos;)" PROPERTY_TAB_ID=""/>
+</item>
+<item historyLabel="BETEW &gt; Add Events &gt; Update event" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv3&apos;)" GRAPHEDITOR_PATH="id(&apos;sv3&apos;)" LOCATIONS="id(&apos;sv3#area3#page12#alt3#page13#enu5#ln19&apos;)" PROPERTY_TAB_ID=""/>
+</item>
+<item historyLabel="BETEW &gt; Manage Events" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv3&apos;)" GRAPHEDITOR_PATH="id(&apos;sv3&apos;)" LOCATIONS="id(&apos;sv3&apos;)" PROPERTY_TAB_ID=""/>
+</item>
+<item historyLabel="BETEW &gt; Home &gt; Add" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv3&apos;)" GRAPHEDITOR_PATH="id(&apos;sv3&apos;)" LOCATIONS="id(&apos;sv3#area3#page12#ln24&apos;)" PROPERTY_TAB_ID=""/>
+</item>
+<item historyLabel="BETEW &gt; Manage Events" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv3&apos;)" GRAPHEDITOR_PATH="id(&apos;sv3&apos;)" LOCATIONS="id(&apos;sv3&apos;)" PROPERTY_TAB_ID=""/>
+</item>
+<item historyLabel="BETEW" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv3&apos;)" GRAPHEDITOR_PATH="id(&apos;sv3&apos;)" LOCATIONS="id(&apos;sv3#area3#page12#alt3#page5&apos;)" PROPERTY_TAB_ID=""/>
+</item>
+<item historyLabel="BETEW (3 elements)" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv3&apos;)" GRAPHEDITOR_PATH="id(&apos;sv3&apos;)" LOCATIONS="id(&apos;sv3#area3#page12#alt3#page4#dau2#ln17&apos;)$id(&apos;sv3#area3#page12#alt3&apos;)$id(&apos;sv3#area3#page12#alt3#page4#dau2#ln18&apos;)" PROPERTY_TAB_ID=""/>
+</item>
+<item historyLabel="BETEW &gt; Manage Events" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv3&apos;)" GRAPHEDITOR_PATH="id(&apos;sv3&apos;)" LOCATIONS="id(&apos;sv3&apos;)" PROPERTY_TAB_ID=""/>
+</item>
+<item historyLabel="BETEW &gt; Home &gt; Events" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv3&apos;)" GRAPHEDITOR_PATH="id(&apos;sv3&apos;)" LOCATIONS="id(&apos;sv3#area3#page12#alt3&apos;)" PROPERTY_TAB_ID=""/>
+</item>
+<item historyLabel="BETEW &gt; Details &gt; flow17" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv3&apos;)" GRAPHEDITOR_PATH="id(&apos;sv3&apos;)" LOCATIONS="id(&apos;sv3#area3#page12#alt3#page4#dau2#ln17&apos;)" PROPERTY_TAB_ID=""/>
+</item>
+<item historyLabel="BETEW &gt; Home &gt; Events" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv3&apos;)" GRAPHEDITOR_PATH="id(&apos;sv3&apos;)" LOCATIONS="id(&apos;sv3#area3#page12#alt3&apos;)" PROPERTY_TAB_ID=""/>
+</item>
+<item historyLabel="BETEW &gt; Details &gt; Edit" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv3&apos;)" GRAPHEDITOR_PATH="id(&apos;sv3&apos;)" LOCATIONS="id(&apos;sv3#area3#page12#alt3#page4#dau2#ln18&apos;)" PROPERTY_TAB_ID=""/>
+</item>
+<item historyLabel="BETEW &gt; Manage Events" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv3&apos;)" GRAPHEDITOR_PATH="id(&apos;sv3&apos;)" LOCATIONS="id(&apos;sv3&apos;)" PROPERTY_TAB_ID=""/>
+</item>
+<item historyLabel="BETEW &gt; Details &gt; flow17" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv3&apos;)" GRAPHEDITOR_PATH="id(&apos;sv3&apos;)" LOCATIONS="id(&apos;sv3#area3#page12#alt3#page4#dau2#ln17&apos;)" PROPERTY_TAB_ID=""/>
+</item>
+<item historyLabel="BETEW &gt; Manage Events" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv3&apos;)" GRAPHEDITOR_PATH="id(&apos;sv3&apos;)" LOCATIONS="id(&apos;sv3&apos;)" PROPERTY_TAB_ID=""/>
+</item>
+<item historyLabel="BETEW &gt; Manage Events &gt; Update Event" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv3&apos;)" GRAPHEDITOR_PATH="id(&apos;sv3&apos;)" LOCATIONS="id(&apos;sv3#mfu1&apos;)" PROPERTY_TAB_ID=""/>
+</item>
+<item historyLabel="BETEW" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv3&apos;)" GRAPHEDITOR_PATH="id(&apos;sv3&apos;)" LOCATIONS="id(&apos;sv3#mfu1#oln4&apos;)" PROPERTY_TAB_ID=""/>
+</item>
+<item historyLabel="BETEW &gt; Manage Events &gt; Update Event" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv3&apos;)" GRAPHEDITOR_PATH="id(&apos;sv3&apos;)" LOCATIONS="id(&apos;sv3#mfu1&apos;)" PROPERTY_TAB_ID=""/>
+</item>
+<item historyLabel="BETEW" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv3&apos;)" GRAPHEDITOR_PATH="id(&apos;sv3&apos;)" LOCATIONS="id(&apos;sv3#mfu1#kln4&apos;)" PROPERTY_TAB_ID=""/>
+</item>
+<item historyLabel="BETEW &gt; Home &gt; Events" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv3&apos;)" GRAPHEDITOR_PATH="id(&apos;sv3&apos;)" LOCATIONS="id(&apos;sv3#area3#page12#alt3&apos;)" PROPERTY_TAB_ID=""/>
+</item>
+<item historyLabel="BETEW &gt; Manage Events" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv3&apos;)" GRAPHEDITOR_PATH="id(&apos;sv3&apos;)" LOCATIONS="id(&apos;sv3&apos;)" PROPERTY_TAB_ID=""/>
+</item>
+<item active="true" historyLabel="BETEW &gt; Update Event &gt; Event" index="0">
+<position CLIENTAREA_GRAPHINFO="" GRAPHEDITOR_INPUT_PATH="id(&apos;sv3&apos;)" GRAPHEDITOR_PATH="id(&apos;sv3&apos;)" LOCATIONS="id(&apos;sv3#area3#page12#alt3#page5#enu3&apos;)" PROPERTY_TAB_ID=""/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
