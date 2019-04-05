@@ -1,5 +1,0 @@
-<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv1" name="List events" landmarks="sv1#area2" homePage="sv1#area2#page7">
-  <OperationUnits>
-    <CreateUnit gr:x="125" gr:y="365" id="sv1#cru1" name="Add event" entity="ent3"/>
-  </OperationUnits>
-</SiteView>
