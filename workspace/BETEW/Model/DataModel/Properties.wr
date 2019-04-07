@@ -48,7 +48,8 @@
       <db:JoinColumn attribute="moduleOID" name="module_oid"/>
     </RelationshipRole2>
   </Relationship>
-  <db:Database id="db1" name="Database" type="MySQL" url="jdbc:mysql://localhost:3306/bettingwebapp" username="userEW" password="userEW23" connectionCount="5"/>
+  <db:Database id="db1" name="Database" type="MySQL" url="jdbc:mysql://localhost:3306/bettingwebapp" username="userEW" password="userEW23" connectionCount="5">
+  </db:Database>
   <Entity gr:x="375" gr:y="300" id="ent1" name="Bet" duration="persistent" attributeOrder="ent1#att1 ent1#att10" db:database="db1" db:table="bet">
     <Attribute id="ent1#att1" key="true" name="oid" type="integer" db:column="oid"/>
     <Attribute id="ent1#att10" name="wager" type="float" db:column="wager"/>
@@ -59,7 +60,7 @@
     <Attribute id="ent2#att13" name="Odd" type="float" key="false" db:column="odd"/>
   </Entity>
   <Entity gr:x="365" gr:y="5" id="ent3" name="Event" duration="persistent" attributeOrder="ent3#att3 ent3#att18 ent3#att17 ent3#att4 ent3#att14 ent3#att15 ent3#att16" db:database="db1" db:table="event">
-    <Attribute id="ent3#att3" key="true" name="oid" type="integer" db:column="oid"/>
+    <Attribute id="ent3#att3" key="true" name="Event_oid" type="integer" db:column="oid"/>
     <Attribute id="ent3#att16" name="finishingDate" type="date" db:column="finishingdate"/>
     <Attribute id="ent3#att15" name="startingDate" type="date" db:column="startingdate"/>
     <Attribute id="ent3#att14" name="creationDate" type="date" db:column="creationdate"/>
@@ -67,8 +68,9 @@
     <Attribute id="ent3#att17" name="description" type="string" db:column="description"/>
     <Attribute id="ent3#att18" name="name" type="string" db:column="name"/>
   </Entity>
-  <Entity gr:x="800" gr:y="10" id="ent5" name="Sport" duration="persistent" db:database="db1" db:table="sport">
+  <Entity gr:x="800" gr:y="10" id="ent5" name="Sport" duration="persistent" db:database="db1" db:table="sport" attributeOrder="ent5#att5 ent5#att11">
     <Attribute id="ent5#att5" key="true" name="oid" type="integer" db:column="oid"/>
+    <Attribute id="ent5#att11" name="name" type="string" db:column="name_2"/>
   </Entity>
   <Entity gr:x="795" gr:y="375" id="ent6" name="BetType" duration="persistent" db:database="db1" db:table="bettype" attributeOrder="ent6#att6 ent6#att12">
     <Attribute id="ent6#att6" key="true" name="oid" type="integer" db:column="oid"/>

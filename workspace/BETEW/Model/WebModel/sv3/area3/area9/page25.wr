@@ -1,0 +1,261 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv3#area3#area9#page25" name="Bet Types">
+  <ContentUnits/>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:SubPage pageId="sv3#area3#area9#page25#alt6#page27">
+          <layout:Grid containerType="grid">
+            <layout:Row>
+              <layout:Cell colspan="12"/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+            </layout:Row>
+            <layout:Row>
+              <layout:Cell colspan="12"/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+            </layout:Row>
+          </layout:Grid>
+        </layout:SubPage>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#area3#area9#page25#alt6#page27#dau9">
+          <layout:Attribute attribute="ent3#att18"/>
+          <layout:Attribute attribute="ent3#att17"/>
+          <layout:Attribute attribute="ent3#att4"/>
+          <layout:Attribute attribute="ent3#att14"/>
+          <layout:Attribute attribute="ent3#att15"/>
+          <layout:Attribute attribute="ent3#att16"/>
+          <layout:Link link="sv3#area3#area9#page25#alt6#page27#dau9#ln22"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:SubPage pageId="sv3#area3#area9#page25#alt6#page28">
+          <layout:Grid containerType="grid">
+            <layout:Row>
+              <layout:Cell colspan="12">
+                <layout:Unit unitId="sv3#area3#area9#page25#alt6#page28#inu4">
+                  <layout:Attribute attribute="ent6#att12"/>
+                  <layout:Link link="sv3#area3#area9#page25#alt6#page28#inu4#ln24"/>
+                </layout:Unit>
+              </layout:Cell>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+            </layout:Row>
+            <layout:Row>
+              <layout:Cell colspan="12">
+                <layout:SubPage pageId="sv3#area3#area9#page25#alt6#page28#page5">
+                  <layout:Grid containerType="grid">
+                    <layout:Row>
+                      <layout:Cell colspan="12">
+                        <layout:Unit unitId="sv3#area3#area9#page25#alt6#page28#page5#dau6">
+                          <layout:Attribute attribute="ent6#att6"/>
+                          <layout:Attribute attribute="ent6#att12"/>
+                          <layout:Link link="sv3#area3#area9#page25#alt6#page28#page5#dau6#ln26"/>
+                        </layout:Unit>
+                      </layout:Cell>
+                      <layout:Cell/>
+                      <layout:Cell/>
+                      <layout:Cell/>
+                      <layout:Cell/>
+                      <layout:Cell/>
+                      <layout:Cell/>
+                      <layout:Cell/>
+                      <layout:Cell/>
+                      <layout:Cell/>
+                      <layout:Cell/>
+                      <layout:Cell/>
+                    </layout:Row>
+                  </layout:Grid>
+                </layout:SubPage>
+              </layout:Cell>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+            </layout:Row>
+          </layout:Grid>
+        </layout:SubPage>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#area3#area9#page25#alt6#page28#page5#enu3">
+          <layout:Field field="sv3#area3#area9#page25#alt6#page28#page5#enu3#fld1"/>
+          <layout:Link link="sv3#area3#area9#page25#alt6#page28#page5#enu3#ln27"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <Alternative gr:x="0" gr:y="0" id="sv3#area3#area9#page25#alt6" name="Bet Types" defaultPage="sv3#area3#area9#page25#alt6#page27">
+    <Page gr:x="0" gr:y="0" id="sv3#area3#area9#page25#alt6#page27" name="Choose Event">
+      <ContentUnits>
+        <DataUnit id="sv3#area3#area9#page25#alt6#page27#dau9" name="Event" gr:x="0" gr:y="0" entity="ent3" displayAll="true" linkOrder="sv3#area3#area9#page25#alt6#page27#dau9#ln22">
+          <Selector id="sv3#area3#area9#page25#alt6#page27#dau9#su12" defaultPolicy="fill" booleanOperator="and">
+            <KeyCondition id="sv3#area3#area9#page25#alt6#page27#dau9#su12#kcond11" name="KeyCondition9" predicate="in" implied="false"/>
+          </Selector>
+          <Link id="sv3#area3#area9#page25#alt6#page27#dau9#ln22" name="Add Bet Type" to="sv3#area3#area9#page25#alt6#page28#inu4" type="normal" validate="true">
+            <LinkParameter id="sv3#area3#area9#page25#alt6#page27#dau9#ln22#par3" name="oid_PASSING" source="data.ent3#att3" passing="true"/>
+          </Link>
+          <Link id="sv3#area3#area9#page25#alt6#page27#dau9#ln29" name="Flow23" to="sv3#area3#area9#page25#alt6#page28#inu4" type="transport" validate="true" gr:bendpoints="88,10,-197,25">
+            <LinkParameter id="sv3#area3#area9#page25#alt6#page27#dau9#ln29#par39" name="oid_PASSING" source="data.ent3#att3" passing="true"/>
+          </Link>
+        </DataUnit>
+      </ContentUnits>
+    </Page>
+    <Page gr:x="195" gr:y="0" id="sv3#area3#area9#page25#alt6#page28" name="Place Bet Type">
+      <ContentUnits>
+        <IndexUnit gr:x="65" gr:y="0" id="sv3#area3#area9#page25#alt6#page28#inu4" name="Bet Types" entity="ent6" displayAttributes="ent6#att12" linkOrder="sv3#area3#area9#page25#alt6#page28#inu4#ln24">
+          <Link id="sv3#area3#area9#page25#alt6#page28#inu4#ln23" name="Flow23" to="sv3#area3#area9#page25#alt6#page28#page5#dau6" type="transport" validate="true">
+            <LinkParameter id="sv3#area3#area9#page25#alt6#page28#inu4#ln23#par4" name="oid_PASSING" source="data[].ent6#att6" passing="true"/>
+          </Link>
+          <Link id="sv3#area3#area9#page25#alt6#page28#inu4#ln24" name="Flow24" to="sv3#area3#area9#page25#alt6#page28#page5#dau6" type="normal" validate="true" gr:bendpoints="-1,65,-31,-65">
+            <LinkParameter id="sv3#area3#area9#page25#alt6#page28#inu4#ln24#par51" name="oid_KeyCondition4 [oid]" source="data[].ent6#att6" target="sv3#area3#area9#page25#alt6#page28#page5#dau6#su7#kcond4.ent6#att6"/>
+            <LinkParameter id="sv3#area3#area9#page25#alt6#page28#inu4#ln24#par53" name="oid_PASSING" source="data[].ent6#att6" passing="true"/>
+            <LinkParameter id="sv3#area3#area9#page25#alt6#page28#inu4#ln24#par54" name="oid_PASSING" sourceLinkParameter="sv3#area3#area9#page25#alt6#page27#dau9#ln22#par3" passing="true"/>
+            <LinkParameter id="sv3#area3#area9#page25#alt6#page28#inu4#ln24#par55" name="oid_PASSING" sourceLinkParameter="sv3#area3#area9#page25#alt6#page27#dau9#ln29#par39" passing="true"/>
+          </Link>
+        </IndexUnit>
+      </ContentUnits>
+      <Page gr:x="0" gr:y="140" id="sv3#area3#area9#page25#alt6#page28#page5" name="Place Bet Type">
+        <ContentUnits>
+          <EntryUnit id="sv3#area3#area9#page25#alt6#page28#page5#enu3" name="Place Bet Type" linkOrder="sv3#area3#area9#page25#alt6#page28#page5#enu3#ln27" gr:x="120" gr:y="5" entity="ent2">
+            <Field id="sv3#area3#area9#page25#alt6#page28#page5#enu3#fld1" name="Odd" type="float" modifiable="true" attribute="ent2#att13"/>
+            <Link id="sv3#area3#area9#page25#alt6#page28#page5#enu3#ln27" name="Add" to="sv3#cru5" type="normal" validate="true">
+              <LinkParameter id="sv3#area3#area9#page25#alt6#page28#page5#enu3#ln27#par5" name="AvailableBetTypes Object_AvailableBetTypes Object" source="entityBean" target="sv3#cru5.entityBeans"/>
+              <LinkParameter id="sv3#area3#area9#page25#alt6#page28#page5#enu3#ln27#par6" name="Odd_Odd" source="sv3#area3#area9#page25#alt6#page28#page5#enu3#fld1" target="sv3#cru5.ent2#att13"/>
+              <LinkParameter id="sv3#area3#area9#page25#alt6#page28#page5#enu3#ln27#par7" name="Key [oid]_oid" source="key.ent2#att2" target="sv3#cru5.ent2#att2"/>
+              <LinkParameter id="sv3#area3#area9#page25#alt6#page28#page5#enu3#ln27#par40" name="oid_PASSING_BetType.oid(AvailableBetTypesToBetType)" sourceLinkParameter="sv3#area3#area9#page25#alt6#page28#page5#dau6#ln26#par8" target="sv3#cru5.rel19#role38.ent6#att6"/>
+              <LinkParameter id="sv3#area3#area9#page25#alt6#page28#page5#enu3#ln27#par41" name="oid_PASSING_Event.oid(AvailableBetTypesToEvent)" sourceLinkParameter="sv3#area3#area9#page25#alt6#page28#page5#dau6#ln26#par58" target="sv3#cru5.rel20#role39.ent3#att3"/>
+              <LinkParameter id="sv3#area3#area9#page25#alt6#page28#page5#enu3#ln27#par42" name="oid_PASSING" sourceLinkParameter="sv3#area3#area9#page25#alt6#page28#page5#dau6#ln26#par8" passing="true"/>
+              <LinkParameter id="sv3#area3#area9#page25#alt6#page28#page5#enu3#ln27#par43" name="oid_PASSING" sourceLinkParameter="sv3#area3#area9#page25#alt6#page28#page5#dau6#ln26#par35" passing="true"/>
+            </Link>
+          </EntryUnit>
+          <DataUnit gr:x="0" gr:y="0" id="sv3#area3#area9#page25#alt6#page28#page5#dau6" name="Bet Type" entity="ent6" displayAttributes="ent6#att6 ent6#att12" linkOrder="sv3#area3#area9#page25#alt6#page28#page5#dau6#ln26">
+            <Selector id="sv3#area3#area9#page25#alt6#page28#page5#dau6#su7" defaultPolicy="fill" booleanOperator="and">
+              <KeyCondition id="sv3#area3#area9#page25#alt6#page28#page5#dau6#su7#kcond4" name="KeyCondition4" predicate="in" implied="false"/>
+            </Selector>
+            <Link id="sv3#area3#area9#page25#alt6#page28#page5#dau6#ln26" name="Flow26" to="sv3#area3#area9#page25#alt6#page28#page5#enu3" type="normal" validate="true">
+              <LinkParameter id="sv3#area3#area9#page25#alt6#page28#page5#dau6#ln26#par8" name="oid_PASSING" source="data.ent6#att6" passing="true"/>
+              <LinkParameter id="sv3#area3#area9#page25#alt6#page28#page5#dau6#ln26#par35" name="oid_PASSING" sourceLinkParameter="sv3#area3#area9#page25#alt6#page28#inu4#ln23#par4" passing="true"/>
+              <LinkParameter id="sv3#area3#area9#page25#alt6#page28#page5#dau6#ln26#par56" name="oid_PASSING" sourceLinkParameter="sv3#area3#area9#page25#alt6#page28#inu4#ln24#par53" passing="true"/>
+              <LinkParameter id="sv3#area3#area9#page25#alt6#page28#page5#dau6#ln26#par57" name="oid_PASSING" sourceLinkParameter="sv3#area3#area9#page25#alt6#page28#inu4#ln24#par54" passing="true"/>
+              <LinkParameter id="sv3#area3#area9#page25#alt6#page28#page5#dau6#ln26#par58" name="oid_PASSING" sourceLinkParameter="sv3#area3#area9#page25#alt6#page28#inu4#ln24#par55" passing="true"/>
+            </Link>
+            <Link id="sv3#area3#area9#page25#alt6#page28#page5#dau6#ln28" name="Flow28" to="sv3#area3#area9#page25#alt6#page28#page5#enu3" type="transport" validate="true" gr:bendpoints="53,41,-87,41"/>
+          </DataUnit>
+        </ContentUnits>
+      </Page>
+    </Page>
+  </Alternative>
+</Page>

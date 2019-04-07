@@ -5,12 +5,12 @@
 	<section name="DBSyncPlugin">
 	</section>
 	<section name="WR5ImportProjectWizard">
-		<item value="/home/luis/Documentos/UMinho/2º semestre/EW/EW/workspace/EW" key="SOURCE_DIR"/>
+		<item value="/home/luis/Documentos/UMinho/2º semestre/EW/EW/workspace/BETEW" key="SOURCE_DIR"/>
 	</section>
 	<section name="DialogBounds_CouplingDialog">
 		<item value="684" key="DIALOG_WIDTH"/>
-		<item value="38" key="DIALOG_Y_ORIGIN"/>
-		<item value="665" key="DIALOG_HEIGHT"/>
+		<item value="32" key="DIALOG_Y_ORIGIN"/>
+		<item value="677" key="DIALOG_HEIGHT"/>
 		<item value="318" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 	</section>

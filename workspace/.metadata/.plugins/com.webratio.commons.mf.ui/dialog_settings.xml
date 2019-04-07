@@ -3,22 +3,22 @@
 	<section name="com.webratio.ide.ui.dialogs.EditEntryUnitDialog">
 		<item value="1321" key="DIALOG_WIDTH"/>
 		<item value="0" key="DIALOG_Y_ORIGIN"/>
-		<item value="741" key="DIALOG_HEIGHT"/>
 		<item value="0" key="DIALOG_X_ORIGIN"/>
+		<item value="741" key="DIALOG_HEIGHT"/>
 		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="com.webratio.ide.ui.dialogs.EditEntityDialog">
 		<item value="896" key="DIALOG_WIDTH"/>
 		<item value="0" key="DIALOG_Y_ORIGIN"/>
-		<item value="741" key="DIALOG_HEIGHT"/>
 		<item value="212" key="DIALOG_X_ORIGIN"/>
+		<item value="741" key="DIALOG_HEIGHT"/>
 		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="com.webratio.ide.ui.dialogs.EditSlotsDialog">
 		<item value="735" key="DIALOG_WIDTH"/>
 		<item value="212" key="DIALOG_Y_ORIGIN"/>
-		<item value="293" key="DIALOG_X_ORIGIN"/>
 		<item value="317" key="DIALOG_HEIGHT"/>
+		<item value="293" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="com.webratio.ide.ui.properties.items.EntityPropertyItem$2.DialogSettings">

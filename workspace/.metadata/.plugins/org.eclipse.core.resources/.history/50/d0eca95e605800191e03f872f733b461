@@ -1,0 +1,8 @@
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv3" name="Manage Events" landmarks="sv3#area3">
+  <OperationUnits>
+    <CreateUnit id="sv3#cru3" name="Add event" gr:x="450" gr:y="-5" entity="ent3">
+      <KOLink id="sv3#cru3#kln6" name="KOFlow2" to="sv3#area3#area5#page12#enu5" automaticCoupling="true"/>
+      <OKLink id="sv3#cru3#oln8" name="OKFlow1" to="sv3#area3#area6#page16#inu5" automaticCoupling="true"/>
+    </CreateUnit>
+  </OperationUnits>
+</SiteView>
