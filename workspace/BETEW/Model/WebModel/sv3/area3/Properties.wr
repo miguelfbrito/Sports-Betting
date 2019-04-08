@@ -1,9 +1,11 @@
-<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="-135" gr:y="-325" id="sv3#area3" name="Manage Events" landmark="true" landmarks="sv3#area3#area5 sv3#area3#area6" defaultPage="sv3#area3#dlu2">
+<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="-115" gr:y="-265" id="sv3#area3" name="Manage Events" landmark="true" landmarks="sv3#area3#area9 sv3#area3#area12" defaultPage="sv3#area3#dlu2">
   <OperationUnits>
-    <DeleteUnit gr:x="1055" gr:y="615" id="sv3#area3#dlu2" name="Delete Bet Type">
+    <DeleteUnit gr:x="1325" gr:y="500" id="sv3#area3#dlu2" name="Delete Bet Type" entity="ent2">
       <Selector id="sv3#area3#dlu2#su13" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv3#area3#dlu2#su13#kcond10" name="KeyCondition10" predicate="in" implied="false"/>
       </Selector>
+      <OKLink id="sv3#area3#dlu2#oln12" name="OKFlow10" to="sv3#area3#area9#area11#page30#alt8#page33#inu11" automaticCoupling="true" gr:bendpoints="-123,-97,102,118"/>
+      <KOLink id="sv3#area3#dlu2#kln10" name="KOFlow9" to="sv3#area3#area9#area11#page30#alt8#page33#inu11" automaticCoupling="true" gr:bendpoints="-103,-119,122,96"/>
     </DeleteUnit>
   </OperationUnits>
 </Area>

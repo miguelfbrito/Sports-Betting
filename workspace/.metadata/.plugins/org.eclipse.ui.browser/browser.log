@@ -361,3 +361,36 @@ Abr 07, 2019 13:36:34.15 [Parent 31620, Gecko_IOThread] WARNING: pipe error (88)
 Abr 07, 2019 13:43:36.15 [Parent 5427, Gecko_IOThread] WARNING: pipe error (146): Ligação terminada no destino: file /build/firefox-QFhmDU/firefox-66.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
 Abr 07, 2019 13:43:52.73 [Parent 5427, Gecko_IOThread] WARNING: pipe error (66): Ligação terminada no destino: file /build/firefox-QFhmDU/firefox-66.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
 Abr 07, 2019 13:43:52.73 [Parent 5427, Gecko_IOThread] WARNING: pipe error (111): Ligação terminada no destino: file /build/firefox-QFhmDU/firefox-66.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Abr 08, 2019 11:16:14.23 [Parent 7264, Gecko_IOThread] WARNING: pipe error (125): Ligação terminada no destino: file /build/firefox-QFhmDU/firefox-66.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Abr 08, 2019 11:23:07.14 [Parent 7264, Gecko_IOThread] WARNING: pipe error (72): Ligação terminada no destino: file /build/firefox-QFhmDU/firefox-66.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Abr 08, 2019 11:36:44.31 [Parent 7264, Gecko_IOThread] WARNING: pipe error (125): Ligação terminada no destino: file /build/firefox-QFhmDU/firefox-66.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Abr 08, 2019 11:36:45.42 [Parent 7264, Gecko_IOThread] WARNING: pipe error (60): Ligação terminada no destino: file /build/firefox-QFhmDU/firefox-66.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Abr 08, 2019 11:36:46.26 [Parent 7264, Gecko_IOThread] WARNING: pipe error (119): Ligação terminada no destino: file /build/firefox-QFhmDU/firefox-66.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Abr 08, 2019 11:36:56.05 [Parent 7264, Gecko_IOThread] WARNING: pipe error (141): Ligação terminada no destino: file /build/firefox-QFhmDU/firefox-66.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Abr 08, 2019 11:36:56.07 [Parent 7264, Gecko_IOThread] WARNING: pipe error (112): Ligação terminada no destino: file /build/firefox-QFhmDU/firefox-66.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+
+Abr 08, 2019 11:42:05.71 NEW SESSION
+Abr 08, 2019 11:42:05.71 [Parent 10061, Gecko_IOThread] WARNING: pipe error (116): Ligação terminada no destino: file /build/firefox-QFhmDU/firefox-66.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Abr 08, 2019 11:45:10.69 [Parent 10061, Gecko_IOThread] WARNING: pipe error (69): Ligação terminada no destino: file /build/firefox-QFhmDU/firefox-66.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Abr 08, 2019 11:45:11.13 [Parent 10061, Gecko_IOThread] WARNING: pipe error (66): Ligação terminada no destino: file /build/firefox-QFhmDU/firefox-66.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Abr 08, 2019 11:45:20.59 [Parent 10061, Gecko_IOThread] WARNING: pipe error (101): Ligação terminada no destino: file /build/firefox-QFhmDU/firefox-66.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Abr 08, 2019 11:45:20.60 [Parent 10061, Gecko_IOThread] WARNING: pipe error (116): Ligação terminada no destino: file /build/firefox-QFhmDU/firefox-66.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+
+Abr 08, 2019 11:50:43.90 NEW SESSION
+Abr 08, 2019 11:50:43.90 [Parent 11636, Gecko_IOThread] WARNING: pipe error (127): Ligação terminada no destino: file /build/firefox-QFhmDU/firefox-66.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Abr 08, 2019 11:50:43.90 [Parent 11636, Gecko_IOThread] WARNING: pipe error (153): Ligação terminada no destino: file /build/firefox-QFhmDU/firefox-66.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Abr 08, 2019 11:50:43.90 [Parent 11636, Gecko_IOThread] WARNING: pipe error (61): Ligação terminada no destino: file /build/firefox-QFhmDU/firefox-66.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Abr 08, 2019 11:50:43.90 [Parent 11636, Gecko_IOThread] WARNING: pipe error (111): Ligação terminada no destino: file /build/firefox-QFhmDU/firefox-66.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+
+Abr 08, 2019 15:11:02.05 NEW SESSION
+Abr 08, 2019 15:11:02.05 [Parent 3419, Gecko_IOThread] WARNING: pipe error (56): Ligação terminada no destino: file /build/firefox-QFhmDU/firefox-66.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Abr 08, 2019 15:13:34.55 [Parent 3419, Gecko_IOThread] WARNING: pipe error (113): Ligação terminada no destino: file /build/firefox-QFhmDU/firefox-66.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Abr 08, 2019 15:13:34.56 [Parent 3419, Gecko_IOThread] WARNING: pipe error (90): Ligação terminada no destino: file /build/firefox-QFhmDU/firefox-66.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Abr 08, 2019 15:13:34.56 [Parent 3419, Gecko_IOThread] WARNING: pipe error (64): Ligação terminada no destino: file /build/firefox-QFhmDU/firefox-66.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+
+Abr 08, 2019 15:18:01.41 NEW SESSION
+Abr 08, 2019 15:18:01.41 [Parent 4695, Gecko_IOThread] WARNING: pipe error (84): Ligação terminada no destino: file /build/firefox-QFhmDU/firefox-66.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Abr 08, 2019 15:18:48.76 [Parent 4695, Gecko_IOThread] WARNING: pipe error (82): Ligação terminada no destino: file /build/firefox-QFhmDU/firefox-66.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Abr 08, 2019 15:19:09.76 [Parent 4695, Gecko_IOThread] WARNING: pipe error (67): Ligação terminada no destino: file /build/firefox-QFhmDU/firefox-66.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Abr 08, 2019 15:21:18.61 [Parent 4695, Gecko_IOThread] WARNING: pipe error (156): Ligação terminada no destino: file /build/firefox-QFhmDU/firefox-66.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Abr 08, 2019 15:28:47.61 [Parent 4695, Gecko_IOThread] WARNING: pipe error (96): Ligação terminada no destino: file /build/firefox-QFhmDU/firefox-66.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357

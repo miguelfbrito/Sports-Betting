@@ -1,0 +1,176 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv3#area3#area12#area14#page38" name="Add New Event" gr:x="0" gr:y="0">
+  <ContentUnits/>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:SubPage pageId="sv3#area3#area12#area14#page38#alt10#page39">
+          <layout:Grid containerType="grid">
+            <layout:Row>
+              <layout:Cell colspan="12">
+                <layout:Unit unitId="sv3#area3#area12#area14#page38#alt10#page39#inu13">
+                  <layout:Attribute attribute="ent5#att5"/>
+                  <layout:Attribute attribute="ent5#att11"/>
+                  <layout:Link link="sv3#area3#area12#area14#page38#alt10#page39#inu13#ln58"/>
+                </layout:Unit>
+              </layout:Cell>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+            </layout:Row>
+          </layout:Grid>
+        </layout:SubPage>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:SubPage pageId="sv3#area3#area12#area14#page38#alt10#page40">
+          <layout:Grid containerType="grid">
+            <layout:Row>
+              <layout:Cell colspan="12">
+                <layout:Unit unitId="sv3#area3#area12#area14#page38#alt10#page40#dau15">
+                  <layout:Attribute attribute="ent5#att5"/>
+                  <layout:Attribute attribute="ent5#att11"/>
+                </layout:Unit>
+              </layout:Cell>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+            </layout:Row>
+            <layout:Row>
+              <layout:Cell colspan="12"/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+            </layout:Row>
+          </layout:Grid>
+        </layout:SubPage>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#area3#area12#area14#page38#alt10#page40#enu9">
+          <layout:Field field="sv3#area3#area12#area14#page38#alt10#page40#enu9#fld13"/>
+          <layout:Field field="sv3#area3#area12#area14#page38#alt10#page40#enu9#fld18"/>
+          <layout:Field field="sv3#area3#area12#area14#page38#alt10#page40#enu9#fld14"/>
+          <layout:Field field="sv3#area3#area12#area14#page38#alt10#page40#enu9#fld17"/>
+          <layout:Field field="sv3#area3#area12#area14#page38#alt10#page40#enu9#fld16"/>
+          <layout:Field field="sv3#area3#area12#area14#page38#alt10#page40#enu9#fld15"/>
+          <layout:Link link="sv3#area3#area12#area14#page38#alt10#page40#enu9#ln60"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <Alternative id="sv3#area3#area12#area14#page38#alt10" name="Add New Event" defaultPage="sv3#area3#area12#area14#page38#alt10#page39" gr:x="0" gr:y="0">
+    <Page id="sv3#area3#area12#area14#page38#alt10#page39" name="Sport" gr:x="0" gr:y="5">
+      <ContentUnits>
+        <IndexUnit id="sv3#area3#area12#area14#page38#alt10#page39#inu13" name="Sport" linkOrder="sv3#area3#area12#area14#page38#alt10#page39#inu13#ln58" gr:x="0" gr:y="0" entity="ent5" displayAttributes="ent5#att5 ent5#att11">
+          <Link id="sv3#area3#area12#area14#page38#alt10#page39#inu13#ln58" name="Select" to="sv3#area3#area12#area14#page38#alt10#page40#dau15" type="normal" automaticCoupling="true" validate="true"/>
+          <Link id="sv3#area3#area12#area14#page38#alt10#page39#inu13#ln59" name="Flow15" to="sv3#area3#area12#area14#page38#alt10#page40#dau15" type="transport" validate="true" gr:bendpoints="74,17,-81,12"/>
+        </IndexUnit>
+      </ContentUnits>
+    </Page>
+    <Page id="sv3#area3#area12#area14#page38#alt10#page40" name="Add New Event" gr:x="150" gr:y="0">
+      <ContentUnits>
+        <EntryUnit id="sv3#area3#area12#area14#page38#alt10#page40#enu9" name="Event" linkOrder="sv3#area3#area12#area14#page38#alt10#page40#enu9#ln60" gr:x="145" gr:y="5" entity="ent3" fieldOrder="sv3#area3#area12#area14#page38#alt10#page40#enu9#fld13 sv3#area3#area12#area14#page38#alt10#page40#enu9#fld18 sv3#area3#area12#area14#page38#alt10#page40#enu9#fld14 sv3#area3#area12#area14#page38#alt10#page40#enu9#fld17 sv3#area3#area12#area14#page38#alt10#page40#enu9#fld16 sv3#area3#area12#area14#page38#alt10#page40#enu9#fld15">
+          <Field id="sv3#area3#area12#area14#page38#alt10#page40#enu9#fld13" name="name" type="string" modifiable="true" attribute="ent3#att18"/>
+          <Field id="sv3#area3#area12#area14#page38#alt10#page40#enu9#fld14" name="isPremium" type="boolean" modifiable="true" attribute="ent3#att4"/>
+          <Field id="sv3#area3#area12#area14#page38#alt10#page40#enu9#fld15" name="Finishing Date" type="date" modifiable="true" attribute="ent3#att16"/>
+          <Field id="sv3#area3#area12#area14#page38#alt10#page40#enu9#fld16" name="Starting Date" type="date" modifiable="true" attribute="ent3#att15"/>
+          <Field id="sv3#area3#area12#area14#page38#alt10#page40#enu9#fld17" name="Creation Date" type="date" modifiable="true" attribute="ent3#att14"/>
+          <Field id="sv3#area3#area12#area14#page38#alt10#page40#enu9#fld18" name="Description" type="string" modifiable="true" attribute="ent3#att17"/>
+          <Link id="sv3#area3#area12#area14#page38#alt10#page40#enu9#ln60" name="Add Event" to="sv3#cru3" type="normal" validate="true">
+            <LinkParameter id="sv3#area3#area12#area14#page38#alt10#page40#enu9#ln60#par105" name="Creation Date_creationDate" source="sv3#area3#area12#area14#page38#alt10#page40#enu9#fld17" target="sv3#cru3.ent3#att14"/>
+            <LinkParameter id="sv3#area3#area12#area14#page38#alt10#page40#enu9#ln60#par106" name="Description_description" source="sv3#area3#area12#area14#page38#alt10#page40#enu9#fld18" target="sv3#cru3.ent3#att17"/>
+            <LinkParameter id="sv3#area3#area12#area14#page38#alt10#page40#enu9#ln60#par107" name="Event Object_Event Object" source="entityBean" target="sv3#cru3.entityBeans"/>
+            <LinkParameter id="sv3#area3#area12#area14#page38#alt10#page40#enu9#ln60#par108" name="Finishing Date_finishingDate" source="sv3#area3#area12#area14#page38#alt10#page40#enu9#fld15" target="sv3#cru3.ent3#att16"/>
+            <LinkParameter id="sv3#area3#area12#area14#page38#alt10#page40#enu9#ln60#par109" name="isPremium_isPremium" source="sv3#area3#area12#area14#page38#alt10#page40#enu9#fld14" target="sv3#cru3.ent3#att4"/>
+            <LinkParameter id="sv3#area3#area12#area14#page38#alt10#page40#enu9#ln60#par110" name="name_name" source="sv3#area3#area12#area14#page38#alt10#page40#enu9#fld13" target="sv3#cru3.ent3#att18"/>
+            <LinkParameter id="sv3#area3#area12#area14#page38#alt10#page40#enu9#ln60#par111" name="Key [oid]_oid" source="key.ent3#att3" target="sv3#cru3.ent3#att3"/>
+            <LinkParameter id="sv3#area3#area12#area14#page38#alt10#page40#enu9#ln60#par112" name="Starting Date_startingDate" source="sv3#area3#area12#area14#page38#alt10#page40#enu9#fld16" target="sv3#cru3.ent3#att15"/>
+            <LinkParameter id="sv3#area3#area12#area14#page38#alt10#page40#enu9#ln60#par113" name="oid_PASSING_Sport.oid(EventToSport)" sourceLinkParameter="sv3#area3#area12#area14#page38#alt10#page40#dau15#ln61#par114" target="sv3#cru3.rel22#role44.ent5#att5"/>
+          </Link>
+        </EntryUnit>
+        <DataUnit id="sv3#area3#area12#area14#page38#alt10#page40#dau15" name="Sport" gr:x="0" gr:y="0" entity="ent5" displayAttributes="ent5#att5 ent5#att11">
+          <Selector id="sv3#area3#area12#area14#page38#alt10#page40#dau15#su20" defaultPolicy="fill" booleanOperator="and">
+            <KeyCondition id="sv3#area3#area12#area14#page38#alt10#page40#dau15#su20#kcond18" name="KeyCondition2" predicate="in" implied="false"/>
+          </Selector>
+          <Link id="sv3#area3#area12#area14#page38#alt10#page40#dau15#ln61" name="Flow21" to="sv3#area3#area12#area14#page38#alt10#page40#enu9" type="transport" validate="true">
+            <LinkParameter id="sv3#area3#area12#area14#page38#alt10#page40#dau15#ln61#par114" name="oid_PASSING" source="data.ent5#att5" passing="true"/>
+            <LinkParameter id="sv3#area3#area12#area14#page38#alt10#page40#dau15#ln61#par115" name="name_PASSING" source="data.ent5#att11" passing="true"/>
+          </Link>
+        </DataUnit>
+      </ContentUnits>
+    </Page>
+  </Alternative>
+</Page>
