@@ -1,0 +1,31 @@
+Lista de procedures utilizados:
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+-place_bet
+
+CREATE DEFINER=`userEW`@`localhost` PROCEDURE `place_bet`(IN wager float, IN userid integer, IN Eventid integer, IN betTypeid integer, IN resultid integer, OUT place boolean)
+BEGIN
+	update user set balance = (balance - wager) where oid = userid;
+    insert into bet(wager, user_oid, event_oid, bettype_oid, result_oid) values(wager, userid, Eventid, betTypeid, resultid);
+	set place =true;
+END
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+-Add_User
+
+CREATE DEFINER=`userEW`@`localhost` PROCEDURE `Add_User`(In inid integer, IN inusername varchar(255), IN inpassword varchar(255), IN inname varchar(255), IN inemail varchar(255), IN inbalance float, out estado varchar(255))
+BEGIN
+	declare iduser integer;
+	select user.oid into iduser from user where user.username = inusername;
+    if(iduser is null) then
+		INSERT INTO `bettest`.`user` (`oid`, `username`, `password`, `email`, `name`, `balance`) VALUES (inid, inusername, inpassword, inemail, inname, inbalance);
+        set estado = "Adicionado";
+	else
+		set estado = "Username já existe";
+	end if;
+END
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+

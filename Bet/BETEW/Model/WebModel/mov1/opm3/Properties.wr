@@ -1,0 +1,14 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="165" gr:y="195" id="mov1#opm3" name="IsPremium">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#opm3#icu3" gr:x="5" gr:y="95">
+      <InputCollectorParameter id="mov1#opm3#icu3#icp9" name="UserId"/>
+      <OKLink id="mov1#opm3#icu3#oln33" name="OKFlow33" to="mov1#opm3#spu1" automaticCoupling="true"/>
+    </InputCollectorUnit>
+    <StoredProcedureUnit gr:x="265" gr:y="110" id="mov1#opm3#spu1" name="IsPremium" resultType="plain" db="db1" procedure="check_balance">
+      <OKLink id="mov1#opm3#spu1#oln34" name="OKFlow34" to="mov1#opm3#okcu4" automaticCoupling="true"/>
+      <KOLink id="mov1#opm3#spu1#kln26" name="KOFlow26" to="mov1#opm3#kocu3" automaticCoupling="true"/>
+    </StoredProcedureUnit>
+    <OKCollectorUnit gr:x="405" gr:y="70" id="mov1#opm3#okcu4" name="Result"/>
+    <KOCollectorUnit gr:x="405" gr:y="155" id="mov1#opm3#kocu3" name="Error"/>
+  </OperationUnits>
+</OperationModule>

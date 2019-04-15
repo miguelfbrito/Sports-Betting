@@ -1,8 +1,0 @@
-<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv2" name="Make Bet" landmarks="sv2#area1" homePage="sv2#area1#page1">
-  <OperationUnits>
-    <CreateUnit gr:x="485" gr:y="400" id="sv2#cru2" name="Add bet" entity="ent1" skipBlankRecords="true" notBlankAttributes="ent1#att11">
-      <OKLink id="sv2#cru2#oln1" name="OKFlow1" to="sv2#area1#page1#alt2#page2" automaticCoupling="true"/>
-      <KOLink id="sv2#cru2#kln1" name="KOFlow1" to="sv2#area1#page1#alt2#page15#enu11" automaticCoupling="true" gr:bendpoints="-124,4,126,24"/>
-    </CreateUnit>
-  </OperationUnits>
-</SiteView>

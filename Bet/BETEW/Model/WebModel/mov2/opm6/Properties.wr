@@ -1,0 +1,38 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="130" gr:y="35" id="mov2#opm6" name="Add User">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm6#icu9" gr:x="30" gr:y="60">
+      <InputCollectorParameter id="mov2#opm6#icu9#icp6" name="Password"/>
+      <InputCollectorParameter id="mov2#opm6#icu9#icp10" name="Name"/>
+      <InputCollectorParameter id="mov2#opm6#icu9#icp11" name="Username"/>
+      <InputCollectorParameter id="mov2#opm6#icu9#icp13" name="Balance"/>
+      <InputCollectorParameter id="mov2#opm6#icu9#icp14" name="Email"/>
+      <OKLink id="mov2#opm6#icu9#oln16" name="OKFlow16" to="mov2#opm6#spu3">
+        <LinkParameter id="mov2#opm6#icu9#oln16#par72" name="Username_inuser" source="mov2#opm6#icu9#icp11" target="mov2#opm6#spu3.mov2#opm6#spu3#spp7"/>
+        <LinkParameter id="mov2#opm6#icu9#oln16#par73" name="Balance_Balance" source="mov2#opm6#icu9#icp13" target="mov2#opm6#spu3.mov2#opm6#spu3#spp12"/>
+        <LinkParameter id="mov2#opm6#icu9#oln16#par74" name="Email_Email" source="mov2#opm6#icu9#icp14" target="mov2#opm6#spu3.mov2#opm6#spu3#spp10"/>
+        <LinkParameter id="mov2#opm6#icu9#oln16#par75" name="Name_Name" source="mov2#opm6#icu9#icp10" target="mov2#opm6#spu3.mov2#opm6#spu3#spp9"/>
+        <LinkParameter id="mov2#opm6#icu9#oln16#par76" name="Password_Password" source="mov2#opm6#icu9#icp6" target="mov2#opm6#spu3.mov2#opm6#spu3#spp11"/>
+      </OKLink>
+    </InputCollectorUnit>
+    <StoredProcedureUnit gr:x="350" gr:y="95" id="mov2#opm6#spu3" name="Check username" resultType="plain" db="db1" procedure="check_username">
+      <StoredProcedureParameter id="mov2#opm6#spu3#spp7" name="Username" type="string" direction="input" position="1"/>
+      <StoredProcedureParameter id="mov2#opm6#spu3#spp8" name="available" type="boolean" direction="output" position="6"/>
+      <StoredProcedureParameter id="mov2#opm6#spu3#spp12" name="Balance" direction="input" type="float" position="5"/>
+      <StoredProcedureParameter id="mov2#opm6#spu3#spp11" name="Password" direction="input" type="string" position="2"/>
+      <StoredProcedureParameter id="mov2#opm6#spu3#spp10" name="Email" direction="input" type="string" position="4"/>
+      <StoredProcedureParameter id="mov2#opm6#spu3#spp9" name="Name" direction="input" type="string" position="3"/>
+      <OKLink id="mov2#opm6#spu3#oln21" name="OKFlow21" to="mov2#opm6#okcu1">
+        <LinkParameter id="mov2#opm6#spu3#oln21#par116" name="available_Result" source="mov2#opm6#spu3#spp8" target="mov2#opm6#okcu1#ocp17"/>
+      </OKLink>
+      <KOLink id="mov2#opm6#spu3#kln19" name="KOFlow19" to="mov2#opm6#kocu4">
+        <LinkParameter id="mov2#opm6#spu3#kln19#par77" name="available_Result" source="mov2#opm6#spu3#spp8" target="mov2#opm6#kocu4#ocp18"/>
+      </KOLink>
+    </StoredProcedureUnit>
+    <OKCollectorUnit gr:x="750" gr:y="55" id="mov2#opm6#okcu1" name="OK Port1">
+      <OutputCollectorParameter id="mov2#opm6#okcu1#ocp17" name="Result"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit gr:x="750" gr:y="170" id="mov2#opm6#kocu4" name="KO Port4">
+      <OutputCollectorParameter id="mov2#opm6#kocu4#ocp18" name="Result"/>
+    </KOCollectorUnit>
+  </OperationUnits>
+</OperationModule>

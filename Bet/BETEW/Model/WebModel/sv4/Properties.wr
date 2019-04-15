@@ -1,0 +1,24 @@
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv4" name="test view" landmarks="sv4#area4 sv4#area8 sv4#area15" homePage="sv4#area4#page17">
+  <OperationUnits>
+    <ModuleInstanceUnit gr:x="135" gr:y="280" id="sv4#miu6" action="true" name="Check bet" moduleId="mov1#opm1">
+      <KOLink id="sv4#miu6#kln8" name="KOFlow6" to="sv4#area4#page19#mssu8" automaticCoupling="true"/>
+      <OKLink id="sv4#miu6#oln8" name="OKFlow8" to="sv4#area4#page18#mssu10">
+        <LinkParameter id="sv4#miu6#oln8#par31" name="Id_Shown Messages" source="mov1#opm1#okcu3#ocp2" target="sv4#area4#page18#mssu10.shownMessages"/>
+      </OKLink>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="535" gr:y="300" id="sv4#miu3" moduleId="mov1#opm2" action="true" name="Login">
+      <OKLink id="sv4#miu3#oln7" name="OKFlow7" to="sv4#area4#page18#mssu10" automaticCoupling="true"/>
+      <KOLink id="sv4#miu3#kln15" name="KOFlow7" to="sv4#area8#page2#mssu4">
+        <LinkParameter id="sv4#miu3#kln15#par49" name="Username/Password incorretas_Shown Messages" sourceValue="Username/Password incorretas" target="sv4#area8#page2#mssu4.shownMessages"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="435" gr:y="455" id="sv4#miu8" action="true" name="Add User" moduleId="mov2#opm6">
+      <KOLink id="sv4#miu8#kln20" name="KOFlow17" to="sv4#area15#page13#mssu11">
+        <LinkParameter id="sv4#miu8#kln20#par119" name="Result_Shown Messages" source="mov2#opm6#kocu4#ocp18" target="sv4#area15#page13#mssu11.shownMessages"/>
+      </KOLink>
+      <OKLink id="sv4#miu8#oln22" name="OKFlow20" to="sv4#area15#page13#mssu12">
+        <LinkParameter id="sv4#miu8#oln22#par120" name="Result_Shown Messages" source="mov2#opm6#okcu1#ocp17" target="sv4#area15#page13#mssu12.shownMessages"/>
+      </OKLink>
+    </ModuleInstanceUnit>
+  </OperationUnits>
+</SiteView>

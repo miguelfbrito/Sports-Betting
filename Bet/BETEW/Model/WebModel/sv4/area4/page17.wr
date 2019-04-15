@@ -1,0 +1,65 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="60" id="sv4#area4#page17" name="Page 17">
+  <ContentUnits>
+    <EntryUnit gr:x="0" gr:y="5" id="sv4#area4#page17#enu1" name="Form1" linkOrder="sv4#area4#page17#enu1#ln30">
+      <Link id="sv4#area4#page17#enu1#ln30" name="Flow30" to="sv4#miu6" type="normal" validate="true">
+        <LinkParameter id="sv4#area4#page17#enu1#ln30#par29" name="Field21_UserId" source="sv4#area4#page17#enu1#fld21" target="sv4#miu6.mov1#opm1#icu1#icp2"/>
+        <LinkParameter id="sv4#area4#page17#enu1#ln30#par30" name="Field11_Wager" source="sv4#area4#page17#enu1#fld11" target="sv4#miu6.mov1#opm1#icu1#icp1"/>
+        <LinkParameter id="sv4#area4#page17#enu1#ln30#par32" name="2_BetTypeID" sourceValue="2" target="sv4#miu6.mov1#opm1#icu1#icp4"/>
+        <LinkParameter id="sv4#area4#page17#enu1#ln30#par33" name="1_EventId" sourceValue="1" target="sv4#miu6.mov1#opm1#icu1#icp3"/>
+        <LinkParameter id="sv4#area4#page17#enu1#ln30#par34" name="1_resultId" sourceValue="1" target="sv4#miu6.mov1#opm1#icu1#icp5"/>
+      </Link>
+      <Field id="sv4#area4#page17#enu1#fld11" name="Field11" type="string" modifiable="true"/>
+      <Field id="sv4#area4#page17#enu1#fld21" name="Field21" type="string" modifiable="true"/>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv4#area4#page17#enu1">
+          <layout:Link link="sv4#area4#page17#enu1#ln30"/>
+          <layout:Field field="sv4#area4#page17#enu1#fld11"/>
+          <layout:Field field="sv4#area4#page17#enu1#fld21"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

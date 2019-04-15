@@ -1,0 +1,36 @@
+Buildfile: /home/luis/WebRatio_Platform/WebRatio/plugins/com.webratio.generator.webapp_7.2.18.201903231300/DataModel/JavaCompile.xml
+
+main:
+    [javac] Compiling 13 source files to /opt/tomcat/apache-tomcat-8.5.39/webapps/BETEW/WEB-INF/classes
+    [javac] ----------
+    [javac] 1. ERROR in /opt/tomcat/apache-tomcat-8.5.39/webapps/BETEW/WEB-INF/classes/com/webratio/webapp/Sport.java (at line 9)
+    [javac] 	private java.lang.String _name;
+    [javac] 	                         ^^^^^
+    [javac] Duplicate field Sport._name
+    [javac] ----------
+    [javac] 2. ERROR in /opt/tomcat/apache-tomcat-8.5.39/webapps/BETEW/WEB-INF/classes/com/webratio/webapp/Sport.java (at line 11)
+    [javac] 	private java.lang.String _name;
+    [javac] 	                         ^^^^^
+    [javac] Duplicate field Sport._name
+    [javac] ----------
+    [javac] 3. ERROR in /opt/tomcat/apache-tomcat-8.5.39/webapps/BETEW/WEB-INF/classes/com/webratio/webapp/Sport.java (at line 25)
+    [javac] 	public java.lang.String getName() {
+    [javac] 	                        ^^^^^^^^^
+    [javac] Duplicate method getName() in type Sport
+    [javac] ----------
+    [javac] 4. ERROR in /opt/tomcat/apache-tomcat-8.5.39/webapps/BETEW/WEB-INF/classes/com/webratio/webapp/Sport.java (at line 29)
+    [javac] 	public void setName(java.lang.String _name) {
+    [javac] 	            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    [javac] Duplicate method setName(String) in type Sport
+    [javac] ----------
+    [javac] 5. ERROR in /opt/tomcat/apache-tomcat-8.5.39/webapps/BETEW/WEB-INF/classes/com/webratio/webapp/Sport.java (at line 33)
+    [javac] 	public java.lang.String getName() {
+    [javac] 	                        ^^^^^^^^^
+    [javac] Duplicate method getName() in type Sport
+    [javac] ----------
+    [javac] 6. ERROR in /opt/tomcat/apache-tomcat-8.5.39/webapps/BETEW/WEB-INF/classes/com/webratio/webapp/Sport.java (at line 37)
+    [javac] 	public void setName(java.lang.String _name) {
+    [javac] 	            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    [javac] Duplicate method setName(String) in type Sport
+    [javac] ----------
+    [javac] 6 problems (6 errors)

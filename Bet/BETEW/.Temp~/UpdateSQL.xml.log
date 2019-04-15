@@ -1,0 +1,70 @@
+[13 Abr 2019 12:24:08] DEBUG Executing SQL script
+[13 Abr 2019 12:24:08] INFO ================================================================================
+[13 Abr 2019 12:24:08] INFO onError= 'stop'
+[13 Abr 2019 12:24:08] INFO autoCommit= 'false'
+[13 Abr 2019 12:24:08] INFO username= 'userEW'
+[13 Abr 2019 12:24:08] INFO outputPath= '/home/luis/WebRatio_Platform/WebRatio/workspace/BETEW/.Temp~/UpdateSQL.xml'
+[13 Abr 2019 12:24:08] INFO outputLogPath= '/home/luis/WebRatio_Platform/WebRatio/workspace/BETEW/.Temp~/UpdateSQL.xml.log'
+[13 Abr 2019 12:24:08] INFO encoding= ''
+[13 Abr 2019 12:24:08] INFO driverClass= 'com.mysql.jdbc.Driver'
+[13 Abr 2019 12:24:08] INFO sqlScript= '/home/luis/WebRatio_Platform/WebRatio/workspace/BETEW/.Temp~/UpdateSQL.sql'
+[13 Abr 2019 12:24:08] INFO eventSocketPort= '42433'
+[13 Abr 2019 12:24:08] INFO statementSeparator= ';'
+[13 Abr 2019 12:24:08] INFO derby.system.home= '/home/luis/WebRatio_Platform/WebRatio/workspace/.metadata/.plugins/com.webratio.commons.db/derby'
+[13 Abr 2019 12:24:08] INFO password= 'userEW23'
+[13 Abr 2019 12:24:08] INFO url= 'jdbc:mysql://localhost:3306/bettest'
+[13 Abr 2019 12:24:08] INFO ================================================================================
+[13 Abr 2019 12:24:08] INFO Connecting to the Database...
+[13 Abr 2019 12:24:08] INFO Database connection estabilished
+[13 Abr 2019 12:24:08] INFO transaction isolation: 4
+[13 Abr 2019 12:24:08] DEBUG ================================================================================
+[13 Abr 2019 12:24:08] DEBUG Executing SQL script file: /home/luis/WebRatio_Platform/WebRatio/workspace/BETEW/.Temp~/UpdateSQL.sql
+[13 Abr 2019 12:24:08] DEBUG Executing statement:  create table `group` ( `oid`  integer  not null, `groupname`  varchar(255), primary key (`oid`) )
+[13 Abr 2019 12:24:08] DEBUG Executing statement:    create table `module` ( `oid`  integer  not null, `moduleid`  varchar(255), `modulename`  varchar(255), primary key (`oid`) )
+[13 Abr 2019 12:24:09] DEBUG Executing statement:    create table `user` ( `oid`  integer  not null, `username`  varchar(255), `password`  varchar(255), `email`  varchar(255), `name`  varchar(255), `balance`  double precision, primary key (`oid`) )
+[13 Abr 2019 12:24:09] DEBUG Executing statement:    create table `bet` ( `oid`  integer not null auto_increment, `wager`  double precision, `result`  varchar(255), primary key (`oid`) )
+[13 Abr 2019 12:24:09] DEBUG Executing statement:    create table `state` ( `oid`  integer  not null, `name`  varchar(255), primary key (`oid`) )
+[13 Abr 2019 12:24:10] DEBUG Executing statement:    create table `availablebettypes` ( `oid`  integer  not null, `odd`  double precision, `betresult`  bit, primary key (`oid`) )
+[13 Abr 2019 12:24:10] DEBUG Executing statement:    create table `event` ( `event_oid`  integer  not null, `finishingdate`  date, `startingdate`  date, `creationdate`  date, `ispremium`  bit, `description`  varchar(255), `name`  varchar(255), primary key (`event_oid`) )
+[13 Abr 2019 12:24:10] DEBUG Executing statement:    create table `result` ( `oid`  integer  not null, `name`  varchar(255), primary key (`oid`) )
+[13 Abr 2019 12:24:10] DEBUG Executing statement:    create table `sport` ( `oid`  integer  not null, `name`  varchar(255), primary key (`oid`) )
+[13 Abr 2019 12:24:11] DEBUG Executing statement:    create table `bettype` ( `oid`  integer  not null, `name`  varchar(255), primary key (`oid`) )
+[13 Abr 2019 12:24:11] DEBUG Executing statement:    create table `team` ( `oid`  integer  not null, primary key (`oid`) )
+[13 Abr 2019 12:24:11] DEBUG Executing statement:    create table `teamsperevent` ( `oid`  integer  not null, primary key (`oid`) )
+[13 Abr 2019 12:24:11] DEBUG Executing statement:    create table `player` ( `oid`  integer  not null, primary key (`oid`) )
+[13 Abr 2019 12:24:12] DEBUG Executing statement:    alter table `group`  add column  `module_oid`  integer
+[13 Abr 2019 12:24:12] DEBUG Executing statement:  alter table `group`   add index fk_group_module (`module_oid`), add constraint fk_group_module foreign key (`module_oid`) references `module` (`oid`)
+[13 Abr 2019 12:24:13] DEBUG Executing statement:    create table `group_module` ( `group_oid`  integer not null, `module_oid`  integer not null, primary key (`group_oid`, `module_oid`) )
+[13 Abr 2019 12:24:13] DEBUG Executing statement:  alter table `group_module`   add index fk_group_module_group (`group_oid`), add constraint fk_group_module_group foreign key (`group_oid`) references `group` (`oid`)
+[13 Abr 2019 12:24:14] DEBUG Executing statement:  alter table `group_module`   add index fk_group_module_module (`module_oid`), add constraint fk_group_module_module foreign key (`module_oid`) references `module` (`oid`)
+[13 Abr 2019 12:24:14] DEBUG Executing statement:    alter table `user`  add column  `group_oid`  integer
+[13 Abr 2019 12:24:15] DEBUG Executing statement:  alter table `user`   add index fk_user_group (`group_oid`), add constraint fk_user_group foreign key (`group_oid`) references `group` (`oid`)
+[13 Abr 2019 12:24:15] DEBUG Executing statement:    create table `user_group` ( `user_oid`  integer not null, `group_oid`  integer not null, primary key (`user_oid`, `group_oid`) )
+[13 Abr 2019 12:24:16] DEBUG Executing statement:  alter table `user_group`   add index fk_user_group_user (`user_oid`), add constraint fk_user_group_user foreign key (`user_oid`) references `user` (`oid`)
+[13 Abr 2019 12:24:16] DEBUG Executing statement:  alter table `user_group`   add index fk_user_group_group (`group_oid`), add constraint fk_user_group_group foreign key (`group_oid`) references `group` (`oid`)
+[13 Abr 2019 12:24:17] DEBUG Executing statement:    alter table `bet`  add column  `user_oid`  integer
+[13 Abr 2019 12:24:17] DEBUG Executing statement:  alter table `bet`   add index fk_bet_user (`user_oid`), add constraint fk_bet_user foreign key (`user_oid`) references `user` (`oid`)
+[13 Abr 2019 12:24:18] DEBUG Executing statement:    alter table `teamsperevent`  add column  `team_oid`  integer
+[13 Abr 2019 12:24:19] DEBUG Executing statement:  alter table `teamsperevent`   add index fk_teamsperevent_team (`team_oid`), add constraint fk_teamsperevent_team foreign key (`team_oid`) references `team` (`oid`)
+[13 Abr 2019 12:24:19] DEBUG Executing statement:    alter table `teamsperevent`  add column  `event_oid`  integer
+[13 Abr 2019 12:24:20] DEBUG Executing statement:  alter table `teamsperevent`   add index fk_teamsperevent_event (`event_oid`), add constraint fk_teamsperevent_event foreign key (`event_oid`) references `event` (`event_oid`)
+[13 Abr 2019 12:24:21] DEBUG Executing statement:    alter table `player`  add column  `team_oid`  integer
+[13 Abr 2019 12:24:21] DEBUG Executing statement:  alter table `player`   add index fk_player_team (`team_oid`), add constraint fk_player_team foreign key (`team_oid`) references `team` (`oid`)
+[13 Abr 2019 12:24:22] DEBUG Executing statement:    alter table `bet`  add column  `event_oid`  integer
+[13 Abr 2019 12:24:22] DEBUG Executing statement:  alter table `bet`   add index fk_bet_event (`event_oid`), add constraint fk_bet_event foreign key (`event_oid`) references `event` (`event_oid`)
+[13 Abr 2019 12:24:23] DEBUG Executing statement:    alter table `event`  add column  `state_oid`  integer
+[13 Abr 2019 12:24:24] DEBUG Executing statement:  alter table `event`   add index fk_event_state (`state_oid`), add constraint fk_event_state foreign key (`state_oid`) references `state` (`oid`)
+[13 Abr 2019 12:24:24] DEBUG Executing statement:    alter table `bet`  add column  `bettype_oid`  integer
+[13 Abr 2019 12:24:25] DEBUG Executing statement:  alter table `bet`   add index fk_bet_bettype (`bettype_oid`), add constraint fk_bet_bettype foreign key (`bettype_oid`) references `bettype` (`oid`)
+[13 Abr 2019 12:24:26] DEBUG Executing statement:    alter table `availablebettypes`  add column  `bettype_oid`  integer
+[13 Abr 2019 12:24:26] DEBUG Executing statement:  alter table `availablebettypes`   add index fk_availablebettypes_bettype (`bettype_oid`), add constraint fk_availablebettypes_bettype foreign key (`bettype_oid`) references `bettype` (`oid`)
+[13 Abr 2019 12:24:27] DEBUG Executing statement:    alter table `availablebettypes`  add column  `event_oid`  integer
+[13 Abr 2019 12:24:28] DEBUG Executing statement:  alter table `availablebettypes`   add index fk_availablebettypes_event (`event_oid`), add constraint fk_availablebettypes_event foreign key (`event_oid`) references `event` (`event_oid`)
+[13 Abr 2019 12:24:28] DEBUG Executing statement:    alter table `bet`  add column  `result_oid`  integer
+[13 Abr 2019 12:24:29] DEBUG Executing statement:  alter table `bet`   add index fk_bet_result (`result_oid`), add constraint fk_bet_result foreign key (`result_oid`) references `result` (`oid`)
+[13 Abr 2019 12:24:30] DEBUG Executing statement:    alter table `event`  add column  `sport_oid`  integer
+[13 Abr 2019 12:24:30] DEBUG Executing statement:  alter table `event`   add index fk_event_sport (`sport_oid`), add constraint fk_event_sport foreign key (`sport_oid`) references `sport` (`oid`)
+[13 Abr 2019 12:24:31] DEBUG ================================================================================
+[13 Abr 2019 12:24:31] DEBUG SQL SCRIPT SUCCESSFULLY EXECUTED
+[13 Abr 2019 12:24:31] INFO Database connection closed
+[13 Abr 2019 12:24:31] DEBUG Total time: 23362 milliseconds

@@ -1,0 +1,14 @@
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv2" name="Make Bet" landmarks="sv2#area5" homePage="sv2#area5#area6#page6">
+  <OperationUnits>
+    <ModuleInstanceUnit gr:x="320" gr:y="375" id="sv2#miu4" action="true" name="Login" moduleId="mov1#opm2">
+      <KOLink id="sv2#miu4#kln16" name="KOFlow16" to="sv2#page5#mssu5">
+        <LinkParameter id="sv2#miu4#kln16#par50" name="Username/Password incorrect_Shown Messages" sourceValue="Username/Password incorrect" target="sv2#page5#mssu5.shownMessages"/>
+      </KOLink>
+      <OKLink id="sv2#miu4#oln17" name="OKFlow17" to="sv2#area5#area7#page15" automaticCoupling="true"/>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="1620" gr:y="120" id="sv2#miu1" action="true" name="Place bet" moduleId="mov1#opm1">
+      <OKLink id="sv2#miu1#oln4" name="OKFlow4" to="sv2#area5#area6#page6#alt3#page8#inu3" automaticCoupling="true"/>
+      <KOLink id="sv2#miu1#kln5" name="KOFlow5" to="sv2#area5#area6#page6#alt3#page11#enu11" automaticCoupling="true" gr:bendpoints="-144,124,171,-21"/>
+    </ModuleInstanceUnit>
+  </OperationUnits>
+</SiteView>
