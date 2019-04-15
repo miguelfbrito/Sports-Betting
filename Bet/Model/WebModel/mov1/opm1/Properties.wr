@@ -7,11 +7,6 @@
         <LinkParameter id="mov1#opm1#icu1#oln2#par23" name="BetTypeID_BetTypeID" source="mov1#opm1#icu1#icp4" target="mov1#opm1#spu4.mov1#opm1#spu4#spp5"/>
         <LinkParameter id="mov1#opm1#icu1#oln2#par27" name="EventId_EventID" source="mov1#opm1#icu1#icp3" target="mov1#opm1#spu4.mov1#opm1#spu4#spp4"/>
         <LinkParameter id="mov1#opm1#icu1#oln2#par28" name="resultId_resultID" source="mov1#opm1#icu1#icp5" target="mov1#opm1#spu4.mov1#opm1#spu4#spp6"/>
-        <LinkParameter id="mov1#opm1#icu1#oln2#par19" name="BetTypeID_PASSING" source="mov1#opm1#icu1#icp4" passing="true"/>
-        <LinkParameter id="mov1#opm1#icu1#oln2#par20" name="EventId_PASSING" source="mov1#opm1#icu1#icp3" passing="true"/>
-        <LinkParameter id="mov1#opm1#icu1#oln2#par24" name="resultId_PASSING" source="mov1#opm1#icu1#icp5" passing="true"/>
-        <LinkParameter id="mov1#opm1#icu1#oln2#par25" name="UserId_PASSING" source="mov1#opm1#icu1#icp2" passing="true"/>
-        <LinkParameter id="mov1#opm1#icu1#oln2#par35" name="Wager_PASSING" source="mov1#opm1#icu1#icp1" passing="true"/>
       </OKLink>
       <InputCollectorParameter id="mov1#opm1#icu1#icp1" name="Wager"/>
       <InputCollectorParameter id="mov1#opm1#icu1#icp2" name="UserId"/>

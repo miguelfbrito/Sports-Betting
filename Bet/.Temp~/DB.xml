@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <DBMetaData driverMajorVersion="5" driverMinorVersion="1" driverVersion="mysql-connector-java-5.1.31 ( Revision: alexander.soklakov@oracle.com-20140520065950-groqzzbvxprqdmnz )" productVersion="5.7.25-0ubuntu0.18.04.2" identifierQuoteString="`" transactionLevel="Repeatable read" driverName="MySQL Connector Java" productName="MySQL">
-  <StoredProcedure catalog="bettest" name="check_username" resultType="noResult"/>
+  <StoredProcedure catalog="bettest" name="Add_User" resultType="noResult"/>
   <StoredProcedure catalog="bettest" name="place_bet" resultType="noResult"/>
   <Table schema="" ignoreIndexes="false" name="availablebettypes" type="TABLE" refreshed="true">
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="oid" primaryKey="true" notNull="true"/>

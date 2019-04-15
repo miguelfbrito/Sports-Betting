@@ -1,6 +1,6 @@
 <DataModel xmlns:db="http://www.webratio.com/2006/WebML/Database" xmlns:gr="http://www.webratio.com/2006/WebML/Graph">
   <Entity id="User" name="User" duration="persistent" gr:x="340" gr:y="475" gr:hideAttributes="false" attributeOrder="userOID userName password email User#att19 User#att20" db:database="db1" db:table="user">
-    <Attribute name="oid" id="userOID" type="integer" key="true" db:column="oid"/>
+    <Attribute name="oid" id="userOID" type="integer" key="true" db:column="oid" db:idGenerator="identity"/>
     <Attribute name="username" id="userName" type="string" key="false" db:column="username"/>
     <Attribute name="password" id="password" type="password" key="false" db:column="password"/>
     <Attribute name="email" id="email" type="string" key="false" db:column="email"/>
