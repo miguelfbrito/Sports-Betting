@@ -288,6 +288,8 @@ BEGIN
 	declare current_balance float;
     select balance into current_balance from user where user.oid = userid;
     
+    -- TODO : verificar se o evento ainda não terminou
+    
     if current_balance > wager then
 		update user set balance = (balance - wager) where oid = userid;
 		insert into bet(wager, user_oid, event_oid, bettype_oid, result_oid) values(wager, userid, Eventid, betTypeid, resultid);
