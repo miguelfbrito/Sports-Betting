@@ -20,9 +20,9 @@ insert into bettingwebapp.group(groupname) values ("Premium");
 insert into bettingwebapp.group(groupname) values ("Administrator");
 
 -- users
-insert into user(username, password, email, name, balance) values ("maria", "pass", "maria@gmail.com", "Maria Carla", 10.0);
-insert into user(username, password, email, name, balance) values ("joao", "pass", "maria@gmail.com", "Joao", 10.0);
-insert into user(username, password, email, name, balance) values ("carlos", "pass", "maria@gmail.com", "Joao", 10.0);
+insert into user(username, password, email, name, balance, group_oid) values ("maria", "pass", "maria@gmail.com", "Maria Carla", 10.0, 1);
+insert into user(username, password, email, name, balance, group_oid) values ("joao", "pass", "maria@gmail.com", "Joao", 10.0, 2);
+insert into user(username, password, email, name, balance, group_oid) values ("carlos", "pass", "maria@gmail.com", "Joao", 10.0, 3);
 
 -- user_group
 insert into user_group(user_oid, group_oid) values (1,1);
@@ -42,33 +42,40 @@ insert into state(name) value("Closed");
 -- Events
 
 insert into event(startingdate, creationdate, finishingdate, ispremium, description, name, state_oid, sport_oid) values('2019-04-01 0:0', '2019-04-01 0:0', '2019-05-20 0:0', true, "Description of the game", "Benfica x Porto", 1, 1);
-
 insert into event(startingdate, creationdate, finishingdate, ispremium, description, name, state_oid, sport_oid) values('2019-04-01 0:0', '2019-04-01 0:0', '2019-05-20 0:0', true, "Description of the game", "Benfica x Sporting", 1, 1);
-
 insert into event(startingdate, creationdate, finishingdate, ispremium, description, name, state_oid, sport_oid) values('2019-04-01 0:0', '2019-04-01 0:0', '2019-05-20 0:0', true, "Description of the game", "Sporting x Anadia", 1, 2);
-
 insert into event(startingdate, creationdate, finishingdate, ispremium, description, name, state_oid, sport_oid) values('2019-04-01 0:0', '2019-04-01 0:0', '2019-05-20 0:0', true, "Description of the game", "Real Madrid x Barcelona", 1, 2);
-
 insert into event(startingdate, creationdate, finishingdate, ispremium, description, name, state_oid, sport_oid) values('2019-04-01 0:0', '2019-04-01 0:0', '2019-05-20 0:0', true, "Description of the game", "Benfica x Porto", 1, 1);
 
 
 -- bettypes
 
-Insert into bettype(name) values("1 +0,5 golos");
-Insert into bettype(name) values("1 +1,5 golos");
-Insert into bettype(name) values("2 +0,5 golos");
-Insert into bettype(name) values("2 +1,5 golos");
-Insert into bettype(name) values("1 Vence primeiro set");
+Insert into bettype(name) values("1");
+Insert into bettype(name) values("X");
+Insert into bettype(name) values("2");
+Insert into bettype(name) values("1 +0,5 goals");
+Insert into bettype(name) values("1 +1,5 goals");
+Insert into bettype(name) values("2 +0,5 goals");
+Insert into bettype(name) values("2 +1,5 goals");
+Insert into bettype(name) values("100 points");
 
-Insert into bettype_sport values (1, 1);
-Insert into bettype_sport values (2, 1);
-Insert into bettype_sport values (3, 1);
-Insert into bettype_sport values (4, 1);
-Insert into bettype_sport values (5, 2);
+Insert into bettype_sport(bettype_oid, sport_oid) values (1, 1);
+Insert into bettype_sport(bettype_oid, sport_oid) values (2, 1);
+Insert into bettype_sport(bettype_oid, sport_oid) values (3, 1);
+Insert into bettype_sport(bettype_oid, sport_oid) values (4, 1);
+Insert into bettype_sport(bettype_oid, sport_oid) values (5, 1);
+Insert into bettype_sport(bettype_oid, sport_oid) values (6, 1);
+Insert into bettype_sport(bettype_oid, sport_oid) values (7, 1);
+Insert into bettype_sport(bettype_oid, sport_oid) values (8, 2);
 
 -- available bet types
 insert into availablebettypes(odd, betresult, bettype_oid, event_oid) values (1.35, null, 1, 1);
-insert into availablebettypes(odd, betresult, bettype_oid, event_oid) values (2, null, 2, 1);
+insert into availablebettypes(odd, betresult, bettype_oid, event_oid) values (1.5, null, 2, 1);
+insert into availablebettypes(odd, betresult, bettype_oid, event_oid) values (2, null, 3, 1);
+
+insert into availablebettypes(odd, betresult, bettype_oid, event_oid) values (1.35, null, 1, 2);
+insert into availablebettypes(odd, betresult, bettype_oid, event_oid) values (1.5, null, 2, 2);
+insert into availablebettypes(odd, betresult, bettype_oid, event_oid) values (2, null, 3, 2);
 
 -- results
 insert into result(name) values ("Open");
@@ -133,24 +140,46 @@ DELIMITER ;
 DELIMITER //
 create procedure validar_bettype_com_stats(IN i_oid integer, IN i_bettype_id integer)
 BEGIN
-	declare v_bet_name varchar(50);
-    declare v_golos integer;
+	declare v_sport_name varchar(50);
+    
+	select sport.name into v_sport_name from event, sport  where event.sport_oid = sport.oid and event.event_oid = 1;
+    
+    case v_sport_name
+		when 'Football' then call validar_bettype_football(i_oid, i_bettype_id);
+        when 'Basketball' then call validar_bettype_basketball(i_oid, i_bettype_id);
+        else begin end;
+	end case;
+    
+END //
+DELIMITER ;
+
+
+
+
+-- validar apostas para futebol
+DELIMITER //
+create procedure validar_bettype_football(IN i_oid integer, IN i_bettype_id integer)
+BEGIN
+    declare v_bet_name varchar(50);
     declare v_valid boolean;
+    declare v_home_goals integer;
+    declare v_away_goals integer;
     
-    set v_valid = false;
-    set v_golos = 3;
+	set v_valid = false;
+    
+    select  homegoals, awaygoals -- gameduration,awayyellowcards, homeyellowcards, awayredcards, homeredcards 
+	into v_home_goals, v_away_goals
+    from event, stats, footballstats
+    where stats.event_event_oid = event.event_oid and stats.oid = footballstats.stats_oid;
+    
     select name into v_bet_name from bettype where bettype.oid = i_bettype_id;
-    
-    -- TODO : alterar os valores para a lógica das bets adequada
+
     case v_bet_name
-		WHEN '1 +0.5 golos' THEN 
-			if v_golos > 2.5 then 
-				set v_valid = true; 
-			else 
-				set v_valid = false;
-			end if;
-		WHEN '1 +1,5 golos' then select * from dual;
-        WHEN '1 -2.5 golos' then if v_golos > 2.5 then set v_valid = true; end if;
+            WHEN '1' THEN if v_home_goals > v_away_goals then set v_valid = true; end if;
+            WHEN 'X' THEN if v_home_goals = v_away_goals then set v_valid = true; end if;
+            WHEN '2' THEN if v_home_goals < v_away_goals then set v_valid = true; end if;
+			WHEN '1 +0.5 goals' THEN if (v_home_goals - v_away_goals) > 0.5 then set v_valid = true; end if;
+            WHEN '1 +1.5 goals' then if (v_home_goals - v_away_goals) > 1.5 then set v_valid = true; end if;
         else begin end;
 	end case;
     
@@ -162,6 +191,43 @@ BEGIN
     select i_oid;
 END //
 DELIMITER ;
+
+
+-- validar apostas para basketball
+DELIMITER //
+create procedure validar_bettype_basketball(IN i_oid integer, IN i_bettype_id integer)
+BEGIN
+    declare v_bet_name varchar(50);
+	declare v_valid boolean;
+    declare v_home_points integer;
+    declare v_away_points integer;
+    declare v_home_triples integer;
+    declare v_away_triples integer;
+    
+	set v_valid = false;
+    set v_home_points = 103;
+    set v_away_points = 90;
+    set v_home_triples = 10;
+    set v_away_triples = 6;
+    
+    select name into v_bet_name from bettype where bettype.oid = i_bettype_id;
+    
+    case v_bet_name
+            WHEN '1' THEN if v_home_points > v_away_points then set v_valid = true; end if;
+            WHEN 'X' THEN if v_home_points = v_away_points then set v_valid = true; end if;
+            WHEN '2' THEN if v_home_points < v_away_points then set v_valid = true; end if;
+        else begin end;
+	end case;
+    
+    -- result = 1 válida, 0 - perdida
+    if v_valid then
+		update availablebettypes set betresult = 1 where oid=i_oid;
+	end if;
+    
+    select i_oid;
+END //
+DELIMITER ;
+
 
 
 -- definir bet results para todas as bets de um evento
@@ -198,7 +264,7 @@ BEGIN
 				update bet set bet.result_oid = v_result_oid where bet.oid = v_bet_id;
 				select balance into v_balance from user where user.oid = v_user_id;
 				set v_balance = v_balance + v_wager * v_odd;
-				update user set balance = v_balance where user.oid = v_user_id;
+				update user set balance = round(v_balance, 2) where user.oid = v_user_id;
 			else
 				set v_result_oid = 3;
 				update bet set bet.result_oid = v_result_oid where bet.oid = v_bet_id;
@@ -219,9 +285,16 @@ DELIMITER ;
 DELIMITER //
 CREATE PROCEDURE place_bet(IN wager float, IN userid integer, IN Eventid integer, IN betTypeid integer, IN resultid integer, OUT place boolean)
 BEGIN
-    update user set balance = (balance - wager) where oid = userid;
-    insert into bet(wager, user_oid, event_oid, bettype_oid, result_oid) values(wager, userid, Eventid, betTypeid, resultid);
-    set place =true;
+	declare current_balance float;
+    select balance into current_balance from user where user.oid = userid;
+    
+    if current_balance > wager then
+		update user set balance = (balance - wager) where oid = userid;
+		insert into bet(wager, user_oid, event_oid, bettype_oid, result_oid) values(wager, userid, Eventid, betTypeid, resultid);
+		set place = true;
+	else
+		set place = false;
+	end if;
 END //
 DELIMITER ;
 
@@ -293,4 +366,37 @@ BEGIN
     end if;
 END //
 DELIMITER ;
+
+-- deposito de balance num utilizador
+DELIMITER //
+create procedure deposit_balance(IN i_userid integer, IN i_balance float)
+BEGIN 
+	declare max_deposit float;
+    set max_deposit = 100;
+    
+    if i_balance <= max_deposit then
+		update user set balance = round(balance + i_balance, 2) where user.oid = i_userid;
+    end if;
+END //
+DELIMITER ;
+
+-- levantamento de balance
+DELIMITER //
+create procedure withdraw_balance(IN i_userid integer, IN i_value float)
+BEGIN 
+	declare max_withdraw float;
+    
+    select balance into max_withdraw from user where user.oid = i_userid;
+    
+    if i_value <= max_withdraw then
+		update user set balance = round(balance - max_withdraw, 2) where user.oid = i_userid;
+    end if;
+END //
+DELIMITER ;
+
+
+-- Dados de procedimentos
+-- add_football_stats(i_gameduration, i_eventid ,i_awaygoals,i_awayredcards, i_awayyellowcards, i_homegoals,
+-- i_homeredcards, i_homeyellowcards, OUT msg varchar(255))
+call add_football_stats(95, 1, 2, 1,2,3,0,3, @msg);
 
