@@ -4,19 +4,24 @@
       <KOLink id="sv2#miu4#kln16" name="KOFlow16" to="sv2#page5#mssu5">
         <LinkParameter id="sv2#miu4#kln16#par50" name="Username/Password incorrect_Shown Messages" sourceValue="Username/Password incorrect" target="sv2#page5#mssu5.shownMessages"/>
       </KOLink>
-      <OKLink id="sv2#miu4#oln17" name="OKFlow17" to="sv2#area5#area7#page15" automaticCoupling="true"/>
+      <OKLink id="sv2#miu4#oln7" name="OKFlow7" to="sv2#area5#area6#page6#alt3#page58" automaticCoupling="true"/>
     </ModuleInstanceUnit>
     <ModuleInstanceUnit gr:x="1620" gr:y="120" id="sv2#miu1" action="true" name="Place bet" moduleId="mov1#opm1">
       <OKLink id="sv2#miu1#oln4" name="OKFlow4" to="sv2#area5#area6#page6#alt3#page8#inu3" automaticCoupling="true"/>
       <KOLink id="sv2#miu1#kln5" name="KOFlow5" to="sv2#area5#area6#page6#alt3#page11#enu11" automaticCoupling="true" gr:bendpoints="-144,124,171,-21"/>
     </ModuleInstanceUnit>
-    <ModuleInstanceUnit id="sv2#miu7" name="Add User" gr:x="370" gr:y="-10" action="true" moduleId="mov2#opm6">
+    <ModuleInstanceUnit id="sv2#miu7" name="Add User" gr:x="205" gr:y="-20" action="true" moduleId="mov2#opm6">
       <OKLink id="sv2#miu7#oln18" name="OKFlow3" to="sv2#page41#mssu6">
         <LinkParameter id="sv2#miu7#oln18#par44" name="User register with success_Shown Messages" target="sv2#page41#mssu6.shownMessages" sourceValue="User register with success"/>
       </OKLink>
       <KOLink id="sv2#miu7#kln7" name="KOFlow3" to="sv2#page25#mssu7" gr:bendpoints="-131,137,139,-8">
         <LinkParameter id="sv2#miu7#kln7#par53" name="Error on create user_Shown Messages" sourceValue="Error on create user" target="sv2#page25#mssu7.shownMessages"/>
       </KOLink>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit id="sv2#miu28" gr:x="1540" gr:y="-85" action="true" moduleId="mov1#opm3">
+      <OKLink id="sv2#miu28#oln51" name="OKFlow51" to="sv2#area5#area6#page6#alt3#page8#inu3">
+        <LinkParameter id="sv2#miu28#oln51#par224" name="Premium_checkpremium" source="mov1#opm3#okcu4#ocp10" target="sv2#area5#area6#page6#alt3#page8#inu3#su9#acond4"/>
+      </OKLink>
     </ModuleInstanceUnit>
   </OperationUnits>
 </SiteView>

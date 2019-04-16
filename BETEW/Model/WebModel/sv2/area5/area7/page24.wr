@@ -1,0 +1,48 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="295" id="sv2#area5#area7#page24" name="Money Transfers" landmark="true">
+  <ContentUnits>
+    <EntryUnit id="sv2#area5#area7#page24#enu20" name="Raise Money" gr:x="0" gr:y="0" entity="User">
+      <Field id="sv2#area5#area7#page24#enu20#fld53" name="Value" type="float" modifiable="true" attribute="User#att19"/>
+    </EntryUnit>
+    <EntryUnit id="sv2#area5#area7#page24#enu21" name="Cash deposit" gr:x="0" gr:y="100" entity="User">
+      <Field id="sv2#area5#area7#page24#enu21#fld54" name="Value" type="float" modifiable="true" attribute="User#att19"/>
+    </EntryUnit>
+    <GetUnit gr:x="165" gr:y="0" id="sv2#area5#area7#page24#gtu3" name="Get3" contextParameters="UserCtxParam"/>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#area5#area7#page24#enu20">
+          <layout:Field field="sv2#area5#area7#page24#enu20#fld53"/>
+        </layout:Unit>
+        <layout:Unit unitId="sv2#area5#area7#page24#enu21">
+          <layout:Field field="sv2#area5#area7#page24#enu21#fld54"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

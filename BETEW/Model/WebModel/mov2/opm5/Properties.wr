@@ -1,0 +1,47 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="150" gr:y="270" id="mov2#opm5" name="Add Football Stats">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm5#icu5" gr:x="30" gr:y="60">
+      <InputCollectorParameter id="mov2#opm5#icu5#icp15" name="homegoals"/>
+      <InputCollectorParameter id="mov2#opm5#icu5#icp16" name="awaygoals"/>
+      <InputCollectorParameter id="mov2#opm5#icu5#icp17" name="awayyellowcards"/>
+      <InputCollectorParameter id="mov2#opm5#icu5#icp18" name="homeyellowcards"/>
+      <InputCollectorParameter id="mov2#opm5#icu5#icp19" name="awayredcards"/>
+      <InputCollectorParameter id="mov2#opm5#icu5#icp20" name="homeredcards"/>
+      <InputCollectorParameter id="mov2#opm5#icu5#icp21" name="duration"/>
+      <InputCollectorParameter id="mov2#opm5#icu5#icp22" name="Event_id"/>
+      <OKLink id="mov2#opm5#icu5#oln27" name="OKFlow27" to="mov2#opm5#spu2">
+        <LinkParameter id="mov2#opm5#icu5#oln27#par2" name="awaygoals_awaygoals" source="mov2#opm5#icu5#icp16" target="mov2#opm5#spu2.mov2#opm5#spu2#spp15"/>
+        <LinkParameter id="mov2#opm5#icu5#oln27#par5" name="awayredcards_awayredcards" source="mov2#opm5#icu5#icp19" target="mov2#opm5#spu2.mov2#opm5#spu2#spp16"/>
+        <LinkParameter id="mov2#opm5#icu5#oln27#par6" name="awayyellowcards_awayyellowcards" source="mov2#opm5#icu5#icp17" target="mov2#opm5#spu2.mov2#opm5#spu2#spp17"/>
+        <LinkParameter id="mov2#opm5#icu5#oln27#par7" name="Event_id_event_id" source="mov2#opm5#icu5#icp22" target="mov2#opm5#spu2.mov2#opm5#spu2#spp14"/>
+        <LinkParameter id="mov2#opm5#icu5#oln27#par8" name="duration_gameduration" source="mov2#opm5#icu5#icp21" target="mov2#opm5#spu2.mov2#opm5#spu2#spp13"/>
+        <LinkParameter id="mov2#opm5#icu5#oln27#par9" name="homegoals_homegoals" source="mov2#opm5#icu5#icp15" target="mov2#opm5#spu2.mov2#opm5#spu2#spp18"/>
+        <LinkParameter id="mov2#opm5#icu5#oln27#par10" name="homeredcards_homeredcards" source="mov2#opm5#icu5#icp20" target="mov2#opm5#spu2.mov2#opm5#spu2#spp19"/>
+        <LinkParameter id="mov2#opm5#icu5#oln27#par11" name="homeyellowcards_homeyellowcards" source="mov2#opm5#icu5#icp18" target="mov2#opm5#spu2.mov2#opm5#spu2#spp20"/>
+      </OKLink>
+    </InputCollectorUnit>
+    <StoredProcedureUnit gr:x="400" gr:y="125" id="mov2#opm5#spu2" name="Insert Football Stats" resultType="plain" db="db1" procedure="add_football_stats">
+      <StoredProcedureParameter id="mov2#opm5#spu2#spp13" name="gameduration" type="string" direction="input" position="1"/>
+      <StoredProcedureParameter id="mov2#opm5#spu2#spp14" name="event_id" type="string" direction="input" position="2"/>
+      <StoredProcedureParameter id="mov2#opm5#spu2#spp15" name="awaygoals" type="string" direction="input" position="3"/>
+      <StoredProcedureParameter id="mov2#opm5#spu2#spp16" name="awayredcards" type="string" direction="input" position="4"/>
+      <StoredProcedureParameter id="mov2#opm5#spu2#spp17" name="awayyellowcards" type="string" direction="input" position="5"/>
+      <StoredProcedureParameter id="mov2#opm5#spu2#spp18" name="homegoals" type="string" direction="input" position="6"/>
+      <StoredProcedureParameter id="mov2#opm5#spu2#spp19" name="homeredcards" type="string" direction="input" position="7"/>
+      <StoredProcedureParameter id="mov2#opm5#spu2#spp20" name="homeyellowcards" type="string" direction="input" position="8"/>
+      <OKLink id="mov2#opm5#spu2#oln26" name="OKFlow26" to="mov2#opm5#okcu6">
+        <LinkParameter id="mov2#opm5#spu2#oln26#par38" name="msg_msg" source="mov2#opm5#spu2#spp22" target="mov2#opm5#okcu6#ocp1"/>
+      </OKLink>
+      <KOLink id="mov2#opm5#spu2#kln3" name="KOFlow3" to="mov2#opm5#kocu5">
+        <LinkParameter id="mov2#opm5#spu2#kln3#par54" name="Error on adding stats. Please insert again._msg" sourceValue="Error on adding stats. Please insert again." target="mov2#opm5#kocu5#ocp3"/>
+      </KOLink>
+      <StoredProcedureParameter id="mov2#opm5#spu2#spp22" name="msg" type="string" direction="output" position="9"/>
+    </StoredProcedureUnit>
+    <OKCollectorUnit gr:x="675" gr:y="65" id="mov2#opm5#okcu6" name="Added">
+      <OutputCollectorParameter id="mov2#opm5#okcu6#ocp1" name="msg"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit gr:x="675" gr:y="230" id="mov2#opm5#kocu5" name="Error">
+      <OutputCollectorParameter id="mov2#opm5#kocu5#ocp3" name="msg"/>
+    </KOCollectorUnit>
+  </OperationUnits>
+</OperationModule>
