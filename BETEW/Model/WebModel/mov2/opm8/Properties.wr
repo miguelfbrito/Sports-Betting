@@ -1,0 +1,41 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="165" gr:y="340" id="mov2#opm8" name="Add Basketball Stats">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm8#icu6" gr:x="30" gr:y="60">
+      <InputCollectorParameter id="mov2#opm8#icu6#icp23" name="homepoints"/>
+      <InputCollectorParameter id="mov2#opm8#icu6#icp24" name="awaytriples"/>
+      <InputCollectorParameter id="mov2#opm8#icu6#icp25" name="hometriples"/>
+      <InputCollectorParameter id="mov2#opm8#icu6#icp26" name="awaypoints"/>
+      <InputCollectorParameter id="mov2#opm8#icu6#icp27" name="event_id"/>
+      <OKLink id="mov2#opm8#icu6#oln31" name="OKFlow31" to="mov2#opm8#spu6">
+        <LinkParameter id="mov2#opm8#icu6#oln31#par66" name="awaypoints_awaypoints" source="mov2#opm8#icu6#icp26" target="mov2#opm8#spu6.mov2#opm8#spu6#spp38"/>
+        <LinkParameter id="mov2#opm8#icu6#oln31#par117" name="awaytriples_awaytriples" source="mov2#opm8#icu6#icp24" target="mov2#opm8#spu6.mov2#opm8#spu6#spp35"/>
+        <LinkParameter id="mov2#opm8#icu6#oln31#par118" name="event_id_event_id" source="mov2#opm8#icu6#icp27" target="mov2#opm8#spu6.mov2#opm8#spu6#spp33"/>
+        <LinkParameter id="mov2#opm8#icu6#oln31#par120" name="duration_gameduration" source="mov2#opm8#icu6#icp28" target="mov2#opm8#spu6.mov2#opm8#spu6#spp32"/>
+        <LinkParameter id="mov2#opm8#icu6#oln31#par121" name="homepoints_homepoints" source="mov2#opm8#icu6#icp23" target="mov2#opm8#spu6.mov2#opm8#spu6#spp34"/>
+        <LinkParameter id="mov2#opm8#icu6#oln31#par122" name="hometriples_hometriples" source="mov2#opm8#icu6#icp25" target="mov2#opm8#spu6.mov2#opm8#spu6#spp37"/>
+      </OKLink>
+      <InputCollectorParameter id="mov2#opm8#icu6#icp28" name="duration"/>
+    </InputCollectorUnit>
+    <StoredProcedureUnit gr:x="300" gr:y="100" id="mov2#opm8#spu6" name="Insert basketball stats" resultType="plain" db="db1" procedure="add_basketball_stats">
+      <OKLink id="mov2#opm8#spu6#oln30" name="OKFlow30" to="mov2#opm8#okcu8">
+        <LinkParameter id="mov2#opm8#spu6#oln30#par64" name="msg_msg" source="mov2#opm8#spu6#spp36" target="mov2#opm8#okcu8#ocp6"/>
+      </OKLink>
+      <KOLink id="mov2#opm8#spu6#kln18" name="KOFlow18" to="mov2#opm8#kocu7">
+        <LinkParameter id="mov2#opm8#spu6#kln18#par65" name="Error on adding stats. Please insert again._msg" sourceValue="Error on adding stats. Please insert again." target="mov2#opm8#kocu7#ocp7"/>
+      </KOLink>
+      <StoredProcedureParameter id="mov2#opm8#spu6#spp32" name="gameduration" type="string" direction="input" position="1"/>
+      <StoredProcedureParameter id="mov2#opm8#spu6#spp33" name="event_id" type="string" direction="input" position="2"/>
+      <StoredProcedureParameter id="mov2#opm8#spu6#spp34" name="homepoints" type="string" direction="input" position="3"/>
+      <StoredProcedureParameter id="mov2#opm8#spu6#spp35" name="awaytriples" type="string" direction="input" position="4"/>
+      <StoredProcedureParameter id="mov2#opm8#spu6#spp36" name="msg" type="string" direction="output" position="7"/>
+      <StoredProcedureParameter id="mov2#opm8#spu6#spp37" name="hometriples" type="string" direction="input" position="5"/>
+      <StoredProcedureParameter id="mov2#opm8#spu6#spp38" name="awaypoints" type="string" direction="input" position="6"/>
+    </StoredProcedureUnit>
+    <KOCollectorUnit gr:x="585" gr:y="175" id="mov2#opm8#kocu7" name="Error">
+      <OutputCollectorParameter id="mov2#opm8#kocu7#ocp7" name="msg"/>
+    </KOCollectorUnit>
+    <OKCollectorUnit gr:x="585" gr:y="60" id="mov2#opm8#okcu8" name="Success">
+      <OutputCollectorParameter id="mov2#opm8#okcu8#ocp6" name="msg"/>
+    </OKCollectorUnit>
+  </OperationUnits>
+</OperationModule>

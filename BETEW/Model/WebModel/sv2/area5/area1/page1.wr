@@ -74,6 +74,7 @@
       <IndexUnit id="sv2#area5#area1#page1#page16#inu6" name="List bets" gr:x="0" gr:y="125" entity="ent1" displayAttributes="ent1#att26 ent1#att27 ent1#att10">
         <Selector id="sv2#area5#area1#page1#page16#inu6#su22" defaultPolicy="fill" booleanOperator="and">
           <RelationshipRoleCondition id="sv2#area5#area1#page1#page16#inu6#su22#rcond4" name="RoleCondition1" predicate="in" implied="false" role="rel10#role19"/>
+          <AttributesCondition id="sv2#area5#area1#page1#page16#inu6#su22#acond1" name="AttCondition1" predicate="eq" booleanOperator="or" implied="false" attributes="rel21#role42.ent4#att21" value="1"/>
         </Selector>
       </IndexUnit>
       <GetUnit gr:x="0" gr:y="0" id="sv2#area5#area1#page1#page16#gtu6" name="Get6" contextParameters="UserCtxParam">

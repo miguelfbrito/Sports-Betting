@@ -48,8 +48,7 @@
       <db:JoinColumn attribute="moduleOID" name="module_oid"/>
     </RelationshipRole2>
   </Relationship>
-  <db:Database id="db1" name="Database" type="MySQL" url="jdbc:mysql://localhost:3306/bettingwebapp" username="userEW" password="userEW23" connectionCount="5" readProcedures="true">
-  </db:Database>
+  <db:Database id="db1" name="Database" type="MySQL" url="jdbc:mysql://localhost:3306/bettingwebapp" username="userEW" password="userEW23" connectionCount="5" readProcedures="true"/>
   <Entity gr:x="365" gr:y="325" id="ent1" name="Bet" duration="persistent" attributeOrder="ent1#att1 ent1#att10 ent1#att26 ent1#att27" db:database="db1" db:table="bet">
     <Attribute id="ent1#att1" key="true" name="oid" type="integer" db:column="oid" db:idGenerator="identity"/>
     <Attribute id="ent1#att10" name="wager" type="float" db:column="wager" key="false"/>
