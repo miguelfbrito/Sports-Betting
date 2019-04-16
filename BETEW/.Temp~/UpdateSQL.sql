@@ -1,6 +1,6 @@
 -- Group [Group]
 create table `group` (
-   `oid`  integer  not null,
+   `oid`  integer not null auto_increment,
    `groupname`  varchar(255),
   primary key (`oid`)
 );
@@ -8,7 +8,7 @@ create table `group` (
 
 -- Module [Module]
 create table `module` (
-   `oid`  integer  not null,
+   `oid`  integer not null auto_increment,
    `moduleid`  varchar(255),
    `modulename`  varchar(255),
   primary key (`oid`)
@@ -17,7 +17,7 @@ create table `module` (
 
 -- User [User]
 create table `user` (
-   `oid`  integer  not null,
+   `oid`  integer not null auto_increment,
    `username`  varchar(255),
    `password`  varchar(255),
    `email`  varchar(255),
@@ -31,22 +31,53 @@ create table `user` (
 create table `bet` (
    `oid`  integer not null auto_increment,
    `wager`  double precision,
-   `result`  varchar(255),
   primary key (`oid`)
 );
 
 
 -- State [ent10]
 create table `state` (
-   `oid`  integer  not null,
+   `oid`  integer not null auto_increment,
    `name`  varchar(255),
+  primary key (`oid`)
+);
+
+
+-- FootballStats [ent11]
+create table `footballstats` (
+   `stats_oid`  integer  not null,
+   `homegoals`  integer,
+   `awaygoals`  integer,
+   `awayyellowcards`  integer,
+   `homeyellowcards`  integer,
+   `awayredcards`  integer,
+   `homeredcards`  integer,
+  primary key (`stats_oid`)
+);
+
+
+-- BasketballStats [ent13]
+create table `basketballstats` (
+   `stats_oid`  integer  not null,
+   `homepoints`  integer,
+   `awaytriples`  integer,
+   `hometriples`  integer,
+   `awaypoints`  integer,
+  primary key (`stats_oid`)
+);
+
+
+-- Stats [ent15]
+create table `stats` (
+   `oid`  integer not null auto_increment,
+   `gameduration`  varchar(255),
   primary key (`oid`)
 );
 
 
 -- AvailableBetTypes [ent2]
 create table `availablebettypes` (
-   `oid`  integer  not null,
+   `oid`  integer not null auto_increment,
    `odd`  double precision,
    `betresult`  bit,
   primary key (`oid`)
@@ -55,7 +86,7 @@ create table `availablebettypes` (
 
 -- Event [ent3]
 create table `event` (
-   `event_oid`  integer  not null,
+   `event_oid`  integer not null auto_increment,
    `finishingdate`  date,
    `startingdate`  date,
    `creationdate`  date,
@@ -68,7 +99,7 @@ create table `event` (
 
 -- Result [ent4]
 create table `result` (
-   `oid`  integer  not null,
+   `oid`  integer not null auto_increment,
    `name`  varchar(255),
   primary key (`oid`)
 );
@@ -76,7 +107,7 @@ create table `result` (
 
 -- Sport [ent5]
 create table `sport` (
-   `oid`  integer  not null,
+   `oid`  integer not null auto_increment,
    `name`  varchar(255),
   primary key (`oid`)
 );
@@ -84,7 +115,7 @@ create table `sport` (
 
 -- BetType [ent6]
 create table `bettype` (
-   `oid`  integer  not null,
+   `oid`  integer not null auto_increment,
    `name`  varchar(255),
   primary key (`oid`)
 );
@@ -92,21 +123,21 @@ create table `bettype` (
 
 -- Team [ent7]
 create table `team` (
-   `oid`  integer  not null,
+   `oid`  integer not null auto_increment,
   primary key (`oid`)
 );
 
 
 -- TeamsPerEvent [ent8]
 create table `teamsperevent` (
-   `oid`  integer  not null,
+   `oid`  integer not null auto_increment,
   primary key (`oid`)
 );
 
 
 -- Player [ent9]
 create table `player` (
-   `oid`  integer  not null,
+   `oid`  integer not null auto_increment,
   primary key (`oid`)
 );
 
@@ -139,6 +170,16 @@ create table `user_group` (
 );
 alter table `user_group`   add index fk_user_group_user (`user_oid`), add constraint fk_user_group_user foreign key (`user_oid`) references `user` (`oid`);
 alter table `user_group`   add index fk_user_group_group (`group_oid`), add constraint fk_user_group_group foreign key (`group_oid`) references `group` (`oid`);
+
+
+-- BetType_Sport [rel1]
+create table `bettype_sport` (
+   `bettype_oid`  integer not null,
+   `sport_oid`  integer not null,
+  primary key (`bettype_oid`, `sport_oid`)
+);
+alter table `bettype_sport`   add index fk_bettype_sport_bettype (`bettype_oid`), add constraint fk_bettype_sport_bettype foreign key (`bettype_oid`) references `bettype` (`oid`);
+alter table `bettype_sport`   add index fk_bettype_sport_sport (`sport_oid`), add constraint fk_bettype_sport_sport foreign key (`sport_oid`) references `sport` (`oid`);
 
 
 -- User_Bet [rel10]
@@ -194,5 +235,18 @@ alter table `bet`   add index fk_bet_result (`result_oid`), add constraint fk_be
 -- Sport_Event [rel22]
 alter table `event`  add column  `sport_oid`  integer;
 alter table `event`   add index fk_event_sport (`sport_oid`), add constraint fk_event_sport foreign key (`sport_oid`) references `sport` (`oid`);
+
+
+-- Event_Stats [rel6]
+alter table `stats`  add column  `event_event_oid`  integer;
+alter table `stats`   add index fk_stats_event (`event_event_oid`), add constraint fk_stats_event foreign key (`event_event_oid`) references `event` (`event_oid`);
+
+
+-- GEN FK: FootballStats --> Stats
+alter table `footballstats`   add index fk_footballstats_stats (`stats_oid`), add constraint fk_footballstats_stats foreign key (`stats_oid`) references `stats` (`oid`);
+
+
+-- GEN FK: BasketballStats --> Stats
+alter table `basketballstats`   add index fk_basketballstats_stats (`stats_oid`), add constraint fk_basketballstats_stats foreign key (`stats_oid`) references `stats` (`oid`);
 
 

@@ -1,6 +1,6 @@
-<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="-115" gr:y="-265" id="sv3#area3" name="Manage Events" landmark="true" landmarks="sv3#area3#area9 sv3#area3#area12" defaultPage="sv3#area3#dlu2" protected="true">
+<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="-125" gr:y="-180" id="sv3#area3" name="Manage Events" landmark="true" landmarks="sv3#area3#area9 sv3#area3#area12" defaultPage="sv3#area3#dlu2" protected="false">
   <OperationUnits>
-    <DeleteUnit gr:x="1325" gr:y="500" id="sv3#area3#dlu2" name="Delete Bet Type" entity="ent2">
+    <DeleteUnit gr:x="1330" gr:y="545" id="sv3#area3#dlu2" name="Delete Bet Type" entity="ent2">
       <Selector id="sv3#area3#dlu2#su13" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv3#area3#dlu2#su13#kcond10" name="KeyCondition10" predicate="in" implied="false"/>
       </Selector>

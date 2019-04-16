@@ -1,4 +1,4 @@
-<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv2" name="Make Bet" landmarks="sv2#area5" homePage="sv2#area5#area6#page6">
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv2" name="Make Bet" landmarks="sv2#area5 sv2#area4" homePage="sv2#page5">
   <OperationUnits>
     <ModuleInstanceUnit gr:x="320" gr:y="375" id="sv2#miu4" action="true" name="Login" moduleId="mov1#opm2">
       <KOLink id="sv2#miu4#kln16" name="KOFlow16" to="sv2#page5#mssu5">
