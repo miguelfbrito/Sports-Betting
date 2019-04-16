@@ -4,8 +4,6 @@
 /*
 insert into module values (1, "area5", "Betting App");
 
--- group 
-insert into bettingwebapp.group values (1, "Normal", 1);
 
 -- group_module
 insert into group_module values (1,1);
@@ -16,12 +14,23 @@ insert into user_group values (1,1);
 insert into user_group values (2,1);
 */
 
+-- group 
+insert into bettingwebapp.group(groupname) values ("Normal");
+insert into bettingwebapp.group(groupname) values ("Premium");
+insert into bettingwebapp.group(groupname) values ("Administrator");
+
 -- users
-insert into user(username, password, email, name, balance) values ("maria", "pass", "maria@gmail.com", "Maria Carla", 15.0);
-insert into user(username, password, email, name, balance) values ("joao", "pass", "maria@gmail.com", "Joao", 15.0);
+insert into user(username, password, email, name, balance) values ("maria", "pass", "maria@gmail.com", "Maria Carla", 10.0);
+insert into user(username, password, email, name, balance) values ("joao", "pass", "maria@gmail.com", "Joao", 10.0);
+insert into user(username, password, email, name, balance) values ("carlos", "pass", "maria@gmail.com", "Joao", 10.0);
+
+-- user_group
+insert into user_group(user_oid, group_oid) values (1,1);
+insert into user_group(user_oid, group_oid) values (2,2);
+insert into user_group(user_oid, group_oid) values (3,1);
 
 -- Sports
-insert into sport(name) values("Soccer");
+insert into sport(name) values("Football");
 insert into sport(name) values("Futsal");
 insert into sport(name) values("Volleyball");
 insert into sport(name) values("Basketball");
@@ -36,9 +45,9 @@ insert into event(startingdate, creationdate, finishingdate, ispremium, descript
 
 insert into event(startingdate, creationdate, finishingdate, ispremium, description, name, state_oid, sport_oid) values('2019-04-01 0:0', '2019-04-01 0:0', '2019-05-20 0:0', true, "Description of the game", "Benfica x Sporting", 1, 1);
 
-insert into event(startingdate, creationdate, finishingdate, ispremium, description, name, state_oid, sport_oid) values('2019-04-01 0:0', '2019-04-01 0:0', '2019-05-20 0:0', true, "Description of the game", "Sporting x Anadia", 1, 1);
+insert into event(startingdate, creationdate, finishingdate, ispremium, description, name, state_oid, sport_oid) values('2019-04-01 0:0', '2019-04-01 0:0', '2019-05-20 0:0', true, "Description of the game", "Sporting x Anadia", 1, 2);
 
-insert into event(startingdate, creationdate, finishingdate, ispremium, description, name, state_oid, sport_oid) values('2019-04-01 0:0', '2019-04-01 0:0', '2019-05-20 0:0', true, "Description of the game", "Real Madrid x Barcelona", 1, 1);
+insert into event(startingdate, creationdate, finishingdate, ispremium, description, name, state_oid, sport_oid) values('2019-04-01 0:0', '2019-04-01 0:0', '2019-05-20 0:0', true, "Description of the game", "Real Madrid x Barcelona", 1, 2);
 
 insert into event(startingdate, creationdate, finishingdate, ispremium, description, name, state_oid, sport_oid) values('2019-04-01 0:0', '2019-04-01 0:0', '2019-05-20 0:0', true, "Description of the game", "Benfica x Porto", 1, 1);
 
@@ -121,6 +130,7 @@ DELIMITER ;
 
 
 -- validar apostas de acordo com a string do bettype
+DELIMITER //
 create procedure validar_bettype_com_stats(IN i_oid integer, IN i_bettype_id integer)
 BEGIN
 	declare v_bet_name varchar(50);
@@ -205,24 +215,35 @@ BEGIN
 END //
 DELIMITER ;
 
-/*
--- PROCEDURES:
-
-------------------------------------------------------------------------------------------------------------------------------------------
---place_bet
-
-CREATE DEFINER=`userEW`@`localhost` PROCEDURE `place_bet`(IN wager float, IN userid integer, IN Eventid integer, IN betTypeid integer, IN resultid integer, OUT place boolean)
+-- alterar
+DELIMITER //
+CREATE PROCEDURE place_bet(IN wager float, IN userid integer, IN Eventid integer, IN betTypeid integer, IN resultid integer, OUT place boolean)
 BEGIN
-	update user set balance = (balance - wager) where oid = userid;
+    update user set balance = (balance - wager) where oid = userid;
     insert into bet(wager, user_oid, event_oid, bettype_oid, result_oid) values(wager, userid, Eventid, betTypeid, resultid);
-	set place =true;
-END
+    set place =true;
+END //
+DELIMITER ;
 
--------------------------------------------------------------------------------------------------------------------------------------------
 
---Add_User
+-- Check premium 
+DELIMITER //
+CREATE PROCEDURE Check_Premium(IN inid INT, out prem boolean)
+BEGIN
+    declare idgroup integer;
+    declare groupuser varchar(255);
+    select user_group.group_oid into idgroup from user_group where user_oid = inid;
+    select bettest.group.groupname into groupuser from bettest.group where bettest.group.oid = idgroup;
+    if(groupuser="PremiumUser")then
+        set prem=true;
+    end if;
+END //
+DELIMITER ;
 
-CREATE DEFINER=`userEW`@`localhost` PROCEDURE `Add_User`(In inid integer, IN inusername varchar(255), IN inpassword varchar(255), IN inname varchar(255), IN inemail varchar(255), IN inbalance float, out estado varchar(255))
+
+-- Add_User
+DELIMITER //
+CREATE PROCEDURE Add_User(In inid integer, IN inusername varchar(255), IN inpassword varchar(255), IN inname varchar(255), IN inemail varchar(255), IN inbalance float, out estado varchar(255))
 BEGIN
 	DECLARE iduser integer;
 	select user.oid into iduser from user where user.username = inusername;
@@ -232,8 +253,44 @@ BEGIN
 	else
 		set estado = "Username já existe";
 	end if;
-END
+END //
+DELIMITER ;
 
--------------------------------------------------------------------------------------------------------------------------------------------
 
-*/
+-- football stats
+DELIMITER //
+CREATE PROCEDURE add_football_stats(IN i_gameduration integer, IN i_eventid integer, In i_awaygoals integer, In i_awayredcards integer,In i_awayyellowcards integer,In i_homegoals integer,In i_homeredcards integer,In i_homeyellowcards integer, OUT msg varchar(255))
+BEGIN
+    declare v_statsid Integer;
+    declare v_checkstatsid Integer;
+    select oid into v_checkstatsid from stats where event_event_oid = i_eventid;
+    if(v_checkstatsid is null) then
+    Insert into stats(gameduration, event_event_oid) values (i_gameduration, i_eventid);
+    SELECT LAST_INSERT_ID() into v_statsid;
+    insert into footballstats(stats_oid, homegoals, awaygoals, awayyellowcards, homeyellowcards, awayredcards, homeredcards) values (v_statsid, i_homegoals, i_awaygoals, i_awayyellowcards, i_homeyellowcards, i_awayredcards, i_homeredcards);
+    set msg = "Stats added with success";
+    else
+    set msg = "Stats already added";
+    end if;
+END //
+DELIMITER ;
+
+-- basketball stats
+DELIMITER //
+CREATE PROCEDURE add_basketball_stats(IN i_gameduration integer, IN i_eventid integer, In i_homepoints integer, In i_awaytriples integer,In i_hometriples integer,In i_awaypoints integer, OUT msg varchar(255))
+BEGIN
+    declare v_statsid Integer;
+    declare v_checkstatsid Integer;
+    select oid into v_checkstatsid from stats where event_event_oid = i_eventid;
+    if(v_checkstatsid is null) then
+    Insert into stats(gameduration, event_event_oid) values (i_gameduration, i_eventid);
+    SELECT LAST_INSERT_ID() into v_statsid;
+    insert into basketballstats(stats_oid, homepoints, awaytriples, hometriples, awaypoints) 
+    values (v_statsid, i_homepoints, i_awaytriples, i_hometriples, i_awaypoints);
+    set msg = "Stats added with success";
+    else
+    set msg = "Stats already added";
+    end if;
+END //
+DELIMITER ;
+
