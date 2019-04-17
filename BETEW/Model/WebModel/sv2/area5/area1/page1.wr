@@ -26,7 +26,13 @@
               <layout:Cell/>
             </layout:Row>
             <layout:Row>
-              <layout:Cell colspan="12"/>
+              <layout:Cell colspan="12">
+                <layout:Unit unitId="sv2#area5#area1#page1#page16#inu12">
+                  <layout:Attribute attribute="ent1#att10"/>
+                  <layout:Attribute attribute="ent1#att27"/>
+                  <layout:Attribute attribute="rel21#role42.ent4#att22"/>
+                </layout:Unit>
+              </layout:Cell>
               <layout:Cell/>
               <layout:Cell/>
               <layout:Cell/>
@@ -71,7 +77,7 @@
   </layout:Grid>
   <Page id="sv2#area5#area1#page1#page16" name="List" gr:x="0" gr:y="0">
     <ContentUnits>
-      <IndexUnit id="sv2#area5#area1#page1#page16#inu6" name="List bets" gr:x="0" gr:y="125" entity="ent1" displayAttributes="ent1#att26 ent1#att27 ent1#att10">
+      <IndexUnit id="sv2#area5#area1#page1#page16#inu6" name="Open bets" gr:x="0" gr:y="125" entity="ent1" displayAttributes="ent1#att26 ent1#att27 ent1#att10">
         <Selector id="sv2#area5#area1#page1#page16#inu6#su22" defaultPolicy="fill" booleanOperator="and">
           <RelationshipRoleCondition id="sv2#area5#area1#page1#page16#inu6#su22#rcond4" name="RoleCondition1" predicate="in" implied="false" role="rel10#role19"/>
           <AttributesCondition id="sv2#area5#area1#page1#page16#inu6#su22#acond1" name="AttCondition1" predicate="eq" booleanOperator="or" implied="false" attributes="rel21#role42.ent4#att21" value="1"/>
@@ -79,7 +85,14 @@
       </IndexUnit>
       <GetUnit gr:x="0" gr:y="0" id="sv2#area5#area1#page1#page16#gtu6" name="Get6" contextParameters="UserCtxParam">
         <Link id="sv2#area5#area1#page1#page16#gtu6#ln25" name="Flow25" to="sv2#area5#area1#page1#page16#inu6" automaticCoupling="true" type="transport" validate="true"/>
+        <Link id="sv2#area5#area1#page1#page16#gtu6#ln78" name="Flow78" to="sv2#area5#area1#page1#page16#inu12" automaticCoupling="true" type="transport" validate="true"/>
       </GetUnit>
+      <IndexUnit gr:x="145" gr:y="130" id="sv2#area5#area1#page1#page16#inu12" name="Bet History" entity="ent1" displayAttributes="ent1#att10 ent1#att27 rel21#role42.ent4#att22">
+        <Selector id="sv2#area5#area1#page1#page16#inu12#su26" defaultPolicy="fill" booleanOperator="and">
+          <RelationshipRoleCondition id="sv2#area5#area1#page1#page16#inu12#su26#rcond7" name="RoleCondition7" predicate="in" implied="false" role="rel10#role19"/>
+          <AttributesCondition id="sv2#area5#area1#page1#page16#inu12#su26#acond7" name="AttCondition7" predicate="neq" booleanOperator="or" implied="false" attributes="rel21#role42.ent4#att21" value="1"/>
+        </Selector>
+      </IndexUnit>
     </ContentUnits>
   </Page>
 </Page>

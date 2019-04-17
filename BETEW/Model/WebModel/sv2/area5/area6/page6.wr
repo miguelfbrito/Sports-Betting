@@ -219,17 +219,7 @@
                     <layout:Cell/>
                   </layout:Row>
                   <layout:Row>
-                    <layout:Cell colspan="12">
-                      <layout:Unit unitId="sv2#area5#area6#page6#alt3#page3#dau4">
-                        <layout:Link link="sv2#area5#area6#page6#alt3#page3#dau4#ln31"/>
-                        <layout:Attribute attribute="ent3#att16"/>
-                        <layout:Attribute attribute="ent3#att15"/>
-                        <layout:Attribute attribute="ent3#att14"/>
-                        <layout:Attribute attribute="ent3#att4"/>
-                        <layout:Attribute attribute="ent3#att17"/>
-                        <layout:Attribute attribute="ent3#att18"/>
-                      </layout:Unit>
-                    </layout:Cell>
+                    <layout:Cell colspan="12"/>
                     <layout:Cell/>
                     <layout:Cell/>
                     <layout:Cell/>
@@ -366,29 +356,22 @@
     </layout:Row>
   </layout:Grid>
   <Alternative id="sv2#area5#area6#page6#alt3" name="Make Bet" gr:x="0" gr:y="0" defaultPage="sv2#area5#area6#page6#alt3#page58">
-    <Page id="sv2#area5#area6#page6#alt3#page3" name="Bet types" gr:x="0" gr:y="190">
+    <Page id="sv2#area5#area6#page6#alt3#page3" name="Bet types" gr:x="0" gr:y="250">
       <ContentUnits>
-        <IndexUnit gr:x="0" gr:y="185" id="sv2#area5#area6#page6#alt3#page3#inu5" name="List Bet Types" entity="ent2" displayAttributes="ent2#att2 ent2#att13 rel19#role38.ent6#att12" linkOrder="sv2#area5#area6#page6#alt3#page3#inu5#ln22">
+        <IndexUnit gr:x="0" gr:y="0" id="sv2#area5#area6#page6#alt3#page3#inu5" name="List Bet Types" entity="ent2" displayAttributes="ent2#att2 ent2#att13 rel19#role38.ent6#att12" linkOrder="sv2#area5#area6#page6#alt3#page3#inu5#ln22">
           <Selector id="sv2#area5#area6#page6#alt3#page3#inu5#su6" defaultPolicy="fill" booleanOperator="and">
             <RelationshipRoleCondition id="sv2#area5#area6#page6#alt3#page3#inu5#su6#rcond5" name="RoleCondition5" predicate="in" implied="false" role="rel20#role40"/>
           </Selector>
           <Link id="sv2#area5#area6#page6#alt3#page3#inu5#ln22" name="Choose" to="sv2#area5#area6#page6#alt3#page11#dau17" type="normal" automaticCoupling="true" validate="true"/>
           <Link id="sv2#area5#area6#page6#alt3#page3#inu5#ln23" name="Flow62" to="sv2#area5#area6#page6#alt3#page11#dau17" type="transport" validate="true" gr:bendpoints="179,55,-181,-25"/>
         </IndexUnit>
-        <DataUnit gr:x="45" gr:y="0" id="sv2#area5#area6#page6#alt3#page3#dau4" name="Event" entity="ent3" displayAll="true" linkOrder="sv2#area5#area6#page6#alt3#page3#dau4#ln31">
-          <Selector id="sv2#area5#area6#page6#alt3#page3#dau4#su5" defaultPolicy="fill" booleanOperator="and">
-            <KeyCondition id="sv2#area5#area6#page6#alt3#page3#dau4#su5#kcond4" name="KeyCondition4" predicate="in" implied="false"/>
-          </Selector>
-          <Link id="sv2#area5#area6#page6#alt3#page3#dau4#ln29" name="Flow29" to="sv2#area5#area6#page6#alt3#page3#inu5" type="transport" validate="true"/>
-          <Link id="sv2#area5#area6#page6#alt3#page3#dau4#ln31" name="List Bet Types" to="sv2#area5#area6#page6#alt3#page3#inu5" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="-13,129,-18,-126"/>
-        </DataUnit>
       </ContentUnits>
     </Page>
-    <Page id="sv2#area5#area6#page6#alt3#page8" name="Events" gr:x="310" gr:y="155">
+    <Page id="sv2#area5#area6#page6#alt3#page8" name="Events" gr:x="325" gr:y="155">
       <ContentUnits>
         <IndexUnit id="sv2#area5#area6#page6#alt3#page8#inu3" name="List Premium Events" gr:x="0" gr:y="105" entity="ent3" displayAttributes="ent3#att3 ent3#att18 ent3#att17 ent3#att4 ent3#att14 ent3#att15 ent3#att16" linkOrder="sv2#area5#area6#page6#alt3#page8#inu3#ln27">
-          <Link id="sv2#area5#area6#page6#alt3#page8#inu3#ln27" name="Details" to="sv2#area5#area6#page6#alt3#page3#dau4" automaticCoupling="true" type="normal" validate="true"/>
-          <Link id="sv2#area5#area6#page6#alt3#page8#inu3#ln28" name="Flow28" to="sv2#area5#area6#page6#alt3#page3#dau4" type="transport" validate="true" gr:bendpoints="-126,15,129,15"/>
+          <Link id="sv2#area5#area6#page6#alt3#page8#inu3#ln27" name="View Bets" to="sv2#area5#area6#page6#alt3#page3#inu5" automaticCoupling="true" type="normal" validate="true"/>
+          <Link id="sv2#area5#area6#page6#alt3#page8#inu3#ln28" name="Flow28" to="sv2#area5#area6#page6#alt3#page3#inu5" type="transport" validate="true" gr:bendpoints="-126,15,129,15"/>
           <Selector id="sv2#area5#area6#page6#alt3#page8#inu3#su9" defaultPolicy="fill" booleanOperator="and">
             <AttributesCondition id="sv2#area5#area6#page6#alt3#page8#inu3#su9#acond4" name="checkpremium" predicate="eq" booleanOperator="or" implied="false" attributes="ent3#att4"/>
           </Selector>
@@ -397,12 +380,12 @@
           <Selector id="sv2#area5#area6#page6#alt3#page8#inu1#su11" defaultPolicy="fill" booleanOperator="and">
             <AttributesCondition id="sv2#area5#area6#page6#alt3#page8#inu1#su11#acond5" name="AttCondition5" predicate="eq" booleanOperator="or" implied="false" attributes="ent3#att4" value="False"/>
           </Selector>
-          <Link id="sv2#area5#area6#page6#alt3#page8#inu1#ln87" name="Details" to="sv2#area5#area6#page6#alt3#page3#dau4" automaticCoupling="true" type="normal" validate="true"/>
-          <Link id="sv2#area5#area6#page6#alt3#page8#inu1#ln88" name="Flow88" to="sv2#area5#area6#page6#alt3#page3#dau4" type="transport" validate="true" gr:bendpoints="-146,33,139,-2"/>
+          <Link id="sv2#area5#area6#page6#alt3#page8#inu1#ln87" name="View Bets" to="sv2#area5#area6#page6#alt3#page3#inu5" automaticCoupling="true" type="normal" validate="true"/>
+          <Link id="sv2#area5#area6#page6#alt3#page8#inu1#ln88" name="Flow88" to="sv2#area5#area6#page6#alt3#page3#inu5" type="transport" validate="true" gr:bendpoints="-146,33,139,-2"/>
         </IndexUnit>
       </ContentUnits>
     </Page>
-    <Page id="sv2#area5#area6#page6#alt3#page11" name="Place bet" gr:x="280" gr:y="425">
+    <Page id="sv2#area5#area6#page6#alt3#page11" name="Place bet" gr:x="295" gr:y="425">
       <ContentUnits>
         <GetUnit id="sv2#area5#area6#page6#alt3#page11#gtu1" name="Get7" gr:x="0" gr:y="5" contextParameters="UserCtxParam">
           <Link id="sv2#area5#area6#page6#alt3#page11#gtu1#ln14" name="Flow26" to="sv2#area5#area6#page6#alt3#page11#enu11" type="transport" validate="true">
@@ -430,7 +413,7 @@
         </EntryUnit>
       </ContentUnits>
     </Page>
-    <Page id="sv2#area5#area6#page6#alt3#page58" name="Make Bet - welcome menu" gr:x="45" gr:y="0">
+    <Page id="sv2#area5#area6#page6#alt3#page58" name="Make Bet - welcome menu" gr:x="60" gr:y="0">
       <ContentUnits>
         <MultiMessageUnit id="sv2#area5#area6#page6#alt3#page58#mssu33" name="Information" linkOrder="sv2#area5#area6#page6#alt3#page58#mssu33#ln83" gr:x="165" gr:y="15">
           <Message xml:space="preserve">In this page you can choose events to place bets!</Message>

@@ -223,6 +223,7 @@
           <Link id="sv3#area3#area9#area10#page26#alt7#page27#dau10#ln34" name="Flow23" to="sv3#area3#area9#area10#page26#alt7#page28#inu9" type="transport" validate="true" gr:bendpoints="88,10,-197,25">
             <LinkParameter id="sv3#area3#area9#area10#page26#alt7#page27#dau10#ln34#par79" name="oid_PASSING" source="data.ent3#att3" passing="true"/>
             <LinkParameter id="sv3#area3#area9#area10#page26#alt7#page27#dau10#ln34#par61" name="EventToSport.oid_PASSING" source="data.rel22#role44_ent5#att5" passing="true"/>
+            <LinkParameter id="sv3#area3#area9#area10#page26#alt7#page27#dau10#ln34#par272" name="EventToSport.oid_RoleCondition3 [oid]" source="data.rel22#role44_ent5#att5" target="sv3#area3#area9#area10#page26#alt7#page28#inu9#su21#rcond3.ent5#att5"/>
           </Link>
         </DataUnit>
         <IndexUnit id="sv3#area3#area9#area10#page26#alt7#page27#inu7" name="Events" linkOrder="sv3#area3#area9#area10#page26#alt7#page27#inu7#ln35" gr:x="0" gr:y="5" entity="ent3" displayAttributes="ent3#att3 ent3#att18 ent3#att17 ent3#att4 ent3#att14 ent3#att15 ent3#att16">

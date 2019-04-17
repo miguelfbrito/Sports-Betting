@@ -8,7 +8,7 @@
         <LinkParameter id="mov2#opm9#icu7#oln17#par144" name="value_value" source="mov2#opm9#icu7#icp31" target="mov2#opm9#spu5.mov2#opm9#spu5#spp23"/>
       </OKLink>
     </InputCollectorUnit>
-    <StoredProcedureUnit gr:x="300" gr:y="70" id="mov2#opm9#spu5" name="Raise Money" resultType="plain" db="db1" procedure="withdraw_balance">
+    <StoredProcedureUnit gr:x="300" gr:y="70" id="mov2#opm9#spu5" name="Deposit" resultType="plain" db="db1" procedure="deposit_balance">
       <StoredProcedureParameter id="mov2#opm9#spu5#spp21" name="user_id" type="string" direction="input" position="1"/>
       <StoredProcedureParameter id="mov2#opm9#spu5#spp23" name="value" type="string" direction="input" position="2"/>
       <OKLink id="mov2#opm9#spu5#oln19" name="OKFlow19" to="mov2#opm9#okcu7" automaticCoupling="true"/>

@@ -5,7 +5,7 @@
       <InputCollectorParameter id="mov2#opm10#icu8#icp33" name="value"/>
       <OKLink id="mov2#opm10#icu8#oln29" name="OKFlow29" to="mov2#opm10#spu7" automaticCoupling="true"/>
     </InputCollectorUnit>
-    <StoredProcedureUnit gr:x="310" gr:y="70" id="mov2#opm10#spu7" name="Cash deposit" resultType="plain" db="db1" procedure="deposit_balance">
+    <StoredProcedureUnit gr:x="310" gr:y="70" id="mov2#opm10#spu7" name="Withdraw" resultType="plain" db="db1" procedure="withdraw_balance">
       <OKLink id="mov2#opm10#spu7#oln20" name="OKFlow20" to="mov2#opm10#okcu9" automaticCoupling="true"/>
       <KOLink id="mov2#opm10#spu7#kln21" name="KOFlow21" to="mov2#opm10#kocu8" automaticCoupling="true"/>
       <StoredProcedureParameter id="mov2#opm10#spu7#spp24" name="user_id" type="string" direction="input" position="1"/>

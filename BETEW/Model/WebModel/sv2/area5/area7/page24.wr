@@ -1,15 +1,15 @@
 <Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="285" id="sv2#area5#area7#page24" name="Money Transfers" landmark="true">
   <ContentUnits>
-    <EntryUnit id="sv2#area5#area7#page24#enu20" name="Raise Money" gr:x="0" gr:y="25" entity="User" linkOrder="sv2#area5#area7#page24#enu20#ln71">
+    <EntryUnit id="sv2#area5#area7#page24#enu20" name="Deposit" gr:x="0" gr:y="25" entity="User" linkOrder="sv2#area5#area7#page24#enu20#ln71">
       <Field id="sv2#area5#area7#page24#enu20#fld53" name="Value" type="float" modifiable="true" attribute="User#att19"/>
-      <Link id="sv2#area5#area7#page24#enu20#ln71" name="Flow71" to="sv2#miu10" type="normal" validate="true" gr:bendpoints="-154,-30,177,80">
+      <Link id="sv2#area5#area7#page24#enu20#ln71" name="Deposit" to="sv2#miu10" type="normal" validate="true" gr:bendpoints="-154,-30,177,80">
         <LinkParameter id="sv2#area5#area7#page24#enu20#ln71#par152" name="UserCtxParam.oid_PASSING_User_id" sourceLinkParameter="sv2#area5#area7#page24#gtu3#ln64#par149" target="sv2#miu10.mov2#opm9#icu7#icp30"/>
         <LinkParameter id="sv2#area5#area7#page24#enu20#ln71#par153" name="Value_value" source="sv2#area5#area7#page24#enu20#fld53" target="sv2#miu10.mov2#opm9#icu7#icp31"/>
       </Link>
     </EntryUnit>
-    <EntryUnit id="sv2#area5#area7#page24#enu21" name="Cash deposit" gr:x="0" gr:y="180" entity="User" linkOrder="sv2#area5#area7#page24#enu21#ln65">
+    <EntryUnit id="sv2#area5#area7#page24#enu21" name="Withdraw" gr:x="0" gr:y="180" entity="User" linkOrder="sv2#area5#area7#page24#enu21#ln65">
       <Field id="sv2#area5#area7#page24#enu21#fld54" name="Value" type="float" modifiable="true" attribute="User#att19"/>
-      <Link id="sv2#area5#area7#page24#enu21#ln65" name="Flow65" to="sv2#miu11" type="normal" validate="true" gr:bendpoints="-82,49,98,69">
+      <Link id="sv2#area5#area7#page24#enu21#ln65" name="Withdraw" to="sv2#miu11" type="normal" validate="true" gr:bendpoints="-82,49,98,69">
         <LinkParameter id="sv2#area5#area7#page24#enu21#ln65#par150" name="UserCtxParam.oid_PASSING_user_id" sourceLinkParameter="sv2#area5#area7#page24#gtu3#ln63#par147" target="sv2#miu11.mov2#opm10#icu8#icp32"/>
         <LinkParameter id="sv2#area5#area7#page24#enu21#ln65#par151" name="Value_value" source="sv2#area5#area7#page24#enu21#fld54" target="sv2#miu11.mov2#opm10#icu8#icp33"/>
       </Link>

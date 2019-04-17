@@ -1,21 +1,17 @@
 <SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv3" name="Manage Events" landmarks="sv3#area3" homePage="sv3#area3#page4">
   <OperationUnits>
-    <CreateUnit id="sv3#cru3" name="Add event" gr:x="355" gr:y="-345" entity="ent3">
-      <OKLink id="sv3#cru3#oln9" name="OKFlow7" to="sv3#area3#area9#area10#page26#alt7#page27#dau10" automaticCoupling="true"/>
-      <KOLink id="sv3#cru3#kln13" name="KOFlow4" to="sv3#area3#area12#area14#page38#alt10#page40#enu9" automaticCoupling="true" gr:bendpoints="27,240,-58,-235"/>
-    </CreateUnit>
     <ModifyUnit gr:x="-55" gr:y="610" id="sv3#mfu2" name="Update Events" entity="ent3">
       <Selector id="sv3#mfu2#su8" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv3#mfu2#su8#kcond7" name="KeyCondition7" predicate="in" implied="false"/>
       </Selector>
       <KOLink id="sv3#mfu2#kln12" name="KOFlow5" to="sv3#area3#area12#area13#page34#alt9#page37#enu8" automaticCoupling="true" gr:bendpoints="-114,-92,81,103"/>
-      <OKLink id="sv3#mfu2#oln14" name="OKFlow3" to="sv3#area3#area12#area13#page34#alt9#page36#inu12" automaticCoupling="true"/>
+      <OKLink id="sv3#mfu2#oln14" name="OKFlow3" to="sv3#area3#area12#area13#page34#alt9#page36" automaticCoupling="true"/>
     </ModifyUnit>
-    <DeleteUnit gr:x="400" gr:y="580" id="sv3#dlu1" name="Delete event" entity="ent3">
+    <DeleteUnit gr:x="500" gr:y="560" id="sv3#dlu1" name="Delete event" entity="ent3">
       <Selector id="sv3#dlu1#su10" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv3#dlu1#su10#kcond9" name="KeyCondition9" predicate="in" implied="false"/>
       </Selector>
-      <OKLink id="sv3#dlu1#oln13" name="OKFlow5" to="sv3#area3#area12#area13#page34#alt9#page36#inu12" automaticCoupling="true"/>
+      <OKLink id="sv3#dlu1#oln13" name="OKFlow5" to="sv3#area3#area12#area13#page34#alt9#page36" automaticCoupling="true"/>
       <KOLink id="sv3#dlu1#kln14" name="KOFlow3" to="sv3#area3#area12#area13#page34#alt9#page35#dau14" automaticCoupling="true" gr:bendpoints="72,-246,142,105"/>
     </DeleteUnit>
     <CreateUnit gr:x="1215" gr:y="-90" id="sv3#cru5" name="Create availableBT" entity="ent2">
@@ -48,6 +44,14 @@
         <LinkParameter id="sv3#miu22#oln40#par189" name="msg_Shown Messages" source="mov2#opm5#okcu6#ocp1" target="sv3#area3#area12#area13#page34#alt9#page36#mssu24.shownMessages"/>
       </OKLink>
       <KOLink id="sv3#miu22#kln23" name="KOFlow23" to="sv3#area3#area12#area13#page22#alt6#page47#mssu22" automaticCoupling="true"/>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="300" gr:y="-330" id="sv3#miu13" action="true" name="Add Event" moduleId="mov2#opm12">
+      <KOLink id="sv3#miu13#kln38" name="KOFlow4" to="sv3#area3#area12#area14#page38#alt10#page40#mssu15" gr:bendpoints="27,240,-58,-235">
+        <LinkParameter id="sv3#miu13#kln38#par290" name="msg_Shown Messages" source="mov2#opm12#kocu10#ocp5" target="sv3#area3#area12#area14#page38#alt10#page40#mssu15.shownMessages"/>
+      </KOLink>
+      <OKLink id="sv3#miu13#oln61" name="OKFlow7" to="sv3#area3#area9#area10#page26#alt7#page27#dau10">
+        <LinkParameter id="sv3#miu13#oln61#par278" name="Key [Event_oid]_PASSING_KeyCondition9 [Event_oid]" sourceLinkParameter="sv3#area3#area12#area14#page38#alt10#page40#enu9#ln60#par277" target="sv3#area3#area9#area10#page26#alt7#page27#dau10#su12#kcond12.ent3#att3"/>
+      </OKLink>
     </ModuleInstanceUnit>
   </OperationUnits>
 </SiteView>
