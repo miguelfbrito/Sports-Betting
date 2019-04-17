@@ -1,0 +1,20 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="85" gr:y="185" id="mov2#opm9" name="Raise Money">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm9#icu7" gr:x="30" gr:y="60">
+      <InputCollectorParameter id="mov2#opm9#icu7#icp30" name="User_id"/>
+      <InputCollectorParameter id="mov2#opm9#icu7#icp31" name="value"/>
+      <OKLink id="mov2#opm9#icu7#oln17" name="OKFlow17" to="mov2#opm9#spu5">
+        <LinkParameter id="mov2#opm9#icu7#oln17#par143" name="User_id_user_id" source="mov2#opm9#icu7#icp30" target="mov2#opm9#spu5.mov2#opm9#spu5#spp21"/>
+        <LinkParameter id="mov2#opm9#icu7#oln17#par144" name="value_value" source="mov2#opm9#icu7#icp31" target="mov2#opm9#spu5.mov2#opm9#spu5#spp23"/>
+      </OKLink>
+    </InputCollectorUnit>
+    <StoredProcedureUnit gr:x="300" gr:y="70" id="mov2#opm9#spu5" name="Raise Money" resultType="plain" db="db1" procedure="withdraw_balance">
+      <StoredProcedureParameter id="mov2#opm9#spu5#spp21" name="user_id" type="string" direction="input" position="1"/>
+      <StoredProcedureParameter id="mov2#opm9#spu5#spp23" name="value" type="string" direction="input" position="2"/>
+      <OKLink id="mov2#opm9#spu5#oln19" name="OKFlow19" to="mov2#opm9#okcu7" automaticCoupling="true"/>
+      <KOLink id="mov2#opm9#spu5#kln17" name="KOFlow17" to="mov2#opm9#kocu6" automaticCoupling="true"/>
+    </StoredProcedureUnit>
+    <OKCollectorUnit gr:x="495" gr:y="50" id="mov2#opm9#okcu7" name="Success"/>
+    <KOCollectorUnit gr:x="495" gr:y="140" id="mov2#opm9#kocu6" name="Error"/>
+  </OperationUnits>
+</OperationModule>

@@ -1,6 +1,6 @@
-<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="150" gr:y="270" id="mov2#opm5" name="Add Football Stats">
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="350" gr:y="115" id="mov2#opm5" name="Add Football Stats">
   <OperationUnits>
-    <InputCollectorUnit id="mov2#opm5#icu5" gr:x="30" gr:y="60">
+    <InputCollectorUnit id="mov2#opm5#icu5" gr:x="-170" gr:y="70">
       <InputCollectorParameter id="mov2#opm5#icu5#icp15" name="homegoals"/>
       <InputCollectorParameter id="mov2#opm5#icu5#icp16" name="awaygoals"/>
       <InputCollectorParameter id="mov2#opm5#icu5#icp17" name="awayyellowcards"/>
@@ -9,18 +9,19 @@
       <InputCollectorParameter id="mov2#opm5#icu5#icp20" name="homeredcards"/>
       <InputCollectorParameter id="mov2#opm5#icu5#icp21" name="duration"/>
       <InputCollectorParameter id="mov2#opm5#icu5#icp22" name="Event_id"/>
-      <OKLink id="mov2#opm5#icu5#oln27" name="OKFlow27" to="mov2#opm5#spu2">
-        <LinkParameter id="mov2#opm5#icu5#oln27#par2" name="awaygoals_awaygoals" source="mov2#opm5#icu5#icp16" target="mov2#opm5#spu2.mov2#opm5#spu2#spp15"/>
-        <LinkParameter id="mov2#opm5#icu5#oln27#par5" name="awayredcards_awayredcards" source="mov2#opm5#icu5#icp19" target="mov2#opm5#spu2.mov2#opm5#spu2#spp16"/>
-        <LinkParameter id="mov2#opm5#icu5#oln27#par6" name="awayyellowcards_awayyellowcards" source="mov2#opm5#icu5#icp17" target="mov2#opm5#spu2.mov2#opm5#spu2#spp17"/>
-        <LinkParameter id="mov2#opm5#icu5#oln27#par7" name="Event_id_event_id" source="mov2#opm5#icu5#icp22" target="mov2#opm5#spu2.mov2#opm5#spu2#spp14"/>
-        <LinkParameter id="mov2#opm5#icu5#oln27#par8" name="duration_gameduration" source="mov2#opm5#icu5#icp21" target="mov2#opm5#spu2.mov2#opm5#spu2#spp13"/>
-        <LinkParameter id="mov2#opm5#icu5#oln27#par9" name="homegoals_homegoals" source="mov2#opm5#icu5#icp15" target="mov2#opm5#spu2.mov2#opm5#spu2#spp18"/>
-        <LinkParameter id="mov2#opm5#icu5#oln27#par10" name="homeredcards_homeredcards" source="mov2#opm5#icu5#icp20" target="mov2#opm5#spu2.mov2#opm5#spu2#spp19"/>
-        <LinkParameter id="mov2#opm5#icu5#oln27#par11" name="homeyellowcards_homeyellowcards" source="mov2#opm5#icu5#icp18" target="mov2#opm5#spu2.mov2#opm5#spu2#spp20"/>
+      <OKLink id="mov2#opm5#icu5#oln50" name="OKFlow50" to="mov2#opm5#spu2">
+        <LinkParameter id="mov2#opm5#icu5#oln50#par221" name="awaygoals_awaygoals" source="mov2#opm5#icu5#icp16" target="mov2#opm5#spu2.mov2#opm5#spu2#spp15"/>
+        <LinkParameter id="mov2#opm5#icu5#oln50#par222" name="awayredcards_awayredcards" source="mov2#opm5#icu5#icp19" target="mov2#opm5#spu2.mov2#opm5#spu2#spp16"/>
+        <LinkParameter id="mov2#opm5#icu5#oln50#par223" name="awayyellowcards_awayyellowcards" source="mov2#opm5#icu5#icp17" target="mov2#opm5#spu2.mov2#opm5#spu2#spp17"/>
+        <LinkParameter id="mov2#opm5#icu5#oln50#par227" name="Event_id_event_id" source="mov2#opm5#icu5#icp22" target="mov2#opm5#spu2.mov2#opm5#spu2#spp14"/>
+        <LinkParameter id="mov2#opm5#icu5#oln50#par228" name="duration_gameduration" source="mov2#opm5#icu5#icp21" target="mov2#opm5#spu2.mov2#opm5#spu2#spp13"/>
+        <LinkParameter id="mov2#opm5#icu5#oln50#par229" name="homegoals_homegoals" source="mov2#opm5#icu5#icp15" target="mov2#opm5#spu2.mov2#opm5#spu2#spp18"/>
+        <LinkParameter id="mov2#opm5#icu5#oln50#par230" name="homeredcards_homeredcards" source="mov2#opm5#icu5#icp20" target="mov2#opm5#spu2.mov2#opm5#spu2#spp19"/>
+        <LinkParameter id="mov2#opm5#icu5#oln50#par231" name="homeyellowcards_homeyellowcards" source="mov2#opm5#icu5#icp18" target="mov2#opm5#spu2.mov2#opm5#spu2#spp20"/>
+        <LinkParameter id="mov2#opm5#icu5#oln50#par232" name="Event_id_PASSING" source="mov2#opm5#icu5#icp22" passing="true"/>
       </OKLink>
     </InputCollectorUnit>
-    <StoredProcedureUnit gr:x="400" gr:y="125" id="mov2#opm5#spu2" name="Insert Football Stats" resultType="plain" db="db1" procedure="add_football_stats">
+    <StoredProcedureUnit gr:x="115" gr:y="120" id="mov2#opm5#spu2" name="Insert Football Stats" resultType="plain" db="db1" procedure="add_football_stats">
       <StoredProcedureParameter id="mov2#opm5#spu2#spp13" name="gameduration" type="string" direction="input" position="1"/>
       <StoredProcedureParameter id="mov2#opm5#spu2#spp14" name="event_id" type="string" direction="input" position="2"/>
       <StoredProcedureParameter id="mov2#opm5#spu2#spp15" name="awaygoals" type="string" direction="input" position="3"/>
@@ -29,19 +30,38 @@
       <StoredProcedureParameter id="mov2#opm5#spu2#spp18" name="homegoals" type="string" direction="input" position="6"/>
       <StoredProcedureParameter id="mov2#opm5#spu2#spp19" name="homeredcards" type="string" direction="input" position="7"/>
       <StoredProcedureParameter id="mov2#opm5#spu2#spp20" name="homeyellowcards" type="string" direction="input" position="8"/>
-      <OKLink id="mov2#opm5#spu2#oln26" name="OKFlow26" to="mov2#opm5#okcu6">
-        <LinkParameter id="mov2#opm5#spu2#oln26#par38" name="msg_msg" source="mov2#opm5#spu2#spp22" target="mov2#opm5#okcu6#ocp1"/>
-      </OKLink>
-      <KOLink id="mov2#opm5#spu2#kln3" name="KOFlow3" to="mov2#opm5#kocu5">
+      <KOLink id="mov2#opm5#spu2#kln3" name="KOFlow3" to="mov2#opm5#kocu5" gr:bendpoints="0,118,-640,9">
         <LinkParameter id="mov2#opm5#spu2#kln3#par54" name="Error on adding stats. Please insert again._msg" sourceValue="Error on adding stats. Please insert again." target="mov2#opm5#kocu5#ocp3"/>
       </KOLink>
       <StoredProcedureParameter id="mov2#opm5#spu2#spp22" name="msg" type="string" direction="output" position="9"/>
+      <OKLink id="mov2#opm5#spu2#oln52" name="OKFlow52" to="mov2#opm5#spu12">
+        <LinkParameter id="mov2#opm5#spu2#oln52#par233" name="Event_id_PASSING_event_id" sourceLinkParameter="mov2#opm5#icu5#oln50#par232" target="mov2#opm5#spu12.mov2#opm5#spu12#spp29"/>
+        <LinkParameter id="mov2#opm5#spu2#oln52#par234" name="Event_id_PASSING" sourceLinkParameter="mov2#opm5#icu5#oln50#par232" passing="true"/>
+      </OKLink>
     </StoredProcedureUnit>
-    <OKCollectorUnit gr:x="675" gr:y="65" id="mov2#opm5#okcu6" name="Added">
+    <OKCollectorUnit gr:x="725" gr:y="45" id="mov2#opm5#okcu6" name="Added">
       <OutputCollectorParameter id="mov2#opm5#okcu6#ocp1" name="msg"/>
     </OKCollectorUnit>
-    <KOCollectorUnit gr:x="675" gr:y="230" id="mov2#opm5#kocu5" name="Error">
+    <KOCollectorUnit gr:x="725" gr:y="230" id="mov2#opm5#kocu5" name="Error">
       <OutputCollectorParameter id="mov2#opm5#kocu5#ocp3" name="msg"/>
     </KOCollectorUnit>
+    <StoredProcedureUnit gr:x="535" gr:y="130" id="mov2#opm5#spu11" name="Set results" resultType="plain" db="db1" procedure="set_result_of_bets_by_event">
+      <KOLink id="mov2#opm5#spu11#kln30" name="KOFlow30" to="mov2#opm5#kocu5">
+        <LinkParameter id="mov2#opm5#spu11#kln30#par195" name="Error on set results_msg" sourceValue="Error on set results" target="mov2#opm5#kocu5#ocp3"/>
+      </KOLink>
+      <StoredProcedureParameter id="mov2#opm5#spu11#spp28" name="event_id" type="string" direction="input" position="1"/>
+      <OKLink id="mov2#opm5#spu11#oln47" name="OKFlow47" to="mov2#opm5#okcu6">
+        <LinkParameter id="mov2#opm5#spu11#oln47#par198" name="Stats added successfully and results are set._msg" sourceValue="Stats added successfully and results are set." target="mov2#opm5#okcu6#ocp1"/>
+      </OKLink>
+    </StoredProcedureUnit>
+    <StoredProcedureUnit id="mov2#opm5#spu12" name="Close Event" gr:x="350" gr:y="130" resultType="plain" db="db1" procedure="close_event">
+      <StoredProcedureParameter id="mov2#opm5#spu12#spp29" name="event_id" type="string" direction="input" position="1"/>
+      <KOLink id="mov2#opm5#spu12#kln31" name="KOFlow29" to="mov2#opm5#kocu5" gr:bendpoints="16,78,-368,-31">
+        <LinkParameter id="mov2#opm5#spu12#kln31#par208" name="Error on close event_msg" target="mov2#opm5#kocu5#ocp3" sourceValue="Error on close event"/>
+      </KOLink>
+      <OKLink id="mov2#opm5#spu12#oln53" name="OKFlow53" to="mov2#opm5#spu11">
+        <LinkParameter id="mov2#opm5#spu12#oln53#par235" name="Event_id_PASSING_event_id" sourceLinkParameter="mov2#opm5#spu2#oln52#par234" target="mov2#opm5#spu11.mov2#opm5#spu11#spp28"/>
+      </OKLink>
+    </StoredProcedureUnit>
   </OperationUnits>
 </OperationModule>
