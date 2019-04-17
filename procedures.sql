@@ -114,11 +114,8 @@ BEGIN
     avaliar: LOOP
 		fetch bets_validacao into v_oid, v_bettype_id;
                
-        call validar_bettype_com_stats(v_oid, v_bettype_id);
-        
-        -- verificar noutro procedimento com o switch
-        -- obter se é valido/inválido e definir na tabela
-        
+        call validar_bettype_com_stats(i_eventId, v_oid, v_bettype_id);
+
         if v_finished = 1 then 
 			leave avaliar;
         end if;
@@ -126,29 +123,21 @@ BEGIN
     end loop avaliar;
     close bets_validacao;
     
-    -- de acordo com o desporto, validar com as respetivas estatisticas
-    /*case v_sport_name
-		when 'Soccer' then select 'hiii';
-        when 'Futsal' then select 'futsal';
-	end case;
-    */
-    -- Inserir as STATS? Adicionar stats anteriormente e passa-se para este procedimento o id da tabela [Stats].
-    
 END //
 DELIMITER ;
 
 
 -- validar apostas de acordo com a string do bettype
 DELIMITER //
-create procedure validar_bettype_com_stats(IN i_oid integer, IN i_bettype_id integer)
+create procedure validar_bettype_com_stats(IN i_event_id integer, IN i_availablebt_id integer, IN i_bettype_id integer)
 BEGIN
 	declare v_sport_name varchar(50);
     
-	select sport.name into v_sport_name from event, sport  where event.sport_oid = sport.oid and event.event_oid = i_oid;
+	select sport.name into v_sport_name from event, sport  where event.sport_oid = sport.oid and event.event_oid = i_event_id;
     
     case v_sport_name
-		when 'Football' then call validar_bettype_football(i_oid, i_bettype_id);
-        when 'Basketball' then call validar_bettype_basketball(i_oid, i_bettype_id);
+		when 'Football' then call validar_bettype_football(i_event_id, i_availablebt_id, i_bettype_id);
+        when 'Basketball' then call validar_bettype_basketball(i_event_id, i_availablebt_id, i_bettype_id);
         else begin end;
 	end case;
     
@@ -157,49 +146,37 @@ DELIMITER ;
 
 
 
-
 -- validar apostas para futebol
 DELIMITER //
-create procedure validar_bettype_football(IN i_oid integer, IN i_bettype_id integer)
+create procedure validar_bettype_football(IN i_event_id integer, IN i_availablebt_id integer, IN i_bettype_id integer)
 BEGIN
     declare v_bet_name varchar(50);
     declare v_valid boolean;
     declare v_home_goals integer;
     declare v_away_goals integer;
-    
+
 	set v_valid = false;
     
     -- gameduration,awayyellowcards, homeyellowcards, awayredcards, homeredcards
     select name into v_bet_name from bettype where bettype.oid = i_bettype_id;
     
     select homegoals, awaygoals into v_home_goals, v_away_goals from event, stats, footballstats
-    where stats.event_event_oid = event.event_oid and stats.oid = footballstats.stats_oid and event.event_oid = i_oid;
-    
-	select i_oid, v_home_goals, v_away_goals, v_valid;
-  
+    where stats.event_event_oid = event.event_oid and stats.oid = footballstats.stats_oid and event.event_oid = i_event_id;
+
     case v_bet_name
-            WHEN '1' THEN 
-				if v_home_goals > v_away_goals then
-					set v_valid = true;
-                    select 'Ganhou casa';
-				end if;
+            WHEN '1' THEN if v_home_goals > v_away_goals then set v_valid = true; end if;
             WHEN 'X' THEN if v_home_goals = v_away_goals then set v_valid = true; end if;
             WHEN '2' THEN if v_home_goals < v_away_goals then set v_valid = true; end if;
 			WHEN '1 +0.5 goals' THEN if (v_home_goals - v_away_goals) > 0.5 then set v_valid = true; end if;
             WHEN '1 +1.5 goals' then if (v_home_goals - v_away_goals) > 1.5 then set v_valid = true; end if;
-        else begin
-			select 'nenhuma condicao';
-        end;
+        else begin end;
 	end case;
-    
-    
-  
     
     -- result = 1 válida, 0 - perdida
     if v_valid then
-		update availablebettypes set betresult = 1 where oid=i_oid;
+		update availablebettypes set betresult = 1 where oid=i_availablebt_id;
 	else 
-		update availablebettypes set betresult = 0 where oid=i_oid;
+		update availablebettypes set betresult = 0 where oid=i_availablebt_id;
 	end if;
 
 END //
@@ -438,6 +415,8 @@ BEGIN
 END //
 DELIMITER ;
 
+
+
 -- criacao de um evento
 DELIMITER //
 create procedure create_event(IN i_startingdate varchar(25), IN i_finishingdate varchar(25), in ispremium boolean, in description varchar(255), in name varchar(255),
@@ -467,11 +446,17 @@ DELIMITER ;
 
 -- Dados de procedimentos
 -- add_football_stats(i_gameduration, i_eventid ,i_awaygoals,i_awayredcards, i_awayyellowcards, i_homegoals,
--- i_homeredcards, i_homeyellowcards, OUT msg varchar(255))
+
 
 -- PARA TESTES
--- call add_football_stats(95, 1, 0, 1,2,3,0,3, @msg);
--- call close_event(1);
--- call set_result_of_bets_by_event(1);
 
--- call Add_User("teste", "pass", "teste 123", "emai@asda.com", @out);
+call create_event('2019-04-01 00:00', '2019-04-01 00:00', false, "No description", "Porto x Liverpool", 1);
+insert into availablebettypes(odd, betresult, bettype_oid, event_oid) values (1.35, null, 1, 6);
+insert into availablebettypes(odd, betresult, bettype_oid, event_oid) values (1.5, null, 2, 6);
+call place_bet(2, 1, 6, 1, 1, @out);
+call place_bet(2, 2, 6, 2, 1, @out);
+
+call add_football_stats(95, 6, 0, 1,2,3,0,3, @msg);
+call close_event(6);
+call set_result_of_bets_by_event(6);
+select * from bet;
