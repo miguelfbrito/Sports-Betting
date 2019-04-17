@@ -182,10 +182,10 @@ BEGIN
 END //
 DELIMITER ;
 
-
+desc basketballstats;
 -- validar apostas para basketball
 DELIMITER //
-create procedure validar_bettype_basketball(IN i_oid integer, IN i_bettype_id integer)
+create procedure validar_bettype_basketball(IN i_oid integer, IN i_availablebt_id integer, IN i_bettype_id integer)
 BEGIN
     declare v_bet_name varchar(50);
 	declare v_valid boolean;
@@ -195,11 +195,10 @@ BEGIN
     declare v_away_triples integer;
     
 	set v_valid = false;
-    set v_home_points = 103;
-    set v_away_points = 90;
-    set v_home_triples = 10;
-    set v_away_triples = 6;
-    
+
+    select homepoints, awaypoints, hometriples, awaytriples into v_home_points, v_away_points, v_home_triples, v_away_triples from event, stats, basketballstats
+    where stats.event_event_oid = event.event_oid and stats.oid = basketballstats.stats_oid and event.event_oid = i_event_id;
+
     select name into v_bet_name from bettype where bettype.oid = i_bettype_id;
     
     case v_bet_name
@@ -211,7 +210,9 @@ BEGIN
     
     -- result = 1 válida, 0 - perdida
     if v_valid then
-		update availablebettypes set betresult = 1 where oid=i_oid;
+		update availablebettypes set betresult = 1 where oid=i_availablebt_id;
+	else 
+		update availablebettypes set betresult = 0 where oid=i_availablebt_id;
 	end if;
     
     select i_oid;
@@ -398,24 +399,29 @@ DELIMITER ;
 
 -- adesao ao premium
 DELIMITER //
-create procedure buy_premium(IN i_userid integer)
+CREATE PROCEDURE buy_premium(IN i_userid integer, OUT msg varchar(255))
 BEGIN 
-	declare premium_fee float;
+    declare premium_fee float;
     declare user_balance float;
+    declare groupid integer;
+    declare groupn varchar(255);
     set premium_fee = 10;
     
-    select balance into user_balance from user where user.oid = i_userid;
-    
-    if user_balance >= premium_fee then
-		-- id 2 = premium
-		update user set group_oid = 2 where user.oid = i_userid;
-		-- será necessário isto?
-        update user_group set group_oid = 2 where user.oid = i_userid;
+    select group_oid into groupid from user_group where user_oid=i_userid;
+    select groupname into groupn from bettingwebapp.group where oid = groupid;
+    if(groupn = "Premium") then
+			set msg = "You're a Premium user already!";
+		else
+			select balance into user_balance from user where user.oid = i_userid;
+		if user_balance >= premium_fee then
+			update user set group_oid = 2 where user.oid = i_userid;
+			update user_group set group_oid = 2 where user.oid = i_userid;
+			set msg = "You are a Premium user!";
+		else
+			set msg = "Insufficient balance to acquire Premium!";
+		end if;
     end if;
-END //
-DELIMITER ;
-
-
+END
 
 -- criacao de um evento
 DELIMITER //
