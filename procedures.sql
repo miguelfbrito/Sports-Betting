@@ -339,12 +339,13 @@ DELIMITER ;
 
 -- Add_User
 DELIMITER //
-CREATE PROCEDURE Add_User(In inid integer, IN inusername varchar(255), IN inpassword varchar(255), IN inname varchar(255), IN inemail varchar(255), IN inbalance float, out estado varchar(255))
+CREATE PROCEDURE Add_User(IN inusername varchar(50), IN inpassword varchar(50), IN inname varchar(50), IN inemail varchar(50), out estado varchar(255))
 BEGIN
-	DECLARE iduser integer;
-	select user.oid into iduser from user where user.username = inusername;
-    if(iduser is null) then
-		INSERT INTO `bettest`.`user` (`oid`, `username`, `password`, `email`, `name`, `balance`) VALUES (inid, inusername, inpassword, inemail, inname, inbalance);
+	DECLARE v_username varchar(50);
+	select username into v_username from user where user.username = inusername;
+    select v_username;
+    if(v_username is null) then
+		INSERT INTO user (username, password, email, name, balance, group_oid) VALUES (inusername, inpassword, inemail, inname, 0, 1);
         set estado = "Adicionado";
 	else
 		set estado = "Username já existe";
@@ -446,3 +447,4 @@ DELIMITER ;
 -- call close_event(1);
 -- call set_result_of_bets_by_event(1);
 
+-- call Add_User("teste", "pass", "teste 123", "emai@asda.com", @out);
