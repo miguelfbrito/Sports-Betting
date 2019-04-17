@@ -438,17 +438,32 @@ BEGIN
 END //
 DELIMITER ;
 
--- adesao ao premium
+-- criacao de um evento
 DELIMITER //
-create procedure create_event(IN i_startingdate date, IN i_creationdate date, IN i_finishingdate date, in ispremium boolean, in description varchar(255), in name varchar(255),
+create procedure create_event(IN i_startingdate varchar(25), IN i_finishingdate varchar(25), in ispremium boolean, in description varchar(255), in name varchar(255),
 in i_sportid integer)
 BEGIN 
-    insert into event(startingdate, creationdate, finishingdate, ispremium, description, name, state_oid, sport_oid)
- values(i_startingdate, now(), i_finishingdate, ispremium, description, name, 1, i_sportid);
+
+	declare v_starting varchar(25);
+    declare v_creation varchar(25);
+    declare v_finishing varchar(25);
     
+    -- solução à pedreiro LUL
+    select REPLACE(i_startingdate, ' AM', '') into v_starting;
+    select REPLACE(v_starting, ' PM', '') into v_starting;
+    
+	select REPLACE(i_finishingdate, ' AM', '') into v_finishing;
+    select REPLACE(v_finishing, ' PM', '') into v_finishing;
+
+    select DATE_FORMAT(v_starting, '%Y-%m-%d %h:%m:%s') into v_starting;	
+    select DATE_FORMAT(now(), '%Y-%m-%d %h:%m:%s') into v_creation;
+    select DATE_FORMAT(v_finishing, '%Y-%m-%d %h:%m:%s') into v_finishing;
+	
+    insert into event(startingdate, creationdate, finishingdate, ispremium, description, name, state_oid, sport_oid)
+ values(v_starting, v_creation, v_finishing, ispremium, description, name, 1, i_sportid);
+     
 END //
 DELIMITER ;
-
 
 -- Dados de procedimentos
 -- add_football_stats(i_gameduration, i_eventid ,i_awaygoals,i_awayredcards, i_awayyellowcards, i_homegoals,
