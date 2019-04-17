@@ -84,7 +84,9 @@ insert into result(name) values ("Lost");
 
 -- bets
 insert into bet(wager, user_oid, event_oid, bettype_oid, result_oid) values (2, 1, 1, 1, 1);
+insert into bet(wager, user_oid, event_oid, bettype_oid, result_oid) values (4, 2, 1, 2, 1);
 insert into bet(wager, user_oid, event_oid, bettype_oid, result_oid) values (4, 1, 2, 2, 1);
+
 
 -- PROCEDURES
 
@@ -142,7 +144,7 @@ create procedure validar_bettype_com_stats(IN i_oid integer, IN i_bettype_id int
 BEGIN
 	declare v_sport_name varchar(50);
     
-	select sport.name into v_sport_name from event, sport  where event.sport_oid = sport.oid and event.event_oid = 1;
+	select sport.name into v_sport_name from event, sport  where event.sport_oid = sport.oid and event.event_oid = i_oid;
     
     case v_sport_name
 		when 'Football' then call validar_bettype_football(i_oid, i_bettype_id);
@@ -167,28 +169,39 @@ BEGIN
     
 	set v_valid = false;
     
-    select  homegoals, awaygoals -- gameduration,awayyellowcards, homeyellowcards, awayredcards, homeredcards 
-	into v_home_goals, v_away_goals
-    from event, stats, footballstats
-    where stats.event_event_oid = event.event_oid and stats.oid = footballstats.stats_oid;
-    
+    -- gameduration,awayyellowcards, homeyellowcards, awayredcards, homeredcards
     select name into v_bet_name from bettype where bettype.oid = i_bettype_id;
-
+    
+    select homegoals, awaygoals into v_home_goals, v_away_goals from event, stats, footballstats
+    where stats.event_event_oid = event.event_oid and stats.oid = footballstats.stats_oid and event.event_oid = i_oid;
+    
+	select i_oid, v_home_goals, v_away_goals, v_valid;
+  
     case v_bet_name
-            WHEN '1' THEN if v_home_goals > v_away_goals then set v_valid = true; end if;
+            WHEN '1' THEN 
+				if v_home_goals > v_away_goals then
+					set v_valid = true;
+                    select 'Ganhou casa';
+				end if;
             WHEN 'X' THEN if v_home_goals = v_away_goals then set v_valid = true; end if;
             WHEN '2' THEN if v_home_goals < v_away_goals then set v_valid = true; end if;
 			WHEN '1 +0.5 goals' THEN if (v_home_goals - v_away_goals) > 0.5 then set v_valid = true; end if;
             WHEN '1 +1.5 goals' then if (v_home_goals - v_away_goals) > 1.5 then set v_valid = true; end if;
-        else begin end;
+        else begin
+			select 'nenhuma condicao';
+        end;
 	end case;
+    
+    
+  
     
     -- result = 1 válida, 0 - perdida
     if v_valid then
 		update availablebettypes set betresult = 1 where oid=i_oid;
+	else 
+		update availablebettypes set betresult = 0 where oid=i_oid;
 	end if;
-    
-    select i_oid;
+
 END //
 DELIMITER ;
 
@@ -246,16 +259,24 @@ BEGIN
     declare v_finished integer default 0;
     declare v_result_oid integer;
     
-    declare bets_results cursor for select b.oid, a.betresult,b.user_oid, b.wager, a.odd, b.result_oid from event e, bet b, availablebettypes a where 
-    b.event_oid = e.event_oid and b.bettype_oid = a.bettype_oid and e.event_oid = i_eventId ;
+    declare bets_results cursor for select b.oid, availablebettypes.betresult,b.user_oid, b.wager, availablebettypes.odd, b.result_oid from event e, bet b, availablebettypes 
+	where e.event_oid = i_eventId and
+	    b.event_oid = e.event_oid and
+        availablebettypes.bettype_oid = b.bettype_oid 
+        and availablebettypes.event_oid = i_eventId;
+        
+    DECLARE CONTINUE HANDLER FOR NOT FOUND SET v_finished = 1;
     
-	DECLARE CONTINUE HANDLER FOR NOT FOUND SET v_finished = 1;
-
+    select b.oid, availablebettypes.betresult,b.user_oid, b.wager, availablebettypes.odd, b.result_oid from event e, bet b, availablebettypes where e.event_oid = 1 and
+	    b.event_oid = e.event_oid and
+        availablebettypes.bettype_oid = b.bettype_oid and availablebettypes.event_oid = 1;
+	
     open bets_results;
     percorrer_bets: LOOP
 
 		fetch bets_results into v_bet_id, v_bet_result, v_user_id, v_wager, v_odd, v_result_oid;
         
+        select v_bet_id, v_bet_result, v_user_id, v_wager, v_odd, v_result_oid, i_eventId;
         -- verifica se a bet ainda se encontra como resultado OPENED
         if v_result_oid = 1 then
 			-- id ganho = 2, perdido = 3
@@ -272,7 +293,7 @@ BEGIN
         end if;
         
         if v_finished = 1 then 
-				leave percorrer_bets;
+			leave percorrer_bets;
 		end if;
         
     END LOOP;
@@ -397,8 +418,25 @@ END //
 DELIMITER ;
 
 
+
 -- Dados de procedimentos
 -- add_football_stats(i_gameduration, i_eventid ,i_awaygoals,i_awayredcards, i_awayyellowcards, i_homegoals,
 -- i_homeredcards, i_homeyellowcards, OUT msg varchar(255))
-call add_football_stats(95, 1, 2, 1,2,3,0,3, @msg);
 
+call add_football_stats(95, 1, 0, 1,2,3,0,3, @msg);
+call close_event(1);
+call set_result_of_bets_by_event(1);
+
+
+select b.oid, a.betresult,b.user_oid, b.wager, a.odd, b.result_oid from event e, bet b, availablebettypes a where 
+    b.event_oid = e.event_oid and b.bettype_oid = a.bettype_oid and e.event_oid = 1;
+    
+select * from event e, availablebettypes a where e.event_oid = 1 and
+	    a.event_oid = e.event_oid;
+
+select * from availablebettypes;
+
+select b.oid, availablebettypes.betresult,b.user_oid, b.wager, availablebettypes.odd, b.result_oid from event e, bet b, availablebettypes where e.event_oid = 1 and
+	    b.event_oid = e.event_oid and
+        availablebettypes.bettype_oid = b.bettype_oid and availablebettypes.event_oid = 1;
+select * from bet;
