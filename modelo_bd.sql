@@ -87,9 +87,9 @@ create table `availablebettypes` (
 -- Event [ent3]
 create table `event` (
    `event_oid`  integer not null auto_increment,
-   `finishingdate`  date,
-   `startingdate`  date,
-   `creationdate`  date,
+   `finishingdate`  datetime,
+   `startingdate`  datetime,
+   `creationdate`  datetime,
    `ispremium`  bit,
    `description`  varchar(255),
    `name`  varchar(255),

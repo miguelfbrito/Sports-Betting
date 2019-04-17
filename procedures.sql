@@ -41,11 +41,11 @@ insert into state(name) value("Closed");
 
 -- Events
 
-insert into event(startingdate, creationdate, finishingdate, ispremium, description, name, state_oid, sport_oid) values('2019-04-01 0:0', '2019-04-01 0:0', '2019-05-20 0:0', true, "Description of the game", "Benfica x Porto", 1, 1);
-insert into event(startingdate, creationdate, finishingdate, ispremium, description, name, state_oid, sport_oid) values('2019-04-01 0:0', '2019-04-01 0:0', '2019-05-20 0:0', true, "Description of the game", "Benfica x Sporting", 1, 1);
-insert into event(startingdate, creationdate, finishingdate, ispremium, description, name, state_oid, sport_oid) values('2019-04-01 0:0', '2019-04-01 0:0', '2019-05-20 0:0', true, "Description of the game", "Sporting x Anadia", 1, 2);
-insert into event(startingdate, creationdate, finishingdate, ispremium, description, name, state_oid, sport_oid) values('2019-04-01 0:0', '2019-04-01 0:0', '2019-05-20 0:0', true, "Description of the game", "Real Madrid x Barcelona", 1, 2);
-insert into event(startingdate, creationdate, finishingdate, ispremium, description, name, state_oid, sport_oid) values('2019-04-01 0:0', '2019-04-01 0:0', '2019-05-20 0:0', true, "Description of the game", "Benfica x Porto", 1, 1);
+insert into event(startingdate, creationdate, finishingdate, ispremium, description, name, state_oid, sport_oid) values('2019-04-01 0:0', now(), '2019-05-20 0:0', true, "Description of the game", "Benfica x Porto", 1, 1);
+insert into event(startingdate, creationdate, finishingdate, ispremium, description, name, state_oid, sport_oid) values('2019-04-01 0:0', now(), '2019-05-20 0:0', true, "Description of the game", "Benfica x Sporting", 1, 1);
+insert into event(startingdate, creationdate, finishingdate, ispremium, description, name, state_oid, sport_oid) values('2019-04-01 0:0', now(), '2019-05-20 0:0', true, "Description of the game", "Sporting x Anadia", 1, 2);
+insert into event(startingdate, creationdate, finishingdate, ispremium, description, name, state_oid, sport_oid) values('2019-04-01 0:0', now(), '2019-05-20 0:0', true, "Description of the game", "Real Madrid x Barcelona", 1, 2);
+insert into event(startingdate, creationdate, finishingdate, ispremium, description, name, state_oid, sport_oid) values('2019-04-01 0:0', now(), '2019-05-20 0:0', true, "Description of the game", "Benfica x Porto", 1, 1);
 
 
 -- bettypes
@@ -327,10 +327,10 @@ DELIMITER //
 CREATE PROCEDURE Check_Premium(IN inid INT, out prem boolean)
 BEGIN
     declare idgroup integer;
-    declare groupuser varchar(255);
+    declare groupuser varchar(50);
     select user_group.group_oid into idgroup from user_group where user_oid = inid;
-    select bettest.group.groupname into groupuser from bettest.group where bettest.group.oid = idgroup;
-    if(groupuser="PremiumUser")then
+    select bettingwebapp.group.groupname into groupuser from bettingwebapp.group where bettingwebapp.group.oid = idgroup;
+    if(groupuser="Premium")then
         set prem=true;
     end if;
 END //
@@ -405,6 +405,7 @@ END //
 DELIMITER ;
 
 -- levantamento de balance
+
 DELIMITER //
 create procedure withdraw_balance(IN i_userid integer, IN i_value float)
 BEGIN 
@@ -413,7 +414,7 @@ BEGIN
     select balance into max_withdraw from user where user.oid = i_userid;
     
     if i_value <= max_withdraw then
-		update user set balance = round(balance - max_withdraw, 2) where user.oid = i_userid;
+		update user set balance = round(max_withdraw - i_value, 2) where user.oid = i_userid;
     end if;
 END //
 DELIMITER ;
@@ -434,6 +435,17 @@ BEGIN
 		-- será necessário isto?
         update user_group set group_oid = 2 where user.oid = i_userid;
     end if;
+END //
+DELIMITER ;
+
+-- adesao ao premium
+DELIMITER //
+create procedure create_event(IN i_startingdate date, IN i_creationdate date, IN i_finishingdate date, in ispremium boolean, in description varchar(255), in name varchar(255),
+in i_sportid integer)
+BEGIN 
+    insert into event(startingdate, creationdate, finishingdate, ispremium, description, name, state_oid, sport_oid)
+ values(i_startingdate, now(), i_finishingdate, ispremium, description, name, 1, i_sportid);
+    
 END //
 DELIMITER ;
 
