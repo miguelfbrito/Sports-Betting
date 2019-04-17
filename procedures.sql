@@ -417,26 +417,32 @@ BEGIN
 END //
 DELIMITER ;
 
+-- adesao ao premium
+DELIMITER //
+create procedure buy_premium(IN i_userid integer)
+BEGIN 
+	declare premium_fee float;
+    declare user_balance float;
+    set premium_fee = 10;
+    
+    select balance into user_balance from user where user.oid = i_userid;
+    
+    if user_balance >= premium_fee then
+		-- id 2 = premium
+		update user set group_oid = 2 where user.oid = i_userid;
+		-- será necessário isto?
+        update user_group set group_oid = 2 where user.oid = i_userid;
+    end if;
+END //
+DELIMITER ;
 
 
 -- Dados de procedimentos
 -- add_football_stats(i_gameduration, i_eventid ,i_awaygoals,i_awayredcards, i_awayyellowcards, i_homegoals,
 -- i_homeredcards, i_homeyellowcards, OUT msg varchar(255))
 
-call add_football_stats(95, 1, 0, 1,2,3,0,3, @msg);
-call close_event(1);
-call set_result_of_bets_by_event(1);
+-- PARA TESTES
+-- call add_football_stats(95, 1, 0, 1,2,3,0,3, @msg);
+-- call close_event(1);
+-- call set_result_of_bets_by_event(1);
 
-
-select b.oid, a.betresult,b.user_oid, b.wager, a.odd, b.result_oid from event e, bet b, availablebettypes a where 
-    b.event_oid = e.event_oid and b.bettype_oid = a.bettype_oid and e.event_oid = 1;
-    
-select * from event e, availablebettypes a where e.event_oid = 1 and
-	    a.event_oid = e.event_oid;
-
-select * from availablebettypes;
-
-select b.oid, availablebettypes.betresult,b.user_oid, b.wager, availablebettypes.odd, b.result_oid from event e, bet b, availablebettypes where e.event_oid = 1 and
-	    b.event_oid = e.event_oid and
-        availablebettypes.bettype_oid = b.bettype_oid and availablebettypes.event_oid = 1;
-select * from bet;
