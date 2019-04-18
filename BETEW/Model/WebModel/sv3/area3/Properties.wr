@@ -15,8 +15,11 @@
         <LinkParameter id="sv3#area3#miu14#kln35#par157" name="msg_Shown Messages" source="mov2#opm13#kocu11#ocp13" target="sv3#area3#area18#page44#mssu15.shownMessages"/>
       </KOLink>
     </ModuleInstanceUnit>
-    <ModuleInstanceUnit gr:x="15" gr:y="115" id="sv3#area3#miu18" action="true" name="Logout" landmark="true">
+    <ModuleInstanceUnit gr:x="15" gr:y="115" id="sv3#area3#miu18" action="true" name="Logout" landmark="true" moduleId="mov2#opm15">
       <OKLink id="sv3#area3#miu18#oln75" name="OKFlow75" to="sv3#page59" automaticCoupling="true"/>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="845" gr:y="610" id="sv3#area3#miu24" action="true" name="Close events" moduleId="mov2#opm16">
+      <OKLink id="sv3#area3#miu24#oln96" name="OKFlow96" to="sv3#area3#area12#area13#page34#alt9#page36" automaticCoupling="true" gr:bendpoints="-50,134,264,-156"/>
     </ModuleInstanceUnit>
   </OperationUnits>
 </Area>

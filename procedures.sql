@@ -29,6 +29,11 @@ insert into module values (12, "page57", "Premium menu");
 insert into module values (13, "area5", "Betting App");
 insert into module values (14, "miu19", "Logout");
 
+-- user_group
+insert into user_group(user_oid, group_oid) values (1, 1);
+insert into user_group(user_oid, group_oid) values (2, 2);
+insert into user_group(user_oid, group_oid) values (3, 3);
+insert into user_group(user_oid, group_oid) values (4, 3);
 
 -- group_module
 insert into group_module values (1,7);
@@ -67,9 +72,9 @@ insert into state(name) value("In progress");
 
 select * from state;
 
-insert into event(startingdate, creationdate, finishingdate, ispremium, description, name, state_oid, sport_oid) values('2019-04-01 0:0', now(), '2019-05-20 0:0', true, "Description of the game", "Benfica x Porto", 1, 1);
-insert into event(startingdate, creationdate, finishingdate, ispremium, description, name, state_oid, sport_oid) values('2019-04-01 0:0', now(), '2019-05-20 0:0', true, "Description of the game", "Benfica x Sporting", 1, 1);
-insert into event(startingdate, creationdate, finishingdate, ispremium, description, name, state_oid, sport_oid) values('2019-04-01 0:0', now(), '2019-05-20 0:0', true, "Description of the game", "Sporting x Anadia", 1, 2);
+insert into event(startingdate, creationdate, finishingdate, ispremium, description, name, state_oid, sport_oid) values('2019-04-01 0:0', now(), '2019-05-20 0:0', false, "Description of the game", "Benfica x Porto", 1, 1);
+insert into event(startingdate, creationdate, finishingdate, ispremium, description, name, state_oid, sport_oid) values('2019-04-01 0:0', now(), '2019-05-20 0:0', false, "Description of the game", "Benfica x Sporting", 1, 1);
+insert into event(startingdate, creationdate, finishingdate, ispremium, description, name, state_oid, sport_oid) values('2019-04-01 0:0', now(), '2019-05-20 0:0', false, "Description of the game", "Sporting x Anadia", 1, 2);
 insert into event(startingdate, creationdate, finishingdate, ispremium, description, name, state_oid, sport_oid) values('2019-04-01 0:0', now(), '2019-05-20 0:0', true, "Description of the game", "Real Madrid x Barcelona", 1, 2);
 insert into event(startingdate, creationdate, finishingdate, ispremium, description, name, state_oid, sport_oid) values('2019-04-01 0:0', now(), '2019-05-20 0:0', true, "Description of the game", "Benfica x Porto", 1, 1);
 
@@ -454,7 +459,7 @@ BEGIN
     end if;
 END //
 DELIMITER ;
-select * from user;
+
 
 -- criacao de um evento
 DELIMITER //
@@ -515,3 +520,4 @@ call place_bet(2, 2, 6, 2, @out);
 call add_football_stats(95, 6, 0, 1,2,3,0,3, @msg);
 call close_event(6);
 call set_result_of_bets_by_event(6);
+

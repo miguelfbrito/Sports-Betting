@@ -1,10 +1,12 @@
-<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="360" gr:y="270" id="mov2#opm11" name="Be premium">
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="360" gr:y="270" id="mov2#opm11" name="Buy premium">
   <OperationUnits>
     <InputCollectorUnit id="mov2#opm11#icu11" gr:x="30" gr:y="115">
       <InputCollectorParameter id="mov2#opm11#icu11#icp13" name="userId"/>
-      <OKLink id="mov2#opm11#icu11#oln9" name="OKFlow9" to="mov2#opm11#spu8" automaticCoupling="true"/>
+      <OKLink id="mov2#opm11#icu11#oln9" name="OKFlow9" to="mov2#opm11#spu8">
+        <LinkParameter id="mov2#opm11#icu11#oln9#par326" name="userId_UserId" source="mov2#opm11#icu11#icp13" target="mov2#opm11#spu8.mov2#opm11#spu8#spp12"/>
+      </OKLink>
     </InputCollectorUnit>
-    <StoredProcedureUnit gr:x="295" gr:y="125" id="mov2#opm11#spu8" name="Premium" resultType="plain" db="db1" procedure="buy_premium">
+    <StoredProcedureUnit gr:x="310" gr:y="105" id="mov2#opm11#spu8" name="Premium" resultType="plain" db="db1" procedure="buy_premium">
       <StoredProcedureParameter id="mov2#opm11#spu8#spp12" name="UserId" type="string" direction="input" position="1"/>
       <OKLink id="mov2#opm11#spu8#oln11" name="OKFlow11" to="mov2#opm11#okcu10">
         <LinkParameter id="mov2#opm11#spu8#oln11#par83" name="msg_msg" source="mov2#opm11#spu8#spp26" target="mov2#opm11#okcu10#ocp4"/>

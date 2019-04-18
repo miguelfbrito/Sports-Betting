@@ -1,26 +1,21 @@
-<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv2" name="Make Bet" landmarks="sv2#area5" homePage="sv2#page5">
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv2" name="Make Bet" landmarks="sv2#area5 sv2#miu19" homePage="sv2#page102">
   <OperationUnits>
     <ModuleInstanceUnit gr:x="1800" gr:y="-255" id="sv2#miu4" action="true" name="Login" moduleId="mov1#opm2">
-      <KOLink id="sv2#miu4#kln16" name="KOFlow16" to="sv2#page5#mssu5">
-        <LinkParameter id="sv2#miu4#kln16#par50" name="Username/Password incorrect_Shown Messages" sourceValue="Username/Password incorrect" target="sv2#page5#mssu5.shownMessages"/>
-      </KOLink>
       <OKLink id="sv2#miu4#oln71" name="OKFlow7" to="sv2#area5#page83" automaticCoupling="true" gr:bendpoints="-290,51,475,-39"/>
+      <KOLink id="sv2#miu4#kln57" name="KOFlow16" to="sv2#page101#mssu43">
+        <LinkParameter id="sv2#miu4#kln57#par303" name="Username/Password incorrect_Shown Messages" target="sv2#page101#mssu43.shownMessages" sourceValue="Username/Password incorrect"/>
+      </KOLink>
     </ModuleInstanceUnit>
-    <ModuleInstanceUnit gr:x="1620" gr:y="120" id="sv2#miu1" action="true" name="Place bet" moduleId="mov1#opm1">
-      <OKLink id="sv2#miu1#oln4" name="OKFlow4" to="sv2#area5#area6#page6#alt3#page8#inu3" automaticCoupling="true"/>
+    <ModuleInstanceUnit gr:x="1800" gr:y="180" id="sv2#miu1" action="true" name="Place bet" moduleId="mov1#opm1">
+      <OKLink id="sv2#miu1#oln4" name="OKFlow4" to="sv2#area5#miu23" automaticCoupling="true" gr:bendpoints="-210,-356,604,148"/>
       <KOLink id="sv2#miu1#kln5" name="KOFlow5" to="sv2#area5#area6#page6#alt3#page11#enu11" automaticCoupling="true" gr:bendpoints="-144,124,171,-21"/>
     </ModuleInstanceUnit>
-    <ModuleInstanceUnit id="sv2#miu7" name="Add User" gr:x="350" gr:y="-465" action="true" moduleId="mov2#opm6">
+    <ModuleInstanceUnit id="sv2#miu7" name="Add User" gr:x="480" gr:y="-465" action="true" moduleId="mov2#opm6">
       <KOLink id="sv2#miu7#kln7" name="KOFlow3" to="sv2#page25#mssu7" gr:bendpoints="-131,137,139,-8">
         <LinkParameter id="sv2#miu7#kln7#par53" name="Error on create user_Shown Messages" sourceValue="Error on create user" target="sv2#page25#mssu7.shownMessages"/>
       </KOLink>
-      <OKLink id="sv2#miu7#oln44" name="OKFlow3" to="sv2#page5#mssu20">
-        <LinkParameter id="sv2#miu7#oln44#par161" name="User register with success_Shown Messages" target="sv2#page5#mssu20.shownMessages" sourceValue="User register with success"/>
-      </OKLink>
-    </ModuleInstanceUnit>
-    <ModuleInstanceUnit id="sv2#miu28" gr:x="1540" gr:y="-85" action="true" moduleId="mov1#opm3">
-      <OKLink id="sv2#miu28#oln51" name="OKFlow51" to="sv2#area5#area6#page6#alt3#page8#inu3">
-        <LinkParameter id="sv2#miu28#oln51#par224" name="Premium_checkpremium" source="mov1#opm3#okcu4#ocp10" target="sv2#area5#area6#page6#alt3#page8#inu3#su9#acond4"/>
+      <OKLink id="sv2#miu7#oln86" name="OKFlow3" to="sv2#page101#mssu44">
+        <LinkParameter id="sv2#miu7#oln86#par304" name="User register with success_Shown Messages" target="sv2#page101#mssu44.shownMessages" sourceValue="User register with success"/>
       </OKLink>
     </ModuleInstanceUnit>
     <ModuleInstanceUnit gr:x="290" gr:y="20" id="sv2#miu10" action="true" name="Deposit" moduleId="mov2#opm9">
@@ -31,13 +26,16 @@
       <KOLink id="sv2#miu11#kln27" name="KOFlow27" to="sv2#area5#area7#page24#enu21" automaticCoupling="true"/>
       <OKLink id="sv2#miu11#oln36" name="OKFlow36" to="sv2#area5#area7#page15#dau1" automaticCoupling="true" gr:bendpoints="28,-176,-217,53"/>
     </ModuleInstanceUnit>
-    <ModuleInstanceUnit gr:x="245" gr:y="385" id="sv2#miu12" action="true" name="Be premium" moduleId="mov2#opm11">
+    <ModuleInstanceUnit gr:x="245" gr:y="385" id="sv2#miu12" action="true" name="Buy premium" moduleId="mov2#opm11">
       <KOLink id="sv2#miu12#kln36" name="KOFlow13" to="sv2#area5#area20#page57#mssu25" gr:bendpoints="145,39,-150,-11">
         <LinkParameter id="sv2#miu12#kln36#par164" name="msg_Shown Messages" source="mov2#opm11#kocu9#ocp12" target="sv2#area5#area20#page57#mssu25.shownMessages"/>
       </KOLink>
       <OKLink id="sv2#miu12#oln45" name="OKFlow26" to="sv2#area5#area20#page57#mssu25">
         <LinkParameter id="sv2#miu12#oln45#par165" name="msg_Shown Messages" source="mov2#opm11#okcu10#ocp4" target="sv2#area5#area20#page57#mssu25.shownMessages"/>
       </OKLink>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit id="sv2#miu19" name="Logout" landmark="true" gr:x="690" gr:y="-550" action="true" moduleId="mov2#opm14" protected="true">
+      <OKLink id="sv2#miu19#oln87" name="OKFlow73" to="sv2#page101" automaticCoupling="true"/>
     </ModuleInstanceUnit>
   </OperationUnits>
 </SiteView>

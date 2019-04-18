@@ -63,9 +63,9 @@
   </Entity>
   <Entity gr:x="340" gr:y="5" id="ent3" name="Event" duration="persistent" attributeOrder="ent3#att3 ent3#att18 ent3#att17 ent3#att4 ent3#att14 ent3#att15 ent3#att16" db:database="db1" db:table="event">
     <Attribute id="ent3#att3" key="true" name="Event_oid" type="integer" db:column="event_oid" db:idGenerator="identity"/>
-    <Attribute id="ent3#att16" name="finishingDate" type="date" db:column="finishingdate"/>
-    <Attribute id="ent3#att15" name="startingDate" type="date" db:column="startingdate"/>
-    <Attribute id="ent3#att14" name="creationDate" type="date" db:column="creationdate"/>
+    <Attribute id="ent3#att16" name="finishingDate" type="timestamp" db:column="finishingdate"/>
+    <Attribute id="ent3#att15" name="startingDate" type="timestamp" db:column="startingdate"/>
+    <Attribute id="ent3#att14" name="creationDate" type="timestamp" db:column="creationdate"/>
     <Attribute id="ent3#att4" name="isPremium" type="boolean" db:column="ispremium"/>
     <Attribute id="ent3#att17" name="description" type="string" db:column="description"/>
     <Attribute id="ent3#att18" name="name" type="string" db:column="name"/>
