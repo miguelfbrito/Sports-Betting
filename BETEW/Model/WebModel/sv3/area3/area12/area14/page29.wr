@@ -144,11 +144,31 @@
     <Page id="sv3#area3#area12#area14#page29#alt5#page43" name="Add New Event" gr:x="155" gr:y="0">
       <ContentUnits>
         <EntryUnit id="sv3#area3#area12#area14#page29#alt5#page43#enu9" name="Event" linkOrder="sv3#area3#area12#area14#page29#alt5#page43#enu9#ln50" gr:x="145" gr:y="95" entity="ent3" fieldOrder="sv3#area3#area12#area14#page29#alt5#page43#enu9#fld18 sv3#area3#area12#area14#page29#alt5#page43#enu9#fld48 sv3#area3#area12#area14#page29#alt5#page43#enu9#fld37 sv3#area3#area12#area14#page29#alt5#page43#enu9#fld47 sv3#area3#area12#area14#page29#alt5#page43#enu9#fld46">
-          <Field id="sv3#area3#area12#area14#page29#alt5#page43#enu9#fld18" name="name" type="string" modifiable="true" attribute="ent3#att18"/>
-          <Field id="sv3#area3#area12#area14#page29#alt5#page43#enu9#fld37" name="isPremium" type="boolean" modifiable="true" attribute="ent3#att4"/>
-          <Field id="sv3#area3#area12#area14#page29#alt5#page43#enu9#fld46" name="Finishing Date" type="timestamp" modifiable="true" attribute="ent3#att16"/>
-          <Field id="sv3#area3#area12#area14#page29#alt5#page43#enu9#fld47" name="Starting Date" type="timestamp" modifiable="true" attribute="ent3#att15"/>
-          <Field id="sv3#area3#area12#area14#page29#alt5#page43#enu9#fld48" name="Description" type="string" modifiable="true" attribute="ent3#att17"/>
+          <Field id="sv3#area3#area12#area14#page29#alt5#page43#enu9#fld18" name="name" type="string" modifiable="true" attribute="ent3#att18">
+            <VRules>
+              <MandatoryValidationRule id="sv3#area3#area12#area14#page29#alt5#page43#enu9#fld18#mnd13" name="Mandatory13" errorMessage="Required field!"/>
+            </VRules>
+          </Field>
+          <Field id="sv3#area3#area12#area14#page29#alt5#page43#enu9#fld37" name="isPremium" type="boolean" modifiable="true" attribute="ent3#att4">
+            <VRules>
+              <MandatoryValidationRule id="sv3#area3#area12#area14#page29#alt5#page43#enu9#fld37#mnd14" name="Mandatory14" errorMessage="Required field!"/>
+            </VRules>
+          </Field>
+          <Field id="sv3#area3#area12#area14#page29#alt5#page43#enu9#fld46" name="Finishing Date" type="timestamp" modifiable="true" attribute="ent3#att16">
+            <VRules>
+              <MandatoryValidationRule id="sv3#area3#area12#area14#page29#alt5#page43#enu9#fld46#mnd15" name="Mandatory15" errorMessage="Required field!"/>
+            </VRules>
+          </Field>
+          <Field id="sv3#area3#area12#area14#page29#alt5#page43#enu9#fld47" name="Starting Date" type="timestamp" modifiable="true" attribute="ent3#att15">
+            <VRules>
+              <MandatoryValidationRule id="sv3#area3#area12#area14#page29#alt5#page43#enu9#fld47#mnd16" name="Mandatory16" errorMessage="Required field!"/>
+            </VRules>
+          </Field>
+          <Field id="sv3#area3#area12#area14#page29#alt5#page43#enu9#fld48" name="Description" type="string" modifiable="true" attribute="ent3#att17">
+            <VRules>
+              <MandatoryValidationRule id="sv3#area3#area12#area14#page29#alt5#page43#enu9#fld48#mnd12" name="Mandatory12" errorMessage="Required field!"/>
+            </VRules>
+          </Field>
           <Link id="sv3#area3#area12#area14#page29#alt5#page43#enu9#ln50" name="Add Event" to="sv3#miu13" type="normal" validate="true">
             <LinkParameter id="sv3#area3#area12#area14#page29#alt5#page43#enu9#ln50#par123" name="Key [Event_oid]_PASSING" source="key.ent3#att3" passing="true"/>
             <LinkParameter id="sv3#area3#area12#area14#page29#alt5#page43#enu9#ln50#par132" name="Description_description" source="sv3#area3#area12#area14#page29#alt5#page43#enu9#fld48" target="sv3#miu13.mov2#opm12#icu12#icp35"/>

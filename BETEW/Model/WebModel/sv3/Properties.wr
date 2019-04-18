@@ -7,7 +7,7 @@
       <KOLink id="sv3#mfu2#kln12" name="KOFlow5" to="sv3#area3#area12#area13#page34#alt9#page37#enu8" automaticCoupling="true" gr:bendpoints="-114,-92,81,103"/>
       <OKLink id="sv3#mfu2#oln14" name="OKFlow3" to="sv3#area3#area12#area13#page34#alt9#page36" automaticCoupling="true"/>
     </ModifyUnit>
-    <DeleteUnit gr:x="500" gr:y="560" id="sv3#dlu1" name="Delete event" entity="ent3">
+    <DeleteUnit gr:x="435" gr:y="540" id="sv3#dlu1" name="Delete event" entity="ent3">
       <Selector id="sv3#dlu1#su10" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv3#dlu1#su10#kcond9" name="KeyCondition9" predicate="in" implied="false"/>
       </Selector>
@@ -18,14 +18,14 @@
       <OKLink id="sv3#cru5#oln62" name="OKFlow4" to="sv3#area3#area9#area10#page26#alt7#page27#inu7" automaticCoupling="true"/>
       <KOLink id="sv3#cru5#kln39" name="KOFlow6" to="sv3#area3#area9#area10#page26#alt7#page28#alt4#page52#enu14" automaticCoupling="true" gr:bendpoints="-142,82,138,-48"/>
     </CreateUnit>
-    <ModifyUnit gr:x="1150" gr:y="885" id="sv3#mfu1" name="Update Bet Type" entity="ent2">
+    <ModifyUnit gr:x="1165" gr:y="730" id="sv3#mfu1" name="Update Bet Type" entity="ent2">
       <Selector id="sv3#mfu1#su15" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv3#mfu1#su15#kcond13" name="KeyCondition13" predicate="in" implied="false"/>
       </Selector>
       <KOLink id="sv3#mfu1#kln9" name="KOFlow7" to="sv3#area3#area9#area11#page30#alt8#page31#enu7" automaticCoupling="true" gr:bendpoints="-24,-110,-9,105"/>
       <OKLink id="sv3#mfu1#oln10" name="OKFlow6" to="sv3#area3#area9#area11#page30#alt8#page32" automaticCoupling="true"/>
     </ModifyUnit>
-    <ModuleInstanceUnit id="sv3#miu20" gr:x="-340" gr:y="735" action="true" moduleId="mov2#opm4">
+    <ModuleInstanceUnit id="sv3#miu20" gr:x="-410" gr:y="815" action="true" moduleId="mov2#opm4">
       <OKLink id="sv3#miu20#oln37" name="OKFlow37" to="sv3#area3#area12#area13#page22#alt6#page47#enu18" gr:bendpoints="100,143,-150,-27" codeRef="mov2#opm4#okcu2">
         <LinkParameter id="sv3#miu20#oln37#par172" name="EventId_PASSING" source="mov2#opm4#okcu2#ocp8" passing="true"/>
       </OKLink>
@@ -45,7 +45,7 @@
       </OKLink>
       <KOLink id="sv3#miu22#kln23" name="KOFlow23" to="sv3#area3#area12#area13#page22#alt6#page47#mssu22" automaticCoupling="true"/>
     </ModuleInstanceUnit>
-    <ModuleInstanceUnit gr:x="300" gr:y="-330" id="sv3#miu13" action="true" name="Add Event" moduleId="mov2#opm12">
+    <ModuleInstanceUnit gr:x="325" gr:y="-105" id="sv3#miu13" action="true" name="Add Event" moduleId="mov2#opm12">
       <OKLink id="sv3#miu13#oln61" name="OKFlow7" to="sv3#area3#area9#area10#page26#alt7#page27#dau10"/>
       <KOLink id="sv3#miu13#kln29" name="KOFlow4" to="sv3#area3#area12#area14#page29#alt5#page43#mssu2" gr:bendpoints="27,240,-58,-235">
         <LinkParameter id="sv3#miu13#kln29#par141" name="msg_Shown Messages" source="mov2#opm12#kocu10#ocp5" target="sv3#area3#area12#area14#page29#alt5#page43#mssu2.shownMessages"/>

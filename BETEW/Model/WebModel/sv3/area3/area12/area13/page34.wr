@@ -261,10 +261,10 @@
         </DataUnit>
       </ContentUnits>
     </Page>
-    <Page id="sv3#area3#area12#area13#page34#alt9#page36" name="Events" gr:x="150" gr:y="190">
+    <Page id="sv3#area3#area12#area13#page34#alt9#page36" name="Events" gr:x="145" gr:y="190">
       <ContentUnits>
-        <MultiMessageUnit gr:x="245" gr:y="230" id="sv3#area3#area12#area13#page34#alt9#page36#mssu24" name="Information"/>
-        <IndexUnit id="sv3#area3#area12#area13#page34#alt9#page36#inu4" name="List Events - Opened" linkOrder="sv3#area3#area12#area13#page34#alt9#page36#inu4#ln72 sv3#area3#area12#area13#page34#alt9#page36#inu4#ln150" gr:x="190" gr:y="0" entity="ent3" displayAttributes="ent3#att3 ent3#att18 ent3#att17 ent3#att4 ent3#att14 ent3#att15 ent3#att16">
+        <MultiMessageUnit gr:x="250" gr:y="230" id="sv3#area3#area12#area13#page34#alt9#page36#mssu24" name="Information"/>
+        <IndexUnit id="sv3#area3#area12#area13#page34#alt9#page36#inu4" name="List Events - Opened" linkOrder="sv3#area3#area12#area13#page34#alt9#page36#inu4#ln72 sv3#area3#area12#area13#page34#alt9#page36#inu4#ln150" gr:x="195" gr:y="0" entity="ent3" displayAttributes="ent3#att3 ent3#att18 ent3#att17 ent3#att4 ent3#att14 ent3#att15 ent3#att16">
           <Link id="sv3#area3#area12#area13#page34#alt9#page36#inu4#ln72" name="Details" to="sv3#area3#area12#area13#page34#alt9#page35#dau14" type="normal" automaticCoupling="true" validate="true"/>
           <Link id="sv3#area3#area12#area13#page34#alt9#page36#inu4#ln73" name="Flow31" to="sv3#area3#area12#area13#page34#alt9#page35#dau14" type="transport" validate="true" gr:bendpoints="-22,-82,-37,103"/>
           <Selector id="sv3#area3#area12#area13#page34#alt9#page36#inu4#su23" defaultPolicy="fill" booleanOperator="and">
@@ -274,7 +274,7 @@
             <LinkParameter id="sv3#area3#area12#area13#page34#alt9#page36#inu4#ln150#par325" name="Event_oid_EventId" source="data[].ent3#att3" target="sv3#area3#miu24.mov2#opm16#icu16#icp42"/>
           </Link>
         </IndexUnit>
-        <IndexUnit id="sv3#area3#area12#area13#page34#alt9#page36#inu8" name="List Events - In Progress" linkOrder="sv3#area3#area12#area13#page34#alt9#page36#inu8#ln75 sv3#area3#area12#area13#page34#alt9#page36#inu8#ln77" gr:x="0" gr:y="0" entity="ent3" displayAttributes="ent3#att3 ent3#att18 ent3#att17 ent3#att4 ent3#att14 ent3#att15 ent3#att16">
+        <IndexUnit id="sv3#area3#area12#area13#page34#alt9#page36#inu8" name="List Events - In Progress" linkOrder="sv3#area3#area12#area13#page34#alt9#page36#inu8#ln75 sv3#area3#area12#area13#page34#alt9#page36#inu8#ln77" gr:x="0" gr:y="20" entity="ent3" displayAttributes="ent3#att3 ent3#att18 ent3#att17 ent3#att4 ent3#att14 ent3#att15 ent3#att16">
           <Link id="sv3#area3#area12#area13#page34#alt9#page36#inu8#ln75" name="Details" to="sv3#area3#area12#area13#page34#alt9#page35#dau14" type="normal" automaticCoupling="true" validate="true"/>
           <Link id="sv3#area3#area12#area13#page34#alt9#page36#inu8#ln76" name="Flow31" to="sv3#area3#area12#area13#page34#alt9#page35#dau14" type="transport" validate="true" gr:bendpoints="-22,-82,-37,103"/>
           <Link id="sv3#area3#area12#area13#page34#alt9#page36#inu8#ln77" name="Add Stats" to="sv3#miu20" type="normal" validate="true" gr:bendpoints="-168,106,292,-54">
@@ -285,7 +285,7 @@
             <AttributesCondition id="sv3#area3#area12#area13#page34#alt9#page36#inu8#su4#acond3" name="AttCondition3" predicate="eq" booleanOperator="or" implied="false" attributes="rel16#role32.ent10#att23" value="3"/>
           </Selector>
         </IndexUnit>
-        <IndexUnit id="sv3#area3#area12#area13#page34#alt9#page36#inu38" name="List Events - Closed" gr:x="135" gr:y="130" entity="ent3" displayAttributes="ent3#att3 ent3#att18 ent3#att17 ent3#att4 ent3#att14 ent3#att15 ent3#att16">
+        <IndexUnit id="sv3#area3#area12#area13#page34#alt9#page36#inu38" name="List Events - Closed" gr:x="230" gr:y="120" entity="ent3" displayAttributes="ent3#att3 ent3#att18 ent3#att17 ent3#att4 ent3#att14 ent3#att15 ent3#att16">
           <Selector id="sv3#area3#area12#area13#page34#alt9#page36#inu38#su49" defaultPolicy="fill" booleanOperator="and">
             <AttributesCondition id="sv3#area3#area12#area13#page34#alt9#page36#inu38#su49#acond30" name="AttCondition6" predicate="eq" booleanOperator="or" implied="false" attributes="rel16#role32.ent10#att23" value="2"/>
           </Selector>
@@ -295,12 +295,36 @@
     <Page id="sv3#area3#area12#area13#page34#alt9#page37" name="Update Event" gr:x="0" gr:y="5">
       <ContentUnits>
         <EntryUnit id="sv3#area3#area12#area13#page34#alt9#page37#enu8" name="Event" linkOrder="sv3#area3#area12#area13#page34#alt9#page37#enu8#ln57" gr:x="0" gr:y="0" entity="ent3" fieldOrder="sv3#area3#area12#area13#page34#alt9#page37#enu8#fld6 sv3#area3#area12#area13#page34#alt9#page37#enu8#fld12 sv3#area3#area12#area13#page34#alt9#page37#enu8#fld7 sv3#area3#area12#area13#page34#alt9#page37#enu8#fld10 sv3#area3#area12#area13#page34#alt9#page37#enu8#fld9 sv3#area3#area12#area13#page34#alt9#page37#enu8#fld8">
-          <Field id="sv3#area3#area12#area13#page34#alt9#page37#enu8#fld6" name="name" type="string" modifiable="true" attribute="ent3#att18"/>
-          <Field id="sv3#area3#area12#area13#page34#alt9#page37#enu8#fld7" name="isPremium" type="boolean" modifiable="true" attribute="ent3#att4"/>
-          <Field id="sv3#area3#area12#area13#page34#alt9#page37#enu8#fld8" name="Finishing Date" type="timestamp" modifiable="true" attribute="ent3#att16"/>
-          <Field id="sv3#area3#area12#area13#page34#alt9#page37#enu8#fld9" name="Starting Date" type="timestamp" modifiable="true" attribute="ent3#att15"/>
-          <Field id="sv3#area3#area12#area13#page34#alt9#page37#enu8#fld10" name="Creation Date" type="timestamp" modifiable="true" attribute="ent3#att14"/>
-          <Field id="sv3#area3#area12#area13#page34#alt9#page37#enu8#fld12" name="Description" type="string" modifiable="true" attribute="ent3#att17"/>
+          <Field id="sv3#area3#area12#area13#page34#alt9#page37#enu8#fld6" name="name" type="string" modifiable="true" attribute="ent3#att18">
+            <VRules>
+              <MandatoryValidationRule id="sv3#area3#area12#area13#page34#alt9#page37#enu8#fld6#mnd23" name="Mandatory23" errorMessage="Required field!"/>
+            </VRules>
+          </Field>
+          <Field id="sv3#area3#area12#area13#page34#alt9#page37#enu8#fld7" name="isPremium" type="boolean" modifiable="true" attribute="ent3#att4">
+            <VRules>
+              <MandatoryValidationRule id="sv3#area3#area12#area13#page34#alt9#page37#enu8#fld7#mnd22" name="Mandatory22" errorMessage="Required field!"/>
+            </VRules>
+          </Field>
+          <Field id="sv3#area3#area12#area13#page34#alt9#page37#enu8#fld8" name="Finishing Date" type="timestamp" modifiable="true" attribute="ent3#att16">
+            <VRules>
+              <MandatoryValidationRule id="sv3#area3#area12#area13#page34#alt9#page37#enu8#fld8#mnd21" name="Mandatory21" errorMessage="Required field!"/>
+            </VRules>
+          </Field>
+          <Field id="sv3#area3#area12#area13#page34#alt9#page37#enu8#fld9" name="Starting Date" type="timestamp" modifiable="true" attribute="ent3#att15">
+            <VRules>
+              <MandatoryValidationRule id="sv3#area3#area12#area13#page34#alt9#page37#enu8#fld9#mnd24" name="Mandatory24" errorMessage="Required field!"/>
+            </VRules>
+          </Field>
+          <Field id="sv3#area3#area12#area13#page34#alt9#page37#enu8#fld10" name="Creation Date" type="timestamp" modifiable="true" attribute="ent3#att14">
+            <VRules>
+              <MandatoryValidationRule id="sv3#area3#area12#area13#page34#alt9#page37#enu8#fld10#mnd19" name="Mandatory19" errorMessage="Required field!"/>
+            </VRules>
+          </Field>
+          <Field id="sv3#area3#area12#area13#page34#alt9#page37#enu8#fld12" name="Description" type="string" modifiable="true" attribute="ent3#att17">
+            <VRules>
+              <MandatoryValidationRule id="sv3#area3#area12#area13#page34#alt9#page37#enu8#fld12#mnd20" name="Mandatory20" errorMessage="Required field!"/>
+            </VRules>
+          </Field>
           <Link id="sv3#area3#area12#area13#page34#alt9#page37#enu8#ln57" name="Flow20" to="sv3#mfu2" type="normal" automaticCoupling="true" validate="true"/>
         </EntryUnit>
       </ContentUnits>

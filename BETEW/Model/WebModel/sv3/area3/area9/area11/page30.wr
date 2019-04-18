@@ -292,7 +292,12 @@
     <Page id="sv3#area3#area9#area11#page30#alt8#page31" name="Edit Bet Types" gr:x="20" gr:y="215">
       <ContentUnits>
         <EntryUnit id="sv3#area3#area9#area11#page30#alt8#page31#enu7" name="Editar Bet Type" linkOrder="sv3#area3#area9#area11#page30#alt8#page31#enu7#ln44" gr:x="0" gr:y="0" entity="ent2" fieldOrder="sv3#area3#area9#area11#page30#alt8#page31#enu7#fld5">
-          <Field id="sv3#area3#area9#area11#page30#alt8#page31#enu7#fld5" name="Odd" type="float" modifiable="true" attribute="ent2#att13"/>
+          <Field id="sv3#area3#area9#area11#page30#alt8#page31#enu7#fld5" name="Odd" type="float" modifiable="true" attribute="ent2#att13">
+            <VRules>
+              <MandatoryValidationRule id="sv3#area3#area9#area11#page30#alt8#page31#enu7#fld5#mnd18" name="Mandatory18" errorMessage="Required field!"/>
+              <TypeValidationRule id="sv3#area3#area9#area11#page30#alt8#page31#enu7#fld5#tvr5" name="Type Validation5" type="float" errorMessage="Only float values"/>
+            </VRules>
+          </Field>
           <Link id="sv3#area3#area9#area11#page30#alt8#page31#enu7#ln44" name="Edit" to="sv3#mfu1" type="normal" validate="true" gr:bendpoints="158,40,-142,-85">
             <LinkParameter id="sv3#area3#area9#area11#page30#alt8#page31#enu7#ln44#par93" name="AvailableBetTypes Object_AvailableBetTypes Object" source="entityBean" target="sv3#mfu1.entityBeans"/>
             <LinkParameter id="sv3#area3#area9#area11#page30#alt8#page31#enu7#ln44#par94" name="Key [oid]_KeyCondition13 [oid]" source="key.ent2#att2" target="sv3#mfu1#su15#kcond13.ent2#att2"/>

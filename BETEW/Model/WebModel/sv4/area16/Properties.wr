@@ -1,8 +1,0 @@
-<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="505" gr:y="500" id="sv4#area16" name="Area 16" landmark="true" defaultPage="sv4#area16#page12">
-  <OperationUnits>
-    <ModuleInstanceUnit gr:x="5" gr:y="230" id="sv4#area16#miu2" action="true" moduleId="mov2#opm4">
-      <OKLink id="sv4#area16#miu2#oln24" name="OKFlow24" to="sv4#area16#page14#alt2#page20#enu3" automaticCoupling="true" codeRef="mov2#opm4#okcu2"/>
-      <OKLink id="sv4#area16#miu2#oln25" name="OKFlow25" to="sv4#area16#page14#alt2#page21#enu10" automaticCoupling="true" gr:bendpoints="230,-13,-140,97" codeRef="mov2#opm4#okcu5"/>
-    </ModuleInstanceUnit>
-  </OperationUnits>
-</Area>
