@@ -174,6 +174,8 @@ BEGIN
 END //
 DELIMITER ;
 
+select * from sport;
+
 
 
 -- validar apostas para futebol
@@ -205,6 +207,7 @@ BEGIN
     -- result = 1 válida, 0 - perdida
     if v_valid then
 		update availablebettypes set betresult = 1 where oid=i_availablebt_id;
+        
 	else 
 		update availablebettypes set betresult = 0 where oid=i_availablebt_id;
 	end if;
@@ -215,7 +218,7 @@ DELIMITER ;
 
 -- validar apostas para basketball
 DELIMITER //
-create procedure validar_bettype_basketball(IN i_oid integer, IN i_availablebt_id integer, IN i_bettype_id integer)
+create procedure validar_bettype_basketball(IN i_event_id integer, IN i_availablebt_id integer, IN i_bettype_id integer)
 BEGIN
     declare v_bet_name varchar(50);
 	declare v_valid boolean;
@@ -228,6 +231,9 @@ BEGIN
 
     select homepoints, awaypoints, hometriples, awaytriples into v_home_points, v_away_points, v_home_triples, v_away_triples from event, stats, basketballstats
     where stats.event_event_oid = event.event_oid and stats.oid = basketballstats.stats_oid and event.event_oid = i_event_id;
+	
+    select i_event_id, v_home_points, v_away_points, v_home_triples, v_away_triples;
+    
 
     select name into v_bet_name from bettype where bettype.oid = i_bettype_id;
     
@@ -245,7 +251,7 @@ BEGIN
 		update availablebettypes set betresult = 0 where oid=i_availablebt_id;
 	end if;
     
-    select i_oid;
+    
 END //
 DELIMITER ;
 
@@ -321,7 +327,7 @@ BEGIN
     select balance into current_balance from user where user.oid = userid;
     select state_oid into v_event_state from event where event.event_oid = Eventid;
     
-    if current_balance > wager and v_event_state = 1 then
+    if current_balance >= wager and v_event_state = 1 then
 		update user set balance = (balance - wager) where oid = userid;
 		insert into bet(wager, user_oid, event_oid, bettype_oid, result_oid) values(wager, userid, Eventid, betTypeid, 1);
 		set place = true;
@@ -511,13 +517,15 @@ DELIMITER ;
 -- Dados de procedimentos
 -- add_football_stats(i_gameduration, i_eventid ,i_awaygoals,i_awayredcards, i_awayyellowcards, i_homegoals,
 
-call create_event('2019-04-01 00:00', '2019-04-01 00:00', false, "No description", "Porto x Liverpool", 1); 
+/*
+call create_event('2019-04-01 00:00', '2019-04-01 00:00', false, "No description", "Porto x Liverpool", 2); 
 insert into availablebettypes(odd, betresult, bettype_oid, event_oid) values (1.35, null, 1, 6);
 insert into availablebettypes(odd, betresult, bettype_oid, event_oid) values (1.5, null, 2, 6);
 call place_bet(2, 1, 6, 1, @out);
 call place_bet(2, 2, 6, 2, @out);
 
-call add_football_stats(95, 6, 0, 1,2,3,0,3, @msg);
+-- call add_football_stats(95, 6, 0, 1,2,3,0,3, @msg);
+call add_basketball_stats(95, 6, 3, 1,2,3, @msg);
 call close_event(6);
-call set_result_of_bets_by_event(6);
+call set_result_of_bets_by_event(6);*/
 
