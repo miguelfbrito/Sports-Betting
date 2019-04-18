@@ -1,21 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <DBMetaData driverMajorVersion="5" driverMinorVersion="1" driverVersion="mysql-connector-java-5.1.31 ( Revision: alexander.soklakov@oracle.com-20140520065950-groqzzbvxprqdmnz )" productVersion="5.7.25-0ubuntu0.18.04.2" identifierQuoteString="`" transactionLevel="Repeatable read" driverName="MySQL Connector Java" productName="MySQL">
-  <StoredProcedure catalog="bettingwebapp" name="Add_User" resultType="noResult"/>
-  <StoredProcedure catalog="bettingwebapp" name="Check_Premium" resultType="noResult"/>
-  <StoredProcedure catalog="bettingwebapp" name="add_basketball_stats" resultType="noResult"/>
-  <StoredProcedure catalog="bettingwebapp" name="add_football_stats" resultType="noResult"/>
-  <StoredProcedure catalog="bettingwebapp" name="buy_premium" resultType="noResult"/>
-  <StoredProcedure catalog="bettingwebapp" name="close_event" resultType="noResult"/>
-  <StoredProcedure catalog="bettingwebapp" name="create_event" resultType="noResult"/>
-  <StoredProcedure catalog="bettingwebapp" name="deposit_balance" resultType="noResult"/>
-  <StoredProcedure catalog="bettingwebapp" name="place_bet" resultType="noResult"/>
-  <StoredProcedure catalog="bettingwebapp" name="set_event_inprogress" resultType="noResult"/>
-  <StoredProcedure catalog="bettingwebapp" name="set_result_of_bets_by_event" resultType="noResult"/>
-  <StoredProcedure catalog="bettingwebapp" name="validar_bettype_basketball" resultType="noResult"/>
-  <StoredProcedure catalog="bettingwebapp" name="validar_bettype_com_stats" resultType="noResult"/>
-  <StoredProcedure catalog="bettingwebapp" name="validar_bettype_football" resultType="noResult"/>
-  <StoredProcedure catalog="bettingwebapp" name="withdraw_balance" resultType="noResult"/>
   <Table schema="" ignoreIndexes="false" name="availablebettypes" type="TABLE" refreshed="true">
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="true" type="INT" size="10" decimalDigits="0" name="oid" primaryKey="true" notNull="true"/>
     <Column sqlTypeId="8" indexed="unknown" autoIncrement="false" type="DOUBLE" size="22" decimalDigits="0" name="odd" primaryKey="false" notNull="false"/>
@@ -48,9 +33,9 @@
   </Table>
   <Table schema="" ignoreIndexes="false" name="event" type="TABLE" refreshed="true">
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="true" type="INT" size="10" decimalDigits="0" name="event_oid" primaryKey="true" notNull="true"/>
-    <Column sqlTypeId="91" indexed="unknown" autoIncrement="false" type="DATE" size="10" decimalDigits="0" name="finishingdate" primaryKey="false" notNull="false"/>
-    <Column sqlTypeId="91" indexed="unknown" autoIncrement="false" type="DATE" size="10" decimalDigits="0" name="startingdate" primaryKey="false" notNull="false"/>
-    <Column sqlTypeId="91" indexed="unknown" autoIncrement="false" type="DATE" size="10" decimalDigits="0" name="creationdate" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="93" indexed="unknown" autoIncrement="false" type="DATETIME" size="19" decimalDigits="0" name="finishingdate" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="93" indexed="unknown" autoIncrement="false" type="DATETIME" size="19" decimalDigits="0" name="startingdate" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="93" indexed="unknown" autoIncrement="false" type="DATETIME" size="19" decimalDigits="0" name="creationdate" primaryKey="false" notNull="false"/>
     <Column sqlTypeId="-7" indexed="unknown" autoIncrement="false" type="BIT" size="1" decimalDigits="0" name="ispremium" primaryKey="false" notNull="false"/>
     <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="description" primaryKey="false" notNull="false"/>
     <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="name" primaryKey="false" notNull="false"/>
@@ -94,7 +79,7 @@
   </Table>
   <Table schema="" ignoreIndexes="false" name="stats" type="TABLE" refreshed="true">
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="true" type="INT" size="10" decimalDigits="0" name="oid" primaryKey="true" notNull="true"/>
-    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="gameduration" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="gameduration" primaryKey="false" notNull="false"/>
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="event_event_oid" primaryKey="false" notNull="false"/>
   </Table>
   <Table schema="" ignoreIndexes="false" name="user" type="TABLE" refreshed="true">

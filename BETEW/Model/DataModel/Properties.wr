@@ -78,23 +78,6 @@
     <Attribute id="ent6#att6" key="true" name="oid" type="integer" db:column="oid" db:idGenerator="identity"/>
     <Attribute id="ent6#att12" name="Name" type="string" db:column="name"/>
   </Entity>
-  <Entity gr:x="1120" gr:y="355" id="ent7" name="Team" duration="persistent" db:database="db1" db:table="team">
-    <Attribute id="ent7#att7" key="true" name="oid" type="integer" db:column="oid" db:idGenerator="identity"/>
-  </Entity>
-  <Entity gr:x="780" gr:y="295" id="ent8" name="TeamsPerEvent" duration="persistent" db:database="db1" db:table="teamsperevent">
-    <Attribute id="ent8#att8" key="true" name="oid" type="integer" db:column="oid" db:idGenerator="identity"/>
-  </Entity>
-  <Relationship id="rel12" name="Event_TeamsPerEvent" sourceEntity="ent3" targetEntity="ent8" db:database="db1" db:isView="false" db:table="teamsperevent">
-    <RelationshipRole1 id="rel12#role23" name="EventToTeamsPerEvent" maxCard="N">
-      <db:JoinColumn attribute="ent3#att3" name="event_oid"/>
-    </RelationshipRole1>
-    <RelationshipRole2 id="rel12#role24" name="TeamsPerEventToEvent" maxCard="1">
-      <db:JoinColumn attribute="ent8#att8" name="oid"/>
-    </RelationshipRole2>
-  </Relationship>
-  <Entity gr:x="1350" gr:y="375" id="ent9" name="Player" duration="persistent" db:database="db1" db:table="player">
-    <Attribute id="ent9#att9" key="true" name="oid" type="integer" db:column="oid" db:idGenerator="identity"/>
-  </Entity>
   <Entity gr:x="70" gr:y="420" id="ent4" name="Result" duration="persistent" attributeOrder="ent4#att21 ent4#att22" db:database="db1" db:table="result">
     <Attribute id="ent4#att21" key="true" name="oid" type="integer" db:column="oid" db:idGenerator="identity"/>
     <Attribute id="ent4#att22" name="name" type="string" db:column="name"/>
@@ -109,22 +92,6 @@
     </RelationshipRole1>
     <RelationshipRole2 id="rel10#role20" name="BetToUser" maxCard="1">
       <db:JoinColumn attribute="ent1#att1" name="oid"/>
-    </RelationshipRole2>
-  </Relationship>
-  <Relationship id="rel11" name="TeamsPerEvent_Team" sourceEntity="ent8" targetEntity="ent7" db:database="db1" db:table="teamsperevent">
-    <RelationshipRole1 id="rel11#role21" name="TeamsPerEventToTeam" maxCard="1">
-      <db:JoinColumn attribute="ent8#att8" name="oid"/>
-    </RelationshipRole1>
-    <RelationshipRole2 id="rel11#role22" name="TeamToTeamsPerEvent" maxCard="N">
-      <db:JoinColumn attribute="ent7#att7" name="team_oid"/>
-    </RelationshipRole2>
-  </Relationship>
-  <Relationship id="rel14" name="Team_Player" sourceEntity="ent7" targetEntity="ent9" db:database="db1" db:table="player">
-    <RelationshipRole1 id="rel14#role27" name="TeamToPlayer" maxCard="N">
-      <db:JoinColumn attribute="ent7#att7" name="team_oid"/>
-    </RelationshipRole1>
-    <RelationshipRole2 id="rel14#role28" name="PlayerToTeam" maxCard="1">
-      <db:JoinColumn attribute="ent9#att9" name="oid"/>
     </RelationshipRole2>
   </Relationship>
   <Relationship id="rel15" name="Bet_Event" sourceEntity="ent1" targetEntity="ent3" db:database="db1" db:table="bet">
@@ -213,7 +180,7 @@
   </Entity>
   <Entity gr:x="1330" gr:y="-30" id="ent15" name="Stats" duration="persistent" db:database="db1" db:table="stats" attributeOrder="ent15#att49 ent15#att50">
     <Attribute id="ent15#att49" key="true" name="oid" type="integer" db:column="oid" db:idGenerator="identity"/>
-    <Attribute id="ent15#att50" name="gameDuration" type="string" db:column="gameduration"/>
+    <Attribute id="ent15#att50" name="gameDuration" type="integer" db:column="gameduration"/>
   </Entity>
   <Relationship id="rel6" name="Event_Stats" sourceEntity="ent3" targetEntity="ent15" db:database="db1" db:table="stats">
     <RelationshipRole1 id="rel6#role11" name="EventToStats" maxCard="1">

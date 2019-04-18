@@ -99,14 +99,11 @@
                   <layout:Row>
                     <layout:Cell colspan="12">
                       <layout:Unit unitId="sv2#area5#area6#page6#alt3#page8#inu3">
-                        <layout:Attribute attribute="ent3#att3"/>
+                        <layout:Link link="sv2#area5#area6#page6#alt3#page8#inu3#ln27"/>
                         <layout:Attribute attribute="ent3#att18"/>
                         <layout:Attribute attribute="ent3#att17"/>
                         <layout:Attribute attribute="ent3#att4"/>
-                        <layout:Attribute attribute="ent3#att14"/>
-                        <layout:Attribute attribute="ent3#att15"/>
                         <layout:Attribute attribute="ent3#att16"/>
-                        <layout:Link link="sv2#area5#area6#page6#alt3#page8#inu3#ln27"/>
                       </layout:Unit>
                     </layout:Cell>
                     <layout:Cell/>
@@ -168,6 +165,7 @@
                         <layout:Attribute attribute="ent3#att18"/>
                         <layout:Attribute attribute="ent3#att17"/>
                         <layout:Attribute attribute="ent3#att16"/>
+                        <layout:Attribute attribute="ent3#att4"/>
                       </layout:Unit>
                     </layout:Cell>
                     <layout:Cell/>
@@ -386,7 +384,7 @@
     </Page>
     <Page id="sv2#area5#area6#page6#alt3#page8" name="Events" gr:x="315" gr:y="0">
       <ContentUnits>
-        <IndexUnit id="sv2#area5#area6#page6#alt3#page8#inu3" name="List Premium Events" gr:x="0" gr:y="150" entity="ent3" displayAttributes="ent3#att3 ent3#att18 ent3#att17 ent3#att4 ent3#att14 ent3#att15 ent3#att16" linkOrder="sv2#area5#area6#page6#alt3#page8#inu3#ln27">
+        <IndexUnit id="sv2#area5#area6#page6#alt3#page8#inu3" name="List Premium Events" gr:x="0" gr:y="150" entity="ent3" displayAttributes="ent3#att18 ent3#att17 ent3#att4 ent3#att16" linkOrder="sv2#area5#area6#page6#alt3#page8#inu3#ln27">
           <Link id="sv2#area5#area6#page6#alt3#page8#inu3#ln27" name="View Bets" to="sv2#area5#area6#page6#alt3#page3#inu5" automaticCoupling="true" type="normal" validate="true"/>
           <Link id="sv2#area5#area6#page6#alt3#page8#inu3#ln28" name="Flow28" to="sv2#area5#area6#page6#alt3#page3#inu5" type="transport" validate="true" gr:bendpoints="-126,15,129,15"/>
           <Selector id="sv2#area5#area6#page6#alt3#page8#inu3#su9" defaultPolicy="fill" booleanOperator="and">
@@ -408,7 +406,7 @@
             <AttributesCondition id="sv2#area5#area6#page6#alt3#page8#inu31#su43#acond23" name="AttCondition23" predicate="eq" booleanOperator="or" implied="false" attributes="rel16#role32.ent10#att23" value="3"/>
           </Selector>
         </IndexUnit>
-        <IndexUnit gr:x="200" gr:y="150" id="sv2#area5#area6#page6#alt3#page8#inu32" name="Premium Events - In Progress" entity="ent3" displayAttributes="ent3#att18 ent3#att17 ent3#att16">
+        <IndexUnit gr:x="200" gr:y="150" id="sv2#area5#area6#page6#alt3#page8#inu32" name="Premium Events - In Progress" entity="ent3" displayAttributes="ent3#att18 ent3#att17 ent3#att16 ent3#att4">
           <Selector id="sv2#area5#area6#page6#alt3#page8#inu32#su44" defaultPolicy="fill" booleanOperator="and">
             <AttributesCondition id="sv2#area5#area6#page6#alt3#page8#inu32#su44#acond24" name="AttCondition24" predicate="eq" booleanOperator="or" implied="false" attributes="ent3#att4"/>
             <AttributesCondition id="sv2#area5#area6#page6#alt3#page8#inu32#su44#acond25" name="AttCondition25" predicate="eq" booleanOperator="or" implied="false" attributes="rel16#role32.ent10#att23" value="3"/>
