@@ -1,7 +1,18 @@
+
 -- DADOS:
 
+-- group 
+insert into bettingwebapp.group(groupname) values ("Normal");
+insert into bettingwebapp.group(groupname) values ("Premium");
+insert into bettingwebapp.group(groupname) values ("Administrator");
+
+-- users
+insert into user(username, password, email, name, balance, group_oid) values ("maria", "pass", "maria@gmail.com", "Maria Carla", 10.0, 1);
+insert into user(username, password, email, name, balance, group_oid) values ("joao", "pass", "maria@gmail.com", "Joao", 10.0, 2);
+insert into user(username, password, email, name, balance, group_oid) values ("carlos", "pass", "maria@gmail.com", "Joao", 10.0, 3);
+
+
 -- module
-/*
 insert into module values (1, "page4", "Manage Events");
 insert into module values (2, "area14", "Add New Event");
 insert into module values (3, "area13", "Edit Event");
@@ -14,6 +25,8 @@ insert into module values (9, "area1", "List Bets");
 insert into module values (10, "area20", "Buy Premium");
 insert into module values (11, "page83", "Make Bet - welcome menu");
 insert into module values (12, "page57", "Premium menu");
+insert into module values (13, "area5", "Betting App");
+insert into module values (14, "miu19", "Logout");
 
 
 -- group_module
@@ -23,10 +36,13 @@ insert into group_module values (1,9);
 insert into group_module values (1,10);
 insert into group_module values (1,11);
 insert into group_module values (1,12);
+insert into group_module values (1,13);
+insert into group_module values (1,14);
 insert into group_module values (2,7);
 insert into group_module values (2,8);
 insert into group_module values (2,9);
 insert into group_module values (2,11);
+insert into group_module values (2,14);
 insert into group_module values (3,1);
 insert into group_module values (3,2);
 insert into group_module values (3,3);
@@ -34,34 +50,24 @@ insert into group_module values (3,4);
 insert into group_module values (3,5);
 insert into group_module values (3,6);
 
-*/
 
--- group 
-insert into bettingwebapp.group(groupname) values ("Normal");
-insert into bettingwebapp.group(groupname) values ("Premium");
-insert into bettingwebapp.group(groupname) values ("Administrator");
 
--- users
-insert into user(username, password, email, name, balance, group_oid) values ("maria", "pass", "maria@gmail.com", "Maria Carla", 10.0, 1);
-insert into user(username, password, email, name, balance, group_oid) values ("joao", "pass", "maria@gmail.com", "Joao", 10.0, 2);
-insert into user(username, password, email, name, balance, group_oid) values ("carlos", "pass", "maria@gmail.com", "Joao", 10.0, 3);
 
--- user_group
-insert into user_group(user_oid, group_oid) values (1,1);
-insert into user_group(user_oid, group_oid) values (2,2);
-insert into user_group(user_oid, group_oid) values (3,1);
 
 -- Sports
 insert into sport(name) values("Football");
-insert into sport(name) values("Futsal");
-insert into sport(name) values("Volleyball");
+-- insert into sport(name) values("Futsal");
+-- insert into sport(name) values("Volleyball");
 insert into sport(name) values("Basketball");
 
 -- States
 insert into state(name) value("Opened");
 insert into state(name) value("Closed");
+insert into state(name) value("In progress");
 
 -- Events
+
+select * from state;
 
 insert into event(startingdate, creationdate, finishingdate, ispremium, description, name, state_oid, sport_oid) values('2019-04-01 0:0', now(), '2019-05-20 0:0', true, "Description of the game", "Benfica x Porto", 1, 1);
 insert into event(startingdate, creationdate, finishingdate, ispremium, description, name, state_oid, sport_oid) values('2019-04-01 0:0', now(), '2019-05-20 0:0', true, "Description of the game", "Benfica x Sporting", 1, 1);
@@ -128,7 +134,7 @@ BEGIN
     select s.name into v_sport_name from event e, sport s where e.sport_oid = s.oid and e.event_oid = i_eventId;
     
     -- fecha o evento -> passa Closed, id = 2
-    update event set event.state_oid = 2 where event.event_oid = i_eventId;
+    update event set state_oid = 2 where event_oid = i_eventId;
     
     -- obtém todas as AvailableBetTypes e define-as como válidas/inválidas
     
@@ -204,7 +210,7 @@ BEGIN
 END //
 DELIMITER ;
 
-desc basketballstats;
+
 -- validar apostas para basketball
 DELIMITER //
 create procedure validar_bettype_basketball(IN i_oid integer, IN i_availablebt_id integer, IN i_bettype_id integer)
@@ -277,6 +283,7 @@ BEGIN
 		fetch bets_results into v_bet_id, v_bet_result, v_user_id, v_wager, v_odd, v_result_oid;
         
         select v_bet_id, v_bet_result, v_user_id, v_wager, v_odd, v_result_oid, i_eventId;
+        
         -- verifica se a bet ainda se encontra como resultado OPENED
         if v_result_oid = 1 then
 			-- id ganho = 2, perdido = 3
@@ -304,16 +311,17 @@ DELIMITER ;
 
 -- alterar
 DELIMITER //
-CREATE PROCEDURE place_bet(IN wager float, IN userid integer, IN Eventid integer, IN betTypeid integer, IN resultid integer, OUT place boolean)
+CREATE PROCEDURE place_bet(IN wager float, IN userid integer, IN Eventid integer, IN betTypeid integer, OUT place boolean)
 BEGIN
 	declare current_balance float;
+    declare v_event_state integer;
+    
     select balance into current_balance from user where user.oid = userid;
+    select state_oid into v_event_state from event where event.event_oid = Eventid;
     
-    -- TODO : verificar se o evento ainda não terminou
-    
-    if current_balance > wager then
+    if current_balance > wager and v_event_state = 1 then
 		update user set balance = (balance - wager) where oid = userid;
-		insert into bet(wager, user_oid, event_oid, bettype_oid, result_oid) values(wager, userid, Eventid, betTypeid, resultid);
+		insert into bet(wager, user_oid, event_oid, bettype_oid, result_oid) values(wager, userid, Eventid, betTypeid, 1);
 		set place = true;
 	else
 		set place = false;
@@ -321,7 +329,7 @@ BEGIN
 END //
 DELIMITER ;
 
-
+select * from event;
 -- Check premium 
 DELIMITER //
 CREATE PROCEDURE Check_Premium(IN inid INT, out prem boolean)
@@ -341,15 +349,18 @@ DELIMITER ;
 DELIMITER //
 CREATE PROCEDURE Add_User(IN inusername varchar(50), IN inpassword varchar(50), IN inname varchar(50), IN inemail varchar(50), out estado varchar(255))
 BEGIN
-	DECLARE v_username varchar(50);
-	select username into v_username from user where user.username = inusername;
+    DECLARE v_username varchar(50);
+    DECLARE v_userid integer;
+    select username into v_username from user where user.username = inusername;
     select v_username;
     if(v_username is null) then
-		INSERT INTO user (username, password, email, name, balance, group_oid) VALUES (inusername, inpassword, inemail, inname, 0, 1);
+        INSERT INTO user (username, password, email, name, balance, group_oid) VALUES (inusername, inpassword, inemail, inname, 0, 1);
+        SELECT last_insert_id() INTO v_userid;
+        INSERT INTO user_group(user_oid, group_oid) values (v_userid, 1);
         set estado = "Adicionado";
-	else
-		set estado = "Username já existe";
-	end if;
+    else
+        set estado = "Username já existe";
+    end if;
 END //
 DELIMITER ;
 
@@ -454,6 +465,7 @@ BEGIN
 	declare v_starting varchar(25);
     declare v_creation varchar(25);
     declare v_finishing varchar(25);
+    declare v_event_id integer;
     
     -- solução à pedreiro LUL
     select REPLACE(i_startingdate, ' AM', '') into v_starting;
@@ -472,17 +484,26 @@ BEGIN
 END //
 DELIMITER ;
 
+
+-- definir evento como in progress
+DELIMITER //
+create procedure set_event_inprogress(IN i_event_id integer)
+BEGIN 
+	update event set state_oid = 3 where event_oid = i_event_id;
+END //
+DELIMITER ;
+
+select * from event;
+
 -- Dados de procedimentos
 -- add_football_stats(i_gameduration, i_eventid ,i_awaygoals,i_awayredcards, i_awayyellowcards, i_homegoals,
 
 
--- PARA TESTES
-
-call create_event('2019-04-01 00:00', '2019-04-01 00:00', false, "No description", "Porto x Liverpool", 1);
+call create_event('2019-04-01 00:00', '2019-04-01 00:00', false, "No description", "Porto x Liverpool", 1); 
 insert into availablebettypes(odd, betresult, bettype_oid, event_oid) values (1.35, null, 1, 6);
 insert into availablebettypes(odd, betresult, bettype_oid, event_oid) values (1.5, null, 2, 6);
-call place_bet(2, 1, 6, 1, 1, @out);
-call place_bet(2, 2, 6, 2, 1, @out);
+call place_bet(2, 1, 6, 1, @out);
+call place_bet(2, 2, 6, 2, @out);
 
 call add_football_stats(95, 6, 0, 1,2,3,0,3, @msg);
 call close_event(6);
