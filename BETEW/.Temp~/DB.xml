@@ -8,6 +8,7 @@
   <StoredProcedure catalog="bettingwebapp" name="buy_premium" resultType="noResult"/>
   <StoredProcedure catalog="bettingwebapp" name="close_event" resultType="noResult"/>
   <StoredProcedure catalog="bettingwebapp" name="create_event" resultType="noResult"/>
+  <StoredProcedure catalog="bettingwebapp" name="delete_bet" resultType="noResult"/>
   <StoredProcedure catalog="bettingwebapp" name="deposit_balance" resultType="noResult"/>
   <StoredProcedure catalog="bettingwebapp" name="place_bet" resultType="noResult"/>
   <StoredProcedure catalog="bettingwebapp" name="set_result_of_bets_by_event" resultType="noResult"/>

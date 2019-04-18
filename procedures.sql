@@ -2,16 +2,38 @@
 
 -- module
 /*
-insert into module values (1, "area5", "Betting App");
+insert into module values (1, "page4", "Manage Events");
+insert into module values (2, "area14", "Add New Event");
+insert into module values (3, "area13", "Edit Event");
+insert into module values (4, "area18", "Show Bets");
+insert into module values (5, "area10", "Add Bet Types To Event");
+insert into module values (6, "area11", "Edit Bet Types");
+insert into module values (7, "area7", "Profile");
+insert into module values (8, "area6", "Make bet");
+insert into module values (9, "area1", "List Bets");
+insert into module values (10, "area20", "Buy Premium");
+insert into module values (11, "page83", "Make Bet - welcome menu");
+insert into module values (12, "page57", "Premium menu");
 
 
 -- group_module
-insert into group_module values (1,1);
+insert into group_module values (1,7);
+insert into group_module values (1,8);
+insert into group_module values (1,9);
+insert into group_module values (1,10);
+insert into group_module values (1,11);
+insert into group_module values (1,12);
+insert into group_module values (2,7);
+insert into group_module values (2,8);
+insert into group_module values (2,9);
+insert into group_module values (2,11);
+insert into group_module values (3,1);
+insert into group_module values (3,2);
+insert into group_module values (3,3);
+insert into group_module values (3,4);
+insert into group_module values (3,5);
+insert into group_module values (3,6);
 
-
--- user_group
-insert into user_group values (1,1);
-insert into user_group values (2,1);
 */
 
 -- group 

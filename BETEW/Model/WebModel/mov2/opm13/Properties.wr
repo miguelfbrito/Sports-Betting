@@ -1,0 +1,28 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="600" gr:y="265" id="mov2#opm13" name="Delete bet">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm13#icu13" gr:x="25" gr:y="120">
+      <OKLink id="mov2#opm13#icu13#oln27" name="OKFlow27" to="mov2#opm13#spu9">
+        <LinkParameter id="mov2#opm13#icu13#oln27#par155" name="BetId_BetId" source="mov2#opm13#icu13#icp39" target="mov2#opm13#spu9.mov2#opm13#spu9#spp27"/>
+        <LinkParameter id="mov2#opm13#icu13#oln27#par156" name="UserId_UserId" source="mov2#opm13#icu13#icp34" target="mov2#opm13#spu9.mov2#opm13#spu9#spp44"/>
+      </OKLink>
+      <InputCollectorParameter id="mov2#opm13#icu13#icp34" name="UserId"/>
+      <InputCollectorParameter id="mov2#opm13#icu13#icp39" name="BetId"/>
+    </InputCollectorUnit>
+    <StoredProcedureUnit gr:x="320" gr:y="110" id="mov2#opm13#spu9" name="Delete bet" resultType="plain" db="db1" procedure="delete_bet">
+      <OKLink id="mov2#opm13#spu9#oln30" name="OKFlow30" to="mov2#opm13#okcu11">
+        <LinkParameter id="mov2#opm13#spu9#oln30#par145" name="Bet deleted and money replaced._msg" sourceValue="Bet deleted and money replaced." target="mov2#opm13#okcu11#ocp14"/>
+      </OKLink>
+      <KOLink id="mov2#opm13#spu9#kln34" name="KOFlow34" to="mov2#opm13#kocu11">
+        <LinkParameter id="mov2#opm13#spu9#kln34#par154" name="Error on deleting bet._msg" sourceValue="Error on deleting bet." target="mov2#opm13#kocu11#ocp13"/>
+      </KOLink>
+      <StoredProcedureParameter id="mov2#opm13#spu9#spp27" name="BetId" type="string" direction="input" position="1"/>
+      <StoredProcedureParameter id="mov2#opm13#spu9#spp44" name="UserId" type="string" direction="input" position="2"/>
+    </StoredProcedureUnit>
+    <OKCollectorUnit gr:x="495" gr:y="65" id="mov2#opm13#okcu11" name="Success">
+      <OutputCollectorParameter id="mov2#opm13#okcu11#ocp14" name="msg"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit gr:x="495" gr:y="185" id="mov2#opm13#kocu11" name="Error">
+      <OutputCollectorParameter id="mov2#opm13#kocu11#ocp13" name="msg"/>
+    </KOCollectorUnit>
+  </OperationUnits>
+</OperationModule>

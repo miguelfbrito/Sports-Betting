@@ -28,14 +28,20 @@
   <layout:Grid containerType="grid">
     <layout:Row>
       <layout:Cell colspan="12">
-        <layout:Unit unitId="sv2#area5#area7#page24#enu20">
-          <layout:Field field="sv2#area5#area7#page24#enu20#fld53"/>
-          <layout:Link link="sv2#area5#area7#page24#enu20#ln71"/>
-        </layout:Unit>
-        <layout:Unit unitId="sv2#area5#area7#page24#enu21">
-          <layout:Field field="sv2#area5#area7#page24#enu21#fld54"/>
-          <layout:Link link="sv2#area5#area7#page24#enu21#ln65"/>
-        </layout:Unit>
+        <layout:Grid containerType="cell">
+          <layout:Row>
+            <layout:Cell>
+              <layout:Unit unitId="sv2#area5#area7#page24#enu20">
+                <layout:Field field="sv2#area5#area7#page24#enu20#fld53"/>
+                <layout:Link link="sv2#area5#area7#page24#enu20#ln71"/>
+              </layout:Unit>
+              <layout:Unit unitId="sv2#area5#area7#page24#enu21">
+                <layout:Field field="sv2#area5#area7#page24#enu21#fld54"/>
+                <layout:Link link="sv2#area5#area7#page24#enu21#ln65"/>
+              </layout:Unit>
+            </layout:Cell>
+          </layout:Row>
+        </layout:Grid>
       </layout:Cell>
       <layout:Cell/>
       <layout:Cell/>

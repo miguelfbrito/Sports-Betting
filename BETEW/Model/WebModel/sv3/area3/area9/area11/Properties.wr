@@ -1,3 +1,3 @@
-<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv3#area3#area9#area11" name="Edit Bet Types" defaultPage="sv3#area3#area9#area11#page30" landmark="true" gr:x="10" gr:y="595">
+<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv3#area3#area9#area11" name="Edit Bet Types" landmark="true" gr:x="60" gr:y="635" defaultPage="sv3#area3#area9#area11#page30" protected="true">
   <OperationUnits/>
 </Area>

@@ -1,7 +1,13 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1480" gr:y="1015" id="sv3#area3#page4" name="Manage Events">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="360" id="sv3#area3#page4" name="Manage Events" protected="true">
   <ContentUnits>
     <MultiMessageUnit gr:x="0" gr:y="0" id="sv3#area3#page4#mssu1" name="Description of view">
-      <Message xml:space="preserve">In this view the administrator can perform CRUD operations on the events!</Message>
+      <Message xml:space="preserve">Welcome ADMIN.
+
+In this view you can:
+	- Perform CRUD operations on the events;
+	- Add Bet Types to an event;
+	- Add stats to some event and get results of all bets realized for that event;
+	- Delete some bet for any reason.</Message>
     </MultiMessageUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">

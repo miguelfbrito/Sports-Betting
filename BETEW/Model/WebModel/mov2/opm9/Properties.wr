@@ -1,4 +1,4 @@
-<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="85" gr:y="185" id="mov2#opm9" name="Raise Money">
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="85" gr:y="185" id="mov2#opm9" name="Deposit">
   <OperationUnits>
     <InputCollectorUnit id="mov2#opm9#icu7" gr:x="30" gr:y="60">
       <InputCollectorParameter id="mov2#opm9#icu7#icp30" name="User_id"/>

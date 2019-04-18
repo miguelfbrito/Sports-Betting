@@ -1,11 +1,22 @@
-<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="-125" gr:y="-270" id="sv3#area3" name="Manage Events" landmark="true" landmarks="sv3#area3#area9 sv3#area3#area12" defaultPage="sv3#area3#dlu2" protected="false">
+<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="-430" gr:y="-310" id="sv3#area3" name="Manage Events" landmark="true" protected="false" defaultPage="sv3#area3#dlu2" landmarks="sv3#area3#area9 sv3#area3#area12 sv3#area3#area18 sv3#area3#miu18">
   <OperationUnits>
-    <DeleteUnit gr:x="1330" gr:y="635" id="sv3#area3#dlu2" name="Delete Bet Type" entity="ent2">
+    <DeleteUnit gr:x="1615" gr:y="650" id="sv3#area3#dlu2" name="Delete Bet Type" entity="ent2">
       <Selector id="sv3#area3#dlu2#su13" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv3#area3#dlu2#su13#kcond10" name="KeyCondition10" predicate="in" implied="false"/>
       </Selector>
       <OKLink id="sv3#area3#dlu2#oln12" name="OKFlow10" to="sv3#area3#area9#area11#page30#alt8#page33#inu11" automaticCoupling="true" gr:bendpoints="-123,-97,102,118"/>
       <KOLink id="sv3#area3#dlu2#kln10" name="KOFlow9" to="sv3#area3#area9#area11#page30#alt8#page33#inu11" automaticCoupling="true" gr:bendpoints="-103,-119,122,96"/>
     </DeleteUnit>
+    <ModuleInstanceUnit gr:x="895" gr:y="1215" id="sv3#area3#miu14" action="true" name="Delete Bet" moduleId="mov2#opm13">
+      <OKLink id="sv3#area3#miu14#oln41" name="OKFlow41" to="sv3#area3#area18#page44#mssu15" gr:bendpoints="142,34,-108,-76">
+        <LinkParameter id="sv3#area3#miu14#oln41#par158" name="msg_Shown Messages" source="mov2#opm13#okcu11#ocp14" target="sv3#area3#area18#page44#mssu15.shownMessages"/>
+      </OKLink>
+      <KOLink id="sv3#area3#miu14#kln35" name="KOFlow35" to="sv3#area3#area18#page44#mssu15" gr:bendpoints="133,75,-117,-35">
+        <LinkParameter id="sv3#area3#miu14#kln35#par157" name="msg_Shown Messages" source="mov2#opm13#kocu11#ocp13" target="sv3#area3#area18#page44#mssu15.shownMessages"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="15" gr:y="115" id="sv3#area3#miu18" action="true" name="Logout" landmark="true">
+      <OKLink id="sv3#area3#miu18#oln75" name="OKFlow75" to="sv3#page59" automaticCoupling="true"/>
+    </ModuleInstanceUnit>
   </OperationUnits>
 </Area>

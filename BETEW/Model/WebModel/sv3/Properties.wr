@@ -1,4 +1,4 @@
-<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv3" name="Manage Events" landmarks="sv3#area3" homePage="sv3#area3#page4">
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv3" name="Manage Events" landmarks="sv3#area3" homePage="sv3#page59">
   <OperationUnits>
     <ModifyUnit gr:x="-55" gr:y="610" id="sv3#mfu2" name="Update Events" entity="ent3">
       <Selector id="sv3#mfu2#su8" defaultPolicy="fill" booleanOperator="and">
@@ -14,16 +14,16 @@
       <OKLink id="sv3#dlu1#oln13" name="OKFlow5" to="sv3#area3#area12#area13#page34#alt9#page36" automaticCoupling="true"/>
       <KOLink id="sv3#dlu1#kln14" name="KOFlow3" to="sv3#area3#area12#area13#page34#alt9#page35#dau14" automaticCoupling="true" gr:bendpoints="72,-246,142,105"/>
     </DeleteUnit>
-    <CreateUnit gr:x="1215" gr:y="-90" id="sv3#cru5" name="Create availableBT" entity="ent2">
-      <OKLink id="sv3#cru5#oln11" name="OKFlow4" to="sv3#area3#area9#area10#page26#alt7#page28#inu9" automaticCoupling="true"/>
-      <KOLink id="sv3#cru5#kln11" name="KOFlow6" to="sv3#area3#area9#area10#page26#alt7#page28#page29#enu5" automaticCoupling="true" gr:bendpoints="-142,82,138,-48"/>
+    <CreateUnit gr:x="645" gr:y="125" id="sv3#cru5" name="Create availableBT" entity="ent2">
+      <OKLink id="sv3#cru5#oln62" name="OKFlow4" to="sv3#area3#area9#area10#page26#alt7#page27#inu7" automaticCoupling="true"/>
+      <KOLink id="sv3#cru5#kln39" name="KOFlow6" to="sv3#area3#area9#area10#page26#alt7#page28#alt4#page52#enu14" automaticCoupling="true" gr:bendpoints="-142,82,138,-48"/>
     </CreateUnit>
     <ModifyUnit gr:x="1150" gr:y="885" id="sv3#mfu1" name="Update Bet Type" entity="ent2">
       <Selector id="sv3#mfu1#su15" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv3#mfu1#su15#kcond13" name="KeyCondition13" predicate="in" implied="false"/>
       </Selector>
       <KOLink id="sv3#mfu1#kln9" name="KOFlow7" to="sv3#area3#area9#area11#page30#alt8#page31#enu7" automaticCoupling="true" gr:bendpoints="-24,-110,-9,105"/>
-      <OKLink id="sv3#mfu1#oln10" name="OKFlow6" to="sv3#area3#area9#area11#page30#alt8#page31#dau12" automaticCoupling="true"/>
+      <OKLink id="sv3#mfu1#oln10" name="OKFlow6" to="sv3#area3#area9#area11#page30#alt8#page32" automaticCoupling="true"/>
     </ModifyUnit>
     <ModuleInstanceUnit id="sv3#miu20" gr:x="-340" gr:y="735" action="true" moduleId="mov2#opm4">
       <OKLink id="sv3#miu20#oln37" name="OKFlow37" to="sv3#area3#area12#area13#page22#alt6#page47#enu18" gr:bendpoints="100,143,-150,-27" codeRef="mov2#opm4#okcu2">
@@ -46,12 +46,16 @@
       <KOLink id="sv3#miu22#kln23" name="KOFlow23" to="sv3#area3#area12#area13#page22#alt6#page47#mssu22" automaticCoupling="true"/>
     </ModuleInstanceUnit>
     <ModuleInstanceUnit gr:x="300" gr:y="-330" id="sv3#miu13" action="true" name="Add Event" moduleId="mov2#opm12">
-      <KOLink id="sv3#miu13#kln38" name="KOFlow4" to="sv3#area3#area12#area14#page38#alt10#page40#mssu15" gr:bendpoints="27,240,-58,-235">
-        <LinkParameter id="sv3#miu13#kln38#par290" name="msg_Shown Messages" source="mov2#opm12#kocu10#ocp5" target="sv3#area3#area12#area14#page38#alt10#page40#mssu15.shownMessages"/>
+      <OKLink id="sv3#miu13#oln61" name="OKFlow7" to="sv3#area3#area9#area10#page26#alt7#page27#dau10"/>
+      <KOLink id="sv3#miu13#kln29" name="KOFlow4" to="sv3#area3#area12#area14#page29#alt5#page43#mssu2" gr:bendpoints="27,240,-58,-235">
+        <LinkParameter id="sv3#miu13#kln29#par141" name="msg_Shown Messages" source="mov2#opm12#kocu10#ocp5" target="sv3#area3#area12#area14#page29#alt5#page43#mssu2.shownMessages"/>
       </KOLink>
-      <OKLink id="sv3#miu13#oln61" name="OKFlow7" to="sv3#area3#area9#area10#page26#alt7#page27#dau10">
-        <LinkParameter id="sv3#miu13#oln61#par278" name="Key [Event_oid]_PASSING_KeyCondition9 [Event_oid]" sourceLinkParameter="sv3#area3#area12#area14#page38#alt10#page40#enu9#ln60#par277" target="sv3#area3#area9#area10#page26#alt7#page27#dau10#su12#kcond12.ent3#att3"/>
-      </OKLink>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit id="sv3#miu16" name="Login" gr:x="-610" gr:y="195" action="true" moduleId="mov1#opm2">
+      <OKLink id="sv3#miu16#oln46" name="OKFlow46" to="sv3#area3#page4#mssu1" automaticCoupling="true"/>
+      <KOLink id="sv3#miu16#kln38" name="KOFlow38" to="sv3#page59#mssu26">
+        <LinkParameter id="sv3#miu16#kln38#par166" name="Error on Login in Admin area._Shown Messages" sourceValue="Error on Login in Admin area." target="sv3#page59#mssu26.shownMessages"/>
+      </KOLink>
     </ModuleInstanceUnit>
   </OperationUnits>
 </SiteView>

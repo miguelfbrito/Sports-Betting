@@ -85,7 +85,7 @@
       </IndexUnit>
       <GetUnit gr:x="0" gr:y="0" id="sv2#area5#area1#page1#page16#gtu6" name="Get6" contextParameters="UserCtxParam">
         <Link id="sv2#area5#area1#page1#page16#gtu6#ln25" name="Flow25" to="sv2#area5#area1#page1#page16#inu6" automaticCoupling="true" type="transport" validate="true"/>
-        <Link id="sv2#area5#area1#page1#page16#gtu6#ln78" name="Flow78" to="sv2#area5#area1#page1#page16#inu12" automaticCoupling="true" type="transport" validate="true"/>
+        <Link id="sv2#area5#area1#page1#page16#gtu6#ln78" name="Flow78" to="sv2#area5#area1#page1#page16#inu12" type="transport" validate="true" automaticCoupling="true"/>
       </GetUnit>
       <IndexUnit gr:x="145" gr:y="130" id="sv2#area5#area1#page1#page16#inu12" name="Bet History" entity="ent1" displayAttributes="ent1#att10 ent1#att27 rel21#role42.ent4#att22">
         <Selector id="sv2#area5#area1#page1#page16#inu12#su26" defaultPolicy="fill" booleanOperator="and">

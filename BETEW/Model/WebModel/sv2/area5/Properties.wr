@@ -1,3 +1,7 @@
-<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="445" gr:y="-350" id="sv2#area5" name="Betting App" landmark="true" landmarks="sv2#area5#area6 sv2#area5#area7 sv2#area5#area1" protected="false">
-  <OperationUnits/>
+<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="470" gr:y="-360" id="sv2#area5" name="Betting App" landmark="true" landmarks="sv2#area5#area6 sv2#area5#area7 sv2#area5#area1 sv2#area5#area20 sv2#area5#miu17" protected="false" defaultPage="sv2#area5#page83">
+  <OperationUnits>
+    <ModuleInstanceUnit gr:x="335" gr:y="40" id="sv2#area5#miu17" action="true" name="Logout" moduleId="mov2#opm14" landmark="true">
+      <OKLink id="sv2#area5#miu17#oln73" name="OKFlow73" to="sv2#page5" automaticCoupling="true"/>
+    </ModuleInstanceUnit>
+  </OperationUnits>
 </Area>

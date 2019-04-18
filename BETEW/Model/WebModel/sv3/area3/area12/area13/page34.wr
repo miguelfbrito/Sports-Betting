@@ -215,7 +215,7 @@
       <layout:Cell/>
     </layout:Row>
   </layout:Grid>
-  <Alternative id="sv3#area3#area12#area13#page34#alt9" name="Edit Event" defaultPage="sv3#area3#area12#area13#page34#alt9#page36" gr:x="0" gr:y="0">
+  <Alternative id="sv3#area3#area12#area13#page34#alt9" name="Edit Event" gr:x="0" gr:y="0" defaultPage="sv3#area3#area12#area13#page34#alt9#page36">
     <Page id="sv3#area3#area12#area13#page34#alt9#page35" name="Details" gr:x="230" gr:y="0">
       <ContentUnits>
         <DataUnit id="sv3#area3#area12#area13#page34#alt9#page35#dau14" name="Event" linkOrder="sv3#area3#area12#area13#page34#alt9#page35#dau14#ln52 sv3#area3#area12#area13#page34#alt9#page35#dau14#ln54" gr:x="0" gr:y="0" entity="ent3" displayAll="true">

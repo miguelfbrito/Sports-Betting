@@ -1,0 +1,35 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#area5#page83" name="Make Bet - welcome menu" gr:x="485" gr:y="0" protected="true">
+  <ContentUnits>
+    <MultiMessageUnit id="sv2#area5#page83#mssu33" name="Information" linkOrder="sv2#area5#page83#mssu33#ln106" gr:x="165" gr:y="15">
+      <Message xml:space="preserve">In this page you can choose events to place bets!</Message>
+      <Link id="sv2#area5#page83#mssu33#ln106" name="Start Place Bet" to="sv2#miu28" type="normal" validate="true">
+        <LinkParameter id="sv2#area5#page83#mssu33#ln106#par265" name="UserCtxParam.oid_PASSING_UserId" sourceLinkParameter="sv2#area5#page83#gtu8#ln107#par266" target="sv2#miu28.mov1#opm3#icu3#icp9"/>
+      </Link>
+    </MultiMessageUnit>
+    <GetUnit id="sv2#area5#page83#gtu8" name="Get4" gr:x="0" gr:y="0" contextParameters="UserCtxParam">
+      <Link id="sv2#area5#page83#gtu8#ln107" name="Flow81" to="sv2#area5#page83#mssu33" type="transport" validate="true">
+        <LinkParameter id="sv2#area5#page83#gtu8#ln107#par266" name="UserCtxParam.oid_PASSING" source="sv2#area5#page83#gtu8.UserCtxParam" passing="true"/>
+      </Link>
+    </GetUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#area5#page83#mssu33">
+          <layout:Link link="sv2#area5#page83#mssu33#ln106"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

@@ -1,0 +1,56 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#area5#area20#page57" name="Premium menu" landmark="true" protected="true" gr:x="0" gr:y="0">
+  <ContentUnits>
+    <MultiMessageUnit id="sv2#area5#area20#page57#mssu21" name="Information" linkOrder="sv2#area5#area20#page57#mssu21#ln59" gr:x="0" gr:y="0">
+      <Message xml:space="preserve">Are you a PREMIUM user?
+
+Get advantges like premium events only for you.
+
+Be a Premium user only for 10&#8364;.</Message>
+      <Link id="sv2#area5#area20#page57#mssu21#ln59" name="Be premium" to="sv2#miu12" type="normal" validate="true">
+        <LinkParameter id="sv2#area5#area20#page57#mssu21#ln59#par162" name="UserCtxParam.oid_PASSING_userId" sourceLinkParameter="sv2#area5#area20#page57#gtu7#ln60#par163" target="sv2#miu12.mov2#opm11#icu11#icp13"/>
+      </Link>
+    </MultiMessageUnit>
+    <GetUnit id="sv2#area5#area20#page57#gtu7" name="Get4" gr:x="140" gr:y="5" contextParameters="UserCtxParam">
+      <Link id="sv2#area5#area20#page57#gtu7#ln60" name="Flow12" to="sv2#area5#area20#page57#mssu21" type="transport" validate="true">
+        <LinkParameter id="sv2#area5#area20#page57#gtu7#ln60#par163" name="UserCtxParam.oid_PASSING" source="sv2#area5#area20#page57#gtu7.UserCtxParam" passing="true"/>
+      </Link>
+    </GetUnit>
+    <MultiMessageUnit id="sv2#area5#area20#page57#mssu25" name="Transaction Information" gr:x="20" gr:y="95"/>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#area5#area20#page57#mssu21">
+          <layout:Link link="sv2#area5#area20#page57#mssu21#ln59"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#area5#area20#page57#mssu25"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

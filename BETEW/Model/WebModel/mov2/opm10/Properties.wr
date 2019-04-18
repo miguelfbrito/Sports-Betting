@@ -1,9 +1,12 @@
-<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="355" gr:y="190" id="mov2#opm10" name="Cash deposit">
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="355" gr:y="190" id="mov2#opm10" name="Withdraw">
   <OperationUnits>
     <InputCollectorUnit id="mov2#opm10#icu8" gr:x="30" gr:y="60">
       <InputCollectorParameter id="mov2#opm10#icu8#icp32" name="user_id"/>
       <InputCollectorParameter id="mov2#opm10#icu8#icp33" name="value"/>
-      <OKLink id="mov2#opm10#icu8#oln29" name="OKFlow29" to="mov2#opm10#spu7" automaticCoupling="true"/>
+      <OKLink id="mov2#opm10#icu8#oln29" name="OKFlow29" to="mov2#opm10#spu7">
+        <LinkParameter id="mov2#opm10#icu8#oln29#par91" name="user_id_user_id" source="mov2#opm10#icu8#icp32" target="mov2#opm10#spu7.mov2#opm10#spu7#spp24"/>
+        <LinkParameter id="mov2#opm10#icu8#oln29#par92" name="value_value" source="mov2#opm10#icu8#icp33" target="mov2#opm10#spu7.mov2#opm10#spu7#spp25"/>
+      </OKLink>
     </InputCollectorUnit>
     <StoredProcedureUnit gr:x="310" gr:y="70" id="mov2#opm10#spu7" name="Withdraw" resultType="plain" db="db1" procedure="withdraw_balance">
       <OKLink id="mov2#opm10#spu7#oln20" name="OKFlow20" to="mov2#opm10#okcu9" automaticCoupling="true"/>
