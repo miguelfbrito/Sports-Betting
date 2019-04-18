@@ -96,7 +96,10 @@ Insert into bettype_sport(bettype_oid, sport_oid) values (4, 1);
 Insert into bettype_sport(bettype_oid, sport_oid) values (5, 1);
 Insert into bettype_sport(bettype_oid, sport_oid) values (6, 1);
 Insert into bettype_sport(bettype_oid, sport_oid) values (7, 1);
-Insert into bettype_sport(bettype_oid, sport_oid) values (8, 2);
+Insert into bettype_sport(bettype_oid, sport_oid) values (1, 2);
+Insert into bettype_sport(bettype_oid, sport_oid) values (2, 2);
+Insert into bettype_sport(bettype_oid, sport_oid) values (3, 2);
+
 
 -- available bet types
 insert into availablebettypes(odd, betresult, bettype_oid, event_oid) values (1.35, null, 1, 1);
