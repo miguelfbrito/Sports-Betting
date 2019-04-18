@@ -6,14 +6,14 @@
     <Property name="applicationServer">Tomcat</Property>
     <Property name="cloudDeploy">false</Property>
     <Property name="commonsLibDir">/home/luis/WebRatio_Platform/WebRatio/plugins/com.webratio.commons.libs_7.2.18.201903231300/lib</Property>
-    <Property name="dbConfigPath">/tmp/WRDBConfig2582251385760559789.xml</Property>
+    <Property name="dbConfigPath">/tmp/WRDBConfig3270699278377062739.xml</Property>
     <Property name="defaultEncoding"></Property>
     <Property name="deployCorePluginDir">/home/luis/WebRatio_Platform/WebRatio/configuration/org.eclipse.osgi/bundles/49/1/.cp</Property>
     <Property name="derbySystemHome">/home/luis/WebRatio_Platform/WebRatio/workspace/.metadata/.plugins/com.webratio.commons.db/derby</Property>
     <Property name="enterpriseProjectDir"></Property>
-    <Property name="eventSocketPort">38205</Property>
+    <Property name="eventSocketPort">39057</Property>
     <Property name="excludedProjects" type="list"></Property>
-    <Property name="generationTime">201904181712</Property>
+    <Property name="generationTime">201904182127</Property>
     <Property name="helpersPluginDir">/home/luis/WebRatio_Platform/WebRatio/plugins/com.webratio.generator.helpers_7.2.18.201903231300</Property>
     <Property name="hostAlwaysAllowed">false</Property>
     <Property name="i18nBundleKeysFile" type="file"></Property>
@@ -22,17 +22,17 @@
     <Property name="lockDir">/home/luis/WebRatio_Platform/WebRatio/workspace/BETEW4/.Temp~</Property>
     <Property name="normalizeDescriptors">false</Property>
     <Property name="outputPath">/opt/tomcat/apache-tomcat-8.5.39/webapps/BETEW4</Property>
-    <Property name="phases">All</Property>
+    <Property name="phases">Logic|Struts13PagesOnly</Property>
     <Property name="projectDir">/home/luis/WebRatio_Platform/WebRatio/workspace/BETEW4</Property>
     <Property name="projectName">BETEW4</Property>
-    <Property name="projectPath">/tmp/Project5690089501571444485.wr</Property>
+    <Property name="projectPath">/tmp/Project706710642575209121.wr</Property>
     <Property name="projectType">WEBPROJECT</Property>
     <Property name="rootModuleName"></Property>
     <Property name="uiPluginDir">/home/luis/WebRatio_Platform/WebRatio/plugins/com.webratio.ide.ui_7.2.18.201903231300</Property>
     <Property name="webappPluginDir">/home/luis/WebRatio_Platform/WebRatio/plugins/com.webratio.generator.webapp_7.2.18.201903231300</Property>
     <Property name="wrBuildId">201903231300</Property>
     <Property name="wrGenerateOldValidationRules">false</Property>
-    <Property name="wrModelStatistics">pages=28|units=166</Property>
+    <Property name="wrModelStatistics">pages=19|units=141</Property>
     <Property name="wrVersion">7.2.18</Property>
   </Properties>
   <Plugins>

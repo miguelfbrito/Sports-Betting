@@ -238,10 +238,9 @@
                   <layout:Row>
                     <layout:Cell colspan="12">
                       <layout:Unit unitId="sv2#area5#area6#page6#alt3#page3#inu5">
-                        <layout:Attribute attribute="ent2#att2"/>
+                        <layout:Link link="sv2#area5#area6#page6#alt3#page3#inu5#ln22"/>
                         <layout:Attribute attribute="ent2#att13"/>
                         <layout:Attribute attribute="rel19#role38.ent6#att12"/>
-                        <layout:Link link="sv2#area5#area6#page6#alt3#page3#inu5#ln22"/>
                       </layout:Unit>
                     </layout:Cell>
                     <layout:Cell/>
@@ -291,14 +290,11 @@
     <layout:Row>
       <layout:Cell colspan="12">
         <layout:Unit unitId="sv2#area5#area6#page6#alt3#page11#dau17">
-          <layout:Attribute attribute="rel20#role39.ent3#att3"/>
           <layout:Attribute attribute="rel20#role39.ent3#att18"/>
           <layout:Attribute attribute="rel20#role39.ent3#att4"/>
-          <layout:Attribute attribute="rel20#role39.ent3#att16"/>
-          <layout:Attribute attribute="ent2#att2"/>
           <layout:Attribute attribute="rel19#role38.ent6#att12"/>
           <layout:Attribute attribute="ent2#att13"/>
-          <layout:Attribute attribute="rel19#role38.ent6#att6"/>
+          <layout:Attribute attribute="rel20#role39.ent3#att16"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>
@@ -373,7 +369,7 @@
   <Alternative id="sv2#area5#area6#page6#alt3" name="Make Bet" gr:x="0" gr:y="0" defaultPage="sv2#area5#area6#page6#alt3#page8">
     <Page id="sv2#area5#area6#page6#alt3#page3" name="Bet types" gr:x="0" gr:y="165">
       <ContentUnits>
-        <IndexUnit gr:x="0" gr:y="0" id="sv2#area5#area6#page6#alt3#page3#inu5" name="List Bet Types" entity="ent2" displayAttributes="ent2#att2 ent2#att13 rel19#role38.ent6#att12" linkOrder="sv2#area5#area6#page6#alt3#page3#inu5#ln22">
+        <IndexUnit gr:x="0" gr:y="0" id="sv2#area5#area6#page6#alt3#page3#inu5" name="List Bet Types" entity="ent2" displayAttributes="ent2#att13 rel19#role38.ent6#att12" linkOrder="sv2#area5#area6#page6#alt3#page3#inu5#ln22">
           <Selector id="sv2#area5#area6#page6#alt3#page3#inu5#su6" defaultPolicy="fill" booleanOperator="and">
             <RelationshipRoleCondition id="sv2#area5#area6#page6#alt3#page3#inu5#su6#rcond5" name="RoleCondition5" predicate="in" implied="false" role="rel20#role40"/>
           </Selector>
@@ -421,7 +417,7 @@
             <LinkParameter id="sv2#area5#area6#page6#alt3#page11#gtu1#ln14#par16" name="UserCtxParam.oid_PASSING" source="sv2#area5#area6#page6#alt3#page11#gtu1.UserCtxParam" passing="true"/>
           </Link>
         </GetUnit>
-        <DataUnit id="sv2#area5#area6#page6#alt3#page11#dau17" name="Bet Type" gr:x="55" gr:y="130" entity="ent2" displayAttributes="rel20#role39.ent3#att3 rel20#role39.ent3#att18 rel20#role39.ent3#att4 rel20#role39.ent3#att16 ent2#att2 rel19#role38.ent6#att12 ent2#att13 rel19#role38.ent6#att6">
+        <DataUnit id="sv2#area5#area6#page6#alt3#page11#dau17" name="Bet Type" gr:x="55" gr:y="130" entity="ent2" displayAttributes="rel20#role39.ent3#att18 rel20#role39.ent3#att4 rel19#role38.ent6#att12 ent2#att13 rel20#role39.ent3#att16">
           <Selector id="sv2#area5#area6#page6#alt3#page11#dau17#su25" defaultPolicy="fill" booleanOperator="and">
             <KeyCondition id="sv2#area5#area6#page6#alt3#page11#dau17#su25#kcond21" name="KeyCondition20" predicate="in" implied="false"/>
           </Selector>
@@ -431,7 +427,12 @@
           </Link>
         </DataUnit>
         <EntryUnit gr:x="135" gr:y="0" id="sv2#area5#area6#page6#alt3#page11#enu11" name="Place bet" entity="ent1" linkOrder="sv2#area5#area6#page6#alt3#page11#enu11#ln4">
-          <Field id="sv2#area5#area6#page6#alt3#page11#enu11#fld25" name="wager" type="float" modifiable="true" attribute="ent1#att10"/>
+          <Field id="sv2#area5#area6#page6#alt3#page11#enu11#fld25" name="wager" type="float" modifiable="true" attribute="ent1#att10">
+            <VRules>
+              <MandatoryValidationRule id="sv2#area5#area6#page6#alt3#page11#enu11#fld25#mnd9" name="Mandatory9" errorMessage="Required field!"/>
+              <TypeValidationRule id="sv2#area5#area6#page6#alt3#page11#enu11#fld25#tvr3" name="Type Validation3" errorMessage="Only float values!" type="float"/>
+            </VRules>
+          </Field>
           <Link id="sv2#area5#area6#page6#alt3#page11#enu11#ln4" name="Place bet" to="sv2#miu1" type="normal" validate="true">
             <LinkParameter id="sv2#area5#area6#page6#alt3#page11#enu11#ln4#par12" name="AvailableBetTypesToBetType.oid_PASSING_BetTypeID" target="sv2#miu1.mov1#opm1#icu1#icp4" sourceLinkParameter="sv2#area5#area6#page6#alt3#page11#dau17#ln24#par36"/>
             <LinkParameter id="sv2#area5#area6#page6#alt3#page11#enu11#ln4#par15" name="UserCtxParam.oid_PASSING_UserId" sourceLinkParameter="sv2#area5#area6#page6#alt3#page11#gtu1#ln14#par16" target="sv2#miu1.mov1#opm1#icu1#icp2"/>

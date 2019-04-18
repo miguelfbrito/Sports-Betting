@@ -66,6 +66,24 @@
               <layout:Cell/>
               <layout:Cell/>
             </layout:Row>
+            <layout:Row>
+              <layout:Cell colspan="12">
+                <layout:Unit unitId="sv2#page102#alt21#page104#inu17">
+                  <layout:Attribute attribute="rel19#role38.ent6#att12"/>
+                </layout:Unit>
+              </layout:Cell>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+            </layout:Row>
           </layout:Grid>
         </layout:SubPage>
       </layout:Cell>
@@ -100,10 +118,16 @@
           <Selector id="sv2#page102#alt21#page104#dau15#su41" defaultPolicy="fill" booleanOperator="and">
             <KeyCondition id="sv2#page102#alt21#page104#dau15#su41#kcond19" name="KeyCondition15" predicate="in" implied="false"/>
           </Selector>
+          <Link id="sv2#page102#alt21#page104#dau15#ln2" name="Flow2" to="sv2#page102#alt21#page104#inu17" automaticCoupling="true" type="transport" validate="true"/>
         </DataUnit>
+        <IndexUnit gr:x="145" gr:y="0" id="sv2#page102#alt21#page104#inu17" name="List Bet Types" entity="ent2" displayAttributes="rel19#role38.ent6#att12">
+          <Selector id="sv2#page102#alt21#page104#inu17#su21" defaultPolicy="fill" booleanOperator="and">
+            <RelationshipRoleCondition id="sv2#page102#alt21#page104#inu17#su21#rcond1" name="RoleCondition1" predicate="in" implied="false" role="rel20#role40"/>
+          </Selector>
+        </IndexUnit>
       </ContentUnits>
     </Page>
   </Alternative>
   <Link id="sv2#page102#ln132" name="Login" to="sv2#page101" automaticCoupling="true" type="normal" validate="true"/>
-  <Link id="sv2#page102#ln151" name="Register user" to="sv2#page25" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="-576,62,234,-304"/>
+  <Link id="sv2#page102#ln151" name="Register" to="sv2#page25" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="-576,62,234,-304"/>
 </Page>

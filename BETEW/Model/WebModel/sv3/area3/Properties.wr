@@ -7,7 +7,7 @@
       <OKLink id="sv3#area3#dlu2#oln12" name="OKFlow10" to="sv3#area3#area9#area11#page30#alt8#page33#inu11" automaticCoupling="true" gr:bendpoints="-123,-97,102,118"/>
       <KOLink id="sv3#area3#dlu2#kln10" name="KOFlow9" to="sv3#area3#area9#area11#page30#alt8#page33#inu11" automaticCoupling="true" gr:bendpoints="-103,-119,122,96"/>
     </DeleteUnit>
-    <ModuleInstanceUnit gr:x="895" gr:y="1215" id="sv3#area3#miu14" action="true" name="Delete Bet" moduleId="mov2#opm13">
+    <ModuleInstanceUnit gr:x="915" gr:y="1235" id="sv3#area3#miu14" action="true" name="Delete Bet" moduleId="mov2#opm13">
       <OKLink id="sv3#area3#miu14#oln41" name="OKFlow41" to="sv3#area3#area18#page44#mssu15" gr:bendpoints="142,34,-108,-76">
         <LinkParameter id="sv3#area3#miu14#oln41#par158" name="msg_Shown Messages" source="mov2#opm13#okcu11#ocp14" target="sv3#area3#area18#page44#mssu15.shownMessages"/>
       </OKLink>
@@ -18,7 +18,7 @@
     <ModuleInstanceUnit gr:x="15" gr:y="115" id="sv3#area3#miu18" action="true" name="Logout" landmark="true" moduleId="mov2#opm15">
       <OKLink id="sv3#area3#miu18#oln75" name="OKFlow75" to="sv3#page59" automaticCoupling="true"/>
     </ModuleInstanceUnit>
-    <ModuleInstanceUnit gr:x="845" gr:y="610" id="sv3#area3#miu24" action="true" name="Close events" moduleId="mov2#opm16">
+    <ModuleInstanceUnit gr:x="745" gr:y="590" id="sv3#area3#miu24" action="true" name="Close events" moduleId="mov2#opm16">
       <OKLink id="sv3#area3#miu24#oln96" name="OKFlow96" to="sv3#area3#area12#area13#page34#alt9#page36" automaticCoupling="true" gr:bendpoints="-50,134,264,-156"/>
     </ModuleInstanceUnit>
   </OperationUnits>

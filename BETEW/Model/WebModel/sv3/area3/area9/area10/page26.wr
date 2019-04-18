@@ -329,7 +329,12 @@
         <Page id="sv3#area3#area9#area10#page26#alt7#page28#alt4#page52" name="Place Bet Type" gr:x="30" gr:y="175">
           <ContentUnits>
             <EntryUnit gr:x="0" gr:y="0" id="sv3#area3#area9#area10#page26#alt7#page28#alt4#page52#enu14" name="Place Bet Type" entity="ent2" linkOrder="sv3#area3#area9#area10#page26#alt7#page28#alt4#page52#enu14#ln31">
-              <Field id="sv3#area3#area9#area10#page26#alt7#page28#alt4#page52#enu14#fld17" name="Odd" type="float" modifiable="true" attribute="ent2#att13"/>
+              <Field id="sv3#area3#area9#area10#page26#alt7#page28#alt4#page52#enu14#fld17" name="Odd" type="float" modifiable="true" attribute="ent2#att13">
+                <VRules>
+                  <MandatoryValidationRule id="sv3#area3#area9#area10#page26#alt7#page28#alt4#page52#enu14#fld17#mnd17" name="Mandatory17" errorMessage="Required field!"/>
+                  <TypeValidationRule id="sv3#area3#area9#area10#page26#alt7#page28#alt4#page52#enu14#fld17#tvr4" name="Type Validation4" type="float" errorMessage="Only float values"/>
+                </VRules>
+              </Field>
               <Link id="sv3#area3#area9#area10#page26#alt7#page28#alt4#page52#enu14#ln31" name="Add" to="sv3#cru5" type="normal" validate="true">
                 <LinkParameter id="sv3#area3#area9#area10#page26#alt7#page28#alt4#page52#enu14#ln31#par38" name="AvailableBetTypes Object_AvailableBetTypes Object" source="entityBean" target="sv3#cru5.entityBeans"/>
                 <LinkParameter id="sv3#area3#area9#area10#page26#alt7#page28#alt4#page52#enu14#ln31#par39" name="Odd_Odd" source="sv3#area3#area9#area10#page26#alt7#page28#alt4#page52#enu14#fld17" target="sv3#cru5.ent2#att13"/>
