@@ -39,7 +39,7 @@
     <OKCollectorUnit gr:x="625" gr:y="30" id="mov2#opm8#okcu8" name="Success">
       <OutputCollectorParameter id="mov2#opm8#okcu8#ocp6" name="msg"/>
     </OKCollectorUnit>
-    <StoredProcedureUnit gr:x="285" gr:y="85" id="mov2#opm8#spu13" name="Close event" resultType="plain" db="db1" procedure="close_event">
+    <StoredProcedureUnit gr:x="270" gr:y="95" id="mov2#opm8#spu13" name="Close event" resultType="plain" db="db1" procedure="close_event">
       <StoredProcedureParameter id="mov2#opm8#spu13#spp30" name="event_id" type="string" direction="input" position="1"/>
       <OKLink id="mov2#opm8#spu13#oln55" name="OKFlow55" to="mov2#opm8#spu14">
         <LinkParameter id="mov2#opm8#spu13#oln55#par239" name="event_id_PASSING_event_id" sourceLinkParameter="mov2#opm8#spu6#oln54#par238" target="mov2#opm8#spu14.mov2#opm8#spu14#spp31"/>
