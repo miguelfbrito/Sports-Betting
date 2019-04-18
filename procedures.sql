@@ -454,7 +454,8 @@ BEGIN
 			set msg = "Insufficient balance to acquire Premium!";
 		end if;
     end if;
-END
+END //
+DELIMITER ;
 
 -- criacao de um evento
 DELIMITER //

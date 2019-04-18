@@ -142,6 +142,46 @@
                     <layout:Cell/>
                     <layout:Cell/>
                   </layout:Row>
+                  <layout:Row>
+                    <layout:Cell colspan="12">
+                      <layout:Unit unitId="sv2#area5#area6#page6#alt3#page8#inu31">
+                        <layout:Attribute attribute="ent3#att18"/>
+                        <layout:Attribute attribute="ent3#att17"/>
+                        <layout:Attribute attribute="ent3#att16"/>
+                      </layout:Unit>
+                    </layout:Cell>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                  </layout:Row>
+                  <layout:Row>
+                    <layout:Cell colspan="12">
+                      <layout:Unit unitId="sv2#area5#area6#page6#alt3#page8#inu32">
+                        <layout:Attribute attribute="ent3#att18"/>
+                        <layout:Attribute attribute="ent3#att17"/>
+                        <layout:Attribute attribute="ent3#att16"/>
+                      </layout:Unit>
+                    </layout:Cell>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                  </layout:Row>
                 </layout:Grid>
               </layout:SubPage>
               <layout:SubPage pageId="sv2#area5#area6#page6#alt3#page11">
@@ -332,8 +372,8 @@
       <layout:Cell/>
     </layout:Row>
   </layout:Grid>
-  <Alternative id="sv2#area5#area6#page6#alt3" name="Make Bet" gr:x="0" gr:y="0">
-    <Page id="sv2#area5#area6#page6#alt3#page3" name="Bet types" gr:x="0" gr:y="105">
+  <Alternative id="sv2#area5#area6#page6#alt3" name="Make Bet" gr:x="0" gr:y="0" defaultPage="sv2#area5#area6#page6#alt3#page8">
+    <Page id="sv2#area5#area6#page6#alt3#page3" name="Bet types" gr:x="0" gr:y="165">
       <ContentUnits>
         <IndexUnit gr:x="0" gr:y="0" id="sv2#area5#area6#page6#alt3#page3#inu5" name="List Bet Types" entity="ent2" displayAttributes="ent2#att2 ent2#att13 rel19#role38.ent6#att12" linkOrder="sv2#area5#area6#page6#alt3#page3#inu5#ln22">
           <Selector id="sv2#area5#area6#page6#alt3#page3#inu5#su6" defaultPolicy="fill" booleanOperator="and">
@@ -346,7 +386,7 @@
     </Page>
     <Page id="sv2#area5#area6#page6#alt3#page8" name="Events" gr:x="315" gr:y="0">
       <ContentUnits>
-        <IndexUnit id="sv2#area5#area6#page6#alt3#page8#inu3" name="List Premium Events" gr:x="0" gr:y="120" entity="ent3" displayAttributes="ent3#att3 ent3#att18 ent3#att17 ent3#att4 ent3#att14 ent3#att15 ent3#att16" linkOrder="sv2#area5#area6#page6#alt3#page8#inu3#ln27">
+        <IndexUnit id="sv2#area5#area6#page6#alt3#page8#inu3" name="List Premium Events" gr:x="0" gr:y="150" entity="ent3" displayAttributes="ent3#att3 ent3#att18 ent3#att17 ent3#att4 ent3#att14 ent3#att15 ent3#att16" linkOrder="sv2#area5#area6#page6#alt3#page8#inu3#ln27">
           <Link id="sv2#area5#area6#page6#alt3#page8#inu3#ln27" name="View Bets" to="sv2#area5#area6#page6#alt3#page3#inu5" automaticCoupling="true" type="normal" validate="true"/>
           <Link id="sv2#area5#area6#page6#alt3#page8#inu3#ln28" name="Flow28" to="sv2#area5#area6#page6#alt3#page3#inu5" type="transport" validate="true" gr:bendpoints="-126,15,129,15"/>
           <Selector id="sv2#area5#area6#page6#alt3#page8#inu3#su9" defaultPolicy="fill" booleanOperator="and">
@@ -354,7 +394,7 @@
             <AttributesCondition id="sv2#area5#area6#page6#alt3#page8#inu3#su9#acond10" name="AttCondition10" predicate="eq" booleanOperator="or" implied="false" attributes="rel16#role32.ent10#att23" value="1"/>
           </Selector>
         </IndexUnit>
-        <IndexUnit gr:x="15" gr:y="0" id="sv2#area5#area6#page6#alt3#page8#inu1" name="List Events" entity="ent3" displayAttributes="ent3#att18 ent3#att17 ent3#att16" linkOrder="sv2#area5#area6#page6#alt3#page8#inu1#ln87">
+        <IndexUnit gr:x="10" gr:y="0" id="sv2#area5#area6#page6#alt3#page8#inu1" name="List Events" entity="ent3" displayAttributes="ent3#att18 ent3#att17 ent3#att16" linkOrder="sv2#area5#area6#page6#alt3#page8#inu1#ln87">
           <Selector id="sv2#area5#area6#page6#alt3#page8#inu1#su11" defaultPolicy="fill" booleanOperator="and">
             <AttributesCondition id="sv2#area5#area6#page6#alt3#page8#inu1#su11#acond5" name="AttCondition5" predicate="eq" booleanOperator="or" implied="false" attributes="ent3#att4" value="False"/>
             <AttributesCondition id="sv2#area5#area6#page6#alt3#page8#inu1#su11#acond9" name="AttCondition9" predicate="eq" booleanOperator="or" implied="false" attributes="rel16#role32.ent10#att23" value="1"/>
@@ -362,9 +402,21 @@
           <Link id="sv2#area5#area6#page6#alt3#page8#inu1#ln87" name="View Bets" to="sv2#area5#area6#page6#alt3#page3#inu5" automaticCoupling="true" type="normal" validate="true"/>
           <Link id="sv2#area5#area6#page6#alt3#page8#inu1#ln88" name="Flow88" to="sv2#area5#area6#page6#alt3#page3#inu5" type="transport" validate="true" gr:bendpoints="-146,33,139,-2"/>
         </IndexUnit>
+        <IndexUnit gr:x="205" gr:y="0" id="sv2#area5#area6#page6#alt3#page8#inu31" name="List Events - In Progress" entity="ent3" displayAttributes="ent3#att18 ent3#att17 ent3#att16">
+          <Selector id="sv2#area5#area6#page6#alt3#page8#inu31#su43" defaultPolicy="fill" booleanOperator="and">
+            <AttributesCondition id="sv2#area5#area6#page6#alt3#page8#inu31#su43#acond22" name="AttCondition22" predicate="eq" booleanOperator="or" implied="false" attributes="ent3#att4" value="False"/>
+            <AttributesCondition id="sv2#area5#area6#page6#alt3#page8#inu31#su43#acond23" name="AttCondition23" predicate="eq" booleanOperator="or" implied="false" attributes="rel16#role32.ent10#att23" value="3"/>
+          </Selector>
+        </IndexUnit>
+        <IndexUnit gr:x="200" gr:y="150" id="sv2#area5#area6#page6#alt3#page8#inu32" name="Premium Events - In Progress" entity="ent3" displayAttributes="ent3#att18 ent3#att17 ent3#att16">
+          <Selector id="sv2#area5#area6#page6#alt3#page8#inu32#su44" defaultPolicy="fill" booleanOperator="and">
+            <AttributesCondition id="sv2#area5#area6#page6#alt3#page8#inu32#su44#acond24" name="AttCondition24" predicate="eq" booleanOperator="or" implied="false" attributes="ent3#att4"/>
+            <AttributesCondition id="sv2#area5#area6#page6#alt3#page8#inu32#su44#acond25" name="AttCondition25" predicate="eq" booleanOperator="or" implied="false" attributes="rel16#role32.ent10#att23" value="3"/>
+          </Selector>
+        </IndexUnit>
       </ContentUnits>
     </Page>
-    <Page id="sv2#area5#area6#page6#alt3#page11" name="Place bet" gr:x="295" gr:y="280">
+    <Page id="sv2#area5#area6#page6#alt3#page11" name="Place bet" gr:x="295" gr:y="340">
       <ContentUnits>
         <GetUnit id="sv2#area5#area6#page6#alt3#page11#gtu1" name="Get7" gr:x="0" gr:y="5" contextParameters="UserCtxParam">
           <Link id="sv2#area5#area6#page6#alt3#page11#gtu1#ln14" name="Flow26" to="sv2#area5#area6#page6#alt3#page11#enu11" type="transport" validate="true">
@@ -384,7 +436,6 @@
           <Field id="sv2#area5#area6#page6#alt3#page11#enu11#fld25" name="wager" type="float" modifiable="true" attribute="ent1#att10"/>
           <Link id="sv2#area5#area6#page6#alt3#page11#enu11#ln4" name="Place bet" to="sv2#miu1" type="normal" validate="true">
             <LinkParameter id="sv2#area5#area6#page6#alt3#page11#enu11#ln4#par12" name="AvailableBetTypesToBetType.oid_PASSING_BetTypeID" target="sv2#miu1.mov1#opm1#icu1#icp4" sourceLinkParameter="sv2#area5#area6#page6#alt3#page11#dau17#ln24#par36"/>
-            <LinkParameter id="sv2#area5#area6#page6#alt3#page11#enu11#ln4#par14" name="1_resultId" sourceValue="1" target="sv2#miu1.mov1#opm1#icu1#icp5"/>
             <LinkParameter id="sv2#area5#area6#page6#alt3#page11#enu11#ln4#par15" name="UserCtxParam.oid_PASSING_UserId" sourceLinkParameter="sv2#area5#area6#page6#alt3#page11#gtu1#ln14#par16" target="sv2#miu1.mov1#opm1#icu1#icp2"/>
             <LinkParameter id="sv2#area5#area6#page6#alt3#page11#enu11#ln4#par17" name="wager_Wager" source="sv2#area5#area6#page6#alt3#page11#enu11#fld25" target="sv2#miu1.mov1#opm1#icu1#icp1"/>
             <LinkParameter id="sv2#area5#area6#page6#alt3#page11#enu11#ln4#par60" name="AvailableBetTypesToEvent.Event_oid_PASSING_EventId" sourceLinkParameter="sv2#area5#area6#page6#alt3#page11#dau17#ln24#par59" target="sv2#miu1.mov1#opm1#icu1#icp3"/>

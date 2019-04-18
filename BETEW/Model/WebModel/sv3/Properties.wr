@@ -1,6 +1,6 @@
 <SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv3" name="Manage Events" landmarks="sv3#area3" homePage="sv3#page59">
   <OperationUnits>
-    <ModifyUnit gr:x="-55" gr:y="610" id="sv3#mfu2" name="Update Events" entity="ent3">
+    <ModifyUnit gr:x="-110" gr:y="525" id="sv3#mfu2" name="Update Events" entity="ent3">
       <Selector id="sv3#mfu2#su8" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv3#mfu2#su8#kcond7" name="KeyCondition7" predicate="in" implied="false"/>
       </Selector>
@@ -33,14 +33,14 @@
         <LinkParameter id="sv3#miu20#oln38#par173" name="Event_id_PASSING" source="mov2#opm4#okcu5#ocp9" passing="true"/>
       </OKLink>
     </ModuleInstanceUnit>
-    <ModuleInstanceUnit id="sv3#miu21" name="Add Basketball stats" gr:x="305" gr:y="1070" action="true" moduleId="mov2#opm8">
+    <ModuleInstanceUnit id="sv3#miu21" name="Add Basketball stats" gr:x="215" gr:y="1180" action="true" moduleId="mov2#opm8">
       <OKLink id="sv3#miu21#oln39" name="OKFlow39" to="sv3#area3#area12#area13#page34#alt9#page36#mssu24" gr:bendpoints="32,-255,232,175">
         <LinkParameter id="sv3#miu21#oln39#par188" name="msg_Shown Messages" source="mov2#opm8#okcu8#ocp6" target="sv3#area3#area12#area13#page34#alt9#page36#mssu24.shownMessages"/>
       </OKLink>
       <KOLink id="sv3#miu21#kln24" name="KOFlow24" to="sv3#area3#area12#area13#page22#alt6#page48#mssu23" automaticCoupling="true"/>
     </ModuleInstanceUnit>
-    <ModuleInstanceUnit id="sv3#miu22" gr:x="-65" gr:y="1070" action="true" moduleId="mov2#opm5">
-      <OKLink id="sv3#miu22#oln40" name="OKFlow40" to="sv3#area3#area12#area13#page34#alt9#page36#mssu24" gr:bendpoints="146,-143,-49,297">
+    <ModuleInstanceUnit id="sv3#miu22" gr:x="-80" gr:y="1175" action="true" moduleId="mov2#opm5">
+      <OKLink id="sv3#miu22#oln40" name="OKFlow40" to="sv3#area3#area12#area13#page34#alt9#page36#mssu24">
         <LinkParameter id="sv3#miu22#oln40#par189" name="msg_Shown Messages" source="mov2#opm5#okcu6#ocp1" target="sv3#area3#area12#area13#page34#alt9#page36#mssu24.shownMessages"/>
       </OKLink>
       <KOLink id="sv3#miu22#kln23" name="KOFlow23" to="sv3#area3#area12#area13#page22#alt6#page47#mssu22" automaticCoupling="true"/>
