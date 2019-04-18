@@ -76,13 +76,13 @@
     <layout:Row>
       <layout:Cell colspan="12">
         <layout:Unit unitId="sv3#area3#area9#area10#page26#alt7#page27#dau10">
-          <layout:Attribute attribute="ent3#att18"/>
-          <layout:Attribute attribute="ent3#att17"/>
-          <layout:Attribute attribute="ent3#att4"/>
-          <layout:Attribute attribute="ent3#att14"/>
-          <layout:Attribute attribute="ent3#att15"/>
-          <layout:Attribute attribute="ent3#att16"/>
           <layout:Link link="sv3#area3#area9#area10#page26#alt7#page27#dau10#ln96"/>
+          <layout:Attribute attribute="ent3#att16"/>
+          <layout:Attribute attribute="ent3#att15"/>
+          <layout:Attribute attribute="ent3#att14"/>
+          <layout:Attribute attribute="ent3#att4"/>
+          <layout:Attribute attribute="ent3#att17"/>
+          <layout:Attribute attribute="ent3#att18"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>

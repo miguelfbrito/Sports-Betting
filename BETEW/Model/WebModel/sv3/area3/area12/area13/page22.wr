@@ -105,7 +105,7 @@
           <Field id="sv3#area3#area12#area13#page22#alt6#page47#enu18#fld73" name="awayRedCards" type="integer" modifiable="true" attribute="ent11#att34"/>
           <Field id="sv3#area3#area12#area13#page22#alt6#page47#enu18#fld74" name="homeYellowCards" type="integer" modifiable="true" attribute="ent11#att35"/>
           <Field id="sv3#area3#area12#area13#page22#alt6#page47#enu18#fld75" name="awayYellowCards" type="integer" modifiable="true" attribute="ent11#att38"/>
-          <Field id="sv3#area3#area12#area13#page22#alt6#page47#enu18#fld76" name="gameDuration" type="string" modifiable="true" attribute="ent15#att50"/>
+          <Field id="sv3#area3#area12#area13#page22#alt6#page47#enu18#fld76" name="gameDuration" type="integer" modifiable="true" attribute="ent15#att50"/>
           <Link id="sv3#area3#area12#area13#page22#alt6#page47#enu18#ln67" name="Add" to="sv3#miu22" type="normal" validate="true">
             <LinkParameter id="sv3#area3#area12#area13#page22#alt6#page47#enu18#ln67#par174" name="awayGoals_awaygoals" source="sv3#area3#area12#area13#page22#alt6#page47#enu18#fld71" target="sv3#miu22.mov2#opm5#icu5#icp16"/>
             <LinkParameter id="sv3#area3#area12#area13#page22#alt6#page47#enu18#ln67#par175" name="awayRedCards_awayredcards" source="sv3#area3#area12#area13#page22#alt6#page47#enu18#fld73" target="sv3#miu22.mov2#opm5#icu5#icp19"/>
@@ -127,7 +127,7 @@
           <Field id="sv3#area3#area12#area13#page22#alt6#page48#enu19#fld78" name="awayPoints" type="integer" modifiable="true" attribute="ent13#att41"/>
           <Field id="sv3#area3#area12#area13#page22#alt6#page48#enu19#fld79" name="homeTriples" type="integer" modifiable="true" attribute="ent13#att42"/>
           <Field id="sv3#area3#area12#area13#page22#alt6#page48#enu19#fld80" name="awayTriples" type="integer" modifiable="true" attribute="ent13#att43"/>
-          <Field id="sv3#area3#area12#area13#page22#alt6#page48#enu19#fld81" name="gameDuration" type="string" modifiable="true" attribute="ent15#att50"/>
+          <Field id="sv3#area3#area12#area13#page22#alt6#page48#enu19#fld81" name="gameDuration" type="integer" modifiable="true" attribute="ent15#att50"/>
           <Link id="sv3#area3#area12#area13#page22#alt6#page48#enu19#ln68" name="Add" to="sv3#miu21" type="normal" validate="true">
             <LinkParameter id="sv3#area3#area12#area13#page22#alt6#page48#enu19#ln68#par182" name="awayPoints_awaypoints" source="sv3#area3#area12#area13#page22#alt6#page48#enu19#fld78" target="sv3#miu21.mov2#opm8#icu6#icp26"/>
             <LinkParameter id="sv3#area3#area12#area13#page22#alt6#page48#enu19#ln68#par183" name="awayTriples_awaytriples" source="sv3#area3#area12#area13#page22#alt6#page48#enu19#fld80" target="sv3#miu21.mov2#opm8#icu6#icp24"/>

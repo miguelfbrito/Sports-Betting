@@ -70,7 +70,7 @@ create table `basketballstats` (
 -- Stats [ent15]
 create table `stats` (
    `oid`  integer not null auto_increment,
-   `gameduration`  varchar(255),
+   `gameduration`  integer,
   primary key (`oid`)
 );
 
@@ -87,9 +87,9 @@ create table `availablebettypes` (
 -- Event [ent3]
 create table `event` (
    `event_oid`  integer not null auto_increment,
-   `finishingdate`  date,
-   `startingdate`  date,
-   `creationdate`  date,
+   `finishingdate`  datetime,
+   `startingdate`  datetime,
+   `creationdate`  datetime,
    `ispremium`  bit,
    `description`  varchar(255),
    `name`  varchar(255),
@@ -117,27 +117,6 @@ create table `sport` (
 create table `bettype` (
    `oid`  integer not null auto_increment,
    `name`  varchar(255),
-  primary key (`oid`)
-);
-
-
--- Team [ent7]
-create table `team` (
-   `oid`  integer not null auto_increment,
-  primary key (`oid`)
-);
-
-
--- TeamsPerEvent [ent8]
-create table `teamsperevent` (
-   `oid`  integer not null auto_increment,
-  primary key (`oid`)
-);
-
-
--- Player [ent9]
-create table `player` (
-   `oid`  integer not null auto_increment,
   primary key (`oid`)
 );
 
@@ -185,21 +164,6 @@ alter table `bettype_sport`   add index fk_bettype_sport_sport (`sport_oid`), ad
 -- User_Bet [rel10]
 alter table `bet`  add column  `user_oid`  integer;
 alter table `bet`   add index fk_bet_user (`user_oid`), add constraint fk_bet_user foreign key (`user_oid`) references `user` (`oid`);
-
-
--- TeamsPerEvent_Team [rel11]
-alter table `teamsperevent`  add column  `team_oid`  integer;
-alter table `teamsperevent`   add index fk_teamsperevent_team (`team_oid`), add constraint fk_teamsperevent_team foreign key (`team_oid`) references `team` (`oid`);
-
-
--- Event_TeamsPerEvent [rel12]
-alter table `teamsperevent`  add column  `event_oid`  integer;
-alter table `teamsperevent`   add index fk_teamsperevent_event (`event_oid`), add constraint fk_teamsperevent_event foreign key (`event_oid`) references `event` (`event_oid`);
-
-
--- Team_Player [rel14]
-alter table `player`  add column  `team_oid`  integer;
-alter table `player`   add index fk_player_team (`team_oid`), add constraint fk_player_team foreign key (`team_oid`) references `team` (`oid`);
 
 
 -- Bet_Event [rel15]
