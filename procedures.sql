@@ -8,8 +8,9 @@ insert into bettingwebapp.group(groupname) values ("Administrator");
 
 -- users
 insert into user(username, password, email, name, balance, group_oid) values ("maria", "pass", "maria@gmail.com", "Maria Carla", 10.0, 1);
-insert into user(username, password, email, name, balance, group_oid) values ("joao", "pass", "maria@gmail.com", "Joao", 10.0, 2);
-insert into user(username, password, email, name, balance, group_oid) values ("carlos", "pass", "maria@gmail.com", "Joao", 10.0, 3);
+insert into user(username, password, email, name, balance, group_oid) values ("joao", "pass", "joao@gmail.com", "Joao", 10.0, 2);
+insert into user(username, password, email, name, balance, group_oid) values ("carlos", "pass", "carlos@gmail.com", "Maria", 10.0, 2);
+insert into user(username, password, email, name, balance, group_oid) values ("admin", "admin", "admin@gmail.com", "Admin", 0, 3);
 
 
 -- module
@@ -51,9 +52,6 @@ insert into group_module values (3,5);
 insert into group_module values (3,6);
 
 
-
-
-
 -- Sports
 insert into sport(name) values("Football");
 -- insert into sport(name) values("Futsal");
@@ -77,7 +75,6 @@ insert into event(startingdate, creationdate, finishingdate, ispremium, descript
 
 
 -- bettypes
-
 Insert into bettype(name) values("1");
 Insert into bettype(name) values("X");
 Insert into bettype(name) values("2");
@@ -447,14 +444,17 @@ BEGIN
 		else
 			select balance into user_balance from user where user.oid = i_userid;
 		if user_balance >= premium_fee then
-			update user set group_oid = 2 where user.oid = i_userid;
-			update user_group set group_oid = 2 where user.oid = i_userid;
+			update user set group_oid = 2 where oid = i_userid;
+			update user_group set group_oid = 2 where user_oid = i_userid;
+            update user set balance = round(user_balance - premium_fee, 2) where oid = i_userid;
 			set msg = "You are a Premium user!";
 		else
 			set msg = "Insufficient balance to acquire Premium!";
 		end if;
     end if;
-END
+END //
+DELIMITER ;
+select * from user;
 
 -- criacao de um evento
 DELIMITER //
@@ -493,11 +493,18 @@ BEGIN
 END //
 DELIMITER ;
 
-select * from event;
+DELIMITER //
+CREATE PROCEDURE delete_bet(IN i_betid INTEGER, IN i_userid INTEGER)
+BEGIN
+    DECLARE v_value float;
+    select wager into v_value from bet where oid=i_betid;
+    update user set balance = round(balance + v_value, 2) where oid = i_userid;
+    delete from bet where oid=i_betid;
+END //
+DELIMITER ;
 
 -- Dados de procedimentos
 -- add_football_stats(i_gameduration, i_eventid ,i_awaygoals,i_awayredcards, i_awayyellowcards, i_homegoals,
-
 
 call create_event('2019-04-01 00:00', '2019-04-01 00:00', false, "No description", "Porto x Liverpool", 1); 
 insert into availablebettypes(odd, betresult, bettype_oid, event_oid) values (1.35, null, 1, 6);
@@ -508,4 +515,3 @@ call place_bet(2, 2, 6, 2, @out);
 call add_football_stats(95, 6, 0, 1,2,3,0,3, @msg);
 call close_event(6);
 call set_result_of_bets_by_event(6);
-select * from bet;
