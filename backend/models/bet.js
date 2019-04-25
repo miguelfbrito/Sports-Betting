@@ -9,7 +9,7 @@ const Bet = db.sequelize.define('bet', {
     autoIncrement: true
   },
   wager: {
-    type: "DOUBLE",
+    type: Sequelize.DOUBLE,
     allowNull: true
   }
   // user_oid: {

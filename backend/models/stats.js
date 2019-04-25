@@ -11,14 +11,6 @@ const Stats = db.sequelize.define('stats', {
   gameduration: {
     type: Sequelize.STRING(255),
     allowNull: true
-  },
-  event_event_oid: {
-    type: Sequelize.INTEGER(11),
-    allowNull: true,
-    references: {
-      model: 'event',
-      key: 'event_oid'
-    }
   }
 }, {
     tableName: 'stats'

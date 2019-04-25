@@ -1,6 +1,8 @@
 const Sequelize = require('sequelize');
 const db = require('../database/db');
 
+const Event = require('./event');
+
 const State = db.sequelize.define('state', {
   oid: {
     type: Sequelize.INTEGER(11),
@@ -15,5 +17,7 @@ const State = db.sequelize.define('state', {
 }, {
     tableName: 'state'
   });
+
+State.hasMany(Event);
 
 module.exports = State;

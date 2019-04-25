@@ -15,22 +15,6 @@ const AvailableBetType = db.sequelize.define('availablebettypes', {
   betresult: {
     type: Sequelize.BOOLEAN,
     allowNull: true
-  },
-  bettype_oid: {
-    type: Sequelize.INTEGER(11),
-    allowNull: true,
-    references: {
-      model: 'bettype',
-      key: 'oid'
-    }
-  },
-  event_oid: {
-    type: Sequelize.INTEGER(11),
-    allowNull: true,
-    references: {
-      model: 'event',
-      key: 'event_oid'
-    }
   }
 }, {
     tableName: 'availablebettypes'

@@ -2,6 +2,8 @@
 
 // Configuracao do sequelize: https://blog.rocketseat.com.br/nodejs-express-sequelize/
 
+const drop_and_create = true;
+
 const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');
@@ -11,12 +13,6 @@ const config = require('../config/database');
 
 const db = {};
 const sequelize = new Sequelize(config);
-// let sequelize;
-// if (config.use_env_variable) {
-//   sequelize = new Sequelize(process.env[config.use_env_variable], config);
-// } else {
-//   sequelize = new Sequelize(config.database, config.username, config.password, config);
-// }
 
 fs
   .readdirSync(__dirname)
@@ -43,6 +39,11 @@ sequelize
     console.error('Unable to connect to the database:', err);
   });
 
+
+if (drop_and_create)
+  sequelize.query("drop database bettingwebapp; create database bettingwebapp;")
+
+sequelize.sync();
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;

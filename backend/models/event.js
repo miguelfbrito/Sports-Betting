@@ -1,8 +1,11 @@
 const Sequelize = require('sequelize');
 const db = require('../database/db');
+const Bet = require('./bet');
+const AvailableBetTypes = require('./availablebettypes');
+const Stats = require('./stats');
 
 const Event = db.sequelize.define('event', {
-  event_oid: {
+  oid: {
     type: Sequelize.INTEGER(11),
     allowNull: false,
     primaryKey: true,
@@ -31,25 +34,13 @@ const Event = db.sequelize.define('event', {
   name: {
     type: Sequelize.STRING(255),
     allowNull: true
-  },
-  state_oid: {
-    type: Sequelize.INTEGER(11),
-    allowNull: true,
-    references: {
-      model: 'state',
-      key: 'oid'
-    }
-  },
-  sport_oid: {
-    type: Sequelize.INTEGER(11),
-    allowNull: true,
-    references: {
-      model: 'sport',
-      key: 'oid'
-    }
   }
 }, {
     tableName: 'event'
   });
+
+Event.hasMany(Bet);
+Event.hasMany(AvailableBetTypes);
+Event.hasOne(Stats);
 
 module.exports = Event;

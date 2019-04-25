@@ -1,16 +1,8 @@
 const Sequelize = require('sequelize');
 const db = require('../database/db');
 
+// TODO : falta adicionar a key das stats
 const BasketballStats = db.sequelize.define('basketballstats', {
-    stats_oid: {
-      type: Sequelize.INTEGER(11),
-      allowNull: false,
-      primaryKey: true,
-      references: {
-        model: 'stats',
-        key: 'oid'
-      }
-    },
     homepoints: {
       type: Sequelize.INTEGER(11),
       allowNull: true

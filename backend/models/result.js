@@ -1,5 +1,6 @@
 const Sequelize = require('sequelize');
 const db = require('../database/db');
+const Bet = require('./bet')
 
 const Result = db.sequelize.define('result', {
   oid: {
@@ -15,5 +16,7 @@ const Result = db.sequelize.define('result', {
 }, {
     tableName: 'result'
   });
+
+Result.hasMany(Bet);
 
 module.exports = Result;
