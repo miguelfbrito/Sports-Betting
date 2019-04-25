@@ -2,7 +2,7 @@
 
 // Configuracao do sequelize: https://blog.rocketseat.com.br/nodejs-express-sequelize/
 
-const drop_and_create = true;
+const drop_and_create = false;
 
 const fs = require('fs');
 const path = require('path');
@@ -43,8 +43,7 @@ sequelize
 if (drop_and_create)
   sequelize.query("drop database bettingwebapp; create database bettingwebapp;")
 
-sequelize.sync();
-
+sequelize.sync({ force: true });
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 

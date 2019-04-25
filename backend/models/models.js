@@ -12,7 +12,13 @@ const Sport = require("./sport");
 const BetType = require("./bettype");
 const BetTypeSport = require("./bettype_sport");
 
+setup = () => {
+
+
+}
+
 module.exports = {
+    setup,
     AvailableBetTypes,
     Stats,
     FootballStats,

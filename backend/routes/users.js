@@ -2,9 +2,10 @@ var express = require('express');
 var router = express.Router();
 const User = require('../models/user')
 
-/* GET users listing. */
-router.get('/', function (req, res, next) {
-  res.json({msg : "Just a test"})
+router.get('/', async (req, res, next) => {
+  console.log("Creating user!")
+  let user = await User.create({ username: "mbrito", password: "pass" });
+  res.json(user)
 });
 
 module.exports = router;
