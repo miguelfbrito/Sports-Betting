@@ -1,7 +1,8 @@
-var Sequelize = require('sequelize');
-var db = require('../database/db');
+const Sequelize = require('sequelize');
+const db = require('../database/db');
+const Bet = require('./bet')
 
-var User = db.sequelize.define('user', {
+const User = db.sequelize.define('user', {
     id: {
         type: Sequelize.BIGINT(11),
         autoIncrement: true,
@@ -27,21 +28,15 @@ var User = db.sequelize.define('user', {
         allowNull: false,
     },
  }, {
-        underscored: true,
-        timestamps: false,
-        createAt: false,
-        paranoid: true
+        // underscored: true,
+        // timestamps: false,
+        // createAt: false,
+        // paranoid: true
     });
 
-User.sync({
-    force: false
-}).then(function () {
-    return User.create({
-        username: 'admin',
-        password: 'admin',
-        role: 1,
-        name: 'admin'
-    });
-});
+    console.log("Bet")
+    console.log(Bet)
+User.hasOne(Bet);
+
 
 module.exports = User

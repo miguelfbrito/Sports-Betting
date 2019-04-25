@@ -8,6 +8,9 @@ const usersRouter = require('./routes/users');
 
 const app = express();
 
+// Database models
+const models = require('./models/models')
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -16,6 +19,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+
+models.setup();
 
 
 module.exports = app;
