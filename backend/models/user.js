@@ -3,40 +3,43 @@ const db = require('../database/db');
 const Bet = require('./bet')
 
 const User = db.sequelize.define('user', {
-    id: {
-        type: Sequelize.BIGINT(11),
-        autoIncrement: true,
-        primaryKey: true,
-        unique: true,
-        allowNull: false
+    oid: {
+        type: Sequelize.INTEGER(11),
+        allowNull: false,
+        primaryKey: true
     },
     username: {
-        type: Sequelize.STRING(50),
-        allowNull: false,
-        unique: true,
+        type: Sequelize.STRING(255),
+        allowNull: true
     },
     password: {
-        type: Sequelize.STRING(50),
-        allowNull: false,
+        type: Sequelize.STRING(255),
+        allowNull: true
     },
-    role: {
-        type: Sequelize.BIGINT(11),
-        allowNull: false,
+    email: {
+        type: Sequelize.STRING(255),
+        allowNull: true
     },
     name: {
-        type: Sequelize.STRING(50),
-        allowNull: false,
+        type: Sequelize.STRING(255),
+        allowNull: true
     },
- }, {
-        // underscored: true,
-        // timestamps: false,
-        // createAt: false,
-        // paranoid: true
+    balance: {
+        type: Sequelize.DOUBLE,
+        allowNull: true
+    },
+    // group_oid: {
+    //     type: Sequelize.INTEGER(11),
+    //     allowNull: true,
+    //     references: {
+    //         model: 'group',
+    //         key: 'oid'
+    //     }
+    // }
+}, {
+        tableName: 'user'
     });
 
-    console.log("Bet")
-    console.log(Bet)
-User.hasOne(Bet);
+User.hasMany(Bet);
 
-
-module.exports = User
+module.exports = User;
