@@ -31,21 +31,21 @@ class CurrentEventsCarousel extends Component {
                 <Carousel interval={15000} showThumbs={false} infiniteLoop={true} autoPlay={true} showStats={false}>
                     <div>
                         <img src={require("../../assets/carousel/football.jpg")} alt="Football" />
-                        <div className="team-block team-block-left">Barcelona FC</div>
+                        <div className="team-block team-block-left shadow">Barcelona FC</div>
                         <p className="team-block-vs">{vs}</p>
-                        <div className="team-block team-block-right">Sporting FC</div>
+                        <div className="team-block team-block-right shadow">Sporting FC</div>
                     </div>
                     <div>
                         <img src={require("../../assets/carousel/football.jpg")} alt="Football" />
-                        <div className="team-block team-block-left">Barcelona FC</div>
+                        <div className="team-block team-block-left shadow">Barcelona FC</div>
                         <p className="team-block-vs">{vs}</p>
-                        <div className="team-block team-block-right">Sporting FC</div>
+                        <div className="team-block team-block-right shadow">Sporting FC</div>
                     </div>
                     <div>
                         <img src={require("../../assets/carousel/football.jpg")} alt="Football" />
-                        <div className="team-block team-block-left">Barcelona FC</div>
+                        <div className="team-block team-block-left shadow">Barcelona FC</div>
                         <p className="team-block-vs">{vs}</p>
-                        <div className="team-block team-block-right">Sporting FC</div>
+                        <div className="team-block team-block-right shadow">Sporting FC</div>
                     </div>
                 </Carousel>
             </div>

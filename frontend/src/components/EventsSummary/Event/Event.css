@@ -2,7 +2,13 @@
     border-bottom: 1px solid #aaa; 
     height: 100px;
     position: relative;
-    padding: 10px 0 0 10px;
+    padding: 10px 0 0 20px;
+}
+
+.event-info p{
+    color: black;
+    font-size: 14pt;
+    letter-spacing: 0.75pt;
 }
 
 .event-date {

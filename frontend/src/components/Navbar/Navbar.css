@@ -1,5 +1,5 @@
 .navbar {
-    background-color: var(--color-main);
+    background:linear-gradient(160deg, #465884 0%,#5e2f69 60%);
     -webkit-box-shadow: -4px 6px 25px -10px rgba(0,0,0,0.75);
     -moz-box-shadow: -4px 6px 25px -10px rgba(0,0,0,0.75);
     box-shadow: -4px 6px 25px -10px rgba(0,0,0,0.75);

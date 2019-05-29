@@ -19,11 +19,13 @@
 }
 
 .team-block {
+
+    background:linear-gradient(135deg, #647296 0%,#5f3a71 100%);
+
     position: absolute;
     top:calc(200px/4);
     width: 200px;
     height: 125px;
-    background-color: rgba(50, 25, 35, 0.5);
     border-radius: 5px;
     color: rgb(255, 226, 226);
     font-size: 18pt;
