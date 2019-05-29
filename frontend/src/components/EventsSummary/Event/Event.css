@@ -1,0 +1,15 @@
+.event {
+    border-bottom: 1px solid #aaa; 
+    height: 100px;
+    position: relative;
+    padding: 10px 0 0 10px;
+}
+
+.event-date {
+    position: absolute;
+    right: 0;
+}
+
+.event:last-child{
+    border-bottom: 0;
+}

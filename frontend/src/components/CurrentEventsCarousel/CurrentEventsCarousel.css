@@ -1,0 +1,47 @@
+.carousel-container {
+    position: relative;
+}
+
+.carousel, .slider-wrapper, .slider{
+    max-height: 215px;
+    position: relative;
+}
+
+.carousel .slide .legend {
+    position: absolute;
+    top: 35px;
+    bottom: 100px !important;
+    left: -100px !important;
+    max-width: 150px;
+    max-height: 150px;
+    background-color: red !important;
+    opacity: 90% !important;
+}
+
+.team-block {
+    position: absolute;
+    top:calc(200px/4);
+    width: 200px;
+    height: 125px;
+    background-color: rgba(50, 25, 35, 0.5);
+    border-radius: 5px;
+    color: rgb(255, 226, 226);
+    font-size: 18pt;
+    font-weight: 450;
+}
+
+.team-block-left {
+    right: 21%;
+}
+
+.team-block-right {
+    left: 21%;
+}
+
+.team-block-vs {
+    position: absolute;
+    top: calc(50% - 26pt/2);
+    left: calc(50% - 13pt);
+    font-size: 26pt;
+
+}

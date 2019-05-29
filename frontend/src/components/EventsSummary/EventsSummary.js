@@ -16,15 +16,15 @@ class EventsSummary extends Component {
             events: [
                 {
                     "name": "Arsenal x Chelsea",
-                    "date": Date.now
+                    "date": Date.now()
                 },
                 {
                     "name": "Benfica x Porto",
-                    "date": Date.now
+                    "date": Date.now()
                 },
                 {
                     "name": "Sporting x Porto",
-                    "date": Date.now
+                    "date": Date.now()
                 }
             ]
         })
@@ -36,12 +36,11 @@ class EventsSummary extends Component {
         const { events } = this.state;
         return (
 
-            <div className="events-container">
+            <div className="events-container shadow-div">
 
 
                 {/* Carousel 4 or 5 games */}
                 <CurrentEventsCarousel />
-
 
                 {/* List all events */}
                 {events.map(event => (

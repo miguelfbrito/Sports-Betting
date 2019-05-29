@@ -1,0 +1,15 @@
+:root {
+  --color-main:  #393D3F; 
+  --color-sec: #FACFAD ;
+  --color-third: #DCEDFF;
+  --color-gray: #E8E9EB;
+  --color-gray-lighter: rgb(240, 240, 240);
+}
+
+.shadow-div {
+    box-shadow: 0 1px 10px rgba(0, 0, 0, .5);
+}
+
+body {
+  background-color: var(--color-gray-lighter) !important;
+}
