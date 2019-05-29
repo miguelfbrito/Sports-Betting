@@ -10,7 +10,7 @@ class Navbar extends Component {
     render() {
         return (
             <nav className="navbar navbar-expand-md bg-faded">
-                <div className="container">
+                <div className="container navbar-container">
                     <a className="navbar-brand" href="#">Bet</a>
                     <div className="collapse navbar-collapse " id="navbarText">
                         <ul className="navbar-nav ml-auto">
@@ -26,7 +26,7 @@ class Navbar extends Component {
                             </li>
                             <li className="nav-item">
                                 <Link to="/">
-                                    <span className="nav-link" href="#">Menu 3</span>
+                                    <span className="nav-link" href="#">Login</span>
                                 </Link>
                             </li>
                         </ul>

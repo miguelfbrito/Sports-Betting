@@ -1,16 +1,33 @@
 .navbar {
-    background-color:darkslategrey;
+    background-color: var(--color-main);
     -webkit-box-shadow: -4px 6px 25px -10px rgba(0,0,0,0.75);
     -moz-box-shadow: -4px 6px 25px -10px rgba(0,0,0,0.75);
     box-shadow: -4px 6px 25px -10px rgba(0,0,0,0.75);
+
+}
+.container {
+    margin: 0;
+}
+
+.navbar-container {
+    padding-bottom: 5px;
 }
 
 .navbar-brand  {
     color: white;
-    font-size: 24pt !important;
+    font-size: 20pt !important;
 }
 
 .nav-item a{
     color: white;
     font-size: 14pt;
+    font-weight: 350;
+    line-height: 0px;
+    text-transform: uppercase;
+    
+}
+
+.nav-item a:hover, .navbar-container a:hover{
+    text-decoration: none;
+    color: black;
 }

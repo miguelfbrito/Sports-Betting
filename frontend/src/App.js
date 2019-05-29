@@ -5,6 +5,7 @@ import './App.css';
 
 // Components
 import Navbar from './components/Navbar/Navbar';
+import EventsSummary from './components/EventsSummary/EventsSummary';
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
         <Navbar />
         <div className="container mt-4">
           <Switch>
-            {/* <Route exact path="" component={} /> */}
+            <Route exact path="/events" component={EventsSummary} />
             {/* <Route path="/" component={Dashboard} /> */}
           </Switch>
         </div>
