@@ -1,0 +1,77 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#page101" name="Login" linkOrder="sv2#page101#ln128" landmark="false" gr:x="905" gr:y="-610">
+  <ContentUnits>
+    <EntryUnit id="sv2#page101#enu30" name="Login" linkOrder="sv2#page101#enu30#ln127" gr:x="135" gr:y="35" entity="User" fieldOrder="sv2#page101#enu30#fld95 sv2#page101#enu30#fld94">
+      <Field id="sv2#page101#enu30#fld94" name="password" type="password" modifiable="true" attribute="password">
+        <VRules>
+          <MandatoryValidationRule id="sv2#page101#enu30#fld94#mnd5" name="Mandatory5" errorMessage="Required field!"/>
+        </VRules>
+      </Field>
+      <Field id="sv2#page101#enu30#fld95" name="username" type="string" modifiable="true" attribute="userName">
+        <VRules>
+          <MandatoryValidationRule id="sv2#page101#enu30#fld95#mnd6" name="Mandatory6" errorMessage="Required field!"/>
+        </VRules>
+      </Field>
+      <Link id="sv2#page101#enu30#ln127" name="Login" to="sv2#miu4" type="normal" validate="true">
+        <LinkParameter id="sv2#page101#enu30#ln127#par295" name="password_Password" source="sv2#page101#enu30#fld94" target="sv2#miu4.mov1#opm2#icu2#icp8"/>
+        <LinkParameter id="sv2#page101#enu30#ln127#par302" name="username_Username" source="sv2#page101#enu30#fld95" target="sv2#miu4.mov1#opm2#icu2#icp7"/>
+      </Link>
+    </EntryUnit>
+    <MultiMessageUnit id="sv2#page101#mssu43" name="Error" gr:x="0" gr:y="0"/>
+    <MultiMessageUnit id="sv2#page101#mssu44" name="Information" gr:x="0" gr:y="90"/>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page101#enu30">
+          <layout:Field field="sv2#page101#enu30#fld95"/>
+          <layout:Field field="sv2#page101#enu30#fld94"/>
+          <layout:Link link="sv2#page101#enu30#ln127"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page101#mssu43"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page101#mssu44"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <Link id="sv2#page101#ln128" name="Register" to="sv2#page25" type="normal" automaticCoupling="true" validate="true" gr:bendpoints="-388,-79,247,-159"/>
+</Page>

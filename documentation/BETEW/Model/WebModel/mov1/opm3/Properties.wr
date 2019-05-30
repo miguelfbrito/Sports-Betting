@@ -1,0 +1,26 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="165" gr:y="195" id="mov1#opm3" name="IsPremium">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#opm3#icu3" gr:x="5" gr:y="95">
+      <InputCollectorParameter id="mov1#opm3#icu3#icp9" name="UserId"/>
+      <OKLink id="mov1#opm3#icu3#oln33" name="OKFlow33" to="mov1#opm3#spu1">
+        <LinkParameter id="mov1#opm3#icu3#oln33#par210" name="UserId_IdUser" source="mov1#opm3#icu3#icp9" target="mov1#opm3#spu1.mov1#opm3#spu1#spp39"/>
+      </OKLink>
+    </InputCollectorUnit>
+    <StoredProcedureUnit gr:x="265" gr:y="90" id="mov1#opm3#spu1" name="IsPremium" resultType="plain" db="db1" procedure="Check_Premium">
+      <OKLink id="mov1#opm3#spu1#oln34" name="OKFlow34" to="mov1#opm3#okcu4">
+        <LinkParameter id="mov1#opm3#spu1#oln34#par212" name="Premium_Premium" source="mov1#opm3#spu1#spp40" target="mov1#opm3#okcu4#ocp10"/>
+      </OKLink>
+      <KOLink id="mov1#opm3#spu1#kln26" name="KOFlow26" to="mov1#opm3#kocu3">
+        <LinkParameter id="mov1#opm3#spu1#kln26#par211" name="Error on getting premium_msg" sourceValue="False" target="mov1#opm3#kocu3#ocp11"/>
+      </KOLink>
+      <StoredProcedureParameter id="mov1#opm3#spu1#spp39" name="IdUser" type="string" direction="input" position="1"/>
+      <StoredProcedureParameter id="mov1#opm3#spu1#spp40" name="Premium" type="string" direction="output" position="2"/>
+    </StoredProcedureUnit>
+    <OKCollectorUnit gr:x="480" gr:y="55" id="mov1#opm3#okcu4" name="Result">
+      <OutputCollectorParameter id="mov1#opm3#okcu4#ocp10" name="Premium"/>
+    </OKCollectorUnit>
+    <KOCollectorUnit gr:x="480" gr:y="155" id="mov1#opm3#kocu3" name="Error">
+      <OutputCollectorParameter id="mov1#opm3#kocu3#ocp11" name="msg"/>
+    </KOCollectorUnit>
+  </OperationUnits>
+</OperationModule>

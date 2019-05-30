@@ -1,0 +1,333 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv3#area3#area12#area13#page34" name="Edit Event" gr:x="0" gr:y="0">
+  <ContentUnits/>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Grid containerType="cell">
+          <layout:Row>
+            <layout:Cell/>
+          </layout:Row>
+        </layout:Grid>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Grid containerType="cell">
+          <layout:Row>
+            <layout:Cell>
+              <layout:SubPage pageId="sv3#area3#area12#area13#page34#alt9#page35">
+                <layout:Grid containerType="grid">
+                  <layout:Row>
+                    <layout:Cell colspan="12">
+                      <layout:Unit unitId="sv3#area3#area12#area13#page34#alt9#page35#dau14">
+                        <layout:Link link="sv3#area3#area12#area13#page34#alt9#page35#dau14#ln52"/>
+                        <layout:Link link="sv3#area3#area12#area13#page34#alt9#page35#dau14#ln54"/>
+                        <layout:Attribute attribute="ent3#att16"/>
+                        <layout:Attribute attribute="ent3#att15"/>
+                        <layout:Attribute attribute="ent3#att14"/>
+                        <layout:Attribute attribute="ent3#att4"/>
+                        <layout:Attribute attribute="ent3#att17"/>
+                        <layout:Attribute attribute="ent3#att18"/>
+                      </layout:Unit>
+                    </layout:Cell>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                  </layout:Row>
+                </layout:Grid>
+              </layout:SubPage>
+              <layout:SubPage pageId="sv3#area3#area12#area13#page34#alt9#page36">
+                <layout:Grid containerType="grid">
+                  <layout:Row>
+                    <layout:Cell colspan="12"/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                  </layout:Row>
+                  <layout:Row>
+                    <layout:Cell colspan="12"/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                  </layout:Row>
+                  <layout:Row>
+                    <layout:Cell colspan="12">
+                      <layout:Unit unitId="sv3#area3#area12#area13#page34#alt9#page36#mssu24"/>
+                    </layout:Cell>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                    <layout:Cell/>
+                  </layout:Row>
+                </layout:Grid>
+              </layout:SubPage>
+            </layout:Cell>
+          </layout:Row>
+        </layout:Grid>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:SubPage pageId="sv3#area3#area12#area13#page34#alt9#page37">
+          <layout:Grid containerType="grid">
+            <layout:Row>
+              <layout:Cell colspan="12">
+                <layout:Unit unitId="sv3#area3#area12#area13#page34#alt9#page37#enu8">
+                  <layout:Field field="sv3#area3#area12#area13#page34#alt9#page37#enu8#fld6"/>
+                  <layout:Field field="sv3#area3#area12#area13#page34#alt9#page37#enu8#fld12"/>
+                  <layout:Field field="sv3#area3#area12#area13#page34#alt9#page37#enu8#fld7"/>
+                  <layout:Field field="sv3#area3#area12#area13#page34#alt9#page37#enu8#fld10"/>
+                  <layout:Field field="sv3#area3#area12#area13#page34#alt9#page37#enu8#fld9"/>
+                  <layout:Field field="sv3#area3#area12#area13#page34#alt9#page37#enu8#fld8"/>
+                  <layout:Link link="sv3#area3#area12#area13#page34#alt9#page37#enu8#ln57"/>
+                </layout:Unit>
+              </layout:Cell>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+            </layout:Row>
+          </layout:Grid>
+        </layout:SubPage>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#area3#area12#area13#page34#alt9#page36#inu4">
+          <layout:Attribute attribute="ent3#att3"/>
+          <layout:Attribute attribute="ent3#att18"/>
+          <layout:Attribute attribute="ent3#att17"/>
+          <layout:Attribute attribute="ent3#att4"/>
+          <layout:Attribute attribute="ent3#att14"/>
+          <layout:Attribute attribute="ent3#att15"/>
+          <layout:Attribute attribute="ent3#att16"/>
+          <layout:Link link="sv3#area3#area12#area13#page34#alt9#page36#inu4#ln72"/>
+          <layout:Link link="sv3#area3#area12#area13#page34#alt9#page36#inu4#ln150"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#area3#area12#area13#page34#alt9#page36#inu8">
+          <layout:Attribute attribute="ent3#att3"/>
+          <layout:Attribute attribute="ent3#att18"/>
+          <layout:Attribute attribute="ent3#att17"/>
+          <layout:Attribute attribute="ent3#att4"/>
+          <layout:Attribute attribute="ent3#att14"/>
+          <layout:Attribute attribute="ent3#att15"/>
+          <layout:Attribute attribute="ent3#att16"/>
+          <layout:Link link="sv3#area3#area12#area13#page34#alt9#page36#inu8#ln75"/>
+          <layout:Link link="sv3#area3#area12#area13#page34#alt9#page36#inu8#ln77"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#area3#area12#area13#page34#alt9#page36#inu38">
+          <layout:Attribute attribute="ent3#att3"/>
+          <layout:Attribute attribute="ent3#att18"/>
+          <layout:Attribute attribute="ent3#att17"/>
+          <layout:Attribute attribute="ent3#att4"/>
+          <layout:Attribute attribute="ent3#att14"/>
+          <layout:Attribute attribute="ent3#att15"/>
+          <layout:Attribute attribute="ent3#att16"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <Alternative id="sv3#area3#area12#area13#page34#alt9" name="Edit Event" gr:x="0" gr:y="0" defaultPage="sv3#area3#area12#area13#page34#alt9#page36">
+    <Page id="sv3#area3#area12#area13#page34#alt9#page35" name="Details" gr:x="230" gr:y="0">
+      <ContentUnits>
+        <DataUnit id="sv3#area3#area12#area13#page34#alt9#page35#dau14" name="Event" linkOrder="sv3#area3#area12#area13#page34#alt9#page35#dau14#ln52 sv3#area3#area12#area13#page34#alt9#page35#dau14#ln54" gr:x="0" gr:y="0" entity="ent3" displayAll="true">
+          <Selector id="sv3#area3#area12#area13#page34#alt9#page35#dau14#su19" defaultPolicy="fill" booleanOperator="and">
+            <KeyCondition id="sv3#area3#area12#area13#page34#alt9#page35#dau14#su19#kcond17" name="KeyCondition9" predicate="in" implied="false"/>
+          </Selector>
+          <Link id="sv3#area3#area12#area13#page34#alt9#page35#dau14#ln52" name="Edit Event" to="sv3#area3#area12#area13#page34#alt9#page37#enu8" type="normal" automaticCoupling="true" validate="true"/>
+          <Link id="sv3#area3#area12#area13#page34#alt9#page35#dau14#ln53" name="Flow36" to="sv3#area3#area12#area13#page34#alt9#page37#enu8" type="transport" validate="true" gr:bendpoints="-40,114,-40,-106">
+            <LinkParameter id="sv3#area3#area12#area13#page34#alt9#page35#dau14#ln53#par97" name="creationDate_PASSING" source="data.ent3#att14" passing="true"/>
+            <LinkParameter id="sv3#area3#area12#area13#page34#alt9#page35#dau14#ln53#par98" name="Data Size_PASSING" source="dataSize" passing="true"/>
+            <LinkParameter id="sv3#area3#area12#area13#page34#alt9#page35#dau14#ln53#par99" name="description_PASSING" source="data.ent3#att17" passing="true"/>
+            <LinkParameter id="sv3#area3#area12#area13#page34#alt9#page35#dau14#ln53#par100" name="finishingDate_PASSING" source="data.ent3#att16" passing="true"/>
+            <LinkParameter id="sv3#area3#area12#area13#page34#alt9#page35#dau14#ln53#par101" name="isPremium_PASSING" source="data.ent3#att4" passing="true"/>
+            <LinkParameter id="sv3#area3#area12#area13#page34#alt9#page35#dau14#ln53#par102" name="name_PASSING" source="data.ent3#att18" passing="true"/>
+            <LinkParameter id="sv3#area3#area12#area13#page34#alt9#page35#dau14#ln53#par103" name="oid_PASSING" source="data.ent3#att3" passing="true"/>
+            <LinkParameter id="sv3#area3#area12#area13#page34#alt9#page35#dau14#ln53#par104" name="startingDate_PASSING" source="data.ent3#att15" passing="true"/>
+          </Link>
+          <Link id="sv3#area3#area12#area13#page34#alt9#page35#dau14#ln54" name="Delete event" to="sv3#dlu1" type="normal" automaticCoupling="true" validate="true" gr:bendpoints="99,120,29,-231"/>
+        </DataUnit>
+      </ContentUnits>
+    </Page>
+    <Page id="sv3#area3#area12#area13#page34#alt9#page36" name="Events" gr:x="145" gr:y="190">
+      <ContentUnits>
+        <MultiMessageUnit gr:x="250" gr:y="230" id="sv3#area3#area12#area13#page34#alt9#page36#mssu24" name="Information"/>
+        <IndexUnit id="sv3#area3#area12#area13#page34#alt9#page36#inu4" name="List Events - Opened" linkOrder="sv3#area3#area12#area13#page34#alt9#page36#inu4#ln72 sv3#area3#area12#area13#page34#alt9#page36#inu4#ln150" gr:x="195" gr:y="0" entity="ent3" displayAttributes="ent3#att3 ent3#att18 ent3#att17 ent3#att4 ent3#att14 ent3#att15 ent3#att16">
+          <Link id="sv3#area3#area12#area13#page34#alt9#page36#inu4#ln72" name="Details" to="sv3#area3#area12#area13#page34#alt9#page35#dau14" type="normal" automaticCoupling="true" validate="true"/>
+          <Link id="sv3#area3#area12#area13#page34#alt9#page36#inu4#ln73" name="Flow31" to="sv3#area3#area12#area13#page34#alt9#page35#dau14" type="transport" validate="true" gr:bendpoints="-22,-82,-37,103"/>
+          <Selector id="sv3#area3#area12#area13#page34#alt9#page36#inu4#su23" defaultPolicy="fill" booleanOperator="and">
+            <AttributesCondition id="sv3#area3#area12#area13#page34#alt9#page36#inu4#su23#acond6" name="AttCondition6" predicate="eq" booleanOperator="or" implied="false" attributes="rel16#role32.ent10#att23" value="1"/>
+          </Selector>
+          <Link id="sv3#area3#area12#area13#page34#alt9#page36#inu4#ln150" name="Close event" to="sv3#area3#miu24" type="normal" validate="true">
+            <LinkParameter id="sv3#area3#area12#area13#page34#alt9#page36#inu4#ln150#par325" name="Event_oid_EventId" source="data[].ent3#att3" target="sv3#area3#miu24.mov2#opm16#icu16#icp42"/>
+          </Link>
+        </IndexUnit>
+        <IndexUnit id="sv3#area3#area12#area13#page34#alt9#page36#inu8" name="List Events - In Progress" linkOrder="sv3#area3#area12#area13#page34#alt9#page36#inu8#ln75 sv3#area3#area12#area13#page34#alt9#page36#inu8#ln77" gr:x="0" gr:y="20" entity="ent3" displayAttributes="ent3#att3 ent3#att18 ent3#att17 ent3#att4 ent3#att14 ent3#att15 ent3#att16">
+          <Link id="sv3#area3#area12#area13#page34#alt9#page36#inu8#ln75" name="Details" to="sv3#area3#area12#area13#page34#alt9#page35#dau14" type="normal" automaticCoupling="true" validate="true"/>
+          <Link id="sv3#area3#area12#area13#page34#alt9#page36#inu8#ln76" name="Flow31" to="sv3#area3#area12#area13#page34#alt9#page35#dau14" type="transport" validate="true" gr:bendpoints="-22,-82,-37,103"/>
+          <Link id="sv3#area3#area12#area13#page34#alt9#page36#inu8#ln77" name="Add Stats" to="sv3#miu20" type="normal" validate="true" gr:bendpoints="-168,106,292,-54">
+            <LinkParameter id="sv3#area3#area12#area13#page34#alt9#page36#inu8#ln77#par245" name="EventToSport.oid_SportId" source="data[].rel22#role44_ent5#att5" target="sv3#miu20.mov2#opm4#icu4#icp12"/>
+            <LinkParameter id="sv3#area3#area12#area13#page34#alt9#page36#inu8#ln77#par246" name="Event_oid_EventId" source="data[].ent3#att3" target="sv3#miu20.mov2#opm4#icu4#icp29"/>
+          </Link>
+          <Selector id="sv3#area3#area12#area13#page34#alt9#page36#inu8#su4" defaultPolicy="fill" booleanOperator="and">
+            <AttributesCondition id="sv3#area3#area12#area13#page34#alt9#page36#inu8#su4#acond3" name="AttCondition3" predicate="eq" booleanOperator="or" implied="false" attributes="rel16#role32.ent10#att23" value="3"/>
+          </Selector>
+        </IndexUnit>
+        <IndexUnit id="sv3#area3#area12#area13#page34#alt9#page36#inu38" name="List Events - Closed" gr:x="230" gr:y="120" entity="ent3" displayAttributes="ent3#att3 ent3#att18 ent3#att17 ent3#att4 ent3#att14 ent3#att15 ent3#att16">
+          <Selector id="sv3#area3#area12#area13#page34#alt9#page36#inu38#su49" defaultPolicy="fill" booleanOperator="and">
+            <AttributesCondition id="sv3#area3#area12#area13#page34#alt9#page36#inu38#su49#acond30" name="AttCondition6" predicate="eq" booleanOperator="or" implied="false" attributes="rel16#role32.ent10#att23" value="2"/>
+          </Selector>
+        </IndexUnit>
+      </ContentUnits>
+    </Page>
+    <Page id="sv3#area3#area12#area13#page34#alt9#page37" name="Update Event" gr:x="0" gr:y="5">
+      <ContentUnits>
+        <EntryUnit id="sv3#area3#area12#area13#page34#alt9#page37#enu8" name="Event" linkOrder="sv3#area3#area12#area13#page34#alt9#page37#enu8#ln57" gr:x="0" gr:y="0" entity="ent3" fieldOrder="sv3#area3#area12#area13#page34#alt9#page37#enu8#fld6 sv3#area3#area12#area13#page34#alt9#page37#enu8#fld12 sv3#area3#area12#area13#page34#alt9#page37#enu8#fld7 sv3#area3#area12#area13#page34#alt9#page37#enu8#fld10 sv3#area3#area12#area13#page34#alt9#page37#enu8#fld9 sv3#area3#area12#area13#page34#alt9#page37#enu8#fld8">
+          <Field id="sv3#area3#area12#area13#page34#alt9#page37#enu8#fld6" name="name" type="string" modifiable="true" attribute="ent3#att18">
+            <VRules>
+              <MandatoryValidationRule id="sv3#area3#area12#area13#page34#alt9#page37#enu8#fld6#mnd23" name="Mandatory23" errorMessage="Required field!"/>
+            </VRules>
+          </Field>
+          <Field id="sv3#area3#area12#area13#page34#alt9#page37#enu8#fld7" name="isPremium" type="boolean" modifiable="true" attribute="ent3#att4">
+            <VRules>
+              <MandatoryValidationRule id="sv3#area3#area12#area13#page34#alt9#page37#enu8#fld7#mnd22" name="Mandatory22" errorMessage="Required field!"/>
+            </VRules>
+          </Field>
+          <Field id="sv3#area3#area12#area13#page34#alt9#page37#enu8#fld8" name="Finishing Date" type="timestamp" modifiable="true" attribute="ent3#att16">
+            <VRules>
+              <MandatoryValidationRule id="sv3#area3#area12#area13#page34#alt9#page37#enu8#fld8#mnd21" name="Mandatory21" errorMessage="Required field!"/>
+            </VRules>
+          </Field>
+          <Field id="sv3#area3#area12#area13#page34#alt9#page37#enu8#fld9" name="Starting Date" type="timestamp" modifiable="true" attribute="ent3#att15">
+            <VRules>
+              <MandatoryValidationRule id="sv3#area3#area12#area13#page34#alt9#page37#enu8#fld9#mnd24" name="Mandatory24" errorMessage="Required field!"/>
+            </VRules>
+          </Field>
+          <Field id="sv3#area3#area12#area13#page34#alt9#page37#enu8#fld10" name="Creation Date" type="timestamp" modifiable="true" attribute="ent3#att14">
+            <VRules>
+              <MandatoryValidationRule id="sv3#area3#area12#area13#page34#alt9#page37#enu8#fld10#mnd19" name="Mandatory19" errorMessage="Required field!"/>
+            </VRules>
+          </Field>
+          <Field id="sv3#area3#area12#area13#page34#alt9#page37#enu8#fld12" name="Description" type="string" modifiable="true" attribute="ent3#att17">
+            <VRules>
+              <MandatoryValidationRule id="sv3#area3#area12#area13#page34#alt9#page37#enu8#fld12#mnd20" name="Mandatory20" errorMessage="Required field!"/>
+            </VRules>
+          </Field>
+          <Link id="sv3#area3#area12#area13#page34#alt9#page37#enu8#ln57" name="Flow20" to="sv3#mfu2" type="normal" automaticCoupling="true" validate="true"/>
+        </EntryUnit>
+      </ContentUnits>
+    </Page>
+  </Alternative>
+</Page>

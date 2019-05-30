@@ -1,0 +1,10 @@
+-- State [ent10]
+drop table `state`;
+-- Bet [ent1]
+drop table `bet`;
+-- User [User]
+drop table `user`;
+-- Module [Module]
+drop table `module`;
+-- Group [Group]
+drop table `group`;

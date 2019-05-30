@@ -1,0 +1,17 @@
+<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="470" gr:y="-380" id="sv2#area5" name="Betting App" landmark="true" landmarks="sv2#area5#area7 sv2#area5#area1 sv2#area5#area20 sv2#area5#miu23" protected="false" defaultPage="sv2#area5#page83">
+  <OperationUnits>
+    <GetUnit id="sv2#area5#gtu10" name="Get4" gr:x="340" gr:y="20" contextParameters="UserCtxParam" linkOrder="sv2#area5#gtu10#ln134">
+      <Link id="sv2#area5#gtu10#ln134" name="Flow134" to="sv2#area5#miu23" type="transport" validate="true">
+        <LinkParameter id="sv2#area5#gtu10#ln134#par308" name="UserCtxParam.oid_UserId" source="sv2#area5#gtu10.UserCtxParam" target="sv2#area5#miu23.mov1#opm3#icu3#icp9"/>
+      </Link>
+    </GetUnit>
+    <ModuleInstanceUnit id="sv2#area5#miu23" gr:x="500" gr:y="20" action="true" moduleId="mov1#opm3" name="List events" landmark="true">
+      <OKLink id="sv2#area5#miu23#oln88" name="OKFlow51" to="sv2#area5#area6#page6#alt3#page8#inu3">
+        <LinkParameter id="sv2#area5#miu23#oln88#par307" name="Premium_checkpremium" source="mov1#opm3#okcu4#ocp10" target="sv2#area5#area6#page6#alt3#page8#inu3#su9#acond4"/>
+      </OKLink>
+      <OKLink id="sv2#area5#miu23#oln89" name="OKFlow89" to="sv2#area5#area6#page6#alt3#page8#inu32">
+        <LinkParameter id="sv2#area5#miu23#oln89#par309" name="Premium_AttCondition24" source="mov1#opm3#okcu4#ocp10" target="sv2#area5#area6#page6#alt3#page8#inu32#su44#acond24"/>
+      </OKLink>
+    </ModuleInstanceUnit>
+  </OperationUnits>
+</Area>

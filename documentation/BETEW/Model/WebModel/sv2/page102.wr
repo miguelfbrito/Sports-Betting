@@ -1,0 +1,133 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#page102" name="Events" gr:x="835" gr:y="-880" linkOrder="sv2#page102#ln132 sv2#page102#ln151">
+  <ContentUnits/>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:SubPage pageId="sv2#page102#alt21#page103">
+          <layout:Grid containerType="grid">
+            <layout:Row>
+              <layout:Cell colspan="12">
+                <layout:Unit unitId="sv2#page102#alt21#page103#inu30">
+                  <layout:Attribute attribute="ent3#att18"/>
+                  <layout:Attribute attribute="ent3#att16"/>
+                  <layout:Link link="sv2#page102#alt21#page103#inu30#ln130"/>
+                </layout:Unit>
+              </layout:Cell>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+            </layout:Row>
+          </layout:Grid>
+        </layout:SubPage>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:SubPage pageId="sv2#page102#alt21#page104">
+          <layout:Grid containerType="grid">
+            <layout:Row>
+              <layout:Cell colspan="12">
+                <layout:Unit unitId="sv2#page102#alt21#page104#dau15">
+                  <layout:Attribute attribute="ent3#att18"/>
+                  <layout:Attribute attribute="ent3#att17"/>
+                  <layout:Attribute attribute="ent3#att4"/>
+                  <layout:Attribute attribute="ent3#att15"/>
+                  <layout:Attribute attribute="ent3#att16"/>
+                </layout:Unit>
+              </layout:Cell>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+            </layout:Row>
+            <layout:Row>
+              <layout:Cell colspan="12">
+                <layout:Unit unitId="sv2#page102#alt21#page104#inu17">
+                  <layout:Attribute attribute="rel19#role38.ent6#att12"/>
+                </layout:Unit>
+              </layout:Cell>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+              <layout:Cell/>
+            </layout:Row>
+          </layout:Grid>
+        </layout:SubPage>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <Alternative id="sv2#page102#alt21" name="Events" defaultPage="sv2#page102#alt21#page103" gr:x="0" gr:y="0">
+    <Page id="sv2#page102#alt21#page103" name="List events" gr:x="0" gr:y="5">
+      <ContentUnits>
+        <IndexUnit id="sv2#page102#alt21#page103#inu30" name="Events" linkOrder="sv2#page102#alt21#page103#inu30#ln130" gr:x="0" gr:y="0" entity="ent3" displayAttributes="ent3#att18 ent3#att16">
+          <Link id="sv2#page102#alt21#page103#inu30#ln130" name="Details" to="sv2#page102#alt21#page104#dau15" type="normal" automaticCoupling="true" validate="true"/>
+          <Link id="sv2#page102#alt21#page103#inu30#ln131" name="Flow117" to="sv2#page102#alt21#page104#dau15" type="transport" automaticCoupling="true" validate="true" gr:bendpoints="107,15,-128,15"/>
+          <Selector id="sv2#page102#alt21#page103#inu30#su42" defaultPolicy="fill" booleanOperator="and">
+            <AttributesCondition id="sv2#page102#alt21#page103#inu30#su42#acond21" name="AttCondition21" predicate="eq" booleanOperator="or" implied="false" attributes="rel16#role32.ent10#att23" value="1"/>
+          </Selector>
+        </IndexUnit>
+      </ContentUnits>
+    </Page>
+    <Page id="sv2#page102#alt21#page104" name="Event" gr:x="215" gr:y="0">
+      <ContentUnits>
+        <DataUnit id="sv2#page102#alt21#page104#dau15" name="Event" gr:x="0" gr:y="0" entity="ent3" displayAttributes="ent3#att18 ent3#att17 ent3#att4 ent3#att15 ent3#att16">
+          <Selector id="sv2#page102#alt21#page104#dau15#su41" defaultPolicy="fill" booleanOperator="and">
+            <KeyCondition id="sv2#page102#alt21#page104#dau15#su41#kcond19" name="KeyCondition15" predicate="in" implied="false"/>
+          </Selector>
+          <Link id="sv2#page102#alt21#page104#dau15#ln2" name="Flow2" to="sv2#page102#alt21#page104#inu17" automaticCoupling="true" type="transport" validate="true"/>
+        </DataUnit>
+        <IndexUnit gr:x="145" gr:y="0" id="sv2#page102#alt21#page104#inu17" name="List Bet Types" entity="ent2" displayAttributes="rel19#role38.ent6#att12">
+          <Selector id="sv2#page102#alt21#page104#inu17#su21" defaultPolicy="fill" booleanOperator="and">
+            <RelationshipRoleCondition id="sv2#page102#alt21#page104#inu17#su21#rcond1" name="RoleCondition1" predicate="in" implied="false" role="rel20#role40"/>
+          </Selector>
+        </IndexUnit>
+      </ContentUnits>
+    </Page>
+  </Alternative>
+  <Link id="sv2#page102#ln132" name="Login" to="sv2#page101" automaticCoupling="true" type="normal" validate="true"/>
+  <Link id="sv2#page102#ln151" name="Register" to="sv2#page25" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="-576,62,234,-304"/>
+</Page>

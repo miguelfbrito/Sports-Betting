@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Warnings> 
+  <Warning error="false" xpath="id('sv1#area2#page7#alt1#page10#inu2')" rootXPath="id('sv1')" key="UNSPECIFIED_SORTING_ATTRIBUTE" label="List Events"> 
+    <Message>Sorting attribute are unspecified for the component 'List Events'</Message> 
+  </Warning>  
+  <Warning error="false" xpath="id('sv1#area2#page7')" rootXPath="id('sv1')" key="" label="Home"> 
+    <Message>Security Warning: the page 'Home' is public but no captcha field is configured on its form component</Message> 
+  </Warning> 
+</Warnings>

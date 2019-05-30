@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Configuration>
+  <Properties>
+    <Property name="ajaxActivated">true</Property>
+    <Property name="applicationServer">Tomcat</Property>
+    <Property name="cloudDeploy">false</Property>
+    <Property name="commonsLibDir">/home/luis/WebRatio_Platform/WebRatio/plugins/com.webratio.commons.libs_7.2.18.201903231300/lib</Property>
+    <Property name="dbConfigPath">/tmp/WRDBConfig3270699278377062739.xml</Property>
+    <Property name="defaultEncoding"></Property>
+    <Property name="deployCorePluginDir">/home/luis/WebRatio_Platform/WebRatio/configuration/org.eclipse.osgi/bundles/49/1/.cp</Property>
+    <Property name="derbySystemHome">/home/luis/WebRatio_Platform/WebRatio/workspace/.metadata/.plugins/com.webratio.commons.db/derby</Property>
+    <Property name="enterpriseProjectDir"></Property>
+    <Property name="eventSocketPort">39057</Property>
+    <Property name="excludedProjects" type="list"></Property>
+    <Property name="generationTime">201904182127</Property>
+    <Property name="helpersPluginDir">/home/luis/WebRatio_Platform/WebRatio/plugins/com.webratio.generator.helpers_7.2.18.201903231300</Property>
+    <Property name="hostAlwaysAllowed">false</Property>
+    <Property name="i18nBundleKeysFile" type="file"></Property>
+    <Property name="i18nExtraBundleFile" type="file"></Property>
+    <Property name="localDeploy">true</Property>
+    <Property name="lockDir">/home/luis/WebRatio_Platform/WebRatio/workspace/BETEW4/.Temp~</Property>
+    <Property name="normalizeDescriptors">false</Property>
+    <Property name="outputPath">/opt/tomcat/apache-tomcat-8.5.39/webapps/BETEW4</Property>
+    <Property name="phases">Logic|Struts13PagesOnly</Property>
+    <Property name="projectDir">/home/luis/WebRatio_Platform/WebRatio/workspace/BETEW4</Property>
+    <Property name="projectName">BETEW4</Property>
+    <Property name="projectPath">/tmp/Project706710642575209121.wr</Property>
+    <Property name="projectType">WEBPROJECT</Property>
+    <Property name="rootModuleName"></Property>
+    <Property name="uiPluginDir">/home/luis/WebRatio_Platform/WebRatio/plugins/com.webratio.ide.ui_7.2.18.201903231300</Property>
+    <Property name="webappPluginDir">/home/luis/WebRatio_Platform/WebRatio/plugins/com.webratio.generator.webapp_7.2.18.201903231300</Property>
+    <Property name="wrBuildId">201903231300</Property>
+    <Property name="wrGenerateOldValidationRules">false</Property>
+    <Property name="wrModelStatistics">pages=19|units=141</Property>
+    <Property name="wrVersion">7.2.18</Property>
+  </Properties>
+  <Plugins>
+    <Plugin id="com.webratio.commons.libs" path="/home/luis/WebRatio_Platform/WebRatio/plugins/com.webratio.commons.libs_7.2.18.201903231300"/>
+    <Plugin id="com.webratio.commons.transform" path="/home/luis/WebRatio_Platform/WebRatio/plugins/com.webratio.commons.transform_7.2.18.201903231300"/>
+    <Plugin id="com.webratio.debug" path="/home/luis/WebRatio_Platform/WebRatio/plugins/com.webratio.debug_7.2.18.201903231300"/>
+    <Plugin id="com.webratio.json" path="/home/luis/WebRatio_Platform/WebRatio/plugins/com.webratio.json_7.2.18.201903231300"/>
+    <Plugin id="com.webratio.lib.apache.commons.codec" path="/home/luis/WebRatio_Platform/WebRatio/plugins/com.webratio.lib.apache.commons.codec_7.2.18.201903231300"/>
+    <Plugin id="com.webratio.lib.apache.commons.collections" path="/home/luis/WebRatio_Platform/WebRatio/plugins/com.webratio.lib.apache.commons.collections_7.2.18.201903231300"/>
+    <Plugin id="com.webratio.lib.apache.commons.httpclient" path="/home/luis/WebRatio_Platform/WebRatio/plugins/com.webratio.lib.apache.commons.httpclient_7.2.18.201903231300"/>
+    <Plugin id="com.webratio.lib.apache.commons.lang" path="/home/luis/WebRatio_Platform/WebRatio/plugins/com.webratio.lib.apache.commons.lang_7.2.18.201903231300"/>
+    <Plugin id="com.webratio.lib.apache.commons.logging" path="/home/luis/WebRatio_Platform/WebRatio/plugins/com.webratio.lib.apache.commons.logging_7.2.18.201903231300"/>
+    <Plugin id="com.webratio.lib.dom4j" path="/home/luis/WebRatio_Platform/WebRatio/plugins/com.webratio.lib.dom4j_7.2.18.201903231300"/>
+    <Plugin id="com.webratio.lib.google.guava" path="/home/luis/WebRatio_Platform/WebRatio/plugins/com.webratio.lib.google.guava_7.2.18.201903231300"/>
+    <Plugin id="com.webratio.lib.javassist" path="/home/luis/WebRatio_Platform/WebRatio/plugins/com.webratio.lib.javassist_7.2.18.201903231300"/>
+    <Plugin id="com.webratio.rtx.extras" path="/home/luis/WebRatio_Platform/WebRatio/plugins/com.webratio.rtx.extras_7.2.18.201903231300"/>
+    <Plugin id="com.webratio.rtx" path="/home/luis/WebRatio_Platform/WebRatio/plugins/com.webratio.rtx_7.2.18.201903231300"/>
+    <Plugin id="com.webratio.struts13" path="/home/luis/WebRatio_Platform/WebRatio/plugins/com.webratio.struts13_7.2.18.201903231300"/>
+    <Plugin id="com.webratio.units.content" path="/home/luis/WebRatio_Platform/WebRatio/plugins/com.webratio.units.content_7.2.18.201903231300" type="components"/>
+    <Plugin id="com.webratio.units.controlflow" path="/home/luis/WebRatio_Platform/WebRatio/plugins/com.webratio.units.controlflow_7.2.18.201903231300" type="components"/>
+    <Plugin id="com.webratio.units.module" path="/home/luis/WebRatio_Platform/WebRatio/plugins/com.webratio.units.module_7.2.18.201903231300" type="components"/>
+    <Plugin id="com.webratio.units.operation" path="/home/luis/WebRatio_Platform/WebRatio/plugins/com.webratio.units.operation_7.2.18.201903231300" type="components"/>
+    <Plugin id="com.webratio.units.session" path="/home/luis/WebRatio_Platform/WebRatio/plugins/com.webratio.units.session_7.2.18.201903231300" type="components"/>
+    <Plugin id="com.webratio.units.utility" path="/home/luis/WebRatio_Platform/WebRatio/plugins/com.webratio.units.utility_7.2.18.201903231300" type="components"/>
+    <Plugin id="com.webratio.units.validation" path="/home/luis/WebRatio_Platform/WebRatio/plugins/com.webratio.units.validation_7.2.18.201903231300" type="components"/>
+    <Plugin id="com.webratio.units.ws" path="/home/luis/WebRatio_Platform/WebRatio/plugins/com.webratio.units.ws_7.2.18.201903231300" type="components"/>
+    <Plugin id="com.webratio.ws" path="/home/luis/WebRatio_Platform/WebRatio/plugins/com.webratio.ws_7.2.18.201903231300"/>
+    <Plugin id="com.webratio.xsd" path="/home/luis/WebRatio_Platform/WebRatio/plugins/com.webratio.xsd_7.2.18.201903231300"/>
+  </Plugins>
+  <Styles>
+    <Style name="Excel" path="/home/luis/WebRatio_Platform/WebRatio/plugins/Excel_7.2.18.201903231300"/>
+    <Style name="Multiflex" path="/home/luis/WebRatio_Platform/WebRatio/plugins/Multiflex_7.2.18.201903231300"/>
+    <Style name="Reports" path="/home/luis/WebRatio_Platform/WebRatio/plugins/Reports_7.2.18.201903231300"/>
+    <Style name="WebRatio" path="/home/luis/WebRatio_Platform/WebRatio/plugins/WebRatio_7.2.18.201903231300"/>
+    <Style name="WRDefault" path="/home/luis/WebRatio_Platform/WebRatio/plugins/WRDefault_7.2.18.201903231300"/>
+  </Styles>
+  <FileEncodings/>
+</Configuration>
