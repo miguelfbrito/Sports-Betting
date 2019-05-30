@@ -1,0 +1,10 @@
+FROM node:8
+
+WORKDIR /usr/src/app
+
+RUN npm install
+RUN npm install nodemon -g
+
+# Change to npm start for deploy
+CMD ["nodemon"]
+
