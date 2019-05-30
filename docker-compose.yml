@@ -1,0 +1,43 @@
+version: '3.3'
+
+services:
+   
+    db_baseline: 
+        image: mysql:5.7.26
+        environment:
+            MYSQL_DATABASE: db
+            MYSQL_USER: db 
+            MYSQL_PASSWORD: db
+            MYSQL_ROOT_PASSWORD: root-password
+        ports:
+            - 3300:3306
+        networks:
+            - network_backend
+
+
+    backend:
+        build: ./microservices/baseline-microservice
+        volumes:
+            - ./microservices/baseline-microservice:/usr/src/app
+        environment:
+            DB_USERNAME: db
+            DB_PASSWORD: db
+            DB_NAME: db
+            DB_HOST: db_baseline
+
+        ports:
+            - 3001:3000
+        networks:
+            - network_backend
+        depends_on:
+            - db_baseline
+        restart: always
+
+#    frontend:
+#        build: ./client
+#        ports:
+#            - 3333:3000
+
+networks:
+    network_backend:
+        driver: "bridge"
