@@ -2,7 +2,7 @@
 
 // Configuracao do sequelize: https://blog.rocketseat.com.br/nodejs-express-sequelize/
 
-const drop_and_create = false;
+const recreate_database = false;
 
 const fs = require('fs');
 const path = require('path');
@@ -12,7 +12,15 @@ const env = process.env.NODE_ENV || 'development';
 const config = require('../config/database');
 
 const db = {};
-const sequelize = new Sequelize(config);
+const sequelize = new Sequelize(
+  {
+    username: process.env.DB_USERNAME || config.username,
+    password: process.env.DB_PASSWORD || config.password,
+    database: process.env.DB_NAME || config.database,
+    host: process.env.DB_HOST || config.host,
+    dialect: process.env.DB_DIALECT || config.dialect
+  }
+);
 
 fs
   .readdirSync(__dirname)
@@ -40,12 +48,12 @@ sequelize
   });
 
 
-if (drop_and_create) {
-  console.log("Teste")
-  sequelize.query("drop database bettingwebapp; create database bettingwebapp;")
+
+if (recreate_database) {
+  console.log("Recreating database!")
+  sequelize.sync({ force: true });
 }
 
-sequelize.sync({ force: true });
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
