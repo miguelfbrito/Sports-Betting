@@ -1,10 +1,12 @@
+# É possivel definir valores fallback/default para as variaveis de environment
+
 http:
   port: 8080
 admin:
   port: 9876
   host: localhost
-apiEndpoints:
 
+apiEndpoints:
   api:
     host: localhost
     paths: '/ip'
@@ -23,9 +25,11 @@ serviceEndpoints:
   httpbin:
     url: 'https://httpbin.org'
   user-manager-service:
-    url : 'http://localhost:3001/'
+    #url : 'http://localhost:3001/'
+    url : ${MS_USER_MANAGER_URL}
   bet-manager-service:
-    url : 'http://localhost:3002/'
+    #url : 'http://localhost:3002/'
+    url : ${MS_BET_MANAGER_URL}
 
 policies:
   - basic-auth
