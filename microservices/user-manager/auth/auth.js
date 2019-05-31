@@ -1,6 +1,6 @@
 const passport = require('passport');
 const localStrategy = require('passport-local').Strategy;
-const User = require('../models/user');
+const User = require('../controllers/user');
 const JWTStrategy = require('passport-jwt').Strategy;
 const ExtractJWT = require('passport-jwt').ExtractJwt;
 const bcrypt = require('bcrypt');
@@ -13,31 +13,28 @@ passport.use('signup', new localStrategy({
     passReqToCallback: true,
     usernameField: 'username',
     passwordField: 'password'
-}, async (req, email, password, done) => {
+}, async (req, username, password, done) => {
     try {
 
-        console.log("HELLO WORLD")
-        // TODO : Validar existencia do utilizador
-        // const userExist = await User.findOne({ where: { email: email } })
+        const userExist = await User.findOne({ where: { username: username } })
 
-        // if (userExist) {
-        //     return done(null, false, {
-        //         message: 'O utilizador já existe'
-        //     })
-        // }
+        if (userExist) {
+            return done(null, false, {
+                message: 'O utilizador já existe'
+            })
+        }
 
         const userData = req.body
         const passwordHash = await createHash(userData.password)
         userData.password = passwordHash
 
         const newUser = await User.create(userData)
-        console.log(newUser);
 
         return done(null, newUser, {
             message: 'Utilizador criado com sucesso'
         })
     } catch (err) {
-        const userExist = await User.findOne({ where: { email: email } })
+        const userExist = await User.findOne({ where: { username: username } })
 
         if (userExist) {
             return done(null, false, {
@@ -56,11 +53,19 @@ passport.use('login', new localStrategy({
     passwordField: 'password'
 }, async (username, password, done) => {
     try {
+
         const user = await User.findOne({
-            username: username
+            where: {
+                username: username
+            }
         })
 
-        const valid = await isValidPassword(user, password)
+        console.log("User", user.dataValues)
+
+        console.log("Username", username)
+        console.log("Password", password)
+
+        const valid = await isValidPassword(user.dataValues, password)
 
         if (!user || !valid) {
             return done(null, false, {
