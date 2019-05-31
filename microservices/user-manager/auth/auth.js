@@ -1,11 +1,11 @@
-const passport = require('passport')
-const localStrategy = require('passport-local').Strategy
-const User = require('../models/user')
-const JWTStrategy = require('passport-jwt').Strategy
-const ExtractJWT = require('passport-jwt').ExtractJwt
-const bcrypt = require('bcrypt')
-const SALT_ROUNDS = 10
-const AUTHENTICATION_ENABLED = false
+const passport = require('passport');
+const localStrategy = require('passport-local').Strategy;
+const User = require('../models/user');
+const JWTStrategy = require('passport-jwt').Strategy;
+const ExtractJWT = require('passport-jwt').ExtractJwt;
+const bcrypt = require('bcrypt');
+const SALT_ROUNDS = 10;
+const AUTHENTICATION_ENABLED = true;
 
 require('dotenv').config()
 
@@ -16,19 +16,22 @@ passport.use('signup', new localStrategy({
 }, async (req, email, password, done) => {
     try {
 
-        const userExist = await User.findOne({ where: { email: email } })
+        console.log("HELLO WORLD")
+        // TODO : Validar existencia do utilizador
+        // const userExist = await User.findOne({ where: { email: email } })
 
-        if (userExist) {
-            return done(null, false, {
-                message: 'O utilizador já existe'
-            })
-        }
+        // if (userExist) {
+        //     return done(null, false, {
+        //         message: 'O utilizador já existe'
+        //     })
+        // }
 
         const userData = req.body
         const passwordHash = await createHash(userData.password)
         userData.password = passwordHash
 
         const newUser = await User.create(userData)
+        console.log(newUser);
 
         return done(null, newUser, {
             message: 'Utilizador criado com sucesso'
@@ -108,6 +111,7 @@ let isValidPassword = (user, password) => {
 
 let authenticate = () => {
     if (AUTHENTICATION_ENABLED) {
+
         return passport.authenticate('jwt', {
             session: false
         })

@@ -1,6 +1,5 @@
 const Sequelize = require('sequelize');
 const db = require('../database/db');
-const Bet = require('./bet')
 
 const User = db.sequelize.define('user', {
     oid: {
@@ -40,7 +39,5 @@ const User = db.sequelize.define('user', {
 }, {
         tableName: 'user'
     });
-
-User.hasMany(Bet);
 
 module.exports = User;

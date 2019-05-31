@@ -10,14 +10,6 @@ const Group = db.sequelize.define('group', {
   groupname: {
     type: Sequelize.STRING(255),
     allowNull: true
-  },
-  module_oid: {
-    type: Sequelize.INTEGER(11),
-    allowNull: true,
-    references: {
-      model: 'module',
-      key: 'oid'
-    }
   }
 }, {
     tableName: 'group'
