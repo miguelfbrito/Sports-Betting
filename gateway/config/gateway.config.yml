@@ -12,25 +12,27 @@ apiEndpoints:
     paths: '/ip'
   user-manager:
     host: localhost
-    paths: 
+    paths:
         - '/users/*'
- 
+
   bet-manager:
     host: localhost
-    paths: 
+    paths:
         - '/bets/*'
-        
+
 serviceEndpoints:
 
   httpbin:
     url: 'https://httpbin.org'
   user-manager-service:
     #url : 'http://localhost:3001/'
-    url : ${MS_USER_MANAGER_URL}
+    url : ${MS_USER_MANAGER_URL} 
   bet-manager-service:
     #url : 'http://localhost:3002/'
-    url : ${MS_BET_MANAGER_URL}
+    url : ${MS_BET_MANAGER_URL} 
 
+# Remover as que não estão a ser utilizadas mais tarde
+# Apenas fazem alguma coisa se a sua acao for definida na pipeline
 policies:
   - basic-auth
   - cors
@@ -40,6 +42,7 @@ policies:
   - oauth2
   - proxy
   - rate-limit
+  - jwt-db
 pipelines:
 
   default:
@@ -50,20 +53,30 @@ pipelines:
     # - key-auth:
       - proxy:
         - action:
-            serviceEndpoint: httpbin 
+            serviceEndpoint: httpbin
             changeOrigin: true
 
   user-manager-pipe:
     apiEndpoints: user-manager
-    policies: 
+    policies:
+      - jwt-db:
+        - action:
+                secret: "secret"
+#      - expression:
+#        - action:
+#            jscode: 'res.send(req.query)'
+#      - jwt:
+#        - action:
+#            checkCredentialExistence: false
+#            jwtExtractor: ['authBearer', 'authScheme', 'header', 'query']
+  #     jscode: 'console.log("hello");'
       - proxy:
         - action:
             serviceEndpoint: user-manager-service
-    
+
   bet-manager-pipe:
     apiEndpoints: bet-manager
-    policies: 
+    policies:
       - proxy:
         - action:
             serviceEndpoint: bet-manager-service
-    
