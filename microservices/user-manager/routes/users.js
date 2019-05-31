@@ -8,4 +8,8 @@ router.get('/', async (req, res, next) => {
   res.json(user)
 });
 
+router.get('/test', async (req, res, next) => {
+  res.json({ "teste": "This is a test" })
+});
+
 module.exports = router;

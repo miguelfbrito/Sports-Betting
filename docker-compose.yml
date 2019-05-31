@@ -1,36 +1,71 @@
 version: '3.3'
 
 services:
-   
-    db_baseline: 
+
+# MS - USER- MANAGER
+    db_user_manager: 
         image: mysql:5.7.26
         environment:
-            MYSQL_DATABASE: db
-            MYSQL_USER: db 
-            MYSQL_PASSWORD: db
+            MYSQL_DATABASE: db_user_manager
+            MYSQL_USER: db_user_manager
+            MYSQL_PASSWORD: db_user_manager
             MYSQL_ROOT_PASSWORD: root-password
+        volumes:
+            - ~/databases/db_user_manager/data:/var/lib/mysql
         ports:
             - 3300:3306
         networks:
             - network_backend
 
-
-    backend:
-        build: ./microservices/baseline-microservice
+    ms_user_manager:
+        build: ./microservices/user-manager
         volumes:
-            - ./microservices/baseline-microservice:/usr/src/app
+            - ./microservices/user-manager:/usr/src/app
         environment:
-            DB_USERNAME: db
-            DB_PASSWORD: db
-            DB_NAME: db
-            DB_HOST: db_baseline
+            DB_USERNAME: db_user_manager
+            DB_PASSWORD: db_user_manager
+            DB_NAME: db_user_manager
+            DB_HOST: db_user_manager
 
         ports:
             - 3001:3000
         networks:
             - network_backend
         depends_on:
-            - db_baseline
+            - db_user_manager
+        restart: always
+
+# MS - BET-MANAGER
+    db_bet_manager: 
+        image: mysql:5.7.26
+        environment:
+            MYSQL_DATABASE: db_bet_manager
+            MYSQL_USER: db_bet_manager
+            MYSQL_PASSWORD: db_bet_manager
+            MYSQL_ROOT_PASSWORD: root-password
+        volumes:
+            - ~/databases/db_bet_manager/data:/var/lib/mysql
+        ports:
+            - 3301:3306
+        networks:
+            - network_backend
+
+    ms_bet_manager:
+        build: ./microservices/bet-manager
+        volumes:
+            - ./microservices/bet-manager:/usr/src/app
+        environment:
+            DB_USERNAME: db_bet_manager
+            DB_PASSWORD: db_bet_manager
+            DB_NAME: db_bet_manager
+            DB_HOST: db_bet_manager
+
+        ports:
+            - 3002:3000
+        networks:
+            - network_backend
+        depends_on:
+            - db_bet_manager
         restart: always
 
 #    frontend:
