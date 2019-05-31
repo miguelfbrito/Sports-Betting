@@ -2,19 +2,19 @@ version: '3.3'
 
 services:
 
-# GATEWAY
-#    gateway:
-#        build: ./gateway
-#        volumes:
-#            - ./gateway:/usr/src/app
-#        environment:
-#            MS_USER_MANAGER_URL: 'http://ms_user_manager:3000'
-#            MS_BET_MANAGER_URL: 'http://ms_bet_manager:3000'
-#        ports:
-#            - 8081:8080
-#        networks:
-#            - network_backend
-#        restart: always
+# Gateway
+    gateway:
+        build: ./gateway
+        volumes:
+            - ./gateway:/usr/src/app
+        environment:
+            MS_USER_MANAGER_URL: 'http://ms_user_manager:3000'
+            MS_BET_MANAGER_URL: 'http://ms_bet_manager:3000'
+        ports:
+            - 8081:8080
+        networks:
+            - network_backend
+        restart: always
 
 # MS - USER- MANAGER
     db_user_manager: 

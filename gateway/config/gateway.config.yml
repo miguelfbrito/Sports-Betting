@@ -10,10 +10,19 @@ apiEndpoints:
   api:
     host: localhost
     paths: '/ip'
-  user-manager:
+
+  user-no-auth-required:
     host: localhost
     paths:
-        - '/users/*'
+      - '/user/login'
+      - '/user/signup'
+
+  user-manager:
+    host: localhost
+#    paths:
+#        - '/user/login'
+#        - '/user/signup'
+
 
   bet-manager:
     host: localhost
@@ -49,19 +58,24 @@ pipelines:
     apiEndpoints:
       - api
     policies:
-    # Uncomment `key-auth:` when instructed to in the Getting Started guide.
-    # - key-auth:
       - proxy:
         - action:
             serviceEndpoint: httpbin
             changeOrigin: true
 
-  user-manager-pipe:
-    apiEndpoints: user-manager
+  user-no-auth-required:
+    apiEndpoints: user-no-auth-required
     policies:
-      - jwt-db:
+      - proxy:
         - action:
-                secret: "secret"
+            serviceEndpoint: user-manager-service
+  
+#  user-manager-pipe:
+#    apiEndpoints: user-manager-service
+#    policies:
+#      - jwt-db:
+#        - action:
+#                secret: "secret"
 #      - expression:
 #        - action:
 #            jscode: 'res.send(req.query)'
@@ -69,10 +83,10 @@ pipelines:
 #        - action:
 #            checkCredentialExistence: false
 #            jwtExtractor: ['authBearer', 'authScheme', 'header', 'query']
-  #     jscode: 'console.log("hello");'
-      - proxy:
-        - action:
-            serviceEndpoint: user-manager-service
+#       jscode: 'console.log("hello");'
+#      - proxy:
+#        - action:
+#            serviceEndpoint: user-manager-service
 
   bet-manager-pipe:
     apiEndpoints: bet-manager
