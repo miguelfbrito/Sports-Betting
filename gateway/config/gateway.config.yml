@@ -17,12 +17,12 @@ apiEndpoints:
       - '/user/login'
       - '/user/signup'
 
-  user-manager:
-    host: localhost
-#    paths:
-#        - '/user/login'
-#        - '/user/signup'
+  #user-manager:
+  #  host: localhost
 
+  event-manager:
+    host: localhost
+    paths: '*'
 
   bet-manager:
     host: localhost
@@ -34,11 +34,11 @@ serviceEndpoints:
   httpbin:
     url: 'https://httpbin.org'
   user-manager-service:
-    #url : 'http://localhost:3001/'
-    url : ${MS_USER_MANAGER_URL} 
+    url: ${MS_USER_MANAGER_URL} 
   bet-manager-service:
-    #url : 'http://localhost:3002/'
-    url : ${MS_BET_MANAGER_URL} 
+    url: ${MS_BET_MANAGER_URL} 
+  event-manager-service:
+    url: ${MS_EVENT_MANAGER_URL} 
 
 # Remover as que não estão a ser utilizadas mais tarde
 # Apenas fazem alguma coisa se a sua acao for definida na pipeline
@@ -70,6 +70,19 @@ pipelines:
         - action:
             serviceEndpoint: user-manager-service
   
+  event-manager-pipe:
+    apiEndpoints: event-manager
+    policies:
+      - proxy:
+        - action:
+            serviceEndpoint: event-manager-service
+
+  bet-manager-pipe:
+    apiEndpoints: bet-manager
+    policies:
+      - proxy:
+        - action:
+            serviceEndpoint: bet-manager-service
 #  user-manager-pipe:
 #    apiEndpoints: user-manager-service
 #    policies:
@@ -88,9 +101,4 @@ pipelines:
 #        - action:
 #            serviceEndpoint: user-manager-service
 
-  bet-manager-pipe:
-    apiEndpoints: bet-manager
-    policies:
-      - proxy:
-        - action:
-            serviceEndpoint: bet-manager-service
+

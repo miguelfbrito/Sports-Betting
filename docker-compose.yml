@@ -10,10 +10,15 @@ services:
         environment:
             MS_USER_MANAGER_URL: 'http://ms_user_manager:3000'
             MS_BET_MANAGER_URL: 'http://ms_bet_manager:3000'
+            MS_EVENT_MANAGER_URL: 'http://ms_event_manager:3000'
         ports:
             - 8081:8080
         networks:
             - network_backend
+        depends_on:
+            - ms_user_manager
+            - ms_bet_manager
+            - ms_event_manager
         restart: always
 
 # MS - USER- MANAGER
@@ -82,10 +87,45 @@ services:
             - db_bet_manager
         restart: always
 
-#    frontend:
-#        build: ./client
-#        ports:
-#            - 3333:3000
+# MS - EVENT-MANAGER
+    db_event_manager: 
+        image: mysql:5.7.26
+        environment:
+            MYSQL_DATABASE: db_event_manager
+            MYSQL_USER: db_event_manager
+            MYSQL_PASSWORD: db_event_manager
+            MYSQL_ROOT_PASSWORD: root-password
+        volumes:
+            - ~/databases/db_event_manager/data:/var/lib/mysql
+        ports:
+            - 3302:3306
+        networks:
+            - network_backend
+
+    ms_event_manager:
+        build: ./microservices/event-manager
+        volumes:
+            - ./microservices/event-manager:/usr/src/app
+        environment:
+            DB_USERNAME: db_event_manager
+            DB_PASSWORD: db_event_manager
+            DB_NAME: db_event_manager
+            DB_HOST: db_event_manager
+
+        ports:
+            - 3003:3000
+        networks:
+            - network_backend
+        depends_on:
+            - db_event_manager
+        restart: always
+
+    frontend:
+        build: ./frontend
+        ports:
+            - 3333:3000
+        volumes:
+            - ./frontend:/usr/src/app
 
 networks:
     network_backend:

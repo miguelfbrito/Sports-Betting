@@ -54,6 +54,7 @@ if (recreate_database) {
   sequelize.sync({ force: true });
 }
 
+
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
