@@ -94,7 +94,7 @@ passport.use('login', new localStrategy({
 
 passport.use(new JWTStrategy({
     jwtFromRequest: ExtractJWT.fromExtractors([ExtractJWT.fromAuthHeaderAsBearerToken(), ExtractJWT.fromUrlQueryParameter('api_key')]),
-    secretOrKey: process.env.JWT_SECRET_KEY,
+    secretOrKey: process.env.JWT_SECRET_KEY || 'mega_secret_key',
     expiresIn: '1h'
 }, async (decodedToken, done) => {
     try {

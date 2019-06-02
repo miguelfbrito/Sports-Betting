@@ -2,10 +2,10 @@ FROM node:8
 
 WORKDIR /usr/src/app
 
+COPY package*.json ./
+
 RUN npm install
-RUN npm install express-gateway -g
-#RUN eg plugin install ./plugins/express-gateway-jwt-database-plugin
+RUN npm install -g express-gateway 
 
 CMD ["npm", "start"]
-
 

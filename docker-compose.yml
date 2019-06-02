@@ -7,6 +7,7 @@ services:
         build: ./gateway
         volumes:
             - ./gateway:/usr/src/app
+            - /usr/src/app/node_modules
         environment:
             MS_USER_MANAGER_URL: 'http://ms_user_manager:3000'
             MS_BET_MANAGER_URL: 'http://ms_bet_manager:3000'
@@ -41,6 +42,7 @@ services:
         build: ./microservices/user-manager
         volumes:
             - ./microservices/user-manager:/usr/src/app
+            - /usr/src/app/node_modules
         environment:
             DB_USERNAME: db_user_manager
             DB_PASSWORD: db_user_manager
@@ -74,6 +76,7 @@ services:
         build: ./microservices/bet-manager
         volumes:
             - ./microservices/bet-manager:/usr/src/app
+            - /usr/src/app/node_modules
         environment:
             DB_USERNAME: db_bet_manager
             DB_PASSWORD: db_bet_manager
@@ -107,6 +110,7 @@ services:
         build: ./microservices/event-manager
         volumes:
             - ./microservices/event-manager:/usr/src/app
+            - /usr/src/app/node_modules
         environment:
             DB_USERNAME: db_event_manager
             DB_PASSWORD: db_event_manager
@@ -127,6 +131,7 @@ services:
             - 3333:3000
         volumes:
             - ./frontend:/usr/src/app
+            - /usr/src/app/node_modules
         networks:
             - network_frontend
 
