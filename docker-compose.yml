@@ -15,6 +15,7 @@ services:
             - 8081:8080
         networks:
             - network_backend
+            - network_frontend
         depends_on:
             - ms_user_manager
             - ms_bet_manager
@@ -126,7 +127,11 @@ services:
             - 3333:3000
         volumes:
             - ./frontend:/usr/src/app
+        networks:
+            - network_frontend
 
 networks:
     network_backend:
+        driver: "bridge"
+    network_frontend:
         driver: "bridge"

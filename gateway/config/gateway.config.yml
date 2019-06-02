@@ -12,7 +12,7 @@ apiEndpoints:
     paths: '/ip'
 
   user-no-auth-required:
-    host: localhost
+    host: '*'
     paths:
       - '/user/login'
       - '/user/signup'
@@ -21,11 +21,11 @@ apiEndpoints:
   #  host: localhost
 
   event-manager:
-    host: localhost
+    host: '*'
     paths: '*'
 
   bet-manager:
-    host: localhost
+    host: '*'
     paths:
         - '/bets/*'
 
