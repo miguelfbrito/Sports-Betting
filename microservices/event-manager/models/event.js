@@ -10,27 +10,28 @@ const Event = db.sequelize.define('event', {
     primaryKey: true,
     autoIncrement: true
   },
+  name: {
+    type: Sequelize.STRING(255),
+    allowNull: false,
+    unique: true
+  },
   finishingdate: {
-    type: Sequelize.DATEONLY,
+    type: Sequelize.DATE,
     allowNull: true
   },
   startingdate: {
-    type: Sequelize.DATEONLY,
+    type: Sequelize.DATE,
     allowNull: true
   },
   creationdate: {
-    type: Sequelize.DATEONLY,
+    type: Sequelize.DATE,
     allowNull: true
   },
   ispremium: {
     type: Sequelize.BOOLEAN,
-    allowNull: true
+    allowNull: false
   },
   description: {
-    type: Sequelize.STRING(255),
-    allowNull: true
-  },
-  name: {
     type: Sequelize.STRING(255),
     allowNull: true
   }

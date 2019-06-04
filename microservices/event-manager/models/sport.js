@@ -9,7 +9,8 @@ const Sport = db.sequelize.define('sport', {
     type: Sequelize.INTEGER(11),
     allowNull: false,
     primaryKey: true,
-    autoIncrement: true
+    autoIncrement: true,
+    unique: true
   },
   name: {
     type: Sequelize.STRING(255),

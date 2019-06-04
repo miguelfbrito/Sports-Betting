@@ -8,7 +8,7 @@ router.get('/', async (req, res, next) => {
 
 router.post('/create', async (req, res, next) => {
   console.log(req.body)
-  const newEvent = await Event.createEvent(req.body)
+  const newEvent = await Event.create(req.body)
   res.json(newEvent)
 })
 
