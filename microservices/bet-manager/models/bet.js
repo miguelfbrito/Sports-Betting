@@ -1,6 +1,8 @@
 const Sequelize = require('sequelize');
 const db = require('../database/db');
 
+const BetType = require('./bettype');
+
 const Bet = db.sequelize.define('bet', {
   oid: {
     type: Sequelize.INTEGER(11),
@@ -10,16 +12,18 @@ const Bet = db.sequelize.define('bet', {
   },
   wager: {
     type: Sequelize.DOUBLE,
-    allowNull: true
+    allowNull: false
+  },
+  userOid: {
+    type: Sequelize.INTEGER(10),
+    allowNull: false
+  },
+  eventOid: {
+    type: Sequelize.INTEGER(11),
+    allowNull: false
+  }, result: {
+    type: Sequelize.STRING(25)
   }
-  // user_oid: {
-  //   type: Sequelize.INTEGER(11),
-  //   allowNull: true,
-  //   references: {
-  //     model: 'user',
-  //     key: 'oid'
-  //   }
-  // },
   // event_oid: {
   //   type: Sequelize.INTEGER(11),
   //   allowNull: true,
@@ -27,25 +31,10 @@ const Bet = db.sequelize.define('bet', {
   //     model: 'event',
   //     key: 'event_oid'
   //   }
-  // },
-  // bettype_oid: {
-  //   type: Sequelize.INTEGER(11),
-  //   allowNull: true,
-  //   references: {
-  //     model: 'bettype',
-  //     key: 'oid'
-  //   }
-  // },
-  // result_oid: {
-  //   type: Sequelize.INTEGER(11),
-  //   allowNull: true,
-  //   references: {
-  //     model: 'result',
-  //     key: 'oid'
-  //   }
-  // }
 }, {
     tableName: 'bet'
   });
+
+Bet.hasOne(BetType);
 
 module.exports = Bet;

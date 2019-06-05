@@ -30,23 +30,36 @@ testFunction = async () => {
 
 
     const event = {
-        name: "Evento1234",
+        name: "Evento1234564",
         ispremium: true,
-        startingdate: Date.now()
+        startingdate: Date.now(),
+        state: 'Upcoming'
     }
 
-    const dataEvent = await events.create(event);
-    console.log(dataEvent.dataValues)
+    // const dataEvent = await events.create(event);
+    // console.log(dataEvent.dataValues)
 
-    const updateEvent = {
-        name: "NOME",
-        ispremium: false
-    }
+    // const updateEvent = {
+    //     name: "NOME1",
+    //     ispremium: false
+    // }
 
-    const updateEventData = await events.update({ where: { name: 'Evento123' } }, updateEvent)
-    console.log(updateEventData)
+    // const updateEventData = await events.update({ where: { name: 'Evento123' } }, updateEvent)
+    // console.log(updateEventData)
+
+    // const createEventSport = await events.createEvent(event, { name: 'Football' })
+
+    // console.log("Teste!")
+    // console.log(createEventSport)
+
+
+    const fetchEvent = await events.fetch();
+    console.log("TESTE")
+
+    fetchEvent.forEach(e => console.log(e.dataValues))
+
 }
 
-testFunction();
+// testFunction();
 
 module.exports = app;

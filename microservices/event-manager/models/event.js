@@ -1,7 +1,9 @@
 const Sequelize = require('sequelize');
 const db = require('../database/db');
+
 const AvailableBetTypes = require('./availablebettypes');
 const Stats = require('./stats');
+const Sport = require('./sport');
 
 const Event = db.sequelize.define('event', {
   oid: {
@@ -34,6 +36,10 @@ const Event = db.sequelize.define('event', {
   description: {
     type: Sequelize.STRING(255),
     allowNull: true
+  },
+  state: {
+    type: Sequelize.STRING(25),
+    allowNull: false
   }
 }, {
     tableName: 'event'
@@ -41,5 +47,6 @@ const Event = db.sequelize.define('event', {
 
 Event.hasMany(AvailableBetTypes);
 Event.hasOne(Stats);
+Event.belongsTo(Sport);
 
 module.exports = Event;
