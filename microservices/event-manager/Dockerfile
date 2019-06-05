@@ -2,13 +2,14 @@ FROM node:8
 
 WORKDIR /usr/src/app
 
-COPY package*.json /usr/src/app/
+RUN apt-get update
+
+COPY package*.json ./
 
 RUN npm install
 RUN npm install nodemon -g
 
-COPY . /usr/src/app
+COPY . ./
 
 # Change to npm start for deploy
 CMD ["nodemon"]
-
