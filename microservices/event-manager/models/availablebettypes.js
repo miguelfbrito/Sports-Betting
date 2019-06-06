@@ -13,8 +13,11 @@ const AvailableBetType = db.sequelize.define('availablebettypes', {
     allowNull: true
   },
   betresult: {
-    type: Sequelize.BOOLEAN,
+    type: Sequelize.INTEGER(2),
     allowNull: true
+  },
+  bettypeOid: {
+    type: Sequelize.INTEGER(11),
   }
 }, {
     tableName: 'availablebettypes'

@@ -1,10 +1,18 @@
 const AvailableBetTypes = module.exports;
 const AvailableBetTypesDB = require('../models/availablebettypes');
+const axios = require('axios');
 
+AvailableBetTypes.createDefaultBySportName = async (name) => {
 
-AvailableBetTypes.createDefaultBySportName = (name) => {
+    let available = []
     switch (name.toLowerCase()) {
         case 'football':
+
+            const defaultBetTypes = ['1', 'X', '2'];
+            available = await Promise.all(defaultBetTypes.map(async bettype => {
+                return (await this.fetchBetTypesByName(bettype)).data;
+            }))
+            return available;
 
         case 'basketball':
 
@@ -13,6 +21,10 @@ AvailableBetTypes.createDefaultBySportName = (name) => {
         default:
 
     }
+}
+
+AvailableBetTypes.fetchBetTypesByName = async (name) => {
+    return await axios.get(`${global.MS_BETS}/bettype/${name}`);
 }
 
 // DB Abstractions

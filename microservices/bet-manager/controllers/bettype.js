@@ -1,5 +1,13 @@
 const BetType = module.exports;
-const BetTypeDB = require('../models/bet');
+const BetTypeDB = require('../models/bettype');
+
+BetType.findByname = async (name) => {
+    try {
+        return await BetTypeDB.findOne({ where: { name: name } });
+    } catch (e) {
+        console.error(e);
+    }
+}
 
 BetType.create = async (bettype) => {
 
@@ -35,4 +43,15 @@ BetType.update = async (findCriteria, changes) => {
     } catch (e) {
         console.error(e);
     }
+}
+
+BetType.seed = () => {
+
+    this.create({ name: '1' })
+    this.create({ name: 'X' })
+    this.create({ name: '2' })
+
+    this.create({ name: '+0.5' })
+    this.create({ name: '+1.5' })
+    this.create({ name: '+2.5' })
 }

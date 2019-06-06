@@ -10,6 +10,7 @@ const app = express();
 // For test
 const sports = require('./controllers/sport');
 const events = require('./controllers/event');
+const availablebetypes = require('./controllers/availablebettypes');
 
 require('dotenv').config();
 
@@ -21,6 +22,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/event', eventRouter);
 
+global.MS_BETS = process.env.MS_BETS || ''
+global.MS_USERS = process.env.MS_USERS || ''
+
 testFunction = async () => {
     const sport = {
         name: 'Football'
@@ -30,14 +34,13 @@ testFunction = async () => {
 
 
     const event = {
-        name: "Evento1234564",
+        name: "Evento1",
         ispremium: true,
         startingdate: Date.now(),
         state: 'Upcoming'
     }
 
-    // const dataEvent = await events.create(event);
-    // console.log(dataEvent.dataValues)
+    const dataEvent = await events.create(event);
 
     // const updateEvent = {
     //     name: "NOME1",
@@ -58,8 +61,12 @@ testFunction = async () => {
 
     fetchEvent.forEach(e => console.log(e.dataValues))
 
+    console.log("HELLO")
+    console.log(global.MS_BETS)
+
+
 }
 
-// testFunction();
+testFunction();
 
 module.exports = app;

@@ -13,7 +13,8 @@ Event.createEvent = async (event, sport, availableBetTypes) => {
     }
 
     if (!availableBetTypes) {
-        AvailableBetTypesController.createDefaultBySportName(sport.name)
+        const available = AvailableBetTypesController.createDefaultBySportName(sport.name);
+        console.log('Available', available);
     }
 
     try {

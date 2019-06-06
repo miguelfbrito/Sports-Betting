@@ -2,10 +2,12 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-const constants = require('./common/constants');
+
+const BetType = require('./controllers/bettype');
 const Bet = require('./controllers/bet');
 
-const betsRouter = require('./routes/bets');
+const betRouter = require('./routes/bets');
+const betTypeRouter = require('./routes/bettype');
 
 const app = express();
 
@@ -17,7 +19,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/bets', betsRouter);
+app.use('/bet', betRouter);
+app.use('/bettype', betTypeRouter);
 
 testFunction = async () => {
 
@@ -26,12 +29,9 @@ testFunction = async () => {
         userOid: 3,
         eventOid: 1
     }
-    const data = await Bet.create(bet)
 
-    console.log(data)
-
-
-    console.log(constants.host)
+    await Bet.create(bet)
+    BetType.seed()
 }
 
 testFunction();
