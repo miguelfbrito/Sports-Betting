@@ -3,13 +3,17 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
+const axios = require('axios');
+
 const eventRouter = require('./routes/event');
 const availableBetTypesRouter = require('./routes/availablebettypes');
+const statsRouter = require('./routes/stats');
 const app = express();
 
 // For test
 const sports = require('./controllers/sport');
 const events = require('./controllers/event');
+const stats = require('./controllers/stats');
 const availablebetypes = require('./controllers/availablebettypes');
 
 require('dotenv').config();
@@ -25,17 +29,19 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/event', eventRouter);
 app.use('/availablebettype', availableBetTypesRouter);
+app.use('/stats', statsRouter);
 
 
-testFunction = async () => {
-    const sport = {
-        name: 'Football'
-    }
-    const data = await sports.create(sport);
-    // console.log(data.dataValues)
+seedData = async () => {
 
+    console.log("\n\n\n\n\n\n\n\n\n\nSeeding data to the database!")
 
-    const event = {
+    // Create sports
+    await sports.create({ name: 'Football' });
+    await sports.create({ name: 'Basketball' });
+
+    // Create event
+    const dataEvent = await events.createEvent({
         name: "Evento de Teste",
         ispremium: true,
         startingdate: Date.now(),
@@ -43,30 +49,44 @@ testFunction = async () => {
         sport: {
             name: 'Football'
         }
-    }
+    });
+    console.log("Creating event", dataEvent.dataValues);
 
-    const dataEvent = await events.createEvent(event);
-    console.log('Creating event', dataEvent)
+    // Create user
+    const userData = await axios.post(`${MS_USERS}/user/signup`, {
+        username: "user",
+        password: "pass"
+    })
+    console.log("Creating user", userData.data);
 
-    // const updateEvent = {
-    //     name: "NOME1",
-    //     ispremium: false
-    // }
+    // Place bet
+    const betData = await axios.post(`${MS_BETS}/bet/place`, {
+        wager: 10,
+        userOid: 1,
+        eventOid: 1,
+        bettypeOid: 5
+    })
+    console.log("Betting data", betData.data);
 
-    // const updateEventData = await events.update({ where: { name: 'Evento123' } }, updateEvent)
-    // console.log(updateEventData)
-
-    // const createEventSport = await events.createEvent(event, { name: 'Football' })
-
-    // console.log("Teste!")
-    // console.log(createEventSport)
-
-
-    // const fetchEvent = await events.fetch();
+    // Create Stats
+    const statsData = await stats.addStatToEvent({
+        eventOid: 1,
+        userOid: 1,
+        stats: {
+            gameduration: 90,
+            homeGoals: 2,
+            awayGoals: 3,
+            homeRedCards: 2,
+            awayRedCards: 1,
+            homeYellowCards: 1,
+            awayYellowCards: 3
+        }
+    })
+    console.log("Creating stats", statsData);
 
 
 }
 
-setTimeout(testFunction, 5000);
+setTimeout(seedData, 3000);
 
 module.exports = app;

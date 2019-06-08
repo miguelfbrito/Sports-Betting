@@ -38,7 +38,6 @@ AvailableBetTypes.createDefaultBySportName = async (name, eventOid) => {
                 return (await BetMS.fetchBetTypesByName(bettype)).data;
 
             }))
-            console.log("Available", bettypes)
 
             bettypes.forEach(async bettype => {
                 // Criar um available
@@ -48,7 +47,6 @@ AvailableBetTypes.createDefaultBySportName = async (name, eventOid) => {
                 }
 
                 const data = await this.create(newAvailableBetType)
-                console.log("Data inside bettypes", data);
             })
 
 

@@ -25,7 +25,7 @@ router.post('/place', async (req, res, next) => {
 
     const newBet = {
         wager: bet.wager,
-        userOid: 1, // 'TODO: OBTER DO TOKEN'
+        userOid: bet.userOid || 1, // 'TODO: OBTER DO TOKEN'
         eventOid: bet.eventOid,
         bettypeOid: bet.bettypeOid
     }

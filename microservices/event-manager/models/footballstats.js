@@ -1,9 +1,16 @@
 const Sequelize = require('sequelize');
 const db = require('../database/db');
 
-// TODO : falta adicionar a key das stats
-const FootbalStats = db.sequelize.define('footballstats', {
+const Stats = require('./stats');
 
+// TODO : falta adicionar a key das stats
+const FootballStats = db.sequelize.define('footballstats', {
+  oid: {
+    type: Sequelize.INTEGER(11),
+    allowNull: false,
+    primaryKey: true,
+    autoIncrement: true
+  },
   homegoals: {
     type: Sequelize.INTEGER(11),
     allowNull: true
@@ -32,4 +39,6 @@ const FootbalStats = db.sequelize.define('footballstats', {
     tableName: 'footballstats'
   });
 
-module.exports = FootbalStats;
+FootballStats.hasOne(Stats);
+
+module.exports = FootballStats;

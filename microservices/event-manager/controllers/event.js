@@ -41,6 +41,10 @@ Event.createEvent = async (eventData) => {
 
 }
 
+Event.fetchOne = async (event) => {
+    return await EventDB.findOne({ event, include: [{ model: Sport }] })
+}
+
 Event.fetch = async (event) => {
     return await EventDB.findAll({ include: [{ model: Sport }] })
 }
