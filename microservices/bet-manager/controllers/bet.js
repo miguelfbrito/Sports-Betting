@@ -28,6 +28,15 @@ Bet.placeBet = async (bet) => {
 
 }
 
+Bet.history = async (userOid) => {
+    try {
+        const data = await this.fetch({ userOid })
+        return data;
+    } catch (e) {
+        console.log(`Error fetching bet history ${e}`)
+    }
+}
+
 Bet.create = async (bet) => {
 
     try {
@@ -59,6 +68,14 @@ Bet.update = async (findCriteria, changes) => {
             changes,
             findCriteria
         );
+    } catch (e) {
+        console.error(e);
+    }
+}
+
+Bet.fetch = async (criteria) => {
+    try {
+        return await BetDB.findAll(criteria);
     } catch (e) {
         console.error(e);
     }

@@ -6,6 +6,19 @@ router.get('/', async (req, res, next) => {
     res.json({ "route": "Bets" })
 });
 
+router.get('/history', async (req, res, next) => {
+
+    const userInfo = JSON.parse(req.headers.userinfo);
+
+    try {
+        const betHistory = await Bet.history(userInfo.userOid);
+        res.send(betHistory);
+    } catch (e) {
+        res.status(500).send({ message: 'Error fetching user bet history' })
+    }
+
+});
+
 router.post('/place', async (req, res, next) => {
 
     const bet = req.body;
