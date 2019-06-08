@@ -2,7 +2,6 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-const axios = require('axios');
 
 const eventRouter = require('./routes/event');
 const app = express();
@@ -30,17 +29,21 @@ testFunction = async () => {
         name: 'Football'
     }
     const data = await sports.create(sport);
-    console.log(data.dataValues)
+    // console.log(data.dataValues)
 
 
     const event = {
         name: "Evento1",
         ispremium: true,
         startingdate: Date.now(),
-        state: 'Upcoming'
+        state: 'Upcoming',
+        sport: {
+            name: 'Football'
+        }
     }
 
-    const dataEvent = await events.create(event);
+    const dataEvent = await events.createEvent(event);
+    console.log('Creating event', dataEvent)
 
     // const updateEvent = {
     //     name: "NOME1",
@@ -56,17 +59,11 @@ testFunction = async () => {
     // console.log(createEventSport)
 
 
-    const fetchEvent = await events.fetch();
-    console.log("TESTE")
-
-    fetchEvent.forEach(e => console.log(e.dataValues))
-
-    console.log("HELLO")
-    console.log(global.MS_BETS)
+    // const fetchEvent = await events.fetch();
 
 
 }
 
-testFunction();
+setTimeout(testFunction, 5000);
 
 module.exports = app;

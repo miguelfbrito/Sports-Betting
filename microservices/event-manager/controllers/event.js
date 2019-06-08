@@ -2,24 +2,39 @@ const Event = module.exports;
 const EventDB = require('../models/event');
 const SportsDB = require('../models/sport');
 const Sport = require('../models/sport')
+const AvailableBetType = require('../models/availablebettypes')
 const AvailableBetTypesController = require('./availablebettypes');
 
-Event.createEvent = async (event, sport, availableBetTypes) => {
+Event.createEvent = async (eventData) => {
 
-    const currSport = await SportsDB.findOne({ where: { name: sport.name } })
+    const currSport = await SportsDB.findOne({ where: { name: eventData.sport.name } })
 
-    if (!sport) {
+    console.log("EVENT", eventData)
+
+    if (!currSport) {
         return 'Invalid sport'
     }
 
-    if (!availableBetTypes) {
-        const available = AvailableBetTypesController.createDefaultBySportName(sport.name);
-        console.log('Available', available);
-    }
-
+    let available = []
     try {
-        const data = { ...event, sportOid: currSport.dataValues.oid }
-        return await this.create(data)
+        const event = {
+            name: eventData.name,
+            ispremium: eventData.ispremium,
+            startingdate: eventData.startingdate,
+            state: eventData.state || 'Upcoming',
+            sportOid: currSport.dataValues.oid
+        }
+
+        console.log("NEW EVENT", event)
+
+        const createdEvent = await this.create(event);
+
+        if (createdEvent) {
+            available = await AvailableBetTypesController.createDefaultBySportName(eventData.sport.name, createdEvent.oid);
+        }
+
+        console.log("HI there created")
+        res.send(createdEvent);
 
     } catch (e) {
         return `Failed to create event, ${e}`

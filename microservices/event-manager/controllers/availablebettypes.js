@@ -2,17 +2,57 @@ const AvailableBetTypes = module.exports;
 const AvailableBetTypesDB = require('../models/availablebettypes');
 const axios = require('axios');
 
-AvailableBetTypes.createDefaultBySportName = async (name) => {
+const BetMS = require('./betMS');
 
-    let available = []
+// oid: {
+
+// type: Sequelize.INTEGER(11),
+// allowNull: false,
+// primaryKey: true,
+// autoIncrement: true
+// },
+
+// odd: {
+
+// type: Sequelize.DOUBLE,
+// allowNull: true
+// },
+
+// betresult: {
+// type: Sequelize.INTEGER(2),
+// allowNull: true
+// },
+
+// bettypeOid: {
+// type: Sequelize.INTEGER(11),
+//   }
+
+AvailableBetTypes.createDefaultBySportName = async (name, eventOid) => {
+
+    let bettypes = []
     switch (name.toLowerCase()) {
         case 'football':
 
             const defaultBetTypes = ['1', 'X', '2'];
-            available = await Promise.all(defaultBetTypes.map(async bettype => {
-                return (await this.fetchBetTypesByName(bettype)).data;
+            bettypes = await Promise.all(defaultBetTypes.map(async bettype => {
+                return (await BetMS.fetchBetTypesByName(bettype)).data;
+
             }))
-            return available;
+            console.log("Available", bettypes)
+
+            bettypes.forEach(async bettype => {
+                // Criar um available
+                const newAvailableBetType = {
+                    bettypeOid: bettype.oid,
+                    eventOid: eventOid
+                }
+
+                const data = await this.create(newAvailableBetType)
+                console.log("Data inside bettypes", data);
+            })
+
+
+            return bettypes;
 
         case 'basketball':
 
@@ -23,9 +63,6 @@ AvailableBetTypes.createDefaultBySportName = async (name) => {
     }
 }
 
-AvailableBetTypes.fetchBetTypesByName = async (name) => {
-    return await axios.get(`${global.MS_BETS}/bettype/${name}`);
-}
 
 // DB Abstractions
 
