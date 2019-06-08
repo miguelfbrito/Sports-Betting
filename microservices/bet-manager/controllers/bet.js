@@ -1,5 +1,23 @@
 const Bet = module.exports;
 const BetDB = require('../models/bet');
+const EventMS = require('./eventMS');
+
+
+Bet.placeBet = async (bet) => {
+
+    const bettypeOid = 1;
+    const eventOid = 1;
+
+    const data = EventMS.verifyBetTypeExistsInEvent(bettypeOid, eventOid);
+
+
+    console.log("[placeBetController]", data)
+
+    return data;
+    // Verificar se a BetType recebida está nas avaialable do evento
+
+    // Criar a BET
+}
 
 Bet.create = async (bet) => {
 

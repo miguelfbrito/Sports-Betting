@@ -15,7 +15,6 @@ Event.createEvent = async (eventData) => {
         return 'Invalid sport'
     }
 
-    let available = []
     try {
         const event = {
             name: eventData.name,
@@ -25,18 +24,17 @@ Event.createEvent = async (eventData) => {
             sportOid: currSport.dataValues.oid
         }
 
-        console.log("NEW EVENT", event)
-
         const createdEvent = await this.create(event);
 
         if (createdEvent) {
+            console.log("Creating available bet types!")
             available = await AvailableBetTypesController.createDefaultBySportName(eventData.sport.name, createdEvent.oid);
         }
 
-        console.log("HI there created")
-        res.send(createdEvent);
+        return createdEvent;
 
     } catch (e) {
+        console.error(e)
         return `Failed to create event, ${e}`
     }
 

@@ -64,6 +64,19 @@ AvailableBetTypes.createDefaultBySportName = async (name, eventOid) => {
 }
 
 
+AvailableBetTypes.betTypeExistsInEvent = async (bettypeOid, eventOid) => {
+
+    const data = await this.fetch({
+        where: {
+            bettypeOid: bettypeOid,
+            eventOid: eventOid
+        }
+    })
+
+    return data;
+}
+
+
 // DB Abstractions
 
 AvailableBetTypes.create = async (available) => {
@@ -100,4 +113,8 @@ AvailableBetTypes.update = async (findCriteria, changes) => {
     } catch (e) {
         console.error(e);
     }
+}
+
+AvailableBetTypes.fetch = async (criteria) => {
+    return await AvailableBetTypesDB.findAll(criteria);
 }

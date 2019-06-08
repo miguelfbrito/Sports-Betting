@@ -13,7 +13,7 @@ router.post('/create', async (req, res, next) => {
 
     try {
         const newEvent = await Event.createEvent(data);
-
+        res.send(newEvent);
     } catch (err) {
         console.error(err)
         res.status(500).send({ message: 'Error creating event' })
@@ -35,10 +35,6 @@ router.post('/create', async (req, res, next) => {
          ]
      }
      */
-
-
-    const newEvent = await Event.create(req.body)
-    res.send(newEvent);
 })
 
 module.exports = router;

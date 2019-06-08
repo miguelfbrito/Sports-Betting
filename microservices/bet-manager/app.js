@@ -13,6 +13,9 @@ const app = express();
 
 require('dotenv').config();
 
+global.MS_EVENTS = process.env.MS_EVENTS || ''
+global.MS_USERS = process.env.MS_USERS || ''
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
