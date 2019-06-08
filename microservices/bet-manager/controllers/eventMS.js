@@ -2,10 +2,11 @@ const EventMS = module.exports;
 const axios = require('axios');
 
 EventMS.verifyBetTypeExistsInEvent = async (bettypeOid, eventOid) => {
-    const data = await axios.post(`${global.MS_EVENTS}/availablebettype/}`, {
+
+    const data = await axios.post(`${global.MS_EVENTS}/availablebettype/verifybettype`, {
         bettypeOid,
         eventOid
     });
 
-    res.send(data);
+    return data.data;
 }

@@ -2,21 +2,30 @@ const Bet = module.exports;
 const BetDB = require('../models/bet');
 const EventMS = require('./eventMS');
 
-
 Bet.placeBet = async (bet) => {
 
-    const bettypeOid = 1;
-    const eventOid = 1;
+    const bettypeOid = bet.bettypeOid || 1;
+    const eventOid = bet.eventOid || 1;
 
-    const data = EventMS.verifyBetTypeExistsInEvent(bettypeOid, eventOid);
+    const data = await EventMS.verifyBetTypeExistsInEvent(bettypeOid, eventOid);
 
+    if (data.length === 0 || !bet) {
+        return { message: 'Invalid data!' };
+    }
 
-    console.log("[placeBetController]", data)
+    const newBet = {
+        wager: bet.wager,
+        userOid: bet.userOid,
+        eventOid: bet.eventOid
+    }
 
-    return data;
-    // Verificar se a BetType recebida está nas avaialable do evento
+    try {
+        const createdBet = this.create(newBet);
+        return createdBet;
+    } catch (e) {
+        console.error(`Unable to place bet ${e}`)
+    }
 
-    // Criar a BET
 }
 
 Bet.create = async (bet) => {

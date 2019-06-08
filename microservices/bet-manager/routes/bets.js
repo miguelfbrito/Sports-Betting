@@ -1,11 +1,29 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const Bet = require('../controllers/bet');
 
 router.get('/', async (req, res, next) => {
     res.json({ "route": "Bets" })
 });
 
-router.get('/place', async (req, res, next) => {
+router.post('/place', async (req, res, next) => {
+
+    const bet = req.body;
+
+    const newBet = {
+        wager: bet.wager,
+        userOid: 1, // 'TODO: OBTER DO TOKEN'
+        eventOid: bet.eventOid,
+        bettypeOid: bet.bettypeOid
+    }
+
+    try {
+        const placedBet = await Bet.placeBet(newBet);
+        res.send(placedBet);
+    } catch (e) {
+        console.error(e)
+        res.status(500).send({ message: 'Error placing bet!' })
+    }
 
 })
 

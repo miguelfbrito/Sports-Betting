@@ -13,12 +13,7 @@ router.post('/verifybettype', async (req, res, next) => {
 
     const data = await AvailableBetTypes.betTypeExistsInEvent(bettypeOid, eventOid)
 
-
-    if (data.length === 0) {
-        res.send({ message: "Invalid bet type" })
-    } else {
-        res.send(data);
-    }
+    res.send(data);
 
 });
 
