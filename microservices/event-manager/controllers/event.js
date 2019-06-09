@@ -45,18 +45,18 @@ Event.closeAndVerifyBets = async (event) => {
 
     // Verificar se o evento ainda se encontra aberto
 
-    // Alterar o estado do evento
+    // Alterar o estado do evento para Finished
     await this.update({ where: { oid: event.oid } }, { state: 'Finished' });
 
-    // Obter todas as availableBetTypes
+    // Obter todas as availableBetTypes relativas ao evento em questão TODO : alterar o valor hardcoded
     const data = await this.fetchOne({ oid: 1 });
-
     const availablebettypes = data.availablebettypes
 
-    //AvailableBetType.checkIfWinOrLoss()
+    const currentStats = await Stats.fetchSubStatsType(event.oid);
 
-    const currentStats = Stats.fetchSubStatsType(event.oid);
-    ValidateBetTypes.validate(availablebettypes, currentStats);
+    console.log("Current stats", currentStats)
+
+    const validatedBetTypes = ValidateBetTypes.validate(availablebettypes, currentStats);
 
     // Validar cada uma das available
     // Pegar em todas as available e o seu resultado

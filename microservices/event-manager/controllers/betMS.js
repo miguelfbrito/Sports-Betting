@@ -1,6 +1,5 @@
-const axios = require('axios');
 const BetMS = module.exports;
-
+const axios = require('axios');
 
 BetMS.fetchBetTypesByName = async (name) => {
     const data = await axios.get(`${global.MS_BETS}/bettype/${name}`);

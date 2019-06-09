@@ -11,7 +11,7 @@ BetType.findByname = async (name) => {
 
 BetType.fetchAll = async () => {
     try {
-        return await BetType.findAll();
+        return await BetTypeDB.findAll();
     } catch (e) {
         console.error(e);
     }

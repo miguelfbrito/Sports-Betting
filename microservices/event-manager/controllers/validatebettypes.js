@@ -1,16 +1,56 @@
 const ValidateBetTypes = module.exports;
 const BetMS = require('./betMS');
 
-ValidateBetTypes.fetchBetTypes = async () => {
-    const data = await BetMS.fetchAlllBetTypes();
+const AvailableBetType = require('./availablebettypes');
+
+ValidateBetTypes.fetchAllBetTypes = async () => {
+    const bettypes = await BetMS.fetchAlllBetTypes();
+
+    // Reorganizar bettypes para uma estrutura de acesso mais simples
+    let newBetTypes = {};
+    bettypes.forEach(b => {
+
+        newBetTypes[b.oid] = {
+            ...b
+        }
+        delete newBetTypes[b.oid].oid;
+    })
+
+    return newBetTypes;
 }
 
-ValidateBetTypes.validate = (availablebettypes, stats) => {
+ValidateBetTypes.validate = async (availablebettypes, stats) => {
 
+    console.log("Printing currentStats", stats)
     console.log("Printing availablebettypes");
-    availablebettypes.forEach(available => {
-        console.log(available.dataValues);
-    })
+
+    // Obter os BetTypes
+    const bettypes = await this.fetchAllBetTypes();
+
+    console.log("BETTYPES", bettypes)
+
+    switch (stats.sport.toLowerCase()) {
+        case 'football':
+            availablebettypes.forEach(async available => {
+
+                const isBetTypeValid = this.isFootballBetTypeValid(stats, bettypes[available.dataValues.bettypeOid].name);
+
+                if (isBetTypeValid) {
+                    await AvailableBetType.setBetResult('WON', available.dataValues.oid)
+                } else {
+                    await AvailableBetType.setBetResult('LOST', available.dataValues.oid)
+                }
+
+            })
+
+        case 'basketball':
+            availablebettypes.forEach(available => {
+                console.log(available.dataValues);
+            })
+
+        default:
+            console.log('Doing nothing')
+    }
 
 }
 
@@ -26,24 +66,35 @@ ValidateBetTypes.isFootballBetTypeValid = (stats, bettype) => {
         awayyellowcards: stats.awayyellowcards || 0
     }
 
+    console.log("DENTRO DO BETTYPE VALIDATION DO FUTEBOL", bettype.toLowerCase())
+
     switch (bettype.toLowerCase()) {
 
         case ("1"):
-            if (stats.homegoals > stats.awaygoals)
+            if (stats.homegoals > stats.awaygoals) {
+                console.log("A validar o tipo de aposta [1], " + stats.homegoals + " :: " + stats.awaygoals)
                 return true;
-
-        case ("X"):
-            if (stats.homegoals === stats.awaygoals)
+            }
+            return false;
+        case ("x"):
+            if (stats.homegoals === stats.awaygoals) {
+                console.log("A validar o tipo de aposta [X], " + stats.homegoals + " :: " + stats.awaygoals)
                 return true;
+            }
+            return false;
 
         case ("2"):
-            if (stats.homegoals < stats.awaygoals)
+            if (stats.homegoals < stats.awaygoals) {
+                console.log("A validar o tipo de aposta [2], " + stats.homegoals + " :: " + stats.awaygoals)
                 return true;
-
+            }
+            return false;
         default:
             return false;
 
     }
+
+
 }
 
 

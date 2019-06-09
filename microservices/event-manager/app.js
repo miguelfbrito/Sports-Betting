@@ -85,15 +85,16 @@ seedData = async () => {
         userOid: 1,
         stats: {
             gameduration: 90,
-            homeGoals: 2,
-            awayGoals: 3,
-            homeRedCards: 2,
-            awayRedCards: 1,
-            homeYellowCards: 1,
-            awayYellowCards: 3
+            homegoals: 2,
+            awaygoals: 3,
+            homeredcards: 2,
+            awayredcards: 1,
+            homeyellowcards: 1,
+            awayyellowcards: 3
         }
     })
-    console.log("Creating stats", statsData);
+
+    console.log("Stats do evento criado", statsData)
 
     const closeAndVerifyBets = await events.closeAndVerifyBets({ oid: 1 });
 

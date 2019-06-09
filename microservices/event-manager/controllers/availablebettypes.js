@@ -25,8 +25,6 @@ AvailableBetTypes.createDefaultBySportName = async (name, eventOid) => {
 
                 const data = await this.create(newAvailableBetType)
             })
-
-
             return bettypes;
 
         case 'basketball':
@@ -67,10 +65,16 @@ AvailableBetTypes.checkIfWinOrLoss = (available, sport, eventOid) => {
         default:
             return 'Invalid sport on validation of bettype';
     }
-
-
 }
 
+
+AvailableBetTypes.setBetResult = async (betresult, oid) => {
+    try {
+        return await this.update({ where: { oid } }, { betresult });
+    } catch (e) {
+        console.error(e);
+    }
+}
 
 // DB Abstractions
 

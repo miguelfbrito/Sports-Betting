@@ -34,10 +34,10 @@ testFunction = async () => {
     }
 
     await Bet.create(bet)
-    BetType.seed()
+    await BetType.seed()
 }
 
-testFunction();
+setTimeout(testFunction, 3000);
 
 
 module.exports = app;
