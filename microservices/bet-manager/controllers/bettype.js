@@ -9,6 +9,14 @@ BetType.findByname = async (name) => {
     }
 }
 
+BetType.fetchAll = async () => {
+    try {
+        return await BetType.findAll();
+    } catch (e) {
+        console.error(e);
+    }
+}
+
 BetType.create = async (bettype) => {
 
     try {

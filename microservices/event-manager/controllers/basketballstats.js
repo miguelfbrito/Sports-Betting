@@ -1,6 +1,16 @@
 const BasketballStats = module.exports;
 const BasketballStatsDB = require('../models/footballstats');
 
+// DATABASE 
+BasketballStats.fetchOne = async (basketballstats) => {
+
+    try {
+        return await BasketballStatsDB.findOne(basketballstats);
+    } catch (e) {
+        console.error(e);
+    }
+}
+
 BasketballStats.create = async (basketballstats) => {
 
     try {

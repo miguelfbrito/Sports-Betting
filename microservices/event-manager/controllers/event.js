@@ -2,8 +2,10 @@ const Event = module.exports;
 const EventDB = require('../models/event');
 const SportsDB = require('../models/sport');
 const Sport = require('../models/sport')
-const AvailableBetType = require('../models/availablebettypes')
-const AvailableBetTypesController = require('./availablebettypes');
+const AvailableBetTypeDB = require('../models/availablebettypes')
+const AvailableBetType = require('./availablebettypes');
+const ValidateBetTypes = require('./validatebettypes');
+const Stats = require('./stats');
 
 Event.createEvent = async (eventData) => {
 
@@ -28,7 +30,7 @@ Event.createEvent = async (eventData) => {
 
         if (createdEvent) {
             console.log("Creating available bet types!")
-            available = await AvailableBetTypesController.createDefaultBySportName(eventData.sport.name, createdEvent.oid);
+            available = await AvailableBetType.createDefaultBySportName(eventData.sport.name, createdEvent.oid);
         }
 
         return createdEvent;
@@ -37,12 +39,35 @@ Event.createEvent = async (eventData) => {
         console.error(e)
         return `Failed to create event, ${e}`
     }
-
-
 }
 
+Event.closeAndVerifyBets = async (event) => {
+
+    // Verificar se o evento ainda se encontra aberto
+
+    // Alterar o estado do evento
+    await this.update({ where: { oid: event.oid } }, { state: 'Finished' });
+
+    // Obter todas as availableBetTypes
+    const data = await this.fetchOne({ oid: 1 });
+
+    const availablebettypes = data.availablebettypes
+
+    //AvailableBetType.checkIfWinOrLoss()
+
+    const currentStats = Stats.fetchSubStatsType(event.oid);
+    ValidateBetTypes.validate(availablebettypes, currentStats);
+
+    // Validar cada uma das available
+    // Pegar em todas as available e o seu resultado
+    // Pegar em todas as bets e validar com o resultado
+}
+
+
+// Database 
+
 Event.fetchOne = async (event) => {
-    return await EventDB.findOne({ event, include: [{ model: Sport }] })
+    return await EventDB.findOne({ event, include: [{ model: Sport }, { model: AvailableBetTypeDB }] })
 }
 
 Event.fetch = async (event) => {

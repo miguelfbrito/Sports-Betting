@@ -1,6 +1,23 @@
 const FootballStats = module.exports;
 const FootballStatsDB = require('../models/footballstats');
 
+
+
+FootballStats.verifyBetType = (bettype) => {
+
+}
+
+
+// DATABASE
+FootballStats.fetchOne = async (footballstats) => {
+
+    try {
+        return await FootballStatsDB.findOne(footballstats);
+    } catch (e) {
+        console.error(e);
+    }
+}
+
 FootballStats.create = async (footballstats) => {
 
     try {
@@ -8,8 +25,8 @@ FootballStats.create = async (footballstats) => {
     } catch (e) {
         console.error(e);
     }
-
 }
+
 FootballStats.deleteByName = async (name) => {
     try {
         return await FootballStatsDB.destroy({ where: { name } });

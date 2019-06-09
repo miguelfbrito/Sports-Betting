@@ -1,31 +1,8 @@
 const AvailableBetTypes = module.exports;
+const Stats = require('../controllers/stats');
 const AvailableBetTypesDB = require('../models/availablebettypes');
-const axios = require('axios');
 
 const BetMS = require('./betMS');
-
-// oid: {
-
-// type: Sequelize.INTEGER(11),
-// allowNull: false,
-// primaryKey: true,
-// autoIncrement: true
-// },
-
-// odd: {
-
-// type: Sequelize.DOUBLE,
-// allowNull: true
-// },
-
-// betresult: {
-// type: Sequelize.INTEGER(2),
-// allowNull: true
-// },
-
-// bettypeOid: {
-// type: Sequelize.INTEGER(11),
-//   }
 
 AvailableBetTypes.createDefaultBySportName = async (name, eventOid) => {
 
@@ -35,7 +12,7 @@ AvailableBetTypes.createDefaultBySportName = async (name, eventOid) => {
 
             const defaultBetTypes = ['1', 'X', '2'];
             bettypes = await Promise.all(defaultBetTypes.map(async bettype => {
-                return (await BetMS.fetchBetTypesByName(bettype)).data;
+                return await BetMS.fetchBetTypesByName(bettype);
 
             }))
 
@@ -72,6 +49,26 @@ AvailableBetTypes.betTypeExistsInEvent = async (bettypeOid, eventOid) => {
     })
 
     return data;
+}
+
+AvailableBetTypes.checkIfWinOrLoss = (available, sport, eventOid) => {
+
+    const stats = Stats.fetchOne({ where: { eventOid } });
+
+    if (!stats) {
+        return;
+    }
+
+    switch (sport.toLowerCase()) {
+        case 'football':
+
+        case 'basketball':
+
+        default:
+            return 'Invalid sport on validation of bettype';
+    }
+
+
 }
 
 

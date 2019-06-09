@@ -70,9 +70,33 @@ Stats.addStatToEvent = async (data) => {
 
 }
 
+Stats.fetchSubStatsType = async (eventOid) => {
+
+    const currentStats = await this.fetchOne({ where: { eventOid } });
+
+    if (!currentStats) {
+        return 'There are no stats for this event'
+    }
+
+    const data = currentStats.dataValues;
+    console.log("Sub currentStats", currentStats);
+
+    console.log("Sub stats", data);
+    if (data.footballstatOid) {
+        const footballStats = FootballStats.fetchOne({ where: { statOid: currentStats.oid } })
+        return footballStats.dataValues;
+    } else if (data.basketballstatOid) {
+        const basketballStats = BasketballStats.fetchOne({ where: { statOid: currentStats.oid } })
+        return basketballStats.dataValues;
+    }
+
+}
+
 Stats.createFootballStats = async (stats) => {
 
     const newFootballStats = {
+
+
         homegoals: 3 || 0,
         awaygoals: stats.awaygoals || 0,
         homeredcards: stats.homeredcards || 0,
@@ -133,6 +157,14 @@ Stats.createBasketballStats = async (stats) => {
 }
 
 // DB Abstraction
+
+Stats.fetchOne = async (stats) => {
+    try {
+        return await StatsDB.findOne(stats);
+    } catch (e) {
+        console.error(e);
+    }
+}
 
 Stats.fetch = async (stats) => {
     try {
