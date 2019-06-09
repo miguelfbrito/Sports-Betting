@@ -6,6 +6,20 @@ router.get('/', async (req, res, next) => {
     res.json({ "route": "Bets" })
 });
 
+router.post('/closebet', async (req, res, next) => {
+
+    console.log("Dados no closeBet", req.body)
+
+
+    try {
+        const data = await Bet.closeBet(req.body);
+        res.send(data)
+    } catch (e) {
+        res.status(500).send({ message: `Error closing bet, ${e}` })
+    }
+
+});
+
 router.get('/history', async (req, res, next) => {
 
     const userInfo = JSON.parse(req.headers.userinfo);
@@ -18,6 +32,20 @@ router.get('/history', async (req, res, next) => {
     }
 
 });
+
+router.get('/fetchbyeventoid/:eventoid', async (req, res, next) => {
+
+    const eventOid = req.params.eventoid || -1;
+
+    try {
+        const bets = await Bet.fetchBetsByEventOid(eventOid);
+        res.send(bets);
+    } catch (e) {
+        res.status(500).send({ message: 'Error fetching bets by eventOid' })
+    }
+
+});
+
 
 router.post('/place', async (req, res, next) => {
 

@@ -2,11 +2,37 @@ const BetMS = module.exports;
 const axios = require('axios');
 
 BetMS.fetchBetTypesByName = async (name) => {
-    const data = await axios.get(`${global.MS_BETS}/bettype/${name}`);
-    return data.data;
+    try {
+        const data = await axios.get(`${global.MS_BETS}/bettype/${name}`);
+        return data.data;
+    } catch (e) {
+        console.error(e);
+    }
 }
 
-BetMS.fetchAlllBetTypes = async () => {
-    const data = await axios.get(`${global.MS_BETS}/bettype`)
-    return data.data;
+BetMS.closeBet = async (bet) => {
+    try {
+        const data = await axios.post(`${global.MS_BETS}/bet/closebet`, bet)
+        return data.data;
+    } catch (e) {
+        console.error(e);
+    }
+}
+
+BetMS.fetchAllBetTypes = async () => {
+    try {
+        const data = await axios.get(`${global.MS_BETS}/bettype`)
+        return data.data;
+    } catch (e) {
+        console.error(e);
+    }
+}
+
+BetMS.fetchAllBetsByEventOid = async (eventOid) => {
+    try {
+        const data = await axios.get(`${global.MS_BETS}/bet/fetchbyeventoid/${eventOid}`)
+        return data.data;
+    } catch (e) {
+        console.error(e);
+    }
 }

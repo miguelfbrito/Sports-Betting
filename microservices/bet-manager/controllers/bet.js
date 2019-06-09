@@ -1,6 +1,25 @@
 const Bet = module.exports;
+const axios = require('axios');
+
 const BetDB = require('../models/bet');
+const BetTypeDB = require('../models/bettype');
+
 const EventMS = require('./eventMS');
+const UserMS = require('./userMS');
+
+Bet.closeBet = async (bet) => {
+
+    // TODO: alterar
+    if (!bet)
+        return 'Bet not found';
+
+    console.log("BetManagerMS", bet)
+
+    const updatedBet = await this.update({ where: { oid: bet.oid } }, { result: bet.betresult });
+    await UserMS.updateBalance(bet);
+
+    return updatedBet;
+}
 
 Bet.placeBet = async (bet) => {
 
@@ -16,7 +35,8 @@ Bet.placeBet = async (bet) => {
     const newBet = {
         wager: bet.wager,
         userOid: bet.userOid,
-        eventOid: bet.eventOid
+        eventOid: bet.eventOid,
+        bettypeOid: bet.bettypeOid
     }
 
     try {
@@ -35,6 +55,16 @@ Bet.history = async (userOid) => {
     } catch (e) {
         console.log(`Error fetching bet history ${e}`)
     }
+}
+
+Bet.fetchBetsByEventOid = async (eventOid) => {
+    try {
+        const data = await BetDB.findAll({ where: { eventOid: eventOid } });
+        return data;
+    } catch (e) {
+        console.log(`Error fetching bets by event oid${e}`)
+    }
+
 }
 
 Bet.create = async (bet) => {
@@ -63,10 +93,11 @@ Bet.delete = async (criteria) => {
 }
 
 Bet.update = async (findCriteria, changes) => {
+
     try {
         return await BetDB.update(
             changes,
-            findCriteria
+            findCriteria,
         );
     } catch (e) {
         console.error(e);

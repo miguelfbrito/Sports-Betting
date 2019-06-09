@@ -13,14 +13,15 @@ AvailableBetTypes.createDefaultBySportName = async (name, eventOid) => {
             const defaultBetTypes = ['1', 'X', '2'];
             bettypes = await Promise.all(defaultBetTypes.map(async bettype => {
                 return await BetMS.fetchBetTypesByName(bettype);
-
             }))
 
+            // TODO : alterar a odd para não ser um valor aleatório
             bettypes.forEach(async bettype => {
                 // Criar um available
                 const newAvailableBetType = {
                     bettypeOid: bettype.oid,
-                    eventOid: eventOid
+                    eventOid: eventOid,
+                    odd: (Math.random() * (2.5 - 1) + 1).toFixed(2)
                 }
 
                 const data = await this.create(newAvailableBetType)
@@ -49,25 +50,8 @@ AvailableBetTypes.betTypeExistsInEvent = async (bettypeOid, eventOid) => {
     return data;
 }
 
-AvailableBetTypes.checkIfWinOrLoss = (available, sport, eventOid) => {
 
-    const stats = Stats.fetchOne({ where: { eventOid } });
-
-    if (!stats) {
-        return;
-    }
-
-    switch (sport.toLowerCase()) {
-        case 'football':
-
-        case 'basketball':
-
-        default:
-            return 'Invalid sport on validation of bettype';
-    }
-}
-
-
+// DB Abstractions
 AvailableBetTypes.setBetResult = async (betresult, oid) => {
     try {
         return await this.update({ where: { oid } }, { betresult });
@@ -76,7 +60,6 @@ AvailableBetTypes.setBetResult = async (betresult, oid) => {
     }
 }
 
-// DB Abstractions
 
 AvailableBetTypes.create = async (available) => {
 

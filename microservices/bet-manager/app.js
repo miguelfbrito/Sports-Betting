@@ -27,14 +27,16 @@ app.use('/bettype', betTypeRouter);
 
 testFunction = async () => {
 
+    await BetType.seed()
+
     const bet = {
         wager: 3.33,
         userOid: 3,
-        eventOid: 1
+        eventOid: 1,
+        bettypeOid: 1
     }
 
     await Bet.create(bet)
-    await BetType.seed()
 }
 
 setTimeout(testFunction, 3000);

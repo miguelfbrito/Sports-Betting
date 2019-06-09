@@ -72,10 +72,10 @@ seedData = async () => {
 
     // Place bet
     const betData = await axios.post(`${MS_BETS}/bet/place`, {
-        wager: 10,
+        wager: 19,
         userOid: 1,
         eventOid: 1,
-        bettypeOid: 5
+        bettypeOid: 2
     })
     console.log("Betting data", betData.data);
 
@@ -85,7 +85,7 @@ seedData = async () => {
         userOid: 1,
         stats: {
             gameduration: 90,
-            homegoals: 2,
+            homegoals: 4,
             awaygoals: 3,
             homeredcards: 2,
             awayredcards: 1,

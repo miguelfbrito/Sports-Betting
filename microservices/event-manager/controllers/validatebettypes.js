@@ -4,7 +4,7 @@ const BetMS = require('./betMS');
 const AvailableBetType = require('./availablebettypes');
 
 ValidateBetTypes.fetchAllBetTypes = async () => {
-    const bettypes = await BetMS.fetchAlllBetTypes();
+    const bettypes = await BetMS.fetchAllBetTypes();
 
     // Reorganizar bettypes para uma estrutura de acesso mais simples
     let newBetTypes = {};
@@ -22,12 +22,9 @@ ValidateBetTypes.fetchAllBetTypes = async () => {
 ValidateBetTypes.validate = async (availablebettypes, stats) => {
 
     console.log("Printing currentStats", stats)
-    console.log("Printing availablebettypes");
 
     // Obter os BetTypes
     const bettypes = await this.fetchAllBetTypes();
-
-    console.log("BETTYPES", bettypes)
 
     switch (stats.sport.toLowerCase()) {
         case 'football':
@@ -40,7 +37,6 @@ ValidateBetTypes.validate = async (availablebettypes, stats) => {
                 } else {
                     await AvailableBetType.setBetResult('LOST', available.dataValues.oid)
                 }
-
             })
 
         case 'basketball':
@@ -65,8 +61,6 @@ ValidateBetTypes.isFootballBetTypeValid = (stats, bettype) => {
         homeyellowcards: stats.homeyellowcards || 0,
         awayyellowcards: stats.awayyellowcards || 0
     }
-
-    console.log("DENTRO DO BETTYPE VALIDATION DO FUTEBOL", bettype.toLowerCase())
 
     switch (bettype.toLowerCase()) {
 
@@ -93,7 +87,6 @@ ValidateBetTypes.isFootballBetTypeValid = (stats, bettype) => {
             return false;
 
     }
-
 
 }
 

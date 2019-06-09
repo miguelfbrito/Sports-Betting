@@ -6,6 +6,7 @@ const AvailableBetTypeDB = require('../models/availablebettypes')
 const AvailableBetType = require('./availablebettypes');
 const ValidateBetTypes = require('./validatebettypes');
 const Stats = require('./stats');
+const BetMS = require('./betMS');
 
 Event.createEvent = async (eventData) => {
 
@@ -49,25 +50,76 @@ Event.closeAndVerifyBets = async (event) => {
     await this.update({ where: { oid: event.oid } }, { state: 'Finished' });
 
     // Obter todas as availableBetTypes relativas ao evento em questão TODO : alterar o valor hardcoded
-    const data = await this.fetchOne({ oid: 1 });
+    const data = await this.fetchOne({ oid: event.oi });
     const availablebettypes = data.availablebettypes
 
     const currentStats = await Stats.fetchSubStatsType(event.oid);
 
-    console.log("Current stats", currentStats)
+    // Validar todas as AvailableBetTypes para um evento
+    await ValidateBetTypes.validate(availablebettypes, currentStats);
 
-    const validatedBetTypes = ValidateBetTypes.validate(availablebettypes, currentStats);
+    // Obter todas as bets do Evento
+    const eventBets = await BetMS.fetchAllBetsByEventOid(event.oid);
+    console.log("Event bets", eventBets);
+
+    // Obter todas as AvailableBetTypes jassociadas ao evento (melhoria: obter a versao atualizada em vez de fazer 2 queries)
+    const updatedEvent = await this.fetchOne({ oid: event.oid })
+    const updatedAvailablebettypes = updatedEvent.availablebettypes;
+
+
+    this.updateBetResult(updatedAvailablebettypes, eventBets);
+
+    // CONTINUAR AQUI
+
 
     // Validar cada uma das available
     // Pegar em todas as available e o seu resultado
     // Pegar em todas as bets e validar com o resultado
 }
 
+Event.updateBetResult = (availablebettypes, bets) => {
+
+    // Formatação da estrutura para um acesso por index ao id do AvailableBetType
+    let formattedAvailableBettypes = {};
+    availablebettypes.forEach(available => {
+        formattedAvailableBettypes[available.bettypeOid] = { ...available }
+        delete formattedAvailableBettypes[available.bettypeOid].bettypeOid;
+    })
+
+    bets.forEach(async bet => {
+
+        const betResult = formattedAvailableBettypes[bet.bettypeOid].dataValues.betresult;
+        const odd = formattedAvailableBettypes[bet.bettypeOid].dataValues.odd;
+
+        if (betResult === 'WON') {
+            const data = await BetMS.closeBet({
+                ...bet,
+                betresult: 'WON',
+                odd
+            })
+
+            console.log("Closing bet over BetMS")
+        } else {
+            const data = await BetMS.closeBet({
+                ...bet,
+                betresult: 'LOST',
+                odd
+            })
+        }
+    })
+
+    // console.log(formattedAvailableBettypes)
+
+}
 
 // Database 
 
 Event.fetchOne = async (event) => {
     return await EventDB.findOne({ event, include: [{ model: Sport }, { model: AvailableBetTypeDB }] })
+}
+
+Event.fetchAll = async (event) => {
+    return await EventDB.findAll({ event, include: [{ model: AvailableBetTypeDB }] })
 }
 
 Event.fetch = async (event) => {
