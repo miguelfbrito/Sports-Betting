@@ -16,6 +16,7 @@ apiEndpoints:
     paths:
       - '/user/login'
       - '/user/signup'
+      - '/user/*'
 
   #user-manager:
   #  host: localhost

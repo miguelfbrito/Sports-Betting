@@ -13,7 +13,7 @@ const AvailableBetType = db.sequelize.define('availablebettypes', {
     allowNull: true
   },
   betresult: {
-    type: Sequelize.INTEGER(2),
+    type: Sequelize.STRING(25),
     allowNull: true
   },
   bettypeOid: {

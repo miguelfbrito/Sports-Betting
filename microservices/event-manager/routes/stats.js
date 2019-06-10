@@ -11,10 +11,13 @@ router.post('/create', async (req, res, next) => {
     console.log(req.body)
     const data = req.body
 
+    /*
+    Exemplo de dados
     const dataType = {
         eventOid: 1,
         stats: {
             gameduration: data.stats.gameduration || 90,
+
             homeGoals: data.stats.homegoals || 0,
             awayGoals: data.stats.awaygoals || 0,
             homeRedCards: data.stats.homeredcards || 0,
@@ -23,7 +26,7 @@ router.post('/create', async (req, res, next) => {
             awayYellowCards: data.stats.awayyellowcards || 0
         },
         userOid: 1
-    }
+    }*/
 
     try {
         const newStats = await Stats.addStatToEvent(data);

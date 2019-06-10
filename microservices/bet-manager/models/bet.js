@@ -1,8 +1,6 @@
 const Sequelize = require('sequelize');
 const db = require('../database/db');
 
-const BetType = require('./bettype');
-
 const Bet = db.sequelize.define('bet', {
   oid: {
     type: Sequelize.INTEGER(11),
@@ -35,6 +33,5 @@ const Bet = db.sequelize.define('bet', {
     tableName: 'bet'
   });
 
-Bet.hasOne(BetType);
 
 module.exports = Bet;

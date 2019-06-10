@@ -42,7 +42,7 @@ seedData = async () => {
 
     // Create event
     const dataEvent = await events.createEvent({
-        name: "Evento de Teste",
+        name: "Evento de Teste 2",
         ispremium: true,
         startingdate: Date.now(),
         state: 'Upcoming',
@@ -50,21 +50,32 @@ seedData = async () => {
             name: 'Football'
         }
     });
-    console.log("Creating event", dataEvent.dataValues);
+
+    await events.createEvent({
+        name: "Evento de Teste 3",
+        ispremium: true,
+        startingdate: Date.now(),
+        state: 'Upcoming',
+        sport: {
+            name: 'Football'
+        }
+    })
+
+    console.log("Creating event");
 
     // Create user
     const userData = await axios.post(`${MS_USERS}/user/signup`, {
         username: "user",
         password: "pass"
     })
-    console.log("Creating user", userData.data);
+    console.log("Creating user");
 
     // Place bet
     const betData = await axios.post(`${MS_BETS}/bet/place`, {
-        wager: 10,
+        wager: 19,
         userOid: 1,
         eventOid: 1,
-        bettypeOid: 5
+        bettypeOid: 2
     })
     console.log("Betting data", betData.data);
 
@@ -74,16 +85,18 @@ seedData = async () => {
         userOid: 1,
         stats: {
             gameduration: 90,
-            homeGoals: 2,
-            awayGoals: 3,
-            homeRedCards: 2,
-            awayRedCards: 1,
-            homeYellowCards: 1,
-            awayYellowCards: 3
+            homegoals: 4,
+            awaygoals: 3,
+            homeredcards: 2,
+            awayredcards: 1,
+            homeyellowcards: 1,
+            awayyellowcards: 3
         }
     })
-    console.log("Creating stats", statsData);
 
+    console.log("Stats do evento criado", statsData)
+
+    const closeAndVerifyBets = await events.closeAndVerifyBets({ oid: 1 });
 
 }
 

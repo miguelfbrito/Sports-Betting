@@ -1,31 +1,8 @@
 const AvailableBetTypes = module.exports;
+const Stats = require('../controllers/stats');
 const AvailableBetTypesDB = require('../models/availablebettypes');
-const axios = require('axios');
 
 const BetMS = require('./betMS');
-
-// oid: {
-
-// type: Sequelize.INTEGER(11),
-// allowNull: false,
-// primaryKey: true,
-// autoIncrement: true
-// },
-
-// odd: {
-
-// type: Sequelize.DOUBLE,
-// allowNull: true
-// },
-
-// betresult: {
-// type: Sequelize.INTEGER(2),
-// allowNull: true
-// },
-
-// bettypeOid: {
-// type: Sequelize.INTEGER(11),
-//   }
 
 AvailableBetTypes.createDefaultBySportName = async (name, eventOid) => {
 
@@ -35,21 +12,20 @@ AvailableBetTypes.createDefaultBySportName = async (name, eventOid) => {
 
             const defaultBetTypes = ['1', 'X', '2'];
             bettypes = await Promise.all(defaultBetTypes.map(async bettype => {
-                return (await BetMS.fetchBetTypesByName(bettype)).data;
-
+                return await BetMS.fetchBetTypesByName(bettype);
             }))
 
+            // TODO : alterar a odd para não ser um valor aleatório
             bettypes.forEach(async bettype => {
                 // Criar um available
                 const newAvailableBetType = {
                     bettypeOid: bettype.oid,
-                    eventOid: eventOid
+                    eventOid: eventOid,
+                    odd: (Math.random() * (2.5 - 1) + 1).toFixed(2)
                 }
 
                 const data = await this.create(newAvailableBetType)
             })
-
-
             return bettypes;
 
         case 'basketball':
@@ -76,6 +52,14 @@ AvailableBetTypes.betTypeExistsInEvent = async (bettypeOid, eventOid) => {
 
 
 // DB Abstractions
+AvailableBetTypes.setBetResult = async (betresult, oid) => {
+    try {
+        return await this.update({ where: { oid } }, { betresult });
+    } catch (e) {
+        console.error(e);
+    }
+}
+
 
 AvailableBetTypes.create = async (available) => {
 
