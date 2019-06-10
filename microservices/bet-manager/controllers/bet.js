@@ -32,16 +32,21 @@ Bet.placeBet = async (bet) => {
     const bettypeOid = bet.bettypeOid;
     const eventOid = bet.eventOid;
 
-    const isEventPremium = await EventMS.isPremium(bet.eventOid);
-
     // TODO : obter o userOid do token
     const userOid = 1;
     const user = await UserMS.fetchUserDetails(userOid);
 
+    const userBettedAlready = await BetDB.findOne({ where: { eventOid, oid: userOid } })
+
+    if (userBettedAlready) {
+        return { message: 'User already bet on event' }
+    }
+
+    const isEventPremium = await EventMS.isPremium(bet.eventOid);
     if (!('ispremium' in isEventPremium)) {
         return { message: 'Event not found' }
     } else {
-        if (isEventPremium.ispremium && (user.data.ispremium === false)) {
+        if (isEventPremium.ispremium && !user.data.ispremium) {
             return { message: 'User must be premium' }
         }
     }
@@ -51,7 +56,6 @@ Bet.placeBet = async (bet) => {
     if (data.length === 0 || !bet) {
         return { message: 'Invalid data!' };
     }
-
 
     if (user.balance < bet.wager) {
         return { message: 'Insufficient balance!' };

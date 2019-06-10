@@ -22,6 +22,18 @@ router.get('/details/:userOid', async (req, res, next) => {
     res.send(user);
 })
 
+router.post('/deposit', async (req, res, next) => {
+    // TODO : obter userOid vindo do gateway
+    const data = req.body;
+    res.send(await UserC.depositBalance(data.userOid, data.amount));
+})
+
+router.post('/withdraw', async (req, res, next) => {
+    // TODO : obter userOid vindo do gateway
+    const data = req.body;
+    res.send(await UserC.withdrawBalance(data.userOid, data.amount));
+})
+
 router.post('/subscribe', async (req, res, next) => {
 
     if (!req.body.userOid) {
