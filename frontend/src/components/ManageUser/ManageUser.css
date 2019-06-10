@@ -1,0 +1,12 @@
+.user-container {
+    background-color: var(--color-gray);
+}
+
+.user-title{
+    background-color: #03B5AA;
+}
+
+.Info-div{
+    margin-left: 15px;
+    font-size: 30px;
+}

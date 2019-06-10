@@ -1,0 +1,34 @@
+.bet {
+    border-bottom: 1px solid #aaa; 
+    height: 200px;
+    position: relative;
+    padding: 10px 0 0 20px;
+}
+
+.bet-info{
+    color: black;
+    font-size: 12pt;
+    letter-spacing: 0.75pt;
+    padding-top: 10px;
+    font-weight: bold;
+}
+
+.bet-elements{
+    color: black;
+    font-size: 12pt;
+    letter-spacing: 0.75pt;
+    padding-top: 10px;
+}
+
+
+#button{
+    font-size: 12pt;
+    letter-spacing: 0.75pt;
+    display: inline-block;
+    margin-right: 30px;
+}
+
+
+.bet:last-child{
+    border-bottom: 0;
+}
