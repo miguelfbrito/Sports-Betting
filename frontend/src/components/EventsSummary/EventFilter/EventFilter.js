@@ -7,14 +7,16 @@ class EventFilter extends Component {
         this.state = {}
     }
     render() {
-        return (
 
+        return (
+            
+            //Colocar as imagens aqui em vez dos nomes
             <div className="event-filter-container">
                 <ul className="event-filters">
-                    <li>All</li>
-                    <li>Football</li>
-                    <li>Tennis</li>
-                    <li>Basketball</li>
+                    <li className="">All</li>
+                    <li className="Football">Football</li>
+                    <li className="Tenis">Tenis</li>
+                    <li className="Basketball">Basketball</li>
                 </ul>
                 <hr />
 

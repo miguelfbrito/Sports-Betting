@@ -30,7 +30,7 @@ body {
 
     background:
         radial-gradient(circle, rgba(0, 23, 137, 0.2) 0%, rgba(0, 10, 22, 1) 100%),
-        url('../assets/bg-image.jpeg') no-repeat center center;
+        url('../assets/bg-image.jpg') no-repeat center center;
 
     /* linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.88)), */
     background-attachment: fixed;
@@ -73,3 +73,4 @@ a {
     background-color: var(--color-roxo);
     box-shadow: 0 1px 10px rgba(0, 0, 0, .9);
 }
+
