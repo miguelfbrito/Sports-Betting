@@ -38,14 +38,18 @@ ValidateBetTypes.validate = async (availablebettypes, stats) => {
                     await AvailableBetType.setBetResult('LOST', available.dataValues.oid)
                 }
             })
+            break;
 
         case 'basketball':
             availablebettypes.forEach(available => {
-                console.log(available.dataValues);
+
             })
+
+            break;
 
         default:
             console.log('Doing nothing')
+            break;
     }
 
 }

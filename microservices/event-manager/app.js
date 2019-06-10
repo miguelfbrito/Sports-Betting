@@ -43,7 +43,7 @@ seedData = async () => {
     // Create event
     const dataEvent = await events.createEvent({
         name: "Evento de Teste 2",
-        ispremium: true,
+        ispremium: false,
         startingdate: Date.now(),
         state: 'Upcoming',
         sport: {
@@ -52,7 +52,7 @@ seedData = async () => {
     });
 
     await events.createEvent({
-        name: "Evento de Teste 3",
+        name: "Evento de Teste 4",
         ispremium: true,
         startingdate: Date.now(),
         state: 'Upcoming',

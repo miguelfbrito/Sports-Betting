@@ -8,9 +8,6 @@ router.get('/', async (req, res, next) => {
 
 router.post('/closebet', async (req, res, next) => {
 
-    console.log("Dados no closeBet", req.body)
-
-
     try {
         const data = await Bet.closeBet(req.body);
         res.send(data)

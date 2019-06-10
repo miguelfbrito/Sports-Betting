@@ -11,8 +11,6 @@ Stats.addStatToEvent = async (data) => {
     // Obter tipo de desporto
     // De acordo com o desporto, criar nova stat
 
-
-    console.log("#######################################", data)
     const event = await Event.fetchOne({ oid: data.eventOid });
 
     if (!event)
@@ -96,8 +94,6 @@ Stats.fetchSubStatsType = async (eventOid) => {
 
 Stats.createFootballStats = async (stats, eventOid) => {
 
-    console.log("ANTES DAS STATS", stats)
-
     const newFootballStats = {
         homegoals: stats.homegoals || 0,
         awaygoals: stats.awaygoals || 0,
@@ -107,13 +103,8 @@ Stats.createFootballStats = async (stats, eventOid) => {
         awayyellowcards: stats.awayyellowcards || 0
     }
 
-    console.log("OBJETO DAS STATS CRIADO", newFootballStats);
-    console.log("OBJETO DAS STATS CRIADO", stats);
-
     try {
         const createdFootballStats = await FootballStats.create(newFootballStats)
-
-        console.log("Created Footbal Stats", createdFootballStats);
 
         if (createdFootballStats) {
             const genericStats = {
@@ -122,9 +113,7 @@ Stats.createFootballStats = async (stats, eventOid) => {
                 eventOid,
             }
 
-            console.log("Generic Stats", genericStats);
             const createdStats = await this.create(genericStats);
-            console.log(createdStats);
         }
         return createdFootballStats.dataValues;
     } catch (e) {
@@ -144,7 +133,6 @@ Stats.createBasketballStats = async (stats) => {
     try {
         const createdBasketballStats = await BasketballStats.create(newFootballStats)
 
-        console.log("Created Basketball Stats", createdBasketballStats);
 
         if (createdBasketballStats) {
             const genericStats = {
@@ -152,9 +140,7 @@ Stats.createBasketballStats = async (stats) => {
                 basketballstatOid: createdBasketballStats.dataValues.oid
             }
 
-            console.log("Generic Stats", genericStats);
             const createdStats = await this.create(genericStats);
-            console.log(createdStats);
         }
         return createdBasketballStats.dataValues;
     } catch (e) {

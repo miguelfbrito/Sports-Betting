@@ -39,7 +39,7 @@ testFunction = async () => {
     await Bet.create(bet)
 }
 
-setTimeout(testFunction, 3000);
+setTimeout(testFunction, 1000);
 
 
 module.exports = app;

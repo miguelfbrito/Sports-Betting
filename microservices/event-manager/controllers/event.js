@@ -77,6 +77,21 @@ Event.closeAndVerifyBets = async (event) => {
     // Pegar em todas as bets e validar com o resultado
 }
 
+Event.isPremium = async (eventOid) => {
+
+    const event = await EventDB.findOne({ where: { oid: eventOid } });
+
+    if (!event) {
+        return -1;
+    }
+
+    if (event.dataValues.ispremium) {
+        return true;
+    }
+
+    return false;
+}
+
 Event.updateBetResult = (availablebettypes, bets) => {
 
     // Formatação da estrutura para um acesso por index ao id do AvailableBetType

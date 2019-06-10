@@ -10,3 +10,11 @@ EventMS.verifyBetTypeExistsInEvent = async (bettypeOid, eventOid) => {
 
     return data.data;
 }
+
+EventMS.isPremium = async (eventOid) => {
+
+    const data = await axios.get(`${global.MS_EVENTS}/event/ispremium/${eventOid}`);
+
+    return data.data;
+
+}

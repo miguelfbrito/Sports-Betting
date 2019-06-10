@@ -13,8 +13,6 @@ Bet.closeBet = async (bet) => {
     if (!bet)
         return 'Bet not found';
 
-    console.log("BetManagerMS", bet)
-
     const updatedBet = await this.update({ where: { oid: bet.oid } }, { result: bet.betresult });
 
 
@@ -31,8 +29,22 @@ Bet.closeBet = async (bet) => {
 
 Bet.placeBet = async (bet) => {
 
-    const bettypeOid = bet.bettypeOid || 1;
-    const eventOid = bet.eventOid || 1;
+    const bettypeOid = bet.bettypeOid;
+    const eventOid = bet.eventOid;
+
+    const isEventPremium = await EventMS.isPremium(bet.eventOid);
+
+    // TODO : obter o userOid do token
+    const userOid = 1;
+    const user = await UserMS.fetchUserDetails(userOid);
+
+    if (!('ispremium' in isEventPremium)) {
+        return { message: 'Event not found' }
+    } else {
+        if (isEventPremium.ispremium && (user.data.ispremium === false)) {
+            return { message: 'User must be premium' }
+        }
+    }
 
     const data = await EventMS.verifyBetTypeExistsInEvent(bettypeOid, eventOid);
 
@@ -40,9 +52,6 @@ Bet.placeBet = async (bet) => {
         return { message: 'Invalid data!' };
     }
 
-    // TODO : obter o userOid do token
-    const userOid = 1;
-    const user = await UserMS.fetchUserDetails(userOid)
 
     if (user.balance < bet.wager) {
         return { message: 'Insufficient balance!' };

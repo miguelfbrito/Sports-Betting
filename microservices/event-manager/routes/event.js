@@ -6,8 +6,28 @@ router.get('/', async (req, res, next) => {
     res.send('Event routes')
 });
 
+router.get('/ispremium/:eventOid', async (req, res, next) => {
+
+    if (!req.params.eventOid) {
+        res.send({ message: 'Invalid event' })
+    }
+
+    const isPremium = await Event.isPremium(req.params.eventOid)
+
+    if (isPremium === -1) {
+        res.send({ message: 'Event not found' })
+    }
+
+    res.send({
+        eventOid: req.params.eventOid,
+        ispremium: isPremium
+    })
+
+})
+
 router.post('/create', async (req, res, next) => {
 
+    console.log("BODY A CHEGAR")
     console.log(req.body)
     const data = req.body
 
