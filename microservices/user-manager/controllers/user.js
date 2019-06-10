@@ -1,6 +1,63 @@
 const User = module.exports;
 const UserDB = require('../models/user');
 
+User.subscribe = async (userOid) => {
+
+    const subscriptionPrice = 10;
+
+    const currentUser = await this.findOne({ where: { oid: userOid } });
+
+    if (!currentUser) {
+        return false;
+    }
+
+    if (currentUser.dataValues.ispremium) {
+        return false;
+    }
+
+    if (currentUser.dataValues.balance >= subscriptionPrice) {
+        await this.takeFromBalance(userOid, subscriptionPrice);
+        await this.update({ where: { oid: userOid } }, { ispremium: true })
+    }
+
+    return true;
+}
+
+User.unsubscribe = async (userOid) => {
+
+    const currentUser = await this.findOne({ where: { oid: userOid } });
+
+    if (!currentUser) {
+        return false;
+    }
+
+    if (currentUser.dataValues.ispremium) {
+        await this.update({ where: { oid: userOid } }, { ispremium: false });
+        return true;
+    }
+
+    return false;
+}
+
+User.takeFromBalance = async (userOid, amount) => {
+
+    const currentUser = await this.findOne({ where: { oid: userOid } });
+
+    if (currentUser.dataValues.balance < amount) {
+        return { message: 'Insufficient balance!' };
+    }
+
+    const newBalance = currentUser.dataValues.balance - amount;
+
+    await this.update({ where: { oid: userOid } }, { balance: newBalance });
+
+    const user = await this.findOne({ where: { oid: userOid } });
+
+    return user;
+}
+
+// DATABASE
+
 User.findOne = (criteria) => {
     try {
         return UserDB.findOne(criteria);

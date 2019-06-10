@@ -28,6 +28,9 @@ const User = db.sequelize.define('user', {
         type: Sequelize.DOUBLE,
         allowNull: true
     },
+    ispremium: {
+        type: Sequelize.BOOLEAN
+    }
     // group_oid: {
     //     type: Sequelize.INTEGER(11),
     //     allowNull: true,
