@@ -5,6 +5,7 @@
     box-shadow: -4px 6px 25px -10px rgba(0,0,0,0.75);
 
 }
+
 .container {
     margin: 0;
 }
@@ -24,10 +25,26 @@
     font-weight: 350;
     line-height: 0px;
     text-transform: uppercase;
-    
 }
 
 .nav-item a:hover, .navbar-container a:hover{
     text-decoration: none;
     color: #EA7317;
+}
+
+[data-notifications] {
+	position: relative;
+}
+
+[data-notifications]:after {
+	content: attr(data-notifications);
+	position: absolute;
+	background: red;
+	border-radius: 50%;
+	display: inline-block;
+    padding: 0.5em;
+    font-size: 14px;
+	color: #f2f2f2;
+	right: 0px;
+	top: -15px;
 }

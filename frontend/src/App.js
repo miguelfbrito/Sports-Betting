@@ -4,10 +4,11 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import './common/global-style.css';
 
 // Components
-import Navbar from './components/Navbar/Navbar';
+import Navbar from './components/Navbar/Navbar-login';
 import Login from './components/Login/Login';
 import EventsSummary from './components/EventsSummary/EventsSummary';
 import makebet from './components/MakeBet/makebet';
+import checkbets from './components/CheckBets/CheckBetsSummary';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Switch>
             <Route exact path="/events" component={EventsSummary} />
             <Route exact path="/login" component={Login} />
+            <Route exact path="/bets" component={checkbets} />
             {/* <Route path="/" component={Dashboard} /> */}
           </Switch>
         </div>
