@@ -5,16 +5,40 @@
     padding: 10px 0 0 20px;
 }
 
-.event-info p{
+.event-info{
+    float: left;
+    width: 60%;
+}
+
+.event-info{
     color: black;
     font-size: 14pt;
     letter-spacing: 0.75pt;
+    padding-top: 20px;
+}
+
+
+#button{
+    font-size: 12pt;
+    letter-spacing: 0.75pt;
+    display: inline-block;
+    margin-right: 30px;
+}
+
+#button:focus{
+    background-color: #EA7317;
+    font-size: 14pt;
+    display: inline-block;
+    margin-right: 30px;
 }
 
 .event-date {
+    color: black;
+    letter-spacing: 0.75pt;
     position: absolute;
-    right: 0;
+    margin-left: 15px;
 }
+
 
 .event:last-child{
     border-bottom: 0;

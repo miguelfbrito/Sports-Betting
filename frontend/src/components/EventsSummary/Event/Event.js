@@ -1,22 +1,41 @@
 import React from 'react';
 
 import './Event.css'
+import Bet from '../../MakeBet/makebet';
 
 const formatDate = (dateMillis) => {
 
     const date = new Date(dateMillis);
 
-    return `${date.getHours()}:${date.getMinutes()}`
+    //Para ser possível escrever a data usando o mês e não número
+    const monthNames = ["January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December"];
+
+
+    return `${monthNames[date.getMonth()]} ${date.getDate()} of ${date.getFullYear()} - ${date.getHours()}:${date.getMinutes()}`
 }
+
+
+    function handleClick(e) {
+        //Chamar o makebet e passar o e para lá
+    }
+
 
 const Event = (props) => {
 
     const { event } = props;
 
     return (
-        <div className="event-info">
-            <p className="event-name">{event.name}</p>
-            <p className="event-date">{formatDate(event.date)}</p>
+        <div className="row">
+        <p className="event-date">{formatDate(event.date)}</p>
+        <div className="col-sm-6">
+            <p className="event-info">{event.name}</p>
+        </div>
+        <div className="col-sm-6">
+            <button id="button" onClick={handleClick.bind(this, event)}>{event.odd1}</button>
+            <button id="button">{event.oddX}</button>
+            <button id="button">{event.odd2}</button>
+        </div>
         </div>
     );
 }

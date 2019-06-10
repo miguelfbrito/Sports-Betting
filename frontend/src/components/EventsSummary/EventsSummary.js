@@ -17,14 +17,23 @@ class EventsSummary extends Component {
             events: [
                 {
                     "name": "Arsenal x Chelsea",
+                    "odd1": "1- 2.85",
+                    "oddX": "x- 1.85",
+                    "odd2": "2- 2.15",
                     "date": Date.now()
                 },
                 {
                     "name": "Benfica x Porto",
+                    "odd1": "1- 2.10",
+                    "oddX": "x- 1.40",
+                    "odd2": "2- 2.35",
                     "date": Date.now()
                 },
                 {
-                    "name": "Sporting x Porto",
+                    "name": "Sporting x Braga",
+                    "odd1": "1- 1.65",
+                    "oddX": "x- 1.25",
+                    "odd2": "2- 1.95",
                     "date": Date.now()
                 }
             ]
@@ -35,26 +44,27 @@ class EventsSummary extends Component {
     render() {
 
         const { events } = this.state;
-        return (
+        return ( 
+            <div className="events-title">
+                <p className="Info-div">Eventos a decorrer</p>
+                <div className="events-container shadow">
 
-            <div className="events-container shadow">
 
+                    {/* Carousel 4 or 5 games */}
+                    {/* <CurrentEventsCarousel /> */}
 
-                {/* Carousel 4 or 5 games */}
-                {/* <CurrentEventsCarousel /> */}
+                    {/* List all events */}
 
-                {/* List all events */}
+                    <EventFilter />
 
-                <EventFilter />
+                    {events.map(event => (
+                        <div className="event">
+                            <Event event={event} />
+                        </div>
+                    ))}
 
-                {events.map(event => (
-                    <div className="event">
-                        <Event event={event} />
-                    </div>
-                ))}
-
+                </div>
             </div>
-
         );
     }
 }
