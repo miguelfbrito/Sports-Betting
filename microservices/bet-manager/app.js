@@ -31,7 +31,7 @@ testFunction = async () => {
 
     const bet = {
         wager: 3.33,
-        userOid: 3,
+        userOid: 1,
         eventOid: 1,
         bettypeOid: 1
     }

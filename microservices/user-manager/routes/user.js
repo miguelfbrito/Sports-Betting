@@ -18,15 +18,54 @@ router.get('/details/:userOid', async (req, res, next) => {
 
     let user = await UserC.findOne({ where: { oid: req.params.userOid } })
     delete user.dataValues.password;
-    console.log(user)
 
     res.send(user);
 })
 
-router.post('/updatebalance', async (req, res, next) => {
+router.post('/subscribe', async (req, res, next) => {
+
+    if (!req.body.userOid) {
+        res.send({ message: 'Missing parameters!' })
+    }
+
+    const userOid = req.body.userOid;
+
+    const didSubscribe = await UserC.subscribe(userOid);
+
+    if (didSubscribe) {
+        res.send({ message: 'You are now subscribed!' })
+    } else {
+        res.send({ message: 'Subscription failed!' })
+    }
+
+})
+
+router.post('/unsubscribe', async (req, res, next) => {
+
+    if (!req.body.userOid) {
+        res.send({ message: 'Missing parameters!' })
+    }
+
+    const userOid = req.body.userOid;
+
+    const didUnsubscrive = await UserC.unsubscribe(userOid);
+
+    if (didUnsubscrive) {
+        res.send({ message: 'Your subscription has been canceled!' })
+    } else {
+        res.send({ message: 'No subscription found!' })
+    }
+
+})
+
+router.post('/updatebalanceonwin', async (req, res, next) => {
 
     const data = req.body;
     const currentUser = await UserC.findOne({ where: { oid: data.userOid } });
+
+    if (!currentUser) {
+        res.send({ message: 'Invalid user' })
+    }
 
     const newBalance = currentUser.dataValues.balance + (data.wager * data.odd);
     await UserC.update({ where: { oid: data.userOid } }, { balance: newBalance });
@@ -35,6 +74,7 @@ router.post('/updatebalance', async (req, res, next) => {
 
     res.send(user);
 })
+
 
 
 router.post('/signup', async (req, res, next) => {

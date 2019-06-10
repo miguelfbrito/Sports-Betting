@@ -16,7 +16,15 @@ Bet.closeBet = async (bet) => {
     console.log("BetManagerMS", bet)
 
     const updatedBet = await this.update({ where: { oid: bet.oid } }, { result: bet.betresult });
-    await UserMS.updateBalance(bet);
+
+
+    bet = {
+        ...bet,
+    }
+
+    if (bet.betresult) {
+        await UserMS.updateBalance(bet);
+    }
 
     return updatedBet;
 }
@@ -36,7 +44,7 @@ Bet.placeBet = async (bet) => {
     const userOid = 1;
     const user = await UserMS.fetchUserDetails(userOid)
 
-    if (user.balance < wager) {
+    if (user.balance < bet.wager) {
         return { message: 'Insufficient balance!' };
     }
 

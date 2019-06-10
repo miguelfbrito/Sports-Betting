@@ -3,7 +3,7 @@ const axios = require('axios');
 
 UserMS.updateBalance = async (bet) => {
 
-    const updatedUser = await axios.post(`${global.MS_USERS}/user/updatebalance`, bet);
+    const updatedUser = await axios.post(`${global.MS_USERS}/user/updatebalanceonwin`, bet);
     return updatedUser;
 }
 
