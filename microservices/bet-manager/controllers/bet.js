@@ -32,6 +32,14 @@ Bet.placeBet = async (bet) => {
         return { message: 'Invalid data!' };
     }
 
+    // TODO : obter o userOid do token
+    const userOid = 1;
+    const user = await UserMS.fetchUserDetails(userOid)
+
+    if (user.balance < wager) {
+        return { message: 'Insufficient balance!' };
+    }
+
     const newBet = {
         wager: bet.wager,
         userOid: bet.userOid,

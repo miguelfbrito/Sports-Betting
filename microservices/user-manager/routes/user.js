@@ -11,12 +11,16 @@ require('dotenv').config();
 router.get('/', async (req, res, next) => {
     console.log("Creating user!")
     let user = await User.create({ username: "mbrito", password: "pass" });
-    res.json(user)
+    res.send(user)
 });
 
-router.get('/teste', async (req, res, next) => {
-    const data = await UserC.findOne({ username: 'mbrito' })
-    res.json(data);
+router.get('/details/:userOid', async (req, res, next) => {
+
+    let user = await UserC.findOne({ where: { oid: req.params.userOid } })
+    delete user.dataValues.password;
+    console.log(user)
+
+    res.send(user);
 })
 
 router.post('/updatebalance', async (req, res, next) => {
@@ -25,12 +29,11 @@ router.post('/updatebalance', async (req, res, next) => {
     const currentUser = await UserC.findOne({ where: { oid: data.userOid } });
 
     const newBalance = currentUser.dataValues.balance + (data.wager * data.odd);
-    const updatedUser = await UserC.update({ where: { oid: data.userOid } }, { balance: newBalance });
+    await UserC.update({ where: { oid: data.userOid } }, { balance: newBalance });
 
-    console.log("Previous User", currentUser);
-    console.log("Updated User", updatedUser);
+    const user = await UserC.findOne({ where: { oid: data.userOid } });
 
-    res.send(updatedUser);
+    res.send(user);
 })
 
 

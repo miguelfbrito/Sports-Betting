@@ -59,7 +59,7 @@ seedData = async () => {
         sport: {
             name: 'Football'
         }
-    });
+    })
 
     console.log("Creating event");
 

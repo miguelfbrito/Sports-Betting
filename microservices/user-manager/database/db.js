@@ -2,7 +2,7 @@
 
 // Configuracao do sequelize: https://blog.rocketseat.com.br/nodejs-express-sequelize/
 
-const recreate_database = true;
+const recreate_database = false;
 
 const fs = require('fs');
 const path = require('path');
