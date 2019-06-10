@@ -1,11 +1,11 @@
-.bet {
+.user {
     border-bottom: 1px solid #aaa; 
-    height: 200px;
+    height: 300px;
     position: relative;
     padding: 10px 0 0 20px;
 }
 
-.bet-info{
+.user-titles{
     color: black;
     font-size: 12pt;
     letter-spacing: 0.75pt;
@@ -13,7 +13,7 @@
     font-weight: bold;
 }
 
-.bet-elements{
+.user-info{
     color: black;
     font-size: 12pt;
     letter-spacing: 0.75pt;
@@ -29,6 +29,7 @@
 }
 
 
-.bet:last-child{
+
+.user:last-child{
     border-bottom: 0;
 }
