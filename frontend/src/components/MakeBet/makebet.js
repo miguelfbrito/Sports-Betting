@@ -38,7 +38,7 @@ class makebet extends Component {
 
         return ( 
             <div className="events-title">
-                <p className="Info-div">Boletim de apostas</p>
+                <p className="Infodiv">Boletim de apostas</p>
                 <div className="events-container shadow">
                     <div className="row">
                         <div className="col-sm-4">

@@ -16,7 +16,7 @@ class Navbar extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {"user" : "João", "saldo" : "10.00", "bets":"2"}
+        this.state = {"user" : "João", "saldo" : "10.00", "bets":"2", "messages":"4"}
     }
 
     render() {
@@ -28,6 +28,7 @@ class Navbar extends Component {
                 <a className="navbar-brand" href="#">Bet</a> 
                 <div className="collapse navbar-collapse " id="navbarText"> 
                     <ul className="navbar-nav ml-auto">
+                    <li className="nav-item active"> <Link to="/messages"> <span data-notifications={this.state.messages} className="nav-link" href="#">Messages</span> </Link> </li>
                         <li className="nav-item active"> <Link to="/bets"> <span data-notifications={this.state.bets} className="nav-link" href="#">Bets</span> </Link> </li>
                         <li className="nav-item active"> <Link to="/events"> <span className="nav-link" href="#">View Events</span> </Link> </li>
                         <li className="nav-item"> <Link to="/user"> <span className="nav-link" href="#">Welcome {this.state.user+ "("+ this.state.saldo +"€)"}</span> </Link> </li>

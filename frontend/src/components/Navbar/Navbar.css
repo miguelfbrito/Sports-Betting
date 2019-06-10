@@ -39,7 +39,7 @@
 [data-notifications]:after {
 	content: attr(data-notifications);
 	position: absolute;
-	background: red;
+	background: #EA7317;
 	border-radius: 50%;
 	display: inline-block;
     padding: 0.5em;

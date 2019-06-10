@@ -1,0 +1,14 @@
+.user {
+    border-bottom: 1px solid #aaa; 
+    height: 230px;
+    position: relative;
+    padding: 10px 0 0 20px;
+}
+
+.input-money{
+    margin-top: 40px;
+}
+
+.money-button{
+    background-color: #EA7317;
+}

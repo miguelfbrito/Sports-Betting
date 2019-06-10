@@ -37,7 +37,7 @@ class CheckBetsSummary extends Component {
         const { bets } = this.state;
         return ( 
             <div className="bet-title">
-                <p className="Info-div">Bets</p>
+                <p className="Infodiv">Bets</p>
                 <div className="bet-container shadow">
 
 
