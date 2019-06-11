@@ -32,7 +32,12 @@ class AnEventSummary extends Component {
                     bt : [{
                     "odd1": "1- 2.85",
                     "oddX": "x- 1.85",
-                    "odd2": "2- 2.15"
+                    "odd2": "2- 2.15",
+                    "odd3": "1- 2.85",
+                    "odd4": "x- 1.85",
+                    "odd5": "2- 2.15",
+                    "odd6": "1- 2.85",
+                    "odd7": "x- 1.85",
                     }
                     ]
                 },
@@ -41,7 +46,11 @@ class AnEventSummary extends Component {
                     bt : [{
                     "odd1": "1- 1.85",
                     "oddX": "x- 1.55",
-                    "odd2": "2- 1.75"
+                    "odd2": "2- 1.75",
+                    "odd4": "x- 1.85",
+                    "odd5": "2- 2.15",
+                    "odd6": "1- 2.85",
+                    "odd7": "x- 1.85",
                     }
                     ]
                 }

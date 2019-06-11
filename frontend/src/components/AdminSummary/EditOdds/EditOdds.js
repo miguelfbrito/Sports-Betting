@@ -12,12 +12,12 @@ import './AnEvent.css'
 const AnEvent = (props) => {
     const { bt } = props;
 
-
+//Adaptar para inputs com o valor igual ao que já possuí
     return (
         <div className="Bettype-odds">
             {bt.map(event => (
         Object.keys(event).map((key, index) => ( 
-            <button id="button" key={index}>  {event[key]}</button> 
+            <input id="button" key={index}>  {event[key]}</input> 
           ))
     ))}
         </div>

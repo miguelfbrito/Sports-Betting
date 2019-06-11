@@ -1,0 +1,27 @@
+.admin-event{
+    height: auto;
+}
+
+.anevents-container {
+    background-color: var(--color-gray);
+}
+
+.anevents-title{
+    background-color: #03B5AA;
+}
+
+.BetText{
+    background-color: gray;
+}
+
+
+#button{
+    background-color: #EA7317;
+    margin-left: 100px;
+}
+
+.Infodiv{
+    margin-left: 15px;
+    font-size: 20px;
+}
+

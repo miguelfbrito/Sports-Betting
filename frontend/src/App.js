@@ -11,6 +11,8 @@ import makebet from './components/MakeBet/makebet';
 import checkbets from './components/CheckBets/CheckBetsSummary';
 import manageusers from './components/ManageUser/ManageUser';
 import AnEvent from './components/AnEventSummary/AnEventSummary';
+import Admin from './components/AdminSummary/AdminSummary';
+import createevent from './components/AdminSummary/AddEvents/AddEvents';
 
 function App() {
   return (
@@ -28,6 +30,8 @@ function App() {
             <Route exact path="/login" component={Login} />
             <Route exact path="/bets" component={checkbets} />
             <Route exact path="/user" component={manageusers} />
+            <Route exact path="/admin" component={Admin} />
+            <Route exact path="/admin/createevent" component={createevent} />
             {/* <Route path="/" component={Dashboard} /> */}
           </Switch>
         </div>
