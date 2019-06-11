@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './AnEventSummary.css';
 import CurrentEventsCarousel from '../CurrentEventsCarousel/CurrentEventsCarousel';
-import Event from './AnEvent/AnEvent';
+import Event from '../AdminSummary/EditOdds/EditOdds';
 
 class AnEventSummary extends Component {
     constructor(props) {
@@ -62,7 +62,7 @@ class AnEventSummary extends Component {
     render() {
 
         const { events } = this.state;
-        console.log(events);
+        
         return ( 
             <div className="anevents-title">
                 <p className="Infodiv">{this.state.name}</p>

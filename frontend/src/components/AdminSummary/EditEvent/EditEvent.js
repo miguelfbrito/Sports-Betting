@@ -11,7 +11,7 @@ const EditEvent = (props) => {
     return (
         <div className="Bettype-odds">
             <form>
-                <input></input>
+                Editar o evento
             </form>
         </div>
     );

@@ -4,21 +4,23 @@ p{
     width: 200px;
 }
 
-#button{
-    font-size: 12pt;
+.buttonsub{
+    display: inline-block;
+}
+
+.buttonsub button{
+    font-size: 10pt;
+    width: auto;
+    background-color: #EA7317;
     letter-spacing: 0.75pt;
     display: inline-block;
     margin-right: 30px;
     margin-bottom: 10px;
+    position: absolute;
+    right: 0;
+    bottom: 10px;
 }
 
-#button:focus{
-    background-color: #EA7317;
-    font-size: 14pt;
-    display: inline-block;
-    margin-right: 30px;
-    margin-bottom: 10px;
-}
 
 .input-info{
     display: inline-block;

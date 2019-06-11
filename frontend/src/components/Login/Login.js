@@ -7,6 +7,7 @@ import { getUserInfo, setUserInfo } from '../utils/utils';
 
 import './Login.css';
 
+
 class Login extends Component {
     constructor(props) {
         super(props);
@@ -41,6 +42,8 @@ class Login extends Component {
                                 let errors = {};
                                 if (!values.username) {
                                     errors.username = 'Required';
+                                }if (!values.password) {
+                                    errors.password = 'Required';
                                 }
                                 return errors;
                             }}
@@ -48,7 +51,6 @@ class Login extends Component {
                                 setTimeout(() => {
                                     alert(JSON.stringify(values, null, 2));
                                     setSubmitting(false);
-                                    console.log("TESTE")
                                 }, 400);
                             }}
                         >

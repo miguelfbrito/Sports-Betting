@@ -150,7 +150,7 @@ const AddEvents = (props) => {
             <p className="error-info">{errors.description && touched.description && errors.description}</p>
             </label>
           </label>
-          <label>
+          <label className="buttonsub">
           <button type="submit" disabled={isSubmitting}>
             Save Changes
           </button>
