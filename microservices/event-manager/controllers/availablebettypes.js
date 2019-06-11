@@ -37,6 +37,13 @@ AvailableBetTypes.createDefaultBySportName = async (name, eventOid) => {
     }
 }
 
+AvailableBetTypes.fetchByEventOid = async (eventOid) => {
+    try {
+        return await AvailableBetTypesDB.findAll({ where: { eventOid } });
+    } catch (e) {
+        console.error(e);
+    }
+}
 
 AvailableBetTypes.betTypeExistsInEvent = async (bettypeOid, eventOid) => {
 

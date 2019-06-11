@@ -49,9 +49,7 @@ Event.closeAndVerifyBets = async (event) => {
 
     // Verificar se o evento ainda não foi fechado
     const currentEvent = await this.fetchOne({ where: { oid: event.oid } });
-
     if (currentEvent) {
-        console.log("Evento Atual", currentEvent);
         if (currentEvent.dataValues.state === 'Finished-Evaluated') {
             return { message: 'Event has already been closed and evaluated' }
         }
@@ -65,9 +63,9 @@ Event.closeAndVerifyBets = async (event) => {
     // Gerar stats aleatórias, simular interacao com API
     await Stats.generateRandomStats(event.oid);
 
-    // Obter todas as availableBetTypes relativas ao evento em questão TODO : alterar o valor hardcoded
-    const data = await this.fetchOne({ oid: event.oid });
-    const availablebettypes = data.availablebettypes
+    // Obter todas as availableBetTypes relativas ao evento em questão
+    const availablebettypes = await AvailableBetType.fetchByEventOid(event.oid);
+    console.log("AVAILABLE RELATIVAS SO A UM EVENTO #################################################", availablebettypes);
 
     const currentStats = await Stats.fetchSubStatsType(event.oid);
 
@@ -77,9 +75,8 @@ Event.closeAndVerifyBets = async (event) => {
     // Obter todas as bets do Evento
     const eventBets = await BetMS.fetchAllBetsByEventOid(event.oid);
 
-    // Obter todas as AvailableBetTypes jassociadas ao evento (melhoria: obter a versao atualizada em vez de fazer 2 queries)
-    const updatedEvent = await this.fetchOne({ oid: event.oid })
-    const updatedAvailablebettypes = updatedEvent.availablebettypes;
+    // const updatedEvent = await this.fetchOne({ oid: event.oid })
+    const updatedAvailablebettypes = await AvailableBetType.fetchByEventOid(event.oid);
 
     this.updateBetResult(updatedAvailablebettypes, eventBets);
 

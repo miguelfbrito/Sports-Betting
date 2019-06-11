@@ -16,6 +16,7 @@ const stats = require('./controllers/stats');
 const availablebetypes = require('./controllers/availablebettypes');
 const HandleEventsTiming = require('./controllers/handleEventsTiming');
 
+
 const app = express();
 
 require('dotenv').config();
@@ -47,7 +48,7 @@ seedData = async () => {
 
     // Create event
     await events.createEvent({
-        name: "Evento de Teste 2",
+        name: "Evento de Teste 1",
         ispremium: false,
         startingdate: (Date.now() + 45 * 1000),
         finishingdate: (Date.now() + 90 * 1000),
@@ -58,7 +59,7 @@ seedData = async () => {
     });
 
     await events.createEvent({
-        name: "Evento de Teste 4",
+        name: "Evento de Teste 2",
         ispremium: true,
         startingdate: Date.now() + 10 * 1000,
         finishingdate: Date.now() + 30 * 1000,
@@ -68,6 +69,28 @@ seedData = async () => {
         }
     })
 
+
+    await events.createEvent({
+        name: "Evento de Teste 3",
+        ispremium: true,
+        startingdate: Date.now() + 5 * 1000,
+        finishingdate: Date.now() + 25 * 1000,
+        state: 'Upcoming',
+        sport: {
+            name: 'Football'
+        }
+    })
+
+    await events.createEvent({
+        name: "Evento de Teste 4",
+        ispremium: true,
+        startingdate: Date.now() + 5 * 1000,
+        finishingdate: Date.now() + 25 * 1000,
+        state: 'Upcoming',
+        sport: {
+            name: 'Football'
+        }
+    })
     console.log("Creating event");
 
     // Create user
@@ -114,6 +137,22 @@ eventsTiming = async () => {
 }
 
 
+
+teste = async (eventOid) => {
+
+    const updatedEvent = await availablebetypes.fetchByEventOid(eventOid);
+
+    console.log("\n\n\n\n\n")
+    updatedEvent.forEach(av => {
+        console.log(av.dataValues)
+    })
+    console.log("\n\n\n\n\n");
+}
+
+// teste(1);
+// teste(2);
+// teste(3);
+// teste(4);
 
 setTimeout(seedData, 4000);
 
