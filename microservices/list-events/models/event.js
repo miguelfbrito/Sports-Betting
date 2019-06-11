@@ -1,6 +1,5 @@
 const Sequelize = require('sequelize');
 const db = require('../database/db');
-const AvailableBetTypes = require('./availablebettypes');
 
 const Event = db.sequelize.define('event', {
   oid: {
@@ -44,7 +43,5 @@ const Event = db.sequelize.define('event', {
 }, {
     tableName: 'event'
   });
-
-Event.hasMany(AvailableBetTypes);
 
 module.exports = Event;

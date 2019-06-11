@@ -1,7 +1,5 @@
 const Event = module.exports;
 const EventDB = require('../models/event');
-const AvailableBetTypeDB = require('../models/availablebettypes');
-
 
 Event.updateAvailable = async (listEvents) => {
 
@@ -22,8 +20,6 @@ Event.updateAvailable = async (listEvents) => {
 
             console.log("Evento não existe no available, a criar novo", event)
             const persistedEvent = await this.create(event);
-
-            console.log("Persisted event", persistedEvent)
 
         } else {
 
@@ -51,12 +47,8 @@ Event.compareEvents = (event1, event2) => {
 
 Event.create = async (event) => {
 
-    console.log("IMPRIME PAAAAAAAAAAAAAAA")
-    console.log("DADOS DE CRIACAO DO EVENTO")
-    console.log(event)
-
     try {
-        return await EventDB.create({ ...event, include: [{ model: AvailableBetTypeDB }] });
+        return await EventDB.create({ ...event });
     } catch (e) {
         console.error(e);
     }
@@ -64,11 +56,11 @@ Event.create = async (event) => {
 
 
 Event.fetchOne = async (event) => {
-    return await EventDB.findOne({ event, include: [{ model: AvailableBetTypeDB }] })
+    return await EventDB.findOne({ event });
 }
 
 Event.fetchAll = async () => {
-    return await EventDB.findAll({ include: [{ model: AvailableBetTypeDB }] })
+    return await EventDB.findAll();
 }
 
 Event.deleteByName = async (name) => {

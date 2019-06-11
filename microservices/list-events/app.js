@@ -4,7 +4,6 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
 const availableEventsRouter = require('./routes/event');
-const availableBetTypesRouter = require('./routes/availablebettypes');
 
 const app = express();
 
