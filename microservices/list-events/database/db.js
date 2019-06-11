@@ -47,11 +47,8 @@ sequelize
 		console.error('Unable to connect to the database:', err);
 	});
 
-
-
-
 if (recreate_database) {
-	console.log("Recreating database!")
+	console.log("Recreating database [list-events-microservice]!")
 	sequelize.sync({ force: true });
 }
 
