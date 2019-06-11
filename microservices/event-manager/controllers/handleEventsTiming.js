@@ -13,11 +13,18 @@ HandleEventsTiming.verify = async () => {
 HandleEventsTiming.justStarted = async () => {
 
     // Enviar estes eventos para o micro-serviço dos disponiveis
+    let justStartedEvents = await Event.fetchAllJustStarted();
 
-    console.log("Checking if just started");
-    const justStartedEvents = await Event.fetchAllJustStarted();
+    await justStartedEvents.forEach(async event => {
 
-    await AvailableEventsMS.updateAvailableEevents(justStartedEvents);
+        await Event.update({ where: { oid: event.oid } }, { state: 'Live' });
+    })
+
+    // TODO : Queries duplicadas, ver como se obtém o resultado de um update, visto só devolver o numero de mudanças
+
+    justStartedEvents = await Event.fetchAllJustStarted();
+
+    await AvailableEventsMS.updateAvailableEvents(justStartedEvents);
 
     // justStartedEvents.forEach(event => {
     //     console.log(event.dataValues);
@@ -25,12 +32,9 @@ HandleEventsTiming.justStarted = async () => {
 }
 
 HandleEventsTiming.justFinished = async () => {
-    console.log("Checking if just finished");
     const justClosedEvents = await Event.fetchAllJustClosed();
 
-    justClosedEvents.forEach(async event => {
-        console.log("Closing event!");
-        console.log(event.dataValues);
+    await justClosedEvents.forEach(async event => {
         await Event.closeAndVerifyBets({ oid: event.oid });
     })
 

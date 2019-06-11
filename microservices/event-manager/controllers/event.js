@@ -47,9 +47,17 @@ Event.createEvent = async (eventData) => {
 
 Event.closeAndVerifyBets = async (event) => {
 
-    // Verificar se o evento ainda se encontra aberto
+    // Verificar se o evento ainda não foi fechado
+    const currentEvent = await this.fetchOne({ where: { oid: event.oid } });
 
-    console.log("A fechar o evento: ", event);
+    if (currentEvent) {
+        console.log("Evento Atual", currentEvent);
+        if (currentEvent.dataValues.state === 'Finished-Evaluated') {
+            return { message: 'Event has already been closed and evaluated' }
+        }
+    }
+
+    console.log("A fechar o evento: ", event)
 
     // Alterar o estado do evento para Finished
     await this.update({ where: { oid: event.oid } }, { state: 'Finished' });
@@ -63,20 +71,20 @@ Event.closeAndVerifyBets = async (event) => {
 
     const currentStats = await Stats.fetchSubStatsType(event.oid);
 
-    console.log("Current stas a fechar o evento!", currentStats);
-
     // Validar todas as AvailableBetTypes para um evento
     await ValidateBetTypes.validate(availablebettypes, currentStats);
 
     // Obter todas as bets do Evento
     const eventBets = await BetMS.fetchAllBetsByEventOid(event.oid);
-    console.log("Event bets", eventBets);
 
     // Obter todas as AvailableBetTypes jassociadas ao evento (melhoria: obter a versao atualizada em vez de fazer 2 queries)
     const updatedEvent = await this.fetchOne({ oid: event.oid })
     const updatedAvailablebettypes = updatedEvent.availablebettypes;
 
     this.updateBetResult(updatedAvailablebettypes, eventBets);
+
+    // Alterar o estado do evento para Finished-Evaluated
+    await this.update({ where: { oid: event.oid } }, { state: 'Finished-Evaluated' });
 
     // CONTINUAR AQUI
 
@@ -151,7 +159,8 @@ Event.fetchAllJustStarted = async () => {
         where: {
             startingdate: {
                 [Op.lte]: Date.now()
-            }
+            },
+            state: 'Upcoming'
         }
     });
 }
@@ -162,9 +171,7 @@ Event.fetchAllJustClosed = async () => {
             finishingdate: {
                 [Op.lte]: Date.now()
             },
-            state: {
-                [Op.ne]: 'Finished'
-            }
+            state: 'Live'
         }
     });
 }

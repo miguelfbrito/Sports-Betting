@@ -115,7 +115,7 @@ eventsTiming = async () => {
 
 
 
-setTimeout(seedData, 1000);
+setTimeout(seedData, 4000);
 
 
 module.exports = app;
