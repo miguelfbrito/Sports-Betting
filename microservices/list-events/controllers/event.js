@@ -8,8 +8,6 @@ const ValidateBetTypes = require('./validatebettypes');
 const Stats = require('./stats');
 const BetMS = require('./betMS');
 
-const { Op } = require('sequelize');
-
 Event.createEvent = async (eventData) => {
 
     const currSport = await SportsDB.findOne({ where: { name: eventData.sport.name } })
@@ -25,7 +23,6 @@ Event.createEvent = async (eventData) => {
             name: eventData.name,
             ispremium: eventData.ispremium,
             startingdate: eventData.startingdate,
-            finishingdate: eventData.finishingdate,
             state: eventData.state || 'Upcoming',
             sportOid: currSport.dataValues.oid
         }
@@ -49,21 +46,14 @@ Event.closeAndVerifyBets = async (event) => {
 
     // Verificar se o evento ainda se encontra aberto
 
-    console.log("A fechar o evento: ", event);
-
     // Alterar o estado do evento para Finished
     await this.update({ where: { oid: event.oid } }, { state: 'Finished' });
 
-    // Gerar stats aleatórias, simular interacao com API
-    await Stats.generateRandomStats(event.oid);
-
     // Obter todas as availableBetTypes relativas ao evento em questão TODO : alterar o valor hardcoded
-    const data = await this.fetchOne({ oid: event.oid });
+    const data = await this.fetchOne({ oid: event.oi });
     const availablebettypes = data.availablebettypes
 
     const currentStats = await Stats.fetchSubStatsType(event.oid);
-
-    console.log("Current stas a fechar o evento!", currentStats);
 
     // Validar todas as AvailableBetTypes para um evento
     await ValidateBetTypes.validate(availablebettypes, currentStats);
@@ -75,6 +65,7 @@ Event.closeAndVerifyBets = async (event) => {
     // Obter todas as AvailableBetTypes jassociadas ao evento (melhoria: obter a versao atualizada em vez de fazer 2 queries)
     const updatedEvent = await this.fetchOne({ oid: event.oid })
     const updatedAvailablebettypes = updatedEvent.availablebettypes;
+
 
     this.updateBetResult(updatedAvailablebettypes, eventBets);
 
@@ -139,34 +130,11 @@ Event.updateBetResult = (availablebettypes, bets) => {
 // Database 
 
 Event.fetchOne = async (event) => {
-    return await EventDB.findOne({ event, include: [{ model: Sport }, { model: AvailableBetTypeDB }] });
+    return await EventDB.findOne({ event, include: [{ model: Sport }, { model: AvailableBetTypeDB }] })
 }
 
 Event.fetchAll = async (event) => {
-    return await EventDB.findAll({ event, include: [{ model: AvailableBetTypeDB }] });
-}
-
-Event.fetchAllJustStarted = async () => {
-    return await EventDB.findAll({
-        where: {
-            startingdate: {
-                [Op.lte]: Date.now()
-            }
-        }
-    });
-}
-
-Event.fetchAllJustClosed = async () => {
-    return await EventDB.findAll({
-        where: {
-            finishingdate: {
-                [Op.lte]: Date.now()
-            },
-            state: {
-                [Op.ne]: 'Finished'
-            }
-        }
-    });
+    return await EventDB.findAll({ event, include: [{ model: AvailableBetTypeDB }] })
 }
 
 Event.fetch = async (event) => {

@@ -1,5 +1,4 @@
 version: '3.3'
-
 services:
 
 # Gateway
@@ -12,6 +11,7 @@ services:
             MS_USER_MANAGER_URL: 'http://ms_user_manager:3000'
             MS_BET_MANAGER_URL: 'http://ms_bet_manager:3000'
             MS_EVENT_MANAGER_URL: 'http://ms_event_manager:3000'
+            MS_LIST_EVENTS_URL: 'http://ms_list_events:3000'
         ports:
             - 8081:8080
         networks:
@@ -23,7 +23,43 @@ services:
             - ms_event_manager
         restart: always
 
-# MS - USER- MANAGER
+# MS - LIST EVENTS 
+    db_list_events: 
+        image: mysql:5.7.26
+        environment:
+            MYSQL_DATABASE: db_list_events
+            MYSQL_USER: db_list_events
+            MYSQL_PASSWORD: db_list_events
+            MYSQL_ROOT_PASSWORD: root-password
+        volumes:
+            - ~/databases/db_list_events/data:/var/lib/mysql
+        ports:
+            - 3304:3306
+        networks:
+            - network_backend
+
+    ms_list_events:
+        build: ./microservices/list-events
+        volumes:
+            - ./microservices/list-events:/usr/src/app
+            - /usr/src/app/node_modules
+        environment:
+            DB_USERNAME: db_list_events
+            DB_PASSWORD: db_list_events
+            DB_NAME: db_list_events
+            DB_HOST: db_list_events
+
+            MS_EVENTS: 'http://ms_event_manager:3000'
+            MS_BETS: 'http://ms_bet_manager:3000'
+        ports:
+            - 3004:3000
+        networks:
+            - network_backend
+        depends_on:
+            - db_list_events
+        restart: always
+
+# MS - LIST_EVENTS
     db_user_manager: 
         image: mysql:5.7.26
         environment:
@@ -58,7 +94,6 @@ services:
         depends_on:
             - db_user_manager
         restart: always
-
 # MS - BET-MANAGER
     db_bet_manager: 
         image: mysql:5.7.26

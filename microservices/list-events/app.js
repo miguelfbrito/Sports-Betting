@@ -8,15 +8,13 @@ const axios = require('axios');
 const eventRouter = require('./routes/event');
 const availableBetTypesRouter = require('./routes/availablebettypes');
 const statsRouter = require('./routes/stats');
+const app = express();
 
 // For test
 const sports = require('./controllers/sport');
 const events = require('./controllers/event');
 const stats = require('./controllers/stats');
 const availablebetypes = require('./controllers/availablebettypes');
-const HandleEventsTiming = require('./controllers/handleEventsTiming');
-
-const app = express();
 
 require('dotenv').config();
 
@@ -43,11 +41,10 @@ seedData = async () => {
     await sports.create({ name: 'Basketball' });
 
     // Create event
-    await events.createEvent({
+    const dataEvent = await events.createEvent({
         name: "Evento de Teste 2",
         ispremium: false,
-        startingdate: (Date.now() + 45 * 1000),
-        finishingdate: (Date.now() + 90 * 1000),
+        startingdate: Date.now(),
         state: 'Upcoming',
         sport: {
             name: 'Football'
@@ -57,8 +54,7 @@ seedData = async () => {
     await events.createEvent({
         name: "Evento de Teste 4",
         ispremium: true,
-        startingdate: Date.now() + 10 * 1000,
-        finishingdate: Date.now() + 30 * 1000,
+        startingdate: Date.now(),
         state: 'Upcoming',
         sport: {
             name: 'Football'
@@ -68,51 +64,42 @@ seedData = async () => {
     console.log("Creating event");
 
     // Create user
-    await axios.post(`${MS_USERS}/user/signup`, {
+    const userData = await axios.post(`${MS_USERS}/user/signup`, {
         username: "user",
         password: "pass"
     })
     console.log("Creating user");
 
     // Place bet
-    await axios.post(`${MS_BETS}/bet/place`, {
+    const betData = await axios.post(`${MS_BETS}/bet/place`, {
         wager: 19,
         userOid: 1,
         eventOid: 1,
         bettypeOid: 2
     })
+    console.log("Betting data", betData.data);
 
     // Create Stats
-    // const statsData = await stats.addStatToEvent({
-    //     eventOid: 1,
-    //     userOid: 1,
-    //     stats: {
-    //         gameduration: 90,
-    //         homegoals: 4,
-    //         awaygoals: 3,
-    //         homeredcards: 2,
-    //         awayredcards: 1,
-    //         homeyellowcards: 1,
-    //         awayyellowcards: 3
-    //     }
-    // })
+    const statsData = await stats.addStatToEvent({
+        eventOid: 1,
+        userOid: 1,
+        stats: {
+            gameduration: 90,
+            homegoals: 4,
+            awaygoals: 3,
+            homeredcards: 2,
+            awayredcards: 1,
+            homeyellowcards: 1,
+            awayyellowcards: 3
+        }
+    })
 
-    // console.log("Stats do evento criado", statsData)
+    console.log("Stats do evento criado", statsData)
 
-    // const closeAndVerifyBets = await events.closeAndVerifyBets({ oid: 1 });
-
-    setInterval(eventsTiming, 20000);
+    const closeAndVerifyBets = await events.closeAndVerifyBets({ oid: 1 });
 
 }
 
-eventsTiming = async () => {
-    console.log("Executing events timing!")
-    await HandleEventsTiming.verify();
-}
-
-
-
-setTimeout(seedData, 1000);
-
+setTimeout(seedData, 3000);
 
 module.exports = app;

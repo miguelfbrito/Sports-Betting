@@ -7,9 +7,14 @@ admin:
   host: localhost
 
 apiEndpoints:
+
   api:
     host: localhost
     paths: '/ip'
+
+  list-events:
+    host: '*'
+    paths: [ '/list-events', '/list-events/*']
 
   user-no-auth-required:
     host: '*'
@@ -39,6 +44,8 @@ serviceEndpoints:
     url: ${MS_BET_MANAGER_URL} 
   event-manager-service:
     url: ${MS_EVENT_MANAGER_URL} 
+  list-events-service:
+    url: ${MS_LIST_EVENTS_URL} 
 
 # Remover as que não estão a ser utilizadas mais tarde
 # Apenas fazem alguma coisa se a sua acao for definida na pipeline
@@ -83,6 +90,14 @@ pipelines:
       - proxy:
         - action:
             serviceEndpoint: bet-manager-service
+
+  list-events-pipe:
+    apiEndpoints: list-events
+    policies:
+      - proxy:
+        - action:
+            serviceEndpoint: list-events-service
+
 #  user-manager-pipe:
 #    apiEndpoints: user-manager-service
 #    policies:

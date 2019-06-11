@@ -5,6 +5,8 @@ const FootballStats = require('../controllers/footballstats');
 const BasketballStats = require('../controllers/basketballstats');
 const Event = require('../controllers/event');
 
+const { randomInteger } = require('../utils/util');
+
 Stats.addStatToEvent = async (data) => {
 
     // Obter dados
@@ -17,21 +19,6 @@ Stats.addStatToEvent = async (data) => {
         return 'Invalid event when adding stats!'
 
     const stats = data.stats;
-
-    const dataType = {
-        eventOid: 1,
-
-        stats: {
-            gameduration: stats.gameduration || 90,
-            homeGoals: stats.homegoals || 0,
-            awayGoals: stats.awaygoals || 0,
-            homeRedCards: stats.homeredcards || 0,
-            awayRedCards: stats.awayredcards || 0,
-            homeYellowCards: stats.homeyellowcards || 0,
-            awayYellowCards: stats.awayyellowcards || 0
-        }
-    }
-
     const sportName = event.sport.dataValues.name
 
     switch (sportName.toLowerCase()) {
@@ -44,7 +31,7 @@ Stats.addStatToEvent = async (data) => {
                     awayredcards: data.stats.awayredcards || 0,
                     homeyellowcards: data.stats.homeyellowcards || 0,
                     awayyellowcards: data.stats.awayyellowcards || 0
-                }, event.oid);
+                }, data.eventOid);
 
 
                 return footballStats;
@@ -55,11 +42,12 @@ Stats.addStatToEvent = async (data) => {
         case 'basketball':
             try {
                 const basketballStats = await this.createBasketballStats({
-                    homepoints: stats.homepoints || 0,
-                    awaypoints: stats.awaypoints || 0,
-                    hometriples: stats.hometriples || 0,
-                    awaytriples: stats.awaytriples || 0,
-                })
+                    eventOid: data.eventOid,
+                    homepoints: data.stats.homepoints || 0,
+                    awaypoints: data.stats.awaypoints || 0,
+                    hometriples: data.stats.hometriples || 0,
+                    awaytriples: data.stats.awaytriples || 0,
+                }, data.eventOid)
                 return basketballStats;
             } catch (e) {
                 console.error(`Error creating basketball stats ${e}`)
@@ -72,6 +60,27 @@ Stats.addStatToEvent = async (data) => {
 
 }
 
+Stats.generateRandomStats = async (eventOid) => {
+
+    console.log("A gerar stats aleatórias para o evento de id", eventOid)
+    const statsData = await this.addStatToEvent({
+        eventOid: eventOid,
+        stats: {
+            gameduration: randomInteger(90, 96),
+            homegoals: randomInteger(0, 5),
+            awaygoals: randomInteger(0, 5),
+            homeredcards: randomInteger(0, 2),
+            awayredcards: randomInteger(0, 2),
+            homeyellowcards: randomInteger(0, 6),
+            awayyellowcards: randomInteger(0, 6)
+        }
+    })
+
+    console.log("Stats aleatorias geradas", statsData)
+
+    return statsData;
+}
+
 Stats.fetchSubStatsType = async (eventOid) => {
 
     const currentStats = await this.fetchOne({ where: { eventOid } });
@@ -81,6 +90,8 @@ Stats.fetchSubStatsType = async (eventOid) => {
     }
 
     const data = currentStats.dataValues;
+
+    console.log("Fetch das stats no processo de fechar", data)
 
     if (data.footballstatOid) {
         const footballStats = await FootballStats.fetchOne({ where: { oid: currentStats.oid } })
@@ -106,13 +117,17 @@ Stats.createFootballStats = async (stats, eventOid) => {
     try {
         const createdFootballStats = await FootballStats.create(newFootballStats)
 
+        console.log("ESTAS STATS", createdFootballStats);
+
         if (createdFootballStats) {
             const genericStats = {
-                gameduration: stats.gameduration || 9,
+                eventOid: eventOid,
+                gameduration: stats.gameduration,
                 footballstatOid: createdFootballStats.dataValues.oid,
                 eventOid,
             }
 
+            console.log("A CRIAR AS STATS #################", genericStats)
             const createdStats = await this.create(genericStats);
         }
         return createdFootballStats.dataValues;
@@ -136,6 +151,7 @@ Stats.createBasketballStats = async (stats) => {
 
         if (createdBasketballStats) {
             const genericStats = {
+                eventOid: stats.eventOid,
                 gameduration: stats.gameduration || 9,
                 basketballstatOid: createdBasketballStats.dataValues.oid
             }
