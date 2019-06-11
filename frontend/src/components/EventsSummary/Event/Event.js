@@ -28,13 +28,14 @@ const Event = (props) => {
     return (
         <div className="row">
         <p className="event-date">{formatDate(event.date)}</p>
-        <div className="col-sm-6">
+        <div className="col-sm-5">
             <p className="event-info">{event.name}</p>
         </div>
-        <div className="col-sm-6">
-            <button id="button" onClick={handleClick.bind(this, event)}>{event.odd1}</button>
-            <button id="button">{event.oddX}</button>
-            <button id="button">{event.odd2}</button>
+        <div className="col-sm-7">
+            <button id="buttonodds" onClick={handleClick.bind(this, event)}>{event.odd1}</button>
+            <button id="buttonodds">{event.oddX}</button>
+            <button id="buttonodds">{event.odd2}</button>
+            <button id="buttonDetails"></button>
         </div>
         </div>
     );

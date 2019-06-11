@@ -1,9 +1,17 @@
-.events-container {
+.anevents-container {
     background-color: var(--color-gray);
 }
 
-.events-title{
+.anevents-title{
     background-color: #03B5AA;
+}
+
+.BetText{
+    background-color: gray;
+}
+
+.BetText p{
+    margin-left: 20px;
 }
 
 .Infodiv{

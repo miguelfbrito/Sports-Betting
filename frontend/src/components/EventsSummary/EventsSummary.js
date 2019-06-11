@@ -46,7 +46,7 @@ class EventsSummary extends Component {
         const { events } = this.state;
         return ( 
             <div className="events-title">
-                <p className="Info-div">Eventos a decorrer</p>
+                <p className="Infodiv">Eventos a decorrer</p>
                 <div className="events-container shadow">
 
 

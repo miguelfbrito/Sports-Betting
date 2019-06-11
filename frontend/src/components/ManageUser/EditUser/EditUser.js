@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './User.css';
+import './EditUser.css';
 
 
 const EditUser = (props) => {

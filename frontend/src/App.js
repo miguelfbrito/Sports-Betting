@@ -10,6 +10,7 @@ import EventsSummary from './components/EventsSummary/EventsSummary';
 import makebet from './components/MakeBet/makebet';
 import checkbets from './components/CheckBets/CheckBetsSummary';
 import manageusers from './components/ManageUser/ManageUser';
+import AnEvent from './components/AnEventSummary/AnEventSummary';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <div className="row">
         <div className="col-sm-9">
           <Switch>
+            <Route exact path="/anevent" component={AnEvent} />
             <Route exact path="/events" component={EventsSummary} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/bets" component={checkbets} />

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import './ManageUser.css';
 import CurrentEventsCarousel from '../CurrentEventsCarousel/CurrentEventsCarousel';
-import User from './User/User';
-//import BetFilter from './FilterOptions/FilterOptions';
+//import User from './User/User';
+import User from './Premium/Premium';
+import FilterOptions from './FilterOptions/FilterOptions';
 
 class CheckBetsSummary extends Component {
     constructor(props) {
@@ -32,7 +33,7 @@ class CheckBetsSummary extends Component {
         const { users } = this.state;
         return ( 
             <div className="user-title">
-                <p className="Info-div">Bets</p>
+                <p className="Info-div">Account Management</p>
                 <div className="user-container shadow">
 
 
@@ -41,7 +42,7 @@ class CheckBetsSummary extends Component {
 
                     {/* List all events */}
 
-                    {/*<BetFilter />*/}
+                    <FilterOptions />
 
                     {users.map(user => (
                         <div className="user">
