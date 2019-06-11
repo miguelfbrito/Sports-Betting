@@ -159,6 +159,7 @@ services:
 
             MS_USERS: 'http://ms_user_manager:3000'
             MS_BETS: 'http://ms_bet_manager:3000'
+            MS_LIST_EVENTS: 'http://ms_list_events:3000'
 
         ports:
             - 3003:3000

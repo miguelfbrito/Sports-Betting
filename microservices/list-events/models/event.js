@@ -1,6 +1,5 @@
 const Sequelize = require('sequelize');
 const db = require('../database/db');
-
 const AvailableBetTypes = require('./availablebettypes');
 
 const Event = db.sequelize.define('event', {
@@ -39,8 +38,8 @@ const Event = db.sequelize.define('event', {
     type: Sequelize.STRING(25),
     allowNull: false
   },
-  sport: {
-    type: Sequelize.STRING
+  sportOid: {
+    type: Sequelize.INTEGER(11)
   }
 }, {
     tableName: 'event'

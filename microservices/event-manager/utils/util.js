@@ -1,5 +1,7 @@
 const Util = module.exports;
 
 Util.randomInteger = (min, max) => {
-    return Math.random() * (max - min) + min;
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min) + min);
 }

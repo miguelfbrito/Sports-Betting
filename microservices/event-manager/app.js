@@ -20,8 +20,11 @@ const app = express();
 
 require('dotenv').config();
 
-global.MS_BETS = process.env.MS_BETS || ''
-global.MS_USERS = process.env.MS_USERS || ''
+global.MS_BETS = process.env.MS_BETS;
+global.MS_USERS = process.env.MS_USERS;
+global.MS_USERS = process.env.MS_USERS;
+global.MS_LIST_EVENTS = process.env.MS_LIST_EVENTS;
+
 
 app.use(logger('dev'));
 app.use(express.json());

@@ -1,6 +1,8 @@
 const HandleEventsTiming = module.exports;
 const Event = require('./event');
 
+const AvailableEventsMS = require('../controllers/availableEventsMS');
+
 HandleEventsTiming.verify = async () => {
 
     await this.justStarted();
@@ -15,9 +17,11 @@ HandleEventsTiming.justStarted = async () => {
     console.log("Checking if just started");
     const justStartedEvents = await Event.fetchAllJustStarted();
 
-    justStartedEvents.forEach(event => {
-        console.log(event.dataValues);
-    })
+    await AvailableEventsMS.updateAvailableEevents(justStartedEvents);
+
+    // justStartedEvents.forEach(event => {
+    //     console.log(event.dataValues);
+    // })
 }
 
 HandleEventsTiming.justFinished = async () => {

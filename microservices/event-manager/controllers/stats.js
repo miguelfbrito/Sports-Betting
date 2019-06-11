@@ -117,8 +117,6 @@ Stats.createFootballStats = async (stats, eventOid) => {
     try {
         const createdFootballStats = await FootballStats.create(newFootballStats)
 
-        console.log("ESTAS STATS", createdFootballStats);
-
         if (createdFootballStats) {
             const genericStats = {
                 eventOid: eventOid,

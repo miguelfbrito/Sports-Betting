@@ -14,7 +14,7 @@ apiEndpoints:
 
   list-events:
     host: '*'
-    paths: [ '/list-events', '/list-events/*']
+    paths: [ '/available-events', '/available-events/*']
 
   user-no-auth-required:
     host: '*'
