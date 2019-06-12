@@ -37,6 +37,8 @@ class CheckBetsSummary extends Component {
         const { bets } = this.state;
         return ( 
             <div className="bet-title">
+                <div className="row">
+                <div className="col-sm-9">
                 <p className="Infodiv">Bets</p>
                 <div className="bet-container shadow">
 
@@ -56,6 +58,10 @@ class CheckBetsSummary extends Component {
 
                 </div>
             </div>
+        <div className="col-sm-3">
+        </div>
+        </div>
+        </div>
         );
     }
 }
