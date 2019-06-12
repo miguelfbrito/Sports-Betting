@@ -1,5 +1,5 @@
 .event-filters {
-    margin: 5px 0 3px 0 !important;
+    margin: 5px 0 5px 0 !important;
     padding: 0;
 }
 
@@ -7,13 +7,7 @@
     display: inline;
     margin: 0;
     margin-right: 10px;
-    padding: 0px 10px 5px 10px;
-
-    border-left: 1px solid #100;
-    border-right:1px solid #100;
-    border-top: 1px solid #100;
-    border-top-right-radius: 5px;
-    border-top-left-radius: 5px;
+    padding: 0px 10px 10px 10px;
 
     transition: background-color linear 250ms;
     transition: color linear 225ms;
@@ -34,6 +28,26 @@
     margin: 0 !important;
     border-width: 1px;
     background-color: #100;
+}
+
+.Football{
+    background-image: url('../../../assets/Sports/football.png');
+    background-size: auto;
+}
+
+.Tenis{
+    background-image: url('../../../assets/Sports/tennis.png');
+    background-size: auto;
+}
+
+.Basketball{
+    background-image: url('../../../assets/Sports/basketball.png');
+    background-size: auto;
+}
+
+.Voleyball{
+    background-image: url('../../../assets/Sports/volleyball.png');
+    background-size: auto;
 }
 
 @media only screen and (max-width: 600px) {

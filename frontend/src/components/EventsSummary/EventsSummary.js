@@ -3,6 +3,7 @@ import './EventsSummary.css';
 import CurrentEventsCarousel from '../CurrentEventsCarousel/CurrentEventsCarousel';
 import Event from './Event/Event';
 import EventFilter from './EventFilter/EventFilter';
+import Makebet from '../MakeBet/makebet';
 
 class EventsSummary extends Component {
     constructor(props) {
@@ -35,6 +36,27 @@ class EventsSummary extends Component {
                     "oddX": "x- 1.25",
                     "odd2": "2- 1.95",
                     "date": Date.now()
+                },
+                {
+                    "name": "Sporting x Braga",
+                    "odd1": "1- 1.65",
+                    "oddX": "x- 1.25",
+                    "odd2": "2- 1.95",
+                    "date": Date.now()
+                },
+                {
+                    "name": "Sporting x Braga",
+                    "odd1": "1- 1.65",
+                    "oddX": "x- 1.25",
+                    "odd2": "2- 1.95",
+                    "date": Date.now()
+                },
+                {
+                    "name": "Sporting x Braga",
+                    "odd1": "1- 1.65",
+                    "oddX": "x- 1.25",
+                    "odd2": "2- 1.95",
+                    "date": Date.now()
                 }
             ]
         })
@@ -46,8 +68,10 @@ class EventsSummary extends Component {
         const { events } = this.state;
         return ( 
             <div className="events-title">
+            <div className="row">
+            <div className="col-sm-9">
                 <p className="Infodiv">Eventos a decorrer</p>
-                <div className="events-container shadow">
+                <div style={{height: "450px", overflowY: "scroll", overflowX: "hidden"}} className="events-container shadow">
 
 
                     {/* Carousel 4 or 5 games */}
@@ -64,6 +88,11 @@ class EventsSummary extends Component {
                     ))}
 
                 </div>
+            </div>
+        <div className="col-sm-3">
+                        <Makebet />
+        </div>
+            </div>
             </div>
         );
     }

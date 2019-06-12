@@ -37,22 +37,38 @@ class makebet extends Component {
 
 
         return ( 
-            <div className="events-title">
-                <p className="Infodiv">Boletim de apostas</p>
+            <div className="event-title">
+                <p className="info-par">Boletim de apostas</p>
                 <div className="events-container shadow">
                     <div className="row">
-                        <div className="col-sm-4">
+                        <div className="col">
                             <p className="bet-titles">Event:</p>
+                        </div>
+                        <div className="col">
+                            <p className="test">{this.state.events.name}</p>
+                        </div>
+                        <div className="col">
                             <p className="bet-titles">Result:</p>
+                        </div>
+                        <div className="col">
+                            <p className="test">{this.state.events.Result}</p>
+                        </div>
+                        <div className="col">
                             <p className="bet-titles">Odd:</p>
+                        </div>
+                        <div className="col">
+                            <p className="test">{this.state.events.oddSelected}</p>
+                        </div>
+                        <div className="col">
                             <p className="bet-titles">Earning:</p>
+                        </div>
+                        <div className="col">
+                            <p className="test">{this.state.events.Ganhos + " €"}</p>
+                        </div>
+                        <div className="col">
                             <p className="bet-titles">Amount:</p>
                         </div>
-                        <div className="col-sm-8">
-                            <p>{this.state.events.name}</p>
-                            <p>{this.state.events.Result}</p>
-                            <p>{this.state.events.oddSelected}</p>
-                            <p id="ganhos">{this.state.events.Ganhos + " €"}</p>
+                        <div className="col">
                             <form>
                             <input type="number" className="bet-amount" placeholder="Amount to bet" id="montante" onInput={this.changeAmount.bind(this)}></input>
                             <button id="bet-place">Bet</button>
@@ -60,7 +76,7 @@ class makebet extends Component {
                         </div>
                     </div>
                 </div>
-            </div>
+                </div>
         );
     }
 }

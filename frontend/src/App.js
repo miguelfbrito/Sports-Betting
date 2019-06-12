@@ -25,7 +25,7 @@ function App() {
         <Navbar />
         <div className="container mt-4">
         <div className="row">
-        <div className="col-sm-9">
+        <div className="col-sm-12">
           <Switch>
             <Route exact path="/anevent" component={AnEvent} />
             <Route exact path="/events" component={EventsSummary} />
@@ -36,12 +36,6 @@ function App() {
             <Route exact path="/admin/createevent" component={createevent} />
             <Route exact path="/register" component={register} />
             <Route exact path="/admin/edit" component={edit} />
-            {/* <Route path="/" component={Dashboard} /> */}
-          </Switch>
-        </div>
-        <div className="col-sm-3 pr-0">
-        <Switch>
-            <Route exact path="/events" component={makebet} />
             {/* <Route path="/" component={Dashboard} /> */}
           </Switch>
         </div>

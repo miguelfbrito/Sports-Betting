@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './AnEventSummary.css';
 import CurrentEventsCarousel from '../CurrentEventsCarousel/CurrentEventsCarousel';
-import Event from '../AdminSummary/EditOdds/EditOdds';
+import Event from './AnEvent/AnEvent';
+import Makebet from '../MakeBet/makebet';
 
 class AnEventSummary extends Component {
     constructor(props) {
@@ -30,27 +31,30 @@ class AnEventSummary extends Component {
                 {
                     "name": "1 x 2 TR",
                     bt : [{
-                    "odd1": "1- 2.85",
-                    "oddX": "x- 1.85",
-                    "odd2": "2- 2.15",
-                    "odd3": "1- 2.85",
-                    "odd4": "x- 1.85",
-                    "odd5": "2- 2.15",
-                    "odd6": "1- 2.85",
-                    "odd7": "x- 1.85",
+                    "1": "2.85",
+                    "X": "1.85",
+                    "2": "2.15"
                     }
                     ]
                 },
                 {
                     "name": "1 x 2 INT",
                     bt : [{
-                    "odd1": "1- 1.85",
-                    "oddX": "x- 1.55",
-                    "odd2": "2- 1.75",
-                    "odd4": "x- 1.85",
-                    "odd5": "2- 2.15",
-                    "odd6": "1- 2.85",
-                    "odd7": "x- 1.85",
+                    "1": "2.85",
+                    "X": "1.85"
+                    }
+                    ]
+                },
+                {
+                    "name": "Goals",
+                    bt : [{
+                    "-1.5 goals": "1.85",
+                    "+1.5 goals": "1.55",
+                    "-2.5 goals": "1.75",
+                    "+2.5 goals": "1.85",
+                    "-3.5 goals": "2.15",
+                    "+3.5 goals": "2.85",
+                    "+4.5 goals": "1.85",
                     }
                     ]
                 }
@@ -65,9 +69,11 @@ class AnEventSummary extends Component {
         
         return ( 
             <div className="anevents-title">
+            <div className="row">
+            <div className="col-sm-9">
                 <p className="Infodiv">{this.state.name}</p>
                 <p>{this.formatDate.bind(this.state.date)}</p>
-                <div className="anevents-container shadow">
+                <div style={{height: "450px", overflowY: "scroll", overflowX:"hidden"}} className="anevents-container shadow">
                     {events.map(event => (
                         <div className="anevent">
                             <div className="BetText">
@@ -80,6 +86,11 @@ class AnEventSummary extends Component {
 
                 </div>
             </div>
+        <div className="col-sm-3">
+                        <Makebet />
+        </div>
+        </div>
+        </div>
         );
     }
 }

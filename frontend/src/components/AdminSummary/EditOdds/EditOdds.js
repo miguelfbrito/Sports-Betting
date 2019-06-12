@@ -19,7 +19,7 @@ const EditOdds = (props) => {
 
     return ( 
         <div className="row">
-        <div style={{overflowy: "scroll", marginLeft:"20px" }} className="Bettype-odds">
+        <div style={{overflowY: "scroll", marginLeft:"20px" }} className="Bettype-odds">
         <Formik
                             initialValues={{}}
                             validate={values => {
