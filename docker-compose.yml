@@ -86,6 +86,10 @@ services:
             DB_NAME: db_user_manager
             DB_HOST: db_user_manager
 
+            FILE_STORE_SECRET_KEY: 'bettingwebapp'
+            PASSPORT_SECRET_KEY: 'bettingwebapp'
+            JWT_SECRET_KEY: 'bettingwebap'
+
             MS_EVENTS: 'http://ms_event_manager:3000'
             MS_BETS: 'http://ms_bet_manager:3000'
         ports:
