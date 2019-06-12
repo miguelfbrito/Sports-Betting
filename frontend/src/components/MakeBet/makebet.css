@@ -1,40 +1,28 @@
-.event {
-    border-bottom: 1px solid #aaa; 
-    height: auto;
-    position: relative;
-    padding: 10px 0 0 20px;
-}
-
-.event-title{
-    width: auto;
-    height: auto;
-    display: inline-block;
-}
-
-.bet-titles{
+.bet-titles {
     width: 100%;
     width: 100px;
     font-size: 12pt;
     font-weight: bold;
 }
 
-.bet-amount{
+.bet-amount {
     width: 90%;
     font-size: 14px;
 }
 
-.test{
+.test {
     width: 100%;
     font-size: 12pt;
 }
 
-#bet-place{
+#bet-place {
     width: auto;
     background-color: #EA7317;
     margin-bottom: 10px;
 }
 
-.info-par{
-    width: 100%;
+.info-par {
+
+    margin: 0;
     font-size: 20px;
 }

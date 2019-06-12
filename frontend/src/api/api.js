@@ -6,9 +6,11 @@ const Api = {};
 
 Api.fetchAvailableEvents = async () => {
 
-    const data = await axios.get(`${host}/bet`);
-    console.log(data.data)
-
+    const data = await axios.get(`${host}/available-events`);
+    return data.data;
 }
+
+
+
 
 export default Api;

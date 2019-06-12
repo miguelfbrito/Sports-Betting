@@ -13,9 +13,6 @@
         0px 2px 6px rgba(0, 0, 0, .2);
 }
 
-body {
-    overflow: hidden;
-}
 
 .bg-image {
     /* background-color: var(--color-gray-lighter) !important; */
@@ -73,4 +70,3 @@ a {
     background-color: var(--color-roxo);
     box-shadow: 0 1px 10px rgba(0, 0, 0, .9);
 }
-

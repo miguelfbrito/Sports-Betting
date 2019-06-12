@@ -3,8 +3,25 @@ const router = express.Router();
 const Event = require('../controllers/event');
 
 router.get('/', async (req, res, next) => {
-    res.send('List events routes')
+
+    // TODO : Obter token, verificar se o user é Premium
+    // - Enviar dados de acordo com estatuto de premium
+
+    const isUserPremium = true;
+
+    try {
+        let data = await Event.fetchAll();
+
+        console.log("DATA FETCH", data)
+
+        data = data.filter(event => event.dataValues.ispremium)
+
+        res.send(data);
+    } catch (e) {
+        res.status(500).send({ message: 'Error fetching events' })
+    }
 });
+
 
 
 router.post('/update', async (req, res, next) => {

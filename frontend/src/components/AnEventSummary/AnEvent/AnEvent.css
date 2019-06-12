@@ -1,22 +1,17 @@
 .anevent {
-    border-bottom: 1px solid #aaa; 
+    border-bottom: 1px solid #aaa;
     height: auto;
     position: relative;
 }
 
-.anevent-info{
-    float: left;
-    width: 60%;
-}
-
-.anevent-info{
+.anevent-info {
     color: black;
     font-size: 14pt;
     letter-spacing: 0.75pt;
     padding-top: 20px;
 }
 
-.parainfo{
+.parainfo {
     width: auto;
     font-size: 14px;
     color: black;
@@ -24,7 +19,7 @@
     margin-left: 10px;
 }
 
-#buttonbettype{
+#buttonbettype {
     font-size: 12pt;
     letter-spacing: 0.75pt;
     display: inline-block;
@@ -32,7 +27,7 @@
     margin-bottom: 10px;
 }
 
-#buttonbettype:focus{
+#buttonbettype:focus {
     background-color: #EA7317;
     font-size: 12pt;
     display: inline-block;
@@ -47,10 +42,10 @@
     margin-left: 15px;
 }
 
-.Bettype-odds{
+.Bettype-odds {
     margin-bottom: 10px;
 }
 
-.anevent:last-child{
+.anevent:last-child {
     border-bottom: 0;
 }

@@ -32,9 +32,6 @@ ValidateBetTypes.validate = async (availablebettypes, stats) => {
 
                 const isBetTypeValid = this.isFootballBetTypeValid(stats, bettypes[available.dataValues.bettypeOid].name);
 
-                console.log("AVAILABLE #######################################")
-                console.log(available.dataValues)
-
                 if (isBetTypeValid) {
                     await AvailableBetType.setBetResult('WON', available.dataValues.oid)
                 } else {

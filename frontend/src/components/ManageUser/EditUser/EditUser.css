@@ -1,16 +1,14 @@
-p{
+p {
     display: inline-block;
     font-size: 14px;
-    width: 200px;
-
     margin-left: 10px;
 }
 
-.buttonsub{
+.buttonsub {
     display: inline-block;
 }
 
-.buttonsub button{
+.buttonsub button {
     font-size: 10pt;
     width: auto;
     background-color: #EA7317;
@@ -24,7 +22,7 @@ p{
 }
 
 
-.input-info{
+.input-info {
     display: inline-block;
     height: auto;
     width: auto;
@@ -32,14 +30,14 @@ p{
     padding: 0px 0px 0px 0px;
 }
 
-.error-info{
+.error-info {
     font-size: 14px;
     margin-left: 10px;
     color: red
 }
 
 
-.label-text{
+.label-text {
     display: block;
     height: auto;
     width: auto;
@@ -49,17 +47,17 @@ p{
     padding: 0px 0px 0px 0px;
 }
 
-input[type="text"]{
+input[type="text"] {
     font-size: 14px;
     width: 300px;
 }
 
-input[type="password"]{
+input[type="password"] {
     font-size: 14px;
     width: 300px;
 }
 
-input[type="email"]{
+input[type="email"] {
     font-size: 14px;
     width: 300px;
 }

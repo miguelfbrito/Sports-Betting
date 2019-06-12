@@ -55,10 +55,10 @@ seedData = async () => {
 
     // Create event
     await events.createEvent({
-        name: "Evento de Teste 1",
+        name: "Benfica x Porto",
         ispremium: false,
         startingdate: (Date.now() + 45 * 1000),
-        finishingdate: (Date.now() + 90 * 1000),
+        finishingdate: (Date.now() + 30 * 60 * 1000),
         state: 'Upcoming',
         sport: {
             name: 'Football'
@@ -66,7 +66,7 @@ seedData = async () => {
     });
 
     await events.createEvent({
-        name: "Evento de Teste 2",
+        name: "Arsenal x Liverpool",
         ispremium: true,
         startingdate: Date.now() + 10 * 1000,
         finishingdate: Date.now() + 30 * 1000,
@@ -78,7 +78,7 @@ seedData = async () => {
 
 
     await events.createEvent({
-        name: "Evento de Teste 3",
+        name: "Barcelona x Real Madrid",
         ispremium: true,
         startingdate: Date.now() + 5 * 1000,
         finishingdate: Date.now() + 25 * 1000,
@@ -89,15 +89,94 @@ seedData = async () => {
     })
 
     await events.createEvent({
-        name: "Evento de Teste 4",
+        name: "Bayern vs Dortmund",
         ispremium: true,
         startingdate: Date.now() + 5 * 1000,
-        finishingdate: Date.now() + 25 * 1000,
+        finishingdate: Date.now() + 35 * 60 * 1000,
         state: 'Upcoming',
         sport: {
             name: 'Football'
         }
     })
+
+    await events.createEvent({
+        name: "Braga x Guimarães",
+        ispremium: true,
+        startingdate: Date.now() + 30 * 60 * 1000,
+        finishingdate: Date.now() + 90 * 60 * 1000,
+        state: 'Upcoming',
+        sport: {
+            name: 'Football'
+        }
+    })
+
+    await events.createEvent({
+        name: "Braga B x Guimarães",
+        ispremium: true,
+        startingdate: Date.now() + 1000,
+        finishingdate: Date.now() + 90 * 60 * 1000,
+        state: 'Upcoming',
+        sport: {
+            name: 'Football'
+        }
+    })
+
+    await events.createEvent({
+        name: "Sporting x Guimarães",
+        ispremium: true,
+        startingdate: Date.now() + 1000,
+        finishingdate: Date.now() + 30 * 60 * 1000,
+        state: 'Upcoming',
+        sport: {
+            name: 'Football'
+        }
+    })
+
+    await events.createEvent({
+        name: "Sporting x Leixões",
+        ispremium: true,
+        startingdate: Date.now(),
+        finishingdate: Date.now() + 45 * 60 * 1000,
+        state: 'Upcoming',
+        sport: {
+            name: 'Football'
+        }
+    })
+
+    await events.createEvent({
+        name: "Estoril x Setúbal",
+        ispremium: true,
+        startingdate: Date.now() + 30 * 60 * 1000,
+        finishingdate: Date.now() + 90 * 60 * 1000,
+        state: 'Upcoming',
+        sport: {
+            name: 'Football'
+        }
+    })
+
+    await events.createEvent({
+        name: "Arouca x Boavista",
+        ispremium: true,
+        startingdate: Date.now() + 1000,
+        finishingdate: Date.now() + 90 * 60 * 1000,
+        state: 'Upcoming',
+        sport: {
+            name: 'Football'
+        }
+    })
+
+
+    await events.createEvent({
+        name: "Paços de Ferreira x Moreirense",
+        ispremium: true,
+        startingdate: Date.now() + 1000,
+        finishingdate: Date.now() + 70 * 60 * 1000,
+        state: 'Upcoming',
+        sport: {
+            name: 'Football'
+        }
+    })
+
     console.log("Creating event");
 
     // Create user
@@ -161,7 +240,7 @@ teste = async (eventOid) => {
 // teste(3);
 // teste(4);
 
-setTimeout(seedData, 4000);
+setTimeout(seedData, 1000);
 
 
 module.exports = app;

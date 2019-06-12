@@ -10,8 +10,8 @@ import EventsSummary from './components/EventsSummary/EventsSummary';
 import makebet from './components/MakeBet/makebet';
 import checkbets from './components/CheckBets/CheckBetsSummary';
 import manageusers from './components/ManageUser/ManageUser';
-import AnEvent from './components/AnEventSummary/AnEventSummary';
-import Admin from './components/AdminSummary/AdminSummary';
+import AnEventSummary from './components/AnEventSummary/AnEventSummary';
+import AdminSummary from './components/AdminSummary/AdminSummary';
 import createevent from './components/AdminSummary/AddEvents/AddEvents';
 import register from './components/Login/Register/Register';
 import edit from './components/AdminSummary/EditEvent/EditEvent';
@@ -19,27 +19,27 @@ import edit from './components/AdminSummary/EditEvent/EditEvent';
 function App() {
   return (
     <div>
-      <div className="bg-image"></div>
+      <div className=""></div>
       {/* TODO: Add navbar */}
       <Router>
         <Navbar />
         <div className="container mt-4">
-        <div className="row">
-        <div className="col-sm-12">
-          <Switch>
-            <Route exact path="/anevent" component={AnEvent} />
-            <Route exact path="/events" component={EventsSummary} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/bets" component={checkbets} />
-            <Route exact path="/user" component={manageusers} />
-            <Route exact path="/admin" component={Admin} />
-            <Route exact path="/admin/createevent" component={createevent} />
-            <Route exact path="/register" component={register} />
-            <Route exact path="/admin/edit" component={edit} />
-            {/* <Route path="/" component={Dashboard} /> */}
-          </Switch>
-        </div>
-        </div>
+          <div className="row">
+            <div className="col-sm-12">
+              <Switch>
+                <Route exact path="/events" component={EventsSummary} />
+                <Route exact path="/events/:eventOid" component={AnEventSummary} />
+                <Route exact path="/login" component={Login} />
+                <Route exact path="/bets" component={checkbets} />
+                <Route exact path="/user" component={manageusers} />
+                <Route exact path="/admin" component={AdminSummary} />
+                <Route exact path="/admin/createevent" component={createevent} />
+                <Route exact path="/register" component={register} />
+                <Route exact path="/admin/edit" component={edit} />
+                {/* <Route path="/" component={Dashboard} /> */}
+              </Switch>
+            </div>
+          </div>
         </div>
       </Router>
     </div >

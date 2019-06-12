@@ -1,31 +1,47 @@
 .event {
-    border-bottom: 1px solid #aaa; 
-    height: 100px;
-    position: relative;
+    border-bottom: 1px solid #ccc;
+    min-height: 100px;
     padding: 10px 0 0 20px;
+    position: relative;
 }
 
-.event-info{
-    float: left;
-    width: 60%;
-}
-
-.event-info{
+.event-info {
     color: black;
     font-size: 14pt;
     letter-spacing: 0.75pt;
     padding-top: 20px;
 }
 
+#view-all-bettypes-container {
+    margin: 0 !important;
+    padding: 0 !important;
+}
 
-#buttonodds{
+#view-all-bettypes {
+    position: absolute;
+    height: 100%;
+    right: 0;
+    top: 0;
+    margin: 0 !important;
+    font-size: 20pt;
+    border-radius: 0;
+    background-color: #3CC6A3;
+    width: 100px;
+    color: whitesmoke;
+}
+
+#view-all-bettypes:hover {
+    background-color: #FF7777;
+}
+
+#buttonodds {
     font-size: 12pt;
     letter-spacing: 0.75pt;
     display: inline-block;
     margin-right: 10px;
 }
 
-#buttonodds:focus{
+#buttonodds:focus {
     background-color: #EA7317;
     font-size: 14pt;
     display: inline-block;
@@ -39,33 +55,10 @@
     margin-left: 15px;
 }
 
-#liDetails{
-        margin: 5px 0 5px 0 !important;
-        padding: 0;
-}
+@media only screen and (max-width: 600px) {
 
-.ButDetails{
-    background-image: url("../../../assets/add-options.png");
-    background-size: auto;    
-    margin: 0;
-    margin-right: 42px;
-    padding: 0px 10px 0px 10px;
+    #view-all-bettypes {
+        width: 40px;
+    }
 
-    transition: background-color linear 250ms;
-    transition: color linear 225ms;
-
-    color: #333;
-    font-weight: 500;
-    letter-spacing: 0.5pt;
-    margin-top: 20px;
-}
-
-.ButDetails:hover {
-    background-color: #EA7317;
-    color: white;
-    cursor: pointer;
-}
-
-.event:last-child{
-    border-bottom: 0;
 }

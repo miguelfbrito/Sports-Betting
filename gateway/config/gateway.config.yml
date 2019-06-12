@@ -85,6 +85,7 @@ pipelines:
             serviceEndpoint: event-manager-service
 
   bet-manager-pipe:
+
     apiEndpoints: bet-manager
     policies:
       - proxy:

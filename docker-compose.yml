@@ -58,6 +58,7 @@ services:
         depends_on:
             - db_list_events
         restart: always
+        command: ["./wait-for-it.sh", "db_list_events:3306", "--", "nodemon"]
 
 # MS - LIST_EVENTS
     db_user_manager: 
@@ -94,6 +95,8 @@ services:
         depends_on:
             - db_user_manager
         restart: always
+        command: ["./wait-for-it.sh", "db_user_manager:3306", "--", "nodemon"]
+
 # MS - BET-MANAGER
     db_bet_manager: 
         image: mysql:5.7.26
@@ -130,6 +133,7 @@ services:
         depends_on:
             - db_bet_manager
         restart: always
+        command: ["./wait-for-it.sh", "db_bet_manager:3306",  "--", "nodemon"]
 
 # MS - EVENT-MANAGER
     db_event_manager: 
@@ -168,6 +172,7 @@ services:
         depends_on:
             - db_event_manager
         restart: always
+        command: ["./wait-for-it.sh", "db_event_manager:3306", "--", "nodemon"]
 
     frontend:
         build: ./frontend

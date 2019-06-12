@@ -55,11 +55,19 @@ BetType.update = async (findCriteria, changes) => {
 
 BetType.seed = () => {
 
-    this.create({ name: '1' })
-    this.create({ name: 'X' })
-    this.create({ name: '2' })
+    this.create({ name: 'TR 1' })
+    this.create({ name: 'TR X' })
+    this.create({ name: 'TR 2' })
 
-    this.create({ name: '+0.5' })
-    this.create({ name: '+1.5' })
-    this.create({ name: '+2.5' })
+    this.create({ name: 'INT 1' })
+    this.create({ name: 'INT X' })
+    this.create({ name: 'INT 2' })
+
+    this.create({ name: 'H +0.5' })
+    this.create({ name: 'H +1.5' })
+    this.create({ name: 'H +2.5' })
+
+    this.create({ name: 'A +0.5' })
+    this.create({ name: 'A +1.5' })
+    this.create({ name: 'A +2.5' })
 }
