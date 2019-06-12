@@ -4,6 +4,8 @@ import CurrentEventsCarousel from '../CurrentEventsCarousel/CurrentEventsCarouse
 import Event from './Event/Event';
 import EventFilter from './EventFilter/EventFilter';
 
+import Api from '../../api/api';
+
 class EventsSummary extends Component {
     constructor(props) {
         super(props);
@@ -12,6 +14,8 @@ class EventsSummary extends Component {
 
     componentDidMount() {
         // TODO : substituir pela API call
+
+        Api.fetchAvailableEvents();
 
         this.setState({
             events: [
@@ -44,7 +48,7 @@ class EventsSummary extends Component {
     render() {
 
         const { events } = this.state;
-        return ( 
+        return (
             <div className="events-title">
                 <p className="Infodiv">Eventos a decorrer</p>
                 <div className="events-container shadow">

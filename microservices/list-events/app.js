@@ -2,12 +2,16 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const cors = require('cors');
 
 const availableEventsRouter = require('./routes/event');
 
 const app = express();
 
 require('dotenv').config();
+
+app.use(cors())
+app.options('*', cors())
 
 global.MS_BETS = process.env.MS_BETS || ''
 global.MS_USERS = process.env.MS_USERS || ''

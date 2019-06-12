@@ -4,6 +4,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
 const axios = require('axios');
+const cors = require('cors');
 
 const eventRouter = require('./routes/event');
 const availableBetTypesRouter = require('./routes/availablebettypes');
@@ -19,7 +20,13 @@ const HandleEventsTiming = require('./controllers/handleEventsTiming');
 
 const app = express();
 
+
+
 require('dotenv').config();
+
+app.use(cors())
+app.options('*', cors())
+
 
 global.MS_BETS = process.env.MS_BETS;
 global.MS_USERS = process.env.MS_USERS;

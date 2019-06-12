@@ -46,11 +46,10 @@ class AdminSummary extends Component {
     render() {
 
         const { events } = this.state;
-        return ( 
+        return (
             <div className="events-title">
                 <p className="Infodiv">Eventos a decorrer</p>
                 <div className="events-container shadow">
-
 
                     {/* Carousel 4 or 5 games */}
                     {/* <CurrentEventsCarousel /> */}
