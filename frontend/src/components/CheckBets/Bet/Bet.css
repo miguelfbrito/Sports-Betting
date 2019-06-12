@@ -1,6 +1,6 @@
 .bet {
     border-bottom: 1px solid #aaa; 
-    height: 200px;
+    height: auto;
     position: relative;
     padding: 10px 0 0 20px;
 }

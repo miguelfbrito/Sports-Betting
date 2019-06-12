@@ -7,6 +7,8 @@
 }
 
 .Info-div{
+    width: auto;
+    height: auto;
     margin-left: 15px;
     font-size: 30px;
 }
