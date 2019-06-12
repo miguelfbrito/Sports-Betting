@@ -66,22 +66,22 @@ ValidateBetTypes.isFootballBetTypeValid = (stats, bettype) => {
         awayyellowcards: stats.awayyellowcards || 0
     }
 
-    switch (bettype.toLowerCase()) {
+    switch (bettype.toUpperCase()) {
 
-        case ("1"):
+        case ("TR 1"):
             if (stats.homegoals > stats.awaygoals) {
                 console.log("A validar o tipo de aposta [1], " + stats.homegoals + " :: " + stats.awaygoals)
                 return true;
             }
             return false;
-        case ("x"):
+        case ("TR X"):
             if (stats.homegoals === stats.awaygoals) {
                 console.log("A validar o tipo de aposta [X], " + stats.homegoals + " :: " + stats.awaygoals)
                 return true;
             }
             return false;
 
-        case ("2"):
+        case ("TR 2"):
             if (stats.homegoals < stats.awaygoals) {
                 console.log("A validar o tipo de aposta [2], " + stats.homegoals + " :: " + stats.awaygoals)
                 return true;

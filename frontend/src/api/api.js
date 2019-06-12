@@ -6,8 +6,23 @@ const Api = {};
 
 Api.fetchAvailableEvents = async () => {
 
-    const data = await axios.get(`${host}/available-events`);
-    return data.data;
+    try {
+        const data = await axios.get(`${host}/available-events`);
+        return data.data;
+    } catch (e) {
+        console.error(e);
+    }
+}
+
+Api.fetchAvailableBetTypesByEventOid = async (eventOid) => {
+
+    try {
+        const data = await axios.get(`${host}/availablebettype/byeventoid/${eventOid}`);
+        return data.data;
+    } catch (e) {
+        console.error(e);
+    }
+
 }
 
 

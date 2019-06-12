@@ -1,13 +1,11 @@
 .events-container {
     background-color: var(--color-gray);
-    margin: 15px;
+    margin: 0px;
 }
 
-.events-title {
-    background-color: #03B5AA;
-}
+.events-title {}
 
 .Infodiv {
-    margin: 0;
+    margin: 0 !important;
     padding: 0;
 }

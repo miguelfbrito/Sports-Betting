@@ -34,18 +34,12 @@ button {
     text-align: right;
 }
 
-.ErrorMess p{
+.ErrorMess p {
     color: red;
     font-size: 10px;
 }
 
-
-.row{
-    overflow-x: hidden;
-    overflow-y: scroll;
-}
-
-.DivRegister{
+.DivRegister {
     height: 200px;
     overflow-y: scroll;
 }

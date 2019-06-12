@@ -9,6 +9,17 @@ router.get('/', async (req, res, next) => {
 
 });
 
+router.get('/byid/:id', async (req, res, next) => {
+
+    if (!req.params.id) {
+        res.send({ message: 'Missing parameters' });
+    }
+
+    const data = await BetType.findById(req.params.id);
+    res.json(data)
+
+});
+
 router.get('/:name', async (req, res, next) => {
 
     const data = await BetType.findByname(req.params.name);

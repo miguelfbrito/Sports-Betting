@@ -2,19 +2,17 @@
     background-color: var(--color-gray);
 }
 
-.anevents-title{
+.BetText {
     background-color: #03B5AA;
 }
 
-.BetText{
-    background-color: gray;
+.BetText p {
+    margin: 0;
+    padding: 10px 20px;
+    font-size: 14pt;
 }
 
-.BetText p{
-    margin-left: 20px;
-}
-
-.Infodiv{
+.Infodiv {
     margin-left: 15px;
     font-size: 20px;
 }

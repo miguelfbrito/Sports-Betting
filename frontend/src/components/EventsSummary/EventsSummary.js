@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+
 import './EventsSummary.css';
 import CurrentEventsCarousel from '../CurrentEventsCarousel/CurrentEventsCarousel';
 import Event from './Event/Event';
@@ -107,7 +109,10 @@ class EventsSummary extends Component {
 
                                 <div className="event">
                                     <Event event={event} />
-                                    <button type="button" className="btn" id="view-all-bettypes">+</button>
+
+                                    <Link to={'/events/' + event.oid}>
+                                        <button type="button" className="btn" id="view-all-bettypes">+</button>
+                                    </Link>
                                 </div>
                             ))}
 

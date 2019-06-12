@@ -11,9 +11,6 @@ router.get('/', async (req, res, next) => {
 
     try {
         let data = await Event.fetchAll();
-
-        console.log("DATA FETCH", data)
-
         data = data.filter(event => event.dataValues.ispremium)
 
         res.send(data);

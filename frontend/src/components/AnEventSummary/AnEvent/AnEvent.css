@@ -1,7 +1,6 @@
 .anevent {
-    border-bottom: 1px solid #aaa;
-    height: auto;
     position: relative;
+    margin-bottom: 30px;
 }
 
 .anevent-info {
@@ -11,12 +10,43 @@
     padding-top: 20px;
 }
 
+#row-anevent {
+    margin: 0 auto !important;
+}
+
 .parainfo {
     width: auto;
     font-size: 14px;
     color: black;
     font-weight: bold;
     margin-left: 10px;
+}
+
+.anevent-block {
+    text-align: center;
+    position: relative;
+    background-color: #3CC6A3;
+    padding: 0;
+    height: 100px;
+    transition: all linear 250ms;
+    border-radius: 15px;
+}
+
+
+.anevent-block:hover {
+    background-color: rgb(67, 224, 185);
+}
+
+.anevent-block p {
+    font-size: 14pt;
+    padding: 2px;
+    margin: 0;
+}
+
+
+.anevent-block button {
+    margin: 0 !important;
+    padding: 10px 45px;
 }
 
 #buttonbettype {
@@ -49,3 +79,6 @@
 .anevent:last-child {
     border-bottom: 0;
 }
+
+
+@media

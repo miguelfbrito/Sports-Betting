@@ -10,6 +10,16 @@ BetMS.fetchBetTypesByName = async (name) => {
     }
 }
 
+BetMS.fetchBetTypeDetailsByOid = async (oid) => {
+    try {
+        const data = await axios.get(`${global.MS_BETS}/bettype/byid/${oid}`);
+        return data.data;
+    } catch (e) {
+        console.error(e);
+    }
+
+}
+
 BetMS.closeBet = async (bet) => {
     try {
         const data = await axios.post(`${global.MS_BETS}/bet/closebet`, bet)

@@ -1,6 +1,6 @@
 const AvailableBetTypes = module.exports;
-const Stats = require('../controllers/stats');
 const AvailableBetTypesDB = require('../models/availablebettypes');
+const Event = require('./event');
 
 const BetMS = require('./betMS');
 
@@ -10,7 +10,7 @@ AvailableBetTypes.createDefaultBySportName = async (name, eventOid) => {
     switch (name.toLowerCase()) {
         case 'football':
 
-            const defaultBetTypes = ['1', 'X', '2'];
+            const defaultBetTypes = ['TR 1', 'TR X', 'TR 2', 'INT 1', 'INT 2'];
             bettypes = await Promise.all(defaultBetTypes.map(async bettype => {
                 return await BetMS.fetchBetTypesByName(bettype);
             }))
@@ -38,6 +38,33 @@ AvailableBetTypes.createDefaultBySportName = async (name, eventOid) => {
 }
 
 AvailableBetTypes.fetchByEventOid = async (eventOid) => {
+
+    try {
+        const available = await AvailableBetTypesDB.findAll({ where: { eventOid } });
+        const event = await Event.fetchOneWithSport({ where: { oid: eventOid } });
+        let final = await Promise.all(available.map(async av => {
+            console.log("AV DATA BETTYPEOID", av.dataValues.bettypeOid)
+            const bettype = await BetMS.fetchBetTypeDetailsByOid(av.dataValues.bettypeOid);
+            return {
+                oid: av.oid,
+                odd: av.odd,
+                bettypeOid: av.bettypeOid,
+                bettypeName: bettype.name
+            }
+        }));
+
+        return {
+            bettypes: final,
+            event
+        }
+
+
+    } catch (e) {
+        console.error(e);
+    }
+}
+
+AvailableBetTypes.fetchByEventOidWithBetTypeName = async (evntOid) => {
     try {
         return await AvailableBetTypesDB.findAll({ where: { eventOid } });
     } catch (e) {

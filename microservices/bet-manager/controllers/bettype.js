@@ -9,6 +9,14 @@ BetType.findByname = async (name) => {
     }
 }
 
+BetType.findById = async (oid) => {
+    try {
+        return await BetTypeDB.findOne({ where: { oid }, attributes: ['oid', 'name'] });
+    } catch (e) {
+        console.error(e);
+    }
+}
+
 BetType.fetchAll = async () => {
     try {
         return await BetTypeDB.findAll();
