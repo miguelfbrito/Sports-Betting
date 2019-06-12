@@ -22,10 +22,10 @@
     font-size: 12pt;
     letter-spacing: 0.75pt;
     display: inline-block;
-    margin-right: 5px;
+    margin-right: 10px;
 }
 
-#button:focus{
+#buttonodds:focus{
     background-color: #EA7317;
     font-size: 14pt;
     display: inline-block;
@@ -39,12 +39,31 @@
     margin-left: 15px;
 }
 
-#buttonDetails{
+#liDetails{
+        margin: 5px 0 5px 0 !important;
+        padding: 0;
+}
+
+.ButDetails{
     background-image: url("../../../assets/add-options.png");
-    width: 30px;
-    height: 30px;
-    float: right;
-    background-color: white;
+    background-size: auto;    
+    margin: 0;
+    margin-right: 42px;
+    padding: 0px 10px 0px 10px;
+
+    transition: background-color linear 250ms;
+    transition: color linear 225ms;
+
+    color: #333;
+    font-weight: 500;
+    letter-spacing: 0.5pt;
+    margin-top: 20px;
+}
+
+.ButDetails:hover {
+    background-color: #EA7317;
+    color: white;
+    cursor: pointer;
 }
 
 .event:last-child{

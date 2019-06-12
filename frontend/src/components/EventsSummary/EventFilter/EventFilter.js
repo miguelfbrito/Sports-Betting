@@ -14,9 +14,10 @@ class EventFilter extends Component {
             <div className="event-filter-container">
                 <ul className="event-filters">
                     <li className="">All</li>
-                    <li className="Football">Football</li>
-                    <li className="Tenis">Tenis</li>
-                    <li className="Basketball">Basketball</li>
+                    <li className="Football"></li>
+                    <li className="Tenis"></li>
+                    <li className="Basketball"></li>
+                    <li className="Voleyball"></li>
                 </ul>
                 <hr />
 

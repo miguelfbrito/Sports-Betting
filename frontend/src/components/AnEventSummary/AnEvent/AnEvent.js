@@ -12,16 +12,35 @@ import './AnEvent.css'
 const AnEvent = (props) => {
     const { bt } = props;
 
-
-    return (
-        <div className="Bettype-odds">
-            {bt.map(event => (
-        Object.keys(event).map((key, index) => ( 
-            <button id="button" key={index}>  {event[key]}</button> 
-          ))
-    ))}
-        </div>
-    );
+    if(Object.keys(bt[0]).length==3){
+        return (
+            <div className="row">
+                {bt.map(event => (
+            Object.keys(event).map((key, index) => ( 
+                <div className="col-sm-4">
+                <p className="parainfo">{key}</p>
+                <p className="parainfo">----------</p>
+                <button id="buttonbettype" key={index}>{event[key]}</button> 
+                </div>
+              ))
+        ))}
+            </div>
+        );
+    }else if(Object.keys(bt[0]).length>=4 || Object.keys(bt[0]).length<=2){
+        return (
+            <div className="row">
+                {bt.map(event => (
+            Object.keys(event).map((key, index) => ( 
+                <div className="col-sm-6">
+                <p className="parainfo">{key}</p>
+                <p className="parainfo">----------</p>
+                <button id="buttonbettype" key={index}>{event[key]}</button> 
+                </div>
+              ))
+        ))}
+            </div>
+        );
+    }
 }
 
 

@@ -31,11 +31,15 @@ const Event = (props) => {
         <div className="col-sm-5">
             <p className="event-info">{event.name}</p>
         </div>
-        <div className="col-sm-7">
+        <div className="col-sm-5">
             <button id="buttonodds" onClick={handleClick.bind(this, event)}>{event.odd1}</button>
             <button id="buttonodds">{event.oddX}</button>
             <button id="buttonodds">{event.odd2}</button>
-            <button id="buttonDetails"></button>
+        </div>
+        <div className="col-sm-2">
+        <ul className="liDetails">
+                <li className ="ButDetails"></li>
+            </ul>
         </div>
         </div>
     );

@@ -16,8 +16,15 @@
     padding-top: 20px;
 }
 
+.parainfo{
+    width: auto;
+    font-size: 14px;
+    color: black;
+    font-weight: bold;
+    margin-left: 10px;
+}
 
-#button{
+#buttonbettype{
     font-size: 12pt;
     letter-spacing: 0.75pt;
     display: inline-block;
@@ -25,9 +32,9 @@
     margin-bottom: 10px;
 }
 
-#button:focus{
+#buttonbettype:focus{
     background-color: #EA7317;
-    font-size: 14pt;
+    font-size: 12pt;
     display: inline-block;
     margin-right: 30px;
     margin-bottom: 10px;

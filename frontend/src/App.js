@@ -14,6 +14,7 @@ import AnEvent from './components/AnEventSummary/AnEventSummary';
 import Admin from './components/AdminSummary/AdminSummary';
 import createevent from './components/AdminSummary/AddEvents/AddEvents';
 import register from './components/Login/Register/Register';
+import edit from './components/AdminSummary/EditEvent/EditEvent';
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
         <Navbar />
         <div className="container mt-4">
         <div className="row">
-        <div className="col-sm-9">
+        <div className="col-sm-12">
           <Switch>
             <Route exact path="/anevent" component={AnEvent} />
             <Route exact path="/events" component={EventsSummary} />
@@ -34,12 +35,7 @@ function App() {
             <Route exact path="/admin" component={Admin} />
             <Route exact path="/admin/createevent" component={createevent} />
             <Route exact path="/register" component={register} />
-            {/* <Route path="/" component={Dashboard} /> */}
-          </Switch>
-        </div>
-        <div className="col-sm-3 pr-0">
-        <Switch>
-            <Route exact path="/events" component={makebet} />
+            <Route exact path="/admin/edit" component={edit} />
             {/* <Route path="/" component={Dashboard} /> */}
           </Switch>
         </div>

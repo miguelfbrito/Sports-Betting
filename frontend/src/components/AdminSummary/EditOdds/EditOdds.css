@@ -11,9 +11,15 @@
 input[type="text"]{
     font-size: 14px;
     width: 300px;
+    margin-bottom: 5px;
+    margin-top: 5px
 }
 
 .formlabe{
     width: auto;
     display: inline-block;
+}
+
+.Bettype-odds{
+    margin-left:"20px";
 }

@@ -12,87 +12,73 @@ import { Formik } from 'formik';
     }
 */
 
-class EditOdds extends Component {
-  constructor(props) {
-      super(props);
-      this.state = { events: [] }
-  }
+const EditOdds = (props) => {
 
-  componentDidMount() {
-    // TODO : substituir pela API call
+    const { bt } = props;
+    const t = bt[0];
 
-    this.setState({
-        events: [
-            {
-                "name": "1 x 2 TR",
-                bt : [{
-                "odd1": "1- 2.85",
-                "oddX": "x- 1.85",
-                "odd2": "2- 2.15",
-                "odd3": "1- 2.85",
-                "odd4": "x- 1.85",
-                "odd5": "2- 2.15",
-                "odd6": "1- 2.85",
-                "odd7": "x- 1.85",
-                }
-                ]
-            },
-            {
-                "name": "1 x 2 INT",
-                bt : [{
-                "odd1": "1- 1.85",
-                "oddX": "x- 1.55",
-                "odd2": "2- 1.75",
-                "odd4": "x- 1.85",
-                "odd5": "2- 2.15",
-                "odd6": "1- 2.85",
-                "odd7": "x- 1.85",
-                }
-                ]
-            }
-        ]
-    })
-
-}
-
-onSubmit(e){
-    console.log(e);
-}
-
-render() {
-    return(
-        <div></div>
-    );
-/*
-    const { bt } = this.state;
-    
     return ( 
-        <div className="Bettypeodds">
-        <form onSubmit={this.onSubmit}>
-          <div className="row">
-            {bt.map(event => (
-            Object.keys(event).map((key, index) => ( 
-              <div className="col">
-                <input
-                    class="form-control"
-                    id = "odds-info"
-                    placeholder="Odd"
-                    type="text"
-                    onChange={console.log()}
-                    name={event[key]}
-                    value={event[key]}
-                />
-                </div>
-              ))
-              ))}
-          </div>
+        <div className="row">
+        <div style={{overflowY: "scroll", marginLeft:"20px" }} className="Bettype-odds">
+        <Formik
+                            initialValues={{}}
+                            validate={values => {
+                              let errors = {};
+                              if (!values) {
+                                errors = 'Required';
+                              }/*else if (
+                                !/^\s*(?=.*[1-9])\d*(?:\.\d{1,2})?\s*$/i.test(values)
+                              ) {
+                                errors = 'Invalid number type';
+                              }*/
+                              return errors;
+                            }}
+                            onSubmit={(values, { setSubmitting }) => {
+                                setTimeout(() => {
+                                    alert(JSON.stringify(values, null, 2));
+                                    setSubmitting(false);
+                                }, 400);
+                            }}
+                        >
+                            {({
+                            values,
+                            errors,
+                            touched,
+                            handleChange,
+                            handleBlur,
+                            handleSubmit,
+                            isSubmitting,
+                            /* and other goodies */
+                        }) => (
+                        <form onSubmit={handleSubmit}>
+                        {Object.keys(t).map((key, index) => {values[key]=t[key]})}
+                        <div className="row">
+                        {
+                            Object.keys(t).map((key, index) => ( 
+                            <div className="col">
+                                <input
+                                    class="form-control"
+                                    id = "odds-info"
+                                    placeholder="Odd"
+                                    type="text"
+                                    onChange={handleChange}
+                                    name={key}
+                                    onBlur={handleBlur}
+                                    value={values[key]}
+                                />
+                        </div>
+                        ))}
+                    </div>
           <label className="buttonsub">
           <button type="submit" >Save Changes</button>
           </label>
         </form>
+      )}
+            </Formik>
+            </div>
         </div>
     );
-            */}
 }
+
 
 export default EditOdds;

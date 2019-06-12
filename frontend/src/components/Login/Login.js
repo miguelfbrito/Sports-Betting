@@ -34,7 +34,7 @@ class Login extends Component {
             <div className="container">
                 <div className="row">
                     <div className="col-lg-3"></div>
-                    <div className="col-lg-6 login-container shadow">
+                    <div overflow="scroll" className="col-lg-6 login-container shadow">
                         <h3>Welcome!</h3>
                         <Formik
                             initialValues={{ username: '', password: '' }}
