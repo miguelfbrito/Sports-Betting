@@ -14,6 +14,7 @@ import AnEvent from './components/AnEventSummary/AnEventSummary';
 import Admin from './components/AdminSummary/AdminSummary';
 import createevent from './components/AdminSummary/AddEvents/AddEvents';
 import register from './components/Login/Register/Register';
+import edit from './components/AdminSummary/EditEvent/EditEvent';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
             <Route exact path="/admin" component={Admin} />
             <Route exact path="/admin/createevent" component={createevent} />
             <Route exact path="/register" component={register} />
+            <Route exact path="/admin/edit" component={edit} />
             {/* <Route path="/" component={Dashboard} /> */}
           </Switch>
         </div>

@@ -19,7 +19,7 @@ class Register extends Component {
             <div className="container">
                 <div className="row">
                     <div className="col-lg-3"></div>
-                    <div className="col-lg-6 login-container shadow">
+                    <div style={{ height: '500px', overflowY: "scroll" }} className="col-lg-9 login-container shadow">
                         <h3>Welcome!</h3>
                         <Formik
                             initialValues={{ username: '', saldo: '', nome: '', email: '', password: '', cpassword : ''}}
@@ -88,7 +88,7 @@ class Register extends Component {
 
                             <div>
                                 <label htmlFor="">Name</label>
-                                <Field className="input" type="text" name="nome" />
+                                <Field className="input" type="username" name="nome" />
                                 <ErrorMessage name="nome" component="div" />
                             </div>
 
