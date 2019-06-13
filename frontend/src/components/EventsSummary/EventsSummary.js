@@ -12,7 +12,7 @@ import Api from '../../api/api';
 class EventsSummary extends Component {
     constructor(props) {
         super(props);
-        this.state = { events: [], loading: true, showBettingSlip: true }
+        this.state = { events: [], loading: true, showBettingSlip: true, bettingSlipBets: [] }
     }
 
     async componentDidMount() {
@@ -80,7 +80,7 @@ class EventsSummary extends Component {
 
     render() {
 
-        const { events, showBettingSlip } = this.state;
+        const { events, showBettingSlip, bettingSlipBets } = this.state;
 
 
         console.log("Eventos", events)
@@ -91,7 +91,7 @@ class EventsSummary extends Component {
 
         const bettingSlipSection = (
             <div className="col-sm-3">
-                <BettingSlip />
+                <BettingSlip bets={bettingSlipBets} />
             </div>);
 
 

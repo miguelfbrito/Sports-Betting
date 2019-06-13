@@ -7,7 +7,7 @@
     padding: 20px;
 }
 
-.bettingslip .col-md-6 p {
+.bettingslip p {
     margin: 3px 5px;
 }
 
@@ -22,6 +22,19 @@
     width: 90%;
     font-size: 14px;
 }
+
+
+
+.input-group-sm input,
+span {
+    height: 30px !important;
+}
+
+.input-group-sm input {
+    border: 2px solid #3CC6A3;
+    
+}
+
 
 
 .top-bar p {
@@ -39,6 +52,5 @@
 #place-bet button {
     margin: 0 !important;
     width: 100%;
-    background-color: ;
     border-radius: 0;
 }
