@@ -65,7 +65,6 @@ Event.closeAndVerifyBets = async (event) => {
 
     // Obter todas as availableBetTypes relativas ao evento em questão
     const availablebettypes = await AvailableBetType.fetchByEventOid(event.oid);
-    console.log("AVAILABLE RELATIVAS SO A UM EVENTO #################################################", availablebettypes);
 
     const currentStats = await Stats.fetchSubStatsType(event.oid);
 
@@ -156,7 +155,8 @@ Event.fetchAll = async (event) => {
 }
 
 Event.fetchAllJustStarted = async () => {
-    return await EventDB.findAll({
+
+    let events = await EventDB.findAll({
         where: {
             startingdate: {
                 [Op.lte]: Date.now()
@@ -164,6 +164,19 @@ Event.fetchAllJustStarted = async () => {
             state: 'Upcoming'
         }
     });
+
+    if (events) {
+        events = Promise.all(events.map(async event => {
+            const availablebettypes = await AvailableBetType.fetchByEventOidWithBetTypeNameOnly(event.dataValues.oid);
+
+            return {
+                ...event.dataValues,
+                availablebettypes
+            }
+        }))
+    }
+
+    return events;
 }
 
 Event.fetchAllJustClosed = async () => {

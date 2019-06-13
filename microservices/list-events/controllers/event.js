@@ -8,6 +8,7 @@ Event.updateAvailable = async (listEvents) => {
     let currentEventsByOid = {};
 
     currentEvents.forEach(event => {
+
         currentEventsByOid[event.oid] = { ...event };
         // Vão ficar duplicados mas + facil de comparar
         // delete currentEventsByOid[event.oid].oid;
@@ -15,6 +16,7 @@ Event.updateAvailable = async (listEvents) => {
 
     listEvents.forEach(async event => {
 
+        event.availablebettypes = JSON.stringify(event.availablebettypes);
         // Se o evento não existir, cria-se um novo
         if (!currentEventsByOid[event.oid]) {
 

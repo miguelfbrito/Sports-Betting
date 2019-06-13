@@ -80,8 +80,8 @@ seedData = async () => {
     await events.createEvent({
         name: "Barcelona x Real Madrid",
         ispremium: true,
-        startingdate: Date.now() + 5 * 1000,
-        finishingdate: Date.now() + 25 * 1000,
+        startingdate: Date.now() + 1 * 1000,
+        finishingdate: Date.now() + 2 * 1000,
         state: 'Upcoming',
         sport: {
             name: 'Football'
@@ -91,8 +91,8 @@ seedData = async () => {
     await events.createEvent({
         name: "Bayern vs Dortmund",
         ispremium: true,
-        startingdate: Date.now() + 5 * 1000,
-        finishingdate: Date.now() + 35 * 60 * 1000,
+        startingdate: Date.now() + 1 * 1000,
+        finishingdate: Date.now() + 10 * 60 * 1000,
         state: 'Upcoming',
         sport: {
             name: 'Football'
@@ -213,7 +213,7 @@ seedData = async () => {
 
     // const closeAndVerifyBets = await events.closeAndVerifyBets({ oid: 1 });
 
-    setInterval(eventsTiming, 20000);
+    setInterval(eventsTiming, 10000);
 
 }
 

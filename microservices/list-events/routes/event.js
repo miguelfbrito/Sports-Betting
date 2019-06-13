@@ -23,7 +23,10 @@ router.get('/', async (req, res, next) => {
 
 router.post('/update', async (req, res, next) => {
 
-    const listEvents = req.body
+    let listEvents = req.body
+
+
+    console.log("EVENTOS RECEBIDOS###################################", listEvents)
 
     try {
         const newEvent = await Event.updateAvailable(listEvents);

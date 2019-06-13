@@ -38,6 +38,26 @@ AvailableBetTypes.createDefaultBySportName = async (name, eventOid) => {
 }
 
 
+AvailableBetTypes.fetchByEventOidWithBetTypeNameOnly = async (eventOid) => {
+    try {
+        const available = await AvailableBetTypesDB.findAll({ where: { eventOid } });
+        let final = await Promise.all(available.map(async av => {
+            const bettype = await BetMS.fetchBetTypeDetailsByOid(av.dataValues.bettypeOid);
+            return {
+                oid: av.oid,
+                odd: av.odd,
+                bettypeOid: av.bettypeOid,
+                bettypeName: bettype.name
+            }
+        }));
+
+        return final;
+
+    } catch (e) {
+        console.error(e);
+    }
+}
+
 AvailableBetTypes.fetchByEventOidWithBetTypeName = async (eventOid) => {
     try {
         const available = await AvailableBetTypesDB.findAll({ where: { eventOid } });

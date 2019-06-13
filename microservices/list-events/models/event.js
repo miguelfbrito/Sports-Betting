@@ -39,6 +39,8 @@ const Event = db.sequelize.define('event', {
   },
   sportOid: {
     type: Sequelize.INTEGER(11)
+  }, availablebettypes: {
+    type: Sequelize.TEXT
   }
 }, {
     tableName: 'event'
