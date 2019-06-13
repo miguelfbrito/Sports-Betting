@@ -10,7 +10,7 @@ AvailableBetTypes.createDefaultBySportName = async (name, eventOid) => {
     switch (name.toLowerCase()) {
         case 'football':
 
-            const defaultBetTypes = ['TR 1', 'TR X', 'TR 2', 'INT 1', 'INT 2'];
+            const defaultBetTypes = ['TR 1', 'TR X', 'TR 2', 'H +0.5', 'H +1.5', 'H +2.5', 'A +0.5', 'A +1.5', 'A +2.5'];
             bettypes = await Promise.all(defaultBetTypes.map(async bettype => {
                 return await BetMS.fetchBetTypesByName(bettype);
             }))
@@ -37,8 +37,8 @@ AvailableBetTypes.createDefaultBySportName = async (name, eventOid) => {
     }
 }
 
-AvailableBetTypes.fetchByEventOid = async (eventOid) => {
 
+AvailableBetTypes.fetchByEventOidWithBetTypeName = async (eventOid) => {
     try {
         const available = await AvailableBetTypesDB.findAll({ where: { eventOid } });
         const event = await Event.fetchOneWithSport({ where: { oid: eventOid } });
@@ -64,13 +64,15 @@ AvailableBetTypes.fetchByEventOid = async (eventOid) => {
     }
 }
 
-AvailableBetTypes.fetchByEventOidWithBetTypeName = async (evntOid) => {
+AvailableBetTypes.fetchByEventOid = async (eventOid) => {
     try {
         return await AvailableBetTypesDB.findAll({ where: { eventOid } });
     } catch (e) {
         console.error(e);
     }
+
 }
+
 
 AvailableBetTypes.betTypeExistsInEvent = async (bettypeOid, eventOid) => {
 

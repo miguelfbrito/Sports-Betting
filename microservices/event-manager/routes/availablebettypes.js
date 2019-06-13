@@ -15,7 +15,7 @@ router.get('/byeventoid/:eventOid', async (req, res, next) => {
     }
 
     try {
-        const data = await AvailableBetTypes.fetchByEventOid(req.params.eventOid);
+        const data = await AvailableBetTypes.fetchByEventOidWithBetTypeName(req.params.eventOid);
         res.send(data);
 
     } catch (e) {

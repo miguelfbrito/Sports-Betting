@@ -4,12 +4,12 @@ import './EventFilter.css';
 class EventFilter extends Component {
     constructor(props) {
         super(props);
-        this.state = {}
+        this.bets = {}
     }
     render() {
 
         return (
-            
+
             //Colocar as imagens aqui em vez dos nomes
             <div className="event-filter-container">
                 <ul className="event-filters">

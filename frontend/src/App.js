@@ -7,7 +7,6 @@ import './common/global-style.css';
 import Navbar from './components/Navbar/Navbar-login';
 import Login from './components/Login/Login';
 import EventsSummary from './components/EventsSummary/EventsSummary';
-import makebet from './components/MakeBet/makebet';
 import checkbets from './components/CheckBets/CheckBetsSummary';
 import manageusers from './components/ManageUser/ManageUser';
 import AnEventSummary from './components/AnEventSummary/AnEventSummary';

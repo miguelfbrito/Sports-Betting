@@ -175,6 +175,9 @@ services:
             - network_backend
         depends_on:
             - db_event_manager
+            - ms_bet_manager
+            - ms_user_manager
+            - ms_list_events
         restart: always
         command: ["./wait-for-it.sh", "db_event_manager:3306", "--", "nodemon"]
 

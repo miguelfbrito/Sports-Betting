@@ -1,0 +1,44 @@
+.bettingslip {
+    background-color: #3CC6A3;
+    margin-top: 5px;
+}
+
+.bettingslip {
+    padding: 20px;
+}
+
+.bettingslip .col-md-6 p {
+    margin: 3px 5px;
+}
+
+.bet-titles {
+    width: 100%;
+    width: 100px;
+    font-size: 12pt;
+    font-weight: bold;
+}
+
+.bet-amount {
+    width: 90%;
+    font-size: 14px;
+}
+
+
+.top-bar p {
+    padding: 7px 15px;
+    margin: 0;
+    font-size: 15pt;
+    color: white;
+}
+
+#place-bet {
+    margin: 0;
+    padding: 0;
+}
+
+#place-bet button {
+    margin: 0 !important;
+    width: 100%;
+    background-color: ;
+    border-radius: 0;
+}

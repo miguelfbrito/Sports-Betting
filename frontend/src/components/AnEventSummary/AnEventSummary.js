@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import CurrentEventsCarousel from '../CurrentEventsCarousel/CurrentEventsCarousel';
 import AnEvent from './AnEvent/AnEvent';
-import Makebet from '../MakeBet/makebet';
+import BettingSlip from '../BettingSlip/BettingSlip';
 import Api from '../../api/api';
 
 import BetTypeStruct from '../utils/bettypesstruct';
@@ -122,7 +122,7 @@ class AnEventSummary extends Component {
                         </div>
                     </div>
                     <div className="col-sm-3">
-                        <Makebet />
+                        <BettingSlip />
                     </div>
                 </div>
             </div>

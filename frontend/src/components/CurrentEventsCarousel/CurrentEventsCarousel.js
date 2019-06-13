@@ -8,7 +8,7 @@ import './CurrentEventsCarousel.css';
 class CurrentEventsCarousel extends Component {
     constructor(props) {
         super(props);
-        this.state = {}
+        this.bets = {}
     }
 
     render() {

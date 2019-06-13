@@ -26,7 +26,7 @@
     font-size: 20pt;
     border-radius: 0;
     background-color: #3CC6A3;
-    width: 100px;
+    width: 75px;
     color: whitesmoke;
 }
 
@@ -59,6 +59,10 @@
 
     #view-all-bettypes {
         width: 40px;
+    }
+
+    .top-bar {
+        margin-top: 35px;
     }
 
 }

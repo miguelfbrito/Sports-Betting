@@ -17,11 +17,8 @@ BetTypeStruct.organizeByFootball = (data) => {
         bettypesByName[b.bettypeName] = { ...b };
     })
 
-
-
-
     let tr = {
-        name: 'Tempo Regulamentar',
+        name: 'Regular Time',
         bettypes: []
     }
 
@@ -29,29 +26,30 @@ BetTypeStruct.organizeByFootball = (data) => {
     verifyAndAdd(bettypesByName['TR X'], tr, 'TR X', 'X');
     verifyAndAdd(bettypesByName['TR 2'], tr, 'TR 2', '2');
 
-
-    console.log("Tempo Regulamentar")
-    console.log(tr)
-
-    let int = {
-        name: 'Ao Intervalo',
+    let homeGoals = {
+        name: 'Home Team Goal Difference',
         bettypes: []
     }
 
-    verifyAndAdd(bettypesByName['INT 1'], int, 'INT 1', '1');
-    verifyAndAdd(bettypesByName['INT X'], int, 'INT X', 'X');
-    verifyAndAdd(bettypesByName['INT 2'], int, 'INT 2', '2');
+    verifyAndAdd(bettypesByName['H +0.5'], homeGoals, 'H +0.5', '+0.5');
+    verifyAndAdd(bettypesByName['H +1.5'], homeGoals, 'H +1.5', '+1.5');
+    verifyAndAdd(bettypesByName['H +2.5'], homeGoals, 'H +2.5', '+2.5');
 
-    console.log("Ao intervalo")
-    console.log(int)
+    let awayGoals = {
+        name: 'Away Team Goals Difference',
+        bettypes: []
+    }
+
+    verifyAndAdd(bettypesByName['A +0.5'], awayGoals, 'A +0.5', '+0.5');
+    verifyAndAdd(bettypesByName['A +1.5'], awayGoals, 'A +1.5', '+1.5');
+    verifyAndAdd(bettypesByName['A +2.5'], awayGoals, 'A +2.5', '+2.5');
 
     let all = [];
     if (tr.bettypes.length > 0) all.push(tr);
-    if (int.bettypes.length > 0) all.push(int);
+    if (homeGoals.bettypes.length > 0) all.push(homeGoals);
+    if (awayGoals.bettypes.length > 0) all.push(awayGoals);
 
     console.log(all)
-
-    // TODO : adicionar os golos
 
     return all;
 }

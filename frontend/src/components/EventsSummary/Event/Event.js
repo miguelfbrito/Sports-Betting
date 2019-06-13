@@ -1,7 +1,6 @@
 import React from 'react';
 
 import './Event.css'
-import Bet from '../../MakeBet/makebet';
 
 const formatDate = (dateMillis) => {
 
@@ -26,7 +25,7 @@ const Event = (props) => {
     const { event } = props;
 
     const buttonSection = (
-        <div className="col-sm-5 events-odds">
+        <div className="col-sm-6 events-odds">
             <button type="button" className="btn btn-info">1 (2.22)</button>
             <button type="button" className="btn btn-info">X (1.43)</button>
             <button type="button" className="btn btn-info">2 (1.10)</button>

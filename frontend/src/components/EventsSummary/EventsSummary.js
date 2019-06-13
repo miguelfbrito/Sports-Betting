@@ -5,20 +5,21 @@ import './EventsSummary.css';
 import CurrentEventsCarousel from '../CurrentEventsCarousel/CurrentEventsCarousel';
 import Event from './Event/Event';
 import EventFilter from './EventFilter/EventFilter';
-import Makebet from '../MakeBet/makebet';
+import BettingSlip from '../BettingSlip/BettingSlip';
 
 import Api from '../../api/api';
 
 class EventsSummary extends Component {
     constructor(props) {
         super(props);
-        this.state = { events: [], loading: true, showBettingSlip: false }
+        this.state = { events: [], loading: true, showBettingSlip: true }
     }
 
     async componentDidMount() {
         // TODO : substituir pela API call
 
         let listEvents = await Api.fetchAvailableEvents();
+
 
         // Obter dados do token
 
@@ -76,9 +77,13 @@ class EventsSummary extends Component {
 
     }
 
+
     render() {
 
         const { events, showBettingSlip } = this.state;
+
+
+        console.log("Eventos", events)
 
         if (!events)
             return (<div></div>)
@@ -86,15 +91,18 @@ class EventsSummary extends Component {
 
         const bettingSlipSection = (
             <div className="col-sm-3">
-                <Makebet />
+                <BettingSlip />
             </div>);
+
 
 
         return (
             <div className="events-title">
                 <div className="row">
                     <div className={showBettingSlip ? 'col-sm-9' : 'col-sm-12'}>
-                        <p className="Infodiv">Eventos a decorrer</p>
+                        <div className="top-bar">
+                            <p className="Infodiv">Eventos a decorrer</p>
+                        </div>
                         <div className="events-container shadow">
 
 

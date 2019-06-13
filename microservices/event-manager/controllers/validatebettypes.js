@@ -23,6 +23,9 @@ ValidateBetTypes.validate = async (availablebettypes, stats) => {
 
     console.log("Printing currentStats", stats)
 
+    if (!availablebettypes)
+        return;
+
     // Obter os BetTypes
     const bettypes = await this.fetchAllBetTypes();
 
@@ -66,6 +69,8 @@ ValidateBetTypes.isFootballBetTypeValid = (stats, bettype) => {
         awayyellowcards: stats.awayyellowcards || 0
     }
 
+    const goalDiff = stats.homegoals - stats.awaygoals;
+
     switch (bettype.toUpperCase()) {
 
         case ("TR 1"):
@@ -87,6 +92,38 @@ ValidateBetTypes.isFootballBetTypeValid = (stats, bettype) => {
                 return true;
             }
             return false;
+
+        case ("H +0.5"):
+            if (goalDiff > 0.5) {
+                return true
+            }
+            return false;
+        case ("H +1.5"):
+            if (goalDiff > 1.5) {
+                return true;
+            }
+            return false;
+        case ("H +2.5"):
+            if (goalDiff > 2.5) {
+                return true;
+            }
+            return false;
+        case ("A +0.5"):
+            if (goalDiff > -0.5) {
+                return true;
+            }
+            return false;
+        case ("A +1.5"):
+            if (goalDiff > -1.5) {
+                return true;
+            }
+            return false;
+        case ("A +2.5"):
+            if (goalDiff > -2.5) {
+                return true;
+            }
+            return false;
+
         default:
             return false;
 
