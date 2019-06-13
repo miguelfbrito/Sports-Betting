@@ -8,35 +8,7 @@ class BettingSlip extends Component {
         this.state = { bets: [] }
 
         this.onChangeAmount = this.onChangeAmount.bind(this);
-    }
-
-
-    componentDidMount() {
-        // TODO : substituir pela API call
-        this.setState({
-            bets: [
-
-                {
-                    "name": "Arsenal x Chelsea",
-                    "eventOid": 1,
-                    "odd": "2.85",
-                    "bettypeOid": 2,
-                    "bettypeName": "1",
-                    "gains": "0.00",
-                    "quantity": "0.00",
-                },
-
-                {
-                    "name": "Port x Chelsea",
-                    "eventOid": 2,
-                    "odd": "2.85",
-                    "bettypeOid": 2,
-                    "bettypeName": "1",
-                    "gains": "0.00",
-                    "quantity": "0.00",
-                }
-            ]
-        });
+        this.onPlaceBet = this.onPlaceBet.bind(this);
     }
 
     //Nesta função colocar a que seja atualizado o valor dos "Ganhos" consoante o valor inserido
@@ -55,10 +27,14 @@ class BettingSlip extends Component {
         console.log(bet);
     }
 
+    onPlaceBet() {
+        this.props.onPlaceBet()
+    }
+
 
     render() {
 
-        const { bets } = this.state;
+        const { bets } = this.props;
 
         if (!bets) {
             return (<div></div>);
@@ -81,7 +57,7 @@ class BettingSlip extends Component {
                                 <p className="test">{bet.name}</p>
                             </div>
                             <div className="col-md-4 ">
-                                <p className="bet-titles">Result:</p>
+                                <p className="bet-titles">Bet:</p>
                             </div>
                             <div className="col-md-8 ">
                                 <p className="test">{bet.bettypeName}</p>
@@ -93,7 +69,7 @@ class BettingSlip extends Component {
                                 <p className="test">{bet.odd}</p>
                             </div>
                             <div className="col-md-4 ">
-                                <p className="bet-titles">Earning:</p>
+                                <p className="bet-titles">Earnings:</p>
                             </div>
                             <div className="col-md-8 ">
                                 <p className="test">{bet.gains + " €"}</p>
@@ -120,7 +96,7 @@ class BettingSlip extends Component {
                     </div>
                 ))}
                 <div id="place-bet">
-                    <button className="btn btn-info" type="submit">Bet</button>
+                    <button className="btn btn-info" type="submit" onClick={this.onPlaceBet}>Bet</button>
                 </div>
             </div>
         );

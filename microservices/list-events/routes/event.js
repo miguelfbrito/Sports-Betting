@@ -25,9 +25,6 @@ router.post('/update', async (req, res, next) => {
 
     let listEvents = req.body
 
-
-    console.log("EVENTOS RECEBIDOS###################################", listEvents)
-
     try {
         const newEvent = await Event.updateAvailable(listEvents);
         res.send(newEvent);

@@ -8,11 +8,12 @@ import EventFilter from './EventFilter/EventFilter';
 import BettingSlip from '../BettingSlip/BettingSlip';
 
 import Api from '../../api/api';
+import BetTypesStruct from '../utils/bettypesstruct';
 
 class EventsSummary extends Component {
     constructor(props) {
         super(props);
-        this.state = { events: [], loading: true, showBettingSlip: true, bettingSlipBets: [] }
+        this.state = { events: [], loading: true, showBettingSlip: false, bettingSlipBets: [] }
     }
 
     async componentDidMount() {
@@ -20,68 +21,44 @@ class EventsSummary extends Component {
 
         let listEvents = await Api.fetchAvailableEvents();
 
-
-        // Obter dados do token
+        listEvents = BetTypesStruct.organizeEventsSummary(listEvents)
 
 
         this.setState({ events: listEvents });
 
+    }
 
+    addBetToBettingSlip = (bet, event) => {
 
-        // this.setState({
-        //     events: [
-        //         {
-        //             "name": "Arsenal x Chelsea",
-        //             "odd1": "1- 2.85",
-        //             "oddX": "x- 1.85",
-        //             "odd2": "2- 2.15",
-        //             "date": Date.now()
-        //         },
-        //         {
-        //             "name": "Benfica x Porto",
-        //             "odd1": "1- 2.10",
-        //             "oddX": "x- 1.40",
-        //             "odd2": "2- 2.35",
-        //             "date": Date.now()
-        //         },
-        //         {
-        //             "name": "Sporting x Braga",
-        //             "odd1": "1- 1.65",
-        //             "oddX": "x- 1.25",
-        //             "odd2": "2- 1.95",
-        //             "date": Date.now()
-        //         },
-        //         {
-        //             "name": "Sporting x Braga",
-        //             "odd1": "1- 1.65",
-        //             "oddX": "x- 1.25",
-        //             "odd2": "2- 1.95",
-        //             "date": Date.now()
-        //         },
-        //         {
-        //             "name": "Sporting x Braga",
-        //             "odd1": "1- 1.65",
-        //             "oddX": "x- 1.25",
-        //             "odd2": "2- 1.95",
-        //             "date": Date.now()
-        //         },
-        //         {
-        //             "name": "Sporting x Braga",
-        //             "odd1": "1- 1.65",
-        //             "oddX": "x- 1.25",
-        //             "odd2": "2- 1.95",
-        //             "date": Date.now()
-        //         }
-        //     ]
-        // })
+        let currentBets = this.state.bettingSlipBets;
+
+        currentBets.push({
+            name: event.name,
+            eventOid: event.oid,
+            odd: bet.odd,
+            bettypeName: bet.bettypeName,
+            bettypeOid: bet.bettypeOid,
+            gains: 0,
+            wager: 0
+        })
+
+        if (currentBets.length > 0) {
+            this.setState({ bettingSlipBets: currentBets, showBettingSlip: true });
+        }
+    }
+
+    onPlaceBet = async () => {
+
+        console.log("Placing bet!")
+        console.log(this.state.bettingSlipBets);
+        await Api.placeBets(this.state.bettingSlipBets)
+        console.log("Placed all the bets!");
 
     }
 
 
     render() {
-
         const { events, showBettingSlip, bettingSlipBets } = this.state;
-
 
         console.log("Eventos", events)
 
@@ -91,7 +68,7 @@ class EventsSummary extends Component {
 
         const bettingSlipSection = (
             <div className="col-sm-3">
-                <BettingSlip bets={bettingSlipBets} />
+                <BettingSlip bets={bettingSlipBets} onPlaceBet={this.onPlaceBet} />
             </div>);
 
 
@@ -116,7 +93,7 @@ class EventsSummary extends Component {
                             {events.map(event => (
 
                                 <div className="event">
-                                    <Event event={event} />
+                                    <Event event={event} addBetToBettingSlip={this.addBetToBettingSlip} onPlaceBet={this.onPlaceBet} />
 
                                     <Link to={'/events/' + event.oid}>
                                         <button type="button" className="btn" id="view-all-bettypes">+</button>

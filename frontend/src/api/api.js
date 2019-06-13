@@ -25,6 +25,24 @@ Api.fetchAvailableBetTypesByEventOid = async (eventOid) => {
 
 }
 
+Api.placeBets = async (listBets) => {
+
+    // TODO : obter o userOid
+    listBets.forEach(async bet => {
+        const currentBet = {
+            wager: bet.wager,
+            userOid: 1,
+            eventOid: bet.eventOid,
+            bettypeOid: bet.bettypeOid
+        }
+
+        const placedBet = await axios.post(`${host}/bet/place`, bet);
+        console.log("Placed bet", placedBet.data)
+
+    })
+
+}
+
 
 
 

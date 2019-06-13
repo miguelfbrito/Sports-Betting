@@ -72,4 +72,97 @@ BetTypeStruct.organize = (data) => {
 
 }
 
+BetTypeStruct.organizeEventsSummaryByFootball = (data) => {
+
+
+    // Percorrer a lista de eventos
+    data = data.map(event => {
+        let available = event.availablebettypes;
+
+        available = available.filter(av => ['TR 1', 'TR 2', 'TR X'].includes(av.bettypeName)).map(av => {
+            return {
+                odd: av.odd,
+                bettypeOid: av.bettypeOid,
+                bettypeName: av.bettypeName.replace('TR ', '')
+            }
+        })
+
+        delete event.availablebettypes;
+
+        return {
+            ...event,
+            available
+        };
+
+    })
+
+
+    console.log("PRINTINGGGGGGGGGGGGGGGG##################", data)
+
+    return data;
+}
+
+BetTypeStruct.organize = (data) => {
+
+    console.log("PRINTING DATA")
+    console.log(data);
+
+    switch (data.event.sport.name.toUpperCase()) {
+        case 'FOOTBALL':
+            return BetTypeStruct.organizeByFootball(data.bettypes);
+
+        case 'BASKETBALL':
+
+        default:
+
+            return data;
+    }
+
+}
+
+BetTypeStruct.organizeEventsSummary = (data) => {
+
+
+    if (!data)
+        return
+
+    let final = data.map(d => {
+        let av = JSON.parse(d.availablebettypes);
+
+        // console.log("Available", av)
+        let unified = [];
+        av.forEach(a => {
+            unified.push({
+                odd: a.odd,
+                bettypeOid: a.bettypeOid,
+                bettypeName: a.bettypeName,
+                availableOid: a.oid
+            })
+        })
+
+        return {
+            ...d,
+            availablebettypes: unified
+        }
+    })
+
+    console.log("FINALLL", final)
+    // TODO : alterar dos Ids para os nomes
+
+    return BetTypeStruct.organizeEventsSummaryByFootball(final);
+
+    // switch (data.event.sport.name.toUpperCase()) {
+    //     case '1':
+    //         return BetTypeStruct.organizeEventsSummaryByFootball(data.bettypes);
+
+    //     case '2':
+
+    //     default:
+
+    //         return data;
+    // }
+
+}
+
+
 export default BetTypeStruct;

@@ -12,6 +12,12 @@
     padding-top: 20px;
 }
 
+.btn-odds {
+    min-width: 90px;
+    font-size: 11pt !important;
+}
+
+
 #view-all-bettypes-container {
     margin: 0 !important;
     padding: 0 !important;
