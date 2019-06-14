@@ -25,6 +25,18 @@ Api.fetchAvailableBetTypesByEventOid = async (eventOid) => {
 
 }
 
+Api.fetchUserBets = async () => {
+    // TODO : alterar para enviar no header o token
+
+    const userOid = 1;
+    try {
+        const data = await axios.get(`${host}/bet/fetchall/${userOid}`);
+        return data.data;
+    } catch (e) {
+        console.error(e);
+    }
+}
+
 Api.placeBets = async (listBets) => {
 
     // TODO : obter o userOid

@@ -57,8 +57,8 @@ seedData = async () => {
     await events.createEvent({
         name: "Benfica x Porto",
         ispremium: false,
-        startingdate: (Date.now() + 45 * 1000),
-        finishingdate: (Date.now() + 30 * 60 * 1000),
+        startingdate: (Date.now()),
+        finishingdate: (Date.now() + 5 * 1000),
         state: 'Upcoming',
         sport: {
             name: 'Football'

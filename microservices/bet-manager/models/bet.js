@@ -21,6 +21,8 @@ const Bet = db.sequelize.define('bet', {
     allowNull: false
   }, result: {
     type: Sequelize.STRING(25)
+  }, earnings: {
+    type: Sequelize.DOUBLE
   }
   // event_oid: {
   //   type: Sequelize.INTEGER(11),

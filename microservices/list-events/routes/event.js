@@ -21,6 +21,7 @@ router.get('/', async (req, res, next) => {
 
 
 
+
 router.post('/update', async (req, res, next) => {
 
     let listEvents = req.body
