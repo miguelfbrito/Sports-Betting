@@ -1,22 +1,29 @@
-import React from 'react';
+import React, {Component} from 'react';
 
 import './AddEvents.css';
 import { Formik } from 'formik';
+import Api from '../../../api/api';
 
 
-function handleClick(e) {
-  //Chamar o makebet e passar o e para lá
-}
+class AddEvents extends Component {
+  constructor(props) {
+      super(props);
+      this.state = { createdEvent: false}
+  }
+
+  componentDidMount() {
+  
+  }
 
 
-const AddEvents = (props) => {
-  const { event } = props;
+render() {
 
   //Adaptar para inputs com o valor igual ao que já possuí
   return (
-    <div className="Bettype-odds">
-      <Formik
-        initialValues={{ sport: '', name: '', premium: '', bdate: '', edate: '', description: '' }}
+    <div className="row">
+      <div className="addevents-form">
+          <Formik
+          initialValues={{ sport: '', name: '', premium: '', bdate: '', edate: '', description : ''}}
         validate={values => {
           let errors = {};
           if (!values.sport) {
@@ -27,6 +34,9 @@ const AddEvents = (props) => {
           }
           if (!values.premium) {
             errors.premium = 'Required';
+          }
+          if(this.state.premium=="Premium"){
+            errors.premium = "Select value";
           }
           if (!values.bdate) {
             errors.bdate = 'Required';
@@ -41,18 +51,18 @@ const AddEvents = (props) => {
           if (!values.description) {
             errors.description = 'Required';
           }
-          /*else if (
-            !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.sport)
-          ) {
-            errors.sport = 'Invalid email address';
-          }*/
           return errors;
         }}
-        onSubmit={(values, { setSubmitting }) => {
-          setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
-            setSubmitting(false);
-          }, 400);
+        onSubmit={async (values, { setSubmitting }) => {
+          const a = await Api.fetchCreateNewEvent(values);
+          //Colocar a apresentar as mensagens de erro
+          if(a.success==true){
+            this.setState({createdEvent: true});
+            alert(this.state.createdEvent);
+          }else{
+            alert(this.state.createdEvent);
+          }
+          setSubmitting(false);
         }}
       >
         {({
@@ -65,101 +75,101 @@ const AddEvents = (props) => {
           isSubmitting,
           /* and other goodies */
         }) => (
-            <form onSubmit={handleSubmit}>
-              <label className="label-text">
-                <label className="input-info">
-                  <p className="">Sport:</p>
-                  <input
-                    placeholder="Sport"
-                    type="text"
-                    name="sport"
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    value={values.sport}
-                  />
-                  <p className="error-info">{errors.sport && touched.sport && errors.sport}</p>
-                </label>
-              </label>
-              <label className="label-text">
-                <label className="input-info">
-                  <p className="">Name:</p>
-                  <input
-                    placeholder="Team1 x Team2"
-                    type="text"
-                    name="name"
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    value={values.name}
-                  />
-                  <p className="error-info">{errors.name && touched.name && errors.name}</p>
-                </label>
-              </label>
-              <label className="label-text">
-                <label className="input-info">
-                  <p className="">Premium:</p>
-                  <input
-                    placeholder="Yes/no"
-                    type="text"
-                    name="premium"
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    value={values.premium}
-                  />
-                  <p className="error-info">{errors.premium && touched.premium && errors.premium}</p>
-                </label>
-              </label>
-              <label className="label-text">
-                <label className="input-info">
-                  <p className="">Begin date:</p>
-                  <input
-                    type="datetime-local"
-                    name="bdate"
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    value={values.bdate}
-                  />
-                  <p className="error-info">{errors.bdate && touched.bdate && errors.bdate}</p>
-                </label>
-              </label>
-              <label className="label-text">
-                <label className="input-info">
-                  <p className="">End date:</p>
-                  <input
-                    type="datetime-local"
-                    name="edate"
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    value={values.edate}
-                  />
-                  <p className="error-info">{errors.edate && touched.edate && errors.edate}</p>
-                </label>
-              </label>
-              <label className="label-text">
-                <label className="input-info">
-                  <p className="">Desciption:</p>
-                  <input
-                    placeholder="Description of event"
-                    type="text"
-                    id="description"
-                    name="description"
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    value={values.description}
-                  />
-                  <p className="error-info">{errors.description && touched.description && errors.description}</p>
-                </label>
-              </label>
-              <label className="buttonsub">
-                <button type="submit" disabled={isSubmitting}>
-                  Save Changes
-          </button>
-              </label>
-            </form>
-          )}
+          <form onSubmit={handleSubmit}>
+          <div className="add-event">
+              <input
+                className="eventsport"
+                  placeholder="Sport"
+                  type="text"
+                  name="sport"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.sport}
+              />
+              <div>
+              <p className="error-info">{errors.sport && touched.sport && errors.sport}</p>
+            </div>
+            </div>
+          <div className="add-event">
+              <input
+                  className="eventname"
+                  placeholder="Name"
+                  type="text"
+                  name="name"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.name}
+              />
+              <div>
+              <p className="error-info">{errors.name && touched.name && errors.name}</p>
+              </div>
+            </div>
+            <div className="add-event">
+            <select name="product" defaultValue={1} className="eventpremium" onChange={(event) => {
+              var id = event.nativeEvent.target.selectedIndex;
+              values.premium = event.nativeEvent.target[id].text;
+              }}
+              onBlur={handleBlur} >
+              <option value="1" disabled>Premium</option>
+              <option value="2">False</option>
+              <option value="3">True</option>
+            </select>
+            <div>
+              <p className="error-info">{errors.premium && touched.premium && errors.premium}</p>
+              </div>
+            </div>
+            <div className="add-event">
+              <input
+                  className="eventbdate"
+                  type="datetime-local"
+                  name="bdate"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.bdate}
+              />
+              <div>
+              <p className="error-info">{errors.bdate && touched.bdate && errors.bdate}</p>
+              </div>
+            </div>
+            <div className="add-event">
+              <input
+                  className="eventedate"
+                  type="datetime-local"
+                  name="edate"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.edate}
+              />
+              <div>
+              <p className="error-info">{errors.edate && touched.edate && errors.edate}</p>
+            </div>
+            </div>
+            <div className="add-event">
+
+            <textarea rows="4" className="eventdescription"
+                  type="text"
+                  name="description"
+                  placeholder="Description of event"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.description}>
+              </textarea>
+              <div>
+              <p className="error-info">{errors.description && touched.description && errors.description}</p>
+              </div>
+            </div>
+            <div className="button-container">
+            <button className="btn-1" type="submit" disabled={isSubmitting}>
+              Save Changes
+            </button>
+            </div>
+          </form>
+        )}
       </Formik>
-    </div>
+      </div>
+      </div>
   );
 }
-
+}
 
 export default AddEvents;
