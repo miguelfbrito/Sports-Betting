@@ -10,7 +10,7 @@ import EditUser from './EditUser/EditUser';
 class CheckBetsSummary extends Component {
     constructor(props) {
         super(props);
-        this.state = { user: [], showEditSlip: false, showDetailsSlip: true }
+        this.state = { user: [], showEditSlip: true, showDetailsSlip: false }
     }
 
     async componentDidMount() {

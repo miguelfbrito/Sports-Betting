@@ -9,14 +9,13 @@ import Api from '../../../api/api';
 class EditUser extends Component {
   constructor(props) {
       super(props);
-      this.state = { password:''}
+      this.state = { userid: 1}
   }
 
   async componentDidMount() {
       
-      const t = 1;
 
-      let userdetails = await Api.fetchUserDetails(1);
+      let userdetails = await Api.fetchUserDetails(this.state.userid);
 
       this.setState(userdetails);
       console.log(this.state)
@@ -32,26 +31,30 @@ render() {
         <Formik
       validate={values => {
         let errors = {};
-        if (!values.password) {
+        if (!this.state.password) {
           errors.password = 'Required';
         }
-        if (!values.name) {
+        if (!this.state.name) {
             errors.name = 'Required';
         }
-        if (!values.email) {
+        if (!this.state .email) {
             errors.email = 'Required';
         }else if (
-            !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+            !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(this.state.email)
           ) {
             errors.email = 'Invalid email address';
           }
         return errors;
       }}
-      onSubmit={(values, { setSubmitting }) => {
-        setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
-          setSubmitting(false);
-        }, 400);
+      onSubmit={async (values, { setSubmitting }) => {
+        const a = await Api.fetchUpdateUser(this.state);
+        //Redirecionar para as páginas
+        if(a==true){
+          alert("Detalhes alterados");
+        }else{
+          alert("Erro ao atualizar detalhes")
+        }
+        setSubmitting(false);
       }}
     >
       {({
@@ -72,7 +75,7 @@ render() {
                 placeholder="Password"
                 type="password"
                 name="password"
-                onChange={handleChange}
+                onChange={(event) => this.setState({password : event.target.value})}
                 onBlur={handleBlur}
                 value={this.state.password}
             />
@@ -85,7 +88,7 @@ render() {
                 placeholder="Name"
                 type="text"
                 name="name"
-                onChange={handleChange}
+                onChange={(event) => this.setState({name : event.target.value})}
                 onBlur={handleBlur}
                 value={this.state.name}
             />
@@ -98,7 +101,7 @@ render() {
                 placeholder="user@email.com"
                 type="email"
                 name="email"
-                onChange={handleChange}
+                onChange={(event) => this.setState({email : event.target.value})}
                 onBlur={handleBlur}
                 value={this.state.email}
             />
@@ -117,4 +120,5 @@ render() {
     );
   }
 }
+
 export default EditUser;

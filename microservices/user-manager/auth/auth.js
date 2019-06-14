@@ -28,7 +28,7 @@ passport.use('signup', new localStrategy({
         const passwordHash = await createHash(userData.password)
         userData.password = passwordHash
 
-        const newUser = await User.create({ ...userData, ispremium: true })
+        const newUser = await User.create({ ...userData, ispremium: false, balance: 0 })
 
         return done(null, newUser, {
             message: 'Utilizador criado com sucesso'
