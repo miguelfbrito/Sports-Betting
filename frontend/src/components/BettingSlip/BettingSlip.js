@@ -72,7 +72,9 @@ class BettingSlip extends Component {
 
                         <div className="row">
                             <div className="col-md-4">
-                                <p className="bet-titles">Event:</p>
+                                {bet.name === '' ?
+                                    <p className="bet-titles">Event:</p>
+                                    : <span style={{ marginTop: "-55px" }}></span>}
                             </div>
                             <div className="col-md-8 ">
                                 <p className="test">{bet.name}</p>

@@ -20,7 +20,7 @@ HandleEventsTiming.justStarted = async () => {
     await justStartedEvents.forEach(async event => {
 
         // TODO : Rever que estados aqui se usam
-        await Event.update({ where: { oid: event.oid } }, { [Op.or]: [{ state: 'Live' }, { state: 'Upcoming' }] });
+        await Event.update({ where: { oid: event.oid }, [Op.or]: [{ state: 'Live' }, { state: 'Upcoming' }] });
     })
 
     // TODO : Queries duplicadas, ver como se obtém o resultado de um update, visto só devolver o numero de mudanças

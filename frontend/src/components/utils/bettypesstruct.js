@@ -17,6 +17,8 @@ BetTypeStruct.organizeByFootball = (data) => {
         bettypesByName[b.bettypeName] = { ...b };
     })
 
+    console.log("BETTYPES", data)
+
     let tr = {
         name: 'Regular Time',
         bettypes: []

@@ -25,22 +25,20 @@
 .anevent-block {
     text-align: center;
     position: relative;
-    background-color: #3CC6A3;
-    padding: 0;
     height: 100px;
     transition: all linear 250ms;
-    border-radius: 15px;
-}
-
-
-.anevent-block:hover {
-    background-color: rgb(67, 224, 185);
 }
 
 .anevent-block p {
     font-size: 14pt;
     padding: 2px;
     margin: 0;
+}
+
+#bettypename {
+    background-color: #3CC6A3;
+    max-width: 130px;
+    margin: 0 auto;
 }
 
 
@@ -79,6 +77,3 @@
 .anevent:last-child {
     border-bottom: 0;
 }
-
-
-@media

@@ -24,10 +24,9 @@ Event.updateAvailable = async (listEvents) => {
             const persistedEvent = await this.create(event);
 
         } else {
-            // !this.compareEvents(event, currentEventsByOid[event.oid]
             console.log("Trying to update!")
             console.log(event.updatedAt + " ------ " + currentEventsByOid[event.oid].updatedAt);
-            if (event.updatedAt !== currentEventsByOid[event.oid].updatedAt) {
+            if (this.compareEvents(event, currentEventsByOid[event.oid])) {
                 await this.update({ where: { oid: event.oid } }, { ...event })
             }
         }

@@ -3,13 +3,16 @@
 }
 
 .BetText {
-    background-color: #03B5AA;
+    border-bottom: 2px solid #03B5AA;
+    margin: 0;
+    padding: 0;
 }
 
 .BetText p {
     margin: 0;
-    padding: 10px 20px;
-    font-size: 14pt;
+    font-size: 13pt;
+    padding: 5px 15px;
+    margin-bottom: -10px;
 }
 
 .Infodiv {
