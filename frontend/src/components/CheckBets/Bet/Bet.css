@@ -1,19 +1,19 @@
 .bet {
-    border-bottom: 1px solid #aaa; 
-    height: auto;
+    border-bottom: 1px solid #aaa;
     position: relative;
-    padding: 10px 0 0 20px;
 }
 
-.bet-info{
+.bet-info {
     color: black;
     font-size: 12pt;
     letter-spacing: 0.75pt;
     padding-top: 10px;
     font-weight: bold;
+    padding: 20px 25px;
+    margin: 0;
 }
 
-.bet-elements{
+.bet-elements {
     color: black;
     font-size: 12pt;
     letter-spacing: 0.75pt;
@@ -21,7 +21,7 @@
 }
 
 
-#button{
+#button {
     font-size: 12pt;
     letter-spacing: 0.75pt;
     display: inline-block;
@@ -29,6 +29,14 @@
 }
 
 
-.bet:last-child{
+.bet:last-child {
     border-bottom: 0;
+}
+
+.lost-bet {
+    background-color: rgba(255, 71, 71, 0.438);
+}
+
+.won-bet {
+    background-color: rgb(138, 230, 126);
 }

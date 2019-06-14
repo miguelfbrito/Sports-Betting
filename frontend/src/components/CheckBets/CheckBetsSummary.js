@@ -7,7 +7,8 @@ import Api from '../../api/api';
 class CheckBetsSummary extends Component {
     constructor(props) {
         super(props);
-        this.state = { bets: [] }
+        this.state = { bets: [], subMenu: 'Open' }
+        this.changeSubMenu = this.changeSubMenu.bind(this);
     }
 
     async componentDidMount() {
@@ -16,29 +17,24 @@ class CheckBetsSummary extends Component {
         const bets = await Api.fetchUserBets();
         console.log("Bets", bets);
 
+        this.setState({ bets: bets });
 
-        this.setState({
-            bets: [
-                {
-                    "name": "Arsenal x Chelsea",
-                    "oddSelected": "2.85",
-                    "amount": "10.00",
-                    "Earning": "28.50"
-                },
-                {
-                    "name": "Benfica x Porto",
-                    "oddSelected": "2.00",
-                    "amount": "5.00",
-                    "Earning": "10.00"
-                }
-            ]
-        })
+    }
 
+    changeSubMenu = (newSubMenu) => {
+        this.setState({ subMenu: newSubMenu });
     }
 
     render() {
         //TODO: Adicionar um scroll para os eventos
-        const { bets } = this.state;
+        let { bets, subMenu } = this.state;
+
+        if (subMenu === 'History') {
+            bets = bets.filter(b => b.result !== null);
+        } else {
+            bets = bets.filter(b => !(['WON', 'LOST'].includes(b.result)));
+        }
+
         return (
             <div className="bet-title">
                 <div className="row">
@@ -49,9 +45,9 @@ class CheckBetsSummary extends Component {
 
                         <div className="bet-container shadow">
 
-                            <div>
-                                <p>Open</p>
-                                <p>History</p>
+                            <div className="top-bar-menu">
+                                <p className={subMenu === 'Open' ? 'top-bar-menu-active' : ''} onClick={() => this.changeSubMenu('Open')}>Open</p>
+                                <p className={subMenu === 'History' ? 'top-bar-menu-active' : ''} onClick={() => this.changeSubMenu('History')}>History</p>
                             </div>
 
                             {/* Carousel 4 or 5 games */}

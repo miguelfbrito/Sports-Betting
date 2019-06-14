@@ -2,13 +2,42 @@
     background-color: var(--color-gray);
 }
 
-.bet-title{
+.bet-title {
     background-color: #03B5AA;
 }
 
-.Info-div{
+.Info-div {
     width: auto;
     height: auto;
     margin-left: 15px;
     font-size: 30px;
+}
+
+
+/*  TOP BAR MENU => SUBMENU */
+
+.top-bar-menu {
+    margin: 0;
+    border-bottom: 2px solid #03B5AA;
+}
+
+.top-bar-menu p {
+    font-size: 12pt;
+    font-weight: bold;
+    padding: 5px 15px;
+    margin: 0;
+    color: gray;
+}
+
+.top-bar-menu p:hover {
+    color: #03B5AA;
+    cursor: pointer;
+    margin-bottom: -2px;
+}
+
+.top-bar-menu-active {
+    border-bottom: 2px solid black;
+    margin-bottom: -2px !important;
+    color: black !important;
+
 }

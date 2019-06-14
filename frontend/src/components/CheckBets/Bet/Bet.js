@@ -6,25 +6,34 @@ import './Bet.css';
 const Bet = (props) => {
 
     const { bet } = props;
+
+    console.log("Printing bet", bet)
+
+    let betContainerClassName = '';
+
+    if (bet.result === 'LOST') {
+        betContainerClassName += " lost-bet";
+    } else if (bet.result === 'WON') {
+        betContainerClassName += " won-bet";
+    }
+
     return (
+        <div className={betContainerClassName}>
             <div className="row">
-                <div className="col-lm-6">
-                    <p className="bet-info">Event:</p>
-                    <p className="bet-elements">{bet.name}</p>
-                </div> 
-                <div className="col-lm-6">
-                    <p className="bet-info">Odd:</p>
-                    <p className="bet-elements">{bet.oddSelected}</p>
+                <div className="col-md-3">
+                    <p className="bet-info">Event: {bet.eventName}</p>
                 </div>
-                <div className="col-lm-6">
-                    <p className="bet-info">Amount:</p>
-                    <p className="bet-elements">{bet.amount}</p>
+                <div className="col-md-3">
+                    <p className="bet-info">Bet Type: {bet.bettypeName}</p>
                 </div>
-                <div className="col-lm-6">
-                    <p className="bet-info">Earning:</p>
-                    <p className="bet-elements">{bet.Earning}</p>
+                <div className="col-md-3">
+                    <p className="bet-info">Wager: {bet.wager}</p>
                 </div>
-            </div>
+                <div className="col-md-3">
+                    <p className="bet-info">Earnings: {bet.earnings}</p>
+                </div>
+            </div >
+        </div>
     );
 }
 

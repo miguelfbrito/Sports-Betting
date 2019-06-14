@@ -194,6 +194,33 @@ seedData = async () => {
         bettypeOid: 2
     })
 
+    await axios.post(`${MS_BETS}/bet/place`, {
+        wager: 10,
+        userOid: 1,
+        eventOid: 1,
+        bettypeOid: 1
+    })
+
+    await axios.post(`${MS_BETS}/bet/place`, {
+        wager: 4,
+        userOid: 1,
+        eventOid: 1,
+        bettypeOid: 3
+    })
+
+    await axios.post(`${MS_BETS}/bet/place`, {
+        wager: 5,
+        userOid: 1,
+        eventOid: 2,
+        bettypeOid: 2
+    })
+
+    await axios.post(`${MS_BETS}/bet/place`, {
+        wager: 20,
+        userOid: 1,
+        eventOid: 3,
+        bettypeOid: 1
+    })
     // Create Stats
     // const statsData = await stats.addStatToEvent({
     //     eventOid: 1,
