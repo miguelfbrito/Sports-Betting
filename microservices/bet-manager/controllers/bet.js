@@ -2,7 +2,7 @@ const Bet = module.exports;
 const axios = require('axios');
 
 const BetDB = require('../models/bet');
-const BetTypeDB = require('../models/bettype');
+const BetType = require('./bettype');
 
 const EventMS = require('./eventMS');
 const UserMS = require('./userMS');
@@ -65,7 +65,8 @@ Bet.placeBet = async (bet) => {
         wager: bet.wager,
         userOid: bet.userOid,
         eventOid: bet.eventOid,
-        bettypeOid: bet.bettypeOid
+        bettypeOid: bet.bettypeOid,
+        earnings: 0.0
     }
 
     try {
@@ -79,9 +80,30 @@ Bet.placeBet = async (bet) => {
 
 Bet.history = async (userOid) => {
     try {
-        const data = await this.fetch({ userOid })
-        return data;
+        let bets = await this.fetch({ userOid });
+
+        // Obter o nome da bettype bettypeOid
+        // Obter o nome do evento eventOid
+
+        console.log(bets)
+
+        bets = Promise.all(bets.map(async bet => {
+            const bettype = await BetType.findById(bet.dataValues.bettypeOid);
+            const event = await EventMS.fetch(bet.dataValues.eventOid);
+
+
+            return {
+                ...bet.dataValues,
+                bettypeName: bettype.dataValues.name,
+                eventName: event.name
+            }
+
+
+        }))
+
+        return bets;
     } catch (e) {
+        console.error(e);
         console.log(`Error fetching bet history ${e}`)
     }
 }

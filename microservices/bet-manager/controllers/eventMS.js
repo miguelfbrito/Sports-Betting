@@ -18,3 +18,13 @@ EventMS.isPremium = async (eventOid) => {
     return data.data;
 
 }
+
+EventMS.fetch = async (eventOid) => {
+    try {
+        const data = await axios.get(`${global.MS_EVENTS}/event/history/${eventOid}`);
+        return data.data;
+    } catch (e) {
+        console.error(e);
+    }
+
+}

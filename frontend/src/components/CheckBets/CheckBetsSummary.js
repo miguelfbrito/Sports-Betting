@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './CheckBetsSummary.css';
-import CurrentEventsCarousel from '../CurrentEventsCarousel/CurrentEventsCarousel';
 import Bet from './Bet/Bet';
-import BetFilter from './FilterBets/FilterBets';
+
+import Api from '../../api/api';
 
 class CheckBetsSummary extends Component {
     constructor(props) {
@@ -10,8 +10,12 @@ class CheckBetsSummary extends Component {
         this.state = { bets: [] }
     }
 
-    componentDidMount() {
+    async componentDidMount() {
         // TODO : substituir pela API call
+
+        const bets = await Api.fetchUserBets();
+        console.log("Bets", bets);
+
 
         this.setState({
             bets: [
@@ -35,33 +39,37 @@ class CheckBetsSummary extends Component {
     render() {
         //TODO: Adicionar um scroll para os eventos
         const { bets } = this.state;
-        return ( 
+        return (
             <div className="bet-title">
                 <div className="row">
-                <div className="col-sm-9">
-                <p className="Infodiv">Bets</p>
-                <div className="bet-container shadow">
-
-
-                    {/* Carousel 4 or 5 games */}
-                    {/* <CurrentEventsCarousel /> */}
-
-                    {/* List all events */}
-
-                    <BetFilter />
-
-                    {bets.map(bet => (
-                        <div className="bet">
-                            <Bet bet={bet} />
+                    <div className="col-sm-12">
+                        <div className="top-bar">
+                            <p className="Infodiv">Bets</p>
                         </div>
-                    ))}
 
+                        <div className="bet-container shadow">
+
+                            <div>
+                                <p>Open</p>
+                                <p>History</p>
+                            </div>
+
+                            {/* Carousel 4 or 5 games */}
+                            {/* <CurrentEventsCarousel /> */}
+
+                            {/* List all events */}
+
+
+                            {bets.map(bet => (
+                                <div className="bet">
+                                    <Bet bet={bet} />
+                                </div>
+                            ))}
+
+                        </div>
+                    </div>
                 </div>
             </div>
-        <div className="col-sm-3">
-        </div>
-        </div>
-        </div>
         );
     }
 }

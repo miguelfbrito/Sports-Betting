@@ -25,6 +25,16 @@ router.get('/ispremium/:eventOid', async (req, res, next) => {
 
 })
 
+router.get('/history/:eventOid', async (req, res, next) => {
+    try {
+        let data = await Event.fetchOne({ where: { oid: req.params.eventOid } });
+
+        res.send(data);
+    } catch (e) {
+        res.status(500).send({ message: 'Error fetching events' })
+    }
+});
+
 router.post('/create', async (req, res, next) => {
 
     console.log("BODY A CHEGAR")
