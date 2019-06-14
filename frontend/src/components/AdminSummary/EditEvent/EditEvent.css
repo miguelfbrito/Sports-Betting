@@ -47,7 +47,10 @@ p {
 }
 
 
-input[type="datetime-local"] {
-    font-size: 14px;
-    width: 300px;
+
+.edit-form{
+    height: auto;
+    width: 100%;
+    margin-bottom: 15px;
+    text-align: center;
 }

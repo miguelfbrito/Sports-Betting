@@ -11,7 +11,7 @@ import checkbets from './components/CheckBets/CheckBetsSummary';
 import manageusers from './components/ManageUser/ManageUser';
 import AnEventSummary from './components/AnEventSummary/AnEventSummary';
 import AdminSummary from './components/AdminSummary/AdminSummary';
-import createevent from './components/AdminSummary/AddEvents/AddEvents';
+import createevent from './components/AdminSummary/AdminSummary';
 import register from './components/Login/Register/Register';
 import edit from './components/AdminSummary/EditEvent/EditEvent';
 

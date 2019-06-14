@@ -1,158 +1,116 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-import '../AddEvents/AddEvents.css';
+import './EditEvent.css';
 
 import { Formik } from 'formik';
+import Api from '../../../api/api';
+
+class EditEvent extends Component {
+  constructor(props) {
+      super(props);
+      this.state = { userid: 1}
+  }
+
+  async componentDidMount() {
+      
+      //Ir buscar os dados do evento em causa
+      let userdetails = await Api.fetchUserDetails(this.state.userid);
+
+      this.setState(userdetails);
+      console.log(this.state)
+  }
 
 
-const EditEvent = (props) => {
-
-const bt = {sport: 'Futebol', name: 'A x B', premium: 'No', bdate: '2019-01-02T00:00', edate: '2019-01-02T20:00', description: 'Football game'}
-
+render() {
 
     return (
-        <div className="row">
-        <div style={{ height: '500px', overflowY: "scroll" }} className="Bettype-odds">
-        <Formik
-      initialValues={{ sport: bt.sport, name: bt.name, premium: bt.premium, bdate: bt.bdate, edate: bt.edate, description: bt.description }}
-      validate={values => {
-        let errors = {};
-        if (!values.sport) {
-          errors.sport = 'Required';
-        }
-        if (!values.name) {
-            errors.name = 'Required';
-        }
-        if (!values.premium) {
-            errors.premium = 'Required';
-        }
-        if (!values.bdate) {
-            errors.bdate = 'Required';
-        }
-        if (!values.edate) {
-            errors.edate = 'Required';
-        }else if(values.bdate && values.bdate){
-            if(values.bdate>values.edate){
-                errors.edate = "Must be after begining date ";
+      <div className="row">
+      <div className="event-form">
+          <Formik
+        validate={values => {
+          let errors = {};
+          if (!this.state.password) {
+            errors.password = 'Required';
+          }
+          if (!this.state.name) {
+              errors.name = 'Required';
+          }
+          if (!this.state .email) {
+              errors.email = 'Required';
+          }else if (
+              !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(this.state.email)
+            ) {
+              errors.email = 'Invalid email address';
             }
-        }
-        if (!values.description ) {
-            errors.description = 'Required';
-        }
-        return errors;
-      }}
-      onSubmit={(values, { setSubmitting }) => {
-        setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
+          return errors;
+        }}
+        onSubmit={async (values, { setSubmitting }) => {
+          alert("Fazer a API call");
           setSubmitting(false);
-        }, 400);
-      }}
-    >
-      {({
-        values,
-        errors,
-        touched,
-        handleChange,
-        handleBlur,
-        handleSubmit,
-        isSubmitting,
-        /* and other goodies */
-      }) => (
-        <form onSubmit={handleSubmit}>
-        <label className="label-text">
-            <label className="input-info">
-            <p className="">Sport:</p>
-            <input
-                placeholder="Sport"
-                type="text"
-                name="sport"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values.sport}
-            />
-            <p className="error-info">{errors.sport && touched.sport && errors.sport}</p>
-            </label>
-          </label>
-        <label className="label-text">
-            <label className="input-info">
-            <p className="">Name:</p>
-            <input
-                placeholder="Team1 x Team2"
-                type="text"
-                name="name"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values.name}
-            />
-            <p className="error-info">{errors.name && touched.name && errors.name}</p>
-            </label>
-          </label>
-          <label className="label-text">
-            <label className="input-info">
-            <p className="">Premium:</p>
-            <input
-                placeholder="Yes/no"
-                type="text"
-                name="premium"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values.premium}
-            />
-            <p className="error-info">{errors.premium && touched.premium && errors.premium}</p>
-            </label>
-          </label>
-          <label className="label-text">
-            <label className="input-info">
-            <p className="">Begin date:</p>
-            <input
-                type="datetime-local"
-                name="bdate"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values.bdate}
-            />
-            <p className="error-info">{errors.bdate && touched.bdate && errors.bdate}</p>
-            </label>
-          </label>
-          <label className="label-text">
-            <label className="input-info">
-            <p className="">End date:</p>
-            <input
-                type="datetime-local"
-                name="edate"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values.edate}
-            />
-            <p className="error-info">{errors.edate && touched.edate && errors.edate}</p>
-            </label>
-            </label>
-          <label className="label-text">
-            <label className="input-info">
-            <p className="">Desciption:</p>
-            <input
-                placeholder="Description of event"
-                type="text"
-                id="description"
-                name="description"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values.description}
-            />
-            <p className="error-info">{errors.description && touched.description && errors.description}</p>
-            </label>
-          </label>
-          <label className="buttonsub">
-          <button type="submit" disabled={isSubmitting}>
-            Save Changes
-          </button>
-          </label>
-        </form>
-      )}
-    </Formik>
-        </div>
-        </div>
+        }}
+      >
+        {({
+          values,
+          errors,
+          touched,
+          handleChange,
+          handleBlur,
+          handleSubmit,
+          isSubmitting,
+          /* and other goodies */
+        }) => (
+          <form onSubmit={handleSubmit}>
+          <div className="edit-user">
+              <p className="">Password:</p>
+              <input
+                className="editpassword"
+                  placeholder="Password"
+                  type="password"
+                  name="password"
+                  onChange={(event) => this.setState({password : event.target.value})}
+                  onBlur={handleBlur}
+                  value={this.state.password}
+              />
+              <p className="error-info">{errors.password && touched.password && errors.password}</p>
+            </div>
+          <div className="edit-user">
+              <p className="">Name:</p>
+              <input
+                  className="editname"
+                  placeholder="Name"
+                  type="text"
+                  name="name"
+                  onChange={(event) => this.setState({name : event.target.value})}
+                  onBlur={handleBlur}
+                  value={this.state.name}
+              />
+              <p className="error-info">{errors.name && touched.name && errors.name}</p>
+            </div>
+            <div className="edit-user">
+              <p className="">Email:</p>
+              <input
+                  className="editemail"
+                  placeholder="user@email.com"
+                  type="email"
+                  name="email"
+                  onChange={(event) => this.setState({email : event.target.value})}
+                  onBlur={handleBlur}
+                  value={this.state.email}
+              />
+              <p className="error-info">{errors.email && touched.email && errors.email}</p>
+            </div>
+            <div className="button-container">
+            <button className="btn-1" type="submit" disabled={isSubmitting}>
+              Save Changes
+            </button>
+            </div>
+          </form>
+        )}
+      </Formik>
+      </div>
+      </div>
     );
+}
 }
 
 export default EditEvent;
