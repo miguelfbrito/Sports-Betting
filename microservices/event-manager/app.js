@@ -67,7 +67,7 @@ seedData = async () => {
 
     await events.createEvent({
         name: "Arsenal x Liverpool",
-        ispremium: true,
+        ispremium: false,
         startingdate: Date.now() + 10 * 1000,
         finishingdate: Date.now() + 30 * 1000,
         state: 'Upcoming',
@@ -79,7 +79,7 @@ seedData = async () => {
 
     await events.createEvent({
         name: "Barcelona x Real Madrid",
-        ispremium: true,
+        ispremium: false,
         startingdate: Date.now() + 1 * 1000,
         finishingdate: Date.now() + 2 * 1000,
         state: 'Upcoming',
@@ -90,7 +90,7 @@ seedData = async () => {
 
     await events.createEvent({
         name: "Bayern vs Dortmund",
-        ispremium: true,
+        ispremium: false,
         startingdate: Date.now() + 1 * 1000,
         finishingdate: Date.now() + 10 * 60 * 1000,
         state: 'Upcoming',
@@ -101,7 +101,7 @@ seedData = async () => {
 
     await events.createEvent({
         name: "Braga x Guimarães",
-        ispremium: true,
+        ispremium: false,
         startingdate: Date.now() + 30 * 60 * 1000,
         finishingdate: Date.now() + 90 * 60 * 1000,
         state: 'Upcoming',
@@ -156,7 +156,7 @@ seedData = async () => {
 
     await events.createEvent({
         name: "Arouca x Boavista",
-        ispremium: true,
+        ispremium: false,
         startingdate: Date.now() + 1000,
         finishingdate: Date.now() + 90 * 60 * 1000,
         state: 'Upcoming',
@@ -167,13 +167,24 @@ seedData = async () => {
 
 
     await events.createEvent({
-        name: "Paços de Ferreira x Moreirense",
+        name: "Pacos de Ferreira x Moreirense",
         ispremium: true,
         startingdate: Date.now() + 1000,
         finishingdate: Date.now() + 70 * 60 * 1000,
         state: 'Upcoming',
         sport: {
             name: 'Football'
+        }
+    })
+
+    await events.createEvent({
+        name: "Toronto Raptors x Golden State Warriors",
+        ispremium: true,
+        startingdate: Date.now() + 1000,
+        finishingdate: Date.now() + 70 * 60 * 1000,
+        state: 'Upcoming',
+        sport: {
+            name: 'Basketball'
         }
     })
 

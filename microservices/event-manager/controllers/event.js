@@ -143,15 +143,18 @@ Event.updateBetResult = (availablebettypes, bets) => {
 // Database 
 
 Event.fetchOne = async (event) => {
-    return await EventDB.findOne({ event, include: [{ model: Sport }, { model: AvailableBetTypeDB }] });
+
+    console.log("FETCHING ONE ################################", event)
+
+    return await EventDB.findOne({ ...event, include: [{ model: Sport }, { model: AvailableBetTypeDB }] });
 }
 
 Event.fetchOneWithSport = async (event) => {
-    return await EventDB.findOne({ event, include: [{ model: Sport }] });
+    return await EventDB.findOne({ ...event, include: [{ model: Sport }] });
 }
 
 Event.fetchAll = async (event) => {
-    return await EventDB.findAll({ event, include: [{ model: AvailableBetTypeDB }] });
+    return await EventDB.findAll({ ...event, include: [{ model: AvailableBetTypeDB }] });
 }
 
 Event.fetchAllJustStarted = async () => {
@@ -162,7 +165,7 @@ Event.fetchAllJustStarted = async () => {
                 [Op.lte]: Date.now()
             },
             state: 'Upcoming'
-        }
+        }, include: [{ model: Sport }]
     });
 
     if (events) {
@@ -190,7 +193,7 @@ Event.fetchAllJustClosed = async () => {
     });
 }
 
-Event.fetch = async (event) => {
+Event.fetch = async () => {
     return await EventDB.findAll({ include: [{ model: Sport }] })
 }
 

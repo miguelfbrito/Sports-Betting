@@ -11,7 +11,7 @@ import './AnEventSummary.css';
 class AnEventSummary extends Component {
     constructor(props) {
         super(props);
-        this.state = { name: "Benfica x Porto", events: [], "date": Date.now(), blocks: [] }
+        this.state = { event: {}, blocks: [] }
     }
 
     formatDate = (dateMillis) => {
@@ -46,51 +46,15 @@ class AnEventSummary extends Component {
         // TODO : substituir pela API call
 
         this.setState({
+            event: data.event,
             blocks: structBetTypes
         })
-
-
-
-
-        // this.setState({
-        //     events: [
-        //         {
-        //             "name": "1 x 2 TR",
-        //             bt: [{
-        //                 "1": "2.85",
-        //                 "X": "1.85",
-        //                 "2": "2.15"
-        //             }]
-        //         },
-        //         {
-        //             "name": "1 x 2 INT",
-        //             bt: [{
-        //                 "1": "2.85",
-        //                 "X": "1.85"
-        //             }
-        //             ]
-        //         },
-        //         {
-        //             "name": "Goals",
-        //             bt: [{
-        //                 "-1.5 goals": "1.85",
-        //                 "+1.5 goals": "1.55",
-        //                 "-2.5 goals": "1.75",
-        //                 "+2.5 goals": "1.85",
-        //                 "-3.5 goals": "2.15",
-        //                 "+3.5 goals": "2.85",
-        //                 "+4.5 goals": "1.85",
-        //             }
-        //             ]
-        //         }
-        //     ]
-        // })
 
     }
 
     render() {
 
-        const { blocks } = this.state;
+        const { blocks, event } = this.state;
 
         if (!blocks) {
             // Loading
@@ -104,8 +68,7 @@ class AnEventSummary extends Component {
             <div className="anevents-title">
                 <div className="row">
                     <div className="col-sm-9">
-                        <p className="Infodiv">{this.state.name}</p>
-                        <p>{this.formatDate.bind(this.state.date)}</p>
+                        <p className="Infodiv">{event.name}</p>
 
                         <div className="anevents-container shadow">
                             {blocks.map(sbt => (

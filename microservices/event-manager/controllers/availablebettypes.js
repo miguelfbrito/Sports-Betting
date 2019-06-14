@@ -6,11 +6,13 @@ const BetMS = require('./betMS');
 
 AvailableBetTypes.createDefaultBySportName = async (name, eventOid) => {
 
-    let bettypes = []
+    let bettypes = [];
+    let defaultBetTypes = [];
+
     switch (name.toLowerCase()) {
         case 'football':
 
-            const defaultBetTypes = ['TR 1', 'TR X', 'TR 2', 'H +0.5', 'H +1.5', 'H +2.5', 'A +0.5', 'A +1.5', 'A +2.5'];
+            defaultBetTypes = ['TR 1', 'TR X', 'TR 2', 'H +0.5', 'H +1.5', 'H +2.5', 'A +0.5', 'A +1.5', 'A +2.5'];
             bettypes = await Promise.all(defaultBetTypes.map(async bettype => {
                 return await BetMS.fetchBetTypesByName(bettype);
             }))
@@ -29,6 +31,23 @@ AvailableBetTypes.createDefaultBySportName = async (name, eventOid) => {
             return bettypes;
 
         case 'basketball':
+            defaultBetTypes = ['TR 1', 'TR X', 'TR 2', 'TRIPLE 1', 'TRIPLE X', 'TRIPLE 2'];
+            bettypes = await Promise.all(defaultBetTypes.map(async bettype => {
+                return await BetMS.fetchBetTypesByName(bettype);
+            }))
+
+            // TODO : alterar a odd para não ser um valor aleatório
+            bettypes.forEach(async bettype => {
+                // Criar um available
+                const newAvailableBetType = {
+                    bettypeOid: bettype.oid,
+                    eventOid: eventOid,
+                    odd: (Math.random() * (2.5 - 1) + 1).toFixed(2)
+                }
+
+                const data = await this.create(newAvailableBetType)
+            })
+            return bettypes;
 
         case 'tennis':
 
@@ -63,7 +82,6 @@ AvailableBetTypes.fetchByEventOidWithBetTypeName = async (eventOid) => {
         const available = await AvailableBetTypesDB.findAll({ where: { eventOid } });
         const event = await Event.fetchOneWithSport({ where: { oid: eventOid } });
         let final = await Promise.all(available.map(async av => {
-            console.log("AV DATA BETTYPEOID", av.dataValues.bettypeOid)
             const bettype = await BetMS.fetchBetTypeDetailsByOid(av.dataValues.bettypeOid);
             return {
                 oid: av.oid,
