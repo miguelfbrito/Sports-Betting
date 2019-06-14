@@ -47,7 +47,7 @@
 
 
 .editpassword{
-    width: 50%;
+    width: 35%;
     padding: 5px;
     margin-top: 5px;
     font-size: 10pt;
@@ -59,7 +59,7 @@
 
 
 .editname{
-    width: 50%;
+    width: 35%;
     padding: 5px;
     margin-top: 5px;
     font-size: 10pt;
@@ -71,7 +71,7 @@
 
 
 .editemail{
-    width: 50%;
+    width: 35%;
     padding: 5px;
     margin-top: 5px;
     font-size: 10pt;

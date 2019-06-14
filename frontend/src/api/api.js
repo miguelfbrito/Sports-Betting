@@ -72,9 +72,7 @@ Api.fetchRegister = async (props) => {
         username:props.username,
         password:props.password,
         email:props.email,
-        name:props.nome,
-        balance:props.saldo,
-        ispremium:0
+        name:props.nome
     }
     );
     return data.data;
@@ -87,6 +85,15 @@ Api.fetchUserDetails = async (props) => {
 }
 
 
+Api.fetchUpdateUser = async (props) => {
+    const data = await axios.post(`${host}/user/update/${props.userid}`, 
+    {
+        name: props.name,
+        password: props.password,
+        email: props.email
+    });
+    return data.data;
+}
 
 
 export default Api;

@@ -46,10 +46,6 @@ p {
     padding: 0px 0px 0px 0px;
 }
 
-input[type="text"] {
-    font-size: 14px;
-    width: 300px;
-}
 
 input[type="datetime-local"] {
     font-size: 14px;

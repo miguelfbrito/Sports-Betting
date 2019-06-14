@@ -22,6 +22,15 @@ router.get('/details/:userOid', async (req, res, next) => {
     res.send(user);
 })
 
+
+router.post('/update/:userOid', async (req, res, next) => {
+
+    const user = req.body;
+    const data = await UserC.update({ where: { oid: req.params.userOid }}, user);
+    res.send(data);
+
+})
+
 router.post('/deposit', async (req, res, next) => {
     // TODO : obter userOid vindo do gateway
     const data = req.body;
