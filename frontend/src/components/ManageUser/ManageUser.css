@@ -1,12 +1,15 @@
 .user-container {
     background-color: var(--color-gray);
+    height: 100%;
+    width: 100%;
 }
 
 .user-title{
     background-color: #03B5AA;
 }
 
-.Info-div{
+.management-div{
     margin-left: 15px;
-    font-size: 30px;
+    font-size: 20px;
+    color: white;
 }

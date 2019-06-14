@@ -1,33 +1,31 @@
-p {
-    display: inline-block;
-    font-size: 14px;
-    margin-left: 10px;
-}
-
 .buttonsub {
     display: inline-block;
 }
 
-.buttonsub button {
-    font-size: 10pt;
-    width: auto;
-    background-color: #EA7317;
-    letter-spacing: 0.75pt;
-    display: inline-block;
-    margin-right: 30px;
-    margin-bottom: 10px;
-    position: absolute;
-    right: 0;
-    bottom: 10px;
+.btn-edit{
+    text-align: center;
 }
 
-
-.input-info {
-    display: inline-block;
+.edit-user {
     height: auto;
-    width: auto;
-    margin-right: 10px;
-    padding: 0px 0px 0px 0px;
+    width: 100%;
+    
+    padding-left: 10px;
+    padding-right: 30px;
+}
+
+.edit-form{
+    height: auto;
+    width: 100%;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.edit-user p{
+    width: 100%;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
 }
 
 .error-info {
@@ -40,24 +38,45 @@ p {
 .label-text {
     display: block;
     height: auto;
-    width: auto;
+    width: 100%;
     margin-left: 10px;
     margin-top: 5px;
     margin-right: 10px;
     padding: 0px 0px 0px 0px;
 }
 
-input[type="text"] {
-    font-size: 14px;
-    width: 300px;
+
+.editpassword{
+    width: 50%;
+    padding: 5px;
+    margin-top: 5px;
+    font-size: 10pt;
+    background-image: url("../../../assets/Form/lock.png");
+    background-repeat: no-repeat;
+    text-indent: 30px;
+    background-origin: content-box;
 }
 
-input[type="password"] {
-    font-size: 14px;
-    width: 300px;
+
+.editname{
+    width: 50%;
+    padding: 5px;
+    margin-top: 5px;
+    font-size: 10pt;
+    background-image: url("../../../assets/Form/man-user.png");
+    background-repeat: no-repeat;
+    text-indent: 30px;
+    background-origin: content-box;
 }
 
-input[type="email"] {
-    font-size: 14px;
-    width: 300px;
+
+.editemail{
+    width: 50%;
+    padding: 5px;
+    margin-top: 5px;
+    font-size: 10pt;
+    background-image: url("../../../assets/Form/envelope.png");
+    background-repeat: no-repeat;
+    text-indent: 30px;
+    background-origin: content-box;
 }

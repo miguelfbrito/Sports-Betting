@@ -1,17 +1,35 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import './EditUser.css';
 
 import { Formik } from 'formik';
+import Api from '../../../api/api';
 
 
-const EditUser = (props) => {
+class EditUser extends Component {
+  constructor(props) {
+      super(props);
+      this.state = { password:''}
+  }
 
-    return (
+  async componentDidMount() {
+      
+      const t = 1;
+
+      let userdetails = await Api.fetchUserDetails(1);
+
+      this.setState(userdetails);
+      console.log(this.state)
+  }
+
+
+render() {
+        //TODO: Adicionar um scroll para os eventos
+        const { users } = this.state;
+        return (
         <div className="row">
-        <div className="Bettype-odds">
+        <div className="edit-form">
         <Formik
-      initialValues={{password: "joao", name: "João Pinto", email: "user@email.com"}}
       validate={values => {
         let errors = {};
         if (!values.password) {
@@ -47,59 +65,56 @@ const EditUser = (props) => {
         /* and other goodies */
       }) => (
         <form onSubmit={handleSubmit}>
-        <label className="label-text">
-            <label className="input-info">
+        <div className="edit-user">
             <p className="">Password:</p>
             <input
+              className="editpassword"
                 placeholder="Password"
                 type="password"
                 name="password"
                 onChange={handleChange}
                 onBlur={handleBlur}
-                value={values.password}
+                value={this.state.password}
             />
             <p className="error-info">{errors.password && touched.password && errors.password}</p>
-            </label>
-          </label>
-        <label className="label-text">
-            <label className="input-info">
+          </div>
+        <div className="edit-user">
             <p className="">Name:</p>
             <input
+                className="editname"
                 placeholder="Name"
                 type="text"
                 name="name"
                 onChange={handleChange}
                 onBlur={handleBlur}
-                value={values.name}
+                value={this.state.name}
             />
             <p className="error-info">{errors.name && touched.name && errors.name}</p>
-            </label>
-          </label>
-          <label className="label-text">
-            <label className="input-info">
+          </div>
+          <div className="edit-user">
             <p className="">Email:</p>
             <input
+                className="editemail"
                 placeholder="user@email.com"
                 type="email"
                 name="email"
                 onChange={handleChange}
                 onBlur={handleBlur}
-                value={values.email}
+                value={this.state.email}
             />
             <p className="error-info">{errors.email && touched.email && errors.email}</p>
-            </label>
-          </label>
-          <label className="buttonsub">
-          <button type="submit" disabled={isSubmitting}>
+          </div>
+          <div className="button-container">
+          <button className="btn-1" type="submit" disabled={isSubmitting}>
             Save Changes
           </button>
-          </label>
+          </div>
         </form>
       )}
     </Formik>
         </div>
         </div>
     );
+  }
 }
-
 export default EditUser;

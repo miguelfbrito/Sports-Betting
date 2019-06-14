@@ -43,6 +43,37 @@ Api.placeBets = async (listBets) => {
 
 }
 
+Api.fetchLogin = async (props) => {
+    const data = await axios.post(`${host}/user/login`,
+    {
+        username: props.username,
+        password: props.password
+    }
+    );
+    return data.data;
+}
+
+
+Api.fetchRegister = async (props) => {
+    const data = await axios.post(`${host}/user/signup`,
+    {
+        username:props.username,
+        password:props.password,
+        email:props.email,
+        name:props.nome,
+        balance:props.saldo,
+        ispremium:0
+    }
+    );
+    return data.data;
+}
+
+
+Api.fetchUserDetails = async (props) => {
+    const data = await axios.get(`${host}/user/details/${props}`);
+    return data.data;
+}
+
 
 
 
