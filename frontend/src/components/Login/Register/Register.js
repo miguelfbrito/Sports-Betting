@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Redirect } from 'react-router-dom'
 
 
 import '../Login.css';
+import Api from '../../../api/api';
 
 class Register extends Component {
     constructor(props) {
         super(props);
-        this.state = {}
+        this.state = { registered: false}
     }
 
     componentDidMount() {
@@ -15,12 +17,10 @@ class Register extends Component {
 
 
     render() {
+
         return (
             <div className="container">
-                <div className="row">
-                    <div className="col-lg-3"></div>
-                    <div style={{ height: '500px', overflowY: "scroll" }} className="col-lg-9 login-container shadow">
-                        <h3>Welcome!</h3>
+                        <h3>Create an account!</h3>
                         <Formik
                             initialValues={{ username: '', saldo: '', nome: '', email: '', password: '', cpassword : ''}}
                             validate={values => {
@@ -31,7 +31,7 @@ class Register extends Component {
                               if (!values.saldo) {
                                   errors.saldo = 'Required';
                               }else if (
-                                  !/^\s*(?=.*[1-9])\d*(?:\.\d{1,2})?\s*$/i.test(values.saldo)
+                                  !/^\s*(?=.*[0-9])\d*(?:\.\d{1,2})?\s*$/i.test(values.saldo)
                                 ) {
                                   errors.saldo = 'Invalid number type';
                                 }
@@ -56,11 +56,16 @@ class Register extends Component {
                                 }
                               return errors;
                             }}
-                            onSubmit={(values, { setSubmitting }) => {
-                                setTimeout(() => {
-                                    alert(JSON.stringify(values, null, 2));
+                            onSubmit={async (values, { setSubmitting }) => {
+                                    const a = await Api.fetchRegister(values);
+                                    //Redirecionar para as páginas
+                                    if(a.success==true){
+                                        this.setState({registered: a});
+                                        alert(a.message);
+                                    }else{
+                                        alert(a.message)
+                                    }
                                     setSubmitting(false);
-                                }, 400);
                             }}
                         >
                             {({
@@ -75,49 +80,42 @@ class Register extends Component {
                         }) => (
                             <form className="form" onSubmit={handleSubmit}>
                             <div>
-                            <label htmlFor="">Username</label>
-                            <Field className="input" type="username" name="username" />
-                            <ErrorMessage name="username" component="div" />
+                            <Field className="username" type="username" name="username" placeholder="Username"/>
+                            <ErrorMessage name="username" component="div" className="ErrorMessa" />
                             </div>
 
                             <div>
-                                <label htmlFor="">Balance</label>
-                                <Field className="input" type="number" name="saldo" />
-                                <ErrorMessage name="saldo" component="div" />
+                                <Field className="balance" type="number" name="saldo" placeholder="00.00"/>
+                                <ErrorMessage name="saldo" component="div" className="ErrorMessa"/>
                             </div>
 
                             <div>
-                                <label htmlFor="">Name</label>
-                                <Field className="input" type="username" name="nome" />
-                                <ErrorMessage name="nome" component="div" />
+                                <Field className="name" type="username" name="nome" placeholder="Name"/>
+                                <ErrorMessage name="nome" component="div" className="ErrorMessa"/>
                             </div>
 
                             <div>
-                                <label htmlFor="">Email</label>
-                                <Field className="input" type="email" name="email" />
-                                <ErrorMessage name="email" component="div" />
+                                <Field className="email" type="email" name="email" placeholder="Email"/>
+                                <ErrorMessage name="email" component="div" className="ErrorMessa"/>
                             </div>
 
                             <div>
-                                <label htmlFor="">Password</label>
-                                <Field className="input" type="password" name="password" />
-                                <ErrorMessage name="password" component="div" />
+                                <Field className="password" type="password" name="password" placeholder="Password"/>
+                                <ErrorMessage name="password" component="div" className="ErrorMessa"/>
                             </div>
 
                             <div>
-                                <label htmlFor="">Confirm Password</label>
-                                <Field className="input" type="password" name="cpassword" />
-                                <ErrorMessage name="cpassword" component="div" />
+                                <Field className="password" type="password" name="cpassword" placeholder="Confirm Password"/>
+                                <ErrorMessage name="cpassword" component="div" className="ErrorMessa"/>
                             </div>
 
                             <div className="button-container">
-                                <button className="btn-1" type="submit" disabled={isSubmitting}>Save</button>
+                                <button className="btn-1" type="submit" disabled={isSubmitting}>Register</button>
                             </div>
                             </form>
                         )}
                         </Formik>
-        </div>
-    </div>
+        
 </div >
         );
 

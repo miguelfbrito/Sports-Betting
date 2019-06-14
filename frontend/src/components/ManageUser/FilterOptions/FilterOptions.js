@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import "./FilterOptions.css";
 
 class FilterBets extends Component {
     constructor(props) {
@@ -10,9 +11,8 @@ class FilterBets extends Component {
 
         return (
             
-            //Colocar as imagens aqui em vez dos nomes
-            <div className="bet-filter-container">
-                <ul className="bet-filters">
+            <div className="options-filter-container">
+                <ul className="options-filters">
                     <li >Profile</li>
                     <li>Edit Profile</li>
                     <li>Deposit/withdraw money</li>

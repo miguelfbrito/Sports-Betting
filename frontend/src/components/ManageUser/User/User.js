@@ -4,24 +4,41 @@ import './User.css';
 
 
 const User = (props) => {
-
     const { user } = props;
     return (
-        <div className="row">
-        <div className="col-sm-6">
+        <div>
+            <div className="row">
+            <div className="col-sm-3">
             <p className="user-titles">Username:</p>
+            </div>
+            <div className="col-sm-3">
+            <p className="user-info">{user.username}</p>
+            </div>
+            <div className="col-sm-3">
             <p className="user-titles">Saldo:</p>
+            </div>
+            <div className="col-sm-3">
+            <p className="user-info">{user.balance + ' €'}</p>
+            </div>
+            <div className="col-sm-3">
             <p className="user-titles">Nome:</p>
+            </div>
+            <div className="col-sm-3">
+            <p className="user-info">{user.name}</p>
+            </div>
+            <div className="col-sm-3">
             <p className="user-titles">Email:</p>
+            </div>
+            <div className="col-sm-3">
+            <p className="user-info">{user.email}</p>
+            </div>
+            <div className="col-sm-3">
             <p className="user-titles">Premium:</p>
-        </div>
-        <div className="col-sm-6">
-            <p className="user-info">{user.Username}</p>
-            <p className="user-info">{user.Saldo + " €"}</p>
-            <p className="user-info">{user.Nome}</p>
-            <p className="user-info">{user.Email}</p>
-            <p className="user-info">{user.Premium}</p>
-        </div>
+            </div>
+            <div className="col-sm-3">
+            <p className="user-info">{String(user.ispremium)}</p>
+            </div>
+            </div>
         </div>
     );
 }

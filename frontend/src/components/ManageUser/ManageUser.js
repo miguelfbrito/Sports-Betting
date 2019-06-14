@@ -2,19 +2,27 @@ import React, { Component } from 'react';
 import './ManageUser.css';
 import CurrentEventsCarousel from '../CurrentEventsCarousel/CurrentEventsCarousel';
 //import User from './User/User';
-import User from './Premium/Premium';
+import User from './User/User';
 import FilterOptions from './FilterOptions/FilterOptions';
+import Api from '../../api/api';
+import EditUser from './EditUser/EditUser';
 
 class CheckBetsSummary extends Component {
     constructor(props) {
         super(props);
-        this.state = { users: [] }
+        this.state = { user: [], showEditSlip: false, showDetailsSlip: true }
     }
 
-    componentDidMount() {
-        // TODO : substituir pela API call
+    async componentDidMount() {
+        
+        const t = 1;
 
-        this.setState({
+        let userdetails = await Api.fetchUserDetails(1);
+
+        this.setState({user: userdetails});
+
+
+        /*this.setState({
             users: [
                 {
                     "Username": "João",
@@ -24,16 +32,26 @@ class CheckBetsSummary extends Component {
                     "Premium": "Não"
                 }
             ]
-        })
+        })*/
 
     }
 
     render() {
         //TODO: Adicionar um scroll para os eventos
-        const { users } = this.state;
+
+        const editSlipSection = (
+            <div className="user">
+                <EditUser />
+            </div>);
+
+        const detailsSlipSection = (
+            <div className="user">
+                <User user={this.state.user} />
+            </div>);
+
         return ( 
             <div className="user-title">
-                <p className="Info-div">Account Management</p>
+                <p className="management-div">Account Management</p>
                 <div className="user-container shadow">
 
 
@@ -44,11 +62,10 @@ class CheckBetsSummary extends Component {
 
                     <FilterOptions />
 
-                    {users.map(user => (
-                        <div className="user">
-                            <User user={user} />
+                        <div >
+                            {this.state.showDetailsSlip ? detailsSlipSection : ''}
+                            {this.state.showEditSlip ? editSlipSection : ''}
                         </div>
-                    ))}
 
                 </div>
             </div>
