@@ -109,6 +109,7 @@ class EventsSummary extends Component {
 
         console.log("Eventos", events)
 
+
         events = events.filter(event => event.sportName.toLowerCase() === sportFilter.toLowerCase() || sportFilter.toLowerCase() === 'all');
 
         if (!events)
@@ -146,10 +147,11 @@ class EventsSummary extends Component {
 
                             {events.map(event => (
 
-                                <div className="event">
+
+                                < div className="event" >
                                     <Event event={event} addBetToBettingSlip={this.addBetToBettingSlip} onPlaceBet={this.onPlaceBet} />
 
-                                    <Link to={'/events/' + event.oid}>
+                                    <Link to={'/events/' + event.eventOid}>
                                         <button type="button" className="btn" id="view-all-bettypes">+</button>
                                     </Link>
                                 </div>

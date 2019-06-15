@@ -35,7 +35,7 @@ class AnEventSummary extends Component {
         console.log("EventOid", eventOid);
 
         const data = await Api.fetchAvailableBetTypesByEventOid(eventOid)
-        console.log("Bettypes")
+        console.log("FetchAvailableBetTypesByEventOid##################")
         console.log(data)
 
         const structBetTypes = BetTypeStruct.organize(data);
