@@ -35,7 +35,7 @@ render() {
           if (!values.premium) {
             errors.premium = 'Required';
           }
-          if(this.state.premium=="Premium"){
+          if(values.premium=="Premium"){
             errors.premium = "Select value";
           }
           if (!values.bdate) {
@@ -48,19 +48,16 @@ render() {
               errors.edate = "Must be after begining date ";
             }
           }
-          if (!values.description) {
-            errors.description = 'Required';
-          }
           return errors;
         }}
         onSubmit={async (values, { setSubmitting }) => {
           const a = await Api.fetchCreateNewEvent(values);
           //Colocar a apresentar as mensagens de erro
-          if(a.success==true){
+          if(a){
             this.setState({createdEvent: true});
-            alert(this.state.createdEvent);
+            alert("Event Created");
           }else{
-            alert(this.state.createdEvent);
+            console.log("Event Already Created");
           }
           setSubmitting(false);
         }}
@@ -77,6 +74,7 @@ render() {
         }) => (
           <form onSubmit={handleSubmit}>
           <div className="add-event">
+              <label>Sport</label>
               <input
                 className="eventsport"
                   placeholder="Sport"
@@ -91,6 +89,7 @@ render() {
             </div>
             </div>
           <div className="add-event">
+          <label>Name of event</label>
               <input
                   className="eventname"
                   placeholder="Name"
@@ -105,20 +104,22 @@ render() {
               </div>
             </div>
             <div className="add-event">
+            <label>Premium</label>
             <select name="product" defaultValue={1} className="eventpremium" onChange={(event) => {
               var id = event.nativeEvent.target.selectedIndex;
               values.premium = event.nativeEvent.target[id].text;
               }}
               onBlur={handleBlur} >
               <option value="1" disabled>Premium</option>
-              <option value="2">False</option>
-              <option value="3">True</option>
+              <option value="2">false</option>
+              <option value="3">true</option>
             </select>
             <div>
               <p className="error-info">{errors.premium && touched.premium && errors.premium}</p>
               </div>
             </div>
             <div className="add-event">
+            <label>Begin Date</label>
               <input
                   className="eventbdate"
                   type="datetime-local"
@@ -132,6 +133,7 @@ render() {
               </div>
             </div>
             <div className="add-event">
+            <label>End Date</label>
               <input
                   className="eventedate"
                   type="datetime-local"
@@ -145,7 +147,7 @@ render() {
             </div>
             </div>
             <div className="add-event">
-
+            <label>Description</label>
             <textarea rows="4" className="eventdescription"
                   type="text"
                   name="description"

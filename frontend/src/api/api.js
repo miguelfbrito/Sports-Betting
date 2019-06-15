@@ -95,5 +95,60 @@ Api.fetchUpdateUser = async (props) => {
     return data.data;
 }
 
+Api.fetchCreateNewEvent = async (props) => {
+
+    let premiumvalue = false;
+
+    if(props.premium==="true"){
+        premiumvalue = true;
+    }else{
+        premiumvalue = false;
+    }
+
+    const data = await axios.post(`${host}/event/create`, 
+    {
+        name: props.name,
+	    ispremium: premiumvalue,
+        startingdate:props.bdate,
+        finishingdate: props.edate,
+        state: "upcoming",
+        sport: {
+		    "name": props.sport
+	    }
+    });
+    return data.data;
+}
+
+Api.fetchEventDetails = async (props) => {
+    const data = await axios.get(`${host}/event/history/${props}`);
+    return data.data;
+}
+
+Api.fetchUpdateEvent = async (props) => {
+
+    let premiumvalue = false;
+
+    if(props.premium==="true"){
+        premiumvalue = true;
+    }else{
+        premiumvalue = false;
+    }
+
+    console.log(props.finishingdate);
+
+    const data = await axios.post(`${host}/event/update/${props.oid}`, 
+    {
+        name: props.name,
+	    ispremium: premiumvalue,
+        startingdate:props.startingdate,
+        finishingdate: props.finishingdate,
+        state: "upcoming",
+        sport: {
+		    name: props.sport
+	    }
+    });
+    console.log(data.data);
+    return data.data;
+}
 
 export default Api;
