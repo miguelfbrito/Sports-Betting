@@ -7,11 +7,12 @@ import FilterOptions from './FilterOptions/FilterOptions';
 import Api from '../../api/api';
 import EditUser from './EditUser/EditUser';
 import Money from './Money/Money';
+import Premium from './Premium/Premium';
 
 class CheckBetsSummary extends Component {
     constructor(props) {
         super(props);
-        this.state = { user: [], showEditSlip: false, showDetailsSlip: false, showMoneySlip: true }
+        this.state = { user: [], showEditSlip: false, showDetailsSlip: false, showMoneySlip: false, showPremium: true }
     }
 
     async componentDidMount() {
@@ -50,9 +51,14 @@ class CheckBetsSummary extends Component {
                 <User user={this.state.user} />
             </div>);
 
-            const moneySlipSection = (
+        const moneySlipSection = (
             <div className="user">
                 <Money user={this.state.user} />
+            </div>);
+
+        const premiumSlipSection = (
+            <div className="user">
+                <Premium user={this.state.user} />
             </div>);
 
         return ( 
@@ -72,6 +78,7 @@ class CheckBetsSummary extends Component {
                             {this.state.showDetailsSlip ? detailsSlipSection : ''}
                             {this.state.showEditSlip ? editSlipSection : ''}
                             {this.state.showMoneySlip ? moneySlipSection : ''}
+                            {this.state.showPremium ? premiumSlipSection : ''}
                         </div>
 
                 </div>
