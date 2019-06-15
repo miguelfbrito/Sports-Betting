@@ -57,30 +57,8 @@ seedData = async () => {
     await events.createEvent({
         name: "Benfica x Porto",
         ispremium: false,
-        startingdate: (Date.now()),
-        finishingdate: (Date.now() + 5 * 1000),
-        state: 'Upcoming',
-        sport: {
-            name: 'Football'
-        }
-    });
-
-    await events.createEvent({
-        name: "EVENTO DE TESTE",
-        ispremium: false,
-        startingdate: (Date.now() + 60 * 1000),
-        finishingdate: (Date.now() + 80 * 1000),
-        state: 'Upcoming',
-        sport: {
-            name: 'Football'
-        }
-    });
-
-    await events.createEvent({
-        name: "EVENTO DE TESTE 2",
-        ispremium: false,
-        startingdate: (Date.now() + 80 * 1000),
-        finishingdate: (Date.now() + 90 * 1000),
+        startingdate: (Date.now() + 10 * 1000),
+        finishingdate: (Date.now() + 20 * 1000),
         state: 'Upcoming',
         sport: {
             name: 'Football'
@@ -90,31 +68,19 @@ seedData = async () => {
     await events.createEvent({
         name: "Arsenal x Liverpool",
         ispremium: false,
-        startingdate: Date.now(),
-        finishingdate: Date.now() + 60 * 1000,
+        startingdate: Date.now() + 10 * 1000,
+        finishingdate: Date.now() + 20 * 1000,
         state: 'Upcoming',
         sport: {
             name: 'Football'
         }
     })
-
-    await events.createEvent({
-        name: "Crystal Palace x Manchester United",
-        ispremium: false,
-        startingdate: Date.now(),
-        finishingdate: Date.now() + 60 * 1000,
-        state: 'Upcoming',
-        sport: {
-            name: 'Football'
-        }
-    })
-
 
     await events.createEvent({
         name: "Barcelona x Real Madrid",
         ispremium: false,
-        startingdate: Date.now() + 1 * 1000,
-        finishingdate: Date.now() + 2 * 1000,
+        startingdate: Date.now() + 90 * 1000,
+        finishingdate: Date.now() + 120 * 1000,
         state: 'Upcoming',
         sport: {
             name: 'Football'
@@ -124,8 +90,8 @@ seedData = async () => {
     await events.createEvent({
         name: "Bayern vs Dortmund",
         ispremium: false,
-        startingdate: Date.now() + 1 * 1000,
-        finishingdate: Date.now() + 10 * 60 * 1000,
+        startingdate: Date.now() + 90 * 60 * 1000,
+        finishingdate: Date.now() + 120 * 60 * 1000,
         state: 'Upcoming',
         sport: {
             name: 'Football'
@@ -135,8 +101,8 @@ seedData = async () => {
     await events.createEvent({
         name: "Braga x Guimarães",
         ispremium: false,
-        startingdate: Date.now() + 30 * 60 * 1000,
-        finishingdate: Date.now() + 90 * 60 * 1000,
+        startingdate: Date.now() + 90 * 60 * 1000,
+        finishingdate: Date.now() + 120 * 60 * 1000,
         state: 'Upcoming',
         sport: {
             name: 'Football'
@@ -146,8 +112,8 @@ seedData = async () => {
     await events.createEvent({
         name: "Braga B x Guimarães",
         ispremium: true,
-        startingdate: Date.now() + 1000,
-        finishingdate: Date.now() + 90 * 60 * 1000,
+        startingdate: Date.now() + 90 * 60 * 1000,
+        finishingdate: Date.now() + 120 * 60 * 1000,
         state: 'Upcoming',
         sport: {
             name: 'Football'
@@ -157,8 +123,8 @@ seedData = async () => {
     await events.createEvent({
         name: "Sporting x Guimarães",
         ispremium: false,
-        startingdate: Date.now() + 1000,
-        finishingdate: Date.now() + 30 * 60 * 1000,
+        startingdate: Date.now() + 60 * 60 * 1000,
+        finishingdate: Date.now() + 120 * 60 * 1000,
         state: 'Upcoming',
         sport: {
             name: 'Football'
@@ -168,8 +134,8 @@ seedData = async () => {
     await events.createEvent({
         name: "Sporting x Leixões",
         ispremium: false,
-        startingdate: Date.now(),
-        finishingdate: Date.now() + 45 * 60 * 1000,
+        startingdate: Date.now() + 45 * 60 * 1000,
+        finishingdate: Date.now() + 90 * 60 * 1000,
         state: 'Upcoming',
         sport: {
             name: 'Football'
@@ -179,31 +145,8 @@ seedData = async () => {
     await events.createEvent({
         name: "Estoril x Setúbal",
         ispremium: false,
-        startingdate: Date.now() + 30 * 60 * 1000,
+        startingdate: Date.now() + 40 * 60 * 1000,
         finishingdate: Date.now() + 90 * 60 * 1000,
-        state: 'Upcoming',
-        sport: {
-            name: 'Football'
-        }
-    })
-
-    await events.createEvent({
-        name: "Arouca x Boavista",
-        ispremium: false,
-        startingdate: Date.now() + 1000,
-        finishingdate: Date.now() + 90 * 60 * 1000,
-        state: 'Upcoming',
-        sport: {
-            name: 'Football'
-        }
-    })
-
-
-    await events.createEvent({
-        name: "Pacos de Ferreira x Moreirense",
-        ispremium: true,
-        startingdate: Date.now() + 1000,
-        finishingdate: Date.now() + 70 * 60 * 1000,
         state: 'Upcoming',
         sport: {
             name: 'Football'
@@ -221,14 +164,63 @@ seedData = async () => {
         }
     })
 
+    await events.createEvent({
+        name: "Atlanta Hawks x Boston Celtics",
+        ispremium: true,
+        startingdate: Date.now() + 30 * 60 * 100,
+        finishingdate: Date.now() + 70 * 60 * 1000,
+        state: 'Upcoming',
+        sport: {
+            name: 'Basketball'
+        }
+    })
+
+    await events.createEvent({
+        name: "Chicago Bulls x Detroit Pistons",
+        ispremium: true,
+        startingdate: Date.now() + 30 * 60 * 100,
+        finishingdate: Date.now() + 190 * 60 * 1000,
+        state: 'Upcoming',
+        sport: {
+            name: 'Basketball'
+        }
+    })
+
+    await events.createEvent({
+        name: "Indiana Pacers x LA Clippers",
+        ispremium: true,
+        startingdate: Date.now() + 45 * 60 * 100,
+        finishingdate: Date.now() + 190 * 60 * 1000,
+        state: 'Upcoming',
+        sport: {
+            name: 'Basketball'
+        }
+    })
+
+    await events.createEvent({
+        name: "Miami Heat x New York Knicks",
+        ispremium: true,
+        startingdate: Date.now(),
+        finishingdate: Date.now() + 20 * 60 * 1000,
+        state: 'Upcoming',
+        sport: {
+            name: 'Basketball'
+        }
+    })
     console.log("Creating event");
 
+    console.log("Creating user");
+
     // Create user
+    await axios.post(`${MS_USERS}/user/signup`, {
+        username: "mbrito",
+        password: "pass"
+    })
+
     await axios.post(`${MS_USERS}/user/signup`, {
         username: "user",
         password: "pass"
     })
-    console.log("Creating user");
 
     // Place bet
     await axios.post(`${MS_BETS}/bet/place`, {
@@ -241,30 +233,66 @@ seedData = async () => {
     await axios.post(`${MS_BETS}/bet/place`, {
         wager: 10,
         userOid: 1,
-        eventOid: 1,
+        eventOid: 4,
         bettypeOid: 1
     })
 
     await axios.post(`${MS_BETS}/bet/place`, {
         wager: 4,
         userOid: 1,
-        eventOid: 1,
+        eventOid: 2,
         bettypeOid: 3
     })
 
     await axios.post(`${MS_BETS}/bet/place`, {
-        wager: 5,
+        wager: 3.33,
         userOid: 1,
         eventOid: 2,
         bettypeOid: 2
     })
 
     await axios.post(`${MS_BETS}/bet/place`, {
-        wager: 20,
+        wager: 8.50,
         userOid: 1,
         eventOid: 3,
         bettypeOid: 1
     })
+
+    await axios.post(`${MS_BETS}/bet/place`, {
+        wager: 5.6,
+        userOid: 1,
+        eventOid: 2,
+        bettypeOid: 3
+    })
+
+    await axios.post(`${MS_BETS}/bet/place`, {
+        wager: 5,
+        userOid: 1,
+        eventOid: 3,
+        bettypeOid: 1
+    })
+
+    await axios.post(`${MS_BETS}/bet/place`, {
+        wager: 5,
+        userOid: 1,
+        eventOid: 7,
+        bettypeOid: 4
+    })
+
+    await axios.post(`${MS_BETS}/bet/place`, {
+        wager: 9,
+        userOid: 1,
+        eventOid: 9,
+        bettypeOid: 5
+    })
+
+    await axios.post(`${MS_BETS}/bet/place`, {
+        wager: 4,
+        userOid: 1,
+        eventOid: 4,
+        bettypeOid: 4
+    })
+
     // Create Stats
     // const statsData = await stats.addStatToEvent({
     //     eventOid: 1,
