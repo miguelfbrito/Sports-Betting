@@ -31,8 +31,8 @@ class Navbar extends Component {
                         <a className="navbar-brand" href="#">Bet</a>
                         <div className="collapse navbar-collapse " id="navbarText">
                             <ul className="navbar-nav ml-auto">
-                                <li className="nav-item active"> <Link to="/bets"> <span data-notifications={1} className="nav-link" href="#">Bets</span> </Link> </li>
                                 <li className="nav-item active"> <Link to="/events"> <span className="nav-link" href="#">Events</span> </Link> </li>
+                                <li className="nav-item active"> <Link to="/bets"> <span className="nav-link" href="#">Bets</span> </Link> </li>
                                 <li className="nav-item"> <Link to="/user"> <span className="nav-link" href="#">Welcome"</span> </Link> </li>
                             </ul>
                         </div>
@@ -49,8 +49,8 @@ class Navbar extends Component {
                     <a className="navbar-brand" href="#">Bet</a>
                     <div className="collapse navbar-collapse " id="navbarText">
                         <ul className="navbar-nav ml-auto">
-                            <li className="nav-item active"> <Link to="/bets"> <span data-notifications={1} className="nav-link" href="#">Bets</span> </Link> </li>
                             <li className="nav-item active"> <Link to="/events"> <span className="nav-link" href="#">Events</span> </Link> </li>
+                            <li className="nav-item active"> <Link to="/bets"> <span className="nav-link" href="#">Bets</span> </Link> </li>
                             <li className="nav-item"> <Link to="/user"> <span className="nav-link" href="#">Welcome, {user.username + "(" + user.balance + "€)"}</span> </Link> </li>
                         </ul>
                     </div>

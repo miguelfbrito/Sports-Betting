@@ -32,7 +32,7 @@ class EventsSummary extends Component {
 
         // Verify if it doesn't exist already
 
-        const matchSame = currentBets.filter(b => b.bettypeOid === bet.bettypeOid && b.eventOid === event.oid);
+        const matchSame = currentBets.filter(b => b.bettypeOid === bet.bettypeOid && b.eventOid === event.eventOid);
 
         if (matchSame.length > 0) {
             console.log("Duplicated bet!")
@@ -41,7 +41,7 @@ class EventsSummary extends Component {
 
         currentBets.push({
             name: event.name,
-            eventOid: event.oid,
+            eventOid: event.eventOid,
             odd: bet.odd,
             bettypeName: bet.bettypeName,
             bettypeOid: bet.bettypeOid,
@@ -141,7 +141,6 @@ class EventsSummary extends Component {
                                 <p className={sportFilter === 'All' ? 'top-bar-menu-active' : ''} onClick={() => this.changeSportFilter('All')}>All</p>
                                 <p className={sportFilter === 'Football' ? 'top-bar-menu-active' : ''} onClick={() => this.changeSportFilter('Football')}>Football</p>
                                 <p className={sportFilter === 'Basketball' ? 'top-bar-menu-active' : ''} onClick={() => this.changeSportFilter('Basketball')}>Basketball</p>
-                                <p className={sportFilter === 'Tennis' ? 'top-bar-menu-active' : ''} onClick={() => this.changeSportFilter('Tennis')}>Tennis</p>
                             </div>
 
 

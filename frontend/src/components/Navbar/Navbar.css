@@ -1,8 +1,8 @@
 .navbar {
-    background:linear-gradient(160deg, rgb(3, 128, 119) 0%,#03B5AA 40%);
-    -webkit-box-shadow: -4px 6px 25px -10px rgba(0,0,0,0.75);
-    -moz-box-shadow: -4px 6px 25px -10px rgba(0,0,0,0.75);
-    box-shadow: -4px 6px 25px -10px rgba(0,0,0,0.75);
+    background: linear-gradient(160deg, rgb(3, 128, 119) 0%, #03B5AA 40%);
+    -webkit-box-shadow: -4px 6px 25px -10px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -4px 6px 25px -10px rgba(0, 0, 0, 0.75);
+    box-shadow: -4px 6px 25px -10px rgba(0, 0, 0, 0.75);
 
 }
 
@@ -14,12 +14,12 @@
     padding-bottom: 5px;
 }
 
-.navbar-brand  {
+.navbar-brand {
     color: black;
     font-size: 20pt !important;
 }
 
-.nav-item a{
+.nav-item a {
     color: black;
     font-size: 14pt;
     font-weight: 350;
@@ -27,24 +27,32 @@
     text-transform: uppercase;
 }
 
-.nav-item a:hover, .navbar-container a:hover{
+.nav-item a:hover,
+.navbar-container a:hover {
     text-decoration: none;
     color: #EA7317;
+    border-bottom: 2px solid black;
+    color: white;
 }
 
 [data-notifications] {
-	position: relative;
+    position: relative;
 }
 
 [data-notifications]:after {
-	content: attr(data-notifications);
-	position: absolute;
-	background: #EA7317;
-	border-radius: 50%;
-	display: inline-block;
+    content: attr(data-notifications);
+    position: absolute;
+    background: #EA7317;
+    border-radius: 50%;
+    display: inline-block;
     padding: 0.5em;
     font-size: 14px;
-	color: #f2f2f2;
-	right: 0px;
-	top: -15px;
+    color: #f2f2f2;
+    right: 0px;
+    top: -15px;
+}
+
+
+.nav-link {
+    line-height: 15px;
 }

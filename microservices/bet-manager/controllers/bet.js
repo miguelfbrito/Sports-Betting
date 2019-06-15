@@ -13,7 +13,13 @@ Bet.closeBet = async (bet) => {
     if (!bet)
         return 'Bet not found';
 
-    const updatedBet = await this.update({ where: { oid: bet.oid } }, { result: bet.betresult });
+    let earnings = 0;
+    if (bet.betresult === 'WON') {
+        earnings = (bet.odd * bet.wager).toFixed(2);
+    } else if (bet.betresult === 'LOST') {
+        earnings = bet.wager * -1
+    }
+    const updatedBet = await this.update({ where: { oid: bet.oid } }, { result: bet.betresult, earnings });
 
 
     bet = {
@@ -35,8 +41,15 @@ Bet.placeBet = async (bet) => {
     // TODO : obter o userOid do token
     const userOid = 1;
     const user = await UserMS.fetchUserDetails(userOid);
+    const event = await EventMS.fetch(eventOid);
 
-    const userBettedAlready = await BetDB.findOne({ where: { eventOid, oid: userOid } })
+    if (Date.now() >= Date.parse(event.startingdate)) {
+        return { message: 'Bets to this event have been closed' };
+    }
+
+    const userBettedAlready = await BetDB.findOne({ where: { eventOid, bettypeOid, userOid: userOid } })
+
+    console.log("USER BETTED ALREADY!", userBettedAlready);
 
     if (userBettedAlready) {
         return { message: 'User already bet on event' }
