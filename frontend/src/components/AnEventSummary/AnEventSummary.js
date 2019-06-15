@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
-import CurrentEventsCarousel from '../CurrentEventsCarousel/CurrentEventsCarousel';
 import AnEvent from './AnEvent/AnEvent';
 import BettingSlip from '../BettingSlip/BettingSlip';
 import Api from '../../api/api';
+import Notification from '../Notification/Notification';
+
+import ReactNotification from "react-notifications-component";
+import "react-notifications-component/dist/theme.css";
 
 import BetTypeStruct from '../utils/bettypesstruct';
 
@@ -12,6 +15,22 @@ class AnEventSummary extends Component {
     constructor(props) {
         super(props);
         this.state = { event: {}, blocks: [], showBettingSlip: true, bettingSlipBets: [] }
+
+        this.addNotification = this.addNotification.bind(this);
+        this.notificationDOMRef = React.createRef();
+    }
+
+    async componentDidMount() {
+
+        const eventOid = this.props.match.params.eventOid || -1;
+        const data = await Api.fetchAvailableBetTypesByEventOid(eventOid)
+        const structBetTypes = BetTypeStruct.organize(data);
+
+        this.setState({
+            event: data.event,
+            blocks: structBetTypes
+        })
+
     }
 
     formatDate = (dateMillis) => {
@@ -28,40 +47,27 @@ class AnEventSummary extends Component {
     }
 
 
-    async componentDidMount() {
 
-        const eventOid = this.props.match.params.eventOid || -1;
-
-        console.log("EventOid", eventOid);
-
-        const data = await Api.fetchAvailableBetTypesByEventOid(eventOid)
-        console.log("FetchAvailableBetTypesByEventOid##################")
-        console.log(data)
-
-        const structBetTypes = BetTypeStruct.organize(data);
-
-        console.log("Struct bet types", structBetTypes)
-
-
-        // TODO : substituir pela API call
-
-        this.setState({
-            event: data.event,
-            blocks: structBetTypes
-        })
-
+    addNotification(notification) {
+        this.notificationDOMRef.current.addNotification({
+            title: notification.title || "Awesomeness",
+            message: notification.message || "Awesome Notifications!",
+            type: notification.type || "success",
+            insert: "top",
+            container: "top-right",
+            animationIn: ["animated", "fadeIn"],
+            animationOut: ["animated", "fadeOut"],
+            dismiss: { duration: notification.dismiss || 2000 },
+            dismissable: { click: true }
+        });
     }
 
     addBetToBettingSlip = (bet, eventOid) => {
-
-        console.log("BETTTTTTTTTTTTTTTTTTTTTTTTT", bet)
-        console.log(bet.name)
 
         let currentBets = this.state.bettingSlipBets;
         const matchSame = currentBets.filter(b => b.bettypeOid === bet.bettypeOid);
 
         if (matchSame.length > 0) {
-            console.log("Duplicated bet!")
             return;
         }
 
@@ -80,13 +86,27 @@ class AnEventSummary extends Component {
         }
     }
 
+
     onPlaceBet = async () => {
-
-        console.log("Placing bet!");
-        console.log(this.state.bettingSlipBets);
-        await Api.placeBets(this.state.bettingSlipBets)
-        console.log("Placed all the bets!");
-
+        const betResults = await Api.placeBets(this.state.bettingSlipBets);
+        betResults.map(br => {
+            const event = this.state.event;
+            if ('message' in br) {
+                this.addNotification({
+                    title: 'Error placing bet!',
+                    message: br.message,
+                    type: 'danger',
+                    dismiss: 5000
+                });
+            } else {
+                this.addNotification({
+                    title: event.name,
+                    message: 'Your bet has been placed!',
+                    type: 'success',
+                    dismiss: 5000
+                });
+            }
+        })
     }
 
     changeSportFilter = (sport) => {
@@ -151,6 +171,7 @@ class AnEventSummary extends Component {
 
         return (
             <div className="anevents-title">
+                <ReactNotification ref={this.notificationDOMRef} />
                 <div className="row">
                     <div className={showBettingSlip ? 'col-md-9' : 'col-md-12'}>
                         <div className="top-bar">

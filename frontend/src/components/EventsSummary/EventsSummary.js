@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import ReactNotification from "react-notifications-component";
+import "react-notifications-component/dist/theme.css";
 
 import './EventsSummary.css';
 import Event from './Event/Event';
@@ -12,18 +14,29 @@ class EventsSummary extends Component {
     constructor(props) {
         super(props);
         this.state = { events: [], loading: true, showBettingSlip: false, bettingSlipBets: [], sportFilter: 'All' }
+
+        this.addNotification = this.addNotification.bind(this);
+        this.notificationDOMRef = React.createRef();
     }
 
     async componentDidMount() {
-        // TODO : substituir pela API call
-
         let listEvents = await Api.fetchAvailableEvents();
-
         listEvents = BetTypesStruct.organizeEventsSummary(listEvents)
-
-
         this.setState({ events: listEvents });
+    }
 
+    addNotification(notification) {
+        this.notificationDOMRef.current.addNotification({
+            title: notification.title || "Awesomeness",
+            message: notification.message || "Awesome Notifications!",
+            type: notification.type || "success",
+            insert: "top",
+            container: "top-right",
+            animationIn: ["animated", "fadeIn"],
+            animationOut: ["animated", "fadeOut"],
+            dismiss: { duration: notification.dismiss || 2000 },
+            dismissable: { click: true }
+        });
     }
 
     addBetToBettingSlip = (bet, event) => {
@@ -54,12 +67,32 @@ class EventsSummary extends Component {
         }
     }
 
+    findEventDetailsByEventOid = (eventOid) => {
+        let events = this.state.events;
+        return events.filter(e => e.eventOid === eventOid)[0];
+    }
+
     onPlaceBet = async () => {
 
-        console.log("Placing bet!");
-        console.log(this.state.bettingSlipBets);
-        await Api.placeBets(this.state.bettingSlipBets)
-        console.log("Placed all the bets!");
+        const betResults = await Api.placeBets(this.state.bettingSlipBets);
+        betResults.map(br => {
+            const event = this.findEventDetailsByEventOid(br.eventOid);
+            if ('message' in br) {
+                this.addNotification({
+                    title: 'Error placing bet!',
+                    message: br.message,
+                    type: 'danger',
+                    dismiss: 5000
+                });
+            } else {
+                this.addNotification({
+                    title: event.name,
+                    message: 'Your bet has been placed!',
+                    type: 'success',
+                    dismiss: 5000
+                });
+            }
+        })
 
     }
 
@@ -141,6 +174,7 @@ class EventsSummary extends Component {
 
         return (
             <div className="events-title">
+                <ReactNotification ref={this.notificationDOMRef} />
                 <div className="row">
                     <div className={showBettingSlip ? 'col-sm-9' : 'col-sm-12'}>
                         <div className="top-bar">

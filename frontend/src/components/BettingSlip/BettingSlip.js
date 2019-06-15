@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import './BettingSlip.css';
 
 class BettingSlip extends Component {
@@ -16,8 +17,6 @@ class BettingSlip extends Component {
 
     onChangeAmount(e, bet) {
         const target = e.target;
-        console.log(target);
-        console.log(bet);
     }
 
     onPlaceBet() {
@@ -47,6 +46,7 @@ class BettingSlip extends Component {
 
         return (
             <div className="event-title">
+
 
                 <div className="top-bar">
                     <p className="info-par">Boletim de apostas</p>
