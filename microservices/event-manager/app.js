@@ -157,7 +157,7 @@ seedData = async () => {
         name: "Toronto Raptors x Golden State Warriors",
         ispremium: true,
         startingdate: Date.now() + 1000,
-        finishingdate: Date.now() + 70 * 60 * 1000,
+        finishingdate: Date.now() + 20 * 1000,
         state: 'Upcoming',
         sport: {
             name: 'Basketball'

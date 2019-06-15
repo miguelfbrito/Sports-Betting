@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import './ManageUser.css';
 import CurrentEventsCarousel from '../CurrentEventsCarousel/CurrentEventsCarousel';
 //import User from './User/User';
@@ -8,12 +9,14 @@ import EditUser from './EditUser/EditUser';
 import Money from './Money/Money';
 import Premium from './Premium/Premium';
 
+import UserHandler from '../utils/userHandler';
+
 class CheckBetsSummary extends Component {
     constructor(props) {
         super(props);
         this.state = {
             user: [], showEditSlip: false, showDetailsSlip: false, showMoneySlip: false, showPremium: true,
-            menus: ['Profile', 'Edit Profile', 'Deposit/Withdraw', 'Premium'], filter: 'Profile'
+            menus: ['Profile', 'Edit Profile', 'Deposit/Withdraw', 'Premium', 'Logout'], filter: 'Profile'
         }
     }
 
@@ -29,6 +32,12 @@ class CheckBetsSummary extends Component {
     }
 
     changeFilter = (menu) => {
+
+        if (menu === 'Logout') {
+            UserHandler.remove();
+            window.location.href = "/events"
+        }
+
         this.setState({ filter: menu });
     }
 

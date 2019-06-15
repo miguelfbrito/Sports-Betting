@@ -12,7 +12,7 @@ import EditEvent from './EditEvent/EditEvent';
 class AdminSummary extends Component {
     constructor(props) {
         super(props);
-        this.state = { events: [], createEvent: false, sportFilter: 'All'  }
+        this.state = { events: [], createEvent: false, sportFilter: 'All' }
     }
 
     async componentDidMount() {
@@ -42,7 +42,9 @@ class AdminSummary extends Component {
 
         const listAllEvents = (
             <div>
-            <p className="Infodiv">Eventos a decorrer</p>
+                <div className="top-bar">
+                    <p className="Infodiv">Events</p>
+                </div>
                 <div className="events-container shadow">
 
                     <div className="top-bar-menu">
@@ -54,7 +56,7 @@ class AdminSummary extends Component {
                     {events.map(event => (
                         <div className="admin-event">
                             <Event event={event} />
-                            
+
                             <hr ></hr>
                         </div>
                     ))}
@@ -64,7 +66,7 @@ class AdminSummary extends Component {
 
         const createAnEvent = (
             <div>
-            <p className="Infodiv">Create new event</p>
+                <p className="Infodiv">Create new event</p>
                 <div className="events-container shadow">
                     <EditEvent />
                 </div>

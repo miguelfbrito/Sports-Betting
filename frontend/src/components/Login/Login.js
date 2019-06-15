@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { gateway } from '../../common/constants';
-
-import { getUserInfo, setUserInfo } from '../utils/utils';
-
+import { Redirect, Link } from 'react-router-dom';
+import ReactNotification from "react-notifications-component";
+import "react-notifications-component/dist/theme.css";
 import UserHandler from '../utils/userHandler';
 
 import './Login.css';
@@ -16,12 +14,28 @@ class Login extends Component {
     constructor(props) {
         super(props);
         this.state = { logged: false, token: "", showRegisterSlip: false }
+        this.addNotification = this.addNotification.bind(this);
+        this.notificationDOMRef = React.createRef();
     }
 
     componentDidMount() {
-        console.log("AQUI")
 
     }
+
+    addNotification(notification) {
+        this.notificationDOMRef.current.addNotification({
+            title: notification.title || "Awesomeness",
+            message: notification.message || "Awesome Notifications!",
+            type: notification.type || "success",
+            insert: "top",
+            container: "top-right",
+            animationIn: ["animated", "fadeIn"],
+            animationOut: ["animated", "fadeOut"],
+            dismiss: { duration: 5000 },
+            dismissable: { click: true }
+        });
+    }
+
 
     render() {
 
@@ -78,12 +92,14 @@ class Login extends Component {
                         if (a.success) {
                             this.setState({ logged: true, registered: a });
                             UserHandler.save(a.token);
+                            window.location.href = '/events';
 
                         } else {
                             this.setState({ registered: a });
+                            this.addNotification({ title: 'Error logging in', message: 'Invalid credentials!', type: 'danger' })
                         }
 
-                        alert(this.state.registered.message);
+
                         setSubmitting(false);
                     }}
                 >
@@ -114,6 +130,7 @@ class Login extends Component {
 
         return (
             <div className="container">
+                <ReactNotification ref={this.notificationDOMRef} />
                 <div className="row">
                     <div className="col-sm-2"></div>
                     <div className={showRegisterSlip ? "col-sm-3" : "col-sm-5"}>

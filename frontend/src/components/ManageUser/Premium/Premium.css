@@ -1,12 +1,11 @@
 .premium {
-    border-bottom: 1px solid #aaa; 
-    height: auto;
-    width: auto;
+    border-bottom: 1px solid #aaa;
     padding: 10px 0 0 20px;
     text-align: center;
+    padding: 25px;
 }
 
-.premium-titles{
+.premium-titles {
     color: black;
     font-size: 12pt;
     letter-spacing: 0.75pt;
@@ -14,12 +13,13 @@
     font-weight: bold;
 }
 
-.premium-info{
+.premium-info {
     color: black;
     font-size: 12pt;
     letter-spacing: 0.75pt;
     padding-top: 10px;
 }
-.premium:last-child{
+
+.premium:last-child {
     border-bottom: 10px;
 }
