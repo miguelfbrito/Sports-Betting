@@ -1,83 +1,74 @@
 import React, { Component } from 'react';
 
-import './EditOdds.css'
 import { Formik } from 'formik';
 
 
-/*import Bet from '../../MakeBet/makebet';*/
+class EditOdds extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {}
 
-
-    /*function handleClick(e) {
-        //Chamar o makebet e passar a aposta para lá
+        this.onBetClick = this.onBetClick.bind(this);
     }
-*/
 
-const EditOdds = (props) => {
 
-    const { bt } = props;
-    const t = bt[0];
+    formatDate = (dateMillis) => {
 
-    return ( 
-        <div className="row">
-        <div style={{overflowY: "scroll", marginLeft:"20px" }} className="Bettype-odds">
-        <Formik
-                            initialValues={{}}
-                            validate={values => {
-                              let errors = {};
-                              if (!values) {
-                                errors = 'Required';
-                              }/*else if (
-                                !/^\s*(?=.*[1-9])\d*(?:\.\d{1,2})?\s*$/i.test(values)
-                              ) {
-                                errors = 'Invalid number type';
-                              }*/
-                              return errors;
-                            }}
-                            onSubmit={(values, { setSubmitting }) => {
-                                setTimeout(() => {
-                                    alert(JSON.stringify(values, null, 2));
-                                    setSubmitting(false);
-                                }, 400);
-                            }}
-                        >
-                            {({
-                            values,
-                            errors,
-                            touched,
-                            handleChange,
-                            handleBlur,
-                            handleSubmit,
-                            isSubmitting,
-                            /* and other goodies */
-                        }) => (
-                        <form onSubmit={handleSubmit}>
-                        {Object.keys(t).map((key, index) => {values[key]=t[key]})}
-                        <div className="row">
-                        {
-                            Object.keys(t).map((key, index) => ( 
-                            <div className="col">
-                                <input
-                                    class="form-control"
-                                    id = "odds-info"
-                                    placeholder="Odd"
-                                    type="text"
-                                    onChange={handleChange}
-                                    name={key}
-                                    onBlur={handleBlur}
-                                    value={values[key]}
-                                />
-                        </div>
-                        ))}
-                    </div>
-          <label className="buttonsub">
-          <button type="submit" >Save Changes</button>
-          </label>
-        </form>
-      )}
-            </Formik>
+        const date = new Date(dateMillis);
+
+        //Para ser possível escrever a data usando o mês e não número
+        const monthNames = ["January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"];
+
+
+        return `${monthNames[date.getMonth()]} ${date.getDate()} of ${date.getFullYear()} - ${date.getHours()}:${date.getMinutes()}`
+    }
+
+
+    onBetClick = (e, bet, event) => {
+        this.props.addBetToBettingSlip(bet, event);
+    }
+
+    onInputChange = (e, bet) => {
+
+    }
+
+    render() {
+
+        const { event } = this.props;
+
+        const buttonSection = (
+
+            <div className="col-sm-6 events-odds">
+                {event.available.map(ev => (
+                    <button type="button" className="btn btn-info btn-odds" onClick={(e) => this.onBetClick(e, ev, event)}>{ev.bettypeName} ({ev.odd})</button>
+
+                ))}
             </div>
-        </div>
-    );
+        )
+
+
+        return (
+            <div className="row">
+                <p className="event-date">{this.formatDate(event.startingdate)}</p>
+                <div className="col-sm-5">
+                    <p className="event-info">{event.name}</p>
+                </div>
+
+                {buttonSection}
+                {/* 
+            <div id="view-all-bettypes-container">
+                <button type="button" className="btn" id="view-all-bettypes">View</button>
+            </div> */}
+                {/* <div className="col-sm-5"> */}
+                {/* <button id="buttonodds" onClick={handleClick.bind(this, event)}>{event.odd1}</button>
+                <button id="buttonodds">{event.oddX}</button>
+                <button id="buttonodds">{event.odd2}</button> */}
+                {/* </div> */}
+
+            </div>
+        );
+    }
 }
 
 
