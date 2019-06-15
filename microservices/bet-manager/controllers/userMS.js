@@ -10,7 +10,7 @@ UserMS.updateBalance = async (bet) => {
 UserMS.fetchUserDetails = async (userOid) => {
     try {
         const userDetails = await axios.get(`${global.MS_USERS}/user/details/${userOid}`);
-        return userDetails;
+        return userDetails.data;
     } catch (e) {
         console.error(e);
     }

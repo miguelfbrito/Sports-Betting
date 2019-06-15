@@ -49,8 +49,6 @@ Bet.placeBet = async (bet) => {
 
     const userBettedAlready = await BetDB.findOne({ where: { eventOid, bettypeOid, userOid: userOid } })
 
-    console.log("USER BETTED ALREADY!", userBettedAlready);
-
     if (userBettedAlready) {
         return { message: 'User already bet on event' }
     }
@@ -69,6 +67,10 @@ Bet.placeBet = async (bet) => {
     if (data.length === 0 || !bet) {
         return { message: 'Invalid data!' };
     }
+
+    console.log(`BALANCE############################`)
+    console.log(user)
+    console.log(bet.wager)
 
     if (user.balance < bet.wager) {
         return { message: 'Insufficient balance!' };
