@@ -91,3 +91,10 @@
     font-size: 10pt;
     margin: 5px;
 }
+
+.add-event label{
+    width: 100%;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+}

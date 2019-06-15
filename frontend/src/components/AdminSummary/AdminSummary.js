@@ -6,6 +6,7 @@ import CreateEvent from '../AdminSummary/AddEvents/AddEvents';
 import EventFilter from '../EventsSummary/EventFilter/EventFilter';
 import Api from '../../api/api';
 import BetTypeStruct from '../utils/bettypesstruct';
+import EditEvent from './EditEvent/EditEvent';
 
 
 class AdminSummary extends Component {
@@ -55,7 +56,8 @@ class AdminSummary extends Component {
             <div>
             <p className="Infodiv">Create new event</p>
                 <div className="events-container shadow">
-                    <CreateEvent />
+                    {/*<CreateEvent />*/}
+                    <EditEvent />
                 </div>
             </div>
         )
