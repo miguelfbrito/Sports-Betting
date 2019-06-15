@@ -8,6 +8,9 @@ const Event = db.sequelize.define('event', {
     primaryKey: true,
     autoIncrement: true
   },
+  eventOid: {
+    type: Sequelize.INTEGER(11),
+  },
   name: {
     type: Sequelize.STRING(255),
     allowNull: false,
@@ -39,7 +42,8 @@ const Event = db.sequelize.define('event', {
   },
   sportOid: {
     type: Sequelize.INTEGER(11)
-  }, availablebettypes: {
+  },
+  availablebettypes: {
     type: Sequelize.TEXT
   },
   sportName: {

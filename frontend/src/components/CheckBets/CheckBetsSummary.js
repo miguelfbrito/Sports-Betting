@@ -35,6 +35,8 @@ class CheckBetsSummary extends Component {
             bets = bets.filter(b => !(['WON', 'LOST'].includes(b.result)));
         }
 
+        bets = bets.sort((a, b) => Date.parse(b.createdAt) - Date.parse(a.createdAt));
+
         return (
             <div className="bet-title">
                 <div className="row">

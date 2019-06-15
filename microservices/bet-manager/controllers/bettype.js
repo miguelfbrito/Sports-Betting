@@ -74,4 +74,8 @@ BetType.seed = () => {
     this.create({ name: 'A +0.5' })
     this.create({ name: 'A +1.5' })
     this.create({ name: 'A +2.5' })
+
+    this.create({ name: 'TRIPLE 1' })
+    this.create({ name: 'TRIPLE X' })
+    this.create({ name: 'TRIPLE 2' })
 }

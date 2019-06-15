@@ -1,0 +1,27 @@
+#!/bin/bash
+
+name=$1
+final_name=''
+
+case $name in
+    bet*)
+        final_name=db_bet_manager
+    ;;
+    user*)
+        final_name=db_user_manager
+    ;;
+    event*)
+        final_name=db_event_manager
+    ;;
+    available*)
+        final_name=db_list_events
+    ;;
+esac
+
+id=$(docker ps | awk '/'"$final_name"'/ {print $1}')
+
+dsh(){
+    docker exec -ti $1 /bin/bash -c "mysql -u $final_name -p$final_name -D $final_name"
+}
+
+dsh $id

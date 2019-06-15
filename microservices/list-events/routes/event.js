@@ -7,11 +7,11 @@ router.get('/', async (req, res, next) => {
     // TODO : Obter token, verificar se o user é Premium
     // - Enviar dados de acordo com estatuto de premium
 
-    const isUserPremium = true;
+    const isUserPremium = false;
 
     try {
         let data = await Event.fetchAll();
-        data = data.filter(event => event.dataValues.ispremium)
+        // data = data.filter(event => event.dataValues.ispremium)
 
         res.send(data);
     } catch (e) {

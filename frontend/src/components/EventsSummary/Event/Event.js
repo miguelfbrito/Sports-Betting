@@ -28,9 +28,6 @@ class Event extends Component {
         this.props.addBetToBettingSlip(bet, event);
     }
 
-    onInputChange = (e, bet) => {
-
-    }
 
     render() {
 

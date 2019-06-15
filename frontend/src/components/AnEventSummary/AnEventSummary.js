@@ -52,16 +52,10 @@ class AnEventSummary extends Component {
 
     }
 
-    addBetToBettingSlip = (bet, event) => {
+    addBetToBettingSlip = (bet, eventOid) => {
 
         let currentBets = this.state.bettingSlipBets;
-
-        console.log("BET###########################", bet)
-        console.log("EVENT###########################", event)
-
-        // Verify if it doesn't exist already
-
-        const matchSame = currentBets.filter(b => b.bettypeOid === bet.bettypeOid && b.eventOid === event.oid);
+        const matchSame = currentBets.filter(b => b.bettypeOid === bet.bettypeOid);
 
         if (matchSame.length > 0) {
             console.log("Duplicated bet!")
@@ -69,16 +63,14 @@ class AnEventSummary extends Component {
         }
 
         currentBets.push({
-            name: event.name,
-            eventOid: parseInt(event),
+            name: eventOid.name,
+            eventOid: parseInt(eventOid),
             odd: bet.odd,
             bettypeName: bet.bettypeName,
             bettypeOid: bet.bettypeOid,
             gains: 0,
             wager: 0
         })
-
-        console.log("CURRENT BETS", currentBets)
 
         if (currentBets.length > 0) {
             this.setState({ bettingSlipBets: currentBets, showBettingSlip: true });

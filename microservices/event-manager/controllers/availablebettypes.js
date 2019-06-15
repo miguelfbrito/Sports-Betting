@@ -38,6 +38,8 @@ AvailableBetTypes.createDefaultBySportName = async (name, eventOid) => {
 
             // TODO : alterar a odd para não ser um valor aleatório
             bettypes.forEach(async bettype => {
+
+                console.log("PRINTING BETTYPES ###################################", bettype)
                 // Criar um available
                 const newAvailableBetType = {
                     bettypeOid: bettype.oid,

@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import './common/global-style.css';
 
 // Components
-import Navbar from './components/Navbar/Navbar-login';
+import Navbar from './components/Navbar/Navbar';
 import Login from './components/Login/Login';
 import EventsSummary from './components/EventsSummary/EventsSummary';
 import CheckBets from './components/CheckBets/CheckBetsSummary';

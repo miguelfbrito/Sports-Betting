@@ -157,12 +157,14 @@ Event.fetchAll = async (event) => {
     return await EventDB.findAll({ ...event, include: [{ model: AvailableBetTypeDB }] });
 }
 
+
+// TODO : os [Op.lte] foram alterados para [Op.gte] confirmar
 Event.fetchAllJustStarted = async () => {
 
     let events = await EventDB.findAll({
         where: {
             startingdate: {
-                [Op.lte]: Date.now()
+                [Op.gte]: Date.now()
             },
             state: 'Upcoming'
         }, include: [{ model: Sport }]

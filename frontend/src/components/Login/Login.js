@@ -5,6 +5,8 @@ import { gateway } from '../../common/constants';
 
 import { getUserInfo, setUserInfo } from '../utils/utils';
 
+import UserHandler from '../utils/userHandler';
+
 import './Login.css';
 import Api from '../../api/api';
 import Register from './Register/Register';
@@ -13,15 +15,16 @@ import Register from './Register/Register';
 class Login extends Component {
     constructor(props) {
         super(props);
-        this.state = {logged: false, token: "", showRegisterSlip: false}
+        this.state = { logged: false, token: "", showRegisterSlip: false }
     }
 
     componentDidMount() {
-        
+        console.log("AQUI")
+
     }
 
     render() {
-        
+
         const { showRegisterSlip } = this.state;
 
         const registerSlipSection = (
@@ -36,7 +39,7 @@ class Login extends Component {
                     To keep connected with us please login with your personal info.
                 </p>
                 <div className="button-container">
-                <button className="btn-1" onClick={() => this.setState({showRegisterSlip : false})}>SignIn</button>
+                    <button className="btn-1" onClick={() => this.setState({ showRegisterSlip: false })}>Sign In</button>
                 </div>
             </div>
         );
@@ -48,74 +51,78 @@ class Login extends Component {
                     Enter your personal details and start betting for fun with us.
                 </p>
                 <div className="button-container">
-                <button className="btn-1" onClick={() => this.setState({showRegisterSlip : true})}>Sign Up</button>
+                    <button className="btn-1" onClick={() => this.setState({ showRegisterSlip: true })}>Sign Up</button>
                 </div>
             </div>
         );
 
         const loginSlipSection = (
             <div className="login-container shadow">
-            <h3>Sign In into BettingAPP!</h3>
-            <Formik
-                initialValues={{ username: '', password: '' }}
-                validate={values => {
-                    let errors = {};
-                    if (!values.username) {
-                        errors.username = 'Required';
-                    }if (!values.password) {
-                        errors.password = 'Required';
-                    }
-                    return errors;
-                }}
-                onSubmit={ async (values, { setSubmitting }) => {
-                        const a = await Api.fetchLogin(values);
-                        //Colocar a apresentar as mensagens de erro
-                        if(a.success==true){
-                            this.setState({logged: true, registered: a});
-                            alert(this.state.registered.message);
-                        }else{
-                            this.setState({registered: a});
-                            alert(this.state.registered.message);
+                <h3>Sign In into BettingAPP!</h3>
+                <Formik
+                    initialValues={{ username: '', password: '' }}
+                    validate={values => {
+                        let errors = {};
+                        if (!values.username) {
+                            errors.username = 'Required';
+                        } if (!values.password) {
+                            errors.password = 'Required';
                         }
+                        return errors;
+                    }}
+                    onSubmit={async (values, { setSubmitting }) => {
+                        const a = await Api.fetchLogin(values);
+
+                        console.log(a)
+                        //Colocar a apresentar as mensagens de erro
+                        if (a.success) {
+                            this.setState({ logged: true, registered: a });
+                            UserHandler.save(a.token);
+
+                        } else {
+                            this.setState({ registered: a });
+                        }
+
+                        alert(this.state.registered.message);
                         setSubmitting(false);
-                }}
-            >
-                {({ isSubmitting }) => (
-                    <Form className="form">
-                        <div>
+                    }}
+                >
+                    {({ isSubmitting }) => (
+                        <Form className="form">
+                            <div>
 
-                            <Field className="username" type="username" name="username" placeholder="Username" />
-                            <ErrorMessage name="username" component="div" className="ErrorMessa"/>
-                        </div>
+                                <Field className="username" type="username" name="username" placeholder="Username" />
+                                <ErrorMessage name="username" component="div" className="ErrorMessa" />
+                            </div>
 
-                        <div>
+                            <div>
 
-                            <Field className="password" type="password" name="password" placeholder="Password" />
-                            <ErrorMessage name="password" component="div" className="ErrorMessa"/>
-                        </div>
+                                <Field className="password" type="password" name="password" placeholder="Password" />
+                                <ErrorMessage name="password" component="div" className="ErrorMessa" />
+                            </div>
 
-                        <div className="button-container">
-                            <button className="btn-1" type="submit" disabled={isSubmitting}>
-                                Sign In
+                            <div className="button-container">
+                                <button className="btn-1" type="submit" disabled={isSubmitting}>
+                                    Sign In
                             </button>
-                        </div>
-                    </Form>
-                )}
-            </Formik>
+                            </div>
+                        </Form>
+                    )}
+                </Formik>
             </div>
         );
 
         return (
             <div className="container">
                 <div className="row">
-                <div className="col-sm-2"></div>
+                    <div className="col-sm-2"></div>
                     <div className={showRegisterSlip ? "col-sm-3" : "col-sm-5"}>
-                    {!showRegisterSlip ? loginSlipSection : ''}
-                    {showRegisterSlip ? loginPresentationSection : ''}
+                        {!showRegisterSlip ? loginSlipSection : ''}
+                        {showRegisterSlip ? loginPresentationSection : ''}
                     </div>
                     <div className={showRegisterSlip ? "col-sm-7" : "col-sm-3"}>
-                    {showRegisterSlip ? registerSlipSection : ''}
-                    {!showRegisterSlip ? registerPresentationSection : ''}
+                        {showRegisterSlip ? registerSlipSection : ''}
+                        {!showRegisterSlip ? registerPresentationSection : ''}
                     </div>
                 </div>
             </div >
