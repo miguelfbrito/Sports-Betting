@@ -21,10 +21,10 @@ const Bet = (props) => {
         <div className={betContainerClassName}>
             <div className="row">
                 <div className="col-md-3">
-                    <p className="bet-info">Event: {bet.eventName}</p>
+                    <p className="bet-info">{bet.eventName}</p>
                 </div>
                 <div className="col-md-3">
-                    <p className="bet-info">Bet Type: {bet.bettypeName}</p>
+                    <p className="bet-info">Bet: {bet.bettypeName}</p>
                 </div>
                 <div className="col-md-3">
                     <p className="bet-info">Wager: {bet.wager}</p>

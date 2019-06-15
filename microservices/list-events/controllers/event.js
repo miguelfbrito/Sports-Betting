@@ -32,27 +32,15 @@ Event.updateAvailable = async (listEvents) => {
         }
 
     })
-
     return;
 }
 
-
 Event.isEventEqual = (event1, event2) => {
 
-    console.log("\n\n\n\n\n\n\n\n\n\n\n\n\n")
-    console.log("EVENT1######################", event1)
-    console.log("EVENT2######################", event2)
-
-
     // TODO : comparar com o updatedAt seria mais simples
-    if (event1.name === event2.name && Date.parse(event1.finishingdate) === Date.parse(event2.finishingdate) && Date.parse(event1.startingdate) === Date.parse(event2.startingdate) && event1.ispremium === event2.ispremium && event1.availablebettypes === event2.availablebettypes) {
-        console.log("TUDO IGUAL")
-        console.log("\n\n\n\n\n\n\n\n\n\n\n\n\n")
+    if (event1.name === event2.name && Date.parse(event1.finishingdate) === Date.parse(event2.finishingdate) && Date.parse(event1.startingdate) === Date.parse(event2.startingdate) && event1.ispremium === event2.ispremium && event1.availablebettypes === event2.availablebettypes && event1.state === event2.state) {
         return true;
     }
-
-    console.log("MUDOU")
-    console.log("\n\n\n\n\n\n\n\n\n\n\n\n\n")
     return false;
 }
 

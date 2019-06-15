@@ -14,8 +14,6 @@ Event.createEvent = async (eventData) => {
 
     const currSport = await SportsDB.findOne({ where: { name: eventData.sport.name } })
 
-    console.log("EVENT", eventData)
-
     if (!currSport) {
         return 'Invalid sport'
     }
@@ -144,8 +142,6 @@ Event.updateBetResult = (availablebettypes, bets) => {
 
 Event.fetchOne = async (event) => {
 
-    console.log("FETCHING ONE ################################", event)
-
     return await EventDB.findOne({ ...event, include: [{ model: Sport }, { model: AvailableBetTypeDB }] });
 }
 
@@ -182,15 +178,14 @@ Event.upcomingEvents = async () => {
     return events;
 }
 
-// TODO : os [Op.lte] foram alterados para [Op.gte] confirmar
-Event.fetchAllJustStarted = async () => {
+Event.fetchAllJustStarted = async (state) => {
 
     let events = await EventDB.findAll({
         where: {
             startingdate: {
                 [Op.lte]: Date.now()
             },
-            state: 'Upcoming'
+            state: state
         }, include: [{ model: Sport }]
     });
 

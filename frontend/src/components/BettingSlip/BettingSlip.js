@@ -14,16 +14,6 @@ class BettingSlip extends Component {
         this.updateWagerBet = this.updateWagerBet.bind(this);
     }
 
-    //Nesta função colocar a que seja atualizado o valor dos "Ganhos" consoante o valor inserido
-    changeAmount(e, bet) {
-        var value = e.target.value;
-        console.log(value);
-        this.setState({
-            Ganhos: value,
-        });
-        console.log(this.state);
-    }
-
     onChangeAmount(e, bet) {
         const target = e.target;
         console.log(target);
@@ -72,9 +62,9 @@ class BettingSlip extends Component {
 
                         <div className="row">
                             <div className="col-md-4">
-                                {bet.name === '' ?
-                                    <p className="bet-titles">Event:</p>
-                                    : <span style={{ marginTop: "-55px" }}></span>}
+                                {bet.name === undefined ?
+                                    <span style={{ marginTop: "-55px" }}></span> :
+                                    <p className="bet-titles">Event:</p>}
                             </div>
                             <div className="col-md-8 ">
                                 <p className="test">{bet.name}</p>

@@ -47,7 +47,7 @@ app.use('/stats', statsRouter);
 
 seedData = async () => {
 
-    console.log("\n\n\n\n\n\n\n\n\n\nSeeding data to the database!")
+    console.log("\n\n\n\n\nSeeding data to the database!")
 
     // Create sports
     await sports.create({ name: 'Football' });
@@ -69,7 +69,7 @@ seedData = async () => {
         name: "Arsenal x Liverpool",
         ispremium: false,
         startingdate: Date.now() + 10 * 1000,
-        finishingdate: Date.now() + 20 * 1000,
+        finishingdate: Date.now() + 30 * 1000,
         state: 'Upcoming',
         sport: {
             name: 'Football'
@@ -145,8 +145,8 @@ seedData = async () => {
     await events.createEvent({
         name: "Estoril x Setúbal",
         ispremium: false,
-        startingdate: Date.now() + 40 * 60 * 1000,
-        finishingdate: Date.now() + 90 * 60 * 1000,
+        startingdate: Date.now() + 10 * 1000,
+        finishingdate: Date.now() + 300 * 60 * 1000,
         state: 'Upcoming',
         sport: {
             name: 'Football'

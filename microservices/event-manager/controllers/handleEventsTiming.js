@@ -9,22 +9,21 @@ HandleEventsTiming.verify = async () => {
 
     await this.handleUpcomingEvents();
 
-    // await this.justStarted();
+    await this.justStarted();
 
-    // await this.justFinished();
+    await this.justFinished();
 
 }
 
 HandleEventsTiming.justStarted = async () => {
 
-    let justStarted = await Event.fetchAllJustStarted();
-    await justStarted.forEach(async event => {
+    let justStarted = await Event.fetchAllJustStarted('Upcoming');
 
-        // TODO : Rever que estados aqui se usam
+    await justStarted.forEach(async event => {
         await Event.update({ where: { oid: event.oid } }, { state: 'Live' });
     })
 
-    justStarted = await Event.fetchAllJustStarted();
+    justStarted = await Event.fetchAllJustStarted('Live');
 
     justStarted = justStarted.map(ev => {
         return {
