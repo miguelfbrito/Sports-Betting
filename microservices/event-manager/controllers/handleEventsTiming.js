@@ -7,27 +7,26 @@ const AvailableEventsMS = require('../controllers/availableEventsMS');
 
 HandleEventsTiming.verify = async () => {
 
-    await this.justStarted();
-    await this.justFinished();
+    await this.handleUpcomingEvents();
+
+    // await this.justStarted();
+
+    // await this.justFinished();
 
 }
 
 HandleEventsTiming.justStarted = async () => {
 
-    // Enviar estes eventos para o micro-serviço dos disponiveis
-    let justStartedEvents = await Event.fetchAllJustStarted();
-
-    await justStartedEvents.forEach(async event => {
+    let justStarted = await Event.fetchAllJustStarted();
+    await justStarted.forEach(async event => {
 
         // TODO : Rever que estados aqui se usam
         await Event.update({ where: { oid: event.oid } }, { state: 'Live' });
     })
 
-    // TODO : Queries duplicadas, ver como se obtém o resultado de um update, visto só devolver o numero de mudanças
+    justStarted = await Event.fetchAllJustStarted();
 
-    justStartedEvents = await Event.fetchAllJustStarted();
-
-    justStartedEvents = justStartedEvents.map(ev => {
+    justStarted = justStarted.map(ev => {
         return {
             eventOid: ev.oid,
             name: ev.name,
@@ -44,12 +43,32 @@ HandleEventsTiming.justStarted = async () => {
         }
     })
 
-    await AvailableEventsMS.updateAvailableEvents(justStartedEvents);
+    await AvailableEventsMS.updateAvailableEvents(justStarted);
+}
 
-    console.log("Just Started ######################", justStartedEvents)
-    justStartedEvents.forEach(event => {
-        console.log(event.dataValues);
+HandleEventsTiming.handleUpcomingEvents = async () => {
+    // Enviar estes eventos para o micro-serviço dos disponiveis
+    let upComingEvents = await Event.upcomingEvents();
+
+    upComingEvents = upComingEvents.map(ev => {
+        return {
+            eventOid: ev.oid,
+            name: ev.name,
+            finishingdate: ev.finishingdate,
+            startingdate: ev.startingdate,
+            creationdate: ev.creationdate,
+            ispremium: ev.ispremium,
+            state: ev.state,
+            createdAt: ev.createdAt,
+            updatedAt: ev.updatedAt,
+            sportOid: ev.sportOid,
+            sportName: ev.sport.dataValues.name,
+            availablebettypes: ev.availablebettypes
+        }
     })
+
+    await AvailableEventsMS.updateAvailableEvents(upComingEvents);
+
 }
 
 HandleEventsTiming.justFinished = async () => {
