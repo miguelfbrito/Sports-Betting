@@ -1,14 +1,44 @@
-.user {
-    border-bottom: 1px solid #aaa; 
-    height: 230px;
-    position: relative;
-    padding: 10px 0 0 20px;
+.btn-update{
+    text-align: center;
 }
 
-.input-money{
-    margin-top: 40px;
+.update-balance {
+    height: auto;
+    width: 100%;
+    
+    padding-left: 10px;
+    padding-right: 30px;
 }
 
-.money-button{
-    background-color: #EA7317;
+
+.update-form{
+    height: auto;
+    width: 100%;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.updatevalue{
+    width: 30%;
+    padding: 5px;
+    margin-top: 5px;
+    font-size: 10pt;
+}
+
+
+.button-container {
+    text-align: center;
+}
+
+.div-title{
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.info-p{
+    width: 100%;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
 }

@@ -1,16 +1,40 @@
 import React, { Component } from 'react';
 
 import { Formik } from 'formik';
+import BetTypeStruct from '../../utils/bettypesstruct';
+import Api from '../../../api/api';
+import UpdateAnEvent from './UpdateAnEvent';
 
 
 class EditOdds extends Component {
     constructor(props) {
         super(props);
-        this.state = {}
+        this.state = { event: {}, blocks: []}
 
-        this.onBetClick = this.onBetClick.bind(this);
     }
 
+
+    async componentDidMount() {
+
+        const eventOid = this.props.match.params.eventOid || -1;
+
+
+        const data = await Api.fetchAvailableBetTypesByEventOid(eventOid);
+
+        const structBetTypes = BetTypeStruct.organize(data);
+
+
+        this.setState({
+            event: data.event,
+            blocks: structBetTypes
+        })
+
+    }
+
+
+    changeSportFilter = (sport) => {
+        this.setState({ sportFilter: sport });
+    }
 
     formatDate = (dateMillis) => {
 
@@ -25,47 +49,46 @@ class EditOdds extends Component {
     }
 
 
-    onBetClick = (e, bet, event) => {
-        this.props.addBetToBettingSlip(bet, event);
-    }
-
-    onInputChange = (e, bet) => {
-
+    changeSportFilter = (sport) => {
+        this.setState({ sportFilter: sport });
     }
 
     render() {
 
-        const { event } = this.props;
+        const { blocks, event } = this.state;
 
-        const buttonSection = (
-
-            <div className="col-sm-6 events-odds">
-                {event.available.map(ev => (
-                    <button type="button" className="btn btn-info btn-odds" onClick={(e) => this.onBetClick(e, ev, event)}>{ev.bettypeName} ({ev.odd})</button>
-
-                ))}
-            </div>
-        )
+        if (!blocks) {
+            // Loading
+            return (<div></div>);
+        }
 
 
         return (
-            <div className="row">
-                <p className="event-date">{this.formatDate(event.startingdate)}</p>
-                <div className="col-sm-5">
-                    <p className="event-info">{event.name}</p>
+            <div className="anevents-title">
+                <div className="row">
+                    <div className='col-md-12'>
+                        <div className="top-bar">
+                            <p className="Infodiv">{event.name}</p>
+                        </div>
+
+                        <div className="anevents-container shadow">
+                            {blocks.map(sbt => (
+                                <div key={sbt.oid} className="anevent">
+                                    <div className="BetText">
+                                        <p>{sbt.name}</p>
+                                    </div>
+
+                                    <UpdateAnEvent bt={sbt.bettypes} eventOid={this.props.match.params.eventOid}
+                                        nameBT={sbt.name}
+                                    />
+
+                                </div>
+                            ))}
+
+                        </div>
+                    </div>
+
                 </div>
-
-                {buttonSection}
-                {/* 
-            <div id="view-all-bettypes-container">
-                <button type="button" className="btn" id="view-all-bettypes">View</button>
-            </div> */}
-                {/* <div className="col-sm-5"> */}
-                {/* <button id="buttonodds" onClick={handleClick.bind(this, event)}>{event.odd1}</button>
-                <button id="buttonodds">{event.oddX}</button>
-                <button id="buttonodds">{event.odd2}</button> */}
-                {/* </div> */}
-
             </div>
         );
     }
