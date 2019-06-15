@@ -3,7 +3,6 @@ import './ManageUser.css';
 import CurrentEventsCarousel from '../CurrentEventsCarousel/CurrentEventsCarousel';
 //import User from './User/User';
 import User from './User/User';
-import FilterOptions from './FilterOptions/FilterOptions';
 import Api from '../../api/api';
 import EditUser from './EditUser/EditUser';
 import Money from './Money/Money';
@@ -12,7 +11,7 @@ import Premium from './Premium/Premium';
 class CheckBetsSummary extends Component {
     constructor(props) {
         super(props);
-        this.state = { user: [], showEditSlip: false, showDetailsSlip: false, showMoneySlip: false, showPremium: true }
+        this.state = { user: [], showSlip: "Profile", userFilter: 'Profile' }
     }
 
     async componentDidMount() {
@@ -22,24 +21,18 @@ class CheckBetsSummary extends Component {
         let userdetails = await Api.fetchUserDetails(1);
 
         this.setState({user: userdetails});
+    }
 
 
-        /*this.setState({
-            users: [
-                {
-                    "Username": "João",
-                    "Saldo": "30.00",
-                    "Nome": "João Pinto",
-                    "Email": "user@email.com",
-                    "Premium": "Não"
-                }
-            ]
-        })*/
-
+    changeUserFilter = (filter) => {
+        this.setState({ userFilter: filter });
+        this.setState({showSlip: filter});
     }
 
     render() {
         //TODO: Adicionar um scroll para os eventos
+
+        const { userFilter } = this.state;
 
         const editSlipSection = (
             <div className="user">
@@ -67,19 +60,19 @@ class CheckBetsSummary extends Component {
                 <div className="user-container shadow">
 
 
-                    {/* Carousel 4 or 5 games */}
-                    {/* <CurrentEventsCarousel /> */}
+                    <div className="top-bar-menu">
+                        <p className={userFilter === 'Profile' ? 'top-bar-menu-active' : ''} onClick={() => this.changeUserFilter('Profile')}>Profile</p>
+                        <p className={userFilter === 'Edit Profile' ? 'top-bar-menu-active' : ''} onClick={() => this.changeUserFilter('Edit Profile')}>Edit Profile</p>
+                        <p className={userFilter === 'Deposit/withdraw money' ? 'top-bar-menu-active' : ''} onClick={() => this.changeUserFilter('Deposit/withdraw money')}>Deposit/withdraw money</p>
+                        <p className={userFilter === 'Premium' ? 'top-bar-menu-active' : ''} onClick={() => this.changeUserFilter('Premium')}>Premium</p>
+                    </div>
 
-                    {/* List all events */}
-
-                    <FilterOptions />
-
-                        <div >
-                            {this.state.showDetailsSlip ? detailsSlipSection : ''}
-                            {this.state.showEditSlip ? editSlipSection : ''}
-                            {this.state.showMoneySlip ? moneySlipSection : ''}
-                            {this.state.showPremium ? premiumSlipSection : ''}
-                        </div>
+                    <div >
+                        {this.state.showSlip==="Profile" ? detailsSlipSection : ''}
+                        {this.state.showSlip==="Edit Profile" ? editSlipSection : ''}
+                        {this.state.showSlip==="Deposit/withdraw money" ? moneySlipSection : ''}
+                        {this.state.showSlip==="Premium" ? premiumSlipSection : ''}
+                    </div>
 
                 </div>
             </div>

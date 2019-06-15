@@ -37,4 +37,11 @@ router.post('/create', async (req, res, next) => {
     }
 })
 
+router.get('/stats/:eventOid', async (req, res, next) => {
+
+    let stats = await Stats.fetchSubStatsType(req.params.eventOid);
+
+    res.send(stats);
+})
+
 module.exports = router;

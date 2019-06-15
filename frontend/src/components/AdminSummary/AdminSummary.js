@@ -12,7 +12,7 @@ import EditEvent from './EditEvent/EditEvent';
 class AdminSummary extends Component {
     constructor(props) {
         super(props);
-        this.state = { events: [], createEvent: true }
+        this.state = { events: [], createEvent: false, sportFilter: 'All'  }
     }
 
     async componentDidMount() {
@@ -26,21 +26,31 @@ class AdminSummary extends Component {
 
     }
 
-    render() {
+    changeSportFilter = (sport) => {
+        this.setState({ sportFilter: sport });
+    }
 
-        const { events } = this.state;
+
+    render() {
+        const { sportFilter } = this.state;
+        let events = this.state.events;
+
+        console.log("Eventos", events)
+
+
+        events = events.filter(event => event.sportName.toLowerCase() === sportFilter.toLowerCase() || sportFilter.toLowerCase() === 'all');
 
         const listAllEvents = (
             <div>
             <p className="Infodiv">Eventos a decorrer</p>
                 <div className="events-container shadow">
 
-                    {/* Carousel 4 or 5 games */}
-                    {/* <CurrentEventsCarousel /> */}
+                    <div className="top-bar-menu">
+                        <p className={sportFilter === 'All' ? 'top-bar-menu-active' : ''} onClick={() => this.changeSportFilter('All')}>All</p>
+                        <p className={sportFilter === 'Football' ? 'top-bar-menu-active' : ''} onClick={() => this.changeSportFilter('Football')}>Football</p>
+                        <p className={sportFilter === 'Basketball' ? 'top-bar-menu-active' : ''} onClick={() => this.changeSportFilter('Basketball')}>Basketball</p>
+                    </div>
 
-                    {/* List all events */}
-
-                    <EventFilter />
                     {events.map(event => (
                         <div className="admin-event">
                             <Event event={event} />
@@ -56,7 +66,6 @@ class AdminSummary extends Component {
             <div>
             <p className="Infodiv">Create new event</p>
                 <div className="events-container shadow">
-                    {/*<CreateEvent />*/}
                     <EditEvent />
                 </div>
             </div>
