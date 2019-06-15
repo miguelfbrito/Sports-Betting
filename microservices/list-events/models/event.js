@@ -41,6 +41,9 @@ const Event = db.sequelize.define('event', {
     type: Sequelize.INTEGER(11)
   }, availablebettypes: {
     type: Sequelize.TEXT
+  },
+  sportName: {
+    type: Sequelize.STRING(25)
   }
 }, {
     tableName: 'event'

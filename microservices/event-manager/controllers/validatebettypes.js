@@ -29,6 +29,8 @@ ValidateBetTypes.validate = async (availablebettypes, stats) => {
     // Obter os BetTypes
     const bettypes = await this.fetchAllBetTypes();
 
+    let isBetTypeValid;
+
     switch (stats.sport.toLowerCase()) {
         case 'football':
             availablebettypes.forEach(async available => {
@@ -44,6 +46,18 @@ ValidateBetTypes.validate = async (availablebettypes, stats) => {
             break;
 
         case 'basketball':
+
+            availablebettypes.forEach(async available => {
+
+                const isBetTypeValid = this.isBasketballBetTypeValid(stats, bettypes[available.dataValues.bettypeOid].name);
+
+                if (isBetTypeValid) {
+                    await AvailableBetType.setBetResult('WON', available.dataValues.oid)
+                } else {
+                    await AvailableBetType.setBetResult('LOST', available.dataValues.oid)
+                }
+            })
+
             availablebettypes.forEach(available => {
 
             })
@@ -58,16 +72,6 @@ ValidateBetTypes.validate = async (availablebettypes, stats) => {
 }
 
 ValidateBetTypes.isFootballBetTypeValid = (stats, bettype) => {
-
-    // TODO : testar e remover os || 
-    const currStats = {
-        homegoals: stats.homegoals || 0,
-        awaygoals: stats.awaygoals || 0,
-        homeredcards: stats.homeredcards || 0,
-        awayredcards: stats.awayredcards || 0,
-        homeyellowcards: stats.homeyellowcards || 0,
-        awayyellowcards: stats.awayyellowcards || 0
-    }
 
     const goalDiff = stats.homegoals - stats.awaygoals;
 
@@ -134,6 +138,54 @@ ValidateBetTypes.isFootballBetTypeValid = (stats, bettype) => {
 
 ValidateBetTypes.isBasketballBetTypeValid = (stats) => {
 
+
+    //     homepoints: {
+    //         type: Sequelize.INTEGER(11),
+    //         allowNull: true
+    //     },
+    //     awaytriples: {
+    //         type: Sequelize.INTEGER(11),
+    //         allowNull: true
+    //     },
+    //     hometriples: {
+    //         type: Sequelize.INTEGER(11),
+    //         allowNull: true
+    //     },
+    //     awaypoints: {
+    //         type: Sequelize.INTEGER(11),
+    //         allowNull: true
+    //     }
+
+    switch (bettype.toUpperCase()) {
+        case ("TR 1"):
+            if (stats.homepoints > stats.awaypoints)
+                return true;
+            return false;
+        case ("TR X"):
+            if (stats.homepoints === stats.awaypoints)
+                return true;
+            return false;
+
+        case ("TR 2"):
+            if (stats.homepoints < stats.awaipoints)
+                return true;
+            return false;
+
+        case ("TRIPLES 1"):
+            if (stats.hometriples < stats.awaytriples)
+                return true;
+            return false;
+        case ("TRIPLES X"):
+            if (stats.hometriples === stats.awaytriples)
+                return true;
+            return false;
+        case ("TRIPLES 2"):
+            if (stats.hometriples < stats.awaytriples)
+                return true;
+            return false;
+        default:
+            return false;
+    }
 }
 
 ValidateBetTypes.isTennisBetTypeValid = (stats) => {

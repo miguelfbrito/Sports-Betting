@@ -24,10 +24,10 @@ Event.updateAvailable = async (listEvents) => {
             const persistedEvent = await this.create(event);
 
         } else {
-
-            if (!this.compareEvents(event, currentEventsByOid[event.oid])) {
+            console.log("Trying to update!")
+            console.log(event.updatedAt + " ------ " + currentEventsByOid[event.oid].updatedAt);
+            if (this.compareEvents(event, currentEventsByOid[event.oid])) {
                 await this.update({ where: { oid: event.oid } }, { ...event })
-
             }
         }
 
@@ -39,7 +39,8 @@ Event.updateAvailable = async (listEvents) => {
 
 Event.compareEvents = (event1, event2) => {
 
-    if (event1.name === event2.name && event1.finishingdate === event2.finishingdate && event1.startingdate === event2.startingdate && event1.ispremium === event2.ispremium && event1.description === event2.description) {
+    // TODO : comparar com o updatedAt seria mais simples
+    if (event1.name === event2.name && event1.finishingdate === event2.finishingdate && event1.startingdate === event2.startingdate && event1.ispremium === event2.ispremium && event1.description === event2.description && event1.availablebettypes === event2.availablebettypes) {
         return true;
     }
 

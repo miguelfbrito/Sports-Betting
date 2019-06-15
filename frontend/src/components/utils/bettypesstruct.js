@@ -17,6 +17,8 @@ BetTypeStruct.organizeByFootball = (data) => {
         bettypesByName[b.bettypeName] = { ...b };
     })
 
+    console.log("BETTYPES", data)
+
     let tr = {
         name: 'Regular Time',
         bettypes: []
@@ -54,6 +56,39 @@ BetTypeStruct.organizeByFootball = (data) => {
     return all;
 }
 
+BetTypeStruct.organizeByBasketball = (data) => {
+
+    let bettypesByName = [];
+    data.forEach(b => {
+        bettypesByName[b.bettypeName] = { ...b };
+    })
+
+    let tr = {
+        name: 'Regular Time',
+        bettypes: []
+    }
+
+    verifyAndAdd(bettypesByName['TR 1'], tr, 'TR 1', '1');
+    verifyAndAdd(bettypesByName['TR X'], tr, 'TR X', 'X');
+    verifyAndAdd(bettypesByName['TR 2'], tr, 'TR 2', '2');
+
+    let triples = {
+        name: 'Most Triples',
+        bettypes: []
+    }
+
+    verifyAndAdd(bettypesByName['TRIPLE 1'], tr, 'TRIPLE 1', '1');
+    verifyAndAdd(bettypesByName['TRIPLE X'], tr, 'TRIPLE X', 'X');
+    verifyAndAdd(bettypesByName['TRIPLE 2'], tr, 'TRIPLE 2', '2');
+
+    let all = [];
+
+    if (tr.bettypes.length > 0) all.push(tr);
+    if (triples.bettypes.length > 0) all.push(triples);
+
+    return all;
+}
+
 BetTypeStruct.organize = (data) => {
 
     console.log("PRINTING DATA")
@@ -64,6 +99,7 @@ BetTypeStruct.organize = (data) => {
             return BetTypeStruct.organizeByFootball(data.bettypes);
 
         case 'BASKETBALL':
+            return BetTypeStruct.organizeByBasketball(data.bettypes);
 
         default:
 
@@ -72,7 +108,7 @@ BetTypeStruct.organize = (data) => {
 
 }
 
-BetTypeStruct.organizeEventsSummaryByFootball = (data) => {
+BetTypeStruct.organizeEventsByTR = (data) => {
 
 
     // Percorrer a lista de eventos
@@ -96,9 +132,6 @@ BetTypeStruct.organizeEventsSummaryByFootball = (data) => {
 
     })
 
-
-    console.log("PRINTINGGGGGGGGGGGGGGGG##################", data)
-
     return data;
 }
 
@@ -112,7 +145,7 @@ BetTypeStruct.organize = (data) => {
             return BetTypeStruct.organizeByFootball(data.bettypes);
 
         case 'BASKETBALL':
-
+            return BetTypeStruct.organizeByBasketball(data.bettypes);
         default:
 
             return data;
@@ -149,11 +182,11 @@ BetTypeStruct.organizeEventsSummary = (data) => {
     console.log("FINALLL", final)
     // TODO : alterar dos Ids para os nomes
 
-    return BetTypeStruct.organizeEventsSummaryByFootball(final);
+    return BetTypeStruct.organizeEventsByTR(final);
 
     // switch (data.event.sport.name.toUpperCase()) {
     //     case '1':
-    //         return BetTypeStruct.organizeEventsSummaryByFootball(data.bettypes);
+    //         return BetTypeStruct.organizeEventsByTR(data.bettypes);
 
     //     case '2':
 

@@ -4,6 +4,7 @@
 }
 
 .bettingslip {
+    position: relative;
     padding: 20px;
 }
 
@@ -32,10 +33,12 @@ span {
 
 .input-group-sm input {
     border: 2px solid #3CC6A3;
-    
+
 }
 
-
+.top-bar {
+    position: relative;
+}
 
 .top-bar p {
     padding: 7px 15px;
@@ -53,4 +56,17 @@ span {
     margin: 0 !important;
     width: 100%;
     border-radius: 0;
+}
+
+.top-bar i {
+    position: absolute;
+    right: 5%;
+    bottom: 25%;
+}
+
+.individual-icon {
+    position: absolute;
+    right: 1%;
+    top: 2%;
+    font-size: 15pt;
 }

@@ -57,10 +57,10 @@ Api.placeBets = async (listBets) => {
 
 Api.fetchLogin = async (props) => {
     const data = await axios.post(`${host}/user/login`,
-    {
-        username: props.username,
-        password: props.password
-    }
+        {
+            username: props.username,
+            password: props.password
+        }
     );
     return data.data;
 }
@@ -68,12 +68,12 @@ Api.fetchLogin = async (props) => {
 
 Api.fetchRegister = async (props) => {
     const data = await axios.post(`${host}/user/signup`,
-    {
-        username:props.username,
-        password:props.password,
-        email:props.email,
-        name:props.nome
-    }
+        {
+            username: props.username,
+            password: props.password,
+            email: props.email,
+            name: props.nome
+        }
     );
     return data.data;
 }
@@ -86,12 +86,12 @@ Api.fetchUserDetails = async (props) => {
 
 
 Api.fetchUpdateUser = async (props) => {
-    const data = await axios.post(`${host}/user/update/${props.userid}`, 
-    {
-        name: props.name,
-        password: props.password,
-        email: props.email
-    });
+    const data = await axios.post(`${host}/user/update/${props.userid}`,
+        {
+            name: props.name,
+            password: props.password,
+            email: props.email
+        });
     return data.data;
 }
 
