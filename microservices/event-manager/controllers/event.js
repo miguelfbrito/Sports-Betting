@@ -157,6 +157,30 @@ Event.fetchAll = async (event) => {
     return await EventDB.findAll({ ...event, include: [{ model: AvailableBetTypeDB }] });
 }
 
+Event.upcomingEvents = async () => {
+
+    let events = await EventDB.findAll({
+        where: {
+            startingdate: {
+                [Op.gte]: Date.now()
+            },
+            state: 'Upcoming'
+        }, include: [{ model: Sport }]
+    });
+
+    if (events) {
+        events = Promise.all(events.map(async event => {
+            const availablebettypes = await AvailableBetType.fetchByEventOidWithBetTypeNameOnly(event.dataValues.oid);
+
+            return {
+                ...event.dataValues,
+                availablebettypes
+            }
+        }))
+    }
+
+    return events;
+}
 
 // TODO : os [Op.lte] foram alterados para [Op.gte] confirmar
 Event.fetchAllJustStarted = async () => {
@@ -164,7 +188,7 @@ Event.fetchAllJustStarted = async () => {
     let events = await EventDB.findAll({
         where: {
             startingdate: {
-                [Op.gte]: Date.now()
+                [Op.lte]: Date.now()
             },
             state: 'Upcoming'
         }, include: [{ model: Sport }]

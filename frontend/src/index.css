@@ -19,3 +19,7 @@ i {
     padding: 0;
     cursor: pointer;
 }
+
+.container {
+    margin-bottom: 50px;
+}
