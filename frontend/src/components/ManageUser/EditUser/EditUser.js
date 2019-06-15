@@ -24,7 +24,6 @@ class EditUser extends Component {
 
 render() {
         //TODO: Adicionar um scroll para os eventos
-        const { users } = this.state;
         return (
         <div className="row">
         <div className="edit-form">

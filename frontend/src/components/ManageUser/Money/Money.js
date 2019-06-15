@@ -85,7 +85,7 @@ class Money extends Component {
         <div className="update-form">
             <p className="div-title">Withdraw Money</p>
                 <Formik
-                initialValues={{ updateValue: 0}}
+                initialValues={{ updateValue: 0,    userOid: this.state.userOid}}
             validate={values => {
                 let errors = {};
                 if (!values.updateValue) {
@@ -99,13 +99,13 @@ class Money extends Component {
                 return errors;
             }}
             onSubmit={async (values, { setSubmitting }) => {
-                //const a = await Api.fetchUpdateUser(this.state);
+                const a = await Api.fetchWithdrawMoney(values);
                 //Redirecionar para as páginas
-                /*if(a==true){
-                alert("Detalhes alterados");
+                if(a){
+                alert("Withdraw realized");
                 }else{
-                alert("Erro ao atualizar detalhes")
-                }*/
+                alert("Error on Withdraw")
+                }
                 setSubmitting(false);
             }}
             >

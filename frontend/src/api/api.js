@@ -134,7 +134,7 @@ Api.fetchUpdateEvent = async (props) => {
         premiumvalue = false;
     }
 
-    console.log(props.finishingdate);
+    //console.log(props.finishingdate);
 
     const data = await axios.post(`${host}/event/update/${props.oid}`, 
     {
@@ -147,16 +147,44 @@ Api.fetchUpdateEvent = async (props) => {
 		    name: props.sport
 	    }
     });
-    console.log(data.data);
+    //console.log(data.data);
     return data.data;
 }
 
 Api.fetchDepositMoney = async (props) => {
-    console.log(props);
+    //console.log(props);
     const data = await axios.post(`${host}/user/deposit`, 
     {
         userOid: props.userOid,
 	    amount: props.updateValue
+    });
+    return data.data;
+}
+
+Api.fetchWithdrawMoney = async (props) => {
+    //console.log(props);
+    const data = await axios.post(`${host}/user/withdraw`, 
+    {
+        userOid: props.userOid,
+	    amount: props.updateValue
+    });
+    return data.data;
+}
+
+Api.fetchSubscribe = async (props) => {
+    console.log(props);
+    const data = await axios.post(`${host}/user/subscribe`, 
+    {
+        userOid: props
+    });
+    return data.data;
+}
+
+Api.fetchUnsubscribe = async (props) => {
+
+    const data = await axios.post(`${host}/user/unsubscribe`, 
+    {
+        userOid: props
     });
     return data.data;
 }

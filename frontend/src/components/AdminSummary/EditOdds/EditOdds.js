@@ -49,10 +49,6 @@ class EditOdds extends Component {
     }
 
 
-    changeSportFilter = (sport) => {
-        this.setState({ sportFilter: sport });
-    }
-
     render() {
 
         const { blocks, event } = this.state;

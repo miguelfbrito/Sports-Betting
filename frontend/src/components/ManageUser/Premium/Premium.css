@@ -1,8 +1,9 @@
 .premium {
     border-bottom: 1px solid #aaa; 
-    height: 150px;
-    position: relative;
+    height: auto;
+    width: auto;
     padding: 10px 0 0 20px;
+    text-align: center;
 }
 
 .premium-titles{
@@ -19,17 +20,6 @@
     letter-spacing: 0.75pt;
     padding-top: 10px;
 }
-
-
-#button{
-    font-size: 12pt;
-    letter-spacing: 0.75pt;
-    display: inline-block;
-    margin-right: 30px;
-}
-
-
-
 .premium:last-child{
-    border-bottom: 0;
+    border-bottom: 10px;
 }

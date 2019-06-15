@@ -14,8 +14,8 @@ class EditEvent extends Component {
   async componentDidMount() {
     const eventToUpdate = await Api.fetchEventDetails(1);
     console.log(eventToUpdate);
-    this.setState(eventToUpdate);
-    this.setState({sport : eventToUpdate.sport.name});
+    //this.setState(eventToUpdate);
+    //this.setState({sport : eventToUpdate.sport.name});
     console.log(this.state);
   }
 
