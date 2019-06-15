@@ -61,6 +61,20 @@
     margin-left: 15px;
 }
 
+.event-info {
+    margin: 0;
+}
+
+.event-info p {
+    font-size: 10pt;
+    margin: 0;
+    padding: 0;
+    color: gray;
+    display: inline;
+}
+
+
+
 @media only screen and (max-width: 600px) {
 
     #view-all-bettypes {

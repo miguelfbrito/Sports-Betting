@@ -46,12 +46,16 @@ class Event extends Component {
 
         return (
             <div className="row">
-                <p className="event-date">{this.formatDate(event.startingdate)}</p>
+                <p className="event-date">{this.state === 'Upcoming' ? this.formatDate(event.startingdate) : this.formatDate(event.finishingdate)}</p>
                 <div className="col-sm-5">
                     <p className="event-info">{event.name}</p>
+                    <div className="event-info">
+                        <p >{event.state}</p>
+                        {event.ispremium ? <p id="premium-event"> | Premium</p> : ''}
+                    </div>
                 </div>
 
-                {buttonSection}
+                {event.state === 'Upcoming' ? buttonSection : ''}
                 {/* 
             <div id="view-all-bettypes-container">
                 <button type="button" className="btn" id="view-all-bettypes">View</button>

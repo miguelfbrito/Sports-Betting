@@ -103,6 +103,19 @@ class EventsSummary extends Component {
 
     }
 
+    sortEventsMostRecent(events) {
+        return events.sort((a, b) => {
+
+            if (Date.parse(a.startingdate) < Date.parse(b.startingdate) && Date.now() > Date.parse(a.startingdate)) {
+                return 1;
+            }
+            else {
+                return -1
+            }
+
+        })
+    }
+
     render() {
         const { showBettingSlip, bettingSlipBets, sportFilter } = this.state;
         let events = this.state.events;
@@ -110,10 +123,14 @@ class EventsSummary extends Component {
         console.log("Eventos", events)
 
 
+
         events = events.filter(event => event.sportName.toLowerCase() === sportFilter.toLowerCase() || sportFilter.toLowerCase() === 'all');
 
         if (!events)
             return (<div></div>)
+
+        events = this.sortEventsMostRecent(events)
+        // events = events.sort((a, b) => Date.parse(a.startingdate) - Date.parse(b.startingdate));
 
         const bettingSlipSection = (
             <div className="col-sm-3">

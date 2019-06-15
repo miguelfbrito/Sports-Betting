@@ -68,10 +68,6 @@ Bet.placeBet = async (bet) => {
         return { message: 'Invalid data!' };
     }
 
-    console.log(`BALANCE############################`)
-    console.log(user)
-    console.log(bet.wager)
-
     if (user.balance < bet.wager) {
         return { message: 'Insufficient balance!' };
     }

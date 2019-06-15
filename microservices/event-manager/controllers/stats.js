@@ -125,7 +125,6 @@ Stats.createFootballStats = async (stats, eventOid) => {
                 eventOid,
             }
 
-            console.log("A CRIAR AS STATS #################", genericStats)
             const createdStats = await this.create(genericStats);
         }
         return createdFootballStats.dataValues;

@@ -54,6 +54,9 @@ class AnEventSummary extends Component {
 
     addBetToBettingSlip = (bet, eventOid) => {
 
+        console.log("BETTTTTTTTTTTTTTTTTTTTTTTTT", bet)
+        console.log(bet.name)
+
         let currentBets = this.state.bettingSlipBets;
         const matchSame = currentBets.filter(b => b.bettypeOid === bet.bettypeOid);
 
