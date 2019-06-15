@@ -38,7 +38,7 @@ render() {
           if (!this.state.premium) {
             errors.premium = 'Required';
           }
-          if(this.state.premium=="Premium"){
+          if(this.state.premium==="Premium"){
             errors.premium = "Select value";
           }
           if (!this.state.bdate) {

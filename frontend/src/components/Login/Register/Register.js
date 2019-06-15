@@ -59,7 +59,7 @@ class Register extends Component {
                             onSubmit={async (values, { setSubmitting }) => {
                                     const a = await Api.fetchRegister(values);
                                     //Redirecionar para as páginas
-                                    if(a.success==true){
+                                    if(a.success===true){
                                         this.setState({registered: a});
                                         alert(a.message);
                                     }else{

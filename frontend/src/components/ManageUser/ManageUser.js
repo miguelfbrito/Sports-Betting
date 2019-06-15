@@ -3,7 +3,6 @@ import './ManageUser.css';
 import CurrentEventsCarousel from '../CurrentEventsCarousel/CurrentEventsCarousel';
 //import User from './User/User';
 import User from './User/User';
-import FilterOptions from './FilterOptions/FilterOptions';
 import Api from '../../api/api';
 import EditUser from './EditUser/EditUser';
 import Money from './Money/Money';
