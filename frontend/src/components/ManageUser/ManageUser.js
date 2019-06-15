@@ -6,11 +6,12 @@ import User from './User/User';
 import FilterOptions from './FilterOptions/FilterOptions';
 import Api from '../../api/api';
 import EditUser from './EditUser/EditUser';
+import Money from './Money/Money';
 
 class CheckBetsSummary extends Component {
     constructor(props) {
         super(props);
-        this.state = { user: [], showEditSlip: true, showDetailsSlip: false }
+        this.state = { user: [], showEditSlip: false, showDetailsSlip: false, showMoneySlip: true }
     }
 
     async componentDidMount() {
@@ -49,6 +50,11 @@ class CheckBetsSummary extends Component {
                 <User user={this.state.user} />
             </div>);
 
+            const moneySlipSection = (
+            <div className="user">
+                <Money user={this.state.user} />
+            </div>);
+
         return ( 
             <div className="user-title">
                 <p className="management-div">Account Management</p>
@@ -65,6 +71,7 @@ class CheckBetsSummary extends Component {
                         <div >
                             {this.state.showDetailsSlip ? detailsSlipSection : ''}
                             {this.state.showEditSlip ? editSlipSection : ''}
+                            {this.state.showMoneySlip ? moneySlipSection : ''}
                         </div>
 
                 </div>

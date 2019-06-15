@@ -151,4 +151,15 @@ Api.fetchUpdateEvent = async (props) => {
     return data.data;
 }
 
+Api.fetchDepositMoney = async (props) => {
+    console.log(props);
+    const data = await axios.post(`${host}/user/deposit`, 
+    {
+        userOid: props.userOid,
+	    amount: props.updateValue
+    });
+    return data.data;
+}
+
+
 export default Api;

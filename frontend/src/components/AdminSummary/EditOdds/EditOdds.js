@@ -1,83 +1,97 @@
 import React, { Component } from 'react';
 
-import './EditOdds.css'
 import { Formik } from 'formik';
+import BetTypeStruct from '../../utils/bettypesstruct';
+import Api from '../../../api/api';
+import UpdateAnEvent from './UpdateAnEvent';
 
 
-/*import Bet from '../../MakeBet/makebet';*/
+class EditOdds extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { event: {}, blocks: []}
 
-
-    /*function handleClick(e) {
-        //Chamar o makebet e passar a aposta para lá
     }
-*/
 
-const EditOdds = (props) => {
 
-    const { bt } = props;
-    const t = bt[0];
+    async componentDidMount() {
 
-    return ( 
-        <div className="row">
-        <div style={{overflowY: "scroll", marginLeft:"20px" }} className="Bettype-odds">
-        <Formik
-                            initialValues={{}}
-                            validate={values => {
-                              let errors = {};
-                              if (!values) {
-                                errors = 'Required';
-                              }/*else if (
-                                !/^\s*(?=.*[1-9])\d*(?:\.\d{1,2})?\s*$/i.test(values)
-                              ) {
-                                errors = 'Invalid number type';
-                              }*/
-                              return errors;
-                            }}
-                            onSubmit={(values, { setSubmitting }) => {
-                                setTimeout(() => {
-                                    alert(JSON.stringify(values, null, 2));
-                                    setSubmitting(false);
-                                }, 400);
-                            }}
-                        >
-                            {({
-                            values,
-                            errors,
-                            touched,
-                            handleChange,
-                            handleBlur,
-                            handleSubmit,
-                            isSubmitting,
-                            /* and other goodies */
-                        }) => (
-                        <form onSubmit={handleSubmit}>
-                        {Object.keys(t).map((key, index) => {values[key]=t[key]})}
-                        <div className="row">
-                        {
-                            Object.keys(t).map((key, index) => ( 
-                            <div className="col">
-                                <input
-                                    class="form-control"
-                                    id = "odds-info"
-                                    placeholder="Odd"
-                                    type="text"
-                                    onChange={handleChange}
-                                    name={key}
-                                    onBlur={handleBlur}
-                                    value={values[key]}
-                                />
+        const eventOid = this.props.match.params.eventOid || -1;
+
+
+        const data = await Api.fetchAvailableBetTypesByEventOid(eventOid);
+
+        const structBetTypes = BetTypeStruct.organize(data);
+
+
+        this.setState({
+            event: data.event,
+            blocks: structBetTypes
+        })
+
+    }
+
+
+    changeSportFilter = (sport) => {
+        this.setState({ sportFilter: sport });
+    }
+
+    formatDate = (dateMillis) => {
+
+        const date = new Date(dateMillis);
+
+        //Para ser possível escrever a data usando o mês e não número
+        const monthNames = ["January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"];
+
+
+        return `${monthNames[date.getMonth()]} ${date.getDate()} of ${date.getFullYear()} - ${date.getHours()}:${date.getMinutes()}`
+    }
+
+
+    changeSportFilter = (sport) => {
+        this.setState({ sportFilter: sport });
+    }
+
+    render() {
+
+        const { blocks, event } = this.state;
+
+        if (!blocks) {
+            // Loading
+            return (<div></div>);
+        }
+
+
+        return (
+            <div className="anevents-title">
+                <div className="row">
+                    <div className='col-md-12'>
+                        <div className="top-bar">
+                            <p className="Infodiv">{event.name}</p>
                         </div>
-                        ))}
+
+                        <div className="anevents-container shadow">
+                            {blocks.map(sbt => (
+                                <div key={sbt.oid} className="anevent">
+                                    <div className="BetText">
+                                        <p>{sbt.name}</p>
+                                    </div>
+
+                                    <UpdateAnEvent bt={sbt.bettypes} eventOid={this.props.match.params.eventOid}
+                                        nameBT={sbt.name}
+                                    />
+
+                                </div>
+                            ))}
+
+                        </div>
                     </div>
-          <label className="buttonsub">
-          <button type="submit" >Save Changes</button>
-          </label>
-        </form>
-      )}
-            </Formik>
+
+                </div>
             </div>
-        </div>
-    );
+        );
+    }
 }
 
 
