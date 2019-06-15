@@ -9,7 +9,7 @@ Event.updateAvailable = async (listEvents) => {
 
     currentEvents.forEach(event => {
 
-        currentEventsByOid[event.oid] = { ...event };
+        currentEventsByOid[event.eventOid] = { ...event };
         // Vão ficar duplicados mas + facil de comparar
         // delete currentEventsByOid[event.oid].oid;
     })
@@ -18,16 +18,16 @@ Event.updateAvailable = async (listEvents) => {
 
         event.availablebettypes = JSON.stringify(event.availablebettypes);
         // Se o evento não existir, cria-se um novo
-        if (!currentEventsByOid[event.oid]) {
+        if (!currentEventsByOid[event.eventOid]) {
 
             console.log("Evento não existe no available, a criar novo", event)
             const persistedEvent = await this.create(event);
 
         } else {
             console.log("Trying to update!")
-            console.log(event.updatedAt + " ------ " + currentEventsByOid[event.oid].updatedAt);
-            if (this.compareEvents(event, currentEventsByOid[event.oid])) {
-                await this.update({ where: { oid: event.oid } }, { ...event })
+            if (this.compareEvents(event, currentEventsByOid[event.eventOid])) {
+                console.log("Available events changed, updating!")
+                await this.update({ where: { eventOid: event.eventOid } }, { ...event })
             }
         }
 

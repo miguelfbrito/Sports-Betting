@@ -62,13 +62,14 @@ HandleEventsTiming.justStarted = async () => {
 
     justStartedEvents = justStartedEvents.map(ev => {
         return {
+            eventOid: ev.oid,
             name: ev.name,
             finishingdate: ev.finishingdate,
             startingdate: ev.startingdate,
             creationdate: ev.creationdate,
             ispremium: ev.ispremium,
             state: ev.state,
-            cretedAt: ev.createdAt,
+            createdAt: ev.createdAt,
             updatedAt: ev.updatedAt,
             sportOid: ev.sportOid,
             sportName: ev.sport.dataValues.name,

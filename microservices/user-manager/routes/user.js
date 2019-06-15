@@ -26,7 +26,7 @@ router.get('/details/:userOid', async (req, res, next) => {
 router.post('/update/:userOid', async (req, res, next) => {
 
     const user = req.body;
-    const data = await UserC.update({ where: { oid: req.params.userOid }}, user);
+    const data = await UserC.update({ where: { oid: req.params.userOid } }, user);
     res.send(data);
 
 })
@@ -147,15 +147,14 @@ router.post('/login', async (req, res, next) => {
                 if (err) return next(err)
 
                 const userInfoInToken = {
-                    id: user.id,
+                    oid: user.oid,
                     username: user.username,
-                    email: user.email,
-                    role: user.role
+                    balance: user.balance
                 }
 
                 // Geração do token
                 const token = jwt.sign({
-                    user: userInfoInToken
+                    ...userInfoInToken
                 }, process.env.JWT_SECRET_KEY, {
                         expiresIn: '1h'
                     })

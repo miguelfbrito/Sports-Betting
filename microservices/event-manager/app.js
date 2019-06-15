@@ -123,7 +123,7 @@ seedData = async () => {
 
     await events.createEvent({
         name: "Sporting x Guimarães",
-        ispremium: true,
+        ispremium: false,
         startingdate: Date.now() + 1000,
         finishingdate: Date.now() + 30 * 60 * 1000,
         state: 'Upcoming',
@@ -134,7 +134,7 @@ seedData = async () => {
 
     await events.createEvent({
         name: "Sporting x Leixões",
-        ispremium: true,
+        ispremium: false,
         startingdate: Date.now(),
         finishingdate: Date.now() + 45 * 60 * 1000,
         state: 'Upcoming',
@@ -145,7 +145,7 @@ seedData = async () => {
 
     await events.createEvent({
         name: "Estoril x Setúbal",
-        ispremium: true,
+        ispremium: false,
         startingdate: Date.now() + 30 * 60 * 1000,
         finishingdate: Date.now() + 90 * 60 * 1000,
         state: 'Upcoming',

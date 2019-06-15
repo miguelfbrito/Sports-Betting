@@ -38,15 +38,13 @@ router.get('/history/:eventOid', async (req, res, next) => {
 router.post('/update/:eventOid', async (req, res, next) => {
 
     const event = req.body;
-    const data = await Event.update({ where: { oid: req.params.eventOid }}, event);
+    const data = await Event.update({ where: { oid: req.params.eventOid } }, event);
     res.send(data);
 
 });
 
 router.post('/create', async (req, res, next) => {
 
-    console.log("BODY A CHEGAR")
-    console.log(req.body)
     const data = req.body
 
     try {

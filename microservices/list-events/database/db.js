@@ -18,7 +18,8 @@ const sequelize = new Sequelize(
 		password: process.env.DB_PASSWORD || config.password,
 		database: process.env.DB_NAME || config.database,
 		host: process.env.DB_HOST || config.host,
-		dialect: process.env.DB_DIALECT || config.dialect
+		dialect: process.env.DB_DIALECT || config.dialect,
+		define: { charset: 'utf8', dialectOptions: { collate: 'utf8_general_ci' } }
 	}
 );
 

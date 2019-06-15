@@ -60,41 +60,30 @@ passport.use('login', new localStrategy({
             }
         })
 
-        console.log("User", user.dataValues)
-
-        console.log("Username", username)
-        console.log("Password", password)
-
-        if(!user){
+        if (!user) {
             return done(null, false, {
                 message: 'Username does not exist!'
             })
-        }else{
-        const valid = await isValidPassword(user.dataValues, password)
+        } else {
+            const valid = await isValidPassword(user.dataValues, password)
 
-        if (!valid) {
-            return done(null, false, {
-                message: 'Utilizador ou password inválido!'
+            if (!valid) {
+                return done(null, false, {
+                    message: 'Utilizador ou password inválido!'
+                })
+            }
+
+            return done(null, user, {
+                message: 'Login realizado com sucesso.'
             })
         }
-
-        return done(null, user, {
-            message: 'Login realizado com sucesso.'
-        })
-    }
 
     } catch (err) {
-        const user = await User.findOne({
-            email: email
+
+        return done(null, false, {
+            message: 'Utilizador ou password inválido!'
         })
 
-        if (!user) {
-            return done(null, false, {
-                message: 'Utilizador ou password inválido!'
-            })
-        }
-
-        return done(err)
     }
 }))
 

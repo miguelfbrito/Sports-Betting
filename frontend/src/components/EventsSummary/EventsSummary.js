@@ -146,8 +146,6 @@ class EventsSummary extends Component {
 
 
                             {events.map(event => (
-
-
                                 < div className="event" >
                                     <Event event={event} addBetToBettingSlip={this.addBetToBettingSlip} onPlaceBet={this.onPlaceBet} />
 
