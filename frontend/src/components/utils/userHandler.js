@@ -19,6 +19,17 @@ UserHandler.get = () => {
     return data;
 }
 
+UserHandler.isUserLogged = () => {
+
+    const data = localStorage.getItem(userData);
+
+    if (data) {
+        return true;
+    }
+
+    return false;
+}
+
 UserHandler.updateBalance = () => {
     // TODO : 
 }

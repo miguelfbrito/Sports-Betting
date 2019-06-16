@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './AdminSummary.css';
 import CurrentEventsCarousel from '../CurrentEventsCarousel/CurrentEventsCarousel';
-import Event from './AdminEvent/AdminEvent';
+import EventsSummary from './AdminEvent/AdminEvent';
 import CreateEvent from '../AdminSummary/AddEvents/AddEvents';
 import EventFilter from '../EventsSummary/EventFilter/EventFilter';
 import Api from '../../api/api';
@@ -11,7 +11,7 @@ import BetTypeStruct from '../utils/bettypesstruct';
 class AdminSummary extends Component {
     constructor(props) {
         super(props);
-        this.state = { events: [], createEvent: true, sportFilter: 'All' }
+        this.state = { events: [], createEvent: false, sportFilter: 'All' }
     }
 
     async componentDidMount() {
@@ -42,7 +42,7 @@ class AdminSummary extends Component {
         const listAllEvents = (
             <div>
                 <div className="top-bar">
-                    <p className="Infodiv">Events</p>
+                    <p className="Infodiv">Manage Events</p>
                 </div>
                 <div className="events-container shadow">
 
@@ -54,7 +54,7 @@ class AdminSummary extends Component {
 
                     {events.map(event => (
                         <div className="admin-event">
-                            <Event event={event} />
+                            <EventsSummary event={event} />
 
                             <hr ></hr>
                         </div>
@@ -66,7 +66,7 @@ class AdminSummary extends Component {
         const createAnEvent = (
             <div>
                 <div className="top-bar">
-                <p className="Infodiv">Create new event</p>
+                    <p className="Infodiv">Create new event</p>
                 </div>
                 <div className="events-container shadow">
                     <CreateEvent />

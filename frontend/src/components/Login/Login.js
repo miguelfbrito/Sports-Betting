@@ -39,6 +39,8 @@ class Login extends Component {
 
     render() {
 
+        console.log("PROPS LOGIN", this.props)
+
         const { showRegisterSlip } = this.state;
 
         const registerSlipSection = (

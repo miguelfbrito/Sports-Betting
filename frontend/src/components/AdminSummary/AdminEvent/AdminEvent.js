@@ -19,7 +19,7 @@ class Event extends Component {
             "July", "August", "September", "October", "November", "December"];
 
 
-        return `${monthNames[date.getMonth()]} ${date.getDate()} of ${date.getFullYear()} - ${date.getHours()}:${date.getMinutes()}`
+        return `${monthNames[date.getMonth()]} ${date.getDate()}, ${date.getHours()}:${date.getMinutes()}`
     }
 
 
@@ -32,8 +32,8 @@ class Event extends Component {
             <div className="col-sm-6 events-odds">
 
                 <button type="button" className="btn btn-info btn-odds">Edit odds</button>
-                <button type="button" className="btn btn-info btn-odds">Add bets</button>
-                <button type="button" className="btn btn-info btn-odds">Close Event</button>
+                <button type="button" className="btn btn-info btn-odds">Add bet types</button>
+                <button type="button" className="btn btn-info btn-odds">Close</button>
                 <button type="button" className="btn btn-info btn-odds">Delete</button>
 
             </div>

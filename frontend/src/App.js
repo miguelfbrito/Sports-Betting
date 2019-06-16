@@ -15,7 +15,12 @@ import UserRegister from './components/Login/Register/Register';
 import AdminEdit from './components/AdminSummary/EditEvent/EditEvent';
 import EditOdds from './components/AdminSummary/EditOdds/EditOdds';
 
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+
+
 function App() {
+
+
   return (
     <div>
       <div className=""></div>
@@ -28,15 +33,16 @@ function App() {
               <Switch>
                 <Route exact path="/" component={EventsSummary} />
                 <Route exact path="/events" component={EventsSummary} />
-                <Route exact path="/events/:eventOid" component={AnEventSummary} />
+                <PrivateRoute exact path="/events/:eventOid" component={AnEventSummary} />
                 <Route exact path="/login" component={Login} />
-                <Route exact path="/bets" component={CheckBets} />
-                <Route exact path="/user" component={ManageUsers} />
-                <Route exact path="/admin" component={AdminSummary} />
+                <PrivateRoute exact path="/bets" component={CheckBets} />
+                <PrivateRoute exact path="/user" component={ManageUsers} />
+                {/* <Route exact path="/admin" component={AdminSummary} /> */}
+                <PrivateRoute exact path="/admin" component={AdminSummary} />
                 <Route exact path="/register" component={UserRegister} />
-                <Route exact path="/admin/edit" component={AdminEdit} />
-                <Route exact path="/admin/update/:eventOid" component={EditOdds} />
-                {/* <Route path="/" component={Dashboard} /> */}
+                <PrivateRoute exact path="/admin/edit" component={AdminEdit} />
+                <PrivateRoute exact path="/admin/update/:eventOid" component={EditOdds} />
+                <Route component={EventsSummary} />
               </Switch>
             </div>
           </div>
