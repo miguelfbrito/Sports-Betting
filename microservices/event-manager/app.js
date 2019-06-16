@@ -80,8 +80,8 @@ seedData = async () => {
     await events.createEvent({
         name: "Barcelona x Real Madrid",
         ispremium: false,
-        startingdate: Date.now() + 90 * 1000,
-        finishingdate: Date.now() + 120 * 1000,
+        startingdate: Date.now() + 10 * 1000,
+        finishingdate: Date.now() + 20 * 1000,
         state: 'Upcoming',
         sport: {
             name: 'Football'
@@ -156,7 +156,7 @@ seedData = async () => {
 
     await events.createEvent({
         name: "Toronto Raptors x Golden State Warriors",
-        ispremium: true,
+        ispremium: false,
         startingdate: Date.now() + 1000,
         finishingdate: Date.now() + 20 * 1000,
         state: 'Upcoming',
@@ -167,7 +167,7 @@ seedData = async () => {
 
     await events.createEvent({
         name: "Atlanta Hawks x Boston Celtics",
-        ispremium: true,
+        ispremium: false,
         startingdate: Date.now() + 30 * 60 * 100,
         finishingdate: Date.now() + 70 * 60 * 1000,
         state: 'Upcoming',
@@ -293,6 +293,15 @@ seedData = async () => {
         eventOid: 4,
         bettypeOid: 4
     })
+
+    await axios.post(`${MS_BETS}/bet/place`, {
+        wager: 2,
+        userOid: 1,
+        eventOid: 4,
+        bettypeOid: 4
+    })
+
+
 
     await basketballstats.create({
         homepoints: 1,

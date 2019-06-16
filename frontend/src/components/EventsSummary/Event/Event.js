@@ -50,7 +50,7 @@ class Event extends Component {
                 <div className="col-sm-5">
                     <p className="event-info">{event.name}</p>
                     <div className="event-info">
-                        <p >{event.state}</p>
+                        <p >{event.state === 'Upcoming' ? 'Open' : event.state}</p>
                         {event.ispremium ? <p id="premium-event"> | Premium</p> : ''}
                     </div>
                 </div>

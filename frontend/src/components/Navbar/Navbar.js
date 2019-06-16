@@ -14,6 +14,9 @@ class Navbar extends Component {
 
     componentDidMount() {
 
+        window.addEventListener('localStorage', () => console.log('IMPRIMINDO DO NAVBAR'), false)
+
+        console.log("NAV")
         const userData = UserHandler.get();
         console.log("USER DATA", userData)
         this.setState({ user: userData });

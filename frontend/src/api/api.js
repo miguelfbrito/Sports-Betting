@@ -113,7 +113,7 @@ Api.fetchCreateNewEvent = async (props) => {
             ispremium: premiumvalue,
             startingdate: props.bdate,
             finishingdate: props.edate,
-            state: "upcoming",
+            state: "Upcoming",
             sport: {
                 "name": props.sport
             }
