@@ -20,7 +20,7 @@ class Event extends Component {
             "July", "August", "September", "October", "November", "December"];
 
 
-        return `${monthNames[date.getMonth()]} ${date.getDate()} of ${date.getFullYear()} - ${date.getHours()}:${date.getMinutes()}`
+        return `${monthNames[date.getMonth()]} ${date.getDate()}, ${date.getHours()}:${date.getMinutes()}`
     }
 
 

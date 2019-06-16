@@ -11,6 +11,12 @@ const Stats = db.sequelize.define('stats', {
     gameduration: {
         type: Sequelize.STRING(255),
         allowNull: true
+    },
+    footballstatOid: {
+        type: Sequelize.INTEGER(11)
+    },
+    basketballstatOid: {
+        type: Sequelize.INTEGER(11)
     }
 }, {
         tableName: 'stats'

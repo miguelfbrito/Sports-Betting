@@ -27,6 +27,7 @@ function App() {
           <div className="row">
             <div className="col-sm-12">
               <Switch>
+                <Route exact path="/" component={EventsSummary} />
                 <Route exact path="/events" component={EventsSummary} />
                 <Route exact path="/events/:eventOid" component={AnEventSummary} />
                 <Route exact path="/login" component={Login} />
@@ -41,6 +42,7 @@ function App() {
               </Switch>
             </div>
           </div>
+          <footer style={{ marginTop: '25px' }}></footer>
         </div>
       </Router>
     </div >

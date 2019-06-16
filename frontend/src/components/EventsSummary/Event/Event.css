@@ -55,10 +55,11 @@
 }
 
 .event-date {
-    color: black;
+    color: gray;
     letter-spacing: 0.75pt;
     position: absolute;
     margin-left: 15px;
+    font-size: 12pt;
 }
 
 .event-info {

@@ -30,8 +30,6 @@
 .nav-item a:hover,
 .navbar-container a:hover {
     text-decoration: none;
-    color: #EA7317;
-    border-bottom: 2px solid black;
     color: white;
 }
 

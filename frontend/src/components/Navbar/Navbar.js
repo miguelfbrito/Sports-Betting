@@ -29,7 +29,7 @@ class Navbar extends Component {
             return (
                 <nav className="navbar navbar-expand-md bg-faded">
                     <div className="container navbar-container">
-                        <a className="navbar-brand" href="#">Bet</a>
+                        <a className="navbar-brand" href="#">BetApp</a>
                         <div className="collapse navbar-collapse " id="navbarText">
                             <ul className="navbar-nav ml-auto">
                                 <li className="nav-item active"> <Link to="/events"> <span className="nav-link" href="#">Events</span> </Link> </li>
@@ -44,12 +44,12 @@ class Navbar extends Component {
         return (
             <nav className="navbar navbar-expand-md bg-faded">
                 <div className="container navbar-container">
-                    <a className="navbar-brand" href="#">Bet</a>
+                    <a className="navbar-brand" href="#">BetApp</a>
                     <div className="collapse navbar-collapse " id="navbarText">
                         <ul className="navbar-nav ml-auto">
                             <li className="nav-item active"> <Link to="/events"> <span className="nav-link" href="#">Events</span> </Link> </li>
                             <li className="nav-item active"> <Link to="/bets"> <span className="nav-link" href="#">Bets</span> </Link> </li>
-                            <li className="nav-item"> <Link to="/user"> <span className="nav-link" href="#"> {user.username + "(" + (user.balance || 0).toFixed(2) + "€)"}</span> </Link> </li>
+                            <li className="nav-item"> <Link to="/user"> <span className="nav-link" href="#"> {user.username + " (" + (user.balance || 0).toFixed(2) + "€)"}</span> </Link> </li>
                         </ul>
                     </div>
                 </div>

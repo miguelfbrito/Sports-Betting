@@ -53,13 +53,14 @@ Event.closeAndVerifyBets = async (event) => {
         }
     }
 
-    console.log("A fechar o evento: ", event)
+    console.log("A fechar o evento: ", currentEvent)
+
 
     // Alterar o estado do evento para Finished
     await this.update({ where: { oid: event.oid } }, { state: 'Finished' });
 
     // Gerar stats aleatórias, simular interacao com API
-    await Stats.generateRandomStats(event.oid);
+    await Stats.generateRandomStats(currentEvent.dataValues);
 
     // Obter todas as availableBetTypes relativas ao evento em questão
     const availablebettypes = await AvailableBetType.fetchByEventOid(event.oid);

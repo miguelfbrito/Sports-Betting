@@ -5,6 +5,12 @@ const Stats = require('./stats');
 
 // TODO : falta adicionar a key das stats
 const BasketballStats = db.sequelize.define('basketballstats', {
+    oid: {
+        type: Sequelize.INTEGER(11),
+        allowNull: false,
+        primaryKey: true,
+        autoIncrement: true
+    },
     homepoints: {
         type: Sequelize.INTEGER(11),
         allowNull: true

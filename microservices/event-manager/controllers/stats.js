@@ -7,7 +7,7 @@ const Event = require('../controllers/event');
 
 const { randomInteger } = require('../utils/util');
 
-Stats.addStatToEvent = async (data) => {
+Stats.addStatToEvent = async (data, sportName) => {
 
     // Obter dados
     // Obter tipo de desporto
@@ -19,7 +19,6 @@ Stats.addStatToEvent = async (data) => {
         return 'Invalid event when adding stats!'
 
     const stats = data.stats;
-    const sportName = event.sport.dataValues.name
 
     switch (sportName.toLowerCase()) {
         case 'football':
@@ -42,7 +41,6 @@ Stats.addStatToEvent = async (data) => {
         case 'basketball':
             try {
                 const basketballStats = await this.createBasketballStats({
-                    eventOid: data.eventOid,
                     homepoints: data.stats.homepoints || 0,
                     awaypoints: data.stats.awaypoints || 0,
                     hometriples: data.stats.hometriples || 0,
@@ -60,23 +58,45 @@ Stats.addStatToEvent = async (data) => {
 
 }
 
-Stats.generateRandomStats = async (eventOid) => {
+Stats.generateRandomStats = async (event) => {
 
-    console.log("A gerar stats aleatórias para o evento de id", eventOid)
-    const statsData = await this.addStatToEvent({
-        eventOid: eventOid,
-        stats: {
-            gameduration: randomInteger(90, 96),
-            homegoals: randomInteger(0, 5),
-            awaygoals: randomInteger(0, 5),
-            homeredcards: randomInteger(0, 2),
-            awayredcards: randomInteger(0, 2),
-            homeyellowcards: randomInteger(0, 6),
-            awayyellowcards: randomInteger(0, 6)
-        }
-    })
+    console.log("A gerar stats aleatórias para o evento de id", event.oid)
 
-    console.log("Stats aleatorias geradas", statsData)
+    let statsData = {};
+
+    switch (event.sport.dataValues.name.toLowerCase()) {
+        case 'football':
+            statsData = await this.addStatToEvent({
+                eventOid: event.oid,
+                stats: {
+                    gameduration: randomInteger(90, 96),
+                    homegoals: randomInteger(0, 5),
+                    awaygoals: randomInteger(0, 5),
+                    homeredcards: randomInteger(0, 2),
+                    awayredcards: randomInteger(0, 2),
+                    homeyellowcards: randomInteger(0, 6),
+                    awayyellowcards: randomInteger(0, 6)
+                }
+            }, 'football')
+            console.log("Generating random stats for Football", statsData);
+            break;
+
+        case 'basketball':
+            statsData = await this.addStatToEvent({
+                eventOid: event.oid,
+                stats: {
+                    homepoints: randomInteger(80, 130),
+                    awaypoints: randomInteger(80, 130),
+                    hometriples: randomInteger(10, 30),
+                    awaytriples: randomInteger(10, 30)
+                }
+            }, 'basketball');
+            console.log("Generating random stats for Basketball", statsData);
+            break;
+
+        default:
+
+    }
 
     return statsData;
 }
@@ -135,21 +155,20 @@ Stats.createFootballStats = async (stats, eventOid) => {
 
 Stats.createBasketballStats = async (stats) => {
 
-    const newFootballStats = {
-        homepoints: 3 || 0,
+    const newBasketballStats = {
+        homepoints: stats.homepoints || 0,
         awaypoints: stats.awaypoints || 0,
         hometriples: stats.hometriples || 0,
         awaytriples: stats.awaytriples || 0,
     }
 
     try {
-        const createdBasketballStats = await BasketballStats.create(newFootballStats)
-
+        const createdBasketballStats = await BasketballStats.create(newBasketballStats)
 
         if (createdBasketballStats) {
             const genericStats = {
                 eventOid: stats.eventOid,
-                gameduration: stats.gameduration || 9,
+                gameduration: stats.gameduration || 60,
                 basketballstatOid: createdBasketballStats.dataValues.oid
             }
 

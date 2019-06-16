@@ -15,6 +15,7 @@ const sports = require('./controllers/sport');
 const events = require('./controllers/event');
 const stats = require('./controllers/stats');
 const availablebetypes = require('./controllers/availablebettypes');
+const basketballstats = require('./controllers/basketballstats');
 const HandleEventsTiming = require('./controllers/handleEventsTiming');
 
 
@@ -291,6 +292,13 @@ seedData = async () => {
         userOid: 1,
         eventOid: 4,
         bettypeOid: 4
+    })
+
+    await basketballstats.create({
+        homepoints: 1,
+        awaypoints: 3,
+        hometriples: 3,
+        awaytriples: 7,
     })
 
     // Create Stats

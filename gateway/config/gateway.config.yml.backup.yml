@@ -1,0 +1,104 @@
+http:
+  port: 8080
+admin:
+  port: 9876
+  host: localhost
+
+apiEndpoints:
+
+  list-events-no-auth:
+    host: '*'
+    paths: ['/available-events']
+
+  list-events:
+    host: '*'
+    paths: ['/available-events/*']
+
+  user-no-auth-required:
+    host: '*'
+    paths:
+      - '/user/login'
+      - '/user/signup'
+
+  user-manager:
+    host: '*'
+    paths: '/user/*'
+
+  event-manager:
+    host: '*'
+    paths: ['/event', '/event/*', '/availablebettype/', '/availablebettype/*', '/stats/', '/stats/*']
+
+  bet-manager:
+    host: '*'
+    paths: ['/bet/', '/bet/*', '/bettype', '/bettype/*']
+
+serviceEndpoints:
+  user-manager-service:
+    url: ${MS_USER_MANAGER_URL} 
+  bet-manager-service:
+    url: ${MS_BET_MANAGER_URL} 
+  event-manager-service:
+    url: ${MS_EVENT_MANAGER_URL} 
+  list-events-service:
+    url: ${MS_LIST_EVENTS_URL} 
+
+policies:
+  - proxy
+  - jwt-db
+pipelines:
+
+  user-no-auth-required:
+    apiEndpoints: user-no-auth-required
+    policies:
+      - proxy:
+        - action:
+            serviceEndpoint: user-manager-service
+  
+  event-manager-pipe:
+    apiEndpoints: event-manager
+    policies:
+      - jwt-db:
+        - action:
+                secret: "secret"
+      - proxy:
+        - action:
+            serviceEndpoint: event-manager-service
+
+  bet-manager-pipe:
+    apiEndpoints: bet-manager
+    policies:
+      - jwt-db:
+        - action:
+                secret: "secret"
+      - proxy:
+        - action:
+            serviceEndpoint: bet-manager-service
+
+  list-events-pipe:
+    apiEndpoints: list-events
+    policies:
+      - jwt-db:
+        - action:
+                secret: "secret"
+      - proxy:
+        - action:
+            serviceEndpoint: list-events-service
+
+  list-events-no-auth-pipe:
+    apiEndpoints: list-events-no-auth
+    policies:
+      - proxy:
+        - action:
+            serviceEndpoint: list-events-service
+
+  user-manager-pipe:
+    apiEndpoints: user-manager-service
+    policies:
+      - jwt-db:
+        - action:
+                secret: "secret"
+      - proxy:
+        - action:
+            serviceEndpoint: user-manager-service
+
+
