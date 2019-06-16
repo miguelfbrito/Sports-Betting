@@ -6,13 +6,12 @@ import CreateEvent from '../AdminSummary/AddEvents/AddEvents';
 import EventFilter from '../EventsSummary/EventFilter/EventFilter';
 import Api from '../../api/api';
 import BetTypeStruct from '../utils/bettypesstruct';
-import EditEvent from './EditEvent/EditEvent';
 
 
 class AdminSummary extends Component {
     constructor(props) {
         super(props);
-        this.state = { events: [], createEvent: false, sportFilter: 'All' }
+        this.state = { events: [], createEvent: true, sportFilter: 'All' }
     }
 
     async componentDidMount() {
@@ -66,9 +65,11 @@ class AdminSummary extends Component {
 
         const createAnEvent = (
             <div>
+                <div className="top-bar">
                 <p className="Infodiv">Create new event</p>
+                </div>
                 <div className="events-container shadow">
-                    <EditEvent />
+                    <CreateEvent />
                 </div>
             </div>
         )

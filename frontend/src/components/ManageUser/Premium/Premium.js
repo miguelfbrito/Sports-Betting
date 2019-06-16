@@ -2,39 +2,58 @@ import React, { Component } from 'react';
 
 import './Premium.css';
 import Api from '../../../api/api';
+import ReactNotification from "react-notifications-component";
+import "react-notifications-component/dist/theme.css";
+import UserHandler from '../../utils/userHandler';
 
 class Premium extends Component {
     constructor(props) {
         super(props);
-        this.state = { userid: 1 }
+        this.state = {  }
     }
 
     async componentDidMount() {
 
-        let userdetails = await Api.fetchUserDetails(this.state.userid);
+        let userdetails = await Api.fetchUserDetails(UserHandler.get().oid);
 
         this.setState(userdetails);
         console.log(this.state)
     }
 
 
+    addNotification(notification) {
+        this.notificationDOMRef.current.addNotification({
+            title: notification.title || "Awesomeness",
+            message: notification.message || "Awesome Notifications!",
+            type: notification.type || "success",
+            insert: "top",
+            container: "top-right",
+            animationIn: ["animated", "fadeIn"],
+            animationOut: ["animated", "fadeOut"],
+            dismiss: { duration: 5000 },
+            dismissable: { click: true }
+        });
+    }
+
     async subscribe() {
-        const a = await Api.fetchSubscribe(this.state.oid);
-        alert(a.message);
+        const a = await Api.fetchSubscribe(UserHandler.get().oid);
+        window.location.href = '/user';
+        this.addNotification({ title: 'Subscribed', message: 'Subscribed!', type: 'success' })
     }
 
     async unsubscribe() {
-        const a = await Api.fetchUnsubscribe(this.state.oid);
-        alert(a.message);
+        const a = await Api.fetchUnsubscribe(UserHandler.get().oid);
+        console.log(a);
+        window.location.href = '/user';
+        this.addNotification({ title: 'Unsubscribe', message: 'Unsubscribed!', type: 'success' })
     }
 
     render() {
         //Todo: colocar os alerta com o resultado
-
         const bePremium = (
             <div className="bePremium">
                 <p className="premium-titles">Become a Premium user, for 10€, and gain access to exclusive events</p>
-                <button className="btn-1" onClick={async () => await Api.fetchSubscribe(this.state.oid)}>Subscribe Premium</button>
+                <button className="btn-1" onClick={this.subscribe}>Subscribe Premium</button>
             </div>
         );
 
@@ -42,13 +61,14 @@ class Premium extends Component {
         const notBePremium = (
             <div className="bePremium">
                 <p className="premium-titles">Already a Premium user! You can cancel your subscription below!</p>
-                <button className="btn-1" onClick={async () => await Api.fetchUnsubscribe(this.state.oid)}>Unsubscribe Premium</button>
+                <button className="btn-1" onClick={this.unsubscribe}>Unsubscribe Premium</button>
             </div>
         );
 
 
         return (
             <div>
+            <ReactNotification ref={this.notificationDOMRef} />
                 <div className="premium">
                     {!this.state.ispremium ? bePremium : ''}
                     {this.state.ispremium ? notBePremium : ''}

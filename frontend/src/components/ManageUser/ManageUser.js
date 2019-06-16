@@ -22,9 +22,7 @@ class CheckBetsSummary extends Component {
 
     async componentDidMount() {
 
-        const t = 1;
-
-        let userdetails = await Api.fetchUserDetails(1);
+        let userdetails = await Api.fetchUserDetails(UserHandler.get().oid);
 
         this.setState({
             user: userdetails

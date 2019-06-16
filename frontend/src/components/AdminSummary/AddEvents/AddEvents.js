@@ -4,11 +4,15 @@ import './AddEvents.css';
 import { Formik } from 'formik';
 import Api from '../../../api/api';
 
+import ReactNotification from "react-notifications-component";
+import "react-notifications-component/dist/theme.css";
 
 class AddEvents extends Component {
   constructor(props) {
       super(props);
-      this.state = { createdEvent: false}
+      this.state = { createdEvent: false};
+      this.addNotification = this.addNotification.bind(this);
+      this.notificationDOMRef = React.createRef();
   }
 
   componentDidMount() {
@@ -16,11 +20,29 @@ class AddEvents extends Component {
   }
 
 
+  addNotification(notification) {
+    this.notificationDOMRef.current.addNotification({
+        title: notification.title || "Awesomeness",
+        message: notification.message || "Awesome Notifications!",
+        type: notification.type || "success",
+        insert: "top",
+        container: "top-right",
+        animationIn: ["animated", "fadeIn"],
+        animationOut: ["animated", "fadeOut"],
+        dismiss: { duration: 5000 },
+        dismissable: { click: true }
+    });
+}
+
+
+
 render() {
 
   //Adaptar para inputs com o valor igual ao que já possuí
   return (
     <div className="row">
+
+<ReactNotification ref={this.notificationDOMRef} />
       <div className="addevents-form">
           <Formik
           initialValues={{ sport: '', name: '', premium: '', bdate: '', edate: '', description : ''}}
@@ -55,9 +77,10 @@ render() {
           //Colocar a apresentar as mensagens de erro
           if(a){
             this.setState({createdEvent: true});
-            alert("Event Created");
+            window.location.href = '/admin';
+            this.addNotification({ title: 'Success add event', message: 'Success on adding event!', type: 'success' })
           }else{
-            console.log("Event Already Created");
+            this.addNotification({ title: 'Error add event', message: 'Error on adding event!', type: 'danger' })
           }
           setSubmitting(false);
         }}

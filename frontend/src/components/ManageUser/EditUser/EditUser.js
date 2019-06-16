@@ -4,28 +4,46 @@ import './EditUser.css';
 
 import { Formik } from 'formik';
 import Api from '../../../api/api';
+import ReactNotification from "react-notifications-component";
+import "react-notifications-component/dist/theme.css";
+import UserHandler from '../../utils/userHandler';
 
 
 class EditUser extends Component {
   constructor(props) {
     super(props);
-    this.state = { userid: 1 }
+    this.state = { };
+    this.addNotification = this.addNotification.bind(this);
+    this.notificationDOMRef = React.createRef();
   }
 
   async componentDidMount() {
 
-
-    let userdetails = await Api.fetchUserDetails(this.state.userid);
+    let userdetails = await Api.fetchUserDetails(UserHandler.get().oid);
 
     this.setState(userdetails);
-    console.log(this.state)
   }
+
+  addNotification(notification) {
+    this.notificationDOMRef.current.addNotification({
+        title: notification.title || "Awesomeness",
+        message: notification.message || "Awesome Notifications!",
+        type: notification.type || "success",
+        insert: "top",
+        container: "top-right",
+        animationIn: ["animated", "fadeIn"],
+        animationOut: ["animated", "fadeOut"],
+        dismiss: { duration: 5000 },
+        dismissable: { click: true }
+    });
+}
 
 
   render() {
-    //TODO: Adicionar um scroll para os eventos
+    
     return (
       <div className="row">
+      <ReactNotification ref={this.notificationDOMRef} />
         <div className="edit-form">
         <Formik
       validate={values => {
@@ -47,11 +65,14 @@ class EditUser extends Component {
       }}
       onSubmit={async (values, { setSubmitting }) => {
         const a = await Api.fetchUpdateUser(this.state);
+        console.log(a);
         //Redirecionar para as páginas
-        if(a===true){
-          alert("Detalhes alterados");
-        }else{
-          alert("Erro ao atualizar detalhes")
+        if(a){
+          this.addNotification({ title: 'Success Edit', message: 'Success on editing profile details!', type: 'success' });
+          window.location.href = '/user';
+        } else {
+          this.setState({ registered: a });
+          this.addNotification({ title: 'Error Edit Profile', message: 'Error on editing profile details!', type: 'danger' })
         }
         setSubmitting(false);
       }}
