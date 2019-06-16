@@ -15,6 +15,7 @@ class Navbar extends Component {
     componentDidMount() {
 
         const userData = UserHandler.get();
+        console.log("USER DATA", userData)
         this.setState({ user: userData });
     }
 
@@ -32,16 +33,13 @@ class Navbar extends Component {
                         <div className="collapse navbar-collapse " id="navbarText">
                             <ul className="navbar-nav ml-auto">
                                 <li className="nav-item active"> <Link to="/events"> <span className="nav-link" href="#">Events</span> </Link> </li>
-                                <li className="nav-item active"> <Link to="/bets"> <span className="nav-link" href="#">Bets</span> </Link> </li>
-                                <li className="nav-item"> <Link to="/user"> <span className="nav-link" href="#">Welcome"</span> </Link> </li>
+                                <li className="nav-item"> <Link to="/login"> <span className="nav-link" href="#">Login</span> </Link> </li>
                             </ul>
                         </div>
                     </div>
                 </nav>
             );
         }
-
-        console.log("PRINT USER", user)
 
         return (
             <nav className="navbar navbar-expand-md bg-faded">
@@ -51,7 +49,7 @@ class Navbar extends Component {
                         <ul className="navbar-nav ml-auto">
                             <li className="nav-item active"> <Link to="/events"> <span className="nav-link" href="#">Events</span> </Link> </li>
                             <li className="nav-item active"> <Link to="/bets"> <span className="nav-link" href="#">Bets</span> </Link> </li>
-                            <li className="nav-item"> <Link to="/user"> <span className="nav-link" href="#">Welcome, {user.username + "(" + user.balance + "€)"}</span> </Link> </li>
+                            <li className="nav-item"> <Link to="/user"> <span className="nav-link" href="#"> {user.username + "(" + (user.balance || 0).toFixed(2) + "€)"}</span> </Link> </li>
                         </ul>
                     </div>
                 </div>

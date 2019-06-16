@@ -8,24 +8,24 @@ import Api from '../../../api/api';
 
 class EditUser extends Component {
   constructor(props) {
-      super(props);
-      this.state = { userid: 1}
+    super(props);
+    this.state = { userid: 1 }
   }
 
   async componentDidMount() {
-      
 
-      let userdetails = await Api.fetchUserDetails(this.state.userid);
 
-      this.setState(userdetails);
-      console.log(this.state)
+    let userdetails = await Api.fetchUserDetails(this.state.userid);
+
+    this.setState(userdetails);
+    console.log(this.state)
   }
 
 
-render() {
-        //TODO: Adicionar um scroll para os eventos
-        return (
-        <div className="row">
+  render() {
+    //TODO: Adicionar um scroll para os eventos
+    return (
+      <div className="row">
         <div className="edit-form">
         <Formik
       validate={values => {
@@ -110,12 +110,12 @@ render() {
           <button className="btn-1" type="submit" disabled={isSubmitting}>
             Save Changes
           </button>
-          </div>
-        </form>
-      )}
-    </Formik>
+                  </div>
+                </form>
+              )}
+          </Formik>
         </div>
-        </div>
+      </div>
     );
   }
 }

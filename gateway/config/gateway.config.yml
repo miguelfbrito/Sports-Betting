@@ -28,7 +28,7 @@ apiEndpoints:
 
   event-manager:
     host: '*'
-    paths: ['/event', '/event/*', '/availablebettype/', '/availablebettype/*', '/stats/','/stats/*']
+    paths: ['/event', '/event/*', '/availablebettype/', '/availablebettype/*', '/stats/', '/stats/*']
 
   bet-manager:
     host: '*'

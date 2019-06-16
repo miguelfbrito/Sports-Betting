@@ -17,5 +17,8 @@ UserHandler.get = () => {
     return data;
 }
 
+UserHandler.remove = () => {
+    localStorage.clear();
+}
 
 export default UserHandler;

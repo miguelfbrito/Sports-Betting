@@ -43,7 +43,7 @@ class Event extends Component {
         return (
             <div className="row">
                 <p className="event-date">{this.formatDate(event.startingdate)}</p>
-                <div className="col-sm-5">
+                <div className="col-sm-6" >
                     <p className="event-info">{event.name}</p>
                 </div>
 

@@ -44,32 +44,31 @@ Bet.placeBet = async (bet) => {
     const event = await EventMS.fetch(eventOid);
 
     if (Date.now() >= Date.parse(event.startingdate)) {
-        return { message: 'Bets to this event have been closed' };
+        return { message: 'Bets to this event have been closed', bet };
     }
 
     const userBettedAlready = await BetDB.findOne({ where: { eventOid, bettypeOid, userOid: userOid } })
-
     if (userBettedAlready) {
-        return { message: 'User already bet on event' }
+        return { message: 'Already bet on the event', bet }
     }
 
     const isEventPremium = await EventMS.isPremium(bet.eventOid);
-    if (!('ispremium' in isEventPremium)) {
-        return { message: 'Event not found' }
+    if (!('ispremium' in isEventPremium) || !isEventPremium) {
+        return { message: 'Event not found', bet }
     } else {
-        if (isEventPremium.ispremium && !user.data.ispremium) {
-            return { message: 'User must be premium' }
+        if (isEventPremium.ispremium && !user.ispremium) {
+            return { message: 'User must be premium', bet }
         }
     }
 
     const data = await EventMS.verifyBetTypeExistsInEvent(bettypeOid, eventOid);
 
     if (data.length === 0 || !bet) {
-        return { message: 'Invalid data!' };
+        return { message: 'Invalid data!', bet };
     }
 
     if (user.balance < bet.wager) {
-        return { message: 'Insufficient balance!' };
+        return { message: 'Insufficient balance!', bet };
     }
 
     const newBet = {
