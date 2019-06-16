@@ -3,15 +3,21 @@ import React, {Component} from 'react';
 import '../AddEvents/AddEvents.css';
 import { Formik } from 'formik';
 import Api from '../../../api/api';
+import ReactNotification from "react-notifications-component";
+import "react-notifications-component/dist/theme.css";
 
 
 class EditEvent extends Component {
   constructor(props) {
       super(props);
-      this.state = {sport:""}
+      this.state = {sport:""};
+      this.addNotification = this.addNotification.bind(this);
+      this.notificationDOMRef = React.createRef();
   }
 
   async componentDidMount() {
+    //TODO: Atualizar como se obtem o id do evento
+    console.log(this.state);
     const eventToUpdate = await Api.fetchEventDetails(1);
     console.log(eventToUpdate);
     //this.setState(eventToUpdate);
@@ -19,12 +25,27 @@ class EditEvent extends Component {
     console.log(this.state);
   }
 
+  addNotification(notification) {
+    this.notificationDOMRef.current.addNotification({
+        title: notification.title || "Awesomeness",
+        message: notification.message || "Awesome Notifications!",
+        type: notification.type || "success",
+        insert: "top",
+        container: "top-right",
+        animationIn: ["animated", "fadeIn"],
+        animationOut: ["animated", "fadeOut"],
+        dismiss: { duration: 5000 },
+        dismissable: { click: true }
+    });
+}
 
 render() {
 
   //Adaptar para inputs com o valor igual ao que já possuí
   return (
     <div className="row">
+
+<ReactNotification ref={this.notificationDOMRef} />
       <div className="addevents-form">
           <Formik
           validate={values => {
@@ -58,9 +79,10 @@ render() {
           //Colocar a apresentar as mensagens de erro
           if(a){
             this.setState({createdEvent: true});
-            alert("Event Created");
-          }else{
-            console.log("Event Already Created");
+            window.location.href = '/admin';
+            this.addNotification({ title: 'Edit Event', message: 'Event Update with success!', type: 'success' })
+          } else {
+            this.addNotification({ title: 'Edit Event', message: 'Error on update event!', type: 'danger' })
           }
           setSubmitting(false);
         }}

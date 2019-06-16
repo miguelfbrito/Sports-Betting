@@ -11,7 +11,6 @@ import CheckBets from './components/CheckBets/CheckBetsSummary';
 import ManageUsers from './components/ManageUser/ManageUser';
 import AnEventSummary from './components/AnEventSummary/AnEventSummary';
 import AdminSummary from './components/AdminSummary/AdminSummary';
-import CreateEvent from './components/AdminSummary/AdminSummary';
 import UserRegister from './components/Login/Register/Register';
 import AdminEdit from './components/AdminSummary/EditEvent/EditEvent';
 import EditOdds from './components/AdminSummary/EditOdds/EditOdds';
@@ -34,7 +33,6 @@ function App() {
                 <Route exact path="/bets" component={CheckBets} />
                 <Route exact path="/user" component={ManageUsers} />
                 <Route exact path="/admin" component={AdminSummary} />
-                <Route exact path="/admin/createevent" component={CreateEvent} />
                 <Route exact path="/register" component={UserRegister} />
                 <Route exact path="/admin/edit" component={AdminEdit} />
                 <Route exact path="/admin/update/:eventOid" component={EditOdds} />

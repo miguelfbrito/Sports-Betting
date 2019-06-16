@@ -67,6 +67,8 @@ Api.fetchLogin = async (props) => {
 
 
 Api.fetchRegister = async (props) => {
+    console.log("Registo", props);
+
     const data = await axios.post(`${host}/user/signup`,
         {
             username: props.username,
@@ -86,7 +88,7 @@ Api.fetchUserDetails = async (props) => {
 
 
 Api.fetchUpdateUser = async (props) => {
-    const data = await axios.post(`${host}/user/update/${props.userid}`,
+    const data = await axios.post(`${host}/user/update/${props.oid}`,
         {
             name: props.name,
             password: props.password,

@@ -1,18 +1,39 @@
 import React, { Component } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom';
+import ReactNotification from "react-notifications-component";
+import "react-notifications-component/dist/theme.css";
+
 
 
 import '../Login.css';
 import Api from '../../../api/api';
+import UserHandler from '../../utils/userHandler';
 
 class Register extends Component {
     constructor(props) {
         super(props);
-        this.state = { registered: false}
+        this.state = { userregistered: false, registered: ''}
+        this.addNotification = this.addNotification.bind(this);
+        this.notificationDOMRef = React.createRef();
     }
 
     componentDidMount() {
+    }
+
+
+    addNotification(notification) {
+        this.notificationDOMRef.current.addNotification({
+            title: notification.title || "Awesomeness",
+            message: notification.message || "Awesome Notifications!",
+            type: notification.type || "success",
+            insert: "top",
+            container: "top-right",
+            animationIn: ["animated", "fadeIn"],
+            animationOut: ["animated", "fadeOut"],
+            dismiss: { duration: 5000 },
+            dismissable: { click: true }
+        });
     }
 
 
@@ -20,9 +41,10 @@ class Register extends Component {
 
         return (
             <div className="container">
+            <ReactNotification ref={this.notificationDOMRef} />
                         <h3>Create an account!</h3>
                         <Formik
-                            initialValues={{ username: '', saldo: '', nome: '', email: '', password: '', cpassword : ''}}
+                            initialValues={{ username: '', saldo: '0', nome: '', email: '', password: '', cpassword : ''}}
                             validate={values => {
                               let errors = {};
                               if (!values.username) {
@@ -58,13 +80,30 @@ class Register extends Component {
                             }}
                             onSubmit={async (values, { setSubmitting }) => {
                                     const a = await Api.fetchRegister(values);
-                                    //Redirecionar para as páginas
-                                    if(a.success===true){
-                                        this.setState({registered: a});
-                                        alert(a.message);
-                                    }else{
-                                        alert(a.message)
+
+                                    //Colocar a apresentar as mensagens de erro
+                                    if (a.success===true) {
+                                        this.setState({registered: true });
+
+                                        const c = await Api.fetchLogin(values);
+
+                                        //console.log(a)
+                                        //Colocar a apresentar as mensagens de erro
+                                        if (c.success) {
+                                            this.setState({ logged: true, registered: c });
+                                            UserHandler.save(c.token);
+                                            window.location.href = '/events';
+                                            this.addNotification({ title: 'Successfully registered', message: 'Registered with success!', type: 'success' })
+                                        } else {
+                                            this.setState({ registered: a });
+                                            
                                     }
+
+                                    } else {
+                                        this.setState({ registered: a });
+                                        this.addNotification({ title: 'Error logging in', message: "Username already selected", type: 'danger' });
+                                    }
+                                    
                                     setSubmitting(false);
                             }}
                         >
@@ -82,11 +121,6 @@ class Register extends Component {
                             <div>
                             <Field className="username" type="username" name="username" placeholder="Username"/>
                             <ErrorMessage name="username" component="div" className="ErrorMessa" />
-                            </div>
-
-                            <div>
-                                <Field className="balance" type="number" name="saldo" placeholder="00.00"/>
-                                <ErrorMessage name="saldo" component="div" className="ErrorMessa"/>
                             </div>
 
                             <div>
