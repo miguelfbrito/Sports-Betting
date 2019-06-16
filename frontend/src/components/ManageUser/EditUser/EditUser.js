@@ -48,7 +48,7 @@ render() {
       onSubmit={async (values, { setSubmitting }) => {
         const a = await Api.fetchUpdateUser(this.state);
         //Redirecionar para as páginas
-        if(a==true){
+        if(a===true){
           alert("Detalhes alterados");
         }else{
           alert("Erro ao atualizar detalhes")

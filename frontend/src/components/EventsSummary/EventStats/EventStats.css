@@ -1,0 +1,16 @@
+.stats-titles{
+    width: auto;
+    height: auto;
+    color: black;
+    font-size: 12pt;
+    letter-spacing: 0.75pt;
+    padding-top: 10px;
+    font-weight: bold;
+}
+
+.stats-info{
+    color: black;
+    font-size: 12pt;
+    letter-spacing: 0.75pt;
+    padding-top: 10px;
+}
