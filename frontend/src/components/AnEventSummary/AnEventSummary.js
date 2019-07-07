@@ -3,6 +3,7 @@ import AnEvent from './AnEvent/AnEvent';
 import BettingSlip from '../BettingSlip/BettingSlip';
 import Api from '../../api/api';
 import Notification from '../Notification/Notification';
+import UserHandler from '../utils/userHandler';
 
 import ReactNotification from "react-notifications-component";
 import "react-notifications-component/dist/theme.css";
@@ -43,7 +44,7 @@ class AnEventSummary extends Component {
             "July", "August", "September", "October", "November", "December"];
 
 
-        return `${monthNames[date.getMonth()]} ${date.getDate()} of ${date.getFullYear()} - ${date.getHours()}:${date.getMinutes()}`
+        return `${monthNames[date.getMonth()]} ${date.getDate()} of ${date.getFullYear()} - ${date.getUTCHours()}:${date.getMinutes()}`
     }
 
 
@@ -105,6 +106,10 @@ class AnEventSummary extends Component {
                     type: 'success',
                     dismiss: 5000
                 });
+
+                const data = UserHandler.get();
+                const newBalance = data.balance - br.wager;
+                this.props.updateBalance(newBalance);
             }
         })
     }

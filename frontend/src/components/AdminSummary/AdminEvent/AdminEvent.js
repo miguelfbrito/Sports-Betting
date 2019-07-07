@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react';
-import '../../EventsSummary/Event/Event.css'
+import { Link } from 'react-router-dom';
+import '../../EventsSummary/Event/Event.css';
 
 class Event extends Component {
     constructor(props) {
@@ -19,7 +20,7 @@ class Event extends Component {
             "July", "August", "September", "October", "November", "December"];
 
 
-        return `${monthNames[date.getMonth()]} ${date.getDate()}, ${date.getHours()}:${date.getMinutes()}`
+        return `${monthNames[date.getMonth()]} ${date.getDate()}, ${date.getUTCHours()}:${date.getMinutes()}`
     }
 
 
@@ -30,11 +31,15 @@ class Event extends Component {
         const buttonSection = (
 
             <div className="col-sm-6 events-odds">
-
-                <button type="button" className="btn btn-info btn-odds">Edit odds</button>
-                <button type="button" className="btn btn-info btn-odds">Add bet types</button>
-                <button type="button" className="btn btn-info btn-odds">Close</button>
-                <button type="button" className="btn btn-info btn-odds">Delete</button>
+                <Link to={'/admin/edit/' + event.eventOid}>
+                    <button type="button" className="btn btn-info btn-odds">Edit Event</button>
+                </Link>
+                <Link to={'/events/' + event.eventOid}>
+                    <button type="button" className="btn btn-info btn-odds">Add bet types</button>
+                </Link>
+                <Link to={'/'}>
+                    <button type="button" className="btn btn-info btn-odds">Delete</button>
+                </Link>
 
             </div>
         )

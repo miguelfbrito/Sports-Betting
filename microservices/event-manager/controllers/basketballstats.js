@@ -1,5 +1,5 @@
 const BasketballStats = module.exports;
-const BasketballStatsDB = require('../models/footballstats');
+const BasketballStatsDB = require('../models/basketballstats');
 
 // DATABASE 
 BasketballStats.fetchOne = async (basketballstats) => {

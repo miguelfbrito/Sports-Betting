@@ -9,6 +9,7 @@ import BettingSlip from '../BettingSlip/BettingSlip';
 
 import Api from '../../api/api';
 import BetTypesStruct from '../utils/bettypesstruct';
+import UserHandler from '../utils/userHandler';
 
 class EventsSummary extends Component {
     constructor(props) {
@@ -76,6 +77,8 @@ class EventsSummary extends Component {
 
         const betResults = await Api.placeBets(this.state.bettingSlipBets);
         betResults.map(br => {
+
+            console.log("BRRRRRRRRRRRRRRRRRR", br)
             const event = this.findEventDetailsByEventOid(br.eventOid);
             if ('message' in br) {
                 this.addNotification({
@@ -85,6 +88,11 @@ class EventsSummary extends Component {
                     dismiss: 5000
                 });
             } else {
+
+                const data = UserHandler.get();
+                const newBalance = data.balance - br.wager;
+                this.props.updateBalance(newBalance);
+
                 this.addNotification({
                     title: event.name,
                     message: 'Your bet has been placed!',
@@ -173,9 +181,12 @@ class EventsSummary extends Component {
             </div>);
 
         return (
+
             <div className="events-title">
                 <ReactNotification ref={this.notificationDOMRef} />
                 <div className="row">
+
+                    {/* <button onClick={() => this.props.testFunction('asdasdasdad')}>CLICK ME</button> */}
                     <div className={showBettingSlip ? 'col-sm-9' : 'col-sm-12'}>
                         <div className="top-bar">
                             <p className="Infodiv">Eventos a decorrer</p>

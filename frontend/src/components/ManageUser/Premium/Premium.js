@@ -9,7 +9,9 @@ import UserHandler from '../../utils/userHandler';
 class Premium extends Component {
     constructor(props) {
         super(props);
-        this.state = {  }
+        this.state = {  };
+        this.addNotification = this.addNotification.bind(this);
+        this.notificationDOMRef = React.createRef();
     }
 
     async componentDidMount() {
@@ -35,16 +37,24 @@ class Premium extends Component {
         });
     }
 
-    async subscribe() {
+    subscribe = async() => {
         const a = await Api.fetchSubscribe(UserHandler.get().oid);
-        window.location.href = '/user';
-        this.addNotification({ title: 'Subscribed', message: 'Subscribed!', type: 'success' })
+        console.log(a);
+        if (a.message!=="Subscription failed!"){
+            window.location.href = '/user';
+            UserHandler.updatePremium(true);
+            UserHandler.WithdrawMoney(10);
+            this.addNotification({ title: 'Subscribed', message: 'Subscribed!', type: 'success' })
+        }else{
+            this.addNotification({ title: 'NOT Subscribed', message: 'Insufficient Balance!', type: 'danger' })   
+        }
     }
 
-    async unsubscribe() {
+    unsubscribe = async() => {
         const a = await Api.fetchUnsubscribe(UserHandler.get().oid);
         console.log(a);
         window.location.href = '/user';
+        UserHandler.updatePremium(false);
         this.addNotification({ title: 'Unsubscribe', message: 'Unsubscribed!', type: 'success' })
     }
 

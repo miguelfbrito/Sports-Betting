@@ -89,13 +89,14 @@ class Login extends Component {
                     onSubmit={async (values, { setSubmitting }) => {
                         const a = await Api.fetchLogin(values);
 
-                        console.log(a)
                         //Colocar a apresentar as mensagens de erro
                         if (a.success) {
                             this.setState({ logged: true, registered: a });
                             UserHandler.save(a.token);
-                            window.location.href = '/events';
-
+                            if(UserHandler.isAdmin())
+                                window.location.href = '/admin';
+                            else
+                                window.location.href = '/events';
                         } else {
                             this.setState({ registered: a });
                             this.addNotification({ title: 'Error logging in', message: 'Invalid credentials!', type: 'danger' })

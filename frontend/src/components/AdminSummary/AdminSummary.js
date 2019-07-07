@@ -6,6 +6,8 @@ import CreateEvent from '../AdminSummary/AddEvents/AddEvents';
 import EventFilter from '../EventsSummary/EventFilter/EventFilter';
 import Api from '../../api/api';
 import BetTypeStruct from '../utils/bettypesstruct';
+import AdminEvent from './AdminEvent/AdminEvent';
+import UserHandler from '../utils/userHandler';
 
 
 class AdminSummary extends Component {
@@ -54,7 +56,7 @@ class AdminSummary extends Component {
 
                     {events.map(event => (
                         <div className="admin-event">
-                            <EventsSummary event={event} />
+                            <AdminEvent event={event} />
 
                             <hr ></hr>
                         </div>

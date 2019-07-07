@@ -67,6 +67,8 @@ Event.closeAndVerifyBets = async (event) => {
 
     const currentStats = await Stats.fetchSubStatsType(event.oid);
 
+    console.log("CURRENT STATS", currentStats)
+
     // Validar todas as AvailableBetTypes para um evento
     await ValidateBetTypes.validate(availablebettypes, currentStats);
 

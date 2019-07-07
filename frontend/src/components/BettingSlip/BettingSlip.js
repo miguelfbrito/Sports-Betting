@@ -50,15 +50,12 @@ class BettingSlip extends Component {
 
                 <div className="top-bar">
                     <p className="info-par">Boletim de apostas</p>
-                    <i className="material-icons" onClick={this.removeBets}>
-                        delete
-                    </i>
+                    <i className="material-icons" onClick={this.removeBets}>delete</i>
                 </div>
                 {bets.map(bet => (
                     <div className="events-container shadow bettingslip">
-                        <i className="material-icons individual-icon" onClick={() => this.removeSingleBet(bet.bettypeOid, bet.eventOid)}>
-                            delete
-                    </i>
+                        <i className="material-icons individual-icon"
+                            onClick={() => this.removeSingleBet(bet.bettypeOid, bet.eventOid)}>delete</i>
 
                         <div className="row">
                             <div className="col-md-4">

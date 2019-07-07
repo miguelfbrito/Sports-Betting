@@ -9,7 +9,7 @@ import UpdateAnEvent from './UpdateAnEvent';
 class EditOdds extends Component {
     constructor(props) {
         super(props);
-        this.state = { event: {}, blocks: []}
+        this.state = { event: {}, blocks: [] }
 
     }
 
@@ -45,7 +45,7 @@ class EditOdds extends Component {
             "July", "August", "September", "October", "November", "December"];
 
 
-        return `${monthNames[date.getMonth()]} ${date.getDate()} of ${date.getFullYear()} - ${date.getHours()}:${date.getMinutes()}`
+        return `${monthNames[date.getMonth()]} ${date.getDate()} of ${date.getFullYear()} - ${date.getUTCHours()}:${date.getMinutes()}`
     }
 
 

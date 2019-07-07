@@ -1,13 +1,26 @@
 
 import axios from 'axios';
+import UserHandler from '../components/utils/userHandler';
+var jwtDecode = require('jwt-decode');
+
 
 const host = 'http://localhost:8081'
 const Api = {};
 
 Api.fetchAvailableEvents = async () => {
+    var premium = true;
+    var tk = "";
+
+    if (UserHandler.get() && !UserHandler.isAdmin()) {
+        tk = UserHandler.get();
+        premium = tk.ispremium;
+    }
 
     try {
-        const data = await axios.get(`${host}/available-events`);
+        const data = await axios.post(`${host}/available-events`,
+            {
+                ispremium: premium
+            });
         return data.data;
     } catch (e) {
         console.error(e);
@@ -28,9 +41,18 @@ Api.fetchAvailableBetTypesByEventOid = async (eventOid) => {
 Api.fetchUserBets = async () => {
     // TODO : alterar para enviar no header o token
 
-    const userOid = 1;
+    const tokendata = localStorage.getItem("token");
+    const data = jwtDecode(tokendata);
+    const userOid = data.oid;
+
+    console.log(userOid);
+
     try {
+
+        console.log("BETTING FOR ", userOid)
         const data = await axios.get(`${host}/bet/fetchall/${userOid}`);
+
+        console.log("BETS DO USER", data)
         return data.data;
     } catch (e) {
         console.error(e);
@@ -39,16 +61,24 @@ Api.fetchUserBets = async () => {
 
 Api.placeBets = async (listBets) => {
 
+    console.log("ListBets", listBets);
+
+    const tokendata = localStorage.getItem("token");
+    const data = jwtDecode(tokendata);
+    const id = data.oid;
+
+    console.log(id);
+
     // TODO : obter o userOid
     let placedBetsOutput = await Promise.all(listBets.map(async bet => {
         const currentBet = {
             wager: bet.wager,
-            userOid: 1,
+            userOid: id,
             eventOid: bet.eventOid,
             bettypeOid: bet.bettypeOid
         }
 
-        const placedBet = await axios.post(`${host}/bet/place`, bet);
+        const placedBet = await axios.post(`${host}/bet/place`, currentBet);
         return placedBet.data
     }))
 
@@ -67,7 +97,7 @@ Api.fetchLogin = async (props) => {
 
 
 Api.fetchRegister = async (props) => {
-    console.log("Registo", props);
+    //console.log("Registo", props);
 
     const data = await axios.post(`${host}/user/signup`,
         {
@@ -144,7 +174,7 @@ Api.fetchUpdateEvent = async (props) => {
             ispremium: premiumvalue,
             startingdate: props.startingdate,
             finishingdate: props.finishingdate,
-            state: "upcoming",
+            state: "Upcoming",
             sport: {
                 name: props.sport
             }
@@ -191,5 +221,9 @@ Api.fetchUnsubscribe = async (props) => {
     return data.data;
 }
 
+Api.fetchSports = async (props) => {
+    const data = await axios.get(`${host}/sport/allsports`);
+    return data.data;
+}
 
 export default Api;

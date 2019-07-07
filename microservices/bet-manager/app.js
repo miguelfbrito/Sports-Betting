@@ -33,14 +33,49 @@ testFunction = async () => {
 
     await BetType.seed()
 
-    const bet = {
-        wager: 3.33,
+    await Bet.create(
+        {
+            wager: 1.25,
+            userOid: 1,
+            eventOid: 1,
+            bettypeOid: 1
+        }
+    )
+    await Bet.create({
+        wager: 4.25,
         userOid: 1,
         eventOid: 1,
-        bettypeOid: 1
-    }
+        bettypeOid: 2
 
-    await Bet.create(bet)
+    })
+    await Bet.create({
+        wager: 1.25,
+        userOid: 1,
+        eventOid: 1,
+        bettypeOid: 3
+
+    })
+    await Bet.create({
+        wager: 1.55,
+        userOid: 1,
+        eventOid: 1,
+        bettypeOid: 4
+
+    })
+    await Bet.create({
+        wager: 3.25,
+        userOid: 1,
+        eventOid: 2,
+        bettypeOid: 5
+
+    })
+    await Bet.create({
+        wager: 2.25,
+        userOid: 1,
+        eventOid: 2,
+        bettypeOid: 3
+
+    })
 }
 
 setTimeout(testFunction, 1000);

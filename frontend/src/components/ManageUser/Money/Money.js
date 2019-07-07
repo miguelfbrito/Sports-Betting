@@ -7,6 +7,7 @@ import Api from '../../../api/api';
 import ReactNotification from "react-notifications-component";
 import "react-notifications-component/dist/theme.css";
 import UserHandler from '../../utils/userHandler';
+import Navbar from '../../Navbar/Navbar';
 
 class Money extends Component {
     constructor(props) {
@@ -59,6 +60,7 @@ class Money extends Component {
                 //Redirecionar para as páginas
                 if(a){
                     window.location.href = '/user';
+                    UserHandler.depositMoney(values.updateValue);
                     this.addNotification({ title: 'Success Deposit Money', message: 'Success on deposit value!', type: 'success' })
                 } else {
                     this.addNotification({ title: 'Error Deposit Money', message: 'Error on deposit value!', type: 'danger' })
@@ -121,9 +123,11 @@ class Money extends Component {
             }}
             onSubmit={async (values, { setSubmitting }) => {
                 const a = await Api.fetchWithdrawMoney(values);
+                console.log(a);
                 //Redirecionar para as páginas
-                if(a){
+                if(a.message!=="Insufficient balance!"){
                     window.location.href = '/user';
+                    UserHandler.WithdrawMoney(values.updateValue);
                     this.addNotification({ title: 'Success Withdraw Money', message: 'Success on withdraw value!', type: 'success' });
                 } else {
                     this.addNotification({ title: 'Error Withdraw Money', message: 'Error on withdraw value!', type: 'danger' })

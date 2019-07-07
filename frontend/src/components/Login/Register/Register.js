@@ -92,6 +92,10 @@ class Register extends Component {
                                         if (c.success) {
                                             this.setState({ logged: true, registered: c });
                                             UserHandler.save(c.token);
+                                            if(UserHandler.isAdmin())
+                                                window.location.href = '/admin';
+                                            else
+                                                window.location.href = '/events';
                                             window.location.href = '/events';
                                             this.addNotification({ title: 'Successfully registered', message: 'Registered with success!', type: 'success' })
                                         } else {

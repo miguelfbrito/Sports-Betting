@@ -60,7 +60,7 @@ AvailableBetTypes.createDefaultBySportName = async (name, eventOid) => {
 
 AvailableBetTypes.fetchByEventOidWithBetTypeNameOnly = async (eventOid) => {
     try {
-        const available = await AvailableBetTypesDB.findAll({ where: { eventOid } });
+        const available = await AvailableBetTypesDB.findAll({ where: { "eventOid": eventOid } });
         let final = await Promise.all(available.map(async av => {
             const bettype = await BetMS.fetchBetTypeDetailsByOid(av.dataValues.bettypeOid);
             return {

@@ -17,10 +17,11 @@ User.subscribe = async (userOid) => {
 
     if (currentUser.dataValues.balance >= subscriptionPrice) {
         await this.withdrawBalance(userOid, subscriptionPrice);
-        await this.update({ where: { oid: userOid } }, { ispremium: true })
+        await this.update({ where: { oid: userOid } }, { ispremium: true });
+        return true;
     }
 
-    return true;
+    return false;
 }
 
 User.unsubscribe = async (userOid) => {
@@ -61,6 +62,9 @@ User.withdrawBalance = async (userOid, amount) => {
     await this.update({ where: { oid: userOid } }, { balance: newBalance });
 
     const user = await this.findOne({ where: { oid: userOid } });
+
+    console.log(`A RETIRAR ${amount}, prev: ${currentUser.dataValues.balance} new : ${newBalance}`)
+    console.log(`DADOS DO USER ${user}`)
 
     return user;
 }

@@ -10,13 +10,18 @@ import "react-notifications-component/dist/theme.css";
 class AddEvents extends Component {
   constructor(props) {
     super(props);
-    this.state = { createdEvent: false };
+    this.state = { createdEvent: false, sports: [] };
     this.addNotification = this.addNotification.bind(this);
     this.notificationDOMRef = React.createRef();
   }
 
-  componentDidMount() {
-
+  async componentDidMount() {
+    var newArray=[];
+    const allSports = await Api.fetchSports();
+    allSports.map(br => {   
+      newArray.push(br.name);
+    });
+    this.setState({sports: newArray});
   }
 
 
@@ -40,6 +45,12 @@ class AddEvents extends Component {
 
     //Adaptar para inputs com o valor igual ao que já possuí
     return (
+
+      <div>
+                <div className="top-bar">
+                    <p className="Infodiv">Create new event</p>
+                </div>
+                <div className="events-container shadow">
       <div className="row">
 
         <ReactNotification ref={this.notificationDOMRef} />
@@ -98,15 +109,14 @@ class AddEvents extends Component {
                 <form onSubmit={handleSubmit}>
                   <div className="add-event">
                     <label>Sport</label>
-                    <input
-                      className="eventsport"
-                      placeholder="Sport"
-                      type="text"
-                      name="sport"
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      value={values.sport}
-                    />
+                    <select name="product" defaultValue={1} className="eventpremium" onChange={(event) => {
+                      values.sport = event.target.value;
+                    }}
+                      onBlur={handleBlur} >
+                      <option value="1" disabled>Sport</option>
+                      {this.state.sports.map((sport) => <option key={sport} value={sport}>{sport}</option>)}
+                    </select>
+
                     <div>
                       <p className="error-info">{errors.sport && touched.sport && errors.sport}</p>
                     </div>
@@ -192,6 +202,8 @@ class AddEvents extends Component {
               )}
           </Formik>
         </div>
+      </div>
+      </div>
       </div>
     );
   }

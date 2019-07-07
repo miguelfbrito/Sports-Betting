@@ -40,7 +40,8 @@ router.post('/deposit', async (req, res, next) => {
 router.post('/withdraw', async (req, res, next) => {
     // TODO : obter userOid vindo do gateway
     const data = req.body;
-    res.send(await UserC.withdrawBalance(data.userOid, data.amount));
+    const request = await UserC.withdrawBalance(data.userOid, data.amount)
+    res.send(request);
 })
 
 router.post('/subscribe', async (req, res, next) => {
@@ -88,7 +89,7 @@ router.post('/updatebalanceonwin', async (req, res, next) => {
         res.send({ message: 'Invalid user' })
     }
 
-    const newBalance = currentUser.dataValues.balance + (data.wager * data.odd);
+    const newBalance = currentUser.dataValues.balance + (data.wager * data.odd) + data.wager;
     await UserC.update({ where: { oid: data.userOid } }, { balance: newBalance });
 
     const user = await UserC.findOne({ where: { oid: data.userOid } });
@@ -149,7 +150,8 @@ router.post('/login', async (req, res, next) => {
                 const userInfoInToken = {
                     oid: user.oid,
                     username: user.username,
-                    balance: user.balance
+                    balance: user.balance,
+                    ispremium: user.ispremium
                 }
 
                 // Geração do token

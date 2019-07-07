@@ -1,17 +1,22 @@
 const express = require('express');
 const router = express.Router();
 const Event = require('../controllers/event');
+var jwtDecode = require('jwt-decode');
 
-router.get('/', async (req, res, next) => {
+router.post('/', async (req, res, next) => {
 
     // TODO : Obter token, verificar se o user é Premium
     // - Enviar dados de acordo com estatuto de premium
 
-    const isUserPremium = false;
+    let userDetails = req.body;
+
+    const isUserPremium = userDetails.ispremium;
 
     try {
         let data = await Event.fetchAll();
-        // data = data.filter(event => event.dataValues.ispremium)
+        
+        if(!isUserPremium)
+            data = data.filter(event => !event.dataValues.ispremium);
 
         res.send(data);
     } catch (e) {

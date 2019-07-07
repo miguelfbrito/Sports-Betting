@@ -10,18 +10,37 @@ import "react-notifications-component/dist/theme.css";
 class EditEvent extends Component {
   constructor(props) {
       super(props);
-      this.state = {sport:""};
+      this.state = {sport:"", eventOid: this.props.match.params.eventOid, sports: []};
       this.addNotification = this.addNotification.bind(this);
       this.notificationDOMRef = React.createRef();
   }
 
+  formatDate = (dateMillis) => {
+
+    const date = new Date(dateMillis);
+
+    //Para ser possível escrever a data usando o mês e não número
+    const monthNames = ["January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"];
+
+    return date.toISOString().substr(0,16);
+}
+
   async componentDidMount() {
-    //TODO: Atualizar como se obtem o id do evento
-    console.log(this.state);
-    const eventToUpdate = await Api.fetchEventDetails(1);
-    console.log(eventToUpdate);
-    //this.setState(eventToUpdate);
-    //this.setState({sport : eventToUpdate.sport.name});
+    var newArray=[];
+    const allSports = await Api.fetchSports();
+    allSports.map(br => {   
+      newArray.push(br.name);
+    });
+    this.setState({sports: newArray});
+    
+    const eventToUpdate = await Api.fetchEventDetails(this.state.eventOid);
+    this.setState(eventToUpdate);
+    this.setState({sport: eventToUpdate.sport.name});
+    this.setState({startingdate: this.formatDate(this.state.startingdate), finishingdate: this.formatDate(this.state.finishingdate)});
+    if(this.state.description===undefined){
+      this.state.description="";
+    }
     console.log(this.state);
   }
 
@@ -43,14 +62,17 @@ render() {
 
   //Adaptar para inputs com o valor igual ao que já possuí
   return (
-    <div className="row">
-
+    <div className="events-title">
+    <div className="events-container shadow">
+                <div className="top-bar">
+                    <p className="Infodiv">Manage Events</p>
+                </div>
 <ReactNotification ref={this.notificationDOMRef} />
       <div className="addevents-form">
-          <Formik
+          <Formik 
           validate={values => {
           let errors = {};
-          if (!this.values.sport) {
+          if (!this.values.sport.name) {
             errors.sport = 'Required';
           }
           if (!this.state.name) {
@@ -62,20 +84,21 @@ render() {
           if(this.state.premium==="Premium"){
             errors.premium = "Select value";
           }
-          if (!this.state.bdate) {
-            errors.bdate = 'Required';
+          if (!this.state.startingdate) {
+            errors.startingdate = 'Required';
           }
-          if (!this.state.edate) {
-            errors.edate = 'Required';
-          } else if (this.state.bdate && this.state.bdate) {
-            if (this.state.bdate > this.state.edate) {
-              errors.edate = "Must be after begining date ";
+          if (!this.state.finishingdate) {
+            errors.finishingdate = 'Required';
+          } else if (this.state.startingdate && this.state.startingdate) {
+            if (this.state.startingdate > this.state.finishingdate) {
+              errors.finishingdate = "Must be after begining date ";
             }
           }
           return errors;
         }}
         onSubmit={async (values, { setSubmitting }) => {
           const a = await Api.fetchUpdateEvent(this.state);
+          console.log(a);
           //Colocar a apresentar as mensagens de erro
           if(a){
             this.setState({createdEvent: true});
@@ -100,15 +123,13 @@ render() {
           <form onSubmit={handleSubmit}>
           <div className="add-event">
               <label>Sport</label>
-              <input
-                className="eventsport"
-                  placeholder="Sport"
-                  type="text"
-                  name="sport"
-                  onChange={(e) => this.setState({sport: e.target.value})}
-                  onBlur={handleBlur}
-                  value={this.state.sport}
-              />
+              <select name="product" value={this.state.sport} className="eventpremium" onChange={(event) => {
+                      this.state.sport = event.target.value;
+                    }}
+                      onBlur={handleBlur} >
+                      <option value="1" disabled>Sport</option>
+                      {this.state.sports.map((sport) => <option key={sport} value={sport}>{sport}</option>)}
+                    </select>
               <div>
               <p className="error-info">{errors.sport && touched.sport && errors.sport}</p>
             </div>
@@ -130,14 +151,14 @@ render() {
             </div>
             <div className="add-event">
             <label>Premium</label>
-            <select name="product" defaultValue={this.state.premium} className="eventpremium" onChange={(event) => {
+            <select name="product" value={this.state.ispremium} className="eventpremium" onChange={(event) => {
               var id = event.nativeEvent.target.selectedIndex;
               this.setState({premium : event.nativeEvent.target[id].text});
               }}
               onBlur={handleBlur} >
               <option value="1" disabled>Premium</option>
-              <option value="2">false</option>
-              <option value="3">true</option>
+              <option value="false">false</option>
+              <option value="true">true</option>
             </select>
             <div>
               <p className="error-info">{errors.premium && touched.premium && errors.premium}</p>
@@ -151,10 +172,10 @@ render() {
                   name="bdate"
                   onChange={(e) => this.setState({startingdate: e.target.value})}
                   onBlur={handleBlur}
-                  value={this.startingdate}
+                  value={this.state.startingdate}
               />
               <div>
-              <p className="error-info">{errors.bdate && touched.bdate && errors.bdate}</p>
+              <p className="error-info">{errors.startingdate && touched.startingdate && errors.startingdate}</p>
               </div>
             </div>
             <div className="add-event">
@@ -168,7 +189,7 @@ render() {
                   value={this.state.finishingdate}
               />
               <div>
-              <p className="error-info">{errors.edate && touched.edate && errors.edate}</p>
+              <p className="error-info">{errors.finishingdate && touched.finishingdate && errors.finishingdate}</p>
             </div>
             </div>
             <div className="add-event">
@@ -193,6 +214,7 @@ render() {
           </form>
         )}
       </Formik>
+      </div>
       </div>
       </div>
   );

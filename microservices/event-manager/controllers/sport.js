@@ -36,3 +36,7 @@ Sport.update = async (findCriteria, changes) => {
         console.error(e);
     }
 }
+
+Sport.fetchAll = async () => {
+    return await SportDB.findAll();
+}

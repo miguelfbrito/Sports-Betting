@@ -23,13 +23,9 @@ router.post('/closebet', async (req, res, next) => {
 
 router.get('/fetchall/:userOid', async (req, res, next) => {
 
-    let userOid;
-    if ('userinfo' in req.headers) {
-        userOid = JSON.parse(req.headers.userinfo);
-    } else {
-        userOid = req.params.userOid
-    }
+    const userOid = req.params.userOid
 
+    console.log("USER OID NO FETCHALL ", userOid)
     try {
         const betHistory = await Bet.history(userOid);
         res.send(betHistory);
@@ -57,6 +53,10 @@ router.get('/fetchbyeventoid/:eventoid', async (req, res, next) => {
 router.post('/place', async (req, res, next) => {
 
     const bet = req.body;
+
+    console.log('\n\n\n\n\n');
+    console.log(bet);
+    console.log('\n\n\n\n\n');
 
     const newBet = {
         wager: bet.wager,

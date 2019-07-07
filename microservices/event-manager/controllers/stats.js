@@ -114,10 +114,13 @@ Stats.fetchSubStatsType = async (eventOid) => {
     console.log("Fetch das stats no processo de fechar", data)
 
     if (data.footballstatOid) {
-        const footballStats = await FootballStats.fetchOne({ where: { oid: currentStats.oid } })
+        const footballStats = await FootballStats.fetchOne({ where: { oid: data.footballstatOid } })
         return { ...footballStats.dataValues, sport: 'football' }
     } else if (data.basketballstatOid) {
-        const basketballStats = await BasketballStats.fetchOne({ where: { oid: currentStats.oid } })
+        const basketballStats = await BasketballStats.fetchOne({ where: { oid: data.basketballstatOid } })
+
+        console.log("BASKETBALL STATS", basketballStats);
+
         return { ...basketballStats.dataValues, sport: 'basketball' }
     }
 

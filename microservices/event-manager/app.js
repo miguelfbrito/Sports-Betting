@@ -9,6 +9,7 @@ const cors = require('cors');
 const eventRouter = require('./routes/event');
 const availableBetTypesRouter = require('./routes/availablebettypes');
 const statsRouter = require('./routes/stats');
+const sportRouter = require('./routes/sport');
 
 // For test
 const sports = require('./controllers/sport');
@@ -44,6 +45,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/event', eventRouter);
 app.use('/availablebettype', availableBetTypesRouter);
 app.use('/stats', statsRouter);
+app.use('/sport', sportRouter);
 
 
 seedData = async () => {
@@ -69,8 +71,8 @@ seedData = async () => {
     await events.createEvent({
         name: "Arsenal x Liverpool",
         ispremium: false,
-        startingdate: Date.now() + 10 * 1000,
-        finishingdate: Date.now() + 30 * 1000,
+        startingdate: (Date.now() + 60 * 1000),
+        finishingdate: (Date.now() + 4 * 60 * 1000),
         state: 'Upcoming',
         sport: {
             name: 'Football'
@@ -115,6 +117,28 @@ seedData = async () => {
         ispremium: true,
         startingdate: Date.now() + 90 * 60 * 1000,
         finishingdate: Date.now() + 120 * 60 * 1000,
+        state: 'Upcoming',
+        sport: {
+            name: 'Football'
+        }
+    })
+
+    await events.createEvent({
+        name: "Real Madrid x Barcelona",
+        ispremium: true,
+        startingdate: Date.now() + 4 * 60 * 1000,
+        finishingdate: Date.now() + 9 * 60 * 1000,
+        state: 'Upcoming',
+        sport: {
+            name: 'Football'
+        }
+    })
+
+    await events.createEvent({
+        name: "Real Madrid B x Barcelona B",
+        ispremium: true,
+        startingdate: Date.now() + 5 * 60 * 1000,
+        finishingdate: Date.now() + 9 * 60 * 1000,
         state: 'Upcoming',
         sport: {
             name: 'Football'
@@ -168,8 +192,8 @@ seedData = async () => {
     await events.createEvent({
         name: "Atlanta Hawks x Boston Celtics",
         ispremium: false,
-        startingdate: Date.now() + 30 * 60 * 100,
-        finishingdate: Date.now() + 70 * 60 * 1000,
+        startingdate: Date.now() + 5 * 60 * 1000,
+        finishingdate: Date.now() + 7 * 60 * 1000,
         state: 'Upcoming',
         sport: {
             name: 'Basketball'
@@ -179,8 +203,8 @@ seedData = async () => {
     await events.createEvent({
         name: "Chicago Bulls x Detroit Pistons",
         ispremium: true,
-        startingdate: Date.now() + 30 * 60 * 100,
-        finishingdate: Date.now() + 190 * 60 * 1000,
+        startingdate: Date.now() + 4 * 60 * 1000,
+        finishingdate: Date.now() + 7 * 60 * 1000,
         state: 'Upcoming',
         sport: {
             name: 'Basketball'
@@ -190,8 +214,8 @@ seedData = async () => {
     await events.createEvent({
         name: "Indiana Pacers x LA Clippers",
         ispremium: true,
-        startingdate: Date.now() + 45 * 60 * 100,
-        finishingdate: Date.now() + 190 * 60 * 1000,
+        startingdate: Date.now() + 4 * 60 * 1000,
+        finishingdate: Date.now() + 6 * 60 * 1000,
         state: 'Upcoming',
         sport: {
             name: 'Basketball'
@@ -219,88 +243,23 @@ seedData = async () => {
     })
 
     await axios.post(`${MS_USERS}/user/signup`, {
-        username: "user",
+        username: "ldias",
+        password: "pass"
+    })
+
+    // Create admin
+    await axios.post(`${MS_USERS}/user/signup`, {
+        username: "admin",
         password: "pass"
     })
 
     // Place bet
     await axios.post(`${MS_BETS}/bet/place`, {
-        wager: 19,
+        wager: 1,
         userOid: 1,
         eventOid: 1,
         bettypeOid: 2
     })
-
-    await axios.post(`${MS_BETS}/bet/place`, {
-        wager: 10,
-        userOid: 1,
-        eventOid: 4,
-        bettypeOid: 1
-    })
-
-    await axios.post(`${MS_BETS}/bet/place`, {
-        wager: 4,
-        userOid: 1,
-        eventOid: 2,
-        bettypeOid: 3
-    })
-
-    await axios.post(`${MS_BETS}/bet/place`, {
-        wager: 3.33,
-        userOid: 1,
-        eventOid: 2,
-        bettypeOid: 2
-    })
-
-    await axios.post(`${MS_BETS}/bet/place`, {
-        wager: 8.50,
-        userOid: 1,
-        eventOid: 3,
-        bettypeOid: 1
-    })
-
-    await axios.post(`${MS_BETS}/bet/place`, {
-        wager: 5.6,
-        userOid: 1,
-        eventOid: 2,
-        bettypeOid: 3
-    })
-
-    await axios.post(`${MS_BETS}/bet/place`, {
-        wager: 5,
-        userOid: 1,
-        eventOid: 3,
-        bettypeOid: 1
-    })
-
-    await axios.post(`${MS_BETS}/bet/place`, {
-        wager: 5,
-        userOid: 1,
-        eventOid: 7,
-        bettypeOid: 4
-    })
-
-    await axios.post(`${MS_BETS}/bet/place`, {
-        wager: 9,
-        userOid: 1,
-        eventOid: 9,
-        bettypeOid: 5
-    })
-
-    await axios.post(`${MS_BETS}/bet/place`, {
-        wager: 4,
-        userOid: 1,
-        eventOid: 4,
-        bettypeOid: 4
-    })
-
-    await axios.post(`${MS_BETS}/bet/place`, {
-        wager: 2,
-        userOid: 1,
-        eventOid: 4,
-        bettypeOid: 4
-    })
-
 
 
     await basketballstats.create({
@@ -356,7 +315,7 @@ teste = async (eventOid) => {
 // teste(3);
 // teste(4);
 
-setTimeout(seedData, 1000);
+setTimeout(seedData, 20000);
 
 
 module.exports = app;

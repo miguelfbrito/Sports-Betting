@@ -26,7 +26,7 @@ Bet.closeBet = async (bet) => {
         ...bet,
     }
 
-    if (bet.betresult) {
+    if (bet.betresult === 'WON') {
         await UserMS.updateBalance(bet);
     }
 
@@ -39,7 +39,7 @@ Bet.placeBet = async (bet) => {
     const eventOid = bet.eventOid;
 
     // TODO : obter o userOid do token
-    const userOid = 1;
+    const userOid = bet.userOid;
     const user = await UserMS.fetchUserDetails(userOid);
     const event = await EventMS.fetch(eventOid);
 
@@ -47,7 +47,11 @@ Bet.placeBet = async (bet) => {
         return { message: 'Bets to this event have been closed', bet };
     }
 
-    const userBettedAlready = await BetDB.findOne({ where: { eventOid, bettypeOid, userOid: userOid } })
+    const before = { where: { "eventOid": eventOid, "bettypeOid": bettypeOid, "userOid": userOid } }
+    console.log("BEFOREEEEEEEEEEEEEEEEEEEE", before)
+    const userBettedAlready = await BetDB.findOne(before)
+
+    console.log("AFTEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEER", userBettedAlready)
     if (userBettedAlready) {
         return { message: 'Already bet on the event', bet }
     }
@@ -71,6 +75,8 @@ Bet.placeBet = async (bet) => {
         return { message: 'Insufficient balance!', bet };
     }
 
+    console.log("Placing new BET!")
+
     const newBet = {
         wager: bet.wager,
         userOid: bet.userOid,
@@ -81,6 +87,12 @@ Bet.placeBet = async (bet) => {
 
     try {
         const createdBet = this.create(newBet);
+
+        console.log("A TIRAR DINHEIRO", newBet)
+
+        // RETIRAR DINHEIRO APOSTADO
+        await UserMS.withdraw(newBet.userOid, newBet.wager);
+
         return createdBet;
     } catch (e) {
         console.error(`Unable to place bet ${e}`)
@@ -90,12 +102,7 @@ Bet.placeBet = async (bet) => {
 
 Bet.history = async (userOid) => {
     try {
-        let bets = await this.fetch({ userOid });
-
-        // Obter o nome da bettype bettypeOid
-        // Obter o nome do evento eventOid
-
-        console.log(bets)
+        let bets = await this.fetch({ where: { "userOid": userOid } });
 
         bets = Promise.all(bets.map(async bet => {
             const bettype = await BetType.findById(bet.dataValues.bettypeOid);
@@ -139,7 +146,7 @@ Bet.create = async (bet) => {
 }
 Bet.deleteByName = async (name) => {
     try {
-        return await BetDB.destroy({ where: { name } });
+        return await BetDB.destroy({ where: { "name": name } });
     } catch (e) {
         console.error(e);
     }
@@ -167,6 +174,10 @@ Bet.update = async (findCriteria, changes) => {
 
 Bet.fetch = async (criteria) => {
     try {
+
+        console.log("Testint for this criteria")
+        console.log(criteria)
+
         return await BetDB.findAll(criteria);
     } catch (e) {
         console.error(e);

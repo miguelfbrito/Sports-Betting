@@ -20,7 +20,7 @@ class Event extends Component {
             "July", "August", "September", "October", "November", "December"];
 
 
-        return `${monthNames[date.getMonth()]} ${date.getDate()}, ${date.getHours()}:${date.getMinutes()}`
+        return `${monthNames[date.getMonth()]} ${date.getDate()}, ${date.getUTCHours()}:${date.getMinutes()}`
     }
 
 
@@ -43,10 +43,11 @@ class Event extends Component {
             </div>
         )
 
+        console.log("EVENT", event)
 
         return (
             <div className="row">
-                <p className="event-date">{this.state === 'Upcoming' ? this.formatDate(event.startingdate) : this.formatDate(event.finishingdate)}</p>
+                <p className="event-date">{event.state === 'Upcoming' ? this.formatDate(event.startingdate) : this.formatDate(event.finishingdate)}</p>
                 <div className="col-sm-5">
                     <p className="event-info">{event.name}</p>
                     <div className="event-info">
