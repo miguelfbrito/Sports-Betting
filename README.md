@@ -1,1 +1,1 @@
-# TEMP
+A web application for sport betting, supporting multiple sports and diverse bet types. Designed to be highly scalable resorting to microservices which were defined using Docker and Docker-compose. Express-gateway is used to handle accesses to the API and deal with token validation.
