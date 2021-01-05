@@ -6,7 +6,7 @@
   "version": "1.0.0",
   "main": "server.js",
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "express-gateway": "^1.16.4",
     "express-gateway-jwt-database-plugin": "file:plugins/express-gateway-jwt-database-plugin",
     "express-gateway-plugin-jwt": "file:../../github/express-gateway-jwt-database-plugin"
